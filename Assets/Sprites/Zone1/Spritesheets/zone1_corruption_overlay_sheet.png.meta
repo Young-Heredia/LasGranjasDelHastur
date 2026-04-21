@@ -1,0 +1,741 @@
+fileFormatVersion: 2
+guid: 7fd79d65aee09c44eacd36b2cdc10d6f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5978263738958827520
+    second: zone1_corruption_overlay_sheet_0
+  - first:
+      213: 135060096105625676
+    second: zone1_corruption_overlay_sheet_1
+  - first:
+      213: 5566476477021947370
+    second: zone1_corruption_overlay_sheet_2
+  - first:
+      213: 7651757885139075090
+    second: zone1_corruption_overlay_sheet_3
+  - first:
+      213: -6595444765737643262
+    second: zone1_corruption_overlay_sheet_4
+  - first:
+      213: 8524903246076140358
+    second: zone1_corruption_overlay_sheet_5
+  - first:
+      213: 2341154767886480157
+    second: zone1_corruption_overlay_sheet_6
+  - first:
+      213: -311838680442076321
+    second: zone1_corruption_overlay_sheet_7
+  - first:
+      213: 6237129957703481337
+    second: zone1_corruption_overlay_sheet_8
+  - first:
+      213: 4872135053280548195
+    second: zone1_corruption_overlay_sheet_9
+  - first:
+      213: -6648307011129552900
+    second: zone1_corruption_overlay_sheet_10
+  - first:
+      213: 555411818821602585
+    second: zone1_corruption_overlay_sheet_11
+  - first:
+      213: 6422238247394087801
+    second: zone1_corruption_overlay_sheet_12
+  - first:
+      213: -7590521337646179113
+    second: zone1_corruption_overlay_sheet_13
+  - first:
+      213: 1326514977791009310
+    second: zone1_corruption_overlay_sheet_14
+  - first:
+      213: -323549076004786222
+    second: zone1_corruption_overlay_sheet_15
+  - first:
+      213: 7946165758622159119
+    second: zone1_corruption_overlay_sheet_16
+  - first:
+      213: -1026618323523864357
+    second: zone1_corruption_overlay_sheet_17
+  - first:
+      213: 1078655775259560320
+    second: zone1_corruption_overlay_sheet_18
+  - first:
+      213: 7582204393885132800
+    second: zone1_corruption_overlay_sheet_19
+  - first:
+      213: 6347388570130624952
+    second: zone1_corruption_overlay_sheet_20
+  - first:
+      213: 796439323508638994
+    second: zone1_corruption_overlay_sheet_21
+  - first:
+      213: 6761713557448322709
+    second: zone1_corruption_overlay_sheet_22
+  - first:
+      213: 9057212703143600971
+    second: zone1_corruption_overlay_sheet_23
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: zone1_corruption_overlay_sheet_0
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 4
+        width: 11
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 000b2c9bdc0f80da0800000000000000
+      internalID: -5978263738958827520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone1_corruption_overlay_sheet_1
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 4
+        width: 31
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c48b4bb1174dfd100800000000000000
+      internalID: 135060096105625676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone1_corruption_overlay_sheet_2
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 4
+        width: 11
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae506770dd8104d40800000000000000
+      internalID: 5566476477021947370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone1_corruption_overlay_sheet_3
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 4
+        width: 11
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 210420b7141803a60800000000000000
+      internalID: 7651757885139075090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone1_corruption_overlay_sheet_4
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 4
+        width: 31
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2039f720ee54874a0800000000000000
+      internalID: -6595444765737643262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone1_corruption_overlay_sheet_5
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 4
+        width: 11
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64b51fed55a8e4670800000000000000
+      internalID: 8524903246076140358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone1_corruption_overlay_sheet_6
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 4
+        width: 11
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d13f5108bd37d7020800000000000000
+      internalID: 2341154767886480157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone1_corruption_overlay_sheet_7
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 4
+        width: 31
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5306015f502cabf0800000000000000
+      internalID: -311838680442076321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone1_corruption_overlay_sheet_8
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 4
+        width: 11
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f7fcda96acbe8650800000000000000
+      internalID: 6237129957703481337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone1_corruption_overlay_sheet_9
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 4
+        width: 11
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 365148c640d4d9340800000000000000
+      internalID: 4872135053280548195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone1_corruption_overlay_sheet_10
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 4
+        width: 31
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cff42e36ff77cb3a0800000000000000
+      internalID: -6648307011129552900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone1_corruption_overlay_sheet_11
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 4
+        width: 11
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91d4ae44b1835b700800000000000000
+      internalID: 555411818821602585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone1_corruption_overlay_sheet_12
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 4
+        width: 11
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9731ad6d8af502950800000000000000
+      internalID: 6422238247394087801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone1_corruption_overlay_sheet_13
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 4
+        width: 31
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7dc93994f0d09a690800000000000000
+      internalID: -7590521337646179113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone1_corruption_overlay_sheet_14
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 4
+        width: 11
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e12e778185ab86210800000000000000
+      internalID: 1326514977791009310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone1_corruption_overlay_sheet_15
+      rect:
+        serializedVersion: 2
+        x: 325
+        y: 4
+        width: 11
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2df245164d5828bf0800000000000000
+      internalID: -323549076004786222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone1_corruption_overlay_sheet_16
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 4
+        width: 31
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f01db0928a3764e60800000000000000
+      internalID: 7946165758622159119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone1_corruption_overlay_sheet_17
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 4
+        width: 11
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd8f372f218b0c1f0800000000000000
+      internalID: -1026618323523864357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone1_corruption_overlay_sheet_18
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 4
+        width: 11
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 089054f66b728fe00800000000000000
+      internalID: 1078655775259560320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone1_corruption_overlay_sheet_19
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 4
+        width: 31
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 008ede759b6693960800000000000000
+      internalID: 7582204393885132800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone1_corruption_overlay_sheet_20
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 4
+        width: 11
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b1b20e4644761850800000000000000
+      internalID: 6347388570130624952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone1_corruption_overlay_sheet_21
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 4
+        width: 11
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21582e258558d0b00800000000000000
+      internalID: 796439323508638994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone1_corruption_overlay_sheet_22
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 4
+        width: 31
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59e66a8c7ae66dd50800000000000000
+      internalID: 6761713557448322709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone1_corruption_overlay_sheet_23
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 4
+        width: 11
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b43a70267fea1bd70800000000000000
+      internalID: 9057212703143600971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      zone1_corruption_overlay_sheet_0: -5978263738958827520
+      zone1_corruption_overlay_sheet_1: 135060096105625676
+      zone1_corruption_overlay_sheet_10: -6648307011129552900
+      zone1_corruption_overlay_sheet_11: 555411818821602585
+      zone1_corruption_overlay_sheet_12: 6422238247394087801
+      zone1_corruption_overlay_sheet_13: -7590521337646179113
+      zone1_corruption_overlay_sheet_14: 1326514977791009310
+      zone1_corruption_overlay_sheet_15: -323549076004786222
+      zone1_corruption_overlay_sheet_16: 7946165758622159119
+      zone1_corruption_overlay_sheet_17: -1026618323523864357
+      zone1_corruption_overlay_sheet_18: 1078655775259560320
+      zone1_corruption_overlay_sheet_19: 7582204393885132800
+      zone1_corruption_overlay_sheet_2: 5566476477021947370
+      zone1_corruption_overlay_sheet_20: 6347388570130624952
+      zone1_corruption_overlay_sheet_21: 796439323508638994
+      zone1_corruption_overlay_sheet_22: 6761713557448322709
+      zone1_corruption_overlay_sheet_23: 9057212703143600971
+      zone1_corruption_overlay_sheet_3: 7651757885139075090
+      zone1_corruption_overlay_sheet_4: -6595444765737643262
+      zone1_corruption_overlay_sheet_5: 8524903246076140358
+      zone1_corruption_overlay_sheet_6: 2341154767886480157
+      zone1_corruption_overlay_sheet_7: -311838680442076321
+      zone1_corruption_overlay_sheet_8: 6237129957703481337
+      zone1_corruption_overlay_sheet_9: 4872135053280548195
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
