@@ -32,6 +32,7 @@ namespace LasGranjasDelHastur.Zone2
             _taxTimer = taxIntervalSeconds;
             if (sharedEconomyWithZone1)
                 PullCoinsFromZone1Save();
+            TryRestoreFromSaveIfRequested();
             BuildUi();
             RefreshUi();
         }
@@ -97,6 +98,7 @@ namespace LasGranjasDelHastur.Zone2
             btnBack.onClick.AddListener(() =>
             {
                 PushCoinsToZone1Save();
+                SaveManager.Instance?.SaveNow();
                 SceneManager.LoadScene("ZoneSelection");
             });
         }
@@ -157,6 +159,47 @@ namespace LasGranjasDelHastur.Zone2
                 return;
 
             SaveManager.Instance.CachedData.zone1.darkCoins = Mathf.Max(0, _darkCoins);
+        }
+
+        void TryRestoreFromSaveIfRequested()
+        {
+            if (SaveManager.Instance == null || !SaveManager.Instance.ShouldRestoreFromSave)
+                return;
+
+            var data = SaveManager.Instance.CachedData;
+            if (data != null && data.zone2 != null && data.zone2.valid)
+                ApplySaveData(data.zone2);
+
+            SaveManager.Instance.MarkRestoreConsumed();
+        }
+
+        public Zone2SaveData CaptureSaveData()
+        {
+            return new Zone2SaveData
+            {
+                valid = true,
+                darkCoins = _darkCoins,
+                citySupplies = _citySupplies,
+                arcaneBlueprints = _arcaneBlueprints,
+                difficultyTier = _difficultyTier,
+                totalSold = _totalSold,
+                taxTimer = _taxTimer,
+                runtimeSeconds = _runtime,
+            };
+        }
+
+        public void ApplySaveData(Zone2SaveData data)
+        {
+            if (data == null || !data.valid)
+                return;
+
+            _darkCoins = Mathf.Max(0, data.darkCoins);
+            _citySupplies = Mathf.Max(0, data.citySupplies);
+            _arcaneBlueprints = Mathf.Max(0, data.arcaneBlueprints);
+            _difficultyTier = Mathf.Clamp(data.difficultyTier, 1, 9);
+            _totalSold = Mathf.Max(0, data.totalSold);
+            _taxTimer = Mathf.Max(0f, data.taxTimer);
+            _runtime = Mathf.Max(0f, data.runtimeSeconds);
         }
 
         static Image CreateImage(Transform parent, string name, Color color)

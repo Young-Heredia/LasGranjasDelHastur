@@ -1,6 +1,8 @@
 using System;
 using System.IO;
 using LasGranjasDelHastur.Zone1;
+using LasGranjasDelHastur.Zone2;
+using LasGranjasDelHastur.Zone3;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -21,6 +23,8 @@ namespace LasGranjasDelHastur.Core
 
         float _autoSaveTimer;
         string SaveFilePath => Path.Combine(Application.persistentDataPath, "savegame.json");
+        string BackupFilePath => Path.Combine(Application.persistentDataPath, "savegame.bak");
+        string TempFilePath => Path.Combine(Application.persistentDataPath, "savegame.tmp");
         public string GetSaveFilePath() => SaveFilePath;
 
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
@@ -115,6 +119,20 @@ namespace LasGranjasDelHastur.Core
                 CachedData.zone1Available = CachedData.zone1 != null && CachedData.zone1.valid;
             }
 
+            var zone2 = FindFirstObjectByType<Zone2PrototypeGame>();
+            if (zone2 != null)
+            {
+                CachedData.zone2 = zone2.CaptureSaveData();
+                CachedData.zone2Available = CachedData.zone2 != null && CachedData.zone2.valid;
+            }
+
+            var zone3 = FindFirstObjectByType<Zone3PrototypeGame>();
+            if (zone3 != null)
+            {
+                CachedData.zone3 = zone3.CaptureSaveData();
+                CachedData.zone3Available = CachedData.zone3 != null && CachedData.zone3.valid;
+            }
+
             CachedData.savedAtUtc = DateTime.UtcNow.ToString("o");
             WriteToDisk(CachedData);
         }
@@ -123,6 +141,10 @@ namespace LasGranjasDelHastur.Core
         {
             if (File.Exists(SaveFilePath))
                 File.Delete(SaveFilePath);
+            if (File.Exists(BackupFilePath))
+                File.Delete(BackupFilePath);
+            if (File.Exists(TempFilePath))
+                File.Delete(TempFilePath);
             CachedData = new SaveGameData();
             ShouldRestoreFromSave = false;
         }
@@ -156,7 +178,10 @@ namespace LasGranjasDelHastur.Core
             catch (Exception e)
             {
                 Debug.LogWarning($"SaveManager: failed to read save file. {e.Message}");
-                CachedData = new SaveGameData();
+                if (TryLoadBackup(out var backupData))
+                    CachedData = backupData;
+                else
+                    CachedData = new SaveGameData();
             }
         }
 
@@ -184,6 +209,8 @@ namespace LasGranjasDelHastur.Core
             // Ensure safe defaults after migration.
             data.lastSceneName = string.IsNullOrWhiteSpace(data.lastSceneName) ? "MainMenu" : data.lastSceneName;
             data.zone1 ??= new Zone1SaveData();
+            data.zone2 ??= new Zone2SaveData();
+            data.zone3 ??= new Zone3SaveData();
             return data;
         }
 
@@ -192,11 +219,38 @@ namespace LasGranjasDelHastur.Core
             try
             {
                 var json = JsonUtility.ToJson(data, true);
-                File.WriteAllText(SaveFilePath, json);
+                File.WriteAllText(TempFilePath, json);
+
+                if (File.Exists(SaveFilePath))
+                    File.Copy(SaveFilePath, BackupFilePath, overwrite: true);
+
+                File.Copy(TempFilePath, SaveFilePath, overwrite: true);
+                File.Delete(TempFilePath);
             }
             catch (Exception e)
             {
                 Debug.LogWarning($"SaveManager: failed to write save file. {e.Message}");
+            }
+        }
+
+        bool TryLoadBackup(out SaveGameData data)
+        {
+            data = null;
+            if (!File.Exists(BackupFilePath))
+                return false;
+
+            try
+            {
+                var json = File.ReadAllText(BackupFilePath);
+                var loaded = JsonUtility.FromJson<SaveGameData>(json);
+                data = MigrateIfNeeded(loaded ?? new SaveGameData());
+                Debug.LogWarning("SaveManager: loaded backup save after primary read failure.");
+                return true;
+            }
+            catch (Exception backupError)
+            {
+                Debug.LogWarning($"SaveManager: failed to read backup save. {backupError.Message}");
+                return false;
             }
         }
     }

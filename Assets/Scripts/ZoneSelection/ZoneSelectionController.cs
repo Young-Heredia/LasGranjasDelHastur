@@ -1,5 +1,6 @@
 using System.Collections;
 using LasGranjasDelHastur;
+using LasGranjasDelHastur.Core;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -210,7 +211,7 @@ public class ZoneSelectionController : MonoBehaviour
 
     void Update()
     {
-        if (!enableDebugUnlockUi)
+        if (!IsDebugUiEnabled())
             return;
         if (InputAdapter.KeyDown(KeyCode.F9))
             ToggleDebugPanel();
@@ -309,12 +310,15 @@ public class ZoneSelectionController : MonoBehaviour
         switch (zoneNumber)
         {
             case 1:
+                SaveManager.Instance?.RequestRestoreOnNextGameplayScene();
                 LoadSceneIfAvailable(zone1SceneName, mainMenuSceneName);
                 break;
             case 2:
+                SaveManager.Instance?.RequestRestoreOnNextGameplayScene();
                 LoadSceneIfAvailable(zone2SceneName, zone1SceneName);
                 break;
             case 3:
+                SaveManager.Instance?.RequestRestoreOnNextGameplayScene();
                 LoadSceneIfAvailable(zone3SceneName, zone2SceneName);
                 break;
         }
@@ -322,7 +326,7 @@ public class ZoneSelectionController : MonoBehaviour
 
     void EnsureDebugUnlockUi()
     {
-        if (!enableDebugUnlockUi)
+        if (!IsDebugUiEnabled())
             return;
         if (_debugPanel != null)
             return;
@@ -526,6 +530,7 @@ public class ZoneSelectionController : MonoBehaviour
 
             zoneManager.CompleteZone2Unlock();
             RefreshAllCards();
+            SaveManager.Instance?.RequestRestoreOnNextGameplayScene();
             LoadSceneIfAvailable(zone2SceneName, zone1SceneName);
         });
     }
@@ -555,6 +560,7 @@ public class ZoneSelectionController : MonoBehaviour
 
             zoneManager.CompleteZone3Unlock();
             RefreshAllCards();
+            SaveManager.Instance?.RequestRestoreOnNextGameplayScene();
             LoadSceneIfAvailable(zone3SceneName, zone2SceneName);
         });
     }
@@ -567,7 +573,10 @@ public class ZoneSelectionController : MonoBehaviour
         if (TryLoadScene(fallbackSceneName))
         {
             Debug.LogWarning($"[ZoneSelection] Escena objetivo no disponible, usando fallback: {fallbackSceneName}");
+            return;
         }
+
+        Debug.LogError($"[ZoneSelection] No se pudo cargar escena objetivo '{preferredSceneName}' ni fallback '{fallbackSceneName}'.");
     }
 
     static bool TryLoadScene(string sceneName)
@@ -590,5 +599,17 @@ public class ZoneSelectionController : MonoBehaviour
         }
 #endif
         return false;
+    }
+
+    bool IsDebugUiEnabled()
+    {
+        if (!enableDebugUnlockUi)
+            return false;
+
+#if UNITY_EDITOR
+        return true;
+#else
+        return Debug.isDebugBuild;
+#endif
     }
 }
