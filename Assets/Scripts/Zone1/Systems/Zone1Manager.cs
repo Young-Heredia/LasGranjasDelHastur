@@ -15,6 +15,7 @@ namespace LasGranjasDelHastur.Zone1
         [SerializeField] private ResourceManager resourceManager;
         [SerializeField] private ProgressionManager progressionManager;
         [SerializeField] private CellManager cellManager;
+        [SerializeField] private AssistantManager assistantManager;
         [SerializeField] private BuyerManager buyerManager;
         [SerializeField] private TaxManager taxManager;
         [SerializeField] private UIManager uiManager;
@@ -30,6 +31,7 @@ namespace LasGranjasDelHastur.Zone1
         public ResourceManager Resources => resourceManager;
         public ProgressionManager Progression => progressionManager;
         public CellManager Cells => cellManager;
+        public AssistantManager Assistants => assistantManager;
         public BuyerManager Buyers => buyerManager;
         public TaxManager Taxes => taxManager;
         public Zone1Config Config => zone1Config;
@@ -42,6 +44,7 @@ namespace LasGranjasDelHastur.Zone1
             if (resourceManager == null) resourceManager = FindFirstObjectByType<ResourceManager>();
             if (progressionManager == null) progressionManager = FindFirstObjectByType<ProgressionManager>();
             if (cellManager == null) cellManager = FindFirstObjectByType<CellManager>();
+            if (assistantManager == null) assistantManager = FindFirstObjectByType<AssistantManager>();
             if (buyerManager == null) buyerManager = FindFirstObjectByType<BuyerManager>();
             if (taxManager == null) taxManager = FindFirstObjectByType<TaxManager>();
             if (uiManager == null) uiManager = FindFirstObjectByType<UIManager>();
@@ -117,22 +120,25 @@ namespace LasGranjasDelHastur.Zone1
             EnsureConfig();
             AutoWireReferences();
 
-            if (resourceManager == null || progressionManager == null || cellManager == null || buyerManager == null || taxManager == null || uiManager == null)
+            if (resourceManager == null || progressionManager == null || cellManager == null || assistantManager == null || buyerManager == null || taxManager == null || uiManager == null)
             {
                 return;
             }
 
             ApplyConfig();
             cellManager.Initialize(resourceManager, progressionManager);
+            assistantManager.Initialize(cellManager, resourceManager, progressionManager);
+            assistantManager.Changed += OnAssistantAssignmentsChanged;
             buyerManager.Initialize(resourceManager, progressionManager);
             taxManager.Initialize(resourceManager, cellManager);
-            uiManager.Initialize(resourceManager, progressionManager, cellManager, buyerManager, taxManager);
+            uiManager.Initialize(resourceManager, progressionManager, cellManager, assistantManager, buyerManager, taxManager);
 
             // Camera bounds tuned by config.
             if (cameraController != null)
                 cameraController.SetBounds(zone1Config.cameraMinBounds, zone1Config.cameraMaxBounds);
 
             TryRestoreFromSaveIfRequested();
+            cellManager.RefreshAssistantVisuals(assistantManager);
             artTuner?.Apply();
 
             _initialized = true;
@@ -195,6 +201,11 @@ namespace LasGranjasDelHastur.Zone1
                 zone1Config.buyerSoldPressurePerUnit,
                 zone1Config.buyerPressureRecoveryPerSecond);
 
+            assistantManager.Configure(
+                zone1Config.initialAssistants,
+                zone1Config.maxAssistants,
+                zone1Config.assistantAutomationTickSeconds);
+
             taxManager.Configure(
                 zone1Config.collectorName,
                 zone1Config.baseTaxPercent,
@@ -241,6 +252,8 @@ namespace LasGranjasDelHastur.Zone1
                 taxAlertActive = taxManager.IsAlertActive,
                 payWindowRemainingSeconds = taxManager.PayWindowRemainingSeconds,
                 cells = cellManager.CaptureSaveData(),
+                assistantTotal = assistantManager.TotalAssistants,
+                assistants = assistantManager.CaptureSaveData(),
             };
             return data;
         }
@@ -258,9 +271,22 @@ namespace LasGranjasDelHastur.Zone1
 
             progressionManager.SetProgress(data.level, data.xp);
             cellManager.ApplySaveData(data.cells);
+            assistantManager.ApplySaveData(data.assistantTotal, data.assistants);
             taxManager.ApplySaveState(data.strikes, data.fineDebt, data.timeToNextTaxSeconds, data.taxAlertActive, data.payWindowRemainingSeconds);
 
+            cellManager.RefreshAssistantVisuals(assistantManager);
             uiManager.RefreshFromExternalState();
+        }
+
+        void OnAssistantAssignmentsChanged()
+        {
+            cellManager?.RefreshAssistantVisuals(assistantManager);
+        }
+
+        void OnDestroy()
+        {
+            if (assistantManager != null)
+                assistantManager.Changed -= OnAssistantAssignmentsChanged;
         }
     }
 }

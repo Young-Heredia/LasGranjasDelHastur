@@ -263,39 +263,34 @@ namespace LasGranjasDelHastur.Zone1
 
         static void EnsureSystems()
         {
-            if (GameObject.Find("Systems") != null)
+            var systems = GameObject.Find("Systems");
+            if (systems == null)
+                systems = new GameObject("Systems");
+
+            EnsureSystemComponent<ResourceManager>(systems.transform, "ResourceManager");
+            EnsureSystemComponent<ProgressionManager>(systems.transform, "ProgressionManager");
+            EnsureSystemComponent<AssistantManager>(systems.transform, "AssistantManager");
+            EnsureSystemComponent<BuyerManager>(systems.transform, "BuyerManager");
+            EnsureSystemComponent<TaxManager>(systems.transform, "TaxManager");
+            EnsureSystemComponent<Zone1ArtTuner>(systems.transform, "Zone1ArtTuner");
+            EnsureSystemComponent<UIManager>(systems.transform, "UIManager");
+            EnsureSystemComponent<Zone1Manager>(systems.transform, "Zone1Manager");
+        }
+
+        static void EnsureSystemComponent<T>(Transform systemsRoot, string objectName) where T : Component
+        {
+            if (Object.FindFirstObjectByType<T>() != null)
                 return;
 
-            var systems = new GameObject("Systems");
+            var go = systemsRoot.Find(objectName)?.gameObject;
+            if (go == null)
+            {
+                go = new GameObject(objectName);
+                go.transform.SetParent(systemsRoot, false);
+            }
 
-            var rm = new GameObject("ResourceManager");
-            rm.transform.SetParent(systems.transform, false);
-            rm.AddComponent<ResourceManager>();
-
-            var pm = new GameObject("ProgressionManager");
-            pm.transform.SetParent(systems.transform, false);
-            pm.AddComponent<ProgressionManager>();
-
-            var bm = new GameObject("BuyerManager");
-            bm.transform.SetParent(systems.transform, false);
-            bm.AddComponent<BuyerManager>();
-
-            var tm = new GameObject("TaxManager");
-            tm.transform.SetParent(systems.transform, false);
-            tm.AddComponent<TaxManager>();
-
-            var art = new GameObject("Zone1ArtTuner");
-            art.transform.SetParent(systems.transform, false);
-            art.AddComponent<Zone1ArtTuner>();
-
-            var uiGo = new GameObject("UIManager");
-            uiGo.transform.SetParent(systems.transform, false);
-            uiGo.AddComponent<UIManager>();
-
-            // Must be created last so its Awake can find all managers.
-            var zone1 = new GameObject("Zone1Manager");
-            zone1.transform.SetParent(systems.transform, false);
-            zone1.AddComponent<Zone1Manager>();
+            if (go.GetComponent<T>() == null)
+                go.AddComponent<T>();
         }
     }
 }

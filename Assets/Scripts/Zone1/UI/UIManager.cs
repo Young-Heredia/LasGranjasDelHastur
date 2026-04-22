@@ -20,6 +20,7 @@ namespace LasGranjasDelHastur.Zone1.UI
         ResourceManager _resources;
         ProgressionManager _progression;
         CellManager _cells;
+        AssistantManager _assistants;
         BuyerManager _buyers;
         TaxManager _tax;
 
@@ -33,6 +34,7 @@ namespace LasGranjasDelHastur.Zone1.UI
         Image _xpFill;
         TextMeshProUGUI _txtTaxTimer;
         TextMeshProUGUI _txtStrikes;
+        TextMeshProUGUI _txtAssistants;
 
         Button _btnSales;
         Button _btnBack;
@@ -51,6 +53,7 @@ namespace LasGranjasDelHastur.Zone1.UI
         Button _cellUpgradeBtn;
         Button _cellBuyBtn;
         Button _cellCleanseBtn;
+        Button _cellAssistantBtn;
 
         // Sales bindings
         RectTransform _salesListRoot;
@@ -71,11 +74,12 @@ namespace LasGranjasDelHastur.Zone1.UI
         float _uiSelfHealTimer;
         bool _eventsWired;
 
-        public void Initialize(ResourceManager resources, ProgressionManager progression, CellManager cells, BuyerManager buyers, TaxManager tax)
+        public void Initialize(ResourceManager resources, ProgressionManager progression, CellManager cells, AssistantManager assistants, BuyerManager buyers, TaxManager tax)
         {
             _resources = resources;
             _progression = progression;
             _cells = cells;
+            _assistants = assistants;
             _buyers = buyers;
             _tax = tax;
 
@@ -138,6 +142,8 @@ namespace LasGranjasDelHastur.Zone1.UI
                 _cells.SelectedCellChanged += OnCellSelected;
                 _cells.CellsChanged += RefreshCellPanel;
             }
+            if (_assistants != null)
+                _assistants.Changed += OnAssistantsChanged;
 
             if (_buyers != null) _buyers.Changed += RefreshSalesPanel;
             if (_tax != null)
@@ -179,6 +185,7 @@ namespace LasGranjasDelHastur.Zone1.UI
             }
 
             if (_buyers != null) _buyers.Changed -= RefreshSalesPanel;
+            if (_assistants != null) _assistants.Changed -= OnAssistantsChanged;
             if (_tax != null)
             {
                 _tax.Changed -= RefreshTaxPanel;
@@ -203,6 +210,12 @@ namespace LasGranjasDelHastur.Zone1.UI
             RefreshTaxPanel();
         }
 
+        void OnAssistantsChanged()
+        {
+            RefreshHUD();
+            RefreshCellPanel();
+        }
+
         void RefreshHUD()
         {
             if (_resources == null || _progression == null)
@@ -214,6 +227,8 @@ namespace LasGranjasDelHastur.Zone1.UI
             _txtEnergy.text = $"Energía pura: {_resources.Get(ResourceType.PureEnergy)}";
             _txtLevel.text = $"Nivel {_progression.Level}";
             _xpFill.fillAmount = _progression.XpProgress01();
+            if (_txtAssistants != null && _assistants != null)
+                _txtAssistants.text = $"Asistentes: {_assistants.AvailableAssistants}/{_assistants.TotalAssistants}";
 
             if (_tax != null)
                 _txtStrikes.text = $"Multas: {_tax.Strikes}/3";
@@ -262,6 +277,7 @@ namespace LasGranjasDelHastur.Zone1.UI
                 ? $"{resourceAmount}/{resourceCap}"
                 : $"{resourceAmount}";
             var storageFull = _resources.IsAtCapacity(_boundCell.ProducesResource) ? " (lleno)" : "";
+            var assistantCount = _assistants != null ? _assistants.GetAssistantCountOnCell(_boundCell) : 0;
 
             _cellBody.text =
                 $"Nivel: {_boundCell.Level}\n" +
@@ -271,6 +287,7 @@ namespace LasGranjasDelHastur.Zone1.UI
                 $"Almacén: {storageLine}{storageFull}\n" +
                 $"Estado: {state}{prod}\n" +
                 $"Corrupta: {corrupt}\n" +
+                $"Asistente: {assistantCount} (máx 1)\n" +
                 $"Costo compra: {_boundCell.PurchaseCostDarkCoins}\n" +
                 $"Costo mejora: {_boundCell.UpgradeCostDarkCoins}";
 
@@ -279,6 +296,8 @@ namespace LasGranjasDelHastur.Zone1.UI
             _cellUpgradeBtn.interactable = _boundCell.CanUpgrade(_resources);
             _cellBuyBtn.interactable = _boundCell.CanBuy(_resources);
             _cellCleanseBtn.interactable = _boundCell.CanCleanse(_resources);
+            _cellAssistantBtn.interactable = _assistants != null &&
+                (_assistants.HasAssistantOnCell(_boundCell) || _assistants.CanAssignToCell(_boundCell));
 
             _cellProduceBtn.onClick.RemoveAllListeners();
             _cellProduceBtn.onClick.AddListener(() =>
@@ -322,6 +341,22 @@ namespace LasGranjasDelHastur.Zone1.UI
                 if (_boundCell.TryCleanse(_resources))
                     _cells.ApplyVisual(_boundCell);
             });
+
+            _cellAssistantBtn.onClick.RemoveAllListeners();
+            if (_assistants != null)
+            {
+                var hasAssistant = _assistants.HasAssistantOnCell(_boundCell);
+                var txt = _cellAssistantBtn.GetComponentInChildren<TextMeshProUGUI>();
+                if (txt != null)
+                    txt.text = hasAssistant ? "Quitar Asist." : "Asignar Asist.";
+                _cellAssistantBtn.onClick.AddListener(() =>
+                {
+                    if (_assistants.HasAssistantOnCell(_boundCell))
+                        _assistants.TryUnassignFromCell(_boundCell);
+                    else
+                        _assistants.TryAssignToCell(_boundCell);
+                });
+            }
         }
 
         void OpenCellPanel()
@@ -607,6 +642,7 @@ namespace LasGranjasDelHastur.Zone1.UI
             _txtZoneLabel = CreateTMP(colTax, "Zona 1 - Calabozos", 22, TextAlignmentOptions.Left);
             _txtTaxTimer = CreateHUDStatRow(colTax, "Assets/Sprites/Zone1/Icons/zone1_icon_tax.png", "Impuesto: 00:00", 20);
             _txtStrikes = CreateHUDStatRow(colTax, "Assets/Sprites/Zone1/Icons/zone1_icon_alert.png", "Multas: 0/3", 20);
+            _txtAssistants = CreateHUDStatRow(colTax, "Assets/Sprites/Zone1/Icons/zone1_icon_level.png", "Asistentes: 0/0", 18);
 
             var colBtns = CreateVerticalGroup(hud.transform, 240);
             _btnSales = CreateButton(colBtns, "Ventas", 210f, 42f);
@@ -699,6 +735,9 @@ namespace LasGranjasDelHastur.Zone1.UI
             _cellCleanseBtn = CreateButton(btnRow3, "Limpiar");
             var close = CreateButton(btnRow3, "Cerrar");
             close.onClick.AddListener(() => CloseCellPanel());
+
+            var btnRow4 = CreateHorizontalGroup(root);
+            _cellAssistantBtn = CreateButton(btnRow4, "Asignar Asist.");
         }
 
         void BuildSalesPanel(Transform root)

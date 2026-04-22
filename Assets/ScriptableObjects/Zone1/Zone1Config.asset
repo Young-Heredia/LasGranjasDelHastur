@@ -48,5 +48,8 @@ MonoBehaviour:
   pureEnergyCapacity: 8
   memoryShardsCapacity: 6
   unstableSoulsCapacity: 5
+  initialAssistants: 2
+  maxAssistants: 30
+  assistantAutomationTickSeconds: 0.25
   cameraMinBounds: {x: -10, y: -8}
   cameraMaxBounds: {x: 10, y: 6}

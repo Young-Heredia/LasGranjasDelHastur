@@ -37,6 +37,7 @@ namespace LasGranjasDelHastur.Zone1
         readonly Dictionary<Zone1CellType, Zone1CellDefinition> _defsByType = new();
         readonly Dictionary<FarmCell, GameObject> _selectionRings = new();
         readonly Dictionary<FarmCell, GameObject> _readyPulses = new();
+        readonly Dictionary<FarmCell, GameObject> _assistantMarkers = new();
 
         ResourceManager _resources;
         ProgressionManager _progression;
@@ -44,6 +45,16 @@ namespace LasGranjasDelHastur.Zone1
 
         public IReadOnlyList<FarmCell> Cells => _cells;
         public FarmCell SelectedCell { get; private set; }
+        public FarmCell GetCellBySlotIndex(int slotIndex)
+        {
+            for (var i = 0; i < _cells.Count; i++)
+            {
+                var cell = _cells[i];
+                if (cell != null && cell.SlotIndex == slotIndex)
+                    return cell;
+            }
+            return null;
+        }
 
         public void Initialize(ResourceManager resources, ProgressionManager progression)
         {
@@ -201,6 +212,18 @@ namespace LasGranjasDelHastur.Zone1
             readyAnim.Configure("Assets/Sprites/Zone1/Spritesheets/zone1_ready_collect_sheet.png", 32, 32, 10f);
             ready.SetActive(false);
             _readyPulses[cell] = ready;
+
+            var assistant = new GameObject("AssistantMarker");
+            assistant.transform.SetParent(parent, false);
+            assistant.transform.localPosition = new Vector3(0f, 1.05f, 0f);
+            assistant.transform.localScale = new Vector3(0.65f, 0.65f, 1f);
+            var assistantSr = assistant.AddComponent<SpriteRenderer>();
+            assistantSr.sprite = Zone1ArtProvider.LoadSprite("Assets/Sprites/Zone1/Icons/zone1_icon_level.png")
+                ?? RuntimeSpriteFactory.OpaqueWhiteSprite;
+            assistantSr.color = new Color(0.80f, 0.95f, 1f, 0.95f);
+            assistantSr.sortingOrder = baseSortingOrder + 5;
+            assistant.SetActive(false);
+            _assistantMarkers[cell] = assistant;
         }
 
         void ApplyInitialUnlocks()
@@ -282,6 +305,20 @@ namespace LasGranjasDelHastur.Zone1
         {
             foreach (var c in _cells)
                 ApplyVisual(c);
+        }
+
+        public void RefreshAssistantVisuals(AssistantManager assistants)
+        {
+            foreach (var c in _cells)
+            {
+                if (c == null)
+                    continue;
+                if (!_assistantMarkers.TryGetValue(c, out var marker) || marker == null)
+                    continue;
+
+                var show = assistants != null && assistants.HasAssistantOnCell(c);
+                marker.SetActive(show);
+            }
         }
 
         public void ApplyVisual(FarmCell cell)
