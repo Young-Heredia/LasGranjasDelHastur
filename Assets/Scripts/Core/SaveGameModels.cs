@@ -34,6 +34,8 @@ namespace LasGranjasDelHastur.Core
         public float payWindowRemainingSeconds;
 
         public List<CellSaveData> cells = new();
+        public int assistantTotal;
+        public List<AssistantSaveData> assistants = new();
     }
 
     [Serializable]
@@ -45,6 +47,13 @@ namespace LasGranjasDelHastur.Core
         public int level;
         public bool isCorrupted;
         public float producingRemainingSeconds;
+    }
+
+    [Serializable]
+    public class AssistantSaveData
+    {
+        public int assistantId;
+        public int assignedSlotIndex = -1;
     }
 }
 

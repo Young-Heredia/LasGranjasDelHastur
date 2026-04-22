@@ -50,16 +50,8 @@ namespace LasGranjasDelHastur.Zone1
             _applying = true;
             try
             {
-                var hasZoneManager = Object.FindFirstObjectByType<Zone1Manager>() != null;
-                var hasWorldRoot = GameObject.Find("WorldRoot") != null;
-                var hasSystems = GameObject.Find("Systems") != null;
-                var hasUiRoot = GameObject.Find("UI") != null;
-
-                if (!hasZoneManager || !hasWorldRoot || !hasSystems || !hasUiRoot)
-                {
-                    Zone1Bootstrap.EnsureSceneScaffold(includeAudioManager: true);
-                    EnsureUiPlaceholders();
-                }
+                Zone1Bootstrap.EnsureSceneScaffold(includeAudioManager: true);
+                EnsureUiPlaceholders();
 
                 EnsureArtTuner();
                 EnsureEventSystemBridge();

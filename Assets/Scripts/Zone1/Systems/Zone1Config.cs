@@ -55,6 +55,11 @@ namespace LasGranjasDelHastur.Zone1
         [Min(1)] public int memoryShardsCapacity = 70;
         [Min(1)] public int unstableSoulsCapacity = 55;
 
+        [Header("Assistants (Zone1)")]
+        [Min(0)] public int initialAssistants = 1;
+        [Min(1)] public int maxAssistants = 30;
+        [Min(0.05f)] public float assistantAutomationTickSeconds = 0.25f;
+
         [Header("Camera Bounds")]
         public Vector2 cameraMinBounds = new(-10f, -8f);
         public Vector2 cameraMaxBounds = new(10f, 6f);
