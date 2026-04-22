@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fc17dc99e0a1db4b8945cdf124a9767, type: 3}
+  m_Name: Zone1Config
+  m_EditorClassIdentifier: Assembly-CSharp::LasGranjasDelHastur.Zone1.Zone1Config
+  initialDarkCoins: 420
+  initialWeakSouls: 12
+  initialPureEnergy: 6
+  initialMemoryShards: 0
+  initialUnstableSouls: 0
+  initialLevel: 1
+  initialXp: 0
+  baseXpToLevel: 50
+  xpGrowthPerLevel: 25
+  gridColumns: 4
+  gridRows: 3
+  gridSpacing: {x: 2.2, y: 2.2}
+  gridOrigin: {x: -3.3, y: 1.8}
+  initiallyUnlockedCells: 1
+  initiallyPurchasableCells: 2
+  collectorName: Cthulhu
+  baseTaxPercent: 0.25
+  taxIntervalSeconds: 28
+  payWindowSeconds: 10
+  moneyLossOnFail: 0.75
+  finePerStrikeStep: 40
+  maxStrikesBeforeGameOver: 3
+  buyerPriceMinMultiplier: 0.75
+  buyerPriceMaxMultiplier: 1.35
+  buyerLevelDemandBonusPerLevel: 0.02
+  buyerStockPenaltyAtFull: 0.2
+  buyerSoldPressurePerUnit: 0.02
+  buyerPressureRecoveryPerSecond: 0.12
+  cellPurchaseSlotScale: 0.3
+  cellUpgradeBaseCost: 30
+  cellUpgradePerLevelAdd: 30
+  cellUpgradeLevelMultiplier: 1.25
+  weakSoulsCapacity: 10
+  pureEnergyCapacity: 8
+  memoryShardsCapacity: 6
+  unstableSoulsCapacity: 5
+  cameraMinBounds: {x: -10, y: -8}
+  cameraMaxBounds: {x: 10, y: 6}

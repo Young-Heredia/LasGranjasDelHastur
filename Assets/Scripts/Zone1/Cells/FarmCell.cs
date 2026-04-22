@@ -21,6 +21,12 @@ namespace LasGranjasDelHastur.Zone1
         [Header("Slot")]
         [SerializeField] private int slotIndex;
 
+        [Header("Economy Scaling")]
+        [SerializeField] private float purchaseSlotScalePercent = 0.12f;
+        [SerializeField] private int upgradeBaseCost = 25;
+        [SerializeField] private int upgradePerLevelAdd = 20;
+        [SerializeField] private float upgradeLevelMultiplier = 1.15f;
+
         public Zone1CellDefinition Definition => definition;
         public CellState State => state;
         public int Level => level;
@@ -33,7 +39,8 @@ namespace LasGranjasDelHastur.Zone1
         public ResourceType ProducesResource => definition != null ? definition.producesResource : ResourceType.WeakSouls;
         public float ProductionSeconds => definition != null ? definition.productionSeconds : 5f;
         public int ProductionAmount => definition != null ? definition.productionAmount : 1;
-        public int PurchaseCostDarkCoins => definition != null ? definition.purchaseCostDarkCoins : 50;
+        public int PurchaseCostDarkCoins => Mathf.Max(0, Mathf.RoundToInt(BasePurchaseCost() * (1f + purchaseSlotScalePercent * slotIndex)));
+        public int UpgradeCostDarkCoins => CalculateUpgradeCostDarkCoins();
         public float CorruptionRiskOnCollect => definition != null ? definition.corruptionRiskOnCollect : 0f;
 
         public void Configure(int newSlotIndex, Zone1CellDefinition def, CellState initialState, int initialLevel = 1)
@@ -45,6 +52,14 @@ namespace LasGranjasDelHastur.Zone1
             isCorrupted = initialState == CellState.Corrupted;
             producingRemaining = 0f;
             NotifyChanged();
+        }
+
+        public void ConfigureEconomy(float newPurchaseSlotScalePercent, int newUpgradeBaseCost, int newUpgradePerLevelAdd, float newUpgradeLevelMultiplier)
+        {
+            purchaseSlotScalePercent = Mathf.Clamp(newPurchaseSlotScalePercent, 0f, 1f);
+            upgradeBaseCost = Mathf.Max(1, newUpgradeBaseCost);
+            upgradePerLevelAdd = Mathf.Max(0, newUpgradePerLevelAdd);
+            upgradeLevelMultiplier = Mathf.Max(1f, newUpgradeLevelMultiplier);
         }
 
         private void Update()
@@ -84,11 +99,16 @@ namespace LasGranjasDelHastur.Zone1
             return true;
         }
 
-        public bool CanProduce() => state == CellState.Available && !IsCorrupted;
-
-        public bool TryStartProduction()
+        public bool CanProduce(ResourceManager resources)
         {
-            if (!CanProduce())
+            if (state != CellState.Available || IsCorrupted || resources == null)
+                return false;
+            return resources.CanAdd(ProducesResource, ProductionAmount);
+        }
+
+        public bool TryStartProduction(ResourceManager resources)
+        {
+            if (!CanProduce(resources))
                 return false;
 
             producingRemaining = Mathf.Max(0.1f, ProductionSeconds);
@@ -96,7 +116,12 @@ namespace LasGranjasDelHastur.Zone1
             return true;
         }
 
-        public bool CanCollect() => state == CellState.ReadyToCollect && !IsCorrupted;
+        public bool CanCollect(ResourceManager resources)
+        {
+            if (state != CellState.ReadyToCollect || IsCorrupted || resources == null)
+                return false;
+            return resources.CanAdd(ProducesResource, ProductionAmount);
+        }
 
         public bool TryCollect(ResourceManager resources, ProgressionManager progression, out ResourceType producedType, out int amount)
         {
@@ -105,7 +130,7 @@ namespace LasGranjasDelHastur.Zone1
 
             if (resources == null)
                 return false;
-            if (!CanCollect())
+            if (!CanCollect(resources))
                 return false;
 
             resources.Add(producedType, amount);
@@ -136,7 +161,7 @@ namespace LasGranjasDelHastur.Zone1
                 return false;
 
             // Placeholder upgrade cost curve.
-            var cost = UpgradeCostDarkCoins();
+            var cost = CalculateUpgradeCostDarkCoins();
             return resources.Get(ResourceType.DarkCoins) >= cost;
         }
 
@@ -147,7 +172,7 @@ namespace LasGranjasDelHastur.Zone1
             if (!CanUpgrade(resources))
                 return false;
 
-            var cost = UpgradeCostDarkCoins();
+            var cost = CalculateUpgradeCostDarkCoins();
             if (!resources.TrySpend(ResourceType.DarkCoins, cost))
                 return false;
 
@@ -157,10 +182,11 @@ namespace LasGranjasDelHastur.Zone1
             return true;
         }
 
-        int UpgradeCostDarkCoins()
+        int CalculateUpgradeCostDarkCoins()
         {
-            // Cost grows; intentionally mild for Zone1 tests.
-            return 25 + (level - 1) * 20;
+            var linear = upgradeBaseCost + (level - 1) * upgradePerLevelAdd;
+            var scaled = linear * Mathf.Pow(upgradeLevelMultiplier, Mathf.Max(0, level - 1));
+            return Mathf.Max(1, Mathf.RoundToInt(scaled));
         }
 
         public void Corrupt()
@@ -196,6 +222,24 @@ namespace LasGranjasDelHastur.Zone1
         }
 
         int CleanseCostDarkCoins() => 15 + (level - 1) * 10;
+
+        int BasePurchaseCost() => definition != null ? definition.purchaseCostDarkCoins : 50;
+
+        public void RestoreState(CellState restoredState, int restoredLevel, bool corrupted, float producingSecondsRemaining)
+        {
+            level = Mathf.Max(1, restoredLevel);
+            producingRemaining = Mathf.Max(0f, producingSecondsRemaining);
+            isCorrupted = corrupted || restoredState == CellState.Corrupted;
+            state = restoredState;
+
+            // Keep state coherent after load.
+            if (isCorrupted && state != CellState.Corrupted)
+                state = CellState.Corrupted;
+            if (state != CellState.Producing)
+                producingRemaining = 0f;
+
+            NotifyChanged();
+        }
 
         void SetStateInternal(CellState newState, bool notify)
         {

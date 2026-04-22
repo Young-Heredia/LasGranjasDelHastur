@@ -19,11 +19,35 @@ namespace LasGranjasDelHastur.Zone1
 
         public int Level { get; private set; }
         public int Xp { get; private set; }
+        bool _initialized;
 
         void Awake()
         {
+            InitializeIfNeeded();
+        }
+
+        public void Configure(int startLevel, int startXp, int newBaseXpToLevel, int newXpGrowthPerLevel, bool resetNow = true)
+        {
+            initialLevel = Mathf.Max(1, startLevel);
+            initialXp = Mathf.Max(0, startXp);
+            baseXpToLevel = Mathf.Max(1, newBaseXpToLevel);
+            xpGrowthPerLevel = Mathf.Max(1, newXpGrowthPerLevel);
+
+            if (resetNow)
+            {
+                _initialized = false;
+                InitializeIfNeeded();
+                Changed?.Invoke();
+            }
+        }
+
+        void InitializeIfNeeded()
+        {
+            if (_initialized)
+                return;
             Level = Mathf.Max(1, initialLevel);
             Xp = Mathf.Max(0, initialXp);
+            _initialized = true;
         }
 
         public void AddXp(int amount)
@@ -73,6 +97,16 @@ namespace LasGranjasDelHastur.Zone1
                 Zone1CellType.BrokenAltar => Level >= 10,
                 _ => false
             };
+        }
+
+        public void SetProgress(int newLevel, int newXp)
+        {
+            var prev = Level;
+            Level = Mathf.Max(1, newLevel);
+            Xp = Mathf.Max(0, newXp);
+            Changed?.Invoke();
+            if (Level != prev)
+                LevelChanged?.Invoke(Level);
         }
     }
 }

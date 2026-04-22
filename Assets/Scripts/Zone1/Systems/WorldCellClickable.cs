@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.EventSystems;
 using LasGranjasDelHastur;
 
 namespace LasGranjasDelHastur.Zone1
@@ -31,10 +30,6 @@ namespace LasGranjasDelHastur.Zone1
         void OnMouseDown()
         {
             if (_cellManager == null || _cell == null)
-                return;
-
-            // Don't interact through UI.
-            if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
                 return;
 
             if (InputAdapter.LeftMouseDownThisFrame())

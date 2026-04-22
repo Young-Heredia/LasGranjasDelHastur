@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using LasGranjasDelHastur.Zone1.Cells;
+using LasGranjasDelHastur.Core;
 using TMPro;
 using LasGranjasDelHastur;
 using UnityEngine;
@@ -64,8 +65,11 @@ namespace LasGranjasDelHastur.Zone1.UI
 
         // Hover bindings
         TextMeshProUGUI _hoverText;
+        TextMeshProUGUI _txtActionHint;
 
         FarmCell _boundCell;
+        float _uiSelfHealTimer;
+        bool _eventsWired;
 
         public void Initialize(ResourceManager resources, ProgressionManager progression, CellManager cells, BuyerManager buyers, TaxManager tax)
         {
@@ -80,8 +84,20 @@ namespace LasGranjasDelHastur.Zone1.UI
             RefreshAll();
         }
 
+        public void RefreshFromExternalState()
+        {
+            RefreshAll();
+        }
+
         void Update()
         {
+            _uiSelfHealTimer += Time.unscaledDeltaTime;
+            if (_uiSelfHealTimer >= 2f)
+            {
+                _uiSelfHealTimer = 0f;
+                SelfHealUiIfNeeded();
+            }
+
             if (InputAdapter.RightMouseDownThisFrame())
             {
                 CloseCellPanel();
@@ -92,8 +108,28 @@ namespace LasGranjasDelHastur.Zone1.UI
                 _txtTaxTimer.text = $"Impuesto: {FormatTime(_tax.IsAlertActive ? _tax.PayWindowRemainingSeconds : _tax.TimeToNextTaxSeconds)}";
         }
 
+        void SelfHealUiIfNeeded()
+        {
+            // Ensure only one top-level UI root exists.
+            GetOrCreateSingleUiRoot();
+
+            // If any placeholder panel was somehow re-enabled without proper bindings, close it.
+            // Runtime panels are controlled by this manager and keep their references.
+            if (_cellPanel == null || _salesPanel == null || _taxPanel == null || _hoverPanel == null)
+                return;
+
+            // Keep valid runtime behavior: only close suspicious states.
+            if (_boundCell == null && _cellPanel.activeSelf)
+                _cellPanel.SetActive(false);
+            if (_tax != null && !_tax.IsAlertActive && _taxPanel.activeSelf)
+                _taxPanel.SetActive(false);
+        }
+
         void WireEvents()
         {
+            if (_eventsWired)
+                return;
+
             if (_resources != null) _resources.Changed += RefreshHUD;
             if (_progression != null) _progression.Changed += RefreshHUD;
 
@@ -107,8 +143,8 @@ namespace LasGranjasDelHastur.Zone1.UI
             if (_tax != null)
             {
                 _tax.Changed += RefreshTaxPanel;
-                _tax.AlertOpened += () => OpenTaxPanel();
-                _tax.AlertClosed += () => CloseTaxPanel();
+                _tax.AlertOpened += OpenTaxPanel;
+                _tax.AlertClosed += CloseTaxPanel;
             }
 
             Zone1UIHoverBus.HoverChanged += OnHoverChanged;
@@ -119,12 +155,44 @@ namespace LasGranjasDelHastur.Zone1.UI
                 else OpenSalesPanel();
             });
 
-            _btnBack.onClick.AddListener(() => SceneManager.LoadScene(zoneSelectionSceneName));
+            _btnBack.onClick.AddListener(() =>
+            {
+                SaveManager.Instance?.SaveNow();
+                SceneManager.LoadScene(zoneSelectionSceneName);
+            });
+
+            _eventsWired = true;
+        }
+
+        void UnwireEvents()
+        {
+            if (!_eventsWired)
+                return;
+
+            if (_resources != null) _resources.Changed -= RefreshHUD;
+            if (_progression != null) _progression.Changed -= RefreshHUD;
+
+            if (_cells != null)
+            {
+                _cells.SelectedCellChanged -= OnCellSelected;
+                _cells.CellsChanged -= RefreshCellPanel;
+            }
+
+            if (_buyers != null) _buyers.Changed -= RefreshSalesPanel;
+            if (_tax != null)
+            {
+                _tax.Changed -= RefreshTaxPanel;
+                _tax.AlertOpened -= OpenTaxPanel;
+                _tax.AlertClosed -= CloseTaxPanel;
+            }
+
+            Zone1UIHoverBus.HoverChanged -= OnHoverChanged;
+            _eventsWired = false;
         }
 
         void OnDestroy()
         {
-            Zone1UIHoverBus.HoverChanged -= OnHoverChanged;
+            UnwireEvents();
         }
 
         void RefreshAll()
@@ -188,18 +256,26 @@ namespace LasGranjasDelHastur.Zone1.UI
             var state = _boundCell.State.ToString();
             var corrupt = _boundCell.IsCorrupted ? "Sí" : "No";
             var prod = _boundCell.State == CellState.Producing ? $" ({FormatTime(_boundCell.ProducingRemainingSeconds)})" : "";
+            var resourceAmount = _resources.Get(_boundCell.ProducesResource);
+            var resourceCap = _resources.GetCapacity(_boundCell.ProducesResource);
+            var storageLine = _resources.HasFiniteCapacity(_boundCell.ProducesResource)
+                ? $"{resourceAmount}/{resourceCap}"
+                : $"{resourceAmount}";
+            var storageFull = _resources.IsAtCapacity(_boundCell.ProducesResource) ? " (lleno)" : "";
 
             _cellBody.text =
                 $"Nivel: {_boundCell.Level}\n" +
                 $"Recurso: {resourceName}\n" +
                 $"Tiempo: {Mathf.Max(0.1f, _boundCell.ProductionSeconds):0.0}s\n" +
                 $"Por ciclo: {_boundCell.ProductionAmount}\n" +
+                $"Almacén: {storageLine}{storageFull}\n" +
                 $"Estado: {state}{prod}\n" +
                 $"Corrupta: {corrupt}\n" +
-                $"Costo compra: {_boundCell.PurchaseCostDarkCoins}";
+                $"Costo compra: {_boundCell.PurchaseCostDarkCoins}\n" +
+                $"Costo mejora: {_boundCell.UpgradeCostDarkCoins}";
 
-            _cellProduceBtn.interactable = _boundCell.CanProduce();
-            _cellCollectBtn.interactable = _boundCell.CanCollect();
+            _cellProduceBtn.interactable = _boundCell.CanProduce(_resources);
+            _cellCollectBtn.interactable = _boundCell.CanCollect(_resources);
             _cellUpgradeBtn.interactable = _boundCell.CanUpgrade(_resources);
             _cellBuyBtn.interactable = _boundCell.CanBuy(_resources);
             _cellCleanseBtn.interactable = _boundCell.CanCleanse(_resources);
@@ -207,7 +283,7 @@ namespace LasGranjasDelHastur.Zone1.UI
             _cellProduceBtn.onClick.RemoveAllListeners();
             _cellProduceBtn.onClick.AddListener(() =>
             {
-                if (_boundCell.TryStartProduction())
+                if (_boundCell.TryStartProduction(_resources))
                     _cells.ApplyVisual(_boundCell);
             });
 
@@ -258,6 +334,7 @@ namespace LasGranjasDelHastur.Zone1.UI
         {
             if (_cellPanel != null)
                 _cellPanel.SetActive(false);
+            _cells?.ClearSelection(notify: false);
             _boundCell = null;
         }
 
@@ -329,31 +406,34 @@ namespace LasGranjasDelHastur.Zone1.UI
                     portraitImg.sprite = p;
             }
 
-            var left = CreateTMP(row.transform, $"{buyer.buyerName} — compra {buyer.buysResource} — {buyer.basePricePerUnit}/u", 16, TextAlignmentOptions.Left);
+            var currentPrice = _buyers != null ? _buyers.GetCurrentPrice(buyer) : buyer.basePricePerUnit;
+            var left = CreateTMP(row.transform, $"{buyer.buyerName} · {ResourceLabel(buyer.buysResource)} · {currentPrice}/u", 14, TextAlignmentOptions.Left);
             var leftLE = left.gameObject.AddComponent<LayoutElement>();
-            leftLE.preferredWidth = 310f;
-            leftLE.minWidth = 260f;
+            leftLE.preferredWidth = 420f;
+            leftLE.minWidth = 360f;
             leftLE.flexibleWidth = 1f;
+            left.textWrappingMode = TextWrappingModes.NoWrap;
+            left.overflowMode = TextOverflowModes.Overflow;
 
             var available = _resources.Get(buyer.buysResource);
-            var mid = CreateTMP(row.transform, $"Disp: {available}", 16, TextAlignmentOptions.Center);
+            var mid = CreateTMP(row.transform, $"Disp: {available}", 14, TextAlignmentOptions.Center);
             var midLE = mid.gameObject.AddComponent<LayoutElement>();
-            midLE.preferredWidth = 80f;
-            midLE.minWidth = 70f;
+            midLE.preferredWidth = 95f;
+            midLE.minWidth = 90f;
 
             var actions = new GameObject("Actions");
             actions.transform.SetParent(row.transform, false);
             var actionsLayout = actions.AddComponent<HorizontalLayoutGroup>();
-            actionsLayout.spacing = 6f;
+            actionsLayout.spacing = 8f;
             actionsLayout.childControlHeight = true;
             actionsLayout.childControlWidth = true;
             actionsLayout.childForceExpandHeight = false;
             actionsLayout.childForceExpandWidth = false;
             var actionsLE = actions.AddComponent<LayoutElement>();
-            actionsLE.preferredWidth = 220f;
-            actionsLE.minWidth = 220f;
+            actionsLE.preferredWidth = 200f;
+            actionsLE.minWidth = 200f;
 
-            var btn1 = CreateButton(actions.transform, "Vender 1", 102f, 32f);
+            var btn1 = CreateButton(actions.transform, "x1", 96f, 34f, 15);
             btn1.onClick.AddListener(() =>
             {
                 if (_buyers.TrySell(buyer, 1))
@@ -365,7 +445,7 @@ namespace LasGranjasDelHastur.Zone1.UI
                 }
             });
 
-            var btnAll = CreateButton(actions.transform, "Todo", 102f, 32f);
+            var btnAll = CreateButton(actions.transform, "MAX", 96f, 34f, 15);
             btnAll.onClick.AddListener(() =>
             {
                 var amt = _resources.Get(buyer.buysResource);
@@ -379,6 +459,15 @@ namespace LasGranjasDelHastur.Zone1.UI
                     RefreshSalesPanel();
                 }
             });
+
+            // Keep intent clear: when there is no stock, selling buttons are visibly disabled.
+            var hasStock = available > 0;
+            btn1.interactable = hasStock;
+            btnAll.interactable = hasStock;
+
+            // Fade the whole row when buyer has no stock to sell.
+            var rowCg = row.AddComponent<CanvasGroup>();
+            rowCg.alpha = hasStock ? 1f : 0.55f;
 
             return row;
         }
@@ -452,9 +541,7 @@ namespace LasGranjasDelHastur.Zone1.UI
         {
             EnsureEventSystem();
 
-            var root = GameObject.Find("UI");
-            if (root == null)
-                root = new GameObject("UI");
+            var root = GetOrCreateSingleUiRoot();
 
             // Rebuild runtime UI cleanly, even if editor placeholders exist.
             for (var i = root.transform.childCount - 1; i >= 0; i--)
@@ -537,7 +624,7 @@ namespace LasGranjasDelHastur.Zone1.UI
             _cellPanel.SetActive(false);
 
             // Sales panel
-            _salesPanel = CreatePanel(root.transform, "SalesPanel", new Vector2(1, 0.5f), new Vector2(1, 0.5f), new Vector2(-10, 0), new Vector2(790, 500));
+            _salesPanel = CreatePanel(root.transform, "SalesPanel", new Vector2(1, 0.5f), new Vector2(1, 0.5f), new Vector2(-10, 0), new Vector2(980, 560));
             BuildSalesPanel(_salesPanel.transform);
             _salesPanel.SetActive(false);
 
@@ -550,6 +637,43 @@ namespace LasGranjasDelHastur.Zone1.UI
             _hoverPanel = CreatePanel(root.transform, "HoverInfoPanel", new Vector2(0.5f, 0), new Vector2(0.5f, 0), new Vector2(0, 14), new Vector2(320, 80));
             _hoverText = CreateTMP(_hoverPanel.transform, "", 16, TextAlignmentOptions.Center);
             _hoverPanel.SetActive(false);
+
+            var hint = CreatePanel(root.transform, "ActionHintPanel", new Vector2(0.5f, 0f), new Vector2(0.5f, 0f), new Vector2(0f, 8f), new Vector2(980f, 34f));
+            _txtActionHint = CreateTMP(hint.transform, "Tip: Click en una celda para abrir panel y usar Producir / Recolectar / Mejorar.", 15, TextAlignmentOptions.Center);
+            _txtActionHint.rectTransform.anchorMin = Vector2.zero;
+            _txtActionHint.rectTransform.anchorMax = Vector2.one;
+            _txtActionHint.rectTransform.offsetMin = new Vector2(8f, 2f);
+            _txtActionHint.rectTransform.offsetMax = new Vector2(-8f, -2f);
+            _txtActionHint.textWrappingMode = TextWrappingModes.NoWrap;
+            _txtActionHint.overflowMode = TextOverflowModes.Overflow;
+        }
+
+        static GameObject GetOrCreateSingleUiRoot()
+        {
+            GameObject kept = null;
+            var all = FindObjectsByType<Transform>(FindObjectsSortMode.None);
+            foreach (var t in all)
+            {
+                if (t == null || t.parent != null)
+                    continue;
+                if (t.name != "UI")
+                    continue;
+                if (kept == null)
+                {
+                    kept = t.gameObject;
+                    continue;
+                }
+
+                // Remove duplicates to avoid stacked invisible panels blocking input.
+                if (Application.isPlaying)
+                    Destroy(t.gameObject);
+                else
+                    DestroyImmediate(t.gameObject);
+            }
+
+            if (kept == null)
+                kept = new GameObject("UI");
+            return kept;
         }
 
         void BuildCellPanel(Transform root)
@@ -584,13 +708,15 @@ namespace LasGranjasDelHastur.Zone1.UI
             v.spacing = 8f;
 
             CreateTMP(root, "Ventas (compradores)", 20, TextAlignmentOptions.Left);
+            var legend = CreateTMP(root, "x1 = vender 1 unidad   |   MAX = vender todo disponible", 14, TextAlignmentOptions.Left);
+            legend.color = new Color(0.88f, 0.86f, 0.72f, 0.9f);
 
             var scrollGo = new GameObject("Scroll");
             scrollGo.transform.SetParent(root, false);
             var scrollRt = scrollGo.AddComponent<RectTransform>();
-            scrollRt.sizeDelta = new Vector2(0, 350);
+            scrollRt.sizeDelta = new Vector2(0, 390);
             var scrollLe = scrollGo.AddComponent<LayoutElement>();
-            scrollLe.preferredHeight = 350f;
+            scrollLe.preferredHeight = 390f;
             scrollLe.flexibleHeight = 1f;
 
             var scroll = scrollGo.AddComponent<ScrollRect>();
@@ -822,7 +948,7 @@ namespace LasGranjasDelHastur.Zone1.UI
             return fill;
         }
 
-        static Button CreateButton(Transform parent, string text, float preferredWidth = 180f, float preferredHeight = 34f)
+        static Button CreateButton(Transform parent, string text, float preferredWidth = 180f, float preferredHeight = 34f, int fontSize = 16)
         {
             var go = new GameObject($"Button_{text}");
             go.transform.SetParent(parent, false);
@@ -843,7 +969,7 @@ namespace LasGranjasDelHastur.Zone1.UI
             colors.pressedColor = new Color(0.08f, 0.08f, 0.10f, 1f);
             btn.colors = colors;
 
-            var txt = CreateTMP(go.transform, text, 16, TextAlignmentOptions.Center);
+            var txt = CreateTMP(go.transform, text, fontSize, TextAlignmentOptions.Center);
             txt.rectTransform.anchorMin = Vector2.zero;
             txt.rectTransform.anchorMax = Vector2.one;
             txt.rectTransform.offsetMin = Vector2.zero;
@@ -867,6 +993,19 @@ namespace LasGranjasDelHastur.Zone1.UI
             }
 
             return btn;
+        }
+
+        static string ResourceLabel(ResourceType type)
+        {
+            return type switch
+            {
+                ResourceType.WeakSouls => "Almas débiles",
+                ResourceType.PureEnergy => "Energía pura",
+                ResourceType.MemoryShards => "Frag. recuerdo",
+                ResourceType.UnstableSouls => "Almas inestables",
+                ResourceType.DarkCoins => "Monedas oscuras",
+                _ => type.ToString()
+            };
         }
 
         static string FormatTime(float seconds)

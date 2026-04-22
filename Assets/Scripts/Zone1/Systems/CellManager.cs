@@ -1,8 +1,10 @@
 using System;
 using System.Collections.Generic;
 using LasGranjasDelHastur;
+using LasGranjasDelHastur.Core;
 using LasGranjasDelHastur.Zone1.Cells;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace LasGranjasDelHastur.Zone1
 {
@@ -25,6 +27,12 @@ namespace LasGranjasDelHastur.Zone1
         [SerializeField] private int initiallyUnlockedCells = 1; // available at start
         [SerializeField] private int initiallyPurchasableCells = 2; // blocked but visible for buying
 
+        [Header("Economy Scaling")]
+        [SerializeField, Range(0f, 1f)] private float purchaseSlotScalePercent = 0.12f;
+        [SerializeField, Min(1)] private int upgradeBaseCost = 25;
+        [SerializeField, Min(0)] private int upgradePerLevelAdd = 20;
+        [SerializeField, Range(1f, 3f)] private float upgradeLevelMultiplier = 1.15f;
+
         readonly List<FarmCell> _cells = new();
         readonly Dictionary<Zone1CellType, Zone1CellDefinition> _defsByType = new();
         readonly Dictionary<FarmCell, GameObject> _selectionRings = new();
@@ -32,12 +40,20 @@ namespace LasGranjasDelHastur.Zone1
 
         ResourceManager _resources;
         ProgressionManager _progression;
+        bool _initialized;
 
         public IReadOnlyList<FarmCell> Cells => _cells;
         public FarmCell SelectedCell { get; private set; }
 
         public void Initialize(ResourceManager resources, ProgressionManager progression)
         {
+            if (_initialized)
+            {
+                _resources = resources;
+                _progression = progression;
+                return;
+            }
+
             _resources = resources;
             _progression = progression;
 
@@ -56,6 +72,60 @@ namespace LasGranjasDelHastur.Zone1
             ApplyInitialUnlocks();
 
             CellsChanged?.Invoke();
+            _initialized = true;
+        }
+
+        void Update()
+        {
+            if (!_initialized || !InputAdapter.LeftMouseDownThisFrame())
+                return;
+
+            // Ignore world click when user is interacting with UI.
+            if (EventSystem.current != null && EventSystem.current.IsPointerOverGameObject())
+                return;
+
+            var cam = UnityEngine.Camera.main;
+            if (cam == null)
+                return;
+
+            var world = cam.ScreenToWorldPoint(InputAdapter.MousePosition());
+            var hit = Physics2D.OverlapPoint(new Vector2(world.x, world.y));
+            if (hit == null)
+                return;
+
+            var cell = hit.GetComponent<FarmCell>();
+            if (cell == null)
+                cell = hit.GetComponentInParent<FarmCell>();
+            if (cell == null)
+                return;
+
+            SelectCell(cell);
+        }
+
+        public void ConfigureGrid(int newColumns, int newRows, Vector2 newSpacing, Vector2 newOrigin, int unlockedAtStart, int purchasableAtStart)
+        {
+            columns = Mathf.Max(1, newColumns);
+            rows = Mathf.Max(1, newRows);
+            cellSpacing = newSpacing;
+            origin = newOrigin;
+            initiallyUnlockedCells = Mathf.Max(0, unlockedAtStart);
+            initiallyPurchasableCells = Mathf.Max(0, purchasableAtStart);
+        }
+
+        public void ConfigureEconomy(float newPurchaseSlotScalePercent, int newUpgradeBaseCost, int newUpgradePerLevelAdd, float newUpgradeLevelMultiplier)
+        {
+            purchaseSlotScalePercent = Mathf.Clamp(newPurchaseSlotScalePercent, 0f, 1f);
+            upgradeBaseCost = Mathf.Max(1, newUpgradeBaseCost);
+            upgradePerLevelAdd = Mathf.Max(0, newUpgradePerLevelAdd);
+            upgradeLevelMultiplier = Mathf.Max(1f, newUpgradeLevelMultiplier);
+
+            for (var i = 0; i < _cells.Count; i++)
+            {
+                var cell = _cells[i];
+                if (cell == null)
+                    continue;
+                cell.ConfigureEconomy(purchaseSlotScalePercent, upgradeBaseCost, upgradePerLevelAdd, upgradeLevelMultiplier);
+            }
         }
 
         void BuildGridIfEmpty()
@@ -83,6 +153,7 @@ namespace LasGranjasDelHastur.Zone1
 
                     var cell = go.AddComponent<FarmCell>();
                     cell.Configure(slotIndex, GetDef(Zone1CellType.SoulPit), CellState.Blocked, 1);
+                    cell.ConfigureEconomy(purchaseSlotScalePercent, upgradeBaseCost, upgradePerLevelAdd, upgradeLevelMultiplier);
                     cell.Changed += _ => CellsChanged?.Invoke();
 
                     var clickable = go.AddComponent<WorldCellClickable>();
@@ -159,10 +230,21 @@ namespace LasGranjasDelHastur.Zone1
         public void SelectCell(FarmCell cell)
         {
             if (SelectedCell == cell)
+            {
+                SelectedCellChanged?.Invoke(cell);
                 return;
+            }
             SelectedCell = cell;
             RefreshSelectionFx();
             SelectedCellChanged?.Invoke(cell);
+        }
+
+        public void ClearSelection(bool notify = true)
+        {
+            SelectedCell = null;
+            RefreshSelectionFx();
+            if (notify)
+                SelectedCellChanged?.Invoke(null);
         }
 
         void RefreshSelectionFx()
@@ -240,6 +322,51 @@ namespace LasGranjasDelHastur.Zone1
             };
 
             return $"Assets/Sprites/Zone1/Cells/zone1_{type}_{state}.png";
+        }
+
+        public List<CellSaveData> CaptureSaveData()
+        {
+            var data = new List<CellSaveData>(_cells.Count);
+            foreach (var c in _cells)
+            {
+                if (c == null)
+                    continue;
+                data.Add(new CellSaveData
+                {
+                    slotIndex = c.SlotIndex,
+                    cellType = c.CellType,
+                    state = c.State,
+                    level = c.Level,
+                    isCorrupted = c.IsCorrupted,
+                    producingRemainingSeconds = c.ProducingRemainingSeconds,
+                });
+            }
+            return data;
+        }
+
+        public void ApplySaveData(List<CellSaveData> saveCells)
+        {
+            if (saveCells == null || saveCells.Count == 0)
+                return;
+
+            var bySlot = new Dictionary<int, CellSaveData>();
+            foreach (var saved in saveCells)
+                bySlot[saved.slotIndex] = saved;
+
+            foreach (var c in _cells)
+            {
+                if (c == null)
+                    continue;
+                if (!bySlot.TryGetValue(c.SlotIndex, out var saved))
+                    continue;
+
+                var def = GetDef(saved.cellType);
+                c.Configure(c.SlotIndex, def, saved.state, saved.level);
+                c.RestoreState(saved.state, saved.level, saved.isCorrupted, saved.producingRemainingSeconds);
+                ApplyVisual(c);
+            }
+
+            CellsChanged?.Invoke();
         }
 
         Zone1CellDefinition GetDef(Zone1CellType type)

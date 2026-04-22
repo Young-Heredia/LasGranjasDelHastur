@@ -22,6 +22,7 @@ namespace LasGranjasDelHastur.Zone1
             EnsureAudioManagerExists();
             EnsureCameraSetup();
             EnsureArtTunerExists();
+            EnsureEditorPlaceholderPanelsAreClosed();
 
             // Build missing structure only when absent.
             if (Object.FindFirstObjectByType<Zone1Manager>() == null || GameObject.Find("WorldRoot") == null || GameObject.Find("Systems") == null)
@@ -64,6 +65,20 @@ namespace LasGranjasDelHastur.Zone1
             if (systems != null)
                 go.transform.SetParent(systems.transform, false);
             go.AddComponent<Zone1ArtTuner>();
+        }
+
+        static void EnsureEditorPlaceholderPanelsAreClosed()
+        {
+            var ui = GameObject.Find("UI");
+            if (ui == null)
+                return;
+
+            foreach (var panelName in new[] { "CellInfoPanel", "SalesPanel", "TaxAlertPanel", "HoverInfoPanel", "ActionHintPanel" })
+            {
+                var t = ui.transform.Find(panelName);
+                if (t != null)
+                    t.gameObject.SetActive(false);
+            }
         }
 
         static void EnsureWorldPlaceholder()
