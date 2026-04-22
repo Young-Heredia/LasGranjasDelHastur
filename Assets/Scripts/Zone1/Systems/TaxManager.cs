@@ -9,6 +9,8 @@ namespace LasGranjasDelHastur.Zone1
         public event Action Changed;
         public event Action AlertOpened;
         public event Action AlertClosed;
+        public event Action TaxPaid;
+        public event Action TaxFailed;
 
         [Header("Zone 1 Taxes")]
         [SerializeField] private string collectorName = "Cthulhu";
@@ -21,6 +23,7 @@ namespace LasGranjasDelHastur.Zone1
 
         [Header("Penalties")]
         [SerializeField, Range(0f, 1f)] private float moneyLossOnFail = 0.75f;
+        [SerializeField] private int finePerStrikeStep = 25;
         [SerializeField] private int maxStrikesBeforeGameOver = 3;
 
         ResourceManager _resources;
@@ -49,6 +52,20 @@ namespace LasGranjasDelHastur.Zone1
         {
             _resources = resources;
             _cells = cells;
+            _timer = Mathf.Max(1f, taxIntervalSeconds);
+            Changed?.Invoke();
+        }
+
+        public void Configure(string newCollectorName, float newBaseTaxPercent, float newTaxIntervalSeconds, float newPayWindowSeconds, float newMoneyLossOnFail, int newFinePerStrikeStep, int newMaxStrikesBeforeGameOver)
+        {
+            collectorName = string.IsNullOrWhiteSpace(newCollectorName) ? "Cthulhu" : newCollectorName;
+            baseTaxPercent = Mathf.Clamp01(newBaseTaxPercent);
+            taxIntervalSeconds = Mathf.Max(5f, newTaxIntervalSeconds);
+            payWindowSeconds = Mathf.Max(5f, newPayWindowSeconds);
+            moneyLossOnFail = Mathf.Clamp01(newMoneyLossOnFail);
+            finePerStrikeStep = Mathf.Max(1, newFinePerStrikeStep);
+            maxStrikesBeforeGameOver = Mathf.Max(1, newMaxStrikesBeforeGameOver);
+            _timer = Mathf.Max(1f, taxIntervalSeconds);
             Changed?.Invoke();
         }
 
@@ -104,6 +121,7 @@ namespace LasGranjasDelHastur.Zone1
 
             _fineDebt = 0;
             CloseAlert(resetTimer: true);
+            TaxPaid?.Invoke();
             return true;
         }
 
@@ -134,7 +152,7 @@ namespace LasGranjasDelHastur.Zone1
             _resources.Multiply(ResourceType.DarkCoins, 1f - moneyLossOnFail);
 
             _strikes += 1;
-            _fineDebt += 25 * _strikes; // escalating fine placeholder
+            _fineDebt += finePerStrikeStep * _strikes;
 
             // Corrupt at least 1 cell if possible.
             _cells?.TryCorruptRandomCell();
@@ -143,6 +161,7 @@ namespace LasGranjasDelHastur.Zone1
                 AudioManager.Instance.PlaySFX(AudioManager.Instance.zone1Corruption);
 
             CloseAlert(resetTimer: true);
+            TaxFailed?.Invoke();
 
             // Game Over prepared (not hard-implemented yet): strikes >= 3.
             if (_strikes >= maxStrikesBeforeGameOver)
@@ -150,6 +169,16 @@ namespace LasGranjasDelHastur.Zone1
                 // Prepared hook: UI can show "Game Over" later.
                 Changed?.Invoke();
             }
+        }
+
+        public void ApplySaveState(int strikes, int fineDebt, float timeToNextTax, bool alertActive, float payWindowRemaining)
+        {
+            _strikes = Mathf.Max(0, strikes);
+            _fineDebt = Mathf.Max(0, fineDebt);
+            _timer = Mathf.Max(0f, timeToNextTax);
+            _alertActive = alertActive;
+            _payWindowRemaining = Mathf.Max(0f, payWindowRemaining);
+            Changed?.Invoke();
         }
     }
 }

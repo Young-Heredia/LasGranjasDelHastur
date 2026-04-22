@@ -14,8 +14,26 @@ namespace LasGranjasDelHastur
     [RequireComponent(typeof(EventSystem))]
     public class EventSystemInputModuleBridge : MonoBehaviour
     {
+        static bool _sceneHookInstalled;
+
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
         static void EnforceAllEventSystemsAfterSceneLoad()
+        {
+            EnforceAllEventSystems();
+
+            if (_sceneHookInstalled)
+                return;
+
+            SceneManager.sceneLoaded += OnSceneLoaded;
+            _sceneHookInstalled = true;
+        }
+
+        static void OnSceneLoaded(Scene _, LoadSceneMode __)
+        {
+            EnforceAllEventSystems();
+        }
+
+        static void EnforceAllEventSystems()
         {
             var all = FindObjectsByType<EventSystem>(FindObjectsSortMode.None);
             foreach (var es in all)
@@ -27,20 +45,6 @@ namespace LasGranjasDelHastur
                     bridge = es.gameObject.AddComponent<EventSystemInputModuleBridge>();
                 bridge.EnsureCorrectInputModule();
             }
-
-            SceneManager.sceneLoaded += (_, _) =>
-            {
-                var systems = FindObjectsByType<EventSystem>(FindObjectsSortMode.None);
-                foreach (var eventSystem in systems)
-                {
-                    if (eventSystem == null)
-                        continue;
-                    var b = eventSystem.GetComponent<EventSystemInputModuleBridge>();
-                    if (b == null)
-                        b = eventSystem.gameObject.AddComponent<EventSystemInputModuleBridge>();
-                    b.EnsureCorrectInputModule();
-                }
-            };
         }
 
         void Awake()

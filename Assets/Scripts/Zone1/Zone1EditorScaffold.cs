@@ -64,6 +64,7 @@ namespace LasGranjasDelHastur.Zone1
                 EnsureArtTuner();
                 EnsureEventSystemBridge();
                 AutoWireZone1Manager();
+                EnsureZone1ConfigAsset();
                 EditorSceneManager.MarkSceneDirty(scene);
             }
             finally
@@ -139,6 +140,37 @@ namespace LasGranjasDelHastur.Zone1
             if (systems != null)
                 go.transform.SetParent(systems.transform, false);
             go.AddComponent<Zone1ArtTuner>();
+        }
+
+        static void EnsureZone1ConfigAsset()
+        {
+            var zone1 = Object.FindFirstObjectByType<Zone1Manager>();
+            if (zone1 == null)
+                return;
+
+            const string assetPath = "Assets/ScriptableObjects/Zone1/Zone1Config.asset";
+            var config = AssetDatabase.LoadAssetAtPath<Zone1Config>(assetPath);
+            if (config == null)
+            {
+                if (!AssetDatabase.IsValidFolder("Assets/ScriptableObjects"))
+                    AssetDatabase.CreateFolder("Assets", "ScriptableObjects");
+                if (!AssetDatabase.IsValidFolder("Assets/ScriptableObjects/Zone1"))
+                    AssetDatabase.CreateFolder("Assets/ScriptableObjects", "Zone1");
+
+                config = ScriptableObject.CreateInstance<Zone1Config>();
+                AssetDatabase.CreateAsset(config, assetPath);
+                AssetDatabase.SaveAssets();
+                AssetDatabase.Refresh();
+            }
+
+            var so = new SerializedObject(zone1);
+            var configProp = so.FindProperty("zone1Config");
+            if (configProp != null && configProp.objectReferenceValue != config)
+            {
+                configProp.objectReferenceValue = config;
+                so.ApplyModifiedPropertiesWithoutUndo();
+                EditorUtility.SetDirty(zone1);
+            }
         }
 
         static void EnsurePanel(Transform parent, string name, Vector2 anchorMin, Vector2 anchorMax, Vector2 anchoredPosition, Vector2 sizeDelta, Color color, bool stretchHorizontal = false)
