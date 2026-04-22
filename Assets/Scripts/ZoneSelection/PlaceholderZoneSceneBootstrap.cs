@@ -42,6 +42,22 @@ public static class PlaceholderZoneSceneBootstrap
         EnsureCamera();
         EnsureEventSystem();
 
+        if (scene.name == "Zone2_Cities")
+        {
+            var zone2 = new GameObject("Zone2PrototypeGame");
+            zone2.AddComponent<PlaceholderZoneSceneMarker>();
+            zone2.AddComponent<LasGranjasDelHastur.Zone2.Zone2PrototypeGame>();
+            return;
+        }
+
+        if (scene.name == "Zone3_Celestial")
+        {
+            var zone3 = new GameObject("Zone3PrototypeGame");
+            zone3.AddComponent<PlaceholderZoneSceneMarker>();
+            zone3.AddComponent<LasGranjasDelHastur.Zone3.Zone3PrototypeGame>();
+            return;
+        }
+
         var root = new GameObject("PlaceholderZoneUI");
         root.AddComponent<PlaceholderZoneSceneMarker>();
         var canvas = root.AddComponent<Canvas>();
