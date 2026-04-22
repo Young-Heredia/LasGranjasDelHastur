@@ -23,6 +23,7 @@ namespace LasGranjasDelHastur.Zone1
         ResourceManager _resources;
         ProgressionManager _progression;
         readonly Dictionary<BuyerDefinition, float> _soldPressure = new();
+        readonly List<BuyerDefinition> _buyerKeysBuffer = new();
         float _broadcastTimer;
 
         public IReadOnlyList<BuyerDefinition> Buyers => buyers;
@@ -62,10 +63,11 @@ namespace LasGranjasDelHastur.Zone1
 
             var recover = soldPressureRecoveryPerSecond * Time.deltaTime;
             var changed = false;
-            var keys = new List<BuyerDefinition>(_soldPressure.Keys);
-            for (var i = 0; i < keys.Count; i++)
+            _buyerKeysBuffer.Clear();
+            _buyerKeysBuffer.AddRange(_soldPressure.Keys);
+            for (var i = 0; i < _buyerKeysBuffer.Count; i++)
             {
-                var key = keys[i];
+                var key = _buyerKeysBuffer[i];
                 var cur = _soldPressure[key];
                 var next = Mathf.Max(0f, cur - recover);
                 if (Mathf.Abs(next - cur) <= 0.0001f)

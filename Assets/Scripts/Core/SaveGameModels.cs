@@ -12,6 +12,10 @@ namespace LasGranjasDelHastur.Core
         public string lastSceneName = "MainMenu";
         public bool zone1Available = false;
         public Zone1SaveData zone1 = new();
+        public bool zone2Available = false;
+        public Zone2SaveData zone2 = new();
+        public bool zone3Available = false;
+        public Zone3SaveData zone3 = new();
     }
 
     [Serializable]
@@ -54,6 +58,34 @@ namespace LasGranjasDelHastur.Core
     {
         public int assistantId;
         public int assignedSlotIndex = -1;
+    }
+
+    [Serializable]
+    public class Zone2SaveData
+    {
+        public bool valid = false;
+        public int darkCoins;
+        public int citySupplies;
+        public int arcaneBlueprints;
+        public int difficultyTier;
+        public int totalSold;
+        public float taxTimer;
+        public float runtimeSeconds;
+    }
+
+    [Serializable]
+    public class Zone3SaveData
+    {
+        public bool valid = false;
+        public int darkCoins;
+        public int astralResidue;
+        public int voidInk;
+        public int difficultyTier;
+        public int totalSold;
+        public float taxTimer;
+        public float runtimeSeconds;
+        public int prestigePoints;
+        public bool endNarrativeShown;
     }
 }
 

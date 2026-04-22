@@ -1,3 +1,4 @@
+using LasGranjasDelHastur.Core;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -32,6 +33,7 @@ namespace LasGranjasDelHastur.Zone3
         void Awake()
         {
             _prestigePoints = PlayerPrefs.GetInt(PrestigeKey, 0);
+            TryRestoreFromSaveIfRequested();
             BuildUi();
             RefreshUi();
         }
@@ -97,7 +99,11 @@ namespace LasGranjasDelHastur.Zone3
             btnSellInk.onClick.AddListener(() => SellInk());
 
             var btnBack = CreateButton(panel.transform, "Volver a Zonas", new Vector2(0, -215), new Vector2(320, 52));
-            btnBack.onClick.AddListener(() => SceneManager.LoadScene("ZoneSelection"));
+            btnBack.onClick.AddListener(() =>
+            {
+                SaveManager.Instance?.SaveNow();
+                SceneManager.LoadScene("ZoneSelection");
+            });
 
             BuildEndPanel(root.transform);
         }
@@ -188,6 +194,53 @@ namespace LasGranjasDelHastur.Zone3
             if (_endPanel != null)
                 _endPanel.SetActive(false);
             _txtHint.text = $"Prestigio aplicado. Puntos totales: {_prestigePoints}.";
+        }
+
+        void TryRestoreFromSaveIfRequested()
+        {
+            if (SaveManager.Instance == null || !SaveManager.Instance.ShouldRestoreFromSave)
+                return;
+
+            var data = SaveManager.Instance.CachedData;
+            if (data != null && data.zone3 != null && data.zone3.valid)
+                ApplySaveData(data.zone3);
+
+            SaveManager.Instance.MarkRestoreConsumed();
+        }
+
+        public Zone3SaveData CaptureSaveData()
+        {
+            return new Zone3SaveData
+            {
+                valid = true,
+                darkCoins = _darkCoins,
+                astralResidue = _astralResidue,
+                voidInk = _voidInk,
+                difficultyTier = _difficultyTier,
+                totalSold = _totalSold,
+                taxTimer = _taxTimer,
+                runtimeSeconds = _runtime,
+                prestigePoints = _prestigePoints,
+                endNarrativeShown = _endNarrativeShown,
+            };
+        }
+
+        public void ApplySaveData(Zone3SaveData data)
+        {
+            if (data == null || !data.valid)
+                return;
+
+            _darkCoins = Mathf.Max(0, data.darkCoins);
+            _astralResidue = Mathf.Max(0, data.astralResidue);
+            _voidInk = Mathf.Max(0, data.voidInk);
+            _difficultyTier = Mathf.Clamp(data.difficultyTier, 1, 9);
+            _totalSold = Mathf.Max(0, data.totalSold);
+            _taxTimer = Mathf.Max(0f, data.taxTimer);
+            _runtime = Mathf.Max(0f, data.runtimeSeconds);
+            _prestigePoints = Mathf.Max(0, data.prestigePoints);
+            _endNarrativeShown = data.endNarrativeShown;
+            PlayerPrefs.SetInt(PrestigeKey, _prestigePoints);
+            PlayerPrefs.Save();
         }
 
         void RefreshUi()
