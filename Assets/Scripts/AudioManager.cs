@@ -11,6 +11,7 @@ public class AudioManager : MonoBehaviour
     [Header("Fuentes (opcional; se crean hijos Music/SFX si faltan)")]
     [SerializeField] private AudioSource musicSource;
     [SerializeField] private AudioSource sfxSource;
+    [SerializeField] private AudioSource uiSource;
 
     [Header("Música (asigna tus pistas al importar)")]
     public AudioClip introMusic;
@@ -29,6 +30,15 @@ public class AudioManager : MonoBehaviour
     [Tooltip("Zonas/UI bloqueados. Si está vacío, se usa uiClick.")]
     public AudioClip uiClickDenied;
     public AudioClip uiBack;
+
+    [Header("Zone1 — placeholders (asigna luego)")]
+    public AudioClip zone1CellClick;
+    public AudioClip zone1Collect;
+    public AudioClip zone1Buy;
+    public AudioClip zone1Sell;
+    public AudioClip zone1TaxAlert;
+    public AudioClip zone1TaxPay;
+    public AudioClip zone1Corruption;
 
     [Header("Intro — paneles con sonido alternativo (índice 0 = primer viñeta)")]
     [Tooltip("Por defecto: índices 3 (contrato) y 5 (última viñeta).")]
@@ -130,6 +140,16 @@ public class AudioManager : MonoBehaviour
             sfxSource.playOnAwake = false;
             sfxSource.spatialBlend = 0f;
         }
+
+        if (uiSource == null)
+        {
+            var go = new GameObject("UI");
+            go.transform.SetParent(transform, false);
+            uiSource = go.AddComponent<AudioSource>();
+            uiSource.loop = false;
+            uiSource.playOnAwake = false;
+            uiSource.spatialBlend = 0f;
+        }
     }
 
     /// <summary>Si música y SFX apuntan al mismo AudioSource, crea un SFX aparte para no cortar la música.</summary>
@@ -157,6 +177,8 @@ public class AudioManager : MonoBehaviour
             musicSource.volume = m;
         if (sfxSource != null)
             sfxSource.volume = s;
+        if (uiSource != null)
+            uiSource.volume = s;
     }
 
     public void PlayMusic(AudioClip clip, bool loop = true)
@@ -180,6 +202,17 @@ public class AudioManager : MonoBehaviour
             return;
         float s = Mathf.Clamp01(PlayerPrefs.GetFloat("SFXVolume", 1f));
         sfxSource.PlayOneShot(clip, s * volumeScale);
+    }
+
+    public void PlayUI(AudioClip clip, float volumeScale = 1f)
+    {
+        if (clip == null)
+            return;
+        float s = Mathf.Clamp01(PlayerPrefs.GetFloat("SFXVolume", 1f));
+        if (uiSource != null)
+            uiSource.PlayOneShot(clip, s * volumeScale);
+        else
+            PlaySFX(clip, volumeScale);
     }
 
     public void PlayIntroOpen()
