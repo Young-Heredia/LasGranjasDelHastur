@@ -50,6 +50,7 @@ namespace LasGranjasDelHastur.Zone1
             _applying = true;
             try
             {
+                RefreshWorldIfOutdated(scene);
                 Zone1Bootstrap.EnsureSceneScaffold(includeAudioManager: true);
                 EnsureUiPlaceholders();
 
@@ -63,6 +64,41 @@ namespace LasGranjasDelHastur.Zone1
             {
                 _applying = false;
             }
+        }
+
+        static void RefreshWorldIfOutdated(Scene scene)
+        {
+            var worldRoot = GameObject.Find("WorldRoot");
+            var needsRefresh = worldRoot == null;
+
+            if (!needsRefresh)
+            {
+                var tf = worldRoot.transform;
+                needsRefresh =
+                    tf.Find("Layer_Floor") == null ||
+                    tf.Find("Layer_WallsBack") == null ||
+                    tf.Find("Layer_CellArea") == null ||
+                    tf.Find("Layer_Decor") == null ||
+                    tf.Find("Layer_Fog") == null ||
+                    tf.Find("Layer_WallsFront") == null ||
+                    tf.Find("Layer_Atmosphere") == null;
+
+                var cellSlots = tf.Find("CellSlotsRoot");
+                if (!needsRefresh && cellSlots != null && cellSlots.childCount < 30)
+                    needsRefresh = true;
+            }
+
+            if (!needsRefresh)
+                return;
+
+            if (worldRoot != null)
+                Object.DestroyImmediate(worldRoot);
+
+            var oldGrid = GameObject.Find("Grid / TilemapRoot");
+            if (oldGrid != null)
+                Object.DestroyImmediate(oldGrid);
+
+            EditorSceneManager.MarkSceneDirty(scene);
         }
 
         static void EnsureUiPlaceholders()

@@ -19,10 +19,10 @@ namespace LasGranjasDelHastur.Zone1
         [Min(1)] public int xpGrowthPerLevel = 25;
 
         [Header("Cells Setup")]
-        [Min(1)] public int gridColumns = 4;
-        [Min(1)] public int gridRows = 3;
-        public Vector2 gridSpacing = new(2.2f, 2.2f);
-        public Vector2 gridOrigin = new(-3.3f, 1.8f);
+        [Min(1)] public int gridColumns = 6;
+        [Min(1)] public int gridRows = 5;
+        public Vector2 gridSpacing = new(2.14f, 1.92f);
+        public Vector2 gridOrigin = new(-5.35f, 3.65f);
         [Min(0)] public int initiallyUnlockedCells = 1;
         [Min(0)] public int initiallyPurchasableCells = 2;
 
@@ -61,8 +61,8 @@ namespace LasGranjasDelHastur.Zone1
         [Min(0.05f)] public float assistantAutomationTickSeconds = 0.25f;
 
         [Header("Camera Bounds")]
-        public Vector2 cameraMinBounds = new(-10f, -8f);
-        public Vector2 cameraMaxBounds = new(10f, 6f);
+        public Vector2 cameraMinBounds = new(-13f, -10f);
+        public Vector2 cameraMaxBounds = new(13f, 8f);
     }
 }
 
