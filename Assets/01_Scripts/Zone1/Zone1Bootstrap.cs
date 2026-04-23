@@ -118,12 +118,12 @@ namespace LasGranjasDelHastur.Zone1
 
             var tilePaths = new[]
             {
-                "Assets/Sprites/Zone1/Tiles/zone1_floor_tile_01.png",
-                "Assets/Sprites/Zone1/Tiles/zone1_floor_tile_02.png",
-                "Assets/Sprites/Zone1/Tiles/zone1_floor_tile_03.png",
-                "Assets/Sprites/Zone1/Tiles/zone1_floor_tile_04.png",
-                "Assets/Sprites/Zone1/Tiles/zone1_floor_tile_05.png",
-                "Assets/Sprites/Zone1/Tiles/zone1_floor_tile_06.png",
+                "Assets/02_Sprites/Zone1/Tiles/zone1_floor_tile_01.png",
+                "Assets/02_Sprites/Zone1/Tiles/zone1_floor_tile_02.png",
+                "Assets/02_Sprites/Zone1/Tiles/zone1_floor_tile_03.png",
+                "Assets/02_Sprites/Zone1/Tiles/zone1_floor_tile_04.png",
+                "Assets/02_Sprites/Zone1/Tiles/zone1_floor_tile_05.png",
+                "Assets/02_Sprites/Zone1/Tiles/zone1_floor_tile_06.png",
             };
 
             for (var y = -10; y <= 10; y++)
@@ -140,9 +140,9 @@ namespace LasGranjasDelHastur.Zone1
                     var path = tilePaths[index];
 
                     if ((x + y) % 13 == 0)
-                        path = "Assets/Sprites/Zone1/Tiles/zone1_floor_corrupt_transition.png";
+                        path = "Assets/02_Sprites/Zone1/Tiles/zone1_floor_corrupt_transition.png";
                     if ((x - y) % 19 == 0)
-                        path = "Assets/Sprites/Zone1/Tiles/zone1_floor_ritual_tile.png";
+                        path = "Assets/02_Sprites/Zone1/Tiles/zone1_floor_ritual_tile.png";
 
                     sr.sprite = Zone1ArtProvider.LoadSprite(path) ?? RuntimeSpriteFactory.OpaqueWhiteSprite;
                     sr.color = Color.white;
@@ -156,7 +156,7 @@ namespace LasGranjasDelHastur.Zone1
                         wet.transform.localPosition = new Vector3(0f, 0f, -0.01f);
                         wet.transform.localScale = new Vector3(0.9f, 0.9f, 1f);
                         var wetSr = wet.AddComponent<SpriteRenderer>();
-                        wetSr.sprite = Zone1ArtProvider.LoadSprite("Assets/Sprites/Zone1/Overlays/zone1_overlay_humidity.png") ?? RuntimeSpriteFactory.OpaqueWhiteSprite;
+                        wetSr.sprite = Zone1ArtProvider.LoadSprite("Assets/02_Sprites/Zone1/Overlays/zone1_overlay_humidity.png") ?? RuntimeSpriteFactory.OpaqueWhiteSprite;
                         wetSr.color = new Color(0.62f, 0.72f, 0.82f, 0.08f);
                         wetSr.sortingOrder = 1;
                     }
@@ -182,12 +182,12 @@ namespace LasGranjasDelHastur.Zone1
             go.transform.localScale = scale;
 
             var sr = go.AddComponent<SpriteRenderer>();
-            sr.sprite = Zone1ArtProvider.LoadSprite("Assets/Sprites/Zone1/Overlays/zone1_overlay_humidity.png") ?? RuntimeSpriteFactory.OpaqueWhiteSprite;
+            sr.sprite = Zone1ArtProvider.LoadSprite("Assets/02_Sprites/Zone1/Overlays/zone1_overlay_humidity.png") ?? RuntimeSpriteFactory.OpaqueWhiteSprite;
             sr.color = color;
             sr.sortingOrder = sortingOrder;
 
             var anim = go.AddComponent<SpriteSheetAnimator>();
-            anim.Configure("Assets/Sprites/Zone1/Spritesheets/zone1_lowfog_sheet.png", 96, 48, fps);
+            anim.Configure("Assets/02_Sprites/Zone1/Spritesheets/zone1_lowfog_sheet.png", 96, 48, fps);
         }
 
         static void CreateTorch(Transform parent, string name, Vector3 pos, int baseSortingOrder)
@@ -201,7 +201,7 @@ namespace LasGranjasDelHastur.Zone1
             go.transform.localScale = new Vector3(0.4f, 1.2f, 1f);
 
             var sr = go.AddComponent<SpriteRenderer>();
-            sr.sprite = Zone1ArtProvider.LoadSprite("Assets/Sprites/Zone1/Props/zone1_prop_column_damaged.png") ?? RuntimeSpriteFactory.OpaqueWhiteSprite;
+            sr.sprite = Zone1ArtProvider.LoadSprite("Assets/02_Sprites/Zone1/Props/zone1_prop_column_damaged.png") ?? RuntimeSpriteFactory.OpaqueWhiteSprite;
             sr.color = new Color(0.5f, 0.35f, 0.15f, 1f);
             sr.sortingOrder = baseSortingOrder;
 
@@ -210,12 +210,12 @@ namespace LasGranjasDelHastur.Zone1
             flame.transform.localPosition = new Vector3(0f, 0.8f, 0f);
             flame.transform.localScale = new Vector3(0.8f, 0.8f, 1f);
             var fsr = flame.AddComponent<SpriteRenderer>();
-            fsr.sprite = Zone1ArtProvider.LoadSprite("Assets/Sprites/Zone1/Spritesheets/zone1_torch_sheet.png") ?? RuntimeSpriteFactory.OpaqueWhiteSprite;
+            fsr.sprite = Zone1ArtProvider.LoadSprite("Assets/02_Sprites/Zone1/Spritesheets/zone1_torch_sheet.png") ?? RuntimeSpriteFactory.OpaqueWhiteSprite;
             fsr.color = new Color(1f, 0.85f, 0.25f, 1f);
             fsr.sortingOrder = baseSortingOrder + 1;
 
             var anim = flame.AddComponent<SpriteSheetAnimator>();
-            anim.Configure("Assets/Sprites/Zone1/Spritesheets/zone1_torch_sheet.png", 32, 32, 10f);
+            anim.Configure("Assets/02_Sprites/Zone1/Spritesheets/zone1_torch_sheet.png", 32, 32, 10f);
         }
 
         static void CreateProp(Transform parent, string fileName, Vector3 pos, Vector3 scale, int sortingOrder)
@@ -235,7 +235,7 @@ namespace LasGranjasDelHastur.Zone1
             shSr.sortingOrder = sortingOrder + Mathf.RoundToInt(-pos.y * 3f) - 1;
 
             var sr = go.AddComponent<SpriteRenderer>();
-            sr.sprite = Zone1ArtProvider.LoadSprite($"Assets/Sprites/Zone1/Props/{fileName}") ?? RuntimeSpriteFactory.OpaqueWhiteSprite;
+            sr.sprite = Zone1ArtProvider.LoadSprite($"Assets/02_Sprites/Zone1/Props/{fileName}") ?? RuntimeSpriteFactory.OpaqueWhiteSprite;
             sr.color = Color.white;
             sr.sortingOrder = sortingOrder + Mathf.RoundToInt(-pos.y * 3f);
         }
@@ -295,7 +295,7 @@ namespace LasGranjasDelHastur.Zone1
                     guide.transform.localScale = new Vector3(1.5f, 1.5f, 1f);
 
                     var sr = guide.AddComponent<SpriteRenderer>();
-                    sr.sprite = Zone1ArtProvider.LoadSprite("Assets/Sprites/Zone1/Tiles/zone1_floor_ritual_tile.png") ?? RuntimeSpriteFactory.OpaqueWhiteSprite;
+                    sr.sprite = Zone1ArtProvider.LoadSprite("Assets/02_Sprites/Zone1/Tiles/zone1_floor_ritual_tile.png") ?? RuntimeSpriteFactory.OpaqueWhiteSprite;
                     sr.color = new Color(0.65f, 0.2f, 0.18f, 0.08f);
                     sr.sortingOrder = 10;
                 }
@@ -336,7 +336,7 @@ namespace LasGranjasDelHastur.Zone1
             go.transform.localScale = new Vector3(5f, 1.7f, 1f);
 
             var sr = go.AddComponent<SpriteRenderer>();
-            sr.sprite = Zone1ArtProvider.LoadSprite("Assets/Sprites/Zone1/Tiles/zone1_floor_ritual_tile.png") ?? RuntimeSpriteFactory.OpaqueWhiteSprite;
+            sr.sprite = Zone1ArtProvider.LoadSprite("Assets/02_Sprites/Zone1/Tiles/zone1_floor_ritual_tile.png") ?? RuntimeSpriteFactory.OpaqueWhiteSprite;
             sr.color = new Color(0.55f, 0.10f, 0.15f, 0.18f);
             sr.sortingOrder = 12;
         }
@@ -351,7 +351,7 @@ namespace LasGranjasDelHastur.Zone1
             runes.transform.position = new Vector3(0f, 0f, 1.8f);
             runes.transform.localScale = new Vector3(5f, 4f, 1f);
             var runesSr = runes.AddComponent<SpriteRenderer>();
-            runesSr.sprite = Zone1ArtProvider.LoadSprite("Assets/Sprites/Zone1/Overlays/zone1_overlay_runes.png");
+            runesSr.sprite = Zone1ArtProvider.LoadSprite("Assets/02_Sprites/Zone1/Overlays/zone1_overlay_runes.png");
             runesSr.color = new Color(1f, 1f, 1f, 0.35f);
             runesSr.sortingOrder = 6;
 
@@ -360,7 +360,7 @@ namespace LasGranjasDelHastur.Zone1
             vignette.transform.position = new Vector3(0f, 0f, 6f);
             vignette.transform.localScale = new Vector3(5f, 5f, 1f);
             var vigSr = vignette.AddComponent<SpriteRenderer>();
-            vigSr.sprite = Zone1ArtProvider.LoadSprite("Assets/Sprites/Zone1/Overlays/zone1_overlay_vignette.png");
+            vigSr.sprite = Zone1ArtProvider.LoadSprite("Assets/02_Sprites/Zone1/Overlays/zone1_overlay_vignette.png");
             vigSr.color = new Color(1f, 1f, 1f, 0.25f);
             vigSr.sortingOrder = 90;
         }

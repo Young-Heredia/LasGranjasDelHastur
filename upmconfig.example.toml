@@ -1,0 +1,10 @@
+# Copia este archivo a tu perfil de usuario y renómbralo a .upmconfig.toml
+#   Windows:  %USERPROFILE%\.upmconfig.toml
+#   macOS/Linux: ~/.upmconfig.toml
+#
+# Crea la carpeta "root" antes de abrir Unity (o elige otra ruta CORTA en disco local).
+# Así el Package Manager deja de escribir en Library\PackageCache del proyecto y
+# se evita el límite de longitud de ruta de Windows con paquetes como collections.
+
+[cache]
+root = "C:/UnityPkgCache"
