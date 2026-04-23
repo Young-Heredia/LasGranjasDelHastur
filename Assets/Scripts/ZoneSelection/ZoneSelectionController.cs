@@ -37,6 +37,9 @@ public class ZoneSelectionController : MonoBehaviour
     [SerializeField] private bool debugPanelStartsHidden = true;
 
     GameObject _debugPanel;
+    Image _transitionOverlay;
+    TextMeshProUGUI _transitionText;
+    bool _isTransitioning;
 
 #if UNITY_EDITOR
     void OnValidate()
@@ -230,6 +233,7 @@ public class ZoneSelectionController : MonoBehaviour
         EnsureBackdropImagesDoNotBlockRaycasts();
         EnsureBackgroundSolidOpaqueRuntimeSprite();
         EnsureAmbientOverlayBelowPanelFrame();
+        EnsureTransitionOverlay();
         EnsureZoneSelectionUiEffects();
         EnsureDebugUnlockUi();
         RefreshAllCards();
@@ -278,7 +282,13 @@ public class ZoneSelectionController : MonoBehaviour
         foreach (var card in zoneCards)
         {
             if (card != null)
+            {
+                card.SetRuntimePresentation(
+                    BuildRequirementsSummary(card.ZoneNumber),
+                    BuildZoneHint(card.ZoneNumber),
+                    ZoneSelectionRuntimeArt.GetZoneIcon(card.ZoneNumber));
                 card.ApplyState();
+            }
         }
     }
 
@@ -294,6 +304,9 @@ public class ZoneSelectionController : MonoBehaviour
     /// <summary>Llamado desde el botón de cada tarjeta (EnterZone1/2/3).</summary>
     public void TryEnterZone(int zoneNumber)
     {
+        if (_isTransitioning)
+            return;
+
         if (zoneNumber == 2 && (zoneManager == null || !zoneManager.IsZoneUnlocked(2)))
         {
             TryUnlockAndEnterZone2();
@@ -311,15 +324,15 @@ public class ZoneSelectionController : MonoBehaviour
         {
             case 1:
                 SaveManager.Instance?.RequestRestoreOnNextGameplayScene();
-                LoadSceneIfAvailable(zone1SceneName, mainMenuSceneName);
+                BeginZoneTransition(zone1SceneName, mainMenuSceneName, "Descendiendo a Zona 1: Calabozos");
                 break;
             case 2:
                 SaveManager.Instance?.RequestRestoreOnNextGameplayScene();
-                LoadSceneIfAvailable(zone2SceneName, zone1SceneName);
+                BeginZoneTransition(zone2SceneName, zone1SceneName, "Abriendo el paso hacia Zona 2: Ciudades");
                 break;
             case 3:
                 SaveManager.Instance?.RequestRestoreOnNextGameplayScene();
-                LoadSceneIfAvailable(zone3SceneName, zone2SceneName);
+                BeginZoneTransition(zone3SceneName, zone2SceneName, "Ascendiendo a Zona 3: Cuerpos Celestes");
                 break;
         }
     }
@@ -531,7 +544,7 @@ public class ZoneSelectionController : MonoBehaviour
             zoneManager.CompleteZone2Unlock();
             RefreshAllCards();
             SaveManager.Instance?.RequestRestoreOnNextGameplayScene();
-            LoadSceneIfAvailable(zone2SceneName, zone1SceneName);
+            BeginZoneTransition(zone2SceneName, zone1SceneName, "Ritual completo. Entrando en Zona 2");
         });
     }
 
@@ -561,22 +574,64 @@ public class ZoneSelectionController : MonoBehaviour
             zoneManager.CompleteZone3Unlock();
             RefreshAllCards();
             SaveManager.Instance?.RequestRestoreOnNextGameplayScene();
-            LoadSceneIfAvailable(zone3SceneName, zone2SceneName);
+            BeginZoneTransition(zone3SceneName, zone2SceneName, "Alineacion completa. Entrando en Zona 3");
         });
     }
 
-    static void LoadSceneIfAvailable(string preferredSceneName, string fallbackSceneName)
+    void BeginZoneTransition(string preferredSceneName, string fallbackSceneName, string transitionLabel)
+    {
+        if (!isActiveAndEnabled)
+        {
+            LoadSceneIfAvailable(preferredSceneName, fallbackSceneName);
+            return;
+        }
+
+        StartCoroutine(TransitionAndLoadScene(preferredSceneName, fallbackSceneName, transitionLabel));
+    }
+
+    IEnumerator TransitionAndLoadScene(string preferredSceneName, string fallbackSceneName, string transitionLabel)
+    {
+        _isTransitioning = true;
+        EnsureTransitionOverlay();
+        if (_transitionOverlay != null)
+            _transitionOverlay.gameObject.SetActive(true);
+        if (_transitionText != null)
+            _transitionText.text = transitionLabel;
+
+        var duration = 0.35f;
+        var elapsed = 0f;
+        while (elapsed < duration)
+        {
+            elapsed += Time.unscaledDeltaTime;
+            var alpha = Mathf.Clamp01(elapsed / duration);
+            SetTransitionAlpha(alpha);
+            yield return null;
+        }
+
+        SetTransitionAlpha(1f);
+
+        if (!LoadSceneIfAvailable(preferredSceneName, fallbackSceneName))
+        {
+            SetTransitionAlpha(0f);
+            if (_transitionOverlay != null)
+                _transitionOverlay.gameObject.SetActive(false);
+            _isTransitioning = false;
+        }
+    }
+
+    static bool LoadSceneIfAvailable(string preferredSceneName, string fallbackSceneName)
     {
         if (TryLoadScene(preferredSceneName))
-            return;
+            return true;
 
         if (TryLoadScene(fallbackSceneName))
         {
             Debug.LogWarning($"[ZoneSelection] Escena objetivo no disponible, usando fallback: {fallbackSceneName}");
-            return;
+            return true;
         }
 
         Debug.LogError($"[ZoneSelection] No se pudo cargar escena objetivo '{preferredSceneName}' ni fallback '{fallbackSceneName}'.");
+        return false;
     }
 
     static bool TryLoadScene(string sceneName)
@@ -611,5 +666,102 @@ public class ZoneSelectionController : MonoBehaviour
 #else
         return Debug.isDebugBuild;
 #endif
+    }
+
+    string BuildRequirementsSummary(int zoneNumber)
+    {
+        var manager = zoneManager == null ? ZoneManager.Instance : zoneManager;
+        var currentLevel = manager != null ? manager.GetCurrentPlayerLevel() : 1;
+
+        switch (zoneNumber)
+        {
+            case 1:
+                return "Requisitos:\n[OK] Disponible desde el inicio";
+            case 2:
+                var zone2LevelMet = manager != null && currentLevel >= manager.LevelRequiredForZone2;
+                var zone2TrialDone = manager != null && manager.IsMiniGameCompleted(ZoneManager.Zone2UnlockMiniGameId);
+                return "Requisitos:\n" +
+                       BuildRequirementLine(zone2LevelMet, $"Nivel {manager?.LevelRequiredForZone2 ?? 1} en Zona 1 (actual: {currentLevel})") + "\n" +
+                       BuildRequirementLine(zone2TrialDone, "Completar el ritual de desbloqueo");
+            case 3:
+                var zone2Unlocked = ZoneProgressState.IsZoneUnlocked(2);
+                var zone3LevelMet = manager != null && currentLevel >= manager.LevelRequiredForZone3;
+                var zone3TrialDone = manager != null && manager.IsMiniGameCompleted(ZoneManager.Zone3UnlockMiniGameId);
+                return "Requisitos:\n" +
+                       BuildRequirementLine(zone2Unlocked, "Desbloquear Zona 2") + "\n" +
+                       BuildRequirementLine(zone3LevelMet, $"Nivel {manager?.LevelRequiredForZone3 ?? 2} en Zona 1 (actual: {currentLevel})") + "\n" +
+                       BuildRequirementLine(zone3TrialDone, "Completar la alineacion celestial");
+            default:
+                return string.Empty;
+        }
+    }
+
+    string BuildZoneHint(int zoneNumber)
+    {
+        var unlocked = ZoneProgressState.IsZoneUnlocked(zoneNumber);
+        if (unlocked)
+        {
+            return zoneNumber == 1
+                ? "Disponible desde el inicio. Haz clic para entrar."
+                : "Desbloqueada. Haz clic para entrar.";
+        }
+
+        return zoneNumber switch
+        {
+            2 => "Bloqueada con candado. Cumple los requisitos para iniciar el ritual.",
+            3 => "Bloqueada con candado. Cumple los requisitos para abrir el acceso celestial.",
+            _ => string.Empty
+        };
+    }
+
+    static string BuildRequirementLine(bool completed, string label)
+    {
+        return completed ? $"[OK] {label}" : $"[ ] {label}";
+    }
+
+    void EnsureTransitionOverlay()
+    {
+        if (_transitionOverlay != null)
+            return;
+
+        var overlay = new GameObject("TransitionOverlay", typeof(RectTransform));
+        overlay.transform.SetParent(transform, false);
+        overlay.transform.SetAsLastSibling();
+
+        var overlayRt = overlay.GetComponent<RectTransform>();
+        overlayRt.anchorMin = Vector2.zero;
+        overlayRt.anchorMax = Vector2.one;
+        overlayRt.offsetMin = Vector2.zero;
+        overlayRt.offsetMax = Vector2.zero;
+
+        _transitionOverlay = overlay.AddComponent<Image>();
+        _transitionOverlay.sprite = GetOrCreateRuntimeOpaqueWhiteSprite();
+        _transitionOverlay.color = new Color(0.02f, 0.01f, 0.05f, 0f);
+        _transitionOverlay.raycastTarget = true;
+
+        var label = new GameObject("TransitionLabel", typeof(RectTransform));
+        label.transform.SetParent(overlay.transform, false);
+        var labelRt = label.GetComponent<RectTransform>();
+        labelRt.anchorMin = new Vector2(0.5f, 0.5f);
+        labelRt.anchorMax = new Vector2(0.5f, 0.5f);
+        labelRt.pivot = new Vector2(0.5f, 0.5f);
+        labelRt.sizeDelta = new Vector2(960f, 120f);
+
+        _transitionText = label.AddComponent<TextMeshProUGUI>();
+        _transitionText.fontSize = 34f;
+        _transitionText.alignment = TextAlignmentOptions.Center;
+        _transitionText.color = new Color(0.96f, 0.88f, 0.68f, 0f);
+        _transitionText.textWrappingMode = TextWrappingModes.Normal;
+        _transitionText.raycastTarget = false;
+
+        overlay.SetActive(false);
+    }
+
+    void SetTransitionAlpha(float alpha)
+    {
+        if (_transitionOverlay != null)
+            _transitionOverlay.color = new Color(0.02f, 0.01f, 0.05f, alpha * 0.96f);
+        if (_transitionText != null)
+            _transitionText.color = new Color(0.96f, 0.88f, 0.68f, Mathf.Clamp01(alpha));
     }
 }
