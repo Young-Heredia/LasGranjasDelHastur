@@ -1,0 +1,897 @@
+fileFormatVersion: 2
+guid: ffa17c05bfb10af4f89efecd74311b1e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1619495624044742993
+    second: zone1_soulpit_production_sheet_0
+  - first:
+      213: 2159393954783697088
+    second: zone1_soulpit_production_sheet_1
+  - first:
+      213: 4273758446768180669
+    second: zone1_soulpit_production_sheet_2
+  - first:
+      213: 1398701204392761127
+    second: zone1_soulpit_production_sheet_3
+  - first:
+      213: -9212248847271654327
+    second: zone1_soulpit_production_sheet_4
+  - first:
+      213: -6850125054129345498
+    second: zone1_soulpit_production_sheet_5
+  - first:
+      213: 6753171487566012932
+    second: zone1_soulpit_production_sheet_6
+  - first:
+      213: -2905865845506513988
+    second: zone1_soulpit_production_sheet_7
+  - first:
+      213: -2316519660593087265
+    second: zone1_soulpit_production_sheet_8
+  - first:
+      213: -6181283875172394828
+    second: zone1_soulpit_production_sheet_9
+  - first:
+      213: 413702791386338979
+    second: zone1_soulpit_production_sheet_10
+  - first:
+      213: -1813104715027840714
+    second: zone1_soulpit_production_sheet_11
+  - first:
+      213: -8621546042243625470
+    second: zone1_soulpit_production_sheet_12
+  - first:
+      213: 4081991600681800067
+    second: zone1_soulpit_production_sheet_13
+  - first:
+      213: -5487039251421620357
+    second: zone1_soulpit_production_sheet_14
+  - first:
+      213: 6184449013054592211
+    second: zone1_soulpit_production_sheet_15
+  - first:
+      213: -4546118533121799859
+    second: zone1_soulpit_production_sheet_16
+  - first:
+      213: -8424267193404974232
+    second: zone1_soulpit_production_sheet_17
+  - first:
+      213: -5411579296965866407
+    second: zone1_soulpit_production_sheet_18
+  - first:
+      213: -8129262948966728779
+    second: zone1_soulpit_production_sheet_19
+  - first:
+      213: -3959083518019365908
+    second: zone1_soulpit_production_sheet_20
+  - first:
+      213: 542358447754707107
+    second: zone1_soulpit_production_sheet_21
+  - first:
+      213: -6049579696203821436
+    second: zone1_soulpit_production_sheet_22
+  - first:
+      213: 4534696038942088753
+    second: zone1_soulpit_production_sheet_23
+  - first:
+      213: 4132625039384866719
+    second: zone1_soulpit_production_sheet_24
+  - first:
+      213: -5705848862783875750
+    second: zone1_soulpit_production_sheet_25
+  - first:
+      213: -5453723214091089409
+    second: zone1_soulpit_production_sheet_26
+  - first:
+      213: -7085566327820857161
+    second: zone1_soulpit_production_sheet_27
+  - first:
+      213: -5239599644362859652
+    second: zone1_soulpit_production_sheet_28
+  - first:
+      213: 8339959488694782291
+    second: zone1_soulpit_production_sheet_29
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: zone1_soulpit_production_sheet_0
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 10
+        width: 31
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa673857f456689e0800000000000000
+      internalID: -1619495624044742993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone1_soulpit_production_sheet_1
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 37
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c812056c55b7fd10800000000000000
+      internalID: 2159393954783697088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone1_soulpit_production_sheet_2
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 10
+        width: 31
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbd417bf9a07f4b30800000000000000
+      internalID: 4273758446768180669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone1_soulpit_production_sheet_3
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 41
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 727ddb2b55f296310800000000000000
+      internalID: 1398701204392761127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone1_soulpit_production_sheet_4
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 39
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94c0fd36b74872080800000000000000
+      internalID: -9212248847271654327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone1_soulpit_production_sheet_5
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 41
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62ced998e877fe0a0800000000000000
+      internalID: -6850125054129345498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone1_soulpit_production_sheet_6
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 42
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4022ba720b518bd50800000000000000
+      internalID: 6753171487566012932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone1_soulpit_production_sheet_7
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 43
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb3e4a1d86a4ca7d0800000000000000
+      internalID: -2905865845506513988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone1_soulpit_production_sheet_8
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 41
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fdcf32364a11adfd0800000000000000
+      internalID: -2316519660593087265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone1_soulpit_production_sheet_9
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 43
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b8df7cb01ba73aa0800000000000000
+      internalID: -6181283875172394828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone1_soulpit_production_sheet_10
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 44
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a69b233f74cdb500800000000000000
+      internalID: 413702791386338979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone1_soulpit_production_sheet_11
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 45
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6310e203ede86d6e0800000000000000
+      internalID: -1813104715027840714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone1_soulpit_production_sheet_12
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 43
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20ec461bd8d1a5880800000000000000
+      internalID: -8621546042243625470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone1_soulpit_production_sheet_13
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 10
+        width: 31
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38154c6cbb526a830800000000000000
+      internalID: 4081991600681800067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone1_soulpit_production_sheet_14
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 37
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7793665fde1ad3b0800000000000000
+      internalID: -5487039251421620357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone1_soulpit_production_sheet_15
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 10
+        width: 31
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d452aa5c9393d550800000000000000
+      internalID: 6184449013054592211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone1_soulpit_production_sheet_16
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 41
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d49847ec741f8e0c0800000000000000
+      internalID: -4546118533121799859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone1_soulpit_production_sheet_17
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 39
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86b9e1c0f9df61b80800000000000000
+      internalID: -8424267193404974232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone1_soulpit_production_sheet_18
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 41
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95ccd7a1d4536e4b0800000000000000
+      internalID: -5411579296965866407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone1_soulpit_production_sheet_19
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 42
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bbf7192b6e0f2f80800000000000000
+      internalID: -8129262948966728779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone1_soulpit_production_sheet_20
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 43
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce31a5834828e09c0800000000000000
+      internalID: -3959083518019365908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone1_soulpit_production_sheet_21
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 41
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a00a5b7228d68700800000000000000
+      internalID: 542358447754707107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone1_soulpit_production_sheet_22
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 43
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48e0b5f71539b0ca0800000000000000
+      internalID: -6049579696203821436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone1_soulpit_production_sheet_23
+      rect:
+        serializedVersion: 2
+        x: 475
+        y: 44
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13e9385850a7eee30800000000000000
+      internalID: 4534696038942088753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone1_soulpit_production_sheet_24
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 45
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9f6b66e3980a5930800000000000000
+      internalID: 4132625039384866719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone1_soulpit_production_sheet_25
+      rect:
+        serializedVersion: 2
+        x: 491
+        y: 43
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5553bfa0b0c0d0b0800000000000000
+      internalID: -5705848862783875750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone1_soulpit_production_sheet_26
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 10
+        width: 31
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff98cc0c1ab7054b0800000000000000
+      internalID: -5453723214091089409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone1_soulpit_production_sheet_27
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 10
+        width: 31
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b0d4cd37f20bad90800000000000000
+      internalID: -7085566327820857161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone1_soulpit_production_sheet_28
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 10
+        width: 31
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7b1d7052e33947b0800000000000000
+      internalID: -5239599644362859652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone1_soulpit_production_sheet_29
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 10
+        width: 31
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3590dccc7fc7db370800000000000000
+      internalID: 8339959488694782291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      zone1_soulpit_production_sheet_0: -1619495624044742993
+      zone1_soulpit_production_sheet_1: 2159393954783697088
+      zone1_soulpit_production_sheet_10: 413702791386338979
+      zone1_soulpit_production_sheet_11: -1813104715027840714
+      zone1_soulpit_production_sheet_12: -8621546042243625470
+      zone1_soulpit_production_sheet_13: 4081991600681800067
+      zone1_soulpit_production_sheet_14: -5487039251421620357
+      zone1_soulpit_production_sheet_15: 6184449013054592211
+      zone1_soulpit_production_sheet_16: -4546118533121799859
+      zone1_soulpit_production_sheet_17: -8424267193404974232
+      zone1_soulpit_production_sheet_18: -5411579296965866407
+      zone1_soulpit_production_sheet_19: -8129262948966728779
+      zone1_soulpit_production_sheet_2: 4273758446768180669
+      zone1_soulpit_production_sheet_20: -3959083518019365908
+      zone1_soulpit_production_sheet_21: 542358447754707107
+      zone1_soulpit_production_sheet_22: -6049579696203821436
+      zone1_soulpit_production_sheet_23: 4534696038942088753
+      zone1_soulpit_production_sheet_24: 4132625039384866719
+      zone1_soulpit_production_sheet_25: -5705848862783875750
+      zone1_soulpit_production_sheet_26: -5453723214091089409
+      zone1_soulpit_production_sheet_27: -7085566327820857161
+      zone1_soulpit_production_sheet_28: -5239599644362859652
+      zone1_soulpit_production_sheet_29: 8339959488694782291
+      zone1_soulpit_production_sheet_3: 1398701204392761127
+      zone1_soulpit_production_sheet_4: -9212248847271654327
+      zone1_soulpit_production_sheet_5: -6850125054129345498
+      zone1_soulpit_production_sheet_6: 6753171487566012932
+      zone1_soulpit_production_sheet_7: -2905865845506513988
+      zone1_soulpit_production_sheet_8: -2316519660593087265
+      zone1_soulpit_production_sheet_9: -6181283875172394828
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -20,6 +20,7 @@ public class ZoneCardUI : MonoBehaviour
     [SerializeField] private CanvasGroup cardCanvasGroup;
     [SerializeField] private Image thumbnailImage;
     [SerializeField] private Image lockSealImage;
+    [SerializeField] private Image zoneIconImage;
 
     [Header("Sprites opcionales (tarjeta)")]
     [SerializeField] private Sprite unlockedCardSprite;
@@ -37,11 +38,18 @@ public class ZoneCardUI : MonoBehaviour
     [Tooltip("Cuando hay sprites de tarjeta, se usa sobre el fondo en lugar del tint plano.")]
     [SerializeField] private Color unlockedImageTint = Color.white;
     [SerializeField] private Color lockedImageTint = new Color(0.78f, 0.74f, 0.86f, 1f);
+    [SerializeField] private Color unlockedHintColor = new Color(0.90f, 0.86f, 0.72f, 1f);
+    [SerializeField] private Color lockedHintColor = new Color(0.96f, 0.82f, 0.66f, 1f);
 
     [Header("Audio")]
     [SerializeField] private BasicUIAudio uiAudio;
 
     private Image _backgroundImage;
+    private string _runtimeDescriptionSuffix;
+    private string _runtimeHint;
+    private Sprite _runtimeZoneIcon;
+
+    public int ZoneNumber => zoneNumber;
 
     private void Awake()
     {
@@ -50,6 +58,8 @@ public class ZoneCardUI : MonoBehaviour
 
         if (_backgroundImage == null)
             _backgroundImage = GetComponent<Image>();
+
+        EnsureRuntimeBindings();
     }
 
     private void OnEnable()
@@ -59,18 +69,25 @@ public class ZoneCardUI : MonoBehaviour
 
     public void ApplyState()
     {
+        EnsureRuntimeBindings();
         bool unlocked = ZoneProgressState.IsZoneUnlocked(zoneNumber);
+        string effectiveDescription = description;
+        if (!string.IsNullOrWhiteSpace(_runtimeDescriptionSuffix))
+            effectiveDescription = $"{description}\n\n{_runtimeDescriptionSuffix}";
+
+        string effectiveHint = string.IsNullOrWhiteSpace(_runtimeHint) ? lockedHint : _runtimeHint;
 
         if (titleText != null)
             titleText.text = title;
 
         if (descriptionText != null)
-            descriptionText.text = description;
+            descriptionText.text = effectiveDescription;
 
         if (lockedHintText != null)
         {
-            lockedHintText.gameObject.SetActive(!unlocked);
-            lockedHintText.text = lockedHint;
+            lockedHintText.gameObject.SetActive(!string.IsNullOrWhiteSpace(effectiveHint));
+            lockedHintText.text = effectiveHint;
+            lockedHintText.color = unlocked ? unlockedHintColor : lockedHintColor;
         }
 
         if (lockOverlay != null)
@@ -101,6 +118,15 @@ public class ZoneCardUI : MonoBehaviour
             thumbnailImage.enabled = true;
         }
 
+        if (zoneIconImage != null)
+        {
+            var iconSprite = _runtimeZoneIcon;
+            zoneIconImage.sprite = iconSprite;
+            zoneIconImage.enabled = iconSprite != null;
+            zoneIconImage.color = Color.white;
+            zoneIconImage.preserveAspect = true;
+        }
+
         if (zoneButton != null)
             zoneButton.interactable = true;
 
@@ -110,5 +136,45 @@ public class ZoneCardUI : MonoBehaviour
             uiAudio.clickClip = unlocked ? AudioManager.Instance.uiClick : AudioManager.Instance.uiClickDenied;
             uiAudio.useAudioManagerFirst = true;
         }
+    }
+
+    public void SetRuntimePresentation(string descriptionSuffix, string hint, Sprite zoneIconSprite)
+    {
+        _runtimeDescriptionSuffix = descriptionSuffix;
+        _runtimeHint = hint;
+        _runtimeZoneIcon = zoneIconSprite;
+    }
+
+    void EnsureRuntimeBindings()
+    {
+        if (thumbnailImage == null)
+            thumbnailImage = transform.Find("Content/Thumbnail")?.GetComponent<Image>();
+
+        if (lockSealImage == null)
+            lockSealImage = transform.Find("LockOverlay/LockSeal")?.GetComponent<Image>();
+
+        if (zoneIconImage != null || thumbnailImage == null)
+            return;
+
+        var existing = thumbnailImage.transform.Find("ZoneIconBadge");
+        if (existing != null)
+        {
+            zoneIconImage = existing.GetComponent<Image>();
+            return;
+        }
+
+        var iconGo = new GameObject("ZoneIconBadge", typeof(RectTransform));
+        iconGo.transform.SetParent(thumbnailImage.transform, false);
+        var iconRt = iconGo.GetComponent<RectTransform>();
+        iconRt.anchorMin = new Vector2(0f, 1f);
+        iconRt.anchorMax = new Vector2(0f, 1f);
+        iconRt.pivot = new Vector2(0f, 1f);
+        iconRt.sizeDelta = new Vector2(54f, 54f);
+        iconRt.anchoredPosition = new Vector2(10f, -10f);
+
+        zoneIconImage = iconGo.AddComponent<Image>();
+        zoneIconImage.raycastTarget = false;
+        zoneIconImage.preserveAspect = true;
+        zoneIconImage.enabled = false;
     }
 }
