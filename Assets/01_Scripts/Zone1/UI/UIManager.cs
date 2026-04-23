@@ -429,9 +429,9 @@ namespace LasGranjasDelHastur.Zone1.UI
             portraitLE.preferredHeight = 40f;
             var portraitPath = buyer.buyerName switch
             {
-                "Los Profundos" => "Assets/Sprites/Zone1/Portraits/zone1_buyer_deepone_portrait.png",
-                "Yekuvian" => "Assets/Sprites/Zone1/Portraits/zone1_buyer_yekuvian_portrait.png",
-                "Ángeles Caídos" => "Assets/Sprites/Zone1/Portraits/zone1_buyer_fallenangel_portrait.png",
+                "Los Profundos" => "Assets/02_Sprites/Zone1/Portraits/zone1_buyer_deepone_portrait.png",
+                "Yekuvian" => "Assets/02_Sprites/Zone1/Portraits/zone1_buyer_yekuvian_portrait.png",
+                "Ángeles Caídos" => "Assets/02_Sprites/Zone1/Portraits/zone1_buyer_fallenangel_portrait.png",
                 _ => null
             };
             if (!string.IsNullOrEmpty(portraitPath))
@@ -613,7 +613,7 @@ namespace LasGranjasDelHastur.Zone1.UI
 
             var hudBg = hud.AddComponent<Image>();
             hudBg.color = new Color(0.05f, 0.05f, 0.06f, 0.92f);
-            var hudSprite = Zone1ArtProvider.LoadSprite("Assets/Sprites/Zone1/UI/zone1_ui_hud_bar.png");
+            var hudSprite = Zone1ArtProvider.LoadSprite("Assets/02_Sprites/Zone1/UI/zone1_ui_hud_bar.png");
             if (hudSprite != null)
             {
                 hudBg.sprite = hudSprite;
@@ -629,20 +629,20 @@ namespace LasGranjasDelHastur.Zone1.UI
             hudLayout.childForceExpandWidth = false;
 
             var colLeft = CreateVerticalGroup(hud.transform, 390);
-            _txtMoney = CreateHUDStatRow(colLeft, "Assets/Sprites/Zone1/Icons/zone1_icon_darkcoin.png", "Monedas oscuras: 0", 24);
-            _txtWeakSouls = CreateHUDStatRow(colLeft, "Assets/Sprites/Zone1/Icons/zone1_icon_soulweak.png", "Almas débiles: 0", 20);
-            _txtEnergy = CreateHUDStatRow(colLeft, "Assets/Sprites/Zone1/Icons/zone1_icon_pureenergy.png", "Energía pura: 0", 20);
+            _txtMoney = CreateHUDStatRow(colLeft, "Assets/02_Sprites/Zone1/Icons/zone1_icon_darkcoin.png", "Monedas oscuras: 0", 24);
+            _txtWeakSouls = CreateHUDStatRow(colLeft, "Assets/02_Sprites/Zone1/Icons/zone1_icon_soulweak.png", "Almas débiles: 0", 20);
+            _txtEnergy = CreateHUDStatRow(colLeft, "Assets/02_Sprites/Zone1/Icons/zone1_icon_pureenergy.png", "Energía pura: 0", 20);
 
             var colMid = CreateVerticalGroup(hud.transform, 260);
-            _txtLevel = CreateHUDStatRow(colMid, "Assets/Sprites/Zone1/Icons/zone1_icon_level.png", "Nivel 1", 22);
+            _txtLevel = CreateHUDStatRow(colMid, "Assets/02_Sprites/Zone1/Icons/zone1_icon_level.png", "Nivel 1", 22);
             CreateTMP(colMid, "Experiencia", 16, TextAlignmentOptions.Left);
             _xpFill = CreateProgressBar(colMid, 230, 18);
 
             var colTax = CreateVerticalGroup(hud.transform, 300);
             _txtZoneLabel = CreateTMP(colTax, "Zona 1 - Calabozos", 22, TextAlignmentOptions.Left);
-            _txtTaxTimer = CreateHUDStatRow(colTax, "Assets/Sprites/Zone1/Icons/zone1_icon_tax.png", "Impuesto: 00:00", 20);
-            _txtStrikes = CreateHUDStatRow(colTax, "Assets/Sprites/Zone1/Icons/zone1_icon_alert.png", "Multas: 0/3", 20);
-            _txtAssistants = CreateHUDStatRow(colTax, "Assets/Sprites/Zone1/Icons/zone1_icon_level.png", "Asistentes: 0/0", 18);
+            _txtTaxTimer = CreateHUDStatRow(colTax, "Assets/02_Sprites/Zone1/Icons/zone1_icon_tax.png", "Impuesto: 00:00", 20);
+            _txtStrikes = CreateHUDStatRow(colTax, "Assets/02_Sprites/Zone1/Icons/zone1_icon_alert.png", "Multas: 0/3", 20);
+            _txtAssistants = CreateHUDStatRow(colTax, "Assets/02_Sprites/Zone1/Icons/zone1_icon_level.png", "Asistentes: 0/0", 18);
 
             var colBtns = CreateVerticalGroup(hud.transform, 240);
             _btnSales = CreateButton(colBtns, "Ventas", 210f, 42f);
@@ -808,7 +808,7 @@ namespace LasGranjasDelHastur.Zone1.UI
             var portraitLe = portraitGo.AddComponent<LayoutElement>();
             portraitLe.preferredWidth = 84f;
             portraitLe.preferredHeight = 84f;
-            var taxPortraitSprite = Zone1ArtProvider.LoadSprite("Assets/Sprites/Zone1/Portraits/zone1_tax_cthulhu_portrait.png");
+            var taxPortraitSprite = Zone1ArtProvider.LoadSprite("Assets/02_Sprites/Zone1/Portraits/zone1_tax_cthulhu_portrait.png");
             if (taxPortraitSprite != null)
                 _taxPortrait.sprite = taxPortraitSprite;
             _taxBody = CreateTMP(root, "-", 16, TextAlignmentOptions.Left);
@@ -855,10 +855,10 @@ namespace LasGranjasDelHastur.Zone1.UI
 
             var spritePath = name switch
             {
-                "CellInfoPanel" => "Assets/Sprites/Zone1/UI/zone1_ui_panel_cell.png",
-                "SalesPanel" => "Assets/Sprites/Zone1/UI/zone1_ui_panel_sales.png",
-                "TaxAlertPanel" => "Assets/Sprites/Zone1/UI/zone1_ui_panel_tax.png",
-                "HoverInfoPanel" => "Assets/Sprites/Zone1/UI/zone1_ui_panel_cell.png",
+                "CellInfoPanel" => "Assets/02_Sprites/Zone1/UI/zone1_ui_panel_cell.png",
+                "SalesPanel" => "Assets/02_Sprites/Zone1/UI/zone1_ui_panel_sales.png",
+                "TaxAlertPanel" => "Assets/02_Sprites/Zone1/UI/zone1_ui_panel_tax.png",
+                "HoverInfoPanel" => "Assets/02_Sprites/Zone1/UI/zone1_ui_panel_cell.png",
                 _ => null
             };
             if (!string.IsNullOrEmpty(spritePath))
@@ -994,7 +994,7 @@ namespace LasGranjasDelHastur.Zone1.UI
 
             var img = go.AddComponent<Image>();
             img.color = new Color(0.12f, 0.12f, 0.14f, 1f);
-            var btnSprite = Zone1ArtProvider.LoadSprite("Assets/Sprites/Zone1/UI/zone1_ui_button_base.png");
+            var btnSprite = Zone1ArtProvider.LoadSprite("Assets/02_Sprites/Zone1/UI/zone1_ui_button_base.png");
             if (btnSprite != null)
             {
                 img.sprite = btnSprite;

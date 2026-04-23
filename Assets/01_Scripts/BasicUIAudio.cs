@@ -4,7 +4,7 @@ using UnityEngine.EventSystems;
 /// <summary>
 /// Hover y click para botones UI. Si <see cref="useAudioManagerFirst"/> y hay <see cref="AudioManager"/>,
 /// usa sus clips con el volumen SFX de opciones; si no, <see cref="sfxSource"/>.
-/// Asigna los clips en el Inspector (p. ej. desde Assets/AUDIO/SFX/hastur_sfx_pack).
+/// Asigna los clips en el Inspector (p. ej. desde Assets/03_AUDIO/SFX/hastur_sfx_pack).
 /// </summary>
 public class BasicUIAudio : MonoBehaviour, IPointerEnterHandler, IPointerClickHandler
 {

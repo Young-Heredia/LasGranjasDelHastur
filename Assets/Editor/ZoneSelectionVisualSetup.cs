@@ -15,8 +15,8 @@ namespace LasGranjas.Editor
     /// </summary>
     public static class ZoneSelectionVisualSetup
     {
-        const string ZoneScenePath = "Assets/Scenes/ZoneSelection.unity";
-        const string Root = "Assets/Sprites/UI/ZoneSelection";
+        const string ZoneScenePath = "Assets/00_Scenes/ZoneSelection.unity";
+        const string Root = "Assets/02_Sprites/UI/ZoneSelection";
 
         const string Bg = Root + "/Backgrounds/zone_selection_bg_16x9.png";
         const string PanelFrame = Root + "/Panels/panel_frame_ritual.png";
@@ -33,7 +33,7 @@ namespace LasGranjas.Editor
         const string IconStrip = Root + "/Icons/ui_icons_strip_6.png";
         const string DecorCorner = Root + "/Decorations/decor_corner_ornament.png";
         const string DecorSep = Root + "/Decorations/decor_separator_line.png";
-        const string WhiteSpritePath = "Assets/Sprites/Placeholders/white_1x1.png";
+        const string WhiteSpritePath = "Assets/02_Sprites/Placeholders/white_1x1.png";
 
         [MenuItem("Tools/Las Granjas del Hastur/ZoneSelection: importar texturas UI (pixel)")]
         public static void ConfigureImportSettings()

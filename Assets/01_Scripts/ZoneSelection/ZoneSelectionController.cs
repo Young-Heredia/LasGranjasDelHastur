@@ -646,7 +646,7 @@ public class ZoneSelectionController : MonoBehaviour
         }
 
 #if UNITY_EDITOR
-        var scenePath = $"Assets/Scenes/{sceneName}.unity";
+        var scenePath = $"Assets/00_Scenes/{sceneName}.unity";
         if (AssetDatabase.LoadAssetAtPath<SceneAsset>(scenePath) != null)
         {
             EditorSceneManager.LoadSceneAsyncInPlayMode(scenePath, new LoadSceneParameters(LoadSceneMode.Single));

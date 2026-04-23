@@ -176,14 +176,14 @@ namespace LasGranjasDelHastur.Zone1
             if (zone1 == null)
                 return;
 
-            const string assetPath = "Assets/ScriptableObjects/Zone1/Zone1Config.asset";
+            const string assetPath = "Assets/04_Prefabs/Zone1/Zone1Config.asset";
             var config = AssetDatabase.LoadAssetAtPath<Zone1Config>(assetPath);
             if (config == null)
             {
-                if (!AssetDatabase.IsValidFolder("Assets/ScriptableObjects"))
-                    AssetDatabase.CreateFolder("Assets", "ScriptableObjects");
-                if (!AssetDatabase.IsValidFolder("Assets/ScriptableObjects/Zone1"))
-                    AssetDatabase.CreateFolder("Assets/ScriptableObjects", "Zone1");
+                if (!AssetDatabase.IsValidFolder("Assets/04_Prefabs"))
+                    AssetDatabase.CreateFolder("Assets", "04_Prefabs");
+                if (!AssetDatabase.IsValidFolder("Assets/04_Prefabs/Zone1"))
+                    AssetDatabase.CreateFolder("Assets/04_Prefabs", "Zone1");
 
                 config = ScriptableObject.CreateInstance<Zone1Config>();
                 AssetDatabase.CreateAsset(config, assetPath);
