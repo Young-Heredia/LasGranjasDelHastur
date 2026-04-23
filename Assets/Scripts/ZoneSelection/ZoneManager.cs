@@ -18,6 +18,9 @@ public class ZoneManager : MonoBehaviour
     [SerializeField, Min(1)] private int levelRequiredForZone2 = 1;
     [SerializeField, Min(1)] private int levelRequiredForZone3 = 2;
 
+    public int LevelRequiredForZone2 => levelRequiredForZone2;
+    public int LevelRequiredForZone3 => levelRequiredForZone3;
+
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
     static void EnsureInstance()
     {
@@ -51,6 +54,11 @@ public class ZoneManager : MonoBehaviour
         if (miniGameId == Zone3UnlockMiniGameId)
             return PlayerPrefs.GetInt(Zone3UnlockMiniGameKey, 0) == 1;
         return false;
+    }
+
+    public int GetCurrentPlayerLevel()
+    {
+        return GetCurrentZone1Level();
     }
 
     public bool CanAttemptZone2Unlock(out string reason)

@@ -83,35 +83,35 @@ namespace LasGranjasDelHastur.Zone1
 
         static void EnsureWorldPlaceholder()
         {
-            if (GameObject.Find("WorldRoot") != null)
-                return;
+            var worldRoot = GameObject.Find("WorldRoot");
+            if (worldRoot == null)
+                worldRoot = new GameObject("WorldRoot");
 
-            var gridRoot = new GameObject("Grid / TilemapRoot");
-            var worldRoot = new GameObject("WorldRoot");
+            var floorRoot = GetOrCreateChild(worldRoot.transform, "Layer_Floor");
+            var wallsBackRoot = GetOrCreateChild(worldRoot.transform, "Layer_WallsBack");
+            var cellAreaRoot = GetOrCreateChild(worldRoot.transform, "Layer_CellArea");
+            var cellSlots = GetOrCreateChild(worldRoot.transform, "CellSlotsRoot");
+            var decorRoot = GetOrCreateChild(worldRoot.transform, "Layer_Decor");
+            var fogRoot = GetOrCreateChild(worldRoot.transform, "Layer_Fog");
+            var wallsFrontRoot = GetOrCreateChild(worldRoot.transform, "Layer_WallsFront");
+            var atmosphereRoot = GetOrCreateChild(worldRoot.transform, "Layer_Atmosphere");
 
-            var cellSlots = new GameObject("CellSlotsRoot");
-            cellSlots.transform.SetParent(worldRoot.transform, false);
-            cellSlots.AddComponent<CellManager>();
+            if (cellSlots.GetComponent<CellManager>() == null)
+                cellSlots.AddComponent<CellManager>();
 
-            var props = new GameObject("DungeonPropsPlaceholderRoot");
-            props.transform.SetParent(worldRoot.transform, false);
-
-            CreateFloorTiled(props.transform);
-            CreateFog(props.transform);
-            CreateTorch(props.transform, new Vector3(-7.5f, 3.5f, 0));
-            CreateTorch(props.transform, new Vector3(7.5f, 3.5f, 0));
-            CreateRitualMark(props.transform, new Vector3(0f, 0f, 0f));
-            CreateProp(props.transform, "zone1_prop_cage_broken.png", new Vector3(-6.4f, -3.2f, 0f), new Vector3(0.9f, 0.9f, 1f), 12);
-            CreateProp(props.transform, "zone1_prop_chain_hanging.png", new Vector3(-3.8f, 3.4f, 0f), new Vector3(0.8f, 0.8f, 1f), 22);
-            CreateProp(props.transform, "zone1_prop_dark_banner.png", new Vector3(3.8f, 3.2f, 0f), new Vector3(0.9f, 0.9f, 1f), 12);
-            CreateProp(props.transform, "zone1_prop_dark_puddle.png", new Vector3(5.6f, -2.8f, 0f), new Vector3(0.9f, 0.9f, 1f), 4);
-            CreateProp(props.transform, "zone1_prop_ritual_candles.png", new Vector3(0.5f, -3.4f, 0f), new Vector3(0.65f, 0.65f, 1f), 14);
-            CreateProp(props.transform, "zone1_prop_sealed_door.png", new Vector3(0f, 4.4f, 0f), new Vector3(1.3f, 1.1f, 1f), 3);
-            CreateAmbientOverlays(props.transform);
+            CreateFloorTiled(floorRoot.transform);
+            CreateBrokenWalls(wallsBackRoot.transform, wallsFrontRoot.transform);
+            CreateCellFieldLayout(cellAreaRoot.transform);
+            CreateDungeonDecor(decorRoot.transform);
+            CreateFog(fogRoot.transform);
+            CreateAmbientOverlays(atmosphereRoot.transform);
         }
 
         static void CreateFloorTiled(Transform parent)
         {
+            if (parent.Find("DungeonFloorRoot") != null)
+                return;
+
             var root = new GameObject("DungeonFloorRoot");
             root.transform.SetParent(parent, false);
             root.transform.position = new Vector3(0, 0, 5f);
@@ -126,9 +126,9 @@ namespace LasGranjasDelHastur.Zone1
                 "Assets/Sprites/Zone1/Tiles/zone1_floor_tile_06.png",
             };
 
-            for (var y = -7; y <= 7; y++)
+            for (var y = -10; y <= 10; y++)
             {
-                for (var x = -11; x <= 11; x++)
+                for (var x = -13; x <= 13; x++)
                 {
                     var go = new GameObject($"Floor_{x}_{y}");
                     go.transform.SetParent(root.transform, false);
@@ -166,23 +166,36 @@ namespace LasGranjasDelHastur.Zone1
 
         static void CreateFog(Transform parent)
         {
-            var go = new GameObject("LowFog");
+            CreateFogBand(parent, "LowFog_Front", new Vector3(0f, -5.8f, 1f), new Vector3(13f, 3.4f, 1f), new Color(0.72f, 0.76f, 0.74f, 0.2f), 70, 6f);
+            CreateFogBand(parent, "LowFog_Center", new Vector3(0f, -1.8f, 1f), new Vector3(12f, 2.8f, 1f), new Color(0.66f, 0.73f, 0.73f, 0.14f), 68, 4.5f);
+            CreateFogBand(parent, "LowFog_Back", new Vector3(0f, 2.7f, 1f), new Vector3(11f, 2.2f, 1f), new Color(0.55f, 0.64f, 0.68f, 0.1f), 16, 3.8f);
+        }
+
+        static void CreateFogBand(Transform parent, string name, Vector3 pos, Vector3 scale, Color color, int sortingOrder, float fps)
+        {
+            if (parent.Find(name) != null)
+                return;
+
+            var go = new GameObject(name);
             go.transform.SetParent(parent, false);
-            go.transform.position = new Vector3(0, -3.5f, 1f);
-            go.transform.localScale = new Vector3(12f, 4f, 1f);
+            go.transform.position = pos;
+            go.transform.localScale = scale;
 
             var sr = go.AddComponent<SpriteRenderer>();
             sr.sprite = Zone1ArtProvider.LoadSprite("Assets/Sprites/Zone1/Overlays/zone1_overlay_humidity.png") ?? RuntimeSpriteFactory.OpaqueWhiteSprite;
-            sr.color = new Color(0.7f, 0.75f, 0.75f, 0.18f);
-            sr.sortingOrder = 50;
+            sr.color = color;
+            sr.sortingOrder = sortingOrder;
 
             var anim = go.AddComponent<SpriteSheetAnimator>();
-            anim.Configure("Assets/Sprites/Zone1/Spritesheets/zone1_lowfog_sheet.png", 96, 48, 6f);
+            anim.Configure("Assets/Sprites/Zone1/Spritesheets/zone1_lowfog_sheet.png", 96, 48, fps);
         }
 
-        static void CreateTorch(Transform parent, Vector3 pos)
+        static void CreateTorch(Transform parent, string name, Vector3 pos, int baseSortingOrder)
         {
-            var go = new GameObject("TorchPlaceholder");
+            if (parent.Find(name) != null)
+                return;
+
+            var go = new GameObject(name);
             go.transform.SetParent(parent, false);
             go.transform.position = pos;
             go.transform.localScale = new Vector3(0.4f, 1.2f, 1f);
@@ -190,32 +203,19 @@ namespace LasGranjasDelHastur.Zone1
             var sr = go.AddComponent<SpriteRenderer>();
             sr.sprite = Zone1ArtProvider.LoadSprite("Assets/Sprites/Zone1/Props/zone1_prop_column_damaged.png") ?? RuntimeSpriteFactory.OpaqueWhiteSprite;
             sr.color = new Color(0.5f, 0.35f, 0.15f, 1f);
-            sr.sortingOrder = 20;
+            sr.sortingOrder = baseSortingOrder;
 
             var flame = new GameObject("Flame");
             flame.transform.SetParent(go.transform, false);
-            flame.transform.localPosition = new Vector3(0, 0.8f, 0);
+            flame.transform.localPosition = new Vector3(0f, 0.8f, 0f);
             flame.transform.localScale = new Vector3(0.8f, 0.8f, 1f);
             var fsr = flame.AddComponent<SpriteRenderer>();
             fsr.sprite = Zone1ArtProvider.LoadSprite("Assets/Sprites/Zone1/Spritesheets/zone1_torch_sheet.png") ?? RuntimeSpriteFactory.OpaqueWhiteSprite;
             fsr.color = new Color(1f, 0.85f, 0.25f, 1f);
-            fsr.sortingOrder = 21;
+            fsr.sortingOrder = baseSortingOrder + 1;
 
             var anim = flame.AddComponent<SpriteSheetAnimator>();
             anim.Configure("Assets/Sprites/Zone1/Spritesheets/zone1_torch_sheet.png", 32, 32, 10f);
-        }
-
-        static void CreateRitualMark(Transform parent, Vector3 pos)
-        {
-            var go = new GameObject("RitualMarkPlaceholder");
-            go.transform.SetParent(parent, false);
-            go.transform.position = pos + new Vector3(0, -1.2f, 2f);
-            go.transform.localScale = new Vector3(4.2f, 1.4f, 1f);
-
-            var sr = go.AddComponent<SpriteRenderer>();
-            sr.sprite = Zone1ArtProvider.LoadSprite("Assets/Sprites/Zone1/Tiles/zone1_floor_ritual_tile.png") ?? RuntimeSpriteFactory.OpaqueWhiteSprite;
-            sr.color = new Color(0.55f, 0.10f, 0.15f, 0.18f);
-            sr.sortingOrder = 5;
         }
 
         static void CreateProp(Transform parent, string fileName, Vector3 pos, Vector3 scale, int sortingOrder)
@@ -240,8 +240,112 @@ namespace LasGranjasDelHastur.Zone1
             sr.sortingOrder = sortingOrder + Mathf.RoundToInt(-pos.y * 3f);
         }
 
+        static void CreateBrokenWalls(Transform wallsBackRoot, Transform wallsFrontRoot)
+        {
+            if (wallsBackRoot.Find("DungeonWallsBack") == null)
+            {
+                var back = new GameObject("DungeonWallsBack");
+                back.transform.SetParent(wallsBackRoot, false);
+
+                CreateWallSegment(back.transform, "TopWall_Left", new Vector3(-7.5f, 5.6f, 0f), new Vector3(10.5f, 2.4f, 1f), -10, new Color(0.19f, 0.18f, 0.22f, 1f));
+                CreateWallSegment(back.transform, "TopWall_Right", new Vector3(7.5f, 5.6f, 0f), new Vector3(10.5f, 2.4f, 1f), -10, new Color(0.19f, 0.18f, 0.22f, 1f));
+                CreateWallSegment(back.transform, "LeftWall", new Vector3(-12.2f, -0.2f, 0f), new Vector3(2.3f, 11.8f, 1f), -9, new Color(0.17f, 0.16f, 0.20f, 1f));
+                CreateWallSegment(back.transform, "RightWall", new Vector3(12.2f, -0.2f, 0f), new Vector3(2.3f, 11.8f, 1f), -9, new Color(0.17f, 0.16f, 0.20f, 1f));
+                CreateWallSegment(back.transform, "BrokenDoorLintel", new Vector3(0f, 5.2f, 0f), new Vector3(3.8f, 1.2f, 1f), -8, new Color(0.26f, 0.22f, 0.18f, 1f));
+
+                CreateProp(back.transform, "zone1_prop_sealed_door.png", new Vector3(0f, 4.55f, 0f), new Vector3(1.35f, 1.15f, 1f), -3);
+                CreateProp(back.transform, "zone1_prop_chain_hanging.png", new Vector3(-4.9f, 4.8f, 0f), new Vector3(0.8f, 0.8f, 1f), -1);
+                CreateProp(back.transform, "zone1_prop_chain_hanging.png", new Vector3(4.7f, 4.8f, 0f), new Vector3(0.85f, 0.85f, 1f), -1);
+            }
+
+            if (wallsFrontRoot.Find("DungeonWallsFront") == null)
+            {
+                var front = new GameObject("DungeonWallsFront");
+                front.transform.SetParent(wallsFrontRoot, false);
+
+                CreateWallSegment(front.transform, "BottomWall_Left", new Vector3(-8.3f, -6.8f, 0f), new Vector3(8.6f, 1.7f, 1f), 78, new Color(0.16f, 0.15f, 0.18f, 1f));
+                CreateWallSegment(front.transform, "BottomWall_Right", new Vector3(8.3f, -6.8f, 0f), new Vector3(8.6f, 1.7f, 1f), 78, new Color(0.16f, 0.15f, 0.18f, 1f));
+                CreateWallSegment(front.transform, "BrokenGapShadow", new Vector3(0f, -6.6f, 0f), new Vector3(3.2f, 1.1f, 1f), 77, new Color(0.04f, 0.03f, 0.05f, 1f));
+
+                CreateProp(front.transform, "zone1_prop_cage_broken.png", new Vector3(-9.1f, -5.9f, 0f), new Vector3(1f, 1f, 1f), 82);
+                CreateProp(front.transform, "zone1_prop_cage_broken.png", new Vector3(9.25f, -5.75f, 0f), new Vector3(-1f, 1f, 1f), 82);
+                CreateProp(front.transform, "zone1_prop_bones_small.png", new Vector3(-2.4f, -5.95f, 0f), new Vector3(0.95f, 0.95f, 1f), 79);
+                CreateProp(front.transform, "zone1_prop_bones_small.png", new Vector3(3.2f, -5.8f, 0f), new Vector3(0.85f, 0.85f, 1f), 79);
+            }
+        }
+
+        static void CreateCellFieldLayout(Transform parent)
+        {
+            if (parent.Find("CellFieldLayout") != null)
+                return;
+
+            var root = new GameObject("CellFieldLayout");
+            root.transform.SetParent(parent, false);
+
+            CreateWallSegment(root.transform, "FieldShadow", new Vector3(0f, -0.45f, 0f), new Vector3(16.4f, 10.8f, 1f), 8, new Color(0.02f, 0.02f, 0.04f, 0.35f));
+            CreateWallSegment(root.transform, "FieldPlate", new Vector3(0f, -0.1f, 0f), new Vector3(15.2f, 9.5f, 1f), 9, new Color(0.12f, 0.10f, 0.12f, 0.58f));
+
+            for (var row = 0; row < 5; row++)
+            {
+                for (var col = 0; col < 6; col++)
+                {
+                    var guide = new GameObject($"SlotGuide_{row}_{col}");
+                    guide.transform.SetParent(root.transform, false);
+                    guide.transform.localPosition = new Vector3(-5.35f + col * 2.14f, 3.65f - row * 1.92f, 0f);
+                    guide.transform.localScale = new Vector3(1.5f, 1.5f, 1f);
+
+                    var sr = guide.AddComponent<SpriteRenderer>();
+                    sr.sprite = Zone1ArtProvider.LoadSprite("Assets/Sprites/Zone1/Tiles/zone1_floor_ritual_tile.png") ?? RuntimeSpriteFactory.OpaqueWhiteSprite;
+                    sr.color = new Color(0.65f, 0.2f, 0.18f, 0.08f);
+                    sr.sortingOrder = 10;
+                }
+            }
+        }
+
+        static void CreateDungeonDecor(Transform decorRoot)
+        {
+            if (decorRoot.Find("DungeonDecor") != null)
+                return;
+
+            var root = new GameObject("DungeonDecor");
+            root.transform.SetParent(decorRoot, false);
+
+            CreateTorch(root.transform, "Torch_NorthWest", new Vector3(-8.9f, 3.8f, 0f), 24);
+            CreateTorch(root.transform, "Torch_NorthEast", new Vector3(8.9f, 3.8f, 0f), 24);
+            CreateTorch(root.transform, "Torch_SouthWest", new Vector3(-8.4f, -4.8f, 0f), 76);
+            CreateTorch(root.transform, "Torch_SouthEast", new Vector3(8.4f, -4.8f, 0f), 76);
+
+            CreateProp(root.transform, "zone1_prop_cage_broken.png", new Vector3(-10.2f, 1.8f, 0f), new Vector3(0.9f, 0.9f, 1f), 18);
+            CreateProp(root.transform, "zone1_prop_cage_broken.png", new Vector3(10.1f, 1.5f, 0f), new Vector3(-0.92f, 0.92f, 1f), 18);
+            CreateProp(root.transform, "zone1_prop_dark_banner.png", new Vector3(-6.5f, 4.2f, 0f), new Vector3(0.95f, 0.95f, 1f), 19);
+            CreateProp(root.transform, "zone1_prop_dark_banner.png", new Vector3(6.5f, 4.2f, 0f), new Vector3(-0.95f, 0.95f, 1f), 19);
+            CreateProp(root.transform, "zone1_prop_dark_puddle.png", new Vector3(-6.3f, -3.7f, 0f), new Vector3(1f, 1f, 1f), 11);
+            CreateProp(root.transform, "zone1_prop_dark_puddle.png", new Vector3(6.0f, -3.2f, 0f), new Vector3(0.9f, 0.9f, 1f), 11);
+            CreateProp(root.transform, "zone1_prop_ritual_candles.png", new Vector3(0f, -5.2f, 0f), new Vector3(0.72f, 0.72f, 1f), 78);
+            CreateRitualMark(root.transform, new Vector3(0f, -4.2f, 0f));
+        }
+
+        static void CreateRitualMark(Transform parent, Vector3 pos)
+        {
+            if (parent.Find("RitualMarkPlaceholder") != null)
+                return;
+
+            var go = new GameObject("RitualMarkPlaceholder");
+            go.transform.SetParent(parent, false);
+            go.transform.position = pos;
+            go.transform.localScale = new Vector3(5f, 1.7f, 1f);
+
+            var sr = go.AddComponent<SpriteRenderer>();
+            sr.sprite = Zone1ArtProvider.LoadSprite("Assets/Sprites/Zone1/Tiles/zone1_floor_ritual_tile.png") ?? RuntimeSpriteFactory.OpaqueWhiteSprite;
+            sr.color = new Color(0.55f, 0.10f, 0.15f, 0.18f);
+            sr.sortingOrder = 12;
+        }
+
         static void CreateAmbientOverlays(Transform parent)
         {
+            if (parent.Find("AmbientRunes") != null || parent.Find("AmbientVignette") != null)
+                return;
+
             var runes = new GameObject("AmbientRunes");
             runes.transform.SetParent(parent, false);
             runes.transform.position = new Vector3(0f, 0f, 1.8f);
@@ -259,6 +363,33 @@ namespace LasGranjasDelHastur.Zone1
             vigSr.sprite = Zone1ArtProvider.LoadSprite("Assets/Sprites/Zone1/Overlays/zone1_overlay_vignette.png");
             vigSr.color = new Color(1f, 1f, 1f, 0.25f);
             vigSr.sortingOrder = 90;
+        }
+
+        static void CreateWallSegment(Transform parent, string name, Vector3 pos, Vector3 scale, int sortingOrder, Color color)
+        {
+            if (parent.Find(name) != null)
+                return;
+
+            var go = new GameObject(name);
+            go.transform.SetParent(parent, false);
+            go.transform.position = pos;
+            go.transform.localScale = scale;
+
+            var sr = go.AddComponent<SpriteRenderer>();
+            sr.sprite = RuntimeSpriteFactory.OpaqueWhiteSprite;
+            sr.color = color;
+            sr.sortingOrder = sortingOrder;
+        }
+
+        static GameObject GetOrCreateChild(Transform parent, string childName)
+        {
+            var child = parent.Find(childName);
+            if (child != null)
+                return child.gameObject;
+
+            var go = new GameObject(childName);
+            go.transform.SetParent(parent, false);
+            return go;
         }
 
         static void EnsureSystems()
