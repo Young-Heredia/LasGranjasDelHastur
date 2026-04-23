@@ -16,8 +16,8 @@ namespace LasGranjas.Editor
     [InitializeOnLoad]
     public static class LasGranjasNewRockerTMPFontFix
     {
-        const string TtfPath = "Assets/FONTS/NewRocker-Regular.ttf";
-        const string SdfPath = "Assets/FONTS/NewRocker-Regular SDF.asset";
+        const string TtfPath = "Assets/05_Fonts/NewRocker-Regular.ttf";
+        const string SdfPath = "Assets/05_Fonts/NewRocker-Regular SDF.asset";
 
         static LasGranjasNewRockerTMPFontFix()
         {

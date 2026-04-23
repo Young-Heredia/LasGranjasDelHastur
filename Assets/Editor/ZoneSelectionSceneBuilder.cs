@@ -16,9 +16,9 @@ namespace LasGranjas.Editor
     /// </summary>
     public static class ZoneSelectionSceneBuilder
     {
-        const string ZoneScenePath = "Assets/Scenes/ZoneSelection.unity";
-        const string MainMenuPath = "Assets/Scenes/MainMenu.unity";
-        const string PlaceholderSpritePath = "Assets/Sprites/Placeholders/white_1x1.png";
+        const string ZoneScenePath = "Assets/00_Scenes/ZoneSelection.unity";
+        const string MainMenuPath = "Assets/00_Scenes/MainMenu.unity";
+        const string PlaceholderSpritePath = "Assets/02_Sprites/Placeholders/white_1x1.png";
         const string TempEventPrefabPath = "Assets/Editor/Temp/_LasGranjas_EventSystemFromMainMenu.prefab";
 
         [MenuItem("Tools/Las Granjas del Hastur/Reparar layout textos ZoneSelection")]
@@ -104,7 +104,7 @@ namespace LasGranjas.Editor
             }
 
             EnsureFolders();
-            var path = "Assets/Prefabs/ZoneSelection/ZoneCard.prefab";
+            var path = "Assets/04_Prefabs/ZoneSelection/ZoneCard.prefab";
             PrefabUtility.SaveAsPrefabAsset(go, path);
             Debug.Log("[LasGranjas] Prefab guardado en " + path);
         }
@@ -166,8 +166,8 @@ namespace LasGranjas.Editor
         {
             foreach (var p in new[]
                      {
-                         "Assets/Scripts/UI", "Assets/Scripts/ZoneSelection", "Assets/Scripts/SceneManagement",
-                         "Assets/Prefabs/UI", "Assets/Prefabs/ZoneSelection", "Assets/Sprites/Placeholders", "Assets/AUDIO/SFX"
+                         "Assets/01_Scripts/UI", "Assets/01_Scripts/ZoneSelection", "Assets/01_Scripts/SceneManagement",
+                         "Assets/04_Prefabs/UI", "Assets/04_Prefabs/ZoneSelection", "Assets/02_Sprites/Placeholders", "Assets/03_AUDIO/SFX"
                      })
             {
                 if (!AssetDatabase.IsValidFolder(p))

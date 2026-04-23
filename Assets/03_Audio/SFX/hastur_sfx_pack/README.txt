@@ -3,8 +3,8 @@ Paquete básico de efectos de sonido para 'Las Granjas del Hastur'
 Coloca aquí los archivos .wav del zip (intro_open, intro_panel_change, etc.).
 
 Scripts del proyecto (no uses una copia duplicada en esta carpeta):
-- Assets/Scripts/AudioManager.cs — objeto vacío "AudioManager" en IntroComic y MainMenu; asigna música y todos los clips SFX.
-- Assets/Scripts/BasicUIAudio.cs — ya añadido a los botones; arrastra ui_hover, ui_click o ui_back según el botón.
+- Assets/01_Scripts/AudioManager.cs — objeto vacío "AudioManager" en IntroComic y MainMenu; asigna música y todos los clips SFX.
+- Assets/01_Scripts/BasicUIAudio.cs — ya añadido a los botones; arrastra ui_hover, ui_click o ui_back según el botón.
 
 En el Inspector del AudioManager:
 - introOpen, introPanelChange, introPanelChangeAlt, narrationTextBlip

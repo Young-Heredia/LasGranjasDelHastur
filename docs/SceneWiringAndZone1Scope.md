@@ -1,6 +1,19 @@
 # Referencia de escenas y alcance de Zone 1
 
-Este documento sustituye la comprobación manual en el Editor: los datos salen de los archivos de escena en `Assets/00_Scenes/` y de los scripts en `Assets/Scripts/`.
+Este documento sustituye la comprobación manual en el Editor: los datos salen de los archivos de escena en `Assets/00_Scenes/` y de los scripts en `Assets/01_Scripts/`.
+
+## Convención de carpetas numeradas en `Assets/`
+
+| Carpeta | Contenido |
+|---------|-----------|
+| `00_Scenes` | Escenas del build y prefabs embebidos de escena si aplica |
+| `01_Scripts` | Código C# del juego (subcarpetas `Edwin`, `Jose`, `Lucas` por autor; el resto sigue siendo código común por área) |
+| `02_Sprites` | Texturas y sprites 2D (Zone1, UI, placeholders) |
+| `03_AUDIO` | Música y SFX |
+| `04_Prefabs` | Prefabs reutilizables y datos serializados de juego (p. ej. `Zone1/Zone1Config.asset`) |
+| `05_Fonts` | Fuentes TMP/TTF |
+
+`Assets/Editor` y `Assets/Settings` siguen en la raíz por convención Unity.
 
 ## Build order
 
