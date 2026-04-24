@@ -294,6 +294,7 @@ public class ZoneSelectionController : MonoBehaviour
 
     public void GoToMainMenu()
     {
+        AudioManager.Instance?.PlayUIBack();
         SceneManager.LoadScene(mainMenuSceneName);
     }
 
@@ -309,16 +310,23 @@ public class ZoneSelectionController : MonoBehaviour
 
         if (zoneNumber == 2 && (zoneManager == null || !zoneManager.IsZoneUnlocked(2)))
         {
+            AudioManager.Instance?.PlayZoneLocked();
             TryUnlockAndEnterZone2();
             return;
         }
         if (zoneNumber == 3 && (zoneManager == null || !zoneManager.IsZoneUnlocked(3)))
         {
+            AudioManager.Instance?.PlayZoneLocked();
             TryUnlockAndEnterZone3();
             return;
         }
         if (!ZoneProgressState.IsZoneUnlocked(zoneNumber))
+        {
+            AudioManager.Instance?.PlayZoneLocked();
             return;
+        }
+
+        AudioManager.Instance?.PlayZoneCardSelect();
 
         switch (zoneNumber)
         {
@@ -450,6 +458,15 @@ public class ZoneSelectionController : MonoBehaviour
             Debug.Log("[ZoneSelection] Debug: bloqueos reiniciados.");
         });
 
+        var btnResetProgress = CreateDebugButton(_debugPanel.transform, "Reset Progreso Total", Vector2.zero, Vector2.zero, new Vector2(220f, 36f));
+        btnResetProgress.onClick.AddListener(() =>
+        {
+            SaveManager.Instance?.ResetAllProgress(resetIntroSeen: true);
+            zoneManager?.ResetAllUnlocksForDebug();
+            RefreshAllCards();
+            Debug.Log("[ZoneSelection] Debug: progreso total reiniciado.");
+        });
+
         _debugPanel.SetActive(!debugPanelStartsHidden);
     }
 
@@ -527,6 +544,7 @@ public class ZoneSelectionController : MonoBehaviour
         {
             if (!string.IsNullOrEmpty(reason))
                 Debug.Log($"[ZoneSelection] Zona 2 bloqueada: {reason}");
+            AudioManager.Instance?.PlayZoneUnlockFail();
             return;
         }
 
@@ -539,9 +557,13 @@ public class ZoneSelectionController : MonoBehaviour
         miniGameManager.StartMiniGame(ZoneManager.Zone2UnlockMiniGameId, success =>
         {
             if (!success)
+            {
+                AudioManager.Instance?.PlayZoneUnlockFail();
                 return;
+            }
 
             zoneManager.CompleteZone2Unlock();
+            AudioManager.Instance?.PlayZoneUnlockSuccess();
             RefreshAllCards();
             SaveManager.Instance?.RequestRestoreOnNextGameplayScene();
             BeginZoneTransition(zone2SceneName, zone1SceneName, "Ritual completo. Entrando en Zona 2");
@@ -557,6 +579,7 @@ public class ZoneSelectionController : MonoBehaviour
         {
             if (!string.IsNullOrEmpty(reason))
                 Debug.Log($"[ZoneSelection] Zona 3 bloqueada: {reason}");
+            AudioManager.Instance?.PlayZoneUnlockFail();
             return;
         }
 
@@ -569,9 +592,13 @@ public class ZoneSelectionController : MonoBehaviour
         miniGameManager.StartMiniGame(ZoneManager.Zone3UnlockMiniGameId, success =>
         {
             if (!success)
+            {
+                AudioManager.Instance?.PlayZoneUnlockFail();
                 return;
+            }
 
             zoneManager.CompleteZone3Unlock();
+            AudioManager.Instance?.PlayZoneUnlockSuccess();
             RefreshAllCards();
             SaveManager.Instance?.RequestRestoreOnNextGameplayScene();
             BeginZoneTransition(zone3SceneName, zone2SceneName, "Alineacion completa. Entrando en Zona 3");
@@ -592,6 +619,7 @@ public class ZoneSelectionController : MonoBehaviour
     IEnumerator TransitionAndLoadScene(string preferredSceneName, string fallbackSceneName, string transitionLabel)
     {
         _isTransitioning = true;
+        AudioManager.Instance?.PlayTransitionWhoosh();
         EnsureTransitionOverlay();
         if (_transitionOverlay != null)
             _transitionOverlay.gameObject.SetActive(true);

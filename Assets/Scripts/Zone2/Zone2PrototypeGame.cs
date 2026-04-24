@@ -29,6 +29,7 @@ namespace LasGranjasDelHastur.Zone2
 
         void Awake()
         {
+            AudioManager.EnsureInstance();
             _taxTimer = taxIntervalSeconds;
             if (sharedEconomyWithZone1)
                 PullCoinsFromZone1Save();
@@ -83,10 +84,18 @@ namespace LasGranjasDelHastur.Zone2
             _txtHint = CreateLabel(panel.transform, "Hint", "", 17, new Vector2(0f, 20f), new Vector2(840f, 42f));
 
             var btnProduceA = CreateButton(panel.transform, "Recolectar Suministros +7", new Vector2(-210f, -70f), new Vector2(300f, 50f));
-            btnProduceA.onClick.AddListener(() => _citySupplies += 7 + _difficultyTier);
+            btnProduceA.onClick.AddListener(() =>
+            {
+                _citySupplies += 7 + _difficultyTier;
+                AudioManager.Instance?.PlayZone2ProduceSupplies();
+            });
 
             var btnProduceB = CreateButton(panel.transform, "Trazar Planos +4", new Vector2(210f, -70f), new Vector2(300f, 50f));
-            btnProduceB.onClick.AddListener(() => _arcaneBlueprints += 4 + Mathf.Max(0, _difficultyTier - 1));
+            btnProduceB.onClick.AddListener(() =>
+            {
+                _arcaneBlueprints += 4 + Mathf.Max(0, _difficultyTier - 1);
+                AudioManager.Instance?.PlayZone2ProduceBlueprints();
+            });
 
             var btnSellA = CreateButton(panel.transform, "Vender Suministros", new Vector2(-210f, -138f), new Vector2(300f, 46f));
             btnSellA.onClick.AddListener(SellSupplies);
@@ -99,6 +108,7 @@ namespace LasGranjasDelHastur.Zone2
             {
                 PushCoinsToZone1Save();
                 SaveManager.Instance?.SaveNow();
+                AudioManager.Instance?.PlayZone2BackToZones();
                 SceneManager.LoadScene("ZoneSelection");
             });
         }
@@ -112,6 +122,7 @@ namespace LasGranjasDelHastur.Zone2
             _darkCoins += amount * (5 + _difficultyTier);
             _totalSold += amount;
             PushCoinsToZone1Save();
+            AudioManager.Instance?.PlayZone2Sell();
         }
 
         void SellBlueprints()
@@ -123,6 +134,7 @@ namespace LasGranjasDelHastur.Zone2
             _darkCoins += amount * (8 + _difficultyTier);
             _totalSold += amount;
             PushCoinsToZone1Save();
+            AudioManager.Instance?.PlayZone2Sell();
         }
 
         void ApplyTax()
@@ -132,6 +144,7 @@ namespace LasGranjasDelHastur.Zone2
             _darkCoins = Mathf.Max(0, _darkCoins - tax);
             _txtHint.text = $"Impuesto urbano aplicado: -{tax} monedas.";
             PushCoinsToZone1Save();
+            AudioManager.Instance?.PlayZone2TaxAlert();
         }
 
         void RefreshUi()

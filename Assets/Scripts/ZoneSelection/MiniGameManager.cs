@@ -37,6 +37,7 @@ public class MiniGameManager : MonoBehaviour
     float _zone3Direction = 1f;
     float _zone3Target01;
     int _zone3Successes;
+    bool _timerWarningPlayed;
 
     public bool IsRunning => _isRunning;
 
@@ -52,6 +53,11 @@ public class MiniGameManager : MonoBehaviour
             return;
 
         _remaining -= Time.unscaledDeltaTime;
+        if (!_timerWarningPlayed && _remaining <= 3f)
+        {
+            _timerWarningPlayed = true;
+            AudioManager.Instance?.PlayMiniGameTimerWarning();
+        }
         if (InputAdapter.KeyDown(KeyCode.Space))
             RegisterAction();
 
@@ -109,6 +115,7 @@ public class MiniGameManager : MonoBehaviour
         _cancelButton.onClick.AddListener(() => Finish(false));
         ConfigureUiForCurrentGame();
         UpdateStatusText();
+        AudioManager.Instance?.PlayMiniGameStart();
         return true;
     }
 
@@ -120,6 +127,7 @@ public class MiniGameManager : MonoBehaviour
         if (_activeMiniGameId == ZoneManager.Zone2UnlockMiniGameId)
         {
             _clicks++;
+            AudioManager.Instance?.PlayMiniGameHit();
         }
         else if (_activeMiniGameId == ZoneManager.Zone3UnlockMiniGameId)
         {
@@ -128,10 +136,12 @@ public class MiniGameManager : MonoBehaviour
             {
                 _zone3Successes++;
                 PickNewZone3Target();
+                AudioManager.Instance?.PlayMiniGameHit();
             }
             else
             {
                 _zone3Successes = Mathf.Max(0, _zone3Successes - 1);
+                AudioManager.Instance?.PlayMiniGameMiss();
             }
         }
 
@@ -162,6 +172,10 @@ public class MiniGameManager : MonoBehaviour
             return;
         _isRunning = false;
         SetOverlayVisible(false);
+        if (success)
+            AudioManager.Instance?.PlayMiniGameComplete();
+        else
+            AudioManager.Instance?.PlayMiniGameFail();
         var callback = _onFinish;
         _onFinish = null;
         callback?.Invoke(success);
@@ -173,6 +187,7 @@ public class MiniGameManager : MonoBehaviour
         _zone3Successes = 0;
         _zone3Cursor01 = 0f;
         _zone3Direction = 1f;
+        _timerWarningPlayed = false;
         PickNewZone3Target();
 
         _remaining = _activeMiniGameId == ZoneManager.Zone2UnlockMiniGameId

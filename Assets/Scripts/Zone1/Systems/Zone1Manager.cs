@@ -54,6 +54,7 @@ namespace LasGranjasDelHastur.Zone1
 
         void Awake()
         {
+            AudioManager.EnsureInstance();
             TryInitialize();
         }
 

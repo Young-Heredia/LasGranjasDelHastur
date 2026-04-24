@@ -151,14 +151,37 @@ namespace LasGranjasDelHastur.Core
 
         public void StartNewGame()
         {
+            ResetAllProgress(resetIntroSeen: true);
+        }
+
+        public void ResetAllProgress(bool resetIntroSeen = true)
+        {
             DeleteSaveFile();
+
+            // Save baseline so "Continue" and restore flow start from a clean state.
             CachedData = new SaveGameData
             {
                 saveVersion = CurrentSaveVersion,
                 savedAtUtc = DateTime.UtcNow.ToString("o"),
                 lastSceneName = "MainMenu",
+                zone1 = new Zone1SaveData(),
+                zone2 = new Zone2SaveData(),
+                zone3 = new Zone3SaveData(),
+                zone1Available = false,
+                zone2Available = false,
+                zone3Available = false,
             };
             WriteToDisk(CachedData);
+
+            // Global progression gates and one-shot flags.
+            global::ZoneProgressState.SetZoneUnlocked(2, false);
+            global::ZoneProgressState.SetZoneUnlocked(3, false);
+            PlayerPrefs.DeleteKey("LasGranjas_Zone2_Minigame_Completed");
+            PlayerPrefs.DeleteKey("LasGranjas_Zone3_Minigame_Completed");
+            PlayerPrefs.DeleteKey("LasGranjas_Zone3_PrestigePoints");
+            if (resetIntroSeen)
+                PlayerPrefs.DeleteKey("IntroSeen");
+            PlayerPrefs.Save();
         }
 
         void LoadFromDisk()

@@ -32,6 +32,7 @@ namespace LasGranjasDelHastur.Zone3
 
         void Awake()
         {
+            AudioManager.EnsureInstance();
             _prestigePoints = PlayerPrefs.GetInt(PrestigeKey, 0);
             TryRestoreFromSaveIfRequested();
             BuildUi();
@@ -87,10 +88,18 @@ namespace LasGranjasDelHastur.Zone3
             _txtHint = CreateLabel(panel.transform, "Hint", "", 17, new Vector2(0, 20), new Vector2(840, 42));
 
             var btnExtract = CreateButton(panel.transform, "Extraer Residuo +8", new Vector2(-210, -70), new Vector2(300, 50));
-            btnExtract.onClick.AddListener(() => _astralResidue += 8 + _difficultyTier);
+            btnExtract.onClick.AddListener(() =>
+            {
+                _astralResidue += 8 + _difficultyTier;
+                AudioManager.Instance?.PlayZone3ExtractResidue();
+            });
 
             var btnCondense = CreateButton(panel.transform, "Condensar Tinta +5", new Vector2(210, -70), new Vector2(300, 50));
-            btnCondense.onClick.AddListener(() => _voidInk += 5 + Mathf.Max(0, _difficultyTier - 1));
+            btnCondense.onClick.AddListener(() =>
+            {
+                _voidInk += 5 + Mathf.Max(0, _difficultyTier - 1);
+                AudioManager.Instance?.PlayZone3CondenseInk();
+            });
 
             var btnSellResidue = CreateButton(panel.transform, "Vender Residuo", new Vector2(-210, -138), new Vector2(300, 46));
             btnSellResidue.onClick.AddListener(() => SellResidue());
@@ -102,6 +111,7 @@ namespace LasGranjasDelHastur.Zone3
             btnBack.onClick.AddListener(() =>
             {
                 SaveManager.Instance?.SaveNow();
+                AudioManager.Instance?.PlayZone3BackToZones();
                 SceneManager.LoadScene("ZoneSelection");
             });
 
@@ -150,6 +160,7 @@ namespace LasGranjasDelHastur.Zone3
             _astralResidue = 0;
             _darkCoins += amount * (4 + _difficultyTier);
             _totalSold += amount;
+            AudioManager.Instance?.PlayZone3Sell();
         }
 
         void SellInk()
@@ -160,6 +171,7 @@ namespace LasGranjasDelHastur.Zone3
             _voidInk = 0;
             _darkCoins += amount * (7 + _difficultyTier * 2);
             _totalSold += amount;
+            AudioManager.Instance?.PlayZone3Sell();
         }
 
         void ApplyTax()
@@ -168,6 +180,7 @@ namespace LasGranjasDelHastur.Zone3
             var taxAmount = Mathf.CeilToInt(_darkCoins * rate);
             _darkCoins = Mathf.Max(0, _darkCoins - taxAmount);
             _txtHint.text = $"Impuesto celestial aplicado: -{taxAmount} monedas.";
+            AudioManager.Instance?.PlayZone3TaxAlert();
         }
 
         void ShowEndNarrative()
@@ -175,6 +188,7 @@ namespace LasGranjasDelHastur.Zone3
             _endNarrativeShown = true;
             if (_endPanel != null)
                 _endPanel.SetActive(true);
+            AudioManager.Instance?.PlayZone3EndNarrative();
         }
 
         void ApplyPrestige()
@@ -194,6 +208,7 @@ namespace LasGranjasDelHastur.Zone3
             if (_endPanel != null)
                 _endPanel.SetActive(false);
             _txtHint.text = $"Prestigio aplicado. Puntos totales: {_prestigePoints}.";
+            AudioManager.Instance?.PlayZone3Prestige();
         }
 
         void TryRestoreFromSaveIfRequested()

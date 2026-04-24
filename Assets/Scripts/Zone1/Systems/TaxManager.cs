@@ -11,6 +11,7 @@ namespace LasGranjasDelHastur.Zone1
         public event Action AlertClosed;
         public event Action TaxPaid;
         public event Action TaxFailed;
+        public event Action GameOverReached;
 
         [Header("Zone 1 Taxes")]
         [SerializeField] private string collectorName = "Cthulhu";
@@ -166,7 +167,7 @@ namespace LasGranjasDelHastur.Zone1
             // Game Over prepared (not hard-implemented yet): strikes >= 3.
             if (_strikes >= maxStrikesBeforeGameOver)
             {
-                // Prepared hook: UI can show "Game Over" later.
+                GameOverReached?.Invoke();
                 Changed?.Invoke();
             }
         }

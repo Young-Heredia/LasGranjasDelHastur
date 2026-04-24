@@ -151,6 +151,7 @@ namespace LasGranjasDelHastur.Zone1.UI
                 _tax.Changed += RefreshTaxPanel;
                 _tax.AlertOpened += OpenTaxPanel;
                 _tax.AlertClosed += CloseTaxPanel;
+                _tax.GameOverReached += OnTaxGameOverReached;
             }
 
             Zone1UIHoverBus.HoverChanged += OnHoverChanged;
@@ -191,6 +192,7 @@ namespace LasGranjasDelHastur.Zone1.UI
                 _tax.Changed -= RefreshTaxPanel;
                 _tax.AlertOpened -= OpenTaxPanel;
                 _tax.AlertClosed -= CloseTaxPanel;
+                _tax.GameOverReached -= OnTaxGameOverReached;
             }
 
             Zone1UIHoverBus.HoverChanged -= OnHoverChanged;
@@ -570,6 +572,14 @@ namespace LasGranjasDelHastur.Zone1.UI
             var line2 = cell.State == CellState.Producing ? $"Produciendo ({FormatTime(cell.ProducingRemainingSeconds)})" : cell.State.ToString();
             var line3 = cell.IsCorrupted ? "Corrupta" : "";
             _hoverText.text = string.IsNullOrEmpty(line3) ? $"{line1}\n{line2}" : $"{line1}\n{line2}\n{line3}";
+        }
+
+        void OnTaxGameOverReached()
+        {
+            AudioManager.Instance?.PlayZone1StrikeGain();
+
+            SaveManager.Instance?.ResetAllProgress(resetIntroSeen: true);
+            SceneManager.LoadScene(zoneSelectionSceneName);
         }
 
         void BuildUI()
