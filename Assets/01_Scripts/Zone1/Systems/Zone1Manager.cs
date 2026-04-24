@@ -54,6 +54,10 @@ namespace LasGranjasDelHastur.Zone1
 
         void Awake()
         {
+<<<<<<< HEAD:Assets/01_Scripts/Zone1/Systems/Zone1Manager.cs
+=======
+            AudioManager.EnsureInstance();
+>>>>>>> origin/devlucas:Assets/Scripts/Zone1/Systems/Zone1Manager.cs
             TryInitialize();
         }
 

@@ -11,6 +11,10 @@ namespace LasGranjasDelHastur.Zone1
         public event Action AlertClosed;
         public event Action TaxPaid;
         public event Action TaxFailed;
+<<<<<<< HEAD:Assets/01_Scripts/Zone1/Systems/TaxManager.cs
+=======
+        public event Action GameOverReached;
+>>>>>>> origin/devlucas:Assets/Scripts/Zone1/Systems/TaxManager.cs
 
         [Header("Zone 1 Taxes")]
         [SerializeField] private string collectorName = "Cthulhu";
@@ -166,7 +170,11 @@ namespace LasGranjasDelHastur.Zone1
             // Game Over prepared (not hard-implemented yet): strikes >= 3.
             if (_strikes >= maxStrikesBeforeGameOver)
             {
+<<<<<<< HEAD:Assets/01_Scripts/Zone1/Systems/TaxManager.cs
                 // Prepared hook: UI can show "Game Over" later.
+=======
+                GameOverReached?.Invoke();
+>>>>>>> origin/devlucas:Assets/Scripts/Zone1/Systems/TaxManager.cs
                 Changed?.Invoke();
             }
         }

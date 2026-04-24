@@ -176,6 +176,7 @@ namespace LasGranjasDelHastur.Zone1
             if (zone1 == null)
                 return;
 
+<<<<<<< HEAD:Assets/01_Scripts/Zone1/Zone1EditorScaffold.cs
             const string assetPath = "Assets/04_Prefabs/Zone1/Zone1Config.asset";
             var config = AssetDatabase.LoadAssetAtPath<Zone1Config>(assetPath);
             if (config == null)
@@ -184,6 +185,16 @@ namespace LasGranjasDelHastur.Zone1
                     AssetDatabase.CreateFolder("Assets", "04_Prefabs");
                 if (!AssetDatabase.IsValidFolder("Assets/04_Prefabs/Zone1"))
                     AssetDatabase.CreateFolder("Assets/04_Prefabs", "Zone1");
+=======
+            const string assetPath = "Assets/ScriptableObjects/Zone1/Zone1Config.asset";
+            var config = AssetDatabase.LoadAssetAtPath<Zone1Config>(assetPath);
+            if (config == null)
+            {
+                if (!AssetDatabase.IsValidFolder("Assets/ScriptableObjects"))
+                    AssetDatabase.CreateFolder("Assets", "ScriptableObjects");
+                if (!AssetDatabase.IsValidFolder("Assets/ScriptableObjects/Zone1"))
+                    AssetDatabase.CreateFolder("Assets/ScriptableObjects", "Zone1");
+>>>>>>> origin/devlucas:Assets/Scripts/Zone1/Zone1EditorScaffold.cs
 
                 config = ScriptableObject.CreateInstance<Zone1Config>();
                 AssetDatabase.CreateAsset(config, assetPath);

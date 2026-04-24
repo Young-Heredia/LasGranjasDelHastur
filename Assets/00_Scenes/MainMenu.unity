@@ -1876,14 +1876,88 @@ MonoBehaviour:
   sfxSource: {fileID: 501002003}
   introMusic: {fileID: 8300000, guid: 244e4f4161d080a498561dc4fefdb164, type: 3}
   mainMenuMusic: {fileID: 8300000, guid: fd8fa7f328aab404b9a802f6d58b9a61, type: 3}
+  zone1Music: {fileID: 8300000, guid: a8b2e266339dbea4a9b97b34cd9c118c, type: 3}
+  zone2Music: {fileID: 8300000, guid: 58cc98ca838e8d849a0ae3dc5265c865, type: 3}
+  zone3Music: {fileID: 8300000, guid: d29a3e85f21340d4c8a0b9917e7761ba, type: 3}
   introOpen: {fileID: 8300000, guid: 899dcf5fa88352a419922d42f625dd6e, type: 3}
   introPanelChange: {fileID: 8300000, guid: 89b7ab18c8e6dec4fb0f67fd3e943669, type: 3}
   introPanelChangeAlt: {fileID: 8300000, guid: 3ad9a7c9980ec334192c5e7f3ff3174c, type: 3}
   narrationTextBlip: {fileID: 8300000, guid: 3fca13b948fffc345b428b6d4ec46776, type: 3}
   uiHover: {fileID: 8300000, guid: 95f2d18ec9d790548aafa22cea9f730d, type: 3}
   uiClick: {fileID: 8300000, guid: 9a459a6301c148e4687502266cf29aed, type: 3}
-  uiClickDenied: {fileID: 8300000, guid: 3ad9a7c9980ec334192c5e7f3ff3174c, type: 3}
+  uiClickDenied: {fileID: 8300000, guid: 66c5141e84d2a204cb363d7caf828032, type: 3}
   uiBack: {fileID: 8300000, guid: 4491363354e8e8f468245265b562865b, type: 3}
+  uiOpenPanel: {fileID: 8300000, guid: 42d302cc9b569194fbfccaa3b41511e7, type: 3}
+  uiClosePanel: {fileID: 8300000, guid: 6ed07f0e674501d4d941c2931ccc6605, type: 3}
+  uiTabSwitch: {fileID: 8300000, guid: b5d8c23fd693e584f8a10d78858d18ab, type: 3}
+  uiConfirm: {fileID: 8300000, guid: e666cfe573392a741a13313cc1e473d9, type: 3}
+  uiCancel: {fileID: 8300000, guid: 45e43858bfdb7c84895cb01b17e1f5d7, type: 3}
+  uiNotificationPop: {fileID: 8300000, guid: 06a1ecc40e0763240be984725e637f2d, type: 3}
+  transitionWhooshShort: {fileID: 8300000, guid: 810fdbf7c9c07a14a8fc546e42b1476f, type: 3}
+  warningSoft: {fileID: 8300000, guid: e766955c58b6791449256ee0ffa75c62, type: 3}
+  errorDeniedSoft: {fileID: 8300000, guid: 66c5141e84d2a204cb363d7caf828032, type: 3}
+  gameSaveOk: {fileID: 8300000, guid: 34a1ad15e170c5c4f8b2ebdcf5a1f5b6, type: 3}
+  gameLoadOk: {fileID: 8300000, guid: b78026de830f46f46831fa30506a294f, type: 3}
+  zoneCardHover: {fileID: 8300000, guid: 6b45c48a228e5aa4d88c9d489c745165, type: 3}
+  zoneCardSelect: {fileID: 8300000, guid: 6a4eae22b83720643adb28cfb301d204, type: 3}
+  zoneLocked: {fileID: 8300000, guid: 8affe612df76625489e569b676086ff9, type: 3}
+  zoneUnlockSuccess: {fileID: 8300000, guid: befb51f77af7efa43b09af627ae07185, type: 3}
+  zoneUnlockFail: {fileID: 8300000, guid: 3bc31c11e6fe8934698d12e104e465d5, type: 3}
+  miniGameStart: {fileID: 8300000, guid: 316921b7d7d8ab54fbd7861b77406bc0, type: 3}
+  miniGameHit: {fileID: 8300000, guid: dc9ce0611f76d5545b1fa38fde0d22e7, type: 3}
+  miniGameMiss: {fileID: 8300000, guid: 6888f2cf2886d1148bcf6168f2e3ec72, type: 3}
+  miniGameTimerWarning: {fileID: 8300000, guid: dae95df38103e164ca8e7a03102150f1, type: 3}
+  miniGameComplete: {fileID: 8300000, guid: aaa27f44ab4e9cd4194349a22022bce1, type: 3}
+  miniGameFail: {fileID: 8300000, guid: 6216b95c8834c1142a920ebc17efde4a, type: 3}
+  zone1CellClick: {fileID: 8300000, guid: 9a459a6301c148e4687502266cf29aed, type: 3}
+  zone1Collect: {fileID: 8300000, guid: a3219b2f0cfe63347ba24f90927745a6, type: 3}
+  zone1Buy: {fileID: 8300000, guid: 4f0fcfcbf1dc635428f3885f1a1645ab, type: 3}
+  zone1Sell: {fileID: 8300000, guid: e666cfe573392a741a13313cc1e473d9, type: 3}
+  zone1ProduceStart: {fileID: 8300000, guid: 9f2f35a51b9d4ed44aea87665ea7da89, type: 3}
+  zone1UpgradeStart: {fileID: 8300000, guid: 4f0fcfcbf1dc635428f3885f1a1645ab, type: 3}
+  zone1UpgradeComplete: {fileID: 8300000, guid: a3219b2f0cfe63347ba24f90927745a6, type: 3}
+  zone1Cleanse: {fileID: 8300000, guid: d15e849587d7711469e8adca3189328d, type: 3}
+  zone1StorageFull: {fileID: 8300000, guid: e93d48cabbe48de44989fbedb0626551, type: 3}
+  zone1StrikeGain: {fileID: 8300000, guid: aaf36aee2d7820a4585c324f0c22220f, type: 3}
+  zone1TaxAlert: {fileID: 8300000, guid: e766955c58b6791449256ee0ffa75c62, type: 3}
+  zone1TaxPay: {fileID: 8300000, guid: e666cfe573392a741a13313cc1e473d9, type: 3}
+  zone1Corruption: {fileID: 8300000, guid: aaf36aee2d7820a4585c324f0c22220f, type: 3}
+  zone1AssistantAssign: {fileID: 8300000, guid: ae62b47bc988fce43adaafa1f219113a, type: 3}
+  zone1AssistantUnassign: {fileID: 8300000, guid: 447eab15b23d0c0439c3ad179b815638, type: 3}
+  zone1BackToZones: {fileID: 8300000, guid: 4491363354e8e8f468245265b562865b, type: 3}
+  zone2Action: {fileID: 8300000, guid: f244e63e33779c943ba351afbbe493e3, type: 3}
+  zone2ProduceSupplies: {fileID: 8300000, guid: f244e63e33779c943ba351afbbe493e3, type: 3}
+  zone2ProduceBlueprints: {fileID: 8300000, guid: ae5efe67dd4c2664b91869da16a3b014, type: 3}
+  zone2Sell: {fileID: 8300000, guid: e666cfe573392a741a13313cc1e473d9, type: 3}
+  zone2TierUp: {fileID: 8300000, guid: d4d041092f5198f47af9831997dca372, type: 3}
+  zone2StorageFull: {fileID: 8300000, guid: 41d94215250e53b42a961f8039fad644, type: 3}
+  zone2TaxAlert: {fileID: 8300000, guid: e766955c58b6791449256ee0ffa75c62, type: 3}
+  zone2TaxPay: {fileID: 8300000, guid: e666cfe573392a741a13313cc1e473d9, type: 3}
+  zone2BackToZones: {fileID: 8300000, guid: 4491363354e8e8f468245265b562865b, type: 3}
+  zone3Action: {fileID: 8300000, guid: 0512dd82611c0ae4b83f56b6108d8e74, type: 3}
+  zone3ExtractResidue: {fileID: 8300000, guid: 0512dd82611c0ae4b83f56b6108d8e74, type: 3}
+  zone3CondenseInk: {fileID: 8300000, guid: f66835e04d16d9b4f9196a3b5fa9edb8, type: 3}
+  zone3Sell: {fileID: 8300000, guid: e666cfe573392a741a13313cc1e473d9, type: 3}
+  zone3TierUp: {fileID: 8300000, guid: 0b5cb18b353f41142a14b5fa691161f3, type: 3}
+  zone3TaxAlert: {fileID: 8300000, guid: a88e21b73d4608e428c225b604e2af24, type: 3}
+  zone3TaxPay: {fileID: 8300000, guid: e666cfe573392a741a13313cc1e473d9, type: 3}
+  zone3Prestige: {fileID: 8300000, guid: d206369455ff02b43b255717b9419cf8, type: 3}
+  zone3EndNarrative: {fileID: 8300000, guid: d206369455ff02b43b255717b9419cf8, type: 3}
+  zone3ObjectiveReached: {fileID: 8300000, guid: d206369455ff02b43b255717b9419cf8, type: 3}
+  zone3EndlessModeEnter: {fileID: 8300000, guid: 0e677f69e25d62442b275baba2d46e07, type: 3}
+  zone3CosmicWarning: {fileID: 8300000, guid: a88e21b73d4608e428c225b604e2af24, type: 3}
+  zone3BackToZones: {fileID: 8300000, guid: 4491363354e8e8f468245265b562865b, type: 3}
+  eventYellowRiftSpawn: {fileID: 8300000, guid: 6a9fd67307f29ce49903e095b4db5d0b, type: 3}
+  eventAshRainLoop: {fileID: 8300000, guid: 32d5fef8e662e724eaae54951e8b5c9f, type: 3}
+  eventVoidVisitorAppear: {fileID: 8300000, guid: 5446837e3a42a0c4b93d0475702c06d4, type: 3}
+  eventHasturBlessing: {fileID: 8300000, guid: 01d2131ece4e7c340aab89c3b29e8cdb, type: 3}
+  eventTentaclePlague: {fileID: 8300000, guid: 87f098471d87c04448b69f8e2c279f8f, type: 3}
+  eventDimensionalStormLoop: {fileID: 8300000, guid: fd33f3234d5653640a5006a6fd184592, type: 3}
+  ambZone1DungeonLoop: {fileID: 8300000, guid: feb68c87cc8d08b4db3b1d0802f4a5df, type: 3}
+  ambZone2RuinedCityLoop: {fileID: 8300000, guid: c7f560f9e9bdce54d9d9d991177fdfa8, type: 3}
+  ambZone3CelestialLoop: {fileID: 8300000, guid: d39d233758c7db047a7f631ebc436c46, type: 3}
+  ambTorchCrackleLoop: {fileID: 8300000, guid: 0b7ad838583f50742865f1cade300632, type: 3}
+  ambLowFogWindLoop: {fileID: 8300000, guid: 0c93b36d432d54d4d9c163799c4b9394, type: 3}
   altPanelIndices: 0300000005000000
   autoPlayMusicByScene: 1
 --- !u!82 &501002003
