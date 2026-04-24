@@ -1,6 +1,11 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
+<<<<<<< HEAD:Assets/01_Scripts/Core/RuntimeDiagnosticsOverlay.cs
+=======
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+>>>>>>> origin/devlucas:Assets/Scripts/Core/RuntimeDiagnosticsOverlay.cs
 
 namespace LasGranjasDelHastur.Core
 {
@@ -12,6 +17,10 @@ namespace LasGranjasDelHastur.Core
         [SerializeField] private bool includeSaveDiagnostics = true;
 
         TextMeshProUGUI _text;
+<<<<<<< HEAD:Assets/01_Scripts/Core/RuntimeDiagnosticsOverlay.cs
+=======
+        Button _resetProgressButton;
+>>>>>>> origin/devlucas:Assets/Scripts/Core/RuntimeDiagnosticsOverlay.cs
         float _timer;
 
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
@@ -60,6 +69,36 @@ namespace LasGranjasDelHastur.Core
             rt.pivot = new Vector2(0f, 1f);
             rt.anchoredPosition = anchoredPos;
             rt.sizeDelta = new Vector2(980f, 110f);
+<<<<<<< HEAD:Assets/01_Scripts/Core/RuntimeDiagnosticsOverlay.cs
+=======
+
+            var btnGo = new GameObject("ResetProgressButton");
+            btnGo.transform.SetParent(root.transform, false);
+            var btnRt = btnGo.AddComponent<RectTransform>();
+            btnRt.anchorMin = new Vector2(0f, 1f);
+            btnRt.anchorMax = new Vector2(0f, 1f);
+            btnRt.pivot = new Vector2(0f, 1f);
+            btnRt.anchoredPosition = anchoredPos + new Vector2(0f, -118f);
+            btnRt.sizeDelta = new Vector2(260f, 34f);
+            var btnImg = btnGo.AddComponent<Image>();
+            btnImg.color = new Color(0.30f, 0.12f, 0.12f, 0.95f);
+            _resetProgressButton = btnGo.AddComponent<Button>();
+            _resetProgressButton.onClick.AddListener(ResetAllProgressFromDebug);
+
+            var labelGo = new GameObject("Text");
+            labelGo.transform.SetParent(btnGo.transform, false);
+            var labelRt = labelGo.AddComponent<RectTransform>();
+            labelRt.anchorMin = Vector2.zero;
+            labelRt.anchorMax = Vector2.one;
+            labelRt.offsetMin = Vector2.zero;
+            labelRt.offsetMax = Vector2.zero;
+            var label = labelGo.AddComponent<TextMeshProUGUI>();
+            label.text = "DEBUG: Reset progreso total";
+            label.fontSize = 16;
+            label.alignment = TextAlignmentOptions.Center;
+            label.color = Color.white;
+            label.raycastTarget = false;
+>>>>>>> origin/devlucas:Assets/Scripts/Core/RuntimeDiagnosticsOverlay.cs
         }
 
         void Update()
@@ -70,6 +109,11 @@ namespace LasGranjasDelHastur.Core
             if (_text == null)
                 return;
             _text.enabled = showOverlay;
+<<<<<<< HEAD:Assets/01_Scripts/Core/RuntimeDiagnosticsOverlay.cs
+=======
+            if (_resetProgressButton != null)
+                _resetProgressButton.gameObject.SetActive(showOverlay);
+>>>>>>> origin/devlucas:Assets/Scripts/Core/RuntimeDiagnosticsOverlay.cs
             if (!showOverlay)
                 return;
 
@@ -100,6 +144,19 @@ namespace LasGranjasDelHastur.Core
                 $"[Save] Exists: {saveExists} | Version: {SaveManager.CurrentSaveVersion}\n" +
                 $"[Save] Path: {path}";
         }
+<<<<<<< HEAD:Assets/01_Scripts/Core/RuntimeDiagnosticsOverlay.cs
+=======
+
+        void ResetAllProgressFromDebug()
+        {
+            SaveManager.Instance?.ResetAllProgress(resetIntroSeen: true);
+            var zoneManager = FindFirstObjectByType<ZoneManager>();
+            if (zoneManager != null)
+                zoneManager.ResetAllUnlocksForDebug();
+
+            SceneManager.LoadScene("MainMenu");
+        }
+>>>>>>> origin/devlucas:Assets/Scripts/Core/RuntimeDiagnosticsOverlay.cs
     }
 }
 

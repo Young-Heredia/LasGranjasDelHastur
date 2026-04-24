@@ -12,6 +12,12 @@ namespace LasGranjasDelHastur.Camera
         [Header("Pan")]
         [SerializeField] private float panSpeed = 1f;
         [SerializeField] private float panSmoothing = 14f;
+<<<<<<< HEAD:Assets/01_Scripts/Camera/CameraController2D.cs
+=======
+        [SerializeField] private float dynamicPanSmoothingBoost = 0.7f;
+        [SerializeField] private float maxDragStepWorld = 2.2f;
+        [SerializeField] private float positionSnapEpsilon = 0.0005f;
+>>>>>>> origin/devlucas:Assets/Scripts/Camera/CameraController2D.cs
 
         [Header("Zoom")]
         [SerializeField] private float zoomSpeed = 6f;
@@ -25,7 +31,11 @@ namespace LasGranjasDelHastur.Camera
 
         Vector3 _targetPos;
         float _targetZoom;
+<<<<<<< HEAD:Assets/01_Scripts/Camera/CameraController2D.cs
         Vector3 _dragOriginWorld;
+=======
+        Vector3 _lastDragWorld;
+>>>>>>> origin/devlucas:Assets/Scripts/Camera/CameraController2D.cs
         bool _dragging;
 
         void Awake()
@@ -56,7 +66,15 @@ namespace LasGranjasDelHastur.Camera
             HandlePan();
 
             _targetPos = ClampToBounds(_targetPos);
+<<<<<<< HEAD:Assets/01_Scripts/Camera/CameraController2D.cs
             transform.position = Vector3.Lerp(transform.position, _targetPos, 1f - Mathf.Exp(-panSmoothing * Time.deltaTime));
+=======
+            var distance = Vector3.Distance(transform.position, _targetPos);
+            var dynamicSmoothing = panSmoothing * (1f + Mathf.Clamp01(distance * 0.35f) * dynamicPanSmoothingBoost);
+            var panLerp = 1f - Mathf.Exp(-dynamicSmoothing * Time.deltaTime);
+            var nextPos = Vector3.Lerp(transform.position, _targetPos, panLerp);
+            transform.position = distance <= positionSnapEpsilon ? _targetPos : nextPos;
+>>>>>>> origin/devlucas:Assets/Scripts/Camera/CameraController2D.cs
             targetCamera.orthographicSize = Mathf.Lerp(targetCamera.orthographicSize, _targetZoom, 1f - Mathf.Exp(-zoomSmoothing * Time.deltaTime));
         }
 
@@ -75,18 +93,34 @@ namespace LasGranjasDelHastur.Camera
             if (InputAdapter.MiddleMouseDownThisFrame() || (InputAdapter.LeftMouseDownThisFrame() && InputAdapter.IsSpacePressed()))
             {
                 _dragging = true;
+<<<<<<< HEAD:Assets/01_Scripts/Camera/CameraController2D.cs
                 _dragOriginWorld = ScreenToWorld(InputAdapter.MousePosition());
             }
 
             if (InputAdapter.MiddleMouseUpThisFrame() || (InputAdapter.LeftMouseUpThisFrame() && !InputAdapter.IsSpacePressed()))
+=======
+                _lastDragWorld = ScreenToWorld(InputAdapter.MousePosition());
+            }
+
+            if (InputAdapter.MiddleMouseUpThisFrame() || InputAdapter.LeftMouseUpThisFrame())
+>>>>>>> origin/devlucas:Assets/Scripts/Camera/CameraController2D.cs
                 _dragging = false;
 
             if (!_dragging)
                 return;
 
             var currentWorld = ScreenToWorld(InputAdapter.MousePosition());
+<<<<<<< HEAD:Assets/01_Scripts/Camera/CameraController2D.cs
             var delta = _dragOriginWorld - currentWorld;
             _targetPos += delta * panSpeed;
+=======
+            var delta = _lastDragWorld - currentWorld;
+            if (delta.sqrMagnitude > maxDragStepWorld * maxDragStepWorld)
+                delta = delta.normalized * maxDragStepWorld;
+
+            _targetPos += delta * panSpeed;
+            _lastDragWorld = currentWorld;
+>>>>>>> origin/devlucas:Assets/Scripts/Camera/CameraController2D.cs
         }
 
         Vector3 ScreenToWorld(Vector3 screen)

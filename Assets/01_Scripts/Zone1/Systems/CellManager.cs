@@ -154,7 +154,11 @@ namespace LasGranjasDelHastur.Zone1
                     go.transform.position = new Vector3(origin.x + c * cellSpacing.x, origin.y - r * cellSpacing.y, 0f);
 
                     var sr = go.AddComponent<SpriteRenderer>();
+<<<<<<< HEAD:Assets/01_Scripts/Zone1/Systems/CellManager.cs
                     sr.sprite = Zone1ArtProvider.LoadSprite("Assets/02_Sprites/Zone1/Cells/zone1_soulpit_blocked.png") ?? RuntimeSpriteFactory.OpaqueWhiteSprite;
+=======
+                    sr.sprite = Zone1ArtProvider.LoadSprite("Assets/Sprites/Zone1/Cells/zone1_soulpit_blocked.png") ?? RuntimeSpriteFactory.OpaqueWhiteSprite;
+>>>>>>> origin/devlucas:Assets/Scripts/Zone1/Systems/CellManager.cs
                     go.transform.localScale = new Vector3(1.2f, 1.2f, 1f);
                     sr.color = new Color(0.12f, 0.12f, 0.14f, 1f);
                     sr.sortingOrder = 40 + (rows - r) * 4;
@@ -192,11 +196,19 @@ namespace LasGranjasDelHastur.Zone1
             ring.transform.localPosition = new Vector3(0f, -0.65f, 0f);
             ring.transform.localScale = new Vector3(1.1f, 0.45f, 1f);
             var ringSr = ring.AddComponent<SpriteRenderer>();
+<<<<<<< HEAD:Assets/01_Scripts/Zone1/Systems/CellManager.cs
             ringSr.sprite = Zone1ArtProvider.LoadSprite("Assets/02_Sprites/Zone1/Spritesheets/zone1_select_ring_sheet.png");
             ringSr.color = new Color(1f, 1f, 1f, 0.9f);
             ringSr.sortingOrder = baseSortingOrder + 3;
             var ringAnim = ring.AddComponent<SpriteSheetAnimator>();
             ringAnim.Configure("Assets/02_Sprites/Zone1/Spritesheets/zone1_select_ring_sheet.png", 32, 32, 8f);
+=======
+            ringSr.sprite = Zone1ArtProvider.LoadSprite("Assets/Sprites/Zone1/Spritesheets/zone1_select_ring_sheet.png");
+            ringSr.color = new Color(1f, 1f, 1f, 0.9f);
+            ringSr.sortingOrder = baseSortingOrder + 3;
+            var ringAnim = ring.AddComponent<SpriteSheetAnimator>();
+            ringAnim.Configure("Assets/Sprites/Zone1/Spritesheets/zone1_select_ring_sheet.png", 32, 32, 8f);
+>>>>>>> origin/devlucas:Assets/Scripts/Zone1/Systems/CellManager.cs
             ring.SetActive(false);
             _selectionRings[cell] = ring;
 
@@ -205,11 +217,19 @@ namespace LasGranjasDelHastur.Zone1
             ready.transform.localPosition = new Vector3(0f, 0.65f, 0f);
             ready.transform.localScale = new Vector3(0.75f, 0.75f, 1f);
             var readySr = ready.AddComponent<SpriteRenderer>();
+<<<<<<< HEAD:Assets/01_Scripts/Zone1/Systems/CellManager.cs
             readySr.sprite = Zone1ArtProvider.LoadSprite("Assets/02_Sprites/Zone1/Spritesheets/zone1_ready_collect_sheet.png");
             readySr.color = Color.white;
             readySr.sortingOrder = baseSortingOrder + 4;
             var readyAnim = ready.AddComponent<SpriteSheetAnimator>();
             readyAnim.Configure("Assets/02_Sprites/Zone1/Spritesheets/zone1_ready_collect_sheet.png", 32, 32, 10f);
+=======
+            readySr.sprite = Zone1ArtProvider.LoadSprite("Assets/Sprites/Zone1/Spritesheets/zone1_ready_collect_sheet.png");
+            readySr.color = Color.white;
+            readySr.sortingOrder = baseSortingOrder + 4;
+            var readyAnim = ready.AddComponent<SpriteSheetAnimator>();
+            readyAnim.Configure("Assets/Sprites/Zone1/Spritesheets/zone1_ready_collect_sheet.png", 32, 32, 10f);
+>>>>>>> origin/devlucas:Assets/Scripts/Zone1/Systems/CellManager.cs
             ready.SetActive(false);
             _readyPulses[cell] = ready;
 
@@ -218,7 +238,11 @@ namespace LasGranjasDelHastur.Zone1
             assistant.transform.localPosition = new Vector3(0f, 1.05f, 0f);
             assistant.transform.localScale = new Vector3(0.65f, 0.65f, 1f);
             var assistantSr = assistant.AddComponent<SpriteRenderer>();
+<<<<<<< HEAD:Assets/01_Scripts/Zone1/Systems/CellManager.cs
             assistantSr.sprite = Zone1ArtProvider.LoadSprite("Assets/02_Sprites/Zone1/Icons/zone1_icon_level.png")
+=======
+            assistantSr.sprite = Zone1ArtProvider.LoadSprite("Assets/Sprites/Zone1/Icons/zone1_icon_level.png")
+>>>>>>> origin/devlucas:Assets/Scripts/Zone1/Systems/CellManager.cs
                 ?? RuntimeSpriteFactory.OpaqueWhiteSprite;
             assistantSr.color = new Color(0.80f, 0.95f, 1f, 0.95f);
             assistantSr.sortingOrder = baseSortingOrder + 5;
@@ -358,7 +382,11 @@ namespace LasGranjasDelHastur.Zone1
                 _ => "idle"
             };
 
+<<<<<<< HEAD:Assets/01_Scripts/Zone1/Systems/CellManager.cs
             return $"Assets/02_Sprites/Zone1/Cells/zone1_{type}_{state}.png";
+=======
+            return $"Assets/Sprites/Zone1/Cells/zone1_{type}_{state}.png";
+>>>>>>> origin/devlucas:Assets/Scripts/Zone1/Systems/CellManager.cs
         }
 
         public List<CellSaveData> CaptureSaveData()

@@ -29,6 +29,10 @@ namespace LasGranjasDelHastur.Zone2
 
         void Awake()
         {
+<<<<<<< HEAD:Assets/01_Scripts/Zone2/Zone2PrototypeGame.cs
+=======
+            AudioManager.EnsureInstance();
+>>>>>>> origin/devlucas:Assets/Scripts/Zone2/Zone2PrototypeGame.cs
             _taxTimer = taxIntervalSeconds;
             if (sharedEconomyWithZone1)
                 PullCoinsFromZone1Save();
@@ -83,10 +87,25 @@ namespace LasGranjasDelHastur.Zone2
             _txtHint = CreateLabel(panel.transform, "Hint", "", 17, new Vector2(0f, 20f), new Vector2(840f, 42f));
 
             var btnProduceA = CreateButton(panel.transform, "Recolectar Suministros +7", new Vector2(-210f, -70f), new Vector2(300f, 50f));
+<<<<<<< HEAD:Assets/01_Scripts/Zone2/Zone2PrototypeGame.cs
             btnProduceA.onClick.AddListener(() => _citySupplies += 7 + _difficultyTier);
 
             var btnProduceB = CreateButton(panel.transform, "Trazar Planos +4", new Vector2(210f, -70f), new Vector2(300f, 50f));
             btnProduceB.onClick.AddListener(() => _arcaneBlueprints += 4 + Mathf.Max(0, _difficultyTier - 1));
+=======
+            btnProduceA.onClick.AddListener(() =>
+            {
+                _citySupplies += 7 + _difficultyTier;
+                AudioManager.Instance?.PlayZone2ProduceSupplies();
+            });
+
+            var btnProduceB = CreateButton(panel.transform, "Trazar Planos +4", new Vector2(210f, -70f), new Vector2(300f, 50f));
+            btnProduceB.onClick.AddListener(() =>
+            {
+                _arcaneBlueprints += 4 + Mathf.Max(0, _difficultyTier - 1);
+                AudioManager.Instance?.PlayZone2ProduceBlueprints();
+            });
+>>>>>>> origin/devlucas:Assets/Scripts/Zone2/Zone2PrototypeGame.cs
 
             var btnSellA = CreateButton(panel.transform, "Vender Suministros", new Vector2(-210f, -138f), new Vector2(300f, 46f));
             btnSellA.onClick.AddListener(SellSupplies);
@@ -99,6 +118,10 @@ namespace LasGranjasDelHastur.Zone2
             {
                 PushCoinsToZone1Save();
                 SaveManager.Instance?.SaveNow();
+<<<<<<< HEAD:Assets/01_Scripts/Zone2/Zone2PrototypeGame.cs
+=======
+                AudioManager.Instance?.PlayZone2BackToZones();
+>>>>>>> origin/devlucas:Assets/Scripts/Zone2/Zone2PrototypeGame.cs
                 SceneManager.LoadScene("ZoneSelection");
             });
         }
@@ -112,6 +135,10 @@ namespace LasGranjasDelHastur.Zone2
             _darkCoins += amount * (5 + _difficultyTier);
             _totalSold += amount;
             PushCoinsToZone1Save();
+<<<<<<< HEAD:Assets/01_Scripts/Zone2/Zone2PrototypeGame.cs
+=======
+            AudioManager.Instance?.PlayZone2Sell();
+>>>>>>> origin/devlucas:Assets/Scripts/Zone2/Zone2PrototypeGame.cs
         }
 
         void SellBlueprints()
@@ -123,6 +150,10 @@ namespace LasGranjasDelHastur.Zone2
             _darkCoins += amount * (8 + _difficultyTier);
             _totalSold += amount;
             PushCoinsToZone1Save();
+<<<<<<< HEAD:Assets/01_Scripts/Zone2/Zone2PrototypeGame.cs
+=======
+            AudioManager.Instance?.PlayZone2Sell();
+>>>>>>> origin/devlucas:Assets/Scripts/Zone2/Zone2PrototypeGame.cs
         }
 
         void ApplyTax()
@@ -132,6 +163,10 @@ namespace LasGranjasDelHastur.Zone2
             _darkCoins = Mathf.Max(0, _darkCoins - tax);
             _txtHint.text = $"Impuesto urbano aplicado: -{tax} monedas.";
             PushCoinsToZone1Save();
+<<<<<<< HEAD:Assets/01_Scripts/Zone2/Zone2PrototypeGame.cs
+=======
+            AudioManager.Instance?.PlayZone2TaxAlert();
+>>>>>>> origin/devlucas:Assets/Scripts/Zone2/Zone2PrototypeGame.cs
         }
 
         void RefreshUi()

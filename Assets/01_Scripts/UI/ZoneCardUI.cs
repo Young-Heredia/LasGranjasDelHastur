@@ -132,8 +132,10 @@ public class ZoneCardUI : MonoBehaviour
 
         if (uiAudio != null && AudioManager.Instance != null)
         {
-            uiAudio.hoverClip = AudioManager.Instance.uiHover;
-            uiAudio.clickClip = unlocked ? AudioManager.Instance.uiClick : AudioManager.Instance.uiClickDenied;
+            uiAudio.hoverClip = AudioManager.Instance.zoneCardHover != null ? AudioManager.Instance.zoneCardHover : AudioManager.Instance.uiHover;
+            uiAudio.clickClip = unlocked
+                ? (AudioManager.Instance.zoneCardSelect != null ? AudioManager.Instance.zoneCardSelect : AudioManager.Instance.uiClick)
+                : (AudioManager.Instance.zoneLocked != null ? AudioManager.Instance.zoneLocked : AudioManager.Instance.uiClickDenied);
             uiAudio.useAudioManagerFirst = true;
         }
     }
