@@ -7,13 +7,14 @@ Este documento sustituye la comprobación manual en el Editor: los datos salen d
 | Carpeta | Contenido |
 |---------|-----------|
 | `00_Scenes` | Escenas del build y prefabs embebidos de escena si aplica |
-| `01_Scripts` | Código C# del juego (subcarpetas `Edwin`, `Jose`, `Lucas` por autor; el resto sigue siendo código común por área) |
-| `02_Sprites` | Texturas y sprites 2D (Zone1, UI, placeholders) |
+| `01_Scripts` | Código C# del juego: **dominio primero** (`Audio`, `Camera`, `Core`, `Intro`, `MainMenu`, `SceneManagement`, `UI`, zonas, `ZoneSelection`), **persona dentro** (`Edwin`, `Jose`, `Lucas`). |
+| `02_Scripts` | Scripts o código auxiliar fuera de `01_Scripts` (antes bajo `03_Audio/Scripts`; misma convención de ensamblado Unity que el resto de `Assets/`). |
+| `02_Sprites` | Texturas, sprites 2D y **Tilemaps** (`02_Sprites/Tilemaps/`; paletas y tiles de nivel) |
 | `03_AUDIO` | Música y SFX |
-| `04_Prefabs` | Prefabs reutilizables y datos serializados de juego (p. ej. `Zone1/Zone1Config.asset`) |
+| `04_Prefabs` | Prefabs reutilizables y datos serializados de juego (p. ej. `Zone1/Zone1Config.asset`; trabajo por autor bajo `Lucas/`, etc.) |
 | `05_Fonts` | Fuentes TMP/TTF |
 
-`Assets/Editor` y `Assets/Settings` siguen en la raíz por convención Unity.
+Los `.cs` bajo cualquier ruta que contenga una carpeta **`Editor/`** se compilan **solo en el Editor** (`UnityEditor`, `MenuItem`, etc.) y **no** entran en el build del jugador. Las herramientas del repo viven en **`01_Scripts/ZoneSelection/Editor/`** (constructores de escena ZoneSelection) y **`05_Fonts/Editor/`** (arreglo TMP New Rocker). **`Assets/Settings`** sigue en la raíz por convención Unity. **No** coloques código con `UnityEditor` dentro de `01_Scripts/...` sin una carpeta `Editor` en la ruta.
 
 ## Build order
 
