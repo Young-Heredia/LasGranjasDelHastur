@@ -12,7 +12,7 @@ namespace LasGranjasDelHastur.Core
     public class SaveManager : MonoBehaviour
     {
         public static SaveManager Instance { get; private set; }
-        public const int CurrentSaveVersion = 1;
+        public const int CurrentSaveVersion = 2;
 
         [Header("Auto Save")]
         [SerializeField] private bool autoSave = true;
@@ -164,6 +164,7 @@ namespace LasGranjasDelHastur.Core
                 saveVersion = CurrentSaveVersion,
                 savedAtUtc = DateTime.UtcNow.ToString("o"),
                 lastSceneName = "MainMenu",
+                globalTaxStrikes = 0,
                 zone1 = new Zone1SaveData(),
                 zone2 = new Zone2SaveData(),
                 zone3 = new Zone3SaveData(),
@@ -221,8 +222,13 @@ namespace LasGranjasDelHastur.Core
             {
                 switch (data.saveVersion)
                 {
-                    // Example structure for upcoming versions:
-                    // case 1: data = MigrateV1ToV2(data); data.saveVersion = 2; break;
+                    case 1:
+                        var z1s = data.zone1 != null ? data.zone1.strikes : 0;
+                        var z2s = data.zone2 != null ? data.zone2.strikes : 0;
+                        var z3s = data.zone3 != null ? data.zone3.strikes : 0;
+                        data.globalTaxStrikes = Mathf.Max(Mathf.Max(Mathf.Max(data.globalTaxStrikes, z1s), z2s), z3s);
+                        data.saveVersion = 2;
+                        break;
                     default:
                         data.saveVersion = CurrentSaveVersion;
                         break;

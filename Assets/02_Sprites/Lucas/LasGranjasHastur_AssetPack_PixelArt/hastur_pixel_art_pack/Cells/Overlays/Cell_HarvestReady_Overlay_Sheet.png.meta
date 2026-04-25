@@ -1,0 +1,1667 @@
+fileFormatVersion: 2
+guid: d396edfb6840c484aace3e81a0db2b23
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8611956848031580732
+    second: Cell_HarvestReady_Overlay_Sheet_0
+  - first:
+      213: 5336549437996041294
+    second: Cell_HarvestReady_Overlay_Sheet_1
+  - first:
+      213: 5770165125288805853
+    second: Cell_HarvestReady_Overlay_Sheet_2
+  - first:
+      213: -467213161297016648
+    second: Cell_HarvestReady_Overlay_Sheet_3
+  - first:
+      213: 283216121506621329
+    second: Cell_HarvestReady_Overlay_Sheet_4
+  - first:
+      213: -3826644615204036994
+    second: Cell_HarvestReady_Overlay_Sheet_5
+  - first:
+      213: -2789570053427897115
+    second: Cell_HarvestReady_Overlay_Sheet_6
+  - first:
+      213: 2121506234980663561
+    second: Cell_HarvestReady_Overlay_Sheet_7
+  - first:
+      213: -8479604211891000051
+    second: Cell_HarvestReady_Overlay_Sheet_8
+  - first:
+      213: -5430343232064971011
+    second: Cell_HarvestReady_Overlay_Sheet_9
+  - first:
+      213: 2690505399304020809
+    second: Cell_HarvestReady_Overlay_Sheet_10
+  - first:
+      213: 6607116678781550907
+    second: Cell_HarvestReady_Overlay_Sheet_11
+  - first:
+      213: 811290591832083773
+    second: Cell_HarvestReady_Overlay_Sheet_12
+  - first:
+      213: 4885147665878978168
+    second: Cell_HarvestReady_Overlay_Sheet_13
+  - first:
+      213: 8788140698955620473
+    second: Cell_HarvestReady_Overlay_Sheet_14
+  - first:
+      213: -2858023968077966243
+    second: Cell_HarvestReady_Overlay_Sheet_15
+  - first:
+      213: 4271757737943259275
+    second: Cell_HarvestReady_Overlay_Sheet_16
+  - first:
+      213: 7970905151914814238
+    second: Cell_HarvestReady_Overlay_Sheet_17
+  - first:
+      213: 2124254031034459120
+    second: Cell_HarvestReady_Overlay_Sheet_18
+  - first:
+      213: -8558199578131861353
+    second: Cell_HarvestReady_Overlay_Sheet_19
+  - first:
+      213: 313762160161143227
+    second: Cell_HarvestReady_Overlay_Sheet_20
+  - first:
+      213: -1635773200516843855
+    second: Cell_HarvestReady_Overlay_Sheet_21
+  - first:
+      213: 869820154067842161
+    second: Cell_HarvestReady_Overlay_Sheet_22
+  - first:
+      213: -2390836446921582253
+    second: Cell_HarvestReady_Overlay_Sheet_23
+  - first:
+      213: -7912729524587551295
+    second: Cell_HarvestReady_Overlay_Sheet_24
+  - first:
+      213: -6319629712598733319
+    second: Cell_HarvestReady_Overlay_Sheet_25
+  - first:
+      213: 8313928510472977977
+    second: Cell_HarvestReady_Overlay_Sheet_26
+  - first:
+      213: -4562697667656303987
+    second: Cell_HarvestReady_Overlay_Sheet_27
+  - first:
+      213: 6939777528843388920
+    second: Cell_HarvestReady_Overlay_Sheet_28
+  - first:
+      213: -4396262288041271502
+    second: Cell_HarvestReady_Overlay_Sheet_29
+  - first:
+      213: -4801008683422436701
+    second: Cell_HarvestReady_Overlay_Sheet_30
+  - first:
+      213: 8828231858343737835
+    second: Cell_HarvestReady_Overlay_Sheet_31
+  - first:
+      213: -4317310501076985595
+    second: Cell_HarvestReady_Overlay_Sheet_32
+  - first:
+      213: -6335515168378872623
+    second: Cell_HarvestReady_Overlay_Sheet_33
+  - first:
+      213: 7427028109024543440
+    second: Cell_HarvestReady_Overlay_Sheet_34
+  - first:
+      213: -5124194859929815964
+    second: Cell_HarvestReady_Overlay_Sheet_35
+  - first:
+      213: -4765594346629859710
+    second: Cell_HarvestReady_Overlay_Sheet_36
+  - first:
+      213: -1558240248598638513
+    second: Cell_HarvestReady_Overlay_Sheet_37
+  - first:
+      213: -1542409888925074394
+    second: Cell_HarvestReady_Overlay_Sheet_38
+  - first:
+      213: 3139303355888055117
+    second: Cell_HarvestReady_Overlay_Sheet_39
+  - first:
+      213: -5148103969195678524
+    second: Cell_HarvestReady_Overlay_Sheet_40
+  - first:
+      213: -3093517117038063706
+    second: Cell_HarvestReady_Overlay_Sheet_41
+  - first:
+      213: -9011133392414875419
+    second: Cell_HarvestReady_Overlay_Sheet_42
+  - first:
+      213: 1669273524120513817
+    second: Cell_HarvestReady_Overlay_Sheet_43
+  - first:
+      213: -4743354008847011555
+    second: Cell_HarvestReady_Overlay_Sheet_44
+  - first:
+      213: 8102220646027095291
+    second: Cell_HarvestReady_Overlay_Sheet_45
+  - first:
+      213: -4688499628244925977
+    second: Cell_HarvestReady_Overlay_Sheet_46
+  - first:
+      213: -6476755891901254571
+    second: Cell_HarvestReady_Overlay_Sheet_47
+  - first:
+      213: 3271558122929808784
+    second: Cell_HarvestReady_Overlay_Sheet_48
+  - first:
+      213: -7398393752872972544
+    second: Cell_HarvestReady_Overlay_Sheet_49
+  - first:
+      213: 4222759737030381942
+    second: Cell_HarvestReady_Overlay_Sheet_50
+  - first:
+      213: 4269192183936299061
+    second: Cell_HarvestReady_Overlay_Sheet_51
+  - first:
+      213: 6553254870159513950
+    second: Cell_HarvestReady_Overlay_Sheet_52
+  - first:
+      213: -441627328175291551
+    second: Cell_HarvestReady_Overlay_Sheet_53
+  - first:
+      213: -2382168613455735192
+    second: Cell_HarvestReady_Overlay_Sheet_54
+  - first:
+      213: -7331620323138383469
+    second: Cell_HarvestReady_Overlay_Sheet_55
+  - first:
+      213: 3298947833876081175
+    second: Cell_HarvestReady_Overlay_Sheet_56
+  - first:
+      213: 3267645624300103913
+    second: Cell_HarvestReady_Overlay_Sheet_57
+  - first:
+      213: 1084898266492500759
+    second: Cell_HarvestReady_Overlay_Sheet_58
+  - first:
+      213: -4927798459778829242
+    second: Cell_HarvestReady_Overlay_Sheet_59
+  - first:
+      213: 5412500708804608924
+    second: Cell_HarvestReady_Overlay_Sheet_60
+  - first:
+      213: -3984093073523093317
+    second: Cell_HarvestReady_Overlay_Sheet_61
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Cell_HarvestReady_Overlay_Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 251
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c324aeb0021d38770800000000000000
+      internalID: 8611956848031580732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cell_HarvestReady_Overlay_Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 551
+        y: 255
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e44801a807b3f0a40800000000000000
+      internalID: 5336549437996041294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cell_HarvestReady_Overlay_Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 951
+        y: 255
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd5cf2c1c9eb31050800000000000000
+      internalID: 5770165125288805853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cell_HarvestReady_Overlay_Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 1351
+        y: 255
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b8018eea102489f0800000000000000
+      internalID: -467213161297016648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cell_HarvestReady_Overlay_Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 1751
+        y: 255
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 197e01ddf8f2ee300800000000000000
+      internalID: 283216121506621329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cell_HarvestReady_Overlay_Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 2095
+        y: 247
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7e1a153ff605eac0800000000000000
+      internalID: -3826644615204036994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cell_HarvestReady_Overlay_Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 2151
+        y: 251
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ecdc51f0d47949d0800000000000000
+      internalID: -2789570053427897115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cell_HarvestReady_Overlay_Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 235
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9018cc43eaa117d10800000000000000
+      internalID: 2121506234980663561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cell_HarvestReady_Overlay_Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 235
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0da45a65e4625a80800000000000000
+      internalID: -8479604211891000051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cell_HarvestReady_Overlay_Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 235
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dfe12540a9b83a4b0800000000000000
+      internalID: -5430343232064971011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cell_HarvestReady_Overlay_Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 907
+        y: 235
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94369cfd768965520800000000000000
+      internalID: 2690505399304020809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cell_HarvestReady_Overlay_Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 1303
+        y: 239
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3145540d9131bb50800000000000000
+      internalID: 6607116678781550907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cell_HarvestReady_Overlay_Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 1699
+        y: 243
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3d84cfae78424b00800000000000000
+      internalID: 811290591832083773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cell_HarvestReady_Overlay_Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 223
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87e8b046be78bc340800000000000000
+      internalID: 4885147665878978168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cell_HarvestReady_Overlay_Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 231
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9702765776fb5f970800000000000000
+      internalID: 8788140698955620473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cell_HarvestReady_Overlay_Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 227
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d54192fe7524658d0800000000000000
+      internalID: -2858023968077966243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cell_HarvestReady_Overlay_Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 991
+        y: 231
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8852a8a705584b30800000000000000
+      internalID: 4271757737943259275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cell_HarvestReady_Overlay_Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 1383
+        y: 227
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1ba63601085e9e60800000000000000
+      internalID: 7970905151914814238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cell_HarvestReady_Overlay_Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 1671
+        y: 223
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f3208459cdda7d10800000000000000
+      internalID: 2124254031034459120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cell_HarvestReady_Overlay_Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 1775
+        y: 223
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7907d84b3da2b3980800000000000000
+      internalID: -8558199578131861353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cell_HarvestReady_Overlay_Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 2063
+        y: 227
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb93d54b505ba5400800000000000000
+      internalID: 313762160161143227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cell_HarvestReady_Overlay_Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 151
+        width: 134
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b6f61ad0f09c49e0800000000000000
+      internalID: -1635773200516843855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cell_HarvestReady_Overlay_Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 215
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17470b552d8321c00800000000000000
+      internalID: 869820154067842161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cell_HarvestReady_Overlay_Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 151
+        width: 142
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3599e213bea02ded0800000000000000
+      internalID: -2390836446921582253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cell_HarvestReady_Overlay_Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 891
+        y: 211
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c5a63bbb66503290800000000000000
+      internalID: -7912729524587551295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cell_HarvestReady_Overlay_Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 895
+        y: 151
+        width: 142
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fd6c8c524a2c48a0800000000000000
+      internalID: -6319629712598733319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cell_HarvestReady_Overlay_Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 1031
+        y: 219
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93efbb26ee1016370800000000000000
+      internalID: 8313928510472977977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cell_HarvestReady_Overlay_Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 1279
+        y: 155
+        width: 138
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8ab7dd35aa0ea0c0800000000000000
+      internalID: -4562697667656303987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cell_HarvestReady_Overlay_Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 1423
+        y: 215
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f7c2fad4ea0f4060800000000000000
+      internalID: 6939777528843388920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cell_HarvestReady_Overlay_Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 1663
+        y: 155
+        width: 134
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23f9addcdb65df2c0800000000000000
+      internalID: -4396262288041271502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cell_HarvestReady_Overlay_Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 2011
+        y: 215
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a23a0d0a046f5db0800000000000000
+      internalID: -4801008683422436701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cell_HarvestReady_Overlay_Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 2047
+        y: 155
+        width: 134
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be97d57e91e248a70800000000000000
+      internalID: 8828231858343737835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cell_HarvestReady_Overlay_Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 2167
+        y: 219
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5091e3e29f4d514c0800000000000000
+      internalID: -4317310501076985595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cell_HarvestReady_Overlay_Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 199
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1dc9da7758ab318a0800000000000000
+      internalID: -6335515168378872623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cell_HarvestReady_Overlay_Sheet_34
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 203
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d2cf3f07ba121760800000000000000
+      internalID: 7427028109024543440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cell_HarvestReady_Overlay_Sheet_35
+      rect:
+        serializedVersion: 2
+        x: 675
+        y: 203
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 464300e8ce333e8b0800000000000000
+      internalID: -5124194859929815964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cell_HarvestReady_Overlay_Sheet_36
+      rect:
+        serializedVersion: 2
+        x: 1623
+        y: 203
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2867481e0353dddb0800000000000000
+      internalID: -4765594346629859710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cell_HarvestReady_Overlay_Sheet_37
+      rect:
+        serializedVersion: 2
+        x: 1811
+        y: 207
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f40df83ffb4006ae0800000000000000
+      internalID: -1558240248598638513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cell_HarvestReady_Overlay_Sheet_38
+      rect:
+        serializedVersion: 2
+        x: 2195
+        y: 199
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62c3298c062489ae0800000000000000
+      internalID: -1542409888925074394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cell_HarvestReady_Overlay_Sheet_39
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 191
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4336e9f4cb019b20800000000000000
+      internalID: 3139303355888055117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cell_HarvestReady_Overlay_Sheet_40
+      rect:
+        serializedVersion: 2
+        x: 855
+        y: 187
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c4205147b24e88b0800000000000000
+      internalID: -5148103969195678524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cell_HarvestReady_Overlay_Sheet_41
+      rect:
+        serializedVersion: 2
+        x: 1059
+        y: 195
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6af0b5c729e9115d0800000000000000
+      internalID: -3093517117038063706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cell_HarvestReady_Overlay_Sheet_42
+      rect:
+        serializedVersion: 2
+        x: 1239
+        y: 195
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e063713ce502f280800000000000000
+      internalID: -9011133392414875419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cell_HarvestReady_Overlay_Sheet_43
+      rect:
+        serializedVersion: 2
+        x: 475
+        y: 175
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91dea2e0d637a2710800000000000000
+      internalID: 1669273524120513817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cell_HarvestReady_Overlay_Sheet_44
+      rect:
+        serializedVersion: 2
+        x: 1443
+        y: 183
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d11bfba09a83c2eb0800000000000000
+      internalID: -4743354008847011555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cell_HarvestReady_Overlay_Sheet_45
+      rect:
+        serializedVersion: 2
+        x: 1643
+        y: 175
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfce74a00ced07070800000000000000
+      internalID: 8102220646027095291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cell_HarvestReady_Overlay_Sheet_46
+      rect:
+        serializedVersion: 2
+        x: 1823
+        y: 175
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e109e8cd6a1feeb0800000000000000
+      internalID: -4688499628244925977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cell_HarvestReady_Overlay_Sheet_47
+      rect:
+        serializedVersion: 2
+        x: 2023
+        y: 183
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 554be46e4d0fd16a0800000000000000
+      internalID: -6476755891901254571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cell_HarvestReady_Overlay_Sheet_48
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 167
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 095664387c8e66d20800000000000000
+      internalID: 3271558122929808784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cell_HarvestReady_Overlay_Sheet_49
+      rect:
+        serializedVersion: 2
+        x: 263
+        y: 167
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00f89838410a35990800000000000000
+      internalID: -7398393752872972544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cell_HarvestReady_Overlay_Sheet_50
+      rect:
+        serializedVersion: 2
+        x: 887
+        y: 159
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67194819b914a9a30800000000000000
+      internalID: 4222759737030381942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cell_HarvestReady_Overlay_Sheet_51
+      rect:
+        serializedVersion: 2
+        x: 1263
+        y: 167
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 530b5611ca73f3b30800000000000000
+      internalID: 4269192183936299061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cell_HarvestReady_Overlay_Sheet_52
+      rect:
+        serializedVersion: 2
+        x: 2203
+        y: 167
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e59d4727596d1fa50800000000000000
+      internalID: 6553254870159513950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cell_HarvestReady_Overlay_Sheet_53
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 139
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 163c10de8460fd9f0800000000000000
+      internalID: -441627328175291551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cell_HarvestReady_Overlay_Sheet_54
+      rect:
+        serializedVersion: 2
+        x: 1387
+        y: 147
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 866d2ef6446d0fed0800000000000000
+      internalID: -2382168613455735192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cell_HarvestReady_Overlay_Sheet_55
+      rect:
+        serializedVersion: 2
+        x: 1759
+        y: 143
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3915d43292ad04a90800000000000000
+      internalID: -7331620323138383469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cell_HarvestReady_Overlay_Sheet_56
+      rect:
+        serializedVersion: 2
+        x: 2131
+        y: 143
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71a6aba839738cd20800000000000000
+      internalID: 3298947833876081175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cell_HarvestReady_Overlay_Sheet_57
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 135
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e86440f162095d20800000000000000
+      internalID: 3267645624300103913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cell_HarvestReady_Overlay_Sheet_58
+      rect:
+        serializedVersion: 2
+        x: 975
+        y: 131
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71bf8bfa9355e0f00800000000000000
+      internalID: 1084898266492500759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cell_HarvestReady_Overlay_Sheet_59
+      rect:
+        serializedVersion: 2
+        x: 1343
+        y: 131
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6447a20d861fc9bb0800000000000000
+      internalID: -4927798459778829242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cell_HarvestReady_Overlay_Sheet_60
+      rect:
+        serializedVersion: 2
+        x: 1711
+        y: 131
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9349dec7b01d1b40800000000000000
+      internalID: 5412500708804608924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cell_HarvestReady_Overlay_Sheet_61
+      rect:
+        serializedVersion: 2
+        x: 2079
+        y: 135
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb0df805578a5b8c0800000000000000
+      internalID: -3984093073523093317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

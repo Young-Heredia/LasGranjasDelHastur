@@ -1,0 +1,1017 @@
+fileFormatVersion: 2
+guid: 2eb467bc702e21d489cc84c389bd53ee
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2819808066266610889
+    second: VFX_HarvestCollection_Sheet_0
+  - first:
+      213: -4181613741327490476
+    second: VFX_HarvestCollection_Sheet_1
+  - first:
+      213: 87289810208421578
+    second: VFX_HarvestCollection_Sheet_2
+  - first:
+      213: -6440352896681459810
+    second: VFX_HarvestCollection_Sheet_3
+  - first:
+      213: -4569263811286244393
+    second: VFX_HarvestCollection_Sheet_4
+  - first:
+      213: 9078808369503115942
+    second: VFX_HarvestCollection_Sheet_5
+  - first:
+      213: 8766656608118227195
+    second: VFX_HarvestCollection_Sheet_6
+  - first:
+      213: -6770808379445480204
+    second: VFX_HarvestCollection_Sheet_7
+  - first:
+      213: -8906530387119064403
+    second: VFX_HarvestCollection_Sheet_8
+  - first:
+      213: -4937923219070875494
+    second: VFX_HarvestCollection_Sheet_9
+  - first:
+      213: 3812262091256341327
+    second: VFX_HarvestCollection_Sheet_10
+  - first:
+      213: 7359938593014225238
+    second: VFX_HarvestCollection_Sheet_11
+  - first:
+      213: -8847168645145454917
+    second: VFX_HarvestCollection_Sheet_12
+  - first:
+      213: 3462064602590098869
+    second: VFX_HarvestCollection_Sheet_13
+  - first:
+      213: -9083954409361205801
+    second: VFX_HarvestCollection_Sheet_14
+  - first:
+      213: -3305206712901588110
+    second: VFX_HarvestCollection_Sheet_15
+  - first:
+      213: 6793035199656745427
+    second: VFX_HarvestCollection_Sheet_16
+  - first:
+      213: -2849259416990055799
+    second: VFX_HarvestCollection_Sheet_17
+  - first:
+      213: -3847329968857757199
+    second: VFX_HarvestCollection_Sheet_18
+  - first:
+      213: 9044276639063641517
+    second: VFX_HarvestCollection_Sheet_19
+  - first:
+      213: 6513678089807423905
+    second: VFX_HarvestCollection_Sheet_20
+  - first:
+      213: -4534501561582375160
+    second: VFX_HarvestCollection_Sheet_21
+  - first:
+      213: -7040423673998432819
+    second: VFX_HarvestCollection_Sheet_22
+  - first:
+      213: -2268213642828881150
+    second: VFX_HarvestCollection_Sheet_23
+  - first:
+      213: -80313734028662592
+    second: VFX_HarvestCollection_Sheet_24
+  - first:
+      213: -4220504068160006285
+    second: VFX_HarvestCollection_Sheet_25
+  - first:
+      213: 1647930866824276088
+    second: VFX_HarvestCollection_Sheet_26
+  - first:
+      213: 533858115322005483
+    second: VFX_HarvestCollection_Sheet_27
+  - first:
+      213: 2356832233606694260
+    second: VFX_HarvestCollection_Sheet_28
+  - first:
+      213: -4572259833810332106
+    second: VFX_HarvestCollection_Sheet_29
+  - first:
+      213: 7606535296378342128
+    second: VFX_HarvestCollection_Sheet_30
+  - first:
+      213: 375278838080565718
+    second: VFX_HarvestCollection_Sheet_31
+  - first:
+      213: 2118435922939890852
+    second: VFX_HarvestCollection_Sheet_32
+  - first:
+      213: -2250643905037693756
+    second: VFX_HarvestCollection_Sheet_33
+  - first:
+      213: -6446014632791945106
+    second: VFX_HarvestCollection_Sheet_34
+  - first:
+      213: 1193918627455424709
+    second: VFX_HarvestCollection_Sheet_35
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: VFX_HarvestCollection_Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 1731
+        y: 231
+        width: 70
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 733c563f0870ed8d0800000000000000
+      internalID: -2819808066266610889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_HarvestCollection_Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 1747
+        y: 283
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4526848157ce7f5c0800000000000000
+      internalID: -4181613741327490476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_HarvestCollection_Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 1783
+        y: 271
+        width: 54
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac6fbf1be9d163100800000000000000
+      internalID: 87289810208421578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_HarvestCollection_Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 1399
+        y: 247
+        width: 22
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9fb425b9254f96a0800000000000000
+      internalID: -6440352896681459810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_HarvestCollection_Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 1419
+        y: 203
+        width: 50
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d36c3bc5c6b690c0800000000000000
+      internalID: -4569263811286244393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_HarvestCollection_Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 1487
+        y: 251
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6aa93184c186efd70800000000000000
+      internalID: 9078808369503115942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_HarvestCollection_Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 1507
+        y: 247
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf0c7b2ccbb69a970800000000000000
+      internalID: 8766656608118227195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_HarvestCollection_Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 1703
+        y: 259
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f4f9e4f6a14902a0800000000000000
+      internalID: -6770808379445480204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_HarvestCollection_Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 1071
+        y: 223
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: daabb8e3dc5a56480800000000000000
+      internalID: -8906530387119064403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_HarvestCollection_Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 1095
+        y: 207
+        width: 34
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9880279ef8f87bb0800000000000000
+      internalID: -4937923219070875494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_HarvestCollection_Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 1119
+        y: 183
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f43a50c7c20e7e430800000000000000
+      internalID: 3812262091256341327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_HarvestCollection_Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 1179
+        y: 223
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6591d4dd721c32660800000000000000
+      internalID: 7359938593014225238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_HarvestCollection_Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 1379
+        y: 227
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb69126ddfa883580800000000000000
+      internalID: -8847168645145454917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_HarvestCollection_Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 1471
+        y: 191
+        width: 18
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b536dac969bb0030800000000000000
+      internalID: 3462064602590098869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_HarvestCollection_Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 1503
+        y: 207
+        width: 22
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d59e22f79f4fe180800000000000000
+      internalID: -9083954409361205801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_HarvestCollection_Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 1803
+        y: 227
+        width: 34
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27ba340a10c8122d0800000000000000
+      internalID: -3305206712901588110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_HarvestCollection_Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 739
+        y: 143
+        width: 42
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d9d346e585b54e50800000000000000
+      internalID: 6793035199656745427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_HarvestCollection_Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 839
+        y: 155
+        width: 42
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9820f5108a56578d0800000000000000
+      internalID: -2849259416990055799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_HarvestCollection_Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 1055
+        y: 203
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f9c48007c98b9ac0800000000000000
+      internalID: -3847329968857757199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_HarvestCollection_Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 1179
+        y: 199
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dad80c14fa9b38d70800000000000000
+      internalID: 9044276639063641517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_HarvestCollection_Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 787
+        y: 179
+        width: 30
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a9673436bb356a50800000000000000
+      internalID: 6513678089807423905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_HarvestCollection_Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 1063
+        y: 163
+        width: 30
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80fad64cad63211c0800000000000000
+      internalID: -4534501561582375160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_HarvestCollection_Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 1143
+        y: 179
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc5a21368f36b4e90800000000000000
+      internalID: -7040423673998432819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_HarvestCollection_Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 123
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2036d7895bfa580e0800000000000000
+      internalID: -2268213642828881150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_HarvestCollection_Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 123
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c8e2ac951ba2eef0800000000000000
+      internalID: -80313734028662592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_HarvestCollection_Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 131
+        width: 34
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3775b3449e1cd65c0800000000000000
+      internalID: -4220504068160006285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_HarvestCollection_Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 451
+        y: 111
+        width: 54
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 878667b6460aed610800000000000000
+      internalID: 1647930866824276088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_HarvestCollection_Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 127
+        width: 38
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be74a3c9025a86700800000000000000
+      internalID: 533858115322005483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_HarvestCollection_Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 791
+        y: 139
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 475415fed6625b020800000000000000
+      internalID: 2356832233606694260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_HarvestCollection_Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 815
+        y: 131
+        width: 30
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 636d2f0f7e11c80c0800000000000000
+      internalID: -4572259833810332106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_HarvestCollection_Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 115
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0fa0a180d87df8960800000000000000
+      internalID: 7606535296378342128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_HarvestCollection_Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 75
+        width: 38
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d1738b6d12453500800000000000000
+      internalID: 375278838080565718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_HarvestCollection_Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 99
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ac424a7f32366d10800000000000000
+      internalID: 2118435922939890852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_HarvestCollection_Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 83
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4cc8454fa4b14c0e0800000000000000
+      internalID: -2250643905037693756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_HarvestCollection_Sheet_34
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 71
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e60577b08d72b86a0800000000000000
+      internalID: -6446014632791945106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_HarvestCollection_Sheet_35
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 59
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c8d3308aa6a19010800000000000000
+      internalID: 1193918627455424709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

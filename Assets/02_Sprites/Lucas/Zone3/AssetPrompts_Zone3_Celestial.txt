@@ -1,0 +1,11 @@
+Las Granjas del Hastur — Zona 3 (Cuerpos celestes)
+Referencia: Documento de Prompts para Assets 2D del proyecto.
+
+Prefijo global y negative prompt: mismos que en Zone2/AssetPrompts_Zone2_Cities.txt
+
+Sección 5.3 — Entorno espacial / plataformas flotantes.
+Sección 6.11–6.14 — Celdas: Huerto Lunar, Molino de Cometas, Núcleo Planetario, Incubadora Estelar.
+Sección 8.3 — Azathoth como manifestación recaudadora (silueta legible, sin gore).
+Sección 9.7–9.9 — Compradores Ubbo-Sathla, Yog-Sothoth, Shoggoth (retratos UI).
+
+Paleta: azul profundo, púrpura oscuro, acento cian tenue para energía, amarillo ritual muy suave.

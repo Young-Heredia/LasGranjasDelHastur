@@ -1,0 +1,1167 @@
+fileFormatVersion: 2
+guid: a9171a1c5f3f7de4487a52d4ec433675
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2209430607686278889
+    second: TaxCollector_Azathoth_Arrival_Sheet_0
+  - first:
+      213: -7755126752652110024
+    second: TaxCollector_Azathoth_Arrival_Sheet_1
+  - first:
+      213: 3277884849046456328
+    second: TaxCollector_Azathoth_Arrival_Sheet_2
+  - first:
+      213: -6242451960488357897
+    second: TaxCollector_Azathoth_Arrival_Sheet_3
+  - first:
+      213: 9210674022080401230
+    second: TaxCollector_Azathoth_Arrival_Sheet_4
+  - first:
+      213: -1120683775900404520
+    second: TaxCollector_Azathoth_Arrival_Sheet_5
+  - first:
+      213: 3320617111545806
+    second: TaxCollector_Azathoth_Arrival_Sheet_6
+  - first:
+      213: -8929243991318962496
+    second: TaxCollector_Azathoth_Arrival_Sheet_7
+  - first:
+      213: -7311512345116178319
+    second: TaxCollector_Azathoth_Arrival_Sheet_8
+  - first:
+      213: 5443785599348561667
+    second: TaxCollector_Azathoth_Arrival_Sheet_9
+  - first:
+      213: -8482491413310793505
+    second: TaxCollector_Azathoth_Arrival_Sheet_10
+  - first:
+      213: -3695794757686456002
+    second: TaxCollector_Azathoth_Arrival_Sheet_11
+  - first:
+      213: 969504728381093832
+    second: TaxCollector_Azathoth_Arrival_Sheet_12
+  - first:
+      213: -6735850694068371714
+    second: TaxCollector_Azathoth_Arrival_Sheet_13
+  - first:
+      213: -122215389598644470
+    second: TaxCollector_Azathoth_Arrival_Sheet_14
+  - first:
+      213: 6592712282178403320
+    second: TaxCollector_Azathoth_Arrival_Sheet_15
+  - first:
+      213: 5848292461100180851
+    second: TaxCollector_Azathoth_Arrival_Sheet_16
+  - first:
+      213: -5083961571223916390
+    second: TaxCollector_Azathoth_Arrival_Sheet_17
+  - first:
+      213: 2207163681901432456
+    second: TaxCollector_Azathoth_Arrival_Sheet_18
+  - first:
+      213: 2507357946277933610
+    second: TaxCollector_Azathoth_Arrival_Sheet_19
+  - first:
+      213: -2717250672285870183
+    second: TaxCollector_Azathoth_Arrival_Sheet_20
+  - first:
+      213: 33404304012912540
+    second: TaxCollector_Azathoth_Arrival_Sheet_21
+  - first:
+      213: 4724541924190474490
+    second: TaxCollector_Azathoth_Arrival_Sheet_22
+  - first:
+      213: -2629514379860122987
+    second: TaxCollector_Azathoth_Arrival_Sheet_23
+  - first:
+      213: -2637853631502316433
+    second: TaxCollector_Azathoth_Arrival_Sheet_24
+  - first:
+      213: -133475932850621252
+    second: TaxCollector_Azathoth_Arrival_Sheet_25
+  - first:
+      213: -6919626766282575508
+    second: TaxCollector_Azathoth_Arrival_Sheet_26
+  - first:
+      213: -8832615198743146609
+    second: TaxCollector_Azathoth_Arrival_Sheet_27
+  - first:
+      213: 283345347416550578
+    second: TaxCollector_Azathoth_Arrival_Sheet_28
+  - first:
+      213: -7022284010432782352
+    second: TaxCollector_Azathoth_Arrival_Sheet_29
+  - first:
+      213: -4935979056519501370
+    second: TaxCollector_Azathoth_Arrival_Sheet_30
+  - first:
+      213: -5100914696389792223
+    second: TaxCollector_Azathoth_Arrival_Sheet_31
+  - first:
+      213: 6561837326470716131
+    second: TaxCollector_Azathoth_Arrival_Sheet_32
+  - first:
+      213: 2331295616812332033
+    second: TaxCollector_Azathoth_Arrival_Sheet_33
+  - first:
+      213: 2242433152391478481
+    second: TaxCollector_Azathoth_Arrival_Sheet_34
+  - first:
+      213: 2228075717477160066
+    second: TaxCollector_Azathoth_Arrival_Sheet_35
+  - first:
+      213: -6017830542910991556
+    second: TaxCollector_Azathoth_Arrival_Sheet_36
+  - first:
+      213: 590993621721232673
+    second: TaxCollector_Azathoth_Arrival_Sheet_37
+  - first:
+      213: 7326038090913187991
+    second: TaxCollector_Azathoth_Arrival_Sheet_38
+  - first:
+      213: -4677988035393501430
+    second: TaxCollector_Azathoth_Arrival_Sheet_39
+  - first:
+      213: -2181310239407353115
+    second: TaxCollector_Azathoth_Arrival_Sheet_40
+  - first:
+      213: -7715953732328157191
+    second: TaxCollector_Azathoth_Arrival_Sheet_41
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: TaxCollector_Azathoth_Arrival_Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 3643
+        y: 299
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 711ebf081968651e0800000000000000
+      internalID: -2209430607686278889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TaxCollector_Azathoth_Arrival_Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 2739
+        y: 67
+        width: 286
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 837da009e41406490800000000000000
+      internalID: -7755126752652110024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TaxCollector_Azathoth_Arrival_Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 2827
+        y: 267
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8088c0a37e26d7d20800000000000000
+      internalID: 3277884849046456328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TaxCollector_Azathoth_Arrival_Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 3103
+        y: 63
+        width: 318
+        height: 214
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ff86af040b5e59a0800000000000000
+      internalID: -6242451960488357897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TaxCollector_Azathoth_Arrival_Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 3479
+        y: 51
+        width: 342
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4f450c0933e2df70800000000000000
+      internalID: 9210674022080401230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TaxCollector_Azathoth_Arrival_Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 2147
+        y: 255
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d4b9ef1b088270f0800000000000000
+      internalID: -1120683775900404520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TaxCollector_Azathoth_Arrival_Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 2371
+        y: 83
+        width: 262
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec76e5b651ccb0000800000000000000
+      internalID: 3320617111545806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TaxCollector_Azathoth_Arrival_Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 943
+        y: 231
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ce54a826e3f41480800000000000000
+      internalID: -8929243991318962496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TaxCollector_Azathoth_Arrival_Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 1299
+        y: 231
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 178877a924a488a90800000000000000
+      internalID: -7311512345116178319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TaxCollector_Azathoth_Arrival_Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 1391
+        y: 223
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 307de8209263c8b40800000000000000
+      internalID: 5443785599348561667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TaxCollector_Azathoth_Arrival_Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 1627
+        y: 99
+        width: 206
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd81f437003284a80800000000000000
+      internalID: -8482491413310793505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TaxCollector_Azathoth_Arrival_Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 1999
+        y: 91
+        width: 230
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e311951cf36e5bcc0800000000000000
+      internalID: -3695794757686456002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TaxCollector_Azathoth_Arrival_Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 123
+        width: 118
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c7773fe96f547d00800000000000000
+      internalID: 969504728381093832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TaxCollector_Azathoth_Arrival_Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 583
+        y: 215
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efe7cf75b737582a0800000000000000
+      internalID: -6735850694068371714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TaxCollector_Azathoth_Arrival_Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 883
+        y: 115
+        width: 154
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0703ec20cdcd4ef0800000000000000
+      internalID: -122215389598644470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TaxCollector_Azathoth_Arrival_Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 1259
+        y: 111
+        width: 178
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8fb399514e40e7b50800000000000000
+      internalID: 6592712282178403320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TaxCollector_Azathoth_Arrival_Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 139
+        width: 94
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 375a87ef10f492150800000000000000
+      internalID: 5848292461100180851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TaxCollector_Azathoth_Arrival_Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 203
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a90367f03e32279b0800000000000000
+      internalID: -5083961571223916390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TaxCollector_Azathoth_Arrival_Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 187
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88ec0e4bcab61ae10800000000000000
+      internalID: 2207163681901432456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TaxCollector_Azathoth_Arrival_Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 1615
+        y: 179
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2236a084ccebc220800000000000000
+      internalID: 2507357946277933610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TaxCollector_Azathoth_Arrival_Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 2235
+        y: 179
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99795b009e26a4ad0800000000000000
+      internalID: -2717250672285870183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TaxCollector_Azathoth_Arrival_Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 163
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c97a8aa990da67000800000000000000
+      internalID: 33404304012912540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TaxCollector_Azathoth_Arrival_Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 1243
+        y: 163
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af050dd29d1f09140800000000000000
+      internalID: 4724541924190474490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TaxCollector_Azathoth_Arrival_Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 2359
+        y: 163
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 592e7a07a96128bd0800000000000000
+      internalID: -2629514379860122987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TaxCollector_Azathoth_Arrival_Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 3823
+        y: 167
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6c84dc1916746bd0800000000000000
+      internalID: -2637853631502316433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TaxCollector_Azathoth_Arrival_Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 155
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb4ff54a85cc52ef0800000000000000
+      internalID: -133475932850621252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TaxCollector_Azathoth_Arrival_Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 127
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6131792e1c88ff90800000000000000
+      internalID: -6919626766282575508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TaxCollector_Azathoth_Arrival_Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 127
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8fc231264f3c6580800000000000000
+      internalID: -8832615198743146609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TaxCollector_Azathoth_Arrival_Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 119
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2bce58d9715aee300800000000000000
+      internalID: 283345347416550578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TaxCollector_Azathoth_Arrival_Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 971
+        y: 99
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ff9f3ee5e5db8e90800000000000000
+      internalID: -7022284010432782352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TaxCollector_Azathoth_Arrival_Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 1295
+        y: 107
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c923653331ef7bb0800000000000000
+      internalID: -4935979056519501370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TaxCollector_Azathoth_Arrival_Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 1387
+        y: 103
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12eed140c19e539b0800000000000000
+      internalID: -5100914696389792223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TaxCollector_Azathoth_Arrival_Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 1343
+        y: 91
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ea9f264844501b50800000000000000
+      internalID: 6561837326470716131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TaxCollector_Azathoth_Arrival_Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 1707
+        y: 83
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1043682030d6a5020800000000000000
+      internalID: 2331295616812332033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TaxCollector_Azathoth_Arrival_Sheet_34
+      rect:
+        serializedVersion: 2
+        x: 1763
+        y: 91
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1dc7ad83219be1f10800000000000000
+      internalID: 2242433152391478481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TaxCollector_Azathoth_Arrival_Sheet_35
+      rect:
+        serializedVersion: 2
+        x: 2427
+        y: 75
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28456e86f07bbee10800000000000000
+      internalID: 2228075717477160066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TaxCollector_Azathoth_Arrival_Sheet_36
+      rect:
+        serializedVersion: 2
+        x: 2495
+        y: 67
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c335b4b410f5c7ca0800000000000000
+      internalID: -6017830542910991556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TaxCollector_Azathoth_Arrival_Sheet_37
+      rect:
+        serializedVersion: 2
+        x: 2559
+        y: 75
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12537375191a33800800000000000000
+      internalID: 590993621721232673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TaxCollector_Azathoth_Arrival_Sheet_38
+      rect:
+        serializedVersion: 2
+        x: 2927
+        y: 63
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7988cd324d05ba560800000000000000
+      internalID: 7326038090913187991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TaxCollector_Azathoth_Arrival_Sheet_39
+      rect:
+        serializedVersion: 2
+        x: 3203
+        y: 51
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a07c7d6baa2741fb0800000000000000
+      internalID: -4677988035393501430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TaxCollector_Azathoth_Arrival_Sheet_40
+      rect:
+        serializedVersion: 2
+        x: 3291
+        y: 43
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e2d333f4ed6ab1e0800000000000000
+      internalID: -2181310239407353115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TaxCollector_Azathoth_Arrival_Sheet_41
+      rect:
+        serializedVersion: 2
+        x: 3647
+        y: 31
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ff0b3916fc6be490800000000000000
+      internalID: -7715953732328157191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

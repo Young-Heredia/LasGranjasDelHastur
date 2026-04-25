@@ -247,7 +247,7 @@ namespace LasGranjasDelHastur.Zone1
                 unstableSouls = resourceManager.Get(ResourceType.UnstableSouls),
                 level = progressionManager.Level,
                 xp = progressionManager.Xp,
-                strikes = taxManager.Strikes,
+                strikes = GlobalTaxLedger.GetStrikes(),
                 fineDebt = taxManager.FineDebt,
                 timeToNextTaxSeconds = taxManager.TimeToNextTaxSeconds,
                 taxAlertActive = taxManager.IsAlertActive,

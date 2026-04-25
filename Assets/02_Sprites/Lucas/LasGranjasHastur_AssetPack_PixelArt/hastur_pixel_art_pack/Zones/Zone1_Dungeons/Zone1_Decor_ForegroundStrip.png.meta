@@ -1,0 +1,567 @@
+fileFormatVersion: 2
+guid: fdb4a56939ad7c246bcaccf0567c0553
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5484271657391083500
+    second: Zone1_Decor_ForegroundStrip_0
+  - first:
+      213: -5164918517897593844
+    second: Zone1_Decor_ForegroundStrip_1
+  - first:
+      213: -4942631357995965575
+    second: Zone1_Decor_ForegroundStrip_2
+  - first:
+      213: 4361418942964660114
+    second: Zone1_Decor_ForegroundStrip_3
+  - first:
+      213: -4479970182862023777
+    second: Zone1_Decor_ForegroundStrip_4
+  - first:
+      213: 5584862852564435709
+    second: Zone1_Decor_ForegroundStrip_5
+  - first:
+      213: 3778077907302522084
+    second: Zone1_Decor_ForegroundStrip_6
+  - first:
+      213: -1014016292722555980
+    second: Zone1_Decor_ForegroundStrip_7
+  - first:
+      213: -5361024652601513748
+    second: Zone1_Decor_ForegroundStrip_8
+  - first:
+      213: -1275946362346431638
+    second: Zone1_Decor_ForegroundStrip_9
+  - first:
+      213: -1406868562927991654
+    second: Zone1_Decor_ForegroundStrip_10
+  - first:
+      213: -7605443481480128288
+    second: Zone1_Decor_ForegroundStrip_11
+  - first:
+      213: 3677717155009528514
+    second: Zone1_Decor_ForegroundStrip_12
+  - first:
+      213: -349483066334180430
+    second: Zone1_Decor_ForegroundStrip_13
+  - first:
+      213: 9059736828394446705
+    second: Zone1_Decor_ForegroundStrip_14
+  - first:
+      213: 3223602011343286681
+    second: Zone1_Decor_ForegroundStrip_15
+  - first:
+      213: -1907326408914615724
+    second: Zone1_Decor_ForegroundStrip_16
+  - first:
+      213: 1197812301249030703
+    second: Zone1_Decor_ForegroundStrip_17
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Zone1_Decor_ForegroundStrip_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 69
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cefc986f30c0c1c40800000000000000
+      internalID: 5484271657391083500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_Decor_ForegroundStrip_1
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 0
+        width: 134
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0c70ee09f58258b0800000000000000
+      internalID: -5164918517897593844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_Decor_ForegroundStrip_2
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 0
+        width: 46
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 973a1f297fe386bb0800000000000000
+      internalID: -4942631357995965575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_Decor_ForegroundStrip_3
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 0
+        width: 70
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 297711cbb6fd68c30800000000000000
+      internalID: 4361418942964660114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_Decor_ForegroundStrip_4
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 0
+        width: 278
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f93da26cad2f3d1c0800000000000000
+      internalID: -4479970182862023777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_Decor_ForegroundStrip_5
+      rect:
+        serializedVersion: 2
+        x: 647
+        y: 0
+        width: 74
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df2c06eac2b618d40800000000000000
+      internalID: 5584862852564435709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_Decor_ForegroundStrip_6
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 0
+        width: 126
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ec948ee6dd6e6430800000000000000
+      internalID: 3778077907302522084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_Decor_ForegroundStrip_7
+      rect:
+        serializedVersion: 2
+        x: 863
+        y: 0
+        width: 66
+        height: 121
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b340d3ed8d7de1f0800000000000000
+      internalID: -1014016292722555980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_Decor_ForegroundStrip_8
+      rect:
+        serializedVersion: 2
+        x: 935
+        y: 0
+        width: 70
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce8239d7b70d995b0800000000000000
+      internalID: -5361024652601513748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_Decor_ForegroundStrip_9
+      rect:
+        serializedVersion: 2
+        x: 1011
+        y: 0
+        width: 154
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6b93ef2b8dea4ee0800000000000000
+      internalID: -1275946362346431638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_Decor_ForegroundStrip_10
+      rect:
+        serializedVersion: 2
+        x: 1155
+        y: 0
+        width: 82
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a944305fe7cc97ce0800000000000000
+      internalID: -1406868562927991654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_Decor_ForegroundStrip_11
+      rect:
+        serializedVersion: 2
+        x: 1227
+        y: 0
+        width: 62
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e8111fe279047690800000000000000
+      internalID: -7605443481480128288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_Decor_ForegroundStrip_12
+      rect:
+        serializedVersion: 2
+        x: 1299
+        y: 0
+        width: 134
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c204b06440e90330800000000000000
+      internalID: 3677717155009528514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_Decor_ForegroundStrip_13
+      rect:
+        serializedVersion: 2
+        x: 1443
+        y: 0
+        width: 130
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2bb0328b003662bf0800000000000000
+      internalID: -349483066334180430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_Decor_ForegroundStrip_14
+      rect:
+        serializedVersion: 2
+        x: 1583
+        y: 0
+        width: 130
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17f99f615a6aabd70800000000000000
+      internalID: 9059736828394446705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_Decor_ForegroundStrip_15
+      rect:
+        serializedVersion: 2
+        x: 1731
+        y: 0
+        width: 62
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 991f95f23f88cbc20800000000000000
+      internalID: 3223602011343286681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_Decor_ForegroundStrip_16
+      rect:
+        serializedVersion: 2
+        x: 1803
+        y: 0
+        width: 54
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4524ced8cb0d785e0800000000000000
+      internalID: -1907326408914615724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_Decor_ForegroundStrip_17
+      rect:
+        serializedVersion: 2
+        x: 1871
+        y: 0
+        width: 49
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2aaa8311fb7f9010800000000000000
+      internalID: 1197812301249030703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

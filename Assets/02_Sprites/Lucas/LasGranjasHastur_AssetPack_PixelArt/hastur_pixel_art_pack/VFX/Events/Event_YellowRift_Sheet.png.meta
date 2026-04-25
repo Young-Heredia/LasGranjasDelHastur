@@ -1,0 +1,1292 @@
+fileFormatVersion: 2
+guid: 7707f1eba9163c547b8923c51d953630
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1830939044159742922
+    second: Event_YellowRift_Sheet_0
+  - first:
+      213: 5915914159926541904
+    second: Event_YellowRift_Sheet_1
+  - first:
+      213: -9132387662893989693
+    second: Event_YellowRift_Sheet_2
+  - first:
+      213: 281593274564523436
+    second: Event_YellowRift_Sheet_3
+  - first:
+      213: 2103753160454478442
+    second: Event_YellowRift_Sheet_4
+  - first:
+      213: -8771593670814551016
+    second: Event_YellowRift_Sheet_5
+  - first:
+      213: 2400018599393970035
+    second: Event_YellowRift_Sheet_6
+  - first:
+      213: 5156376109232627273
+    second: Event_YellowRift_Sheet_7
+  - first:
+      213: -3848796161502945355
+    second: Event_YellowRift_Sheet_8
+  - first:
+      213: 6073505951526401304
+    second: Event_YellowRift_Sheet_9
+  - first:
+      213: 8959983598619705672
+    second: Event_YellowRift_Sheet_10
+  - first:
+      213: 5750812556430857397
+    second: Event_YellowRift_Sheet_11
+  - first:
+      213: -1851820829965113797
+    second: Event_YellowRift_Sheet_12
+  - first:
+      213: -893890559203648983
+    second: Event_YellowRift_Sheet_13
+  - first:
+      213: -6743767823910448231
+    second: Event_YellowRift_Sheet_14
+  - first:
+      213: -5960232433403806160
+    second: Event_YellowRift_Sheet_15
+  - first:
+      213: -3139697365505387774
+    second: Event_YellowRift_Sheet_16
+  - first:
+      213: -3105857612301842701
+    second: Event_YellowRift_Sheet_17
+  - first:
+      213: -7616041702766384928
+    second: Event_YellowRift_Sheet_18
+  - first:
+      213: -7921097697458416431
+    second: Event_YellowRift_Sheet_19
+  - first:
+      213: -4678936072936388196
+    second: Event_YellowRift_Sheet_20
+  - first:
+      213: -1537134401638703680
+    second: Event_YellowRift_Sheet_21
+  - first:
+      213: -3624458485452683079
+    second: Event_YellowRift_Sheet_22
+  - first:
+      213: -1139015527214643932
+    second: Event_YellowRift_Sheet_23
+  - first:
+      213: -8134518917705360899
+    second: Event_YellowRift_Sheet_24
+  - first:
+      213: 3643024188458672511
+    second: Event_YellowRift_Sheet_25
+  - first:
+      213: -3482712829113034410
+    second: Event_YellowRift_Sheet_26
+  - first:
+      213: -1766045980288505556
+    second: Event_YellowRift_Sheet_27
+  - first:
+      213: -8898999560722496587
+    second: Event_YellowRift_Sheet_28
+  - first:
+      213: 7257437062725584602
+    second: Event_YellowRift_Sheet_29
+  - first:
+      213: -2165674892952780270
+    second: Event_YellowRift_Sheet_30
+  - first:
+      213: 5709245318048826927
+    second: Event_YellowRift_Sheet_31
+  - first:
+      213: -2335600670759260845
+    second: Event_YellowRift_Sheet_32
+  - first:
+      213: -7586687659445423680
+    second: Event_YellowRift_Sheet_33
+  - first:
+      213: 8987431243442604881
+    second: Event_YellowRift_Sheet_34
+  - first:
+      213: 2750086968397807197
+    second: Event_YellowRift_Sheet_35
+  - first:
+      213: -8961458116246240380
+    second: Event_YellowRift_Sheet_36
+  - first:
+      213: -5375452363765497815
+    second: Event_YellowRift_Sheet_37
+  - first:
+      213: 7344437631035771306
+    second: Event_YellowRift_Sheet_38
+  - first:
+      213: -2246893280184338370
+    second: Event_YellowRift_Sheet_39
+  - first:
+      213: -2755363365597876338
+    second: Event_YellowRift_Sheet_40
+  - first:
+      213: 5734880835655871222
+    second: Event_YellowRift_Sheet_41
+  - first:
+      213: 6869526243630315615
+    second: Event_YellowRift_Sheet_42
+  - first:
+      213: 3775880495244815679
+    second: Event_YellowRift_Sheet_43
+  - first:
+      213: -6175707133808864931
+    second: Event_YellowRift_Sheet_44
+  - first:
+      213: 859546006078982169
+    second: Event_YellowRift_Sheet_45
+  - first:
+      213: -6676841305725014011
+    second: Event_YellowRift_Sheet_46
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Event_YellowRift_Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 271
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac3e8842c5dc86910800000000000000
+      internalID: 1830939044159742922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_YellowRift_Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 1807
+        y: 275
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05eff18a59c891250800000000000000
+      internalID: 5915914159926541904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_YellowRift_Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 2323
+        y: 275
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c04b0a5ecd334180800000000000000
+      internalID: -9132387662893989693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_YellowRift_Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 2415
+        y: 275
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca5be8d579b68e300800000000000000
+      internalID: 281593274564523436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_YellowRift_Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 43
+        width: 102
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6a9eff6a58023d10800000000000000
+      internalID: 2103753160454478442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_YellowRift_Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 43
+        width: 102
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 814b801c70a054680800000000000000
+      internalID: -8771593670814551016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_YellowRift_Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 759
+        y: 43
+        width: 102
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 377453743349e4120800000000000000
+      internalID: 2400018599393970035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_YellowRift_Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 1079
+        y: 43
+        width: 102
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94e1f1f60c02f8740800000000000000
+      internalID: 5156376109232627273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_YellowRift_Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 1399
+        y: 43
+        width: 102
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bfdabc6844569ac0800000000000000
+      internalID: -3848796161502945355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_YellowRift_Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 1715
+        y: 43
+        width: 106
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 815b3fdeb7d694450800000000000000
+      internalID: 6073505951526401304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_YellowRift_Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 2003
+        y: 267
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 841cd056c91485c70800000000000000
+      internalID: 8959983598619705672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_YellowRift_Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 2039
+        y: 43
+        width: 102
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b4daeb0d8dfecf40800000000000000
+      internalID: 5750812556430857397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_YellowRift_Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 2359
+        y: 43
+        width: 102
+        height: 230
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b36a24a34c20d46e0800000000000000
+      internalID: -1851820829965113797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_YellowRift_Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 1043
+        y: 255
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92a579eb5434893f0800000000000000
+      internalID: -893890559203648983
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_YellowRift_Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 1363
+        y: 259
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 993db18e4e25962a0800000000000000
+      internalID: -6743767823910448231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_YellowRift_Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 2331
+        y: 255
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03e34343e20094da0800000000000000
+      internalID: -5960232433403806160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_YellowRift_Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 883
+        y: 247
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20352d281ed8d64d0800000000000000
+      internalID: -3139697365505387774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_YellowRift_Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 1183
+        y: 235
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f64ec705f6c5e4d0800000000000000
+      internalID: -3105857612301842701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_YellowRift_Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 2351
+        y: 239
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e86c004c626e4690800000000000000
+      internalID: -7616041702766384928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_YellowRift_Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 863
+        y: 219
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d493d7ac9b921290800000000000000
+      internalID: -7921097697458416431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_YellowRift_Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 1527
+        y: 199
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c998dd58e64111fb0800000000000000
+      internalID: -4678936072936388196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_YellowRift_Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 1703
+        y: 203
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0cdda42e7600baae0800000000000000
+      internalID: -1537134401638703680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_YellowRift_Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 187
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b8417fe53653bdc0800000000000000
+      internalID: -3624458485452683079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_YellowRift_Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 183
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42587baa9676130f0800000000000000
+      internalID: -1139015527214643932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_YellowRift_Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 895
+        y: 183
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df91a7394226c1f80800000000000000
+      internalID: -8134518917705360899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_YellowRift_Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 2335
+        y: 167
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f712c35a23f9e8230800000000000000
+      internalID: 3643024188458672511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_YellowRift_Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 155
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6599506522beaafc0800000000000000
+      internalID: -3482712829113034410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_YellowRift_Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 143
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c29a5efa98ebd77e0800000000000000
+      internalID: -1766045980288505556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_YellowRift_Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 1511
+        y: 147
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b347c66c07608480800000000000000
+      internalID: -8898999560722496587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_YellowRift_Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 715
+        y: 135
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad643879e8897b460800000000000000
+      internalID: 7257437062725584602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_YellowRift_Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 1215
+        y: 135
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 212419ab82af1f1e0800000000000000
+      internalID: -2165674892952780270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_YellowRift_Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 1683
+        y: 139
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f26ccdd2e505b3f40800000000000000
+      internalID: 5709245318048826927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_YellowRift_Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 2475
+        y: 135
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35dea328097469fd0800000000000000
+      internalID: -2335600670759260845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_YellowRift_Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 891
+        y: 123
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c17aec05cba6b690800000000000000
+      internalID: -7586687659445423680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_YellowRift_Sheet_34
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 103
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15bc4a43915c9bc70800000000000000
+      internalID: 8987431243442604881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_YellowRift_Sheet_35
+      rect:
+        serializedVersion: 2
+        x: 1535
+        y: 99
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5e38c4f6854a2620800000000000000
+      internalID: 2750086968397807197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_YellowRift_Sheet_36
+      rect:
+        serializedVersion: 2
+        x: 2319
+        y: 95
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4830a97b25182a380800000000000000
+      internalID: -8961458116246240380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_YellowRift_Sheet_37
+      rect:
+        serializedVersion: 2
+        x: 1687
+        y: 87
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92049b63e8e8665b0800000000000000
+      internalID: -5375452363765497815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_YellowRift_Sheet_38
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 79
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa906e8ec1face560800000000000000
+      internalID: 7344437631035771306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_YellowRift_Sheet_39
+      rect:
+        serializedVersion: 2
+        x: 1355
+        y: 79
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e38766a577e61d0e0800000000000000
+      internalID: -2246893280184338370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_YellowRift_Sheet_40
+      rect:
+        serializedVersion: 2
+        x: 1199
+        y: 63
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8fe9661e9bf2c9d0800000000000000
+      internalID: -2755363365597876338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_YellowRift_Sheet_41
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 43
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6faa67e3cb3669f40800000000000000
+      internalID: 5734880835655871222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_YellowRift_Sheet_42
+      rect:
+        serializedVersion: 2
+        x: 559
+        y: 47
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f58fec6e8b5755f50800000000000000
+      internalID: 6869526243630315615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_YellowRift_Sheet_43
+      rect:
+        serializedVersion: 2
+        x: 1159
+        y: 39
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3da4611e4f966430800000000000000
+      internalID: 3775880495244815679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_YellowRift_Sheet_44
+      rect:
+        serializedVersion: 2
+        x: 1367
+        y: 27
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d511a74051b7b4aa0800000000000000
+      internalID: -6175707133808864931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_YellowRift_Sheet_45
+      rect:
+        serializedVersion: 2
+        x: 1763
+        y: 27
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9188178d988bdeb00800000000000000
+      internalID: 859546006078982169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_YellowRift_Sheet_46
+      rect:
+        serializedVersion: 2
+        x: 2483
+        y: 31
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 500fa9635381753a0800000000000000
+      internalID: -6676841305725014011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
