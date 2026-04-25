@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\UNIVALLE\\GESTION 1-2026 ISI\\GAME DEVELOP\\ASSIGNMENT\\2026.04.16 Strange Agriculture Jam\\LasGranjasDelHastur\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{062E4E42-FAFF-D8F9-E90D-3761087FCEA3}|Assembly-CSharp.csproj|d:\\univalle\\gestion 1-2026 isi\\game develop\\assignment\\2026.04.16 strange agriculture jam\\lasgranjasdelhastur\\assets\\01_scripts\\camera\\lucas\\cameracontroller2d.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{062E4E42-FAFF-D8F9-E90D-3761087FCEA3}|Assembly-CSharp.csproj|solutionrelative:assets\\01_scripts\\camera\\lucas\\cameracontroller2d.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{062E4E42-FAFF-D8F9-E90D-3761087FCEA3}|Assembly-CSharp.csproj|d:\\univalle\\gestion 1-2026 isi\\game develop\\assignment\\2026.04.16 strange agriculture jam\\lasgranjasdelhastur\\assets\\01_scripts\\zone1\\lucas\\zone1bootstrap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{062E4E42-FAFF-D8F9-E90D-3761087FCEA3}|Assembly-CSharp.csproj|solutionrelative:assets\\01_scripts\\zone1\\lucas\\zone1bootstrap.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CameraController2D.cs",
+              "DocumentMoniker": "D:\\UNIVALLE\\GESTION 1-2026 ISI\\GAME DEVELOP\\ASSIGNMENT\\2026.04.16 Strange Agriculture Jam\\LasGranjasDelHastur\\Assets\\01_Scripts\\Camera\\Lucas\\CameraController2D.cs",
+              "RelativeDocumentMoniker": "Assets\\01_Scripts\\Camera\\Lucas\\CameraController2D.cs",
+              "ToolTip": "D:\\UNIVALLE\\GESTION 1-2026 ISI\\GAME DEVELOP\\ASSIGNMENT\\2026.04.16 Strange Agriculture Jam\\LasGranjasDelHastur\\Assets\\01_Scripts\\Camera\\Lucas\\CameraController2D.cs",
+              "RelativeToolTip": "Assets\\01_Scripts\\Camera\\Lucas\\CameraController2D.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-25T00:47:13.656Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Zone1Bootstrap.cs",
+              "DocumentMoniker": "D:\\UNIVALLE\\GESTION 1-2026 ISI\\GAME DEVELOP\\ASSIGNMENT\\2026.04.16 Strange Agriculture Jam\\LasGranjasDelHastur\\Assets\\01_Scripts\\Zone1\\Lucas\\Zone1Bootstrap.cs",
+              "RelativeDocumentMoniker": "Assets\\01_Scripts\\Zone1\\Lucas\\Zone1Bootstrap.cs",
+              "ToolTip": "D:\\UNIVALLE\\GESTION 1-2026 ISI\\GAME DEVELOP\\ASSIGNMENT\\2026.04.16 Strange Agriculture Jam\\LasGranjasDelHastur\\Assets\\01_Scripts\\Zone1\\Lucas\\Zone1Bootstrap.cs",
+              "RelativeToolTip": "Assets\\01_Scripts\\Zone1\\Lucas\\Zone1Bootstrap.cs",
+              "ViewState": "AgIAAJQBAAAAAAAAAAD4v6UBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-25T00:38:00.916Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
