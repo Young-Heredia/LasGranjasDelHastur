@@ -6,16 +6,16 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/00_Scenes/IntroComic.unity
+    path: Assets/00_Scenes/Lucas/IntroComic.unity
     guid: c022db5c5aaeea64da4f9896fb92cdb3
   - enabled: 1
-    path: Assets/00_Scenes/MainMenu.unity
+    path: Assets/00_Scenes/Lucas/MainMenu.unity
     guid: 8116c1cf09ae8f84a846a203c9b6ca32
   - enabled: 1
-    path: Assets/00_Scenes/ZoneSelection.unity
+    path: Assets/00_Scenes/Lucas/ZoneSelection.unity
     guid: 578257b098af457448e4394d084643d1
   - enabled: 1
-    path: Assets/00_Scenes/Zone1_Dungeons.unity
+    path: Assets/00_Scenes/Lucas/Zone1_Dungeons.unity
     guid: d4257285012484040b1734a21d711e4f
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
