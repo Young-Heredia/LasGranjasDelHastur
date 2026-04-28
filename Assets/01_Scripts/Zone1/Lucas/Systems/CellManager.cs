@@ -33,6 +33,10 @@ namespace LasGranjasDelHastur.Zone1
         [SerializeField, Min(0)] private int upgradePerLevelAdd = 20;
         [SerializeField, Range(1f, 3f)] private float upgradeLevelMultiplier = 1.15f;
 
+        [Header("Prefab (optional)")]
+        [Tooltip("Raíz: SpriteRenderer, BoxCollider2D, FarmCell, WorldCellClickable, hijos GroundShadow, SelectionRing, ReadyPulse, AssistantMarker. Generar con Jose/Editor: Bake FarmCellSlot prefab. Si null, se construye en código como antes.")]
+        [SerializeField] private GameObject cellSlotPrefab;
+
         readonly List<FarmCell> _cells = new();
         readonly Dictionary<Zone1CellType, Zone1CellDefinition> _defsByType = new();
         readonly Dictionary<FarmCell, GameObject> _selectionRings = new();
@@ -149,81 +153,62 @@ namespace LasGranjasDelHastur.Zone1
                 for (var c = 0; c < columns; c++)
                 {
                     var slotIndex = r * columns + c;
-                    var go = new GameObject($"CellSlot_{slotIndex:00}");
-                    go.transform.SetParent(transform, false);
-                    go.transform.position = new Vector3(origin.x + c * cellSpacing.x, origin.y - r * cellSpacing.y, 0f);
+                    var baseSorting = 40 + (rows - r) * 4;
+                    var go = CreateCellGameObject(slotIndex, r, c);
 
-                    var sr = go.AddComponent<SpriteRenderer>();
-                    sr.sprite = Zone1ArtProvider.LoadSprite("Assets/02_Sprites/Lucas/Zone1/Cells/zone1_soulpit_blocked.png") ?? RuntimeSpriteFactory.OpaqueWhiteSprite;
-                    go.transform.localScale = new Vector3(1.2f, 1.2f, 1f);
+                    var sr = go.GetComponent<SpriteRenderer>();
+                    if (sr == null)
+                        sr = go.AddComponent<SpriteRenderer>();
+
+                    var blockedPath = CellSpritePathResolver.ResolveByFileName("zone1_soulpit_blocked.png");
+                    if (sr.sprite == null)
+                        sr.sprite = Zone1ArtProvider.LoadSprite(blockedPath) ?? RuntimeSpriteFactory.OpaqueWhiteSprite;
                     sr.color = new Color(0.12f, 0.12f, 0.14f, 1f);
-                    sr.sortingOrder = 40 + (rows - r) * 4;
 
-                    var col = go.AddComponent<BoxCollider2D>();
-                    col.size = Vector2.one;
+                    sr.sortingOrder = baseSorting;
 
-                    var cell = go.AddComponent<FarmCell>();
+                    var box = go.GetComponent<BoxCollider2D>();
+                    if (box == null)
+                        box = go.AddComponent<BoxCollider2D>();
+                    box.size = Vector2.one;
+
+                    var cell = go.GetComponent<FarmCell>();
+                    if (cell == null)
+                        cell = go.AddComponent<FarmCell>();
                     cell.Configure(slotIndex, GetDef(Zone1CellType.SoulPit), CellState.Blocked, 1);
                     cell.ConfigureEconomy(purchaseSlotScalePercent, upgradeBaseCost, upgradePerLevelAdd, upgradeLevelMultiplier);
                     cell.Changed += _ => CellsChanged?.Invoke();
 
-                    var clickable = go.AddComponent<WorldCellClickable>();
+                    var clickable = go.GetComponent<WorldCellClickable>();
+                    if (clickable == null)
+                        clickable = go.AddComponent<WorldCellClickable>();
                     clickable.Bind(this, cell);
 
-                    SetupCellFx(go.transform, cell, sr.sortingOrder);
+                    var fx = FarmCellSlotHierarchy.Ensure(go.transform, baseSorting);
+                    _selectionRings[cell] = fx.SelectionRing;
+                    _readyPulses[cell] = fx.ReadyPulse;
+                    _assistantMarkers[cell] = fx.AssistantMarker;
                     _cells.Add(cell);
                 }
             }
         }
 
-        void SetupCellFx(Transform parent, FarmCell cell, int baseSortingOrder)
+        GameObject CreateCellGameObject(int slotIndex, int r, int c)
         {
-            var shadow = new GameObject("GroundShadow");
-            shadow.transform.SetParent(parent, false);
-            shadow.transform.localPosition = new Vector3(0f, -0.58f, 0f);
-            shadow.transform.localScale = new Vector3(1.1f, 0.55f, 1f);
-            var shadowSr = shadow.AddComponent<SpriteRenderer>();
-            shadowSr.sprite = RuntimeSpriteFactory.OpaqueWhiteSprite;
-            shadowSr.color = new Color(0f, 0f, 0f, 0.28f);
-            shadowSr.sortingOrder = baseSortingOrder - 1;
+            if (cellSlotPrefab != null)
+            {
+                var go = Instantiate(cellSlotPrefab, transform, false);
+                go.name = $"CellSlot_{slotIndex:00}";
+                go.transform.position = new Vector3(origin.x + c * cellSpacing.x, origin.y - r * cellSpacing.y, 0f);
+                go.transform.localScale = new Vector3(1.2f, 1.2f, 1f);
+                return go;
+            }
 
-            var ring = new GameObject("SelectionRing");
-            ring.transform.SetParent(parent, false);
-            ring.transform.localPosition = new Vector3(0f, -0.65f, 0f);
-            ring.transform.localScale = new Vector3(1.1f, 0.45f, 1f);
-            var ringSr = ring.AddComponent<SpriteRenderer>();
-            ringSr.sprite = Zone1ArtProvider.LoadSprite("Assets/02_Sprites/Lucas/Zone1/Spritesheets/zone1_select_ring_sheet.png");
-            ringSr.color = new Color(1f, 1f, 1f, 0.9f);
-            ringSr.sortingOrder = baseSortingOrder + 3;
-            var ringAnim = ring.AddComponent<SpriteSheetAnimator>();
-            ringAnim.Configure("Assets/02_Sprites/Lucas/Zone1/Spritesheets/zone1_select_ring_sheet.png", 32, 32, 8f);
-            ring.SetActive(false);
-            _selectionRings[cell] = ring;
-
-            var ready = new GameObject("ReadyPulse");
-            ready.transform.SetParent(parent, false);
-            ready.transform.localPosition = new Vector3(0f, 0.65f, 0f);
-            ready.transform.localScale = new Vector3(0.75f, 0.75f, 1f);
-            var readySr = ready.AddComponent<SpriteRenderer>();
-            readySr.sprite = Zone1ArtProvider.LoadSprite("Assets/02_Sprites/Lucas/Zone1/Spritesheets/zone1_ready_collect_sheet.png");
-            readySr.color = Color.white;
-            readySr.sortingOrder = baseSortingOrder + 4;
-            var readyAnim = ready.AddComponent<SpriteSheetAnimator>();
-            readyAnim.Configure("Assets/02_Sprites/Lucas/Zone1/Spritesheets/zone1_ready_collect_sheet.png", 32, 32, 10f);
-            ready.SetActive(false);
-            _readyPulses[cell] = ready;
-
-            var assistant = new GameObject("AssistantMarker");
-            assistant.transform.SetParent(parent, false);
-            assistant.transform.localPosition = new Vector3(0f, 1.05f, 0f);
-            assistant.transform.localScale = new Vector3(0.65f, 0.65f, 1f);
-            var assistantSr = assistant.AddComponent<SpriteRenderer>();
-            assistantSr.sprite = Zone1ArtProvider.LoadSprite("Assets/02_Sprites/Lucas/Zone1/Icons/zone1_icon_level.png")
-                ?? RuntimeSpriteFactory.OpaqueWhiteSprite;
-            assistantSr.color = new Color(0.80f, 0.95f, 1f, 0.95f);
-            assistantSr.sortingOrder = baseSortingOrder + 5;
-            assistant.SetActive(false);
-            _assistantMarkers[cell] = assistant;
+            var g = new GameObject($"CellSlot_{slotIndex:00}");
+            g.transform.SetParent(transform, false);
+            g.transform.position = new Vector3(origin.x + c * cellSpacing.x, origin.y - r * cellSpacing.y, 0f);
+            g.transform.localScale = new Vector3(1.2f, 1.2f, 1f);
+            return g;
         }
 
         void ApplyInitialUnlocks()
@@ -339,27 +324,7 @@ namespace LasGranjasDelHastur.Zone1
                 pulse.SetActive(cell.State == CellState.ReadyToCollect && !cell.IsCorrupted);
         }
 
-        static string GetCellSpritePath(FarmCell cell)
-        {
-            var type = cell.CellType switch
-            {
-                Zone1CellType.SoulPit => "soulpit",
-                Zone1CellType.EnergyWell => "energywell",
-                Zone1CellType.EchoChamber => "echochamber",
-                Zone1CellType.BrokenAltar => "brokenaltar",
-                _ => "soulpit"
-            };
-
-            var state = cell.IsCorrupted ? "corrupt" : cell.State switch
-            {
-                CellState.Blocked => "blocked",
-                CellState.Producing => "producing",
-                CellState.ReadyToCollect => "ready",
-                _ => "idle"
-            };
-
-            return $"Assets/02_Sprites/Lucas/Zone1/Cells/zone1_{type}_{state}.png";
-        }
+        static string GetCellSpritePath(FarmCell cell) => CellSpritePathResolver.ResolveForCell(cell);
 
         public List<CellSaveData> CaptureSaveData()
         {
