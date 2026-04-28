@@ -658,7 +658,15 @@ public class ZoneSelectionController : MonoBehaviour
             return true;
         }
 
-        Debug.LogError($"[ZoneSelection] No se pudo cargar escena objetivo '{preferredSceneName}' ni fallback '{fallbackSceneName}'.");
+        if (TryLoadScene("ZoneSelection"))
+        {
+            Debug.LogError(
+                $"[ZoneSelection] No se pudo cargar escena objetivo '{preferredSceneName}' ni fallback '{fallbackSceneName}'. " +
+                "Volviendo a ZoneSelection como seguridad.");
+            return true;
+        }
+
+        Debug.LogError($"[ZoneSelection] No se pudo cargar escena objetivo '{preferredSceneName}' ni fallback '{fallbackSceneName}' ni ZoneSelection.");
         return false;
     }
 
@@ -667,6 +675,16 @@ public class ZoneSelectionController : MonoBehaviour
         if (string.IsNullOrEmpty(sceneName))
             return false;
 
+        // Accept explicit scene paths too.
+        if (sceneName.EndsWith(".unity"))
+        {
+            if (Application.CanStreamedLevelBeLoaded(sceneName))
+            {
+                SceneManager.LoadScene(sceneName);
+                return true;
+            }
+        }
+
         if (Application.CanStreamedLevelBeLoaded(sceneName))
         {
             SceneManager.LoadScene(sceneName);
@@ -674,9 +692,18 @@ public class ZoneSelectionController : MonoBehaviour
         }
 
 #if UNITY_EDITOR
-        var scenePath = $"Assets/00_Scenes/{sceneName}.unity";
-        if (AssetDatabase.LoadAssetAtPath<SceneAsset>(scenePath) != null)
+        var candidatePaths = new[]
         {
+            $"Assets/00_Scenes/Lucas/{sceneName}.unity",
+            $"Assets/00_Scenes/{sceneName}.unity",
+            $"Assets/Scenes/{sceneName}.unity",
+        };
+
+        foreach (var scenePath in candidatePaths)
+        {
+            if (AssetDatabase.LoadAssetAtPath<SceneAsset>(scenePath) == null)
+                continue;
+
             EditorSceneManager.LoadSceneAsyncInPlayMode(scenePath, new LoadSceneParameters(LoadSceneMode.Single));
             return true;
         }

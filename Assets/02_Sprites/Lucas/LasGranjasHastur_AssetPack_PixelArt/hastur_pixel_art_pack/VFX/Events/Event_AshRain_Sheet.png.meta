@@ -1,0 +1,7892 @@
+fileFormatVersion: 2
+guid: 5e7215b77876abc49b55700e5bd07a57
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6793717489752449476
+    second: Event_AshRain_Sheet_0
+  - first:
+      213: 8461418529755793075
+    second: Event_AshRain_Sheet_1
+  - first:
+      213: 5866409778091739579
+    second: Event_AshRain_Sheet_2
+  - first:
+      213: 3500862626645229915
+    second: Event_AshRain_Sheet_3
+  - first:
+      213: 6350495830861027715
+    second: Event_AshRain_Sheet_4
+  - first:
+      213: 7948396872579963765
+    second: Event_AshRain_Sheet_5
+  - first:
+      213: 8742901922353074564
+    second: Event_AshRain_Sheet_6
+  - first:
+      213: -1979347080538219898
+    second: Event_AshRain_Sheet_7
+  - first:
+      213: -7066854571042188899
+    second: Event_AshRain_Sheet_8
+  - first:
+      213: 7961712442370446753
+    second: Event_AshRain_Sheet_9
+  - first:
+      213: -5630961763653931709
+    second: Event_AshRain_Sheet_10
+  - first:
+      213: -8734996062396669848
+    second: Event_AshRain_Sheet_11
+  - first:
+      213: 2022680747401124817
+    second: Event_AshRain_Sheet_12
+  - first:
+      213: 5886321583039873188
+    second: Event_AshRain_Sheet_13
+  - first:
+      213: -5936761287786848635
+    second: Event_AshRain_Sheet_14
+  - first:
+      213: -5645835143677255359
+    second: Event_AshRain_Sheet_15
+  - first:
+      213: 2408447097417878187
+    second: Event_AshRain_Sheet_16
+  - first:
+      213: 4445016837136781725
+    second: Event_AshRain_Sheet_17
+  - first:
+      213: 226854292267568916
+    second: Event_AshRain_Sheet_18
+  - first:
+      213: -4866423923020041614
+    second: Event_AshRain_Sheet_19
+  - first:
+      213: -1177940554768727700
+    second: Event_AshRain_Sheet_20
+  - first:
+      213: 5800412567245516831
+    second: Event_AshRain_Sheet_21
+  - first:
+      213: -749236787068559430
+    second: Event_AshRain_Sheet_22
+  - first:
+      213: -1777365382758506451
+    second: Event_AshRain_Sheet_23
+  - first:
+      213: 867799656853837037
+    second: Event_AshRain_Sheet_24
+  - first:
+      213: 6658137945534087325
+    second: Event_AshRain_Sheet_25
+  - first:
+      213: -7482208950728233516
+    second: Event_AshRain_Sheet_26
+  - first:
+      213: 6788683281077237035
+    second: Event_AshRain_Sheet_27
+  - first:
+      213: -9030329134861001673
+    second: Event_AshRain_Sheet_28
+  - first:
+      213: 1451079085038997049
+    second: Event_AshRain_Sheet_29
+  - first:
+      213: -7851696071802893224
+    second: Event_AshRain_Sheet_30
+  - first:
+      213: -16345083740906135
+    second: Event_AshRain_Sheet_31
+  - first:
+      213: 1183095828629721961
+    second: Event_AshRain_Sheet_32
+  - first:
+      213: -2636848315616552846
+    second: Event_AshRain_Sheet_33
+  - first:
+      213: 1622063149613920384
+    second: Event_AshRain_Sheet_34
+  - first:
+      213: -252370274179232281
+    second: Event_AshRain_Sheet_35
+  - first:
+      213: -2827169241770696054
+    second: Event_AshRain_Sheet_36
+  - first:
+      213: 242558246781031288
+    second: Event_AshRain_Sheet_37
+  - first:
+      213: -176120049589776459
+    second: Event_AshRain_Sheet_38
+  - first:
+      213: 7471521382509621692
+    second: Event_AshRain_Sheet_39
+  - first:
+      213: 997919221526178715
+    second: Event_AshRain_Sheet_40
+  - first:
+      213: -8563812598271096506
+    second: Event_AshRain_Sheet_41
+  - first:
+      213: 5134307849219242610
+    second: Event_AshRain_Sheet_42
+  - first:
+      213: 1671720157101785806
+    second: Event_AshRain_Sheet_43
+  - first:
+      213: 6916252865749561853
+    second: Event_AshRain_Sheet_44
+  - first:
+      213: -81381077472998810
+    second: Event_AshRain_Sheet_45
+  - first:
+      213: -7847286783172455336
+    second: Event_AshRain_Sheet_46
+  - first:
+      213: -8055440329149652290
+    second: Event_AshRain_Sheet_47
+  - first:
+      213: 1586056599346557677
+    second: Event_AshRain_Sheet_48
+  - first:
+      213: -5095216130669225241
+    second: Event_AshRain_Sheet_49
+  - first:
+      213: -7175700899500954545
+    second: Event_AshRain_Sheet_50
+  - first:
+      213: 2007465972366836500
+    second: Event_AshRain_Sheet_51
+  - first:
+      213: 5759828464730389087
+    second: Event_AshRain_Sheet_52
+  - first:
+      213: -8758631289730435638
+    second: Event_AshRain_Sheet_53
+  - first:
+      213: 8352444674053427085
+    second: Event_AshRain_Sheet_54
+  - first:
+      213: 768652585659722861
+    second: Event_AshRain_Sheet_55
+  - first:
+      213: -4638900049503287107
+    second: Event_AshRain_Sheet_56
+  - first:
+      213: -626504596334584939
+    second: Event_AshRain_Sheet_57
+  - first:
+      213: -4344310095925032002
+    second: Event_AshRain_Sheet_58
+  - first:
+      213: -7189705102592604272
+    second: Event_AshRain_Sheet_59
+  - first:
+      213: 255986117528993668
+    second: Event_AshRain_Sheet_60
+  - first:
+      213: -1559549871299297509
+    second: Event_AshRain_Sheet_61
+  - first:
+      213: 7986553980327040185
+    second: Event_AshRain_Sheet_62
+  - first:
+      213: 4155922221058385167
+    second: Event_AshRain_Sheet_63
+  - first:
+      213: -5732594644750434454
+    second: Event_AshRain_Sheet_64
+  - first:
+      213: -7675583656396782660
+    second: Event_AshRain_Sheet_65
+  - first:
+      213: 7330177611016455197
+    second: Event_AshRain_Sheet_66
+  - first:
+      213: 7872446786982608751
+    second: Event_AshRain_Sheet_67
+  - first:
+      213: -7604705567604433319
+    second: Event_AshRain_Sheet_68
+  - first:
+      213: -1406777089641945273
+    second: Event_AshRain_Sheet_69
+  - first:
+      213: 6115754475230826422
+    second: Event_AshRain_Sheet_70
+  - first:
+      213: -4532609506343264491
+    second: Event_AshRain_Sheet_71
+  - first:
+      213: 6670307667530993231
+    second: Event_AshRain_Sheet_72
+  - first:
+      213: 7989457877354448122
+    second: Event_AshRain_Sheet_73
+  - first:
+      213: 7973016335048100382
+    second: Event_AshRain_Sheet_74
+  - first:
+      213: 3296290374800568220
+    second: Event_AshRain_Sheet_75
+  - first:
+      213: 1008296769178784826
+    second: Event_AshRain_Sheet_76
+  - first:
+      213: -5351464623167130292
+    second: Event_AshRain_Sheet_77
+  - first:
+      213: -8625279892445574403
+    second: Event_AshRain_Sheet_78
+  - first:
+      213: -6734099964392941211
+    second: Event_AshRain_Sheet_79
+  - first:
+      213: -8788540905775451689
+    second: Event_AshRain_Sheet_80
+  - first:
+      213: -190899255546609056
+    second: Event_AshRain_Sheet_81
+  - first:
+      213: -8367005585407453605
+    second: Event_AshRain_Sheet_82
+  - first:
+      213: 2039260505466049162
+    second: Event_AshRain_Sheet_83
+  - first:
+      213: -4611407994775379523
+    second: Event_AshRain_Sheet_84
+  - first:
+      213: 6008007443223045882
+    second: Event_AshRain_Sheet_85
+  - first:
+      213: -2200003160906481475
+    second: Event_AshRain_Sheet_86
+  - first:
+      213: 3872938360440700535
+    second: Event_AshRain_Sheet_87
+  - first:
+      213: 3852929087639949652
+    second: Event_AshRain_Sheet_88
+  - first:
+      213: -850897629374355591
+    second: Event_AshRain_Sheet_89
+  - first:
+      213: -3974747673313255245
+    second: Event_AshRain_Sheet_90
+  - first:
+      213: 7292999984026422928
+    second: Event_AshRain_Sheet_91
+  - first:
+      213: -5780403516745746459
+    second: Event_AshRain_Sheet_92
+  - first:
+      213: -7035229759605582695
+    second: Event_AshRain_Sheet_93
+  - first:
+      213: 4510362998776667465
+    second: Event_AshRain_Sheet_94
+  - first:
+      213: 8990501273018826189
+    second: Event_AshRain_Sheet_95
+  - first:
+      213: -9221941327680279284
+    second: Event_AshRain_Sheet_96
+  - first:
+      213: -222774203356273853
+    second: Event_AshRain_Sheet_97
+  - first:
+      213: -855333770153007905
+    second: Event_AshRain_Sheet_98
+  - first:
+      213: -7653053679335957385
+    second: Event_AshRain_Sheet_99
+  - first:
+      213: -6374530671180474584
+    second: Event_AshRain_Sheet_100
+  - first:
+      213: -5525776829951232225
+    second: Event_AshRain_Sheet_101
+  - first:
+      213: -5107812035209264553
+    second: Event_AshRain_Sheet_102
+  - first:
+      213: -6536160018024463817
+    second: Event_AshRain_Sheet_103
+  - first:
+      213: -2388306820224169385
+    second: Event_AshRain_Sheet_104
+  - first:
+      213: 6313705542568934715
+    second: Event_AshRain_Sheet_105
+  - first:
+      213: -8454621705430699868
+    second: Event_AshRain_Sheet_106
+  - first:
+      213: 8684550442987985386
+    second: Event_AshRain_Sheet_107
+  - first:
+      213: 206816637113589277
+    second: Event_AshRain_Sheet_108
+  - first:
+      213: 6806146801375532731
+    second: Event_AshRain_Sheet_109
+  - first:
+      213: 8559382990737729170
+    second: Event_AshRain_Sheet_110
+  - first:
+      213: 572468129795780737
+    second: Event_AshRain_Sheet_111
+  - first:
+      213: -5155106744221570930
+    second: Event_AshRain_Sheet_112
+  - first:
+      213: -3867455843711396201
+    second: Event_AshRain_Sheet_113
+  - first:
+      213: 1972061746497134902
+    second: Event_AshRain_Sheet_114
+  - first:
+      213: 8471398441637085969
+    second: Event_AshRain_Sheet_115
+  - first:
+      213: -8234158453682551842
+    second: Event_AshRain_Sheet_116
+  - first:
+      213: -6537912349294134049
+    second: Event_AshRain_Sheet_117
+  - first:
+      213: 2130274407801026702
+    second: Event_AshRain_Sheet_118
+  - first:
+      213: -4572300110419970076
+    second: Event_AshRain_Sheet_119
+  - first:
+      213: -2027510122747443840
+    second: Event_AshRain_Sheet_120
+  - first:
+      213: 2782870512418725165
+    second: Event_AshRain_Sheet_121
+  - first:
+      213: 1680457264281486812
+    second: Event_AshRain_Sheet_122
+  - first:
+      213: 1178158145470365040
+    second: Event_AshRain_Sheet_123
+  - first:
+      213: -7376665085255274888
+    second: Event_AshRain_Sheet_124
+  - first:
+      213: 7204802640893033611
+    second: Event_AshRain_Sheet_125
+  - first:
+      213: -6847176949052248675
+    second: Event_AshRain_Sheet_126
+  - first:
+      213: 4855260212770015626
+    second: Event_AshRain_Sheet_127
+  - first:
+      213: 8819599850521387003
+    second: Event_AshRain_Sheet_128
+  - first:
+      213: 5095857860797079365
+    second: Event_AshRain_Sheet_129
+  - first:
+      213: -346842945525533191
+    second: Event_AshRain_Sheet_130
+  - first:
+      213: 7268214784970160687
+    second: Event_AshRain_Sheet_131
+  - first:
+      213: -8248657973894559896
+    second: Event_AshRain_Sheet_132
+  - first:
+      213: -186639254748033368
+    second: Event_AshRain_Sheet_133
+  - first:
+      213: -6851857876326584064
+    second: Event_AshRain_Sheet_134
+  - first:
+      213: 4674418728802105590
+    second: Event_AshRain_Sheet_135
+  - first:
+      213: -4927762150972592845
+    second: Event_AshRain_Sheet_136
+  - first:
+      213: -2120518867107494123
+    second: Event_AshRain_Sheet_137
+  - first:
+      213: 3153964233969077095
+    second: Event_AshRain_Sheet_138
+  - first:
+      213: 3941286611238923683
+    second: Event_AshRain_Sheet_139
+  - first:
+      213: 7542470346207082575
+    second: Event_AshRain_Sheet_140
+  - first:
+      213: 256116785159322832
+    second: Event_AshRain_Sheet_141
+  - first:
+      213: 8508695686205401437
+    second: Event_AshRain_Sheet_142
+  - first:
+      213: -35353265336759465
+    second: Event_AshRain_Sheet_143
+  - first:
+      213: -3810155604399490721
+    second: Event_AshRain_Sheet_144
+  - first:
+      213: -482981703340011636
+    second: Event_AshRain_Sheet_145
+  - first:
+      213: -533549603678117535
+    second: Event_AshRain_Sheet_146
+  - first:
+      213: 5172175531844346256
+    second: Event_AshRain_Sheet_147
+  - first:
+      213: 9138229537361517101
+    second: Event_AshRain_Sheet_148
+  - first:
+      213: 3209572011869404889
+    second: Event_AshRain_Sheet_149
+  - first:
+      213: -910503730260018794
+    second: Event_AshRain_Sheet_150
+  - first:
+      213: 1775225219452545442
+    second: Event_AshRain_Sheet_151
+  - first:
+      213: -2445755146812596111
+    second: Event_AshRain_Sheet_152
+  - first:
+      213: 3720397017773713683
+    second: Event_AshRain_Sheet_153
+  - first:
+      213: -3705619149942086301
+    second: Event_AshRain_Sheet_154
+  - first:
+      213: -6907417985458925863
+    second: Event_AshRain_Sheet_155
+  - first:
+      213: 5018702464846009773
+    second: Event_AshRain_Sheet_156
+  - first:
+      213: 8513931425983138544
+    second: Event_AshRain_Sheet_157
+  - first:
+      213: -2660947870710352871
+    second: Event_AshRain_Sheet_158
+  - first:
+      213: -990574545543859109
+    second: Event_AshRain_Sheet_159
+  - first:
+      213: -4595276150238148456
+    second: Event_AshRain_Sheet_160
+  - first:
+      213: 2100056795748735037
+    second: Event_AshRain_Sheet_161
+  - first:
+      213: -1562927682072830801
+    second: Event_AshRain_Sheet_162
+  - first:
+      213: -5097020862739918174
+    second: Event_AshRain_Sheet_163
+  - first:
+      213: 8989257301085563014
+    second: Event_AshRain_Sheet_164
+  - first:
+      213: -5170440450099133511
+    second: Event_AshRain_Sheet_165
+  - first:
+      213: -8497789840194522789
+    second: Event_AshRain_Sheet_166
+  - first:
+      213: -9146512254134093231
+    second: Event_AshRain_Sheet_167
+  - first:
+      213: 2337384608289652747
+    second: Event_AshRain_Sheet_168
+  - first:
+      213: -6110692638084729197
+    second: Event_AshRain_Sheet_169
+  - first:
+      213: -2939213144635867960
+    second: Event_AshRain_Sheet_170
+  - first:
+      213: 530087585941961556
+    second: Event_AshRain_Sheet_171
+  - first:
+      213: -4480377862643991737
+    second: Event_AshRain_Sheet_172
+  - first:
+      213: 8817652774479489552
+    second: Event_AshRain_Sheet_173
+  - first:
+      213: -3040642771987736196
+    second: Event_AshRain_Sheet_174
+  - first:
+      213: -6707576213809132594
+    second: Event_AshRain_Sheet_175
+  - first:
+      213: -1592387388310627772
+    second: Event_AshRain_Sheet_176
+  - first:
+      213: 6140587432190106552
+    second: Event_AshRain_Sheet_177
+  - first:
+      213: -6166435683452416102
+    second: Event_AshRain_Sheet_178
+  - first:
+      213: 7289820025043200847
+    second: Event_AshRain_Sheet_179
+  - first:
+      213: -1015419040926952138
+    second: Event_AshRain_Sheet_180
+  - first:
+      213: 461375683159177594
+    second: Event_AshRain_Sheet_181
+  - first:
+      213: 6067638839503457242
+    second: Event_AshRain_Sheet_182
+  - first:
+      213: -3960676590312976879
+    second: Event_AshRain_Sheet_183
+  - first:
+      213: 239987224424347892
+    second: Event_AshRain_Sheet_184
+  - first:
+      213: 739479967782480005
+    second: Event_AshRain_Sheet_185
+  - first:
+      213: 7108900075194184273
+    second: Event_AshRain_Sheet_186
+  - first:
+      213: -8659634779047145976
+    second: Event_AshRain_Sheet_187
+  - first:
+      213: -8138756003201737458
+    second: Event_AshRain_Sheet_188
+  - first:
+      213: 8846224502550213753
+    second: Event_AshRain_Sheet_189
+  - first:
+      213: -514721124171790810
+    second: Event_AshRain_Sheet_190
+  - first:
+      213: 3088959169017978451
+    second: Event_AshRain_Sheet_191
+  - first:
+      213: 4106646181305715145
+    second: Event_AshRain_Sheet_192
+  - first:
+      213: 2084495346400207369
+    second: Event_AshRain_Sheet_193
+  - first:
+      213: 8464550132244547341
+    second: Event_AshRain_Sheet_194
+  - first:
+      213: 13673643653386510
+    second: Event_AshRain_Sheet_195
+  - first:
+      213: 6871000177419057306
+    second: Event_AshRain_Sheet_196
+  - first:
+      213: 2972704747450830283
+    second: Event_AshRain_Sheet_197
+  - first:
+      213: -3720647222140515158
+    second: Event_AshRain_Sheet_198
+  - first:
+      213: -5568968853849725264
+    second: Event_AshRain_Sheet_199
+  - first:
+      213: 2099898199129069056
+    second: Event_AshRain_Sheet_200
+  - first:
+      213: -825873154613650055
+    second: Event_AshRain_Sheet_201
+  - first:
+      213: 8402567646491567152
+    second: Event_AshRain_Sheet_202
+  - first:
+      213: 2009750130806034907
+    second: Event_AshRain_Sheet_203
+  - first:
+      213: -2359071625927807526
+    second: Event_AshRain_Sheet_204
+  - first:
+      213: 9052282227673922492
+    second: Event_AshRain_Sheet_205
+  - first:
+      213: 5610962919502026530
+    second: Event_AshRain_Sheet_206
+  - first:
+      213: -4790430190344762007
+    second: Event_AshRain_Sheet_207
+  - first:
+      213: -5610372418629839653
+    second: Event_AshRain_Sheet_208
+  - first:
+      213: 3075955223293870490
+    second: Event_AshRain_Sheet_209
+  - first:
+      213: 6435635004169904865
+    second: Event_AshRain_Sheet_210
+  - first:
+      213: -2579593582025475712
+    second: Event_AshRain_Sheet_211
+  - first:
+      213: -3735499837621998982
+    second: Event_AshRain_Sheet_212
+  - first:
+      213: -6672628317622001944
+    second: Event_AshRain_Sheet_213
+  - first:
+      213: -8154098474423348759
+    second: Event_AshRain_Sheet_214
+  - first:
+      213: 2224899157320137365
+    second: Event_AshRain_Sheet_215
+  - first:
+      213: 1800746810471396208
+    second: Event_AshRain_Sheet_216
+  - first:
+      213: -2946823096565150757
+    second: Event_AshRain_Sheet_217
+  - first:
+      213: -71342531898139191
+    second: Event_AshRain_Sheet_218
+  - first:
+      213: -7836824848805922978
+    second: Event_AshRain_Sheet_219
+  - first:
+      213: 5801966913864640799
+    second: Event_AshRain_Sheet_220
+  - first:
+      213: 3128853039124896486
+    second: Event_AshRain_Sheet_221
+  - first:
+      213: 5590760039496904943
+    second: Event_AshRain_Sheet_222
+  - first:
+      213: 413880356102263626
+    second: Event_AshRain_Sheet_223
+  - first:
+      213: 8462227707913149657
+    second: Event_AshRain_Sheet_224
+  - first:
+      213: 6135046420636727635
+    second: Event_AshRain_Sheet_225
+  - first:
+      213: 3051090444484069564
+    second: Event_AshRain_Sheet_226
+  - first:
+      213: 9212138503615479753
+    second: Event_AshRain_Sheet_227
+  - first:
+      213: -2582341869487323041
+    second: Event_AshRain_Sheet_228
+  - first:
+      213: 6427175575967672519
+    second: Event_AshRain_Sheet_229
+  - first:
+      213: 1350230063770317700
+    second: Event_AshRain_Sheet_230
+  - first:
+      213: -7746703568823858237
+    second: Event_AshRain_Sheet_231
+  - first:
+      213: 6445273968081903615
+    second: Event_AshRain_Sheet_232
+  - first:
+      213: -7562848196414221546
+    second: Event_AshRain_Sheet_233
+  - first:
+      213: -4995043515168471637
+    second: Event_AshRain_Sheet_234
+  - first:
+      213: -3668466319468237413
+    second: Event_AshRain_Sheet_235
+  - first:
+      213: -7104575138801918351
+    second: Event_AshRain_Sheet_236
+  - first:
+      213: -4668145839008333728
+    second: Event_AshRain_Sheet_237
+  - first:
+      213: -1671706471299441778
+    second: Event_AshRain_Sheet_238
+  - first:
+      213: 2807190083145338283
+    second: Event_AshRain_Sheet_239
+  - first:
+      213: 2069325323715563778
+    second: Event_AshRain_Sheet_240
+  - first:
+      213: -7639186685298767494
+    second: Event_AshRain_Sheet_241
+  - first:
+      213: 3232773405383075664
+    second: Event_AshRain_Sheet_242
+  - first:
+      213: 8727152349316568371
+    second: Event_AshRain_Sheet_243
+  - first:
+      213: -7814776250514011262
+    second: Event_AshRain_Sheet_244
+  - first:
+      213: -8214310011475033847
+    second: Event_AshRain_Sheet_245
+  - first:
+      213: -7746845206063193384
+    second: Event_AshRain_Sheet_246
+  - first:
+      213: 718953247795253127
+    second: Event_AshRain_Sheet_247
+  - first:
+      213: 6053685512885976130
+    second: Event_AshRain_Sheet_248
+  - first:
+      213: -8190280409616242784
+    second: Event_AshRain_Sheet_249
+  - first:
+      213: 4558115653519393560
+    second: Event_AshRain_Sheet_250
+  - first:
+      213: 172712151045795171
+    second: Event_AshRain_Sheet_251
+  - first:
+      213: 6635054452454938098
+    second: Event_AshRain_Sheet_252
+  - first:
+      213: -3168989499522870415
+    second: Event_AshRain_Sheet_253
+  - first:
+      213: 5186545760777215781
+    second: Event_AshRain_Sheet_254
+  - first:
+      213: -9082495255905431413
+    second: Event_AshRain_Sheet_255
+  - first:
+      213: -881950492809211795
+    second: Event_AshRain_Sheet_256
+  - first:
+      213: -7208691502603637736
+    second: Event_AshRain_Sheet_257
+  - first:
+      213: 7833765316955228486
+    second: Event_AshRain_Sheet_258
+  - first:
+      213: -4599428406470357149
+    second: Event_AshRain_Sheet_259
+  - first:
+      213: -108416913899100332
+    second: Event_AshRain_Sheet_260
+  - first:
+      213: 1988110468833774675
+    second: Event_AshRain_Sheet_261
+  - first:
+      213: 4497620854756012872
+    second: Event_AshRain_Sheet_262
+  - first:
+      213: 2478484410158162078
+    second: Event_AshRain_Sheet_263
+  - first:
+      213: -3759806297201245256
+    second: Event_AshRain_Sheet_264
+  - first:
+      213: 4112557030730823083
+    second: Event_AshRain_Sheet_265
+  - first:
+      213: 5457416205924470869
+    second: Event_AshRain_Sheet_266
+  - first:
+      213: 4790788011375932283
+    second: Event_AshRain_Sheet_267
+  - first:
+      213: -6830498187313831939
+    second: Event_AshRain_Sheet_268
+  - first:
+      213: -6693389134726495987
+    second: Event_AshRain_Sheet_269
+  - first:
+      213: -1820673555862002695
+    second: Event_AshRain_Sheet_270
+  - first:
+      213: -5215470279537437823
+    second: Event_AshRain_Sheet_271
+  - first:
+      213: -5058294110706165571
+    second: Event_AshRain_Sheet_272
+  - first:
+      213: -6444072187779146082
+    second: Event_AshRain_Sheet_273
+  - first:
+      213: 5136979249996926579
+    second: Event_AshRain_Sheet_274
+  - first:
+      213: -7831526880821090658
+    second: Event_AshRain_Sheet_275
+  - first:
+      213: -3585413297516067618
+    second: Event_AshRain_Sheet_276
+  - first:
+      213: 1937053355842740932
+    second: Event_AshRain_Sheet_277
+  - first:
+      213: 6646214101662250734
+    second: Event_AshRain_Sheet_278
+  - first:
+      213: -132557084844117482
+    second: Event_AshRain_Sheet_279
+  - first:
+      213: 1994556731398988802
+    second: Event_AshRain_Sheet_280
+  - first:
+      213: 786853878355833422
+    second: Event_AshRain_Sheet_281
+  - first:
+      213: 372657177964715479
+    second: Event_AshRain_Sheet_282
+  - first:
+      213: -3597881538504690887
+    second: Event_AshRain_Sheet_283
+  - first:
+      213: -6488476390242241084
+    second: Event_AshRain_Sheet_284
+  - first:
+      213: 7163455128093158059
+    second: Event_AshRain_Sheet_285
+  - first:
+      213: 6063645050454251768
+    second: Event_AshRain_Sheet_286
+  - first:
+      213: -473307014197745579
+    second: Event_AshRain_Sheet_287
+  - first:
+      213: -2057219467525413447
+    second: Event_AshRain_Sheet_288
+  - first:
+      213: -2340853296049886737
+    second: Event_AshRain_Sheet_289
+  - first:
+      213: 770732223855118905
+    second: Event_AshRain_Sheet_290
+  - first:
+      213: 2619182774840240058
+    second: Event_AshRain_Sheet_291
+  - first:
+      213: -5117843120679293965
+    second: Event_AshRain_Sheet_292
+  - first:
+      213: 619074845665744577
+    second: Event_AshRain_Sheet_293
+  - first:
+      213: -4400768816786368371
+    second: Event_AshRain_Sheet_294
+  - first:
+      213: -1782949422680762487
+    second: Event_AshRain_Sheet_295
+  - first:
+      213: -8680292795347538686
+    second: Event_AshRain_Sheet_296
+  - first:
+      213: 5717441379351165768
+    second: Event_AshRain_Sheet_297
+  - first:
+      213: 8894642028052852029
+    second: Event_AshRain_Sheet_298
+  - first:
+      213: -2180314637829754685
+    second: Event_AshRain_Sheet_299
+  - first:
+      213: -6018542742660595962
+    second: Event_AshRain_Sheet_300
+  - first:
+      213: 7940643804697559741
+    second: Event_AshRain_Sheet_301
+  - first:
+      213: 6128322266413635263
+    second: Event_AshRain_Sheet_302
+  - first:
+      213: 2202717369750647760
+    second: Event_AshRain_Sheet_303
+  - first:
+      213: 4679505661419542524
+    second: Event_AshRain_Sheet_304
+  - first:
+      213: -7374978492244763005
+    second: Event_AshRain_Sheet_305
+  - first:
+      213: 1536939846714640981
+    second: Event_AshRain_Sheet_306
+  - first:
+      213: 8793845273538727144
+    second: Event_AshRain_Sheet_307
+  - first:
+      213: 6515058017017395880
+    second: Event_AshRain_Sheet_308
+  - first:
+      213: -1459906101755062884
+    second: Event_AshRain_Sheet_309
+  - first:
+      213: -2017819168800165136
+    second: Event_AshRain_Sheet_310
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 315
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3e52fe00fdd7b1a0800000000000000
+      internalID: -6793717489752449476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 551
+        y: 315
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b68002825ffc6570800000000000000
+      internalID: 8461418529755793075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 315
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb949029c9ca96150800000000000000
+      internalID: 5866409778091739579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 887
+        y: 315
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5141a4b200959030800000000000000
+      internalID: 3500862626645229915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 1239
+        y: 315
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3891212df4e712850800000000000000
+      internalID: 6350495830861027715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 2223
+        y: 311
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57b54fbd7d06e4e60800000000000000
+      internalID: 7948396872579963765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 2231
+        y: 311
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4815febf9f6055970800000000000000
+      internalID: 8742901922353074564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 2267
+        y: 315
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68a10593152f784e0800000000000000
+      internalID: -1979347080538219898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 2523
+        y: 311
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d915fad953d7ded90800000000000000
+      internalID: -7066854571042188899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 307
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a55c4b884fad7e60800000000000000
+      internalID: 7961712442370446753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 307
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34da99d2c1ecad1b0800000000000000
+      internalID: -5630961763653931709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 1719
+        y: 303
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 860296a7c5f07c680800000000000000
+      internalID: -8734996062396669848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 2055
+        y: 303
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1db9dd25c61021c10800000000000000
+      internalID: 2022680747401124817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 2259
+        y: 299
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a08eceea4a60b150800000000000000
+      internalID: 5886321583039873188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 295
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58e9c2520136c9da0800000000000000
+      internalID: -5936761287786848635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 299
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14163b889d6f5a1b0800000000000000
+      internalID: -5645835143677255359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 691
+        y: 295
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: baac9e5efd58c6120800000000000000
+      internalID: 2408447097417878187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 811
+        y: 299
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d911b2e334fdfad30800000000000000
+      internalID: 4445016837136781725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 1283
+        y: 299
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41f8162e6c2f52300800000000000000
+      internalID: 226854292267568916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 1743
+        y: 295
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2727de5b93df67cb0800000000000000
+      internalID: -4866423923020041614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 1867
+        y: 295
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c61cb727e4d17afe0800000000000000
+      internalID: -1177940554768727700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 287
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f10716d7f743f7050800000000000000
+      internalID: 5800412567245516831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 291
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: abf9f1e9c1d2a95f0800000000000000
+      internalID: -749236787068559430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 1015
+        y: 291
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d206a9ce9978557e0800000000000000
+      internalID: -1777365382758506451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 1471
+        y: 291
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de49afaa03b0b0c00800000000000000
+      internalID: 867799656853837037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 1983
+        y: 291
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d90cb156f25766c50800000000000000
+      internalID: 6658137945534087325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 2019
+        y: 287
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4dd689c0a9ad92890800000000000000
+      internalID: -7482208950728233516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 283
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b25fd35e97f363e50800000000000000
+      internalID: 6788683281077237035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 283
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73cdfbf1f73dda280800000000000000
+      internalID: -9030329134861001673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 279
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93e8fbc5db4432410800000000000000
+      internalID: 1451079085038997049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 283
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85ccbd3d50c290390800000000000000
+      internalID: -7851696071802893224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 283
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96d9cc1ab3ee5cff0800000000000000
+      internalID: -16345083740906135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 839
+        y: 283
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96398b843633b6010800000000000000
+      internalID: 1183095828629721961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 1419
+        y: 283
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27896157d68086bd0800000000000000
+      internalID: -2636848315616552846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_34
+      rect:
+        serializedVersion: 2
+        x: 1679
+        y: 283
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0803dfb27d9b28610800000000000000
+      internalID: 1622063149613920384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_35
+      rect:
+        serializedVersion: 2
+        x: 2183
+        y: 279
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7edcdaf92966f7cf0800000000000000
+      internalID: -252370274179232281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_36
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 271
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a82e858bd80e3c8d0800000000000000
+      internalID: -2827169241770696054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_37
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 275
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87399b8b07dbd5300800000000000000
+      internalID: 242558246781031288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_38
+      rect:
+        serializedVersion: 2
+        x: 631
+        y: 271
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bf806e7fbb4e8df0800000000000000
+      internalID: -176120049589776459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_39
+      rect:
+        serializedVersion: 2
+        x: 647
+        y: 275
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb1b8309c1d20b760800000000000000
+      internalID: 7471521382509621692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_40
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 275
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9b2a99ae3259dd00800000000000000
+      internalID: 997919221526178715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_41
+      rect:
+        serializedVersion: 2
+        x: 1019
+        y: 271
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 649490d90d9372980800000000000000
+      internalID: -8563812598271096506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_42
+      rect:
+        serializedVersion: 2
+        x: 1679
+        y: 267
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27a763049c9b04740800000000000000
+      internalID: 5134307849219242610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_43
+      rect:
+        serializedVersion: 2
+        x: 2271
+        y: 271
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec289ef20a4233710800000000000000
+      internalID: 1671720157101785806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_44
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 263
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df1b7c766577bff50800000000000000
+      internalID: 6916252865749561853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_45
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 263
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66a88c95750eedef0800000000000000
+      internalID: -81381077472998810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_46
+      rect:
+        serializedVersion: 2
+        x: 1211
+        y: 267
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85453665f36d81390800000000000000
+      internalID: -7847286783172455336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_47
+      rect:
+        serializedVersion: 2
+        x: 1283
+        y: 267
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb2edaf33b3553090800000000000000
+      internalID: -8055440329149652290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_48
+      rect:
+        serializedVersion: 2
+        x: 1307
+        y: 267
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de237b5e21ec20610800000000000000
+      internalID: 1586056599346557677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_49
+      rect:
+        serializedVersion: 2
+        x: 1479
+        y: 263
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7eade9dbce72a49b0800000000000000
+      internalID: -5095216130669225241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_50
+      rect:
+        serializedVersion: 2
+        x: 2307
+        y: 263
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4c6bc6ec0aca6c90800000000000000
+      internalID: -7175700899500954545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_51
+      rect:
+        serializedVersion: 2
+        x: 2383
+        y: 263
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4130c957aa3fbdb10800000000000000
+      internalID: 2007465972366836500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_52
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 259
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5a3077c8750fef40800000000000000
+      internalID: 5759828464730389087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_53
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 259
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac5fef84f37137680800000000000000
+      internalID: -8758631289730435638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_54
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 247
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8fce0b8d28d9e370800000000000000
+      internalID: 8352444674053427085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_55
+      rect:
+        serializedVersion: 2
+        x: 931
+        y: 247
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6ceee3447dcaaa00800000000000000
+      internalID: 768652585659722861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_56
+      rect:
+        serializedVersion: 2
+        x: 1263
+        y: 251
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db880d0abf05f9fb0800000000000000
+      internalID: -4638900049503287107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_57
+      rect:
+        serializedVersion: 2
+        x: 1371
+        y: 251
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59bd35593653e47f0800000000000000
+      internalID: -626504596334584939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_58
+      rect:
+        serializedVersion: 2
+        x: 2163
+        y: 247
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebbce322cf8e5b3c0800000000000000
+      internalID: -4344310095925032002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_59
+      rect:
+        serializedVersion: 2
+        x: 2547
+        y: 247
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09787284d49093c90800000000000000
+      internalID: -7189705102592604272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_60
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 239
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48f3fb284027d8300800000000000000
+      internalID: 255986117528993668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_61
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 243
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1ff2b7a7ad5b5ae0800000000000000
+      internalID: -1559549871299297509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_62
+      rect:
+        serializedVersion: 2
+        x: 923
+        y: 239
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b410e0d780f5de60800000000000000
+      internalID: 7986553980327040185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_63
+      rect:
+        serializedVersion: 2
+        x: 1251
+        y: 239
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f056654bd3dcca930800000000000000
+      internalID: 4155922221058385167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_64
+      rect:
+        serializedVersion: 2
+        x: 1547
+        y: 243
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6ff75e0b8bb170b0800000000000000
+      internalID: -5732594644750434454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_65
+      rect:
+        serializedVersion: 2
+        x: 1675
+        y: 239
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb30dacd459da7590800000000000000
+      internalID: -7675583656396782660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_66
+      rect:
+        serializedVersion: 2
+        x: 1915
+        y: 239
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d14482543b50ab560800000000000000
+      internalID: 7330177611016455197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_67
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 231
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6f734b84ac804d60800000000000000
+      internalID: 7872446786982608751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_68
+      rect:
+        serializedVersion: 2
+        x: 1043
+        y: 231
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95e9085e398a67690800000000000000
+      internalID: -7604705567604433319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_69
+      rect:
+        serializedVersion: 2
+        x: 1535
+        y: 231
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 747ebbdb0bf1a7ce0800000000000000
+      internalID: -1406777089641945273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_70
+      rect:
+        serializedVersion: 2
+        x: 1903
+        y: 235
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bf83a5ea468fd450800000000000000
+      internalID: 6115754475230826422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_71
+      rect:
+        serializedVersion: 2
+        x: 2087
+        y: 235
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51fd9d43bafe811c0800000000000000
+      internalID: -4532609506343264491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_72
+      rect:
+        serializedVersion: 2
+        x: 2131
+        y: 235
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4ecfb99b71b19c50800000000000000
+      internalID: 6670307667530993231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_73
+      rect:
+        serializedVersion: 2
+        x: 2231
+        y: 235
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af488a70c9140ee60800000000000000
+      internalID: 7989457877354448122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_74
+      rect:
+        serializedVersion: 2
+        x: 2463
+        y: 235
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1acde62d18d5ae60800000000000000
+      internalID: 7973016335048100382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_75
+      rect:
+        serializedVersion: 2
+        x: 551
+        y: 227
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9fe682a1a6cebd20800000000000000
+      internalID: 3296290374800568220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_76
+      rect:
+        serializedVersion: 2
+        x: 691
+        y: 219
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a345313c1903efd00800000000000000
+      internalID: 1008296769178784826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_77
+      rect:
+        serializedVersion: 2
+        x: 1335
+        y: 227
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c45bd0c4747cbb5b0800000000000000
+      internalID: -5351464623167130292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_78
+      rect:
+        serializedVersion: 2
+        x: 1547
+        y: 227
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dfa4672f2a9dc4880800000000000000
+      internalID: -8625279892445574403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_79
+      rect:
+        serializedVersion: 2
+        x: 2179
+        y: 223
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 569536cd2cbab82a0800000000000000
+      internalID: -6734099964392941211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_80
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 215
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d1b3412c94d80680800000000000000
+      internalID: -8788540905775451689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_81
+      rect:
+        serializedVersion: 2
+        x: 615
+        y: 215
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0620245732ac95df0800000000000000
+      internalID: -190899255546609056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_82
+      rect:
+        serializedVersion: 2
+        x: 731
+        y: 219
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b56541810cc62eb80800000000000000
+      internalID: -8367005585407453605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_83
+      rect:
+        serializedVersion: 2
+        x: 1171
+        y: 215
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8299c010a8ec4c10800000000000000
+      internalID: 2039260505466049162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_84
+      rect:
+        serializedVersion: 2
+        x: 1323
+        y: 219
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db1640d6cdcf000c0800000000000000
+      internalID: -4611407994775379523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_85
+      rect:
+        serializedVersion: 2
+        x: 1411
+        y: 219
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af6663510fab06350800000000000000
+      internalID: 6008007443223045882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_86
+      rect:
+        serializedVersion: 2
+        x: 2003
+        y: 219
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db0ce6108c40871e0800000000000000
+      internalID: -2200003160906481475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_87
+      rect:
+        serializedVersion: 2
+        x: 743
+        y: 207
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77e3d0b4be07fb530800000000000000
+      internalID: 3872938360440700535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_88
+      rect:
+        serializedVersion: 2
+        x: 995
+        y: 211
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4519c8d679a587530800000000000000
+      internalID: 3852929087639949652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_89
+      rect:
+        serializedVersion: 2
+        x: 1415
+        y: 207
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9776be44d110134f0800000000000000
+      internalID: -850897629374355591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_90
+      rect:
+        serializedVersion: 2
+        x: 1703
+        y: 207
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b06a5cdc0cd6d8c0800000000000000
+      internalID: -3974747673313255245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_91
+      rect:
+        serializedVersion: 2
+        x: 2227
+        y: 207
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09e03d278d0f53560800000000000000
+      internalID: 7292999984026422928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_92
+      rect:
+        serializedVersion: 2
+        x: 2395
+        y: 211
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e773fd90a1e7cfa0800000000000000
+      internalID: -5780403516745746459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_93
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 199
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 994d371dec7dd5e90800000000000000
+      internalID: -7035229759605582695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_94
+      rect:
+        serializedVersion: 2
+        x: 1063
+        y: 199
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94d162e1047089e30800000000000000
+      internalID: 4510362998776667465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_95
+      rect:
+        serializedVersion: 2
+        x: 1087
+        y: 199
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dcdfbfa264da4cc70800000000000000
+      internalID: 8990501273018826189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_96
+      rect:
+        serializedVersion: 2
+        x: 1879
+        y: 203
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0d6f10f835150080800000000000000
+      internalID: -9221941327680279284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_97
+      rect:
+        serializedVersion: 2
+        x: 2291
+        y: 199
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34324d7da0c88ecf0800000000000000
+      internalID: -222774203356273853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_98
+      rect:
+        serializedVersion: 2
+        x: 867
+        y: 191
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd462a1c77e3124f0800000000000000
+      internalID: -855333770153007905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_99
+      rect:
+        serializedVersion: 2
+        x: 1043
+        y: 195
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77c1f2ce934eac590800000000000000
+      internalID: -7653053679335957385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_100
+      rect:
+        serializedVersion: 2
+        x: 1135
+        y: 195
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8279476d02e1987a0800000000000000
+      internalID: -6374530671180474584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_101
+      rect:
+        serializedVersion: 2
+        x: 1267
+        y: 191
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f173caeff3f7053b0800000000000000
+      internalID: -5525776829951232225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_102
+      rect:
+        serializedVersion: 2
+        x: 1807
+        y: 195
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75203ed24086d19b0800000000000000
+      internalID: -5107812035209264553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_103
+      rect:
+        serializedVersion: 2
+        x: 2079
+        y: 191
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7328a8af715ea45a0800000000000000
+      internalID: -6536160018024463817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_104
+      rect:
+        serializedVersion: 2
+        x: 2251
+        y: 195
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75a45edc9970bded0800000000000000
+      internalID: -2388306820224169385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_105
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 187
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3d7c315db9ce9750800000000000000
+      internalID: 6313705542568934715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_106
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 183
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a0fe797a562baa80800000000000000
+      internalID: -8454621705430699868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_107
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 187
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae9924c7d98b58870800000000000000
+      internalID: 8684550442987985386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_108
+      rect:
+        serializedVersion: 2
+        x: 879
+        y: 187
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1edbccb2a2ced200800000000000000
+      internalID: 206816637113589277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_109
+      rect:
+        serializedVersion: 2
+        x: 919
+        y: 183
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb65621947a447e50800000000000000
+      internalID: 6806146801375532731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_110
+      rect:
+        serializedVersion: 2
+        x: 1115
+        y: 183
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29661730b7909c670800000000000000
+      internalID: 8559382990737729170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_111
+      rect:
+        serializedVersion: 2
+        x: 1215
+        y: 187
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 180b5b12bb0d1f700800000000000000
+      internalID: 572468129795780737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_112
+      rect:
+        serializedVersion: 2
+        x: 1279
+        y: 183
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e88e373aab16578b0800000000000000
+      internalID: -5155106744221570930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_113
+      rect:
+        serializedVersion: 2
+        x: 1323
+        y: 183
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 796d21b9669045ac0800000000000000
+      internalID: -3867455843711396201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_114
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 175
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6312913c5bb2e5b10800000000000000
+      internalID: 1972061746497134902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_115
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 179
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1138390dff3709570800000000000000
+      internalID: 8471398441637085969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_116
+      rect:
+        serializedVersion: 2
+        x: 1051
+        y: 179
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed3c8f743846abd80800000000000000
+      internalID: -8234158453682551842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_117
+      rect:
+        serializedVersion: 2
+        x: 1371
+        y: 179
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fdcfeaf8b5ba445a0800000000000000
+      internalID: -6537912349294134049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_118
+      rect:
+        serializedVersion: 2
+        x: 1879
+        y: 175
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e88f5178941409d10800000000000000
+      internalID: 2130274407801026702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_119
+      rect:
+        serializedVersion: 2
+        x: 2115
+        y: 179
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e730ff464deb80c0800000000000000
+      internalID: -4572300110419970076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_120
+      rect:
+        serializedVersion: 2
+        x: 2231
+        y: 179
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 085412b1946dcd3e0800000000000000
+      internalID: -2027510122747443840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_121
+      rect:
+        serializedVersion: 2
+        x: 2303
+        y: 175
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2d90ac9cfdbe9620800000000000000
+      internalID: 2782870512418725165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_122
+      rect:
+        serializedVersion: 2
+        x: 2367
+        y: 179
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd509b97afe225710800000000000000
+      internalID: 1680457264281486812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_123
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 171
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07d7ef55798a95010800000000000000
+      internalID: 1178158145470365040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_124
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 167
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87e255e2032d0a990800000000000000
+      internalID: -7376665085255274888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_125
+      rect:
+        serializedVersion: 2
+        x: 475
+        y: 167
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8cb93744d99cf360800000000000000
+      internalID: 7204802640893033611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_126
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 167
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9d6f7db7d0f9f0a0800000000000000
+      internalID: -6847176949052248675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_127
+      rect:
+        serializedVersion: 2
+        x: 1111
+        y: 171
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a898e327079516340800000000000000
+      internalID: 4855260212770015626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_128
+      rect:
+        serializedVersion: 2
+        x: 1399
+        y: 167
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bff5a67f553856a70800000000000000
+      internalID: 8819599850521387003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_129
+      rect:
+        serializedVersion: 2
+        x: 1443
+        y: 171
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54f11b2b9bf18b640800000000000000
+      internalID: 5095857860797079365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_130
+      rect:
+        serializedVersion: 2
+        x: 1555
+        y: 167
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f5b91fbd24cf2bf0800000000000000
+      internalID: -346842945525533191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_131
+      rect:
+        serializedVersion: 2
+        x: 1643
+        y: 167
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2a736996d2edd460800000000000000
+      internalID: 7268214784970160687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_132
+      rect:
+        serializedVersion: 2
+        x: 2075
+        y: 171
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8674258a641e68d80800000000000000
+      internalID: -8248657973894559896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_133
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 159
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ae899f269ce86df0800000000000000
+      internalID: -186639254748033368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_134
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 163
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 001771e609f49e0a0800000000000000
+      internalID: -6851857876326584064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_135
+      rect:
+        serializedVersion: 2
+        x: 751
+        y: 163
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f8bea5511fded040800000000000000
+      internalID: 4674418728802105590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_136
+      rect:
+        serializedVersion: 2
+        x: 1047
+        y: 159
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33de9ad9e621d9bb0800000000000000
+      internalID: -4927762150972592845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_137
+      rect:
+        serializedVersion: 2
+        x: 1251
+        y: 163
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5174b8a43576292e0800000000000000
+      internalID: -2120518867107494123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_138
+      rect:
+        serializedVersion: 2
+        x: 1323
+        y: 159
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76b8308a2c125cb20800000000000000
+      internalID: 3153964233969077095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_139
+      rect:
+        serializedVersion: 2
+        x: 1403
+        y: 159
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ad26e48a4342b630800000000000000
+      internalID: 3941286611238923683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_140
+      rect:
+        serializedVersion: 2
+        x: 1571
+        y: 163
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f48379271dc3ca860800000000000000
+      internalID: 7542470346207082575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_141
+      rect:
+        serializedVersion: 2
+        x: 2187
+        y: 159
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0dcbf60fbd8ed8300800000000000000
+      internalID: 256116785159322832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_142
+      rect:
+        serializedVersion: 2
+        x: 2215
+        y: 163
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d59eb2645a5f41670800000000000000
+      internalID: 8508695686205401437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_143
+      rect:
+        serializedVersion: 2
+        x: 2407
+        y: 159
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75bc3f97466628ff0800000000000000
+      internalID: -35353265336759465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_144
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 151
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f59fdc43aab9f1bc0800000000000000
+      internalID: -3810155604399490721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_145
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 151
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8fc76323ba1c49f0800000000000000
+      internalID: -482981703340011636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_146
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 151
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16127ba56737898f0800000000000000
+      internalID: -533549603678117535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_147
+      rect:
+        serializedVersion: 2
+        x: 635
+        y: 155
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 091ac8b2e3247c740800000000000000
+      internalID: 5172175531844346256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_148
+      rect:
+        serializedVersion: 2
+        x: 1055
+        y: 155
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2a5a6a095381de70800000000000000
+      internalID: 9138229537361517101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_149
+      rect:
+        serializedVersion: 2
+        x: 1455
+        y: 151
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9def2806db0ba8c20800000000000000
+      internalID: 3209572011869404889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_150
+      rect:
+        serializedVersion: 2
+        x: 1563
+        y: 155
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 699fe2f6ead3d53f0800000000000000
+      internalID: -910503730260018794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_151
+      rect:
+        serializedVersion: 2
+        x: 1939
+        y: 155
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a9a8c97eedd2a810800000000000000
+      internalID: 1775225219452545442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_152
+      rect:
+        serializedVersion: 2
+        x: 2291
+        y: 151
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 170e6a2f6aeee0ed0800000000000000
+      internalID: -2445755146812596111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_153
+      rect:
+        serializedVersion: 2
+        x: 2395
+        y: 151
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31923db406181a330800000000000000
+      internalID: 3720397017773713683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_154
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 147
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36521de240ff29cc0800000000000000
+      internalID: -3705619149942086301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_155
+      rect:
+        serializedVersion: 2
+        x: 487
+        y: 147
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9de839570fbe320a0800000000000000
+      internalID: -6907417985458925863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_156
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 143
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da516823d4306a540800000000000000
+      internalID: 5018702464846009773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_157
+      rect:
+        serializedVersion: 2
+        x: 763
+        y: 143
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0fa82cfe58f872670800000000000000
+      internalID: 8513931425983138544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_158
+      rect:
+        serializedVersion: 2
+        x: 891
+        y: 147
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9143a78820a621bd0800000000000000
+      internalID: -2660947870710352871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_159
+      rect:
+        serializedVersion: 2
+        x: 1027
+        y: 143
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b547059f2b5c042f0800000000000000
+      internalID: -990574545543859109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_160
+      rect:
+        serializedVersion: 2
+        x: 1163
+        y: 143
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8980b3c20bc4a30c0800000000000000
+      internalID: -4595276150238148456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_161
+      rect:
+        serializedVersion: 2
+        x: 1215
+        y: 143
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d389fb67786e42d10800000000000000
+      internalID: 2100056795748735037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_162
+      rect:
+        serializedVersion: 2
+        x: 1315
+        y: 147
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fac9c6ccd8d5f4ae0800000000000000
+      internalID: -1562927682072830801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_163
+      rect:
+        serializedVersion: 2
+        x: 1651
+        y: 147
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a2d1afc78eb349b0800000000000000
+      internalID: -5097020862739918174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_164
+      rect:
+        serializedVersion: 2
+        x: 1791
+        y: 147
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 688aac163e140cc70800000000000000
+      internalID: 8989257301085563014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_165
+      rect:
+        serializedVersion: 2
+        x: 2135
+        y: 143
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b3c7870ec7ee38b0800000000000000
+      internalID: -5170440450099133511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_166
+      rect:
+        serializedVersion: 2
+        x: 2203
+        y: 147
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b51384fd929c11a80800000000000000
+      internalID: -8497789840194522789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_167
+      rect:
+        serializedVersion: 2
+        x: 2411
+        y: 143
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15a749ea09f011180800000000000000
+      internalID: -9146512254134093231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_168
+      rect:
+        serializedVersion: 2
+        x: 2487
+        y: 147
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b000290daee007020800000000000000
+      internalID: 2337384608289652747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_169
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 135
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3967d57eb65723ba0800000000000000
+      internalID: -6110692638084729197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_170
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 139
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ccf1d2b731d537d0800000000000000
+      internalID: -2939213144635867960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_171
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 135
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45b3ae3d9df3b5700800000000000000
+      internalID: 530087585941961556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_172
+      rect:
+        serializedVersion: 2
+        x: 1751
+        y: 135
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74bb49d621082d1c0800000000000000
+      internalID: -4480377862643991737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_173
+      rect:
+        serializedVersion: 2
+        x: 1871
+        y: 135
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01a669ffa789e5a70800000000000000
+      internalID: 8817652774479489552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_174
+      rect:
+        serializedVersion: 2
+        x: 1883
+        y: 139
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c79dfc642877dc5d0800000000000000
+      internalID: -3040642771987736196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_175
+      rect:
+        serializedVersion: 2
+        x: 1991
+        y: 139
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecb0c08c8f6e9e2a0800000000000000
+      internalID: -6707576213809132594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_176
+      rect:
+        serializedVersion: 2
+        x: 2067
+        y: 135
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44adeee6b14b6e9e0800000000000000
+      internalID: -1592387388310627772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_177
+      rect:
+        serializedVersion: 2
+        x: 2231
+        y: 135
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8bb5bef3cbfb73550800000000000000
+      internalID: 6140587432190106552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_178
+      rect:
+        serializedVersion: 2
+        x: 2299
+        y: 139
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9f8685ca6b6c6aa0800000000000000
+      internalID: -6166435683452416102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_179
+      rect:
+        serializedVersion: 2
+        x: 2423
+        y: 135
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4baa3d80b4aa2560800000000000000
+      internalID: 7289820025043200847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_180
+      rect:
+        serializedVersion: 2
+        x: 543
+        y: 127
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 635916f13c188e1f0800000000000000
+      internalID: -1015419040926952138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_181
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 127
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a79b4b64db2276600800000000000000
+      internalID: 461375683159177594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_182
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 127
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adb87f57065943450800000000000000
+      internalID: 6067638839503457242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_183
+      rect:
+        serializedVersion: 2
+        x: 815
+        y: 127
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11e803c20a9d809c0800000000000000
+      internalID: -3960676590312976879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_184
+      rect:
+        serializedVersion: 2
+        x: 987
+        y: 127
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f8f17eeb1b945300800000000000000
+      internalID: 239987224424347892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_185
+      rect:
+        serializedVersion: 2
+        x: 1071
+        y: 131
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 588213edc19234a00800000000000000
+      internalID: 739479967782480005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_186
+      rect:
+        serializedVersion: 2
+        x: 1327
+        y: 127
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15272bd24f2e7a260800000000000000
+      internalID: 7108900075194184273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_187
+      rect:
+        serializedVersion: 2
+        x: 1375
+        y: 131
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80ec6469c0cc2d780800000000000000
+      internalID: -8659634779047145976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_188
+      rect:
+        serializedVersion: 2
+        x: 2403
+        y: 131
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0d159b39845d0f80800000000000000
+      internalID: -8138756003201737458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_189
+      rect:
+        serializedVersion: 2
+        x: 2495
+        y: 131
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 974bcd5d05a14ca70800000000000000
+      internalID: 8846224502550213753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_190
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 119
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 626c95b5dd75bd8f0800000000000000
+      internalID: -514721124171790810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_191
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 123
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35e900b8fff2eda20800000000000000
+      internalID: 3088959169017978451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_192
+      rect:
+        serializedVersion: 2
+        x: 475
+        y: 119
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c901f6a1fcbdf830800000000000000
+      internalID: 4106646181305715145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_193
+      rect:
+        serializedVersion: 2
+        x: 1063
+        y: 119
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 902a322397d9dec10800000000000000
+      internalID: 2084495346400207369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_194
+      rect:
+        serializedVersion: 2
+        x: 2075
+        y: 119
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d070ce78f7f187570800000000000000
+      internalID: 8464550132244547341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_195
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 111
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e01deb04b14903000800000000000000
+      internalID: 13673643653386510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_196
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 115
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9875bad142ba5f50800000000000000
+      internalID: 6871000177419057306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_197
+      rect:
+        serializedVersion: 2
+        x: 1947
+        y: 111
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bcd8cedb73b214920800000000000000
+      internalID: 2972704747450830283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_198
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 103
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aac45c5701b9d5cc0800000000000000
+      internalID: -3720647222140515158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_199
+      rect:
+        serializedVersion: 2
+        x: 787
+        y: 107
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b6a215455c07b2b0800000000000000
+      internalID: -5568968853849725264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_200
+      rect:
+        serializedVersion: 2
+        x: 979
+        y: 107
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 006129f4946542d10800000000000000
+      internalID: 2099898199129069056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_201
+      rect:
+        serializedVersion: 2
+        x: 1051
+        y: 103
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97dd8b5ddb8e984f0800000000000000
+      internalID: -825873154613650055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_202
+      rect:
+        serializedVersion: 2
+        x: 1291
+        y: 107
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 034e15a71caeb9470800000000000000
+      internalID: 8402567646491567152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_203
+      rect:
+        serializedVersion: 2
+        x: 1839
+        y: 103
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd11df9881114eb10800000000000000
+      internalID: 2009750130806034907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_204
+      rect:
+        serializedVersion: 2
+        x: 2255
+        y: 103
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: addaed8ead4e24fd0800000000000000
+      internalID: -2359071625927807526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_205
+      rect:
+        serializedVersion: 2
+        x: 2275
+        y: 103
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbbf51b99ba20ad70800000000000000
+      internalID: 9052282227673922492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_206
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 99
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2279ec01c052edd40800000000000000
+      internalID: 5610962919502026530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_207
+      rect:
+        serializedVersion: 2
+        x: 939
+        y: 95
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96d81376f19f48db0800000000000000
+      internalID: -4790430190344762007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_208
+      rect:
+        serializedVersion: 2
+        x: 1531
+        y: 95
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd45be1a204f322b0800000000000000
+      internalID: -5610372418629839653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_209
+      rect:
+        serializedVersion: 2
+        x: 1787
+        y: 99
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a91407d7afcffaa20800000000000000
+      internalID: 3075955223293870490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_210
+      rect:
+        serializedVersion: 2
+        x: 1999
+        y: 95
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e2ed9750f7ff4950800000000000000
+      internalID: 6435635004169904865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_211
+      rect:
+        serializedVersion: 2
+        x: 2163
+        y: 95
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0897e7eed41733cd0800000000000000
+      internalID: -2579593582025475712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_212
+      rect:
+        serializedVersion: 2
+        x: 2319
+        y: 99
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7ae20070b6d82cc0800000000000000
+      internalID: -3735499837621998982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_213
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 91
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ee9de1f5ef0663a0800000000000000
+      internalID: -6672628317622001944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_214
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 91
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e11178c3a2d6de80800000000000000
+      internalID: -8154098474423348759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_215
+      rect:
+        serializedVersion: 2
+        x: 1607
+        y: 87
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59af12ddefd60ee10800000000000000
+      internalID: 2224899157320137365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_216
+      rect:
+        serializedVersion: 2
+        x: 1655
+        y: 91
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 073b090fea98df810800000000000000
+      internalID: 1800746810471396208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_217
+      rect:
+        serializedVersion: 2
+        x: 2083
+        y: 87
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bdb4151b108ca17d0800000000000000
+      internalID: -2946823096565150757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_218
+      rect:
+        serializedVersion: 2
+        x: 2211
+        y: 87
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cd95d0685a820ff0800000000000000
+      internalID: -71342531898139191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_219
+      rect:
+        serializedVersion: 2
+        x: 2251
+        y: 91
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e57f7ff32510e3390800000000000000
+      internalID: -7836824848805922978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_220
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 83
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f19a8730b2ab48050800000000000000
+      internalID: 5801966913864640799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_221
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 79
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ead07ff24beb6b20800000000000000
+      internalID: 3128853039124896486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_222
+      rect:
+        serializedVersion: 2
+        x: 687
+        y: 79
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe079a282ae569d40800000000000000
+      internalID: 5590760039496904943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_223
+      rect:
+        serializedVersion: 2
+        x: 787
+        y: 83
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a43dcf4bdf56eb500800000000000000
+      internalID: 413880356102263626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_224
+      rect:
+        serializedVersion: 2
+        x: 871
+        y: 79
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9dc91aaf34fdf6570800000000000000
+      internalID: 8462227707913149657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_225
+      rect:
+        serializedVersion: 2
+        x: 911
+        y: 83
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3597596f630142550800000000000000
+      internalID: 6135046420636727635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_226
+      rect:
+        serializedVersion: 2
+        x: 1075
+        y: 79
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cb8cf090896a75a20800000000000000
+      internalID: 3051090444484069564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_227
+      rect:
+        serializedVersion: 2
+        x: 2159
+        y: 79
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cff2b9392718df70800000000000000
+      internalID: 9212138503615479753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_228
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 71
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f58079460cda92cd0800000000000000
+      internalID: -2582341869487323041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_229
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 75
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c8ae9a322ae13950800000000000000
+      internalID: 6427175575967672519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_230
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 71
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4833514d61bfcb210800000000000000
+      internalID: 1350230063770317700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_231
+      rect:
+        serializedVersion: 2
+        x: 843
+        y: 71
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3cbc000e52e2e7490800000000000000
+      internalID: -7746703568823858237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_232
+      rect:
+        serializedVersion: 2
+        x: 1375
+        y: 75
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fff18938686327950800000000000000
+      internalID: 6445273968081903615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_233
+      rect:
+        serializedVersion: 2
+        x: 1415
+        y: 75
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 613d68292ad5b0790800000000000000
+      internalID: -7562848196414221546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_234
+      rect:
+        serializedVersion: 2
+        x: 1759
+        y: 71
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba5c3c8436a0eaab0800000000000000
+      internalID: -4995043515168471637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_235
+      rect:
+        serializedVersion: 2
+        x: 1779
+        y: 71
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9d6c9d915df61dc0800000000000000
+      internalID: -3668466319468237413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_236
+      rect:
+        serializedVersion: 2
+        x: 1839
+        y: 75
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17ed3ab8d8a776d90800000000000000
+      internalID: -7104575138801918351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_237
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 63
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 060c032a71a673fb0800000000000000
+      internalID: -4668145839008333728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_238
+      rect:
+        serializedVersion: 2
+        x: 819
+        y: 67
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8b997942d7ecc8e0800000000000000
+      internalID: -1671706471299441778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_239
+      rect:
+        serializedVersion: 2
+        x: 1091
+        y: 63
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bad80eae18425f620800000000000000
+      internalID: 2807190083145338283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_240
+      rect:
+        serializedVersion: 2
+        x: 1207
+        y: 63
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20159cc0b68b7bc10800000000000000
+      internalID: 2069325323715563778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_241
+      rect:
+        serializedVersion: 2
+        x: 1391
+        y: 67
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a798fd11f282cf590800000000000000
+      internalID: -7639186685298767494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_242
+      rect:
+        serializedVersion: 2
+        x: 1403
+        y: 63
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0572033c84e1ddc20800000000000000
+      internalID: 3232773405383075664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_243
+      rect:
+        serializedVersion: 2
+        x: 1427
+        y: 67
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 335dab1c2d21d1970800000000000000
+      internalID: 8727152349316568371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_244
+      rect:
+        serializedVersion: 2
+        x: 1599
+        y: 67
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28b04f497665c8390800000000000000
+      internalID: -7814776250514011262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_245
+      rect:
+        serializedVersion: 2
+        x: 1719
+        y: 63
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 901881bd098e00e80800000000000000
+      internalID: -8214310011475033847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_246
+      rect:
+        serializedVersion: 2
+        x: 2419
+        y: 67
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d26aa2645dad7490800000000000000
+      internalID: -7746845206063193384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_247
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 55
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 78f03f07b2c3af900800000000000000
+      internalID: 718953247795253127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_248
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 59
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24c3f7176e2030450800000000000000
+      internalID: 6053685512885976130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_249
+      rect:
+        serializedVersion: 2
+        x: 647
+        y: 55
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a7abf58c57465e80800000000000000
+      internalID: -8190280409616242784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_250
+      rect:
+        serializedVersion: 2
+        x: 975
+        y: 59
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 813cb25790ea14f30800000000000000
+      internalID: 4558115653519393560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_251
+      rect:
+        serializedVersion: 2
+        x: 1831
+        y: 59
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36d6a7b49c8956200800000000000000
+      internalID: 172712151045795171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_252
+      rect:
+        serializedVersion: 2
+        x: 2119
+        y: 59
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f553f7ded2741c50800000000000000
+      internalID: 6635054452454938098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_253
+      rect:
+        serializedVersion: 2
+        x: 2311
+        y: 55
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1731ff717dc7504d0800000000000000
+      internalID: -3168989499522870415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_254
+      rect:
+        serializedVersion: 2
+        x: 2443
+        y: 55
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52f1f62d3ef4af740800000000000000
+      internalID: 5186545760777215781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_255
+      rect:
+        serializedVersion: 2
+        x: 2483
+        y: 55
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8016959fae74f180800000000000000
+      internalID: -9082495255905431413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_256
+      rect:
+        serializedVersion: 2
+        x: 2503
+        y: 55
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6050a613bea2c3f0800000000000000
+      internalID: -881950492809211795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_257
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 51
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81ceeeb854595fb90800000000000000
+      internalID: -7208691502603637736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_258
+      rect:
+        serializedVersion: 2
+        x: 975
+        y: 51
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64944eafc0027bc60800000000000000
+      internalID: 7833765316955228486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_259
+      rect:
+        serializedVersion: 2
+        x: 1807
+        y: 47
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36f4e7eab3c8b20c0800000000000000
+      internalID: -4599428406470357149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_260
+      rect:
+        serializedVersion: 2
+        x: 1831
+        y: 47
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45766672463de7ef0800000000000000
+      internalID: -108416913899100332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_261
+      rect:
+        serializedVersion: 2
+        x: 2275
+        y: 47
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35c821d10ff279b10800000000000000
+      internalID: 1988110468833774675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_262
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 43
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 843fe168652ca6e30800000000000000
+      internalID: 4497620854756012872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_263
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 43
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9022d08078556220800000000000000
+      internalID: 2478484410158162078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_264
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 39
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b30b0fc71c72dbc0800000000000000
+      internalID: -3759806297201245256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_265
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 43
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba5fe3784dcb21930800000000000000
+      internalID: 4112557030730823083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_266
+      rect:
+        serializedVersion: 2
+        x: 1251
+        y: 39
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5509699ef13acbb40800000000000000
+      internalID: 5457416205924470869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_267
+      rect:
+        serializedVersion: 2
+        x: 1351
+        y: 39
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b73334c405c4c7240800000000000000
+      internalID: 4790788011375932283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_268
+      rect:
+        serializedVersion: 2
+        x: 1691
+        y: 43
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dff953296123531a0800000000000000
+      internalID: -6830498187313831939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_269
+      rect:
+        serializedVersion: 2
+        x: 2255
+        y: 43
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d010b298b0e4c13a0800000000000000
+      internalID: -6693389134726495987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_270
+      rect:
+        serializedVersion: 2
+        x: 2555
+        y: 39
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f3e5ea1c0babb6e0800000000000000
+      internalID: -1820673555862002695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_271
+      rect:
+        serializedVersion: 2
+        x: 875
+        y: 31
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 183509bd96dee97b0800000000000000
+      internalID: -5215470279537437823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_272
+      rect:
+        serializedVersion: 2
+        x: 1267
+        y: 35
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db898e96e445dc9b0800000000000000
+      internalID: -5058294110706165571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_273
+      rect:
+        serializedVersion: 2
+        x: 1379
+        y: 31
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9e1374cc7e0296a0800000000000000
+      internalID: -6444072187779146082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_274
+      rect:
+        serializedVersion: 2
+        x: 1499
+        y: 31
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37e8e9639673a4740800000000000000
+      internalID: 5136979249996926579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_275
+      rect:
+        serializedVersion: 2
+        x: 2463
+        y: 31
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e966cbb8bc3d05390800000000000000
+      internalID: -7831526880821090658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_276
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 23
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed4c79c2a9d0e3ec0800000000000000
+      internalID: -3585413297516067618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_277
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 23
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c22cf1a3cbc1ea10800000000000000
+      internalID: 1937053355842740932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_278
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 27
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee635c623881c3c50800000000000000
+      internalID: 6646214101662250734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_279
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 23
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 612b76d9800192ef0800000000000000
+      internalID: -132557084844117482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_280
+      rect:
+        serializedVersion: 2
+        x: 755
+        y: 23
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 204a66397c61eab10800000000000000
+      internalID: 1994556731398988802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_281
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 23
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e42b985fe677bea00800000000000000
+      internalID: 786853878355833422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_282
+      rect:
+        serializedVersion: 2
+        x: 1007
+        y: 23
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7dd169b9ab1fb2500800000000000000
+      internalID: 372657177964715479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_283
+      rect:
+        serializedVersion: 2
+        x: 1179
+        y: 23
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 933fd799dc1c11ec0800000000000000
+      internalID: -3597881538504690887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_284
+      rect:
+        serializedVersion: 2
+        x: 1743
+        y: 23
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c53a1ab91d44f5a0800000000000000
+      internalID: -6488476390242241084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_285
+      rect:
+        serializedVersion: 2
+        x: 1779
+        y: 23
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: baa61724c74b96360800000000000000
+      internalID: 7163455128093158059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_286
+      rect:
+        serializedVersion: 2
+        x: 1795
+        y: 23
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f8916cfb05662450800000000000000
+      internalID: 6063645050454251768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_287
+      rect:
+        serializedVersion: 2
+        x: 1975
+        y: 27
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 558ea0d37c97e69f0800000000000000
+      internalID: -473307014197745579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_288
+      rect:
+        serializedVersion: 2
+        x: 2143
+        y: 27
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b5212d3bc94373e0800000000000000
+      internalID: -2057219467525413447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_289
+      rect:
+        serializedVersion: 2
+        x: 2183
+        y: 23
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe9e4a1645e938fd0800000000000000
+      internalID: -2340853296049886737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_290
+      rect:
+        serializedVersion: 2
+        x: 2503
+        y: 27
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93ac4d3cfd032ba00800000000000000
+      internalID: 770732223855118905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_291
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 19
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab7ac205bd4395420800000000000000
+      internalID: 2619182774840240058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_292
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 15
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fbebb71cc4c9f8b0800000000000000
+      internalID: -5117843120679293965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_293
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 19
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c65949ca45679800800000000000000
+      internalID: 619074845665744577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_294
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 19
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8815d0d3145de2c0800000000000000
+      internalID: -4400768816786368371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_295
+      rect:
+        serializedVersion: 2
+        x: 1711
+        y: 15
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98710a052f0b147e0800000000000000
+      internalID: -1782949422680762487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_296
+      rect:
+        serializedVersion: 2
+        x: 2031
+        y: 19
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20d6dea51b7698780800000000000000
+      internalID: -8680292795347538686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_297
+      rect:
+        serializedVersion: 2
+        x: 2483
+        y: 19
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84b785864ae685f40800000000000000
+      internalID: 5717441379351165768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_298
+      rect:
+        serializedVersion: 2
+        x: 2527
+        y: 19
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3da9567ccd107b70800000000000000
+      internalID: 8894642028052852029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_299
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 11
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c0b2918367fdb1e0800000000000000
+      internalID: -2180314637829754685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_300
+      rect:
+        serializedVersion: 2
+        x: 919
+        y: 11
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60fb53e5347d97ca0800000000000000
+      internalID: -6018542742660595962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_301
+      rect:
+        serializedVersion: 2
+        x: 1027
+        y: 7
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db287e21875d23e60800000000000000
+      internalID: 7940643804697559741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_302
+      rect:
+        serializedVersion: 2
+        x: 1215
+        y: 11
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb693bec1ac2c0550800000000000000
+      internalID: 6128322266413635263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_303
+      rect:
+        serializedVersion: 2
+        x: 1883
+        y: 11
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d3f19cf6cf919e10800000000000000
+      internalID: 2202717369750647760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_304
+      rect:
+        serializedVersion: 2
+        x: 2087
+        y: 11
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf757512b91f0f040800000000000000
+      internalID: 4679505661419542524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_305
+      rect:
+        serializedVersion: 2
+        x: 2175
+        y: 7
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38eda97b220d6a990800000000000000
+      internalID: -7374978492244763005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_306
+      rect:
+        serializedVersion: 2
+        x: 635
+        y: 0
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55ac194c5ae445510800000000000000
+      internalID: 1536939846714640981
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_307
+      rect:
+        serializedVersion: 2
+        x: 843
+        y: 0
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ec060b3fa30a0a70800000000000000
+      internalID: 8793845273538727144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_308
+      rect:
+        serializedVersion: 2
+        x: 1519
+        y: 3
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8aaf16b8fb22a6a50800000000000000
+      internalID: 6515058017017395880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_309
+      rect:
+        serializedVersion: 2
+        x: 1719
+        y: 0
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c95d677a22f5dbbe0800000000000000
+      internalID: -1459906101755062884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Event_AshRain_Sheet_310
+      rect:
+        serializedVersion: 2
+        x: 1795
+        y: 3
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f231b628244ff3e0800000000000000
+      internalID: -2017819168800165136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

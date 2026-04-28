@@ -29,7 +29,7 @@ namespace LasGranjasDelHastur.Zone1
         [Header("Tax (Zone1)")]
         public string collectorName = "Cthulhu";
         [Range(0f, 1f)] public float baseTaxPercent = 0.15f;
-        [Min(5f)] public float taxIntervalSeconds = 90f;
+        [Min(60f)] public float taxIntervalSeconds = 1200f;
         [Min(5f)] public float payWindowSeconds = 20f;
         [Range(0f, 1f)] public float moneyLossOnFail = 0.75f;
         [Min(1)] public int finePerStrikeStep = 25;

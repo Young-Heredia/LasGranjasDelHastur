@@ -1,0 +1,2317 @@
+fileFormatVersion: 2
+guid: 187f3d819b0b9f6418e09a91052f6afd
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4710840112528105996
+    second: Zone3_Backdrop_DeepSpace_0
+  - first:
+      213: 8914234872417636932
+    second: Zone3_Backdrop_DeepSpace_1
+  - first:
+      213: 6202058901500337555
+    second: Zone3_Backdrop_DeepSpace_2
+  - first:
+      213: 9097767229018963874
+    second: Zone3_Backdrop_DeepSpace_3
+  - first:
+      213: 2990638473781753581
+    second: Zone3_Backdrop_DeepSpace_4
+  - first:
+      213: 114386463199994993
+    second: Zone3_Backdrop_DeepSpace_5
+  - first:
+      213: 6391844388268336616
+    second: Zone3_Backdrop_DeepSpace_6
+  - first:
+      213: 2945829142612813559
+    second: Zone3_Backdrop_DeepSpace_7
+  - first:
+      213: -5591780802221924358
+    second: Zone3_Backdrop_DeepSpace_8
+  - first:
+      213: 5995399788487580540
+    second: Zone3_Backdrop_DeepSpace_9
+  - first:
+      213: -3879744306991243870
+    second: Zone3_Backdrop_DeepSpace_10
+  - first:
+      213: -8006326714100651669
+    second: Zone3_Backdrop_DeepSpace_11
+  - first:
+      213: -5611780576653336015
+    second: Zone3_Backdrop_DeepSpace_12
+  - first:
+      213: 6120820731891838160
+    second: Zone3_Backdrop_DeepSpace_13
+  - first:
+      213: -6973660330963925482
+    second: Zone3_Backdrop_DeepSpace_14
+  - first:
+      213: -1340516121171703016
+    second: Zone3_Backdrop_DeepSpace_15
+  - first:
+      213: 1920821189860563100
+    second: Zone3_Backdrop_DeepSpace_16
+  - first:
+      213: -2678095736726036122
+    second: Zone3_Backdrop_DeepSpace_17
+  - first:
+      213: 5479201145533003091
+    second: Zone3_Backdrop_DeepSpace_18
+  - first:
+      213: 1901535018113133053
+    second: Zone3_Backdrop_DeepSpace_19
+  - first:
+      213: -458174489988256984
+    second: Zone3_Backdrop_DeepSpace_20
+  - first:
+      213: -6350206837878382547
+    second: Zone3_Backdrop_DeepSpace_21
+  - first:
+      213: 9054013044690761810
+    second: Zone3_Backdrop_DeepSpace_22
+  - first:
+      213: -6457098125983627713
+    second: Zone3_Backdrop_DeepSpace_23
+  - first:
+      213: 2809815811518260940
+    second: Zone3_Backdrop_DeepSpace_24
+  - first:
+      213: -2512230267562651479
+    second: Zone3_Backdrop_DeepSpace_25
+  - first:
+      213: -3509589362676992016
+    second: Zone3_Backdrop_DeepSpace_26
+  - first:
+      213: 1038300377941068601
+    second: Zone3_Backdrop_DeepSpace_27
+  - first:
+      213: 997794605603108366
+    second: Zone3_Backdrop_DeepSpace_28
+  - first:
+      213: 1591592787846561017
+    second: Zone3_Backdrop_DeepSpace_29
+  - first:
+      213: 7934824152556867619
+    second: Zone3_Backdrop_DeepSpace_30
+  - first:
+      213: 4466892368035695702
+    second: Zone3_Backdrop_DeepSpace_31
+  - first:
+      213: -6335377317640741974
+    second: Zone3_Backdrop_DeepSpace_32
+  - first:
+      213: 2770616929578224387
+    second: Zone3_Backdrop_DeepSpace_33
+  - first:
+      213: 2540698268135070848
+    second: Zone3_Backdrop_DeepSpace_34
+  - first:
+      213: -6345807326211200833
+    second: Zone3_Backdrop_DeepSpace_35
+  - first:
+      213: -4108600740912258077
+    second: Zone3_Backdrop_DeepSpace_36
+  - first:
+      213: 3056739232866953255
+    second: Zone3_Backdrop_DeepSpace_37
+  - first:
+      213: -1620706195401395381
+    second: Zone3_Backdrop_DeepSpace_38
+  - first:
+      213: 8890935161099213238
+    second: Zone3_Backdrop_DeepSpace_39
+  - first:
+      213: -8657594526854684296
+    second: Zone3_Backdrop_DeepSpace_40
+  - first:
+      213: 4555222770613023239
+    second: Zone3_Backdrop_DeepSpace_41
+  - first:
+      213: -673054745868792281
+    second: Zone3_Backdrop_DeepSpace_42
+  - first:
+      213: 1457209443726176616
+    second: Zone3_Backdrop_DeepSpace_43
+  - first:
+      213: -5683946658836089595
+    second: Zone3_Backdrop_DeepSpace_44
+  - first:
+      213: -6859426099623701052
+    second: Zone3_Backdrop_DeepSpace_45
+  - first:
+      213: 2125886009734300812
+    second: Zone3_Backdrop_DeepSpace_46
+  - first:
+      213: 4498052393912139352
+    second: Zone3_Backdrop_DeepSpace_47
+  - first:
+      213: 7763970247336991190
+    second: Zone3_Backdrop_DeepSpace_48
+  - first:
+      213: -2406410298736480809
+    second: Zone3_Backdrop_DeepSpace_49
+  - first:
+      213: 8641050380111666447
+    second: Zone3_Backdrop_DeepSpace_50
+  - first:
+      213: -737061677347418281
+    second: Zone3_Backdrop_DeepSpace_51
+  - first:
+      213: -2039319558782503541
+    second: Zone3_Backdrop_DeepSpace_52
+  - first:
+      213: -815809543611390587
+    second: Zone3_Backdrop_DeepSpace_53
+  - first:
+      213: 7830487845660960173
+    second: Zone3_Backdrop_DeepSpace_54
+  - first:
+      213: -3056078776345323132
+    second: Zone3_Backdrop_DeepSpace_55
+  - first:
+      213: -1370710414462675429
+    second: Zone3_Backdrop_DeepSpace_56
+  - first:
+      213: 3921224826831830646
+    second: Zone3_Backdrop_DeepSpace_57
+  - first:
+      213: 3055710292760992213
+    second: Zone3_Backdrop_DeepSpace_58
+  - first:
+      213: -2818667424410208945
+    second: Zone3_Backdrop_DeepSpace_59
+  - first:
+      213: -3554487082854085956
+    second: Zone3_Backdrop_DeepSpace_60
+  - first:
+      213: 2552612011735460823
+    second: Zone3_Backdrop_DeepSpace_61
+  - first:
+      213: -2749695711344291310
+    second: Zone3_Backdrop_DeepSpace_62
+  - first:
+      213: 7581681523403574063
+    second: Zone3_Backdrop_DeepSpace_63
+  - first:
+      213: -5913539155756760769
+    second: Zone3_Backdrop_DeepSpace_64
+  - first:
+      213: 2714950663846028729
+    second: Zone3_Backdrop_DeepSpace_65
+  - first:
+      213: -1781365715597874072
+    second: Zone3_Backdrop_DeepSpace_66
+  - first:
+      213: -4637669411149993079
+    second: Zone3_Backdrop_DeepSpace_67
+  - first:
+      213: -5369974071648054740
+    second: Zone3_Backdrop_DeepSpace_68
+  - first:
+      213: -630716971536111619
+    second: Zone3_Backdrop_DeepSpace_69
+  - first:
+      213: -5533410660652336900
+    second: Zone3_Backdrop_DeepSpace_70
+  - first:
+      213: 1038513787503085836
+    second: Zone3_Backdrop_DeepSpace_71
+  - first:
+      213: 1538060953057495589
+    second: Zone3_Backdrop_DeepSpace_72
+  - first:
+      213: -4039497014890064879
+    second: Zone3_Backdrop_DeepSpace_73
+  - first:
+      213: 8725937701634231076
+    second: Zone3_Backdrop_DeepSpace_74
+  - first:
+      213: -4872466015196583807
+    second: Zone3_Backdrop_DeepSpace_75
+  - first:
+      213: 1329330827575462518
+    second: Zone3_Backdrop_DeepSpace_76
+  - first:
+      213: -2802912238990037974
+    second: Zone3_Backdrop_DeepSpace_77
+  - first:
+      213: -5318669775332245554
+    second: Zone3_Backdrop_DeepSpace_78
+  - first:
+      213: -8323670159447138439
+    second: Zone3_Backdrop_DeepSpace_79
+  - first:
+      213: -3906346557006731712
+    second: Zone3_Backdrop_DeepSpace_80
+  - first:
+      213: -6318868433466353212
+    second: Zone3_Backdrop_DeepSpace_81
+  - first:
+      213: -6174530409396248948
+    second: Zone3_Backdrop_DeepSpace_82
+  - first:
+      213: 5517226338823700632
+    second: Zone3_Backdrop_DeepSpace_83
+  - first:
+      213: -8534867623987192555
+    second: Zone3_Backdrop_DeepSpace_84
+  - first:
+      213: -5187863176254053404
+    second: Zone3_Backdrop_DeepSpace_85
+  - first:
+      213: 7799177925426104498
+    second: Zone3_Backdrop_DeepSpace_86
+  - first:
+      213: -1554254663997656693
+    second: Zone3_Backdrop_DeepSpace_87
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_0
+      rect:
+        serializedVersion: 2
+        x: 1575
+        y: 707
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0226ec8f14406140800000000000000
+      internalID: 4710840112528105996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_1
+      rect:
+        serializedVersion: 2
+        x: 1491
+        y: 683
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4425ad60369b5bb70800000000000000
+      internalID: 8914234872417636932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_2
+      rect:
+        serializedVersion: 2
+        x: 1519
+        y: 675
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39d1af306b3221650800000000000000
+      internalID: 6202058901500337555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_3
+      rect:
+        serializedVersion: 2
+        x: 1311
+        y: 647
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2af7ddeb713c14e70800000000000000
+      internalID: 9097767229018963874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_4
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 635
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de6b069c8d1e08920800000000000000
+      internalID: 2990638473781753581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_5
+      rect:
+        serializedVersion: 2
+        x: 1647
+        y: 635
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 174262ad1e1669100800000000000000
+      internalID: 114386463199994993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_6
+      rect:
+        serializedVersion: 2
+        x: 243
+        y: 603
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e5ee4e0b9464b850800000000000000
+      internalID: 6391844388268336616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_7
+      rect:
+        serializedVersion: 2
+        x: 559
+        y: 579
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f62e6e5fffa1e820800000000000000
+      internalID: 2945829142612813559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_8
+      rect:
+        serializedVersion: 2
+        x: 1159
+        y: 579
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aff96b5acf00662b0800000000000000
+      internalID: -5591780802221924358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_9
+      rect:
+        serializedVersion: 2
+        x: 1211
+        y: 571
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7b1147b750f33350800000000000000
+      internalID: 5995399788487580540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_10
+      rect:
+        serializedVersion: 2
+        x: 1215
+        y: 371
+        width: 214
+        height: 214
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ad517acb11682ac0800000000000000
+      internalID: -3879744306991243870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_11
+      rect:
+        serializedVersion: 2
+        x: 559
+        y: 567
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b696f4ad540d3e090800000000000000
+      internalID: -8006326714100651669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_12
+      rect:
+        serializedVersion: 2
+        x: 1079
+        y: 567
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 132242b4c43fe12b0800000000000000
+      internalID: -5611780576653336015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_13
+      rect:
+        serializedVersion: 2
+        x: 647
+        y: 551
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0dc6242b60681f450800000000000000
+      internalID: 6120820731891838160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_14
+      rect:
+        serializedVersion: 2
+        x: 903
+        y: 547
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61689a480e4983f90800000000000000
+      internalID: -6973660330963925482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_15
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 535
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81b40eda0b7856de0800000000000000
+      internalID: -1340516121171703016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_16
+      rect:
+        serializedVersion: 2
+        x: 1799
+        y: 535
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c989eaaf1b028aa10800000000000000
+      internalID: 1920821189860563100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_17
+      rect:
+        serializedVersion: 2
+        x: 1007
+        y: 507
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 661e4f9dd1e75dad0800000000000000
+      internalID: -2678095736726036122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_18
+      rect:
+        serializedVersion: 2
+        x: 1111
+        y: 515
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 355786c69680a0c40800000000000000
+      internalID: 5479201145533003091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_19
+      rect:
+        serializedVersion: 2
+        x: 1767
+        y: 507
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df96992360c936a10800000000000000
+      internalID: 1901535018113133053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_20
+      rect:
+        serializedVersion: 2
+        x: 499
+        y: 499
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82baa179abc34a9f0800000000000000
+      internalID: -458174489988256984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_21
+      rect:
+        serializedVersion: 2
+        x: 1039
+        y: 495
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d20a00a96888fd7a0800000000000000
+      internalID: -6350206837878382547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_22
+      rect:
+        serializedVersion: 2
+        x: 835
+        y: 475
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 258bb88d4e056ad70800000000000000
+      internalID: 9054013044690761810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_23
+      rect:
+        serializedVersion: 2
+        x: 1435
+        y: 471
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f36c7e03777c366a0800000000000000
+      internalID: -6457098125983627713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_24
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 463
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc662d1f7987ef620800000000000000
+      internalID: 2809815811518260940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_25
+      rect:
+        serializedVersion: 2
+        x: 367
+        y: 323
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a091fbc1e3c22dd0800000000000000
+      internalID: -2512230267562651479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_26
+      rect:
+        serializedVersion: 2
+        x: 951
+        y: 459
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f7f52ab11f6b4fc0800000000000000
+      internalID: -3509589362676992016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_27
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 455
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93bc45d41b8c86e00800000000000000
+      internalID: 1038300377941068601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_28
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 443
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0636c148e0e8dd00800000000000000
+      internalID: 997794605603108366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_29
+      rect:
+        serializedVersion: 2
+        x: 347
+        y: 447
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fcfaaa3539761610800000000000000
+      internalID: 1591592787846561017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_30
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 439
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3209758b6882e1e60800000000000000
+      internalID: 7934824152556867619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_31
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 435
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65ccbae21f69dfd30800000000000000
+      internalID: 4466892368035695702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_32
+      rect:
+        serializedVersion: 2
+        x: 1767
+        y: 427
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aabd4f755e73418a0800000000000000
+      internalID: -6335377317640741974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_33
+      rect:
+        serializedVersion: 2
+        x: 931
+        y: 419
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30b81380b65337620800000000000000
+      internalID: 2770616929578224387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_34
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 411
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08c14a91d9f524320800000000000000
+      internalID: 2540698268135070848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_35
+      rect:
+        serializedVersion: 2
+        x: 651
+        y: 403
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb82c1cbbd92fe7a0800000000000000
+      internalID: -6345807326211200833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_36
+      rect:
+        serializedVersion: 2
+        x: 879
+        y: 399
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e3a40af4615bf6c0800000000000000
+      internalID: -4108600740912258077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_37
+      rect:
+        serializedVersion: 2
+        x: 951
+        y: 395
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 728e8021328bb6a20800000000000000
+      internalID: 3056739232866953255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_38
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 387
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4333d95d481289e0800000000000000
+      internalID: -1620706195401395381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_39
+      rect:
+        serializedVersion: 2
+        x: 1183
+        y: 363
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b9595e3c62f26b70800000000000000
+      internalID: 8890935161099213238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_40
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 351
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 871e571d5ab0ad780800000000000000
+      internalID: -8657594526854684296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_41
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 343
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 702f82ba9f6673f30800000000000000
+      internalID: 4555222770613023239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_42
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 323
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72e891e4644d8a6f0800000000000000
+      internalID: -673054745868792281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_43
+      rect:
+        serializedVersion: 2
+        x: 1227
+        y: 327
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 861b4a8b44c093410800000000000000
+      internalID: 1457209443726176616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_44
+      rect:
+        serializedVersion: 2
+        x: 1503
+        y: 323
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5057ecde0a09e11b0800000000000000
+      internalID: -5683946658836089595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_45
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 303
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c5d2e02e4c6ec0a0800000000000000
+      internalID: -6859426099623701052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_46
+      rect:
+        serializedVersion: 2
+        x: 1147
+        y: 303
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c848f2bff0aa08d10800000000000000
+      internalID: 2125886009734300812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_47
+      rect:
+        serializedVersion: 2
+        x: 1843
+        y: 283
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85e7a3012da4c6e30800000000000000
+      internalID: 4498052393912139352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_48
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 271
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d9193ffdc92fbb60800000000000000
+      internalID: 7763970247336991190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_49
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 255
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7dd68ff3596ba9ed0800000000000000
+      internalID: -2406410298736480809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_50
+      rect:
+        serializedVersion: 2
+        x: 1063
+        y: 263
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0d5fc8d98d2be770800000000000000
+      internalID: 8641050380111666447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_51
+      rect:
+        serializedVersion: 2
+        x: 1531
+        y: 167
+        width: 102
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75f47204f4e65c5f0800000000000000
+      internalID: -737061677347418281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_52
+      rect:
+        serializedVersion: 2
+        x: 1655
+        y: 263
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8533438aa1e2b3e0800000000000000
+      internalID: -2039319558782503541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_53
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 251
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5856bacda89ada4f0800000000000000
+      internalID: -815809543611390587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_54
+      rect:
+        serializedVersion: 2
+        x: 1035
+        y: 247
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da5a2aa353b7bac60800000000000000
+      internalID: 7830487845660960173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_55
+      rect:
+        serializedVersion: 2
+        x: 379
+        y: 231
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48993527b80a695d0800000000000000
+      internalID: -3056078776345323132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_56
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 219
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b161600f3224afce0800000000000000
+      internalID: -1370710414462675429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_57
+      rect:
+        serializedVersion: 2
+        x: 1039
+        y: 203
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67ef0c7543dfa6630800000000000000
+      internalID: 3921224826831830646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_58
+      rect:
+        serializedVersion: 2
+        x: 1179
+        y: 195
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d916884250186a20800000000000000
+      internalID: 3055710292760992213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_59
+      rect:
+        serializedVersion: 2
+        x: 1435
+        y: 203
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f45701459e412e8d0800000000000000
+      internalID: -2818667424410208945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_60
+      rect:
+        serializedVersion: 2
+        x: 1687
+        y: 199
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cba84c3a4dcebaec0800000000000000
+      internalID: -3554487082854085956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_61
+      rect:
+        serializedVersion: 2
+        x: 1743
+        y: 199
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7db23e0b913bc6320800000000000000
+      internalID: 2552612011735460823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_62
+      rect:
+        serializedVersion: 2
+        x: 687
+        y: 191
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21298eca15e17d9d0800000000000000
+      internalID: -2749695711344291310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_63
+      rect:
+        serializedVersion: 2
+        x: 1315
+        y: 187
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2bcc921d2b873960800000000000000
+      internalID: 7581681523403574063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_64
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 171
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3141c71873eeeda0800000000000000
+      internalID: -5913539155756760769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_65
+      rect:
+        serializedVersion: 2
+        x: 1471
+        y: 147
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b5e04d8e317da520800000000000000
+      internalID: 2714950663846028729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_66
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 131
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86caabad1515747e0800000000000000
+      internalID: -1781365715597874072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_67
+      rect:
+        serializedVersion: 2
+        x: 1099
+        y: 131
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98ba5b2fd30b3afb0800000000000000
+      internalID: -4637669411149993079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_68
+      rect:
+        serializedVersion: 2
+        x: 1399
+        y: 135
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c221c5e78050a75b0800000000000000
+      internalID: -5369974071648054740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_69
+      rect:
+        serializedVersion: 2
+        x: 1391
+        y: 127
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df7a7cd814e3f37f0800000000000000
+      internalID: -630716971536111619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_70
+      rect:
+        serializedVersion: 2
+        x: 587
+        y: 115
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf8357742506533b0800000000000000
+      internalID: -5533410660652336900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_71
+      rect:
+        serializedVersion: 2
+        x: 1863
+        y: 119
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c09877699ca896e00800000000000000
+      internalID: 1038513787503085836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_72
+      rect:
+        serializedVersion: 2
+        x: 1899
+        y: 115
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52a04eda94a485510800000000000000
+      internalID: 1538060953057495589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_73
+      rect:
+        serializedVersion: 2
+        x: 1687
+        y: 111
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1141a3cfdd2d0f7c0800000000000000
+      internalID: -4039497014890064879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_74
+      rect:
+        serializedVersion: 2
+        x: 1155
+        y: 91
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42bc81e8b12c81970800000000000000
+      internalID: 8725937701634231076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_75
+      rect:
+        serializedVersion: 2
+        x: 1699
+        y: 87
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1886b0089f5816cb0800000000000000
+      internalID: -4872466015196583807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_76
+      rect:
+        serializedVersion: 2
+        x: 739
+        y: 79
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67a8c96385bb27210800000000000000
+      internalID: 1329330827575462518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_77
+      rect:
+        serializedVersion: 2
+        x: 1251
+        y: 83
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2c676a4b2e0a19d0800000000000000
+      internalID: -2802912238990037974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_78
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 71
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ecff6b3d40a4036b0800000000000000
+      internalID: -5318669775332245554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_79
+      rect:
+        serializedVersion: 2
+        x: 763
+        y: 51
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97f52a637126c7c80800000000000000
+      internalID: -8323670159447138439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_80
+      rect:
+        serializedVersion: 2
+        x: 1355
+        y: 55
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0462b0cc08ed9c9c0800000000000000
+      internalID: -3906346557006731712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_81
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 39
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c91fc873aede48a0800000000000000
+      internalID: -6318868433466353212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_82
+      rect:
+        serializedVersion: 2
+        x: 663
+        y: 43
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8ed6158e49af4aa0800000000000000
+      internalID: -6174530409396248948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_83
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 35
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8900407af10219c40800000000000000
+      internalID: 5517226338823700632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_84
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 27
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51dd24b9d1f0e8980800000000000000
+      internalID: -8534867623987192555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_85
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 11
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e32c0c7de10108b0800000000000000
+      internalID: -5187863176254053404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_86
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 11
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b84719500f3c3c60800000000000000
+      internalID: 7799177925426104498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_Backdrop_DeepSpace_87
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 3
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b81fced2e9d2e6ae0800000000000000
+      internalID: -1554254663997656693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

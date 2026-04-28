@@ -16,6 +16,8 @@ namespace LasGranjasDelHastur.Zone1
         [SerializeField, Min(0)] private int initialAssistants = 1;
         [SerializeField, Min(0.05f)] private float automationTickSeconds = 0.25f;
         [SerializeField] private bool oneAssistantPerCell = true;
+        [SerializeField, Min(1)] private int assistantBuyBaseCost = 120;
+        [SerializeField, Min(0)] private int assistantBuyCostStep = 35;
 
         readonly List<int> _assistantAssignedSlot = new();
         CellManager _cells;
@@ -39,6 +41,7 @@ namespace LasGranjasDelHastur.Zone1
             }
         }
         public int AvailableAssistants => Mathf.Max(0, TotalAssistants - AssignedAssistants);
+        public int NextAssistantCost => assistantBuyBaseCost + Mathf.Max(0, TotalAssistants - initialAssistants) * assistantBuyCostStep;
 
         public void Configure(int newInitialAssistants, int newMaxAssistants, float newAutomationTickSeconds)
         {
@@ -142,6 +145,22 @@ namespace LasGranjasDelHastur.Zone1
             }
 
             return false;
+        }
+
+        public bool TryBuyAssistant()
+        {
+            if (_resources == null)
+                return false;
+            if (TotalAssistants >= maxAssistants)
+                return false;
+
+            var cost = NextAssistantCost;
+            if (!_resources.TrySpend(ResourceType.DarkCoins, cost))
+                return false;
+
+            _assistantAssignedSlot.Add(-1);
+            Changed?.Invoke();
+            return true;
         }
 
         public bool HasAssistantOnCell(FarmCell cell)

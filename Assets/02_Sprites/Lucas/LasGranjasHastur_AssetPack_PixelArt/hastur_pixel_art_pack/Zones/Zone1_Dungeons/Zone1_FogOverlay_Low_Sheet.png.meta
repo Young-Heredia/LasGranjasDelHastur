@@ -1,0 +1,2692 @@
+fileFormatVersion: 2
+guid: a77524056034c7148885c8dacae5dd5e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8161247701055637403
+    second: Zone1_FogOverlay_Low_Sheet_0
+  - first:
+      213: 6671818065444238370
+    second: Zone1_FogOverlay_Low_Sheet_1
+  - first:
+      213: 8935098848557702249
+    second: Zone1_FogOverlay_Low_Sheet_2
+  - first:
+      213: 1628359675430720245
+    second: Zone1_FogOverlay_Low_Sheet_3
+  - first:
+      213: -4520034499625486809
+    second: Zone1_FogOverlay_Low_Sheet_4
+  - first:
+      213: -6984331190931646903
+    second: Zone1_FogOverlay_Low_Sheet_5
+  - first:
+      213: -7115442592055620325
+    second: Zone1_FogOverlay_Low_Sheet_6
+  - first:
+      213: 5291853771164114563
+    second: Zone1_FogOverlay_Low_Sheet_7
+  - first:
+      213: 5201896283288555875
+    second: Zone1_FogOverlay_Low_Sheet_8
+  - first:
+      213: 7297444474249515593
+    second: Zone1_FogOverlay_Low_Sheet_9
+  - first:
+      213: -7959324636000830290
+    second: Zone1_FogOverlay_Low_Sheet_10
+  - first:
+      213: -2657882650582279420
+    second: Zone1_FogOverlay_Low_Sheet_11
+  - first:
+      213: 1164149732803240515
+    second: Zone1_FogOverlay_Low_Sheet_12
+  - first:
+      213: 236926919305025897
+    second: Zone1_FogOverlay_Low_Sheet_13
+  - first:
+      213: 2595794599690449303
+    second: Zone1_FogOverlay_Low_Sheet_14
+  - first:
+      213: -7035622574712348207
+    second: Zone1_FogOverlay_Low_Sheet_15
+  - first:
+      213: -27551120367260447
+    second: Zone1_FogOverlay_Low_Sheet_16
+  - first:
+      213: -1261572089394772407
+    second: Zone1_FogOverlay_Low_Sheet_17
+  - first:
+      213: 8522712131914857763
+    second: Zone1_FogOverlay_Low_Sheet_18
+  - first:
+      213: -8730377830936899481
+    second: Zone1_FogOverlay_Low_Sheet_19
+  - first:
+      213: -7395450122808987709
+    second: Zone1_FogOverlay_Low_Sheet_20
+  - first:
+      213: 445270807575957248
+    second: Zone1_FogOverlay_Low_Sheet_21
+  - first:
+      213: -2783996910235617169
+    second: Zone1_FogOverlay_Low_Sheet_22
+  - first:
+      213: 185464843962691084
+    second: Zone1_FogOverlay_Low_Sheet_23
+  - first:
+      213: -5206681235371708084
+    second: Zone1_FogOverlay_Low_Sheet_24
+  - first:
+      213: -316061229141620193
+    second: Zone1_FogOverlay_Low_Sheet_25
+  - first:
+      213: 8500869717074111215
+    second: Zone1_FogOverlay_Low_Sheet_26
+  - first:
+      213: 5909750080736117862
+    second: Zone1_FogOverlay_Low_Sheet_27
+  - first:
+      213: -6127423453440879093
+    second: Zone1_FogOverlay_Low_Sheet_28
+  - first:
+      213: -471477827287663059
+    second: Zone1_FogOverlay_Low_Sheet_29
+  - first:
+      213: 7454704700559010271
+    second: Zone1_FogOverlay_Low_Sheet_30
+  - first:
+      213: -8421844848324833378
+    second: Zone1_FogOverlay_Low_Sheet_31
+  - first:
+      213: -2477867139829789692
+    second: Zone1_FogOverlay_Low_Sheet_32
+  - first:
+      213: 2317738219562982068
+    second: Zone1_FogOverlay_Low_Sheet_33
+  - first:
+      213: -8212971788934296352
+    second: Zone1_FogOverlay_Low_Sheet_34
+  - first:
+      213: -5447923046541735993
+    second: Zone1_FogOverlay_Low_Sheet_35
+  - first:
+      213: 6903241293816482970
+    second: Zone1_FogOverlay_Low_Sheet_36
+  - first:
+      213: 6727829927411273740
+    second: Zone1_FogOverlay_Low_Sheet_37
+  - first:
+      213: 7949271574528609945
+    second: Zone1_FogOverlay_Low_Sheet_38
+  - first:
+      213: 3268014651734217592
+    second: Zone1_FogOverlay_Low_Sheet_39
+  - first:
+      213: -4400653407121570041
+    second: Zone1_FogOverlay_Low_Sheet_40
+  - first:
+      213: 2334314337286856536
+    second: Zone1_FogOverlay_Low_Sheet_41
+  - first:
+      213: -6468763595895327248
+    second: Zone1_FogOverlay_Low_Sheet_42
+  - first:
+      213: -3394953581554244498
+    second: Zone1_FogOverlay_Low_Sheet_43
+  - first:
+      213: -4706849520753392242
+    second: Zone1_FogOverlay_Low_Sheet_44
+  - first:
+      213: 4246240790039201123
+    second: Zone1_FogOverlay_Low_Sheet_45
+  - first:
+      213: -3932021928038638535
+    second: Zone1_FogOverlay_Low_Sheet_46
+  - first:
+      213: -4999128442577449582
+    second: Zone1_FogOverlay_Low_Sheet_47
+  - first:
+      213: 7877283574835920468
+    second: Zone1_FogOverlay_Low_Sheet_48
+  - first:
+      213: 2633301509676919449
+    second: Zone1_FogOverlay_Low_Sheet_49
+  - first:
+      213: 4241359818621113314
+    second: Zone1_FogOverlay_Low_Sheet_50
+  - first:
+      213: -5226572365171443334
+    second: Zone1_FogOverlay_Low_Sheet_51
+  - first:
+      213: 8557495780118974868
+    second: Zone1_FogOverlay_Low_Sheet_52
+  - first:
+      213: -5030727388372853447
+    second: Zone1_FogOverlay_Low_Sheet_53
+  - first:
+      213: 2819632082593250235
+    second: Zone1_FogOverlay_Low_Sheet_54
+  - first:
+      213: -4622569907170702637
+    second: Zone1_FogOverlay_Low_Sheet_55
+  - first:
+      213: 7951430797639719537
+    second: Zone1_FogOverlay_Low_Sheet_56
+  - first:
+      213: -1366495626312774685
+    second: Zone1_FogOverlay_Low_Sheet_57
+  - first:
+      213: -2352527806140456620
+    second: Zone1_FogOverlay_Low_Sheet_58
+  - first:
+      213: 6634344923607090621
+    second: Zone1_FogOverlay_Low_Sheet_59
+  - first:
+      213: 6099034677067322349
+    second: Zone1_FogOverlay_Low_Sheet_60
+  - first:
+      213: -2101287887854659484
+    second: Zone1_FogOverlay_Low_Sheet_61
+  - first:
+      213: 4224404084005910257
+    second: Zone1_FogOverlay_Low_Sheet_62
+  - first:
+      213: 4320389180655690830
+    second: Zone1_FogOverlay_Low_Sheet_63
+  - first:
+      213: -9146503525482113888
+    second: Zone1_FogOverlay_Low_Sheet_64
+  - first:
+      213: -5570273871791083857
+    second: Zone1_FogOverlay_Low_Sheet_65
+  - first:
+      213: -6985923850070322684
+    second: Zone1_FogOverlay_Low_Sheet_66
+  - first:
+      213: -769399943625219612
+    second: Zone1_FogOverlay_Low_Sheet_67
+  - first:
+      213: 4070355899329034332
+    second: Zone1_FogOverlay_Low_Sheet_68
+  - first:
+      213: 7317496832451347611
+    second: Zone1_FogOverlay_Low_Sheet_69
+  - first:
+      213: -7742037567503701360
+    second: Zone1_FogOverlay_Low_Sheet_70
+  - first:
+      213: -4087216862518634637
+    second: Zone1_FogOverlay_Low_Sheet_71
+  - first:
+      213: 7892794990947906014
+    second: Zone1_FogOverlay_Low_Sheet_72
+  - first:
+      213: 3146034510818964049
+    second: Zone1_FogOverlay_Low_Sheet_73
+  - first:
+      213: -6303719538630517349
+    second: Zone1_FogOverlay_Low_Sheet_74
+  - first:
+      213: 5145004662417806553
+    second: Zone1_FogOverlay_Low_Sheet_75
+  - first:
+      213: 3553268380225806794
+    second: Zone1_FogOverlay_Low_Sheet_76
+  - first:
+      213: 1536897121972088435
+    second: Zone1_FogOverlay_Low_Sheet_77
+  - first:
+      213: -2952061059718809055
+    second: Zone1_FogOverlay_Low_Sheet_78
+  - first:
+      213: 2475163449821010570
+    second: Zone1_FogOverlay_Low_Sheet_79
+  - first:
+      213: 2541569344797973360
+    second: Zone1_FogOverlay_Low_Sheet_80
+  - first:
+      213: -1356805437418164935
+    second: Zone1_FogOverlay_Low_Sheet_81
+  - first:
+      213: -1423922161218726260
+    second: Zone1_FogOverlay_Low_Sheet_82
+  - first:
+      213: 4244090160367949383
+    second: Zone1_FogOverlay_Low_Sheet_83
+  - first:
+      213: -2507319299774709436
+    second: Zone1_FogOverlay_Low_Sheet_84
+  - first:
+      213: -1882841877026358724
+    second: Zone1_FogOverlay_Low_Sheet_85
+  - first:
+      213: 2514878388973393922
+    second: Zone1_FogOverlay_Low_Sheet_86
+  - first:
+      213: -8827763532135312854
+    second: Zone1_FogOverlay_Low_Sheet_87
+  - first:
+      213: 1353011789092652498
+    second: Zone1_FogOverlay_Low_Sheet_88
+  - first:
+      213: 6959560652618782286
+    second: Zone1_FogOverlay_Low_Sheet_89
+  - first:
+      213: 7456374251187684087
+    second: Zone1_FogOverlay_Low_Sheet_90
+  - first:
+      213: -6645340261364918693
+    second: Zone1_FogOverlay_Low_Sheet_91
+  - first:
+      213: 9082804996442456201
+    second: Zone1_FogOverlay_Low_Sheet_92
+  - first:
+      213: 8912474095490495628
+    second: Zone1_FogOverlay_Low_Sheet_93
+  - first:
+      213: -3631779389332620558
+    second: Zone1_FogOverlay_Low_Sheet_94
+  - first:
+      213: -8227117761251794736
+    second: Zone1_FogOverlay_Low_Sheet_95
+  - first:
+      213: 8839909982246781385
+    second: Zone1_FogOverlay_Low_Sheet_96
+  - first:
+      213: -1815695019381796330
+    second: Zone1_FogOverlay_Low_Sheet_97
+  - first:
+      213: -2082763885687089364
+    second: Zone1_FogOverlay_Low_Sheet_98
+  - first:
+      213: 1574947897804277590
+    second: Zone1_FogOverlay_Low_Sheet_99
+  - first:
+      213: -3313696256883167015
+    second: Zone1_FogOverlay_Low_Sheet_100
+  - first:
+      213: -4219028391016527452
+    second: Zone1_FogOverlay_Low_Sheet_101
+  - first:
+      213: -6679138780036651967
+    second: Zone1_FogOverlay_Low_Sheet_102
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 1315
+        y: 291
+        width: 94
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9705614b83924170800000000000000
+      internalID: 8161247701055637403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 1563
+        y: 287
+        width: 146
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22476d48e2f079c50800000000000000
+      internalID: 6671818065444238370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 2299
+        y: 291
+        width: 178
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96c98450019dffb70800000000000000
+      internalID: 8935098848557702249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 3767
+        y: 279
+        width: 214
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f25e945f78199610800000000000000
+      internalID: 1628359675430720245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 279
+        width: 210
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 726ff4d129c9541c0800000000000000
+      internalID: -4520034499625486809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 1675
+        y: 275
+        width: 254
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94696d259cba21f90800000000000000
+      internalID: -6984331190931646903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 267
+        width: 105
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1d07d869aed04d90800000000000000
+      internalID: -7115442592055620325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 255
+        width: 198
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38e5c89a7f0707940800000000000000
+      internalID: 5291853771164114563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 731
+        y: 263
+        width: 82
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 361d6dbdb19d03840800000000000000
+      internalID: 5201896283288555875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 2427
+        y: 259
+        width: 286
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94297c7f51bb54560800000000000000
+      internalID: 7297444474249515593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 3147
+        y: 267
+        width: 86
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eacb723f96cca8190800000000000000
+      internalID: -7959324636000830290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 5051
+        y: 267
+        width: 69
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40b9e55bfcd4d1bd0800000000000000
+      internalID: -2657882650582279420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 3803
+        y: 255
+        width: 158
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3426a199304e72010800000000000000
+      internalID: 1164149732803240515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 4607
+        y: 247
+        width: 126
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96957ee17cbb94300800000000000000
+      internalID: 236926919305025897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 235
+        width: 233
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7913d607f6d160420800000000000000
+      internalID: 2595794599690449303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 631
+        y: 235
+        width: 98
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d12d8c6b827c5e90800000000000000
+      internalID: -7035622574712348207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 759
+        y: 239
+        width: 178
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ec6859e66e1e9ff0800000000000000
+      internalID: -27551120367260447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 1975
+        y: 243
+        width: 138
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 946c3196edefd7ee0800000000000000
+      internalID: -1261572089394772407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 2395
+        y: 239
+        width: 110
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32d72b95781c64670800000000000000
+      internalID: 8522712131914857763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 3183
+        y: 243
+        width: 306
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7609f084e9777d680800000000000000
+      internalID: -8730377830936899481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 4739
+        y: 243
+        width: 94
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3cfe9dbcb451e5990800000000000000
+      internalID: -7395450122808987709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 5047
+        y: 239
+        width: 73
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00f8a6ab07bed2600800000000000000
+      internalID: 445270807575957248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 1047
+        y: 223
+        width: 98
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f68fe957f814d59d0800000000000000
+      internalID: -2783996910235617169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 1351
+        y: 219
+        width: 150
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0e28befa47e29200800000000000000
+      internalID: 185464843962691084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 1871
+        y: 223
+        width: 222
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c413afaa0072eb7b0800000000000000
+      internalID: -5206681235371708084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 2367
+        y: 227
+        width: 206
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1a8db59cff1d9bf0800000000000000
+      internalID: -316061229141620193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 3275
+        y: 219
+        width: 78
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: feae318d7f729f570800000000000000
+      internalID: 8500869717074111215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 4387
+        y: 223
+        width: 246
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 664cc912366a30250800000000000000
+      internalID: 5909750080736117862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 4711
+        y: 223
+        width: 78
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b06524565d407faa0800000000000000
+      internalID: -6127423453440879093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 2667
+        y: 211
+        width: 142
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2ebb010a69f479f0800000000000000
+      internalID: -471477827287663059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 3247
+        y: 203
+        width: 222
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd9214ead6e647760800000000000000
+      internalID: 7454704700559010271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 3747
+        y: 211
+        width: 90
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9f05263bb89f1b80800000000000000
+      internalID: -8421844848324833378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 4227
+        y: 215
+        width: 78
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40c05d1f6f8dc9dd0800000000000000
+      internalID: -2477867139829789692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 1663
+        y: 191
+        width: 378
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bad56b71a24a2020800000000000000
+      internalID: 2317738219562982068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_34
+      rect:
+        serializedVersion: 2
+        x: 2911
+        y: 195
+        width: 118
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ec44421ca9a50e80800000000000000
+      internalID: -8212971788934296352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_35
+      rect:
+        serializedVersion: 2
+        x: 4539
+        y: 203
+        width: 78
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c7473f7ad61564b0800000000000000
+      internalID: -5447923046541735993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_36
+      rect:
+        serializedVersion: 2
+        x: 647
+        y: 187
+        width: 114
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9c4dbcb16d3dcf50800000000000000
+      internalID: 6903241293816482970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_37
+      rect:
+        serializedVersion: 2
+        x: 2563
+        y: 187
+        width: 94
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0057946cad0e5d50800000000000000
+      internalID: 6727829927411273740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_38
+      rect:
+        serializedVersion: 2
+        x: 3059
+        y: 187
+        width: 170
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99e43e6416c715e60800000000000000
+      internalID: 7949271574528609945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_39
+      rect:
+        serializedVersion: 2
+        x: 3779
+        y: 183
+        width: 234
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 873d365d2025a5d20800000000000000
+      internalID: 3268014651734217592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_40
+      rect:
+        serializedVersion: 2
+        x: 4975
+        y: 191
+        width: 145
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70708e8ba0dbde2c0800000000000000
+      internalID: -4400653407121570041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_41
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 171
+        width: 157
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85f9514a586256020800000000000000
+      internalID: 2334314337286856536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_42
+      rect:
+        serializedVersion: 2
+        x: 551
+        y: 167
+        width: 174
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f53ea258c55a36a0800000000000000
+      internalID: -6468763595895327248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_43
+      rect:
+        serializedVersion: 2
+        x: 1175
+        y: 167
+        width: 210
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e64e48e64b3b2e0d0800000000000000
+      internalID: -3394953581554244498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_44
+      rect:
+        serializedVersion: 2
+        x: 1955
+        y: 163
+        width: 266
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e85c6408c49edaeb0800000000000000
+      internalID: -4706849520753392242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_45
+      rect:
+        serializedVersion: 2
+        x: 2339
+        y: 171
+        width: 122
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3658f01408dadea30800000000000000
+      internalID: 4246240790039201123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_46
+      rect:
+        serializedVersion: 2
+        x: 3371
+        y: 147
+        width: 362
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93cd532a3e6ae69c0800000000000000
+      internalID: -3932021928038638535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_47
+      rect:
+        serializedVersion: 2
+        x: 3779
+        y: 167
+        width: 90
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29d8e910b278f9ab0800000000000000
+      internalID: -4999128442577449582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_48
+      rect:
+        serializedVersion: 2
+        x: 4183
+        y: 175
+        width: 226
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45e3d19fcabb15d60800000000000000
+      internalID: 7877283574835920468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_49
+      rect:
+        serializedVersion: 2
+        x: 4551
+        y: 167
+        width: 142
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99aeace65cd5b8420800000000000000
+      internalID: 2633301509676919449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_50
+      rect:
+        serializedVersion: 2
+        x: 811
+        y: 151
+        width: 162
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e3d68988465cda30800000000000000
+      internalID: 4241359818621113314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_51
+      rect:
+        serializedVersion: 2
+        x: 1771
+        y: 151
+        width: 82
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a79351d102c7777b0800000000000000
+      internalID: -5226572365171443334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_52
+      rect:
+        serializedVersion: 2
+        x: 2531
+        y: 159
+        width: 198
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49155ec821552c670800000000000000
+      internalID: 8557495780118974868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_53
+      rect:
+        serializedVersion: 2
+        x: 2855
+        y: 131
+        width: 566
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93d153e18144f2ab0800000000000000
+      internalID: -5030727388372853447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_54
+      rect:
+        serializedVersion: 2
+        x: 4135
+        y: 155
+        width: 206
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bbbf348a078512720800000000000000
+      internalID: 2819632082593250235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_55
+      rect:
+        serializedVersion: 2
+        x: 4411
+        y: 159
+        width: 94
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3da0ead292559dfb0800000000000000
+      internalID: -4622569907170702637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_56
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 147
+        width: 222
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17a9a659e28295e60800000000000000
+      internalID: 7951430797639719537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_57
+      rect:
+        serializedVersion: 2
+        x: 2291
+        y: 147
+        width: 226
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3eb8086c77b390de0800000000000000
+      internalID: -1366495626312774685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_58
+      rect:
+        serializedVersion: 2
+        x: 2555
+        y: 143
+        width: 210
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 451e4ceac642a5fd0800000000000000
+      internalID: -2352527806140456620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_59
+      rect:
+        serializedVersion: 2
+        x: 899
+        y: 131
+        width: 226
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db54409ce8de11c50800000000000000
+      internalID: 6634344923607090621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_60
+      rect:
+        serializedVersion: 2
+        x: 1927
+        y: 127
+        width: 210
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de3136789bf14a450800000000000000
+      internalID: 6099034677067322349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_61
+      rect:
+        serializedVersion: 2
+        x: 2175
+        y: 135
+        width: 202
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46897919cc9b6d2e0800000000000000
+      internalID: -2101287887854659484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_62
+      rect:
+        serializedVersion: 2
+        x: 3771
+        y: 131
+        width: 314
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f6b1eee12910aa30800000000000000
+      internalID: 4224404084005910257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_63
+      rect:
+        serializedVersion: 2
+        x: 4603
+        y: 127
+        width: 94
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e446c64c11b15fb30800000000000000
+      internalID: 4320389180655690830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_64
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 115
+        width: 106
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a4d7caf087111180800000000000000
+      internalID: -9146503525482113888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_65
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 115
+        width: 266
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: faea04a1d6962b2b0800000000000000
+      internalID: -5570273871791083857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_66
+      rect:
+        serializedVersion: 2
+        x: 907
+        y: 115
+        width: 86
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40211a875430d0f90800000000000000
+      internalID: -6985923850070322684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_67
+      rect:
+        serializedVersion: 2
+        x: 1463
+        y: 123
+        width: 122
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e16306e3da8255f0800000000000000
+      internalID: -769399943625219612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_68
+      rect:
+        serializedVersion: 2
+        x: 1751
+        y: 111
+        width: 178
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c583ce0ff1fcc7830800000000000000
+      internalID: 4070355899329034332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_69
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 103
+        width: 202
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b940f4f6998fc8560800000000000000
+      internalID: 7317496832451347611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_70
+      rect:
+        serializedVersion: 2
+        x: 1127
+        y: 111
+        width: 114
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09a6637f9d1ce8490800000000000000
+      internalID: -7742037567503701360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_71
+      rect:
+        serializedVersion: 2
+        x: 1255
+        y: 99
+        width: 218
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37717952be94747c0800000000000000
+      internalID: -4087216862518634637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_72
+      rect:
+        serializedVersion: 2
+        x: 3631
+        y: 103
+        width: 206
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed1be68f937d88d60800000000000000
+      internalID: 7892794990947906014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_73
+      rect:
+        serializedVersion: 2
+        x: 3867
+        y: 107
+        width: 150
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 152fb7c18b5f8ab20800000000000000
+      internalID: 3146034510818964049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_74
+      rect:
+        serializedVersion: 2
+        x: 5035
+        y: 103
+        width: 85
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9d1d386a70b488a0800000000000000
+      internalID: -6303719538630517349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_75
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 95
+        width: 86
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d454272b7ab66740800000000000000
+      internalID: 5145004662417806553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_76
+      rect:
+        serializedVersion: 2
+        x: 1059
+        y: 91
+        width: 182
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac1acfa04cebf4130800000000000000
+      internalID: 3553268380225806794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_77
+      rect:
+        serializedVersion: 2
+        x: 1863
+        y: 91
+        width: 102
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37e67732ac7245510800000000000000
+      internalID: 1536897121972088435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_78
+      rect:
+        serializedVersion: 2
+        x: 2323
+        y: 99
+        width: 218
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12a723c5b1c2807d0800000000000000
+      internalID: -2952061059718809055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_79
+      rect:
+        serializedVersion: 2
+        x: 4439
+        y: 99
+        width: 202
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8a9c9b2b0c895220800000000000000
+      internalID: 2475163449821010570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_80
+      rect:
+        serializedVersion: 2
+        x: 1563
+        y: 79
+        width: 98
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07b94b07ad7754320800000000000000
+      internalID: 2541569344797973360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_81
+      rect:
+        serializedVersion: 2
+        x: 2187
+        y: 79
+        width: 186
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93d2f51b4a8ab2de0800000000000000
+      internalID: -1356805437418164935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_82
+      rect:
+        serializedVersion: 2
+        x: 2507
+        y: 87
+        width: 114
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8650c0b6563d3ce0800000000000000
+      internalID: -1423922161218726260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_83
+      rect:
+        serializedVersion: 2
+        x: 3763
+        y: 87
+        width: 78
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7465673c38906ea30800000000000000
+      internalID: 4244090160367949383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_84
+      rect:
+        serializedVersion: 2
+        x: 3891
+        y: 83
+        width: 198
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 44182769166343dd0800000000000000
+      internalID: -2507319299774709436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_85
+      rect:
+        serializedVersion: 2
+        x: 4435
+        y: 79
+        width: 210
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3a3d9fd94dced5e0800000000000000
+      internalID: -1882841877026358724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_86
+      rect:
+        serializedVersion: 2
+        x: 4935
+        y: 83
+        width: 90
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 208d0140294a6e220800000000000000
+      internalID: 2514878388973393922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_87
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 71
+        width: 333
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a225de9c6db7d7580800000000000000
+      internalID: -8827763532135312854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_88
+      rect:
+        serializedVersion: 2
+        x: 1871
+        y: 67
+        width: 118
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d588c9bd0dd6c210800000000000000
+      internalID: 1353011789092652498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_89
+      rect:
+        serializedVersion: 2
+        x: 2959
+        y: 71
+        width: 122
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e46d02c4a83559060800000000000000
+      internalID: 6959560652618782286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_90
+      rect:
+        serializedVersion: 2
+        x: 3411
+        y: 75
+        width: 226
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7f2496a30ec5a7760800000000000000
+      internalID: 7456374251187684087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_91
+      rect:
+        serializedVersion: 2
+        x: 4731
+        y: 67
+        width: 90
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b561eb5ad3207c3a0800000000000000
+      internalID: -6645340261364918693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_92
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 59
+        width: 126
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9808811850b9c0e70800000000000000
+      internalID: 9082804996442456201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_93
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 63
+        width: 82
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c84f49338f77fab70800000000000000
+      internalID: 8912474095490495628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_94
+      rect:
+        serializedVersion: 2
+        x: 1291
+        y: 55
+        width: 146
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fa7e3c23e3599dc0800000000000000
+      internalID: -3631779389332620558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_95
+      rect:
+        serializedVersion: 2
+        x: 2743
+        y: 63
+        width: 206
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d0a74b3cf763dd80800000000000000
+      internalID: -8227117761251794736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_96
+      rect:
+        serializedVersion: 2
+        x: 2971
+        y: 55
+        width: 102
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c1cf320b4badaa70800000000000000
+      internalID: 8839909982246781385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_97
+      rect:
+        serializedVersion: 2
+        x: 4111
+        y: 59
+        width: 154
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6125d45fffa5dc6e0800000000000000
+      internalID: -1815695019381796330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_98
+      rect:
+        serializedVersion: 2
+        x: 4547
+        y: 55
+        width: 94
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c27db9ae7498813e0800000000000000
+      internalID: -2082763885687089364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_99
+      rect:
+        serializedVersion: 2
+        x: 615
+        y: 51
+        width: 138
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6574f54c4c65bd510800000000000000
+      internalID: 1574947897804277590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_100
+      rect:
+        serializedVersion: 2
+        x: 2695
+        y: 51
+        width: 190
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d0ffe2afc26302d0800000000000000
+      internalID: -3313696256883167015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_101
+      rect:
+        serializedVersion: 2
+        x: 3223
+        y: 51
+        width: 198
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a90c2028000375c0800000000000000
+      internalID: -4219028391016527452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone1_FogOverlay_Low_Sheet_102
+      rect:
+        serializedVersion: 2
+        x: 3871
+        y: 51
+        width: 198
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 144216acaaeee43a0800000000000000
+      internalID: -6679138780036651967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
