@@ -60,6 +60,10 @@ namespace LasGranjasDelHastur.Core
     {
         public int assistantId;
         public int assignedSlotIndex = -1;
+        /// <summary>Zona 2/3: arquetipo (0=Huerto Lunar … 3=Incubadora). Z1 ignora; default 0.</summary>
+        public int assistantType;
+        /// <summary>Zona 2/3: nivel de asistente. Z1 ignora; 0 en disco se trata como 1 en runtime.</summary>
+        public int assistantLevel;
     }
 
     [Serializable]

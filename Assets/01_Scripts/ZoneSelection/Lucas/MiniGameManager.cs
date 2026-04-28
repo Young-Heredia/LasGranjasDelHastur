@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 /// <summary>
-/// Framework mínimo para lanzar minijuegos de desbloqueo desde ZoneSelection.
+/// Minijuegos de desbloqueo: Z2 sellos; Z3 alineación celestial (arrastre) con temporizador y victoria.
 /// </summary>
 [DisallowMultipleComponent]
 public class MiniGameManager : MonoBehaviour
@@ -14,29 +14,23 @@ public class MiniGameManager : MonoBehaviour
     [SerializeField, Min(1)] private int zone2TargetClicks = 10;
     [SerializeField, Min(1f)] private float zone2DurationSeconds = 8f;
 
-    [Header("Zone3 Alignment Trial")]
-    [SerializeField, Min(1)] private int zone3TargetAlignments = 3;
-    [SerializeField, Min(1f)] private float zone3DurationSeconds = 14f;
-    [SerializeField, Min(0.1f)] private float zone3CursorSpeed = 1.5f;
-    [SerializeField, Range(0.05f, 0.4f)] private float zone3HitWindow = 0.16f;
+    [Header("Zone3 Celestial Alignment")]
+    [SerializeField, Min(1f)] private float zone3DurationSeconds = 50f;
 
     GameObject _overlayRoot;
+    RectTransform _panelRt;
     TextMeshProUGUI _title;
     TextMeshProUGUI _body;
     TextMeshProUGUI _status;
     Button _actionButton;
     Button _cancelButton;
+    CelestialAlignmentMinigameController _celestial;
 
     bool _isRunning;
     string _activeMiniGameId;
     int _clicks;
     float _remaining;
     Action<bool> _onFinish;
-
-    float _zone3Cursor01;
-    float _zone3Direction = 1f;
-    float _zone3Target01;
-    int _zone3Successes;
     bool _timerWarningPlayed;
 
     public bool IsRunning => _isRunning;
@@ -58,25 +52,10 @@ public class MiniGameManager : MonoBehaviour
             _timerWarningPlayed = true;
             AudioManager.Instance?.PlayMiniGameTimerWarning();
         }
-        if (InputAdapter.KeyDown(KeyCode.Space))
+        if (InputAdapter.KeyDown(KeyCode.Space) && _activeMiniGameId == ZoneManager.Zone2UnlockMiniGameId)
             RegisterAction();
-
-        if (_activeMiniGameId == ZoneManager.Zone3UnlockMiniGameId)
-        {
-            _zone3Cursor01 += _zone3Direction * zone3CursorSpeed * Time.unscaledDeltaTime;
-            if (_zone3Cursor01 >= 1f)
-            {
-                _zone3Cursor01 = 1f;
-                _zone3Direction = -1f;
-            }
-            else if (_zone3Cursor01 <= 0f)
-            {
-                _zone3Cursor01 = 0f;
-                _zone3Direction = 1f;
-            }
-        }
-
-        UpdateStatusText();
+        if (InputAdapter.KeyDown(KeyCode.Space) && _activeMiniGameId == ZoneManager.Zone3UnlockMiniGameId && _celestial != null)
+            _celestial.TrySnapIfClose();
 
         if (_activeMiniGameId == ZoneManager.Zone2UnlockMiniGameId && _clicks >= zone2TargetClicks)
         {
@@ -84,11 +63,17 @@ public class MiniGameManager : MonoBehaviour
             return;
         }
 
-        if (_activeMiniGameId == ZoneManager.Zone3UnlockMiniGameId && _zone3Successes >= zone3TargetAlignments)
+        if (_activeMiniGameId == ZoneManager.Zone3UnlockMiniGameId)
         {
-            Finish(true);
-            return;
+            _celestial?.Tick();
+            if (_celestial != null && _celestial.IsVictory)
+            {
+                Finish(true);
+                return;
+            }
         }
+
+        UpdateStatusText();
 
         if (_remaining <= 0f)
             Finish(false);
@@ -106,6 +91,7 @@ public class MiniGameManager : MonoBehaviour
         BuildOverlayIfNeeded();
         _activeMiniGameId = miniGameId;
         _onFinish = onFinish;
+        ConfigureUiForCurrentGame();
         ResetGameState();
         _isRunning = true;
         SetOverlayVisible(true);
@@ -113,7 +99,6 @@ public class MiniGameManager : MonoBehaviour
         _actionButton.onClick.AddListener(RegisterAction);
         _cancelButton.onClick.RemoveAllListeners();
         _cancelButton.onClick.AddListener(() => Finish(false));
-        ConfigureUiForCurrentGame();
         UpdateStatusText();
         AudioManager.Instance?.PlayMiniGameStart();
         return true;
@@ -129,20 +114,10 @@ public class MiniGameManager : MonoBehaviour
             _clicks++;
             AudioManager.Instance?.PlayMiniGameHit();
         }
-        else if (_activeMiniGameId == ZoneManager.Zone3UnlockMiniGameId)
+        else if (_activeMiniGameId == ZoneManager.Zone3UnlockMiniGameId && _celestial != null)
         {
-            var aligned = Mathf.Abs(_zone3Cursor01 - _zone3Target01) <= zone3HitWindow;
-            if (aligned)
-            {
-                _zone3Successes++;
-                PickNewZone3Target();
-                AudioManager.Instance?.PlayMiniGameHit();
-            }
-            else
-            {
-                _zone3Successes = Mathf.Max(0, _zone3Successes - 1);
-                AudioManager.Instance?.PlayMiniGameMiss();
-            }
+            _celestial.TrySnapIfClose();
+            AudioManager.Instance?.PlayMiniGameHit();
         }
 
         UpdateStatusText();
@@ -159,11 +134,8 @@ public class MiniGameManager : MonoBehaviour
             return;
         }
 
-        if (_activeMiniGameId == ZoneManager.Zone3UnlockMiniGameId)
-        {
-            var marker = BuildZone3MarkerBar();
-            _status.text = $"Alineaciones: {_zone3Successes}/{zone3TargetAlignments}   Tiempo: {Mathf.Max(0f, _remaining):0.0}s\n{marker}";
-        }
+        if (_activeMiniGameId == ZoneManager.Zone3UnlockMiniGameId && _celestial != null)
+            _status.text = _celestial.BuildStatusLine(_remaining);
     }
 
     void Finish(bool success)
@@ -172,6 +144,8 @@ public class MiniGameManager : MonoBehaviour
             return;
         _isRunning = false;
         SetOverlayVisible(false);
+        if (_celestial != null)
+            _celestial.gameObject.SetActive(false);
         if (success)
             AudioManager.Instance?.PlayMiniGameComplete();
         else
@@ -184,33 +158,64 @@ public class MiniGameManager : MonoBehaviour
     void ResetGameState()
     {
         _clicks = 0;
-        _zone3Successes = 0;
-        _zone3Cursor01 = 0f;
-        _zone3Direction = 1f;
         _timerWarningPlayed = false;
-        PickNewZone3Target();
 
-        _remaining = _activeMiniGameId == ZoneManager.Zone2UnlockMiniGameId
-            ? zone2DurationSeconds
-            : zone3DurationSeconds;
+        if (_activeMiniGameId == ZoneManager.Zone2UnlockMiniGameId)
+        {
+            _remaining = zone2DurationSeconds;
+            return;
+        }
+
+        if (_activeMiniGameId == ZoneManager.Zone3UnlockMiniGameId)
+        {
+            _remaining = zone3DurationSeconds;
+            if (_celestial != null)
+            {
+                _celestial.gameObject.SetActive(true);
+                _celestial.ResetGame();
+            }
+        }
     }
 
     void ConfigureUiForCurrentGame()
     {
         if (_activeMiniGameId == ZoneManager.Zone2UnlockMiniGameId)
         {
-            _title.text = "Minijuego: Alineación de Sellos";
-            _body.text = "Canaliza el sello pulsando el botón (o barra espaciadora)\nantes de que termine el tiempo.";
+            if (_celestial != null)
+                _celestial.gameObject.SetActive(false);
+            if (_panelRt != null)
+                _panelRt.sizeDelta = new Vector2(760f, 300f);
+            if (_title != null)
+                _title.text = "Minijuego: Alineación de Sellos";
+            if (_body != null)
+                _body.text = "Canaliza el sello pulsando el botón (o barra espaciadora)\nantes de que termine el tiempo.";
             SetActionLabel("Canalizar (+1)");
             return;
         }
 
         if (_activeMiniGameId == ZoneManager.Zone3UnlockMiniGameId)
         {
-            _title.text = "Minijuego: Alineación Celestial";
-            _body.text = "Deten el cursor cuando quede alineado con el objetivo.\nPulsa botón o barra espaciadora para intentar alinear.";
-            SetActionLabel("Alinear");
+            if (_panelRt != null)
+                _panelRt.sizeDelta = new Vector2(920f, 580f);
+            if (_title != null)
+                _title.text = "Alineación celestial";
+            if (_body != null)
+                _body.text = "Coloca el planeta y las dos lunas en los anillos de luz. Mantén la formación un instante. Espacio: acercar piezas. Cancelar: salir.";
+            SetActionLabel("Acercar piezas");
+            EnsureCelestial();
         }
+    }
+
+    void EnsureCelestial()
+    {
+        if (_celestial != null)
+            return;
+        if (_panelRt == null)
+            return;
+        var cgo = new GameObject("CelestialController");
+        cgo.transform.SetParent(_panelRt, false);
+        _celestial = cgo.AddComponent<CelestialAlignmentMinigameController>();
+        _celestial.Build();
     }
 
     void SetActionLabel(string text)
@@ -220,24 +225,6 @@ public class MiniGameManager : MonoBehaviour
         var label = _actionButton.GetComponentInChildren<TextMeshProUGUI>();
         if (label != null)
             label.text = text;
-    }
-
-    void PickNewZone3Target()
-    {
-        _zone3Target01 = UnityEngine.Random.Range(0.12f, 0.88f);
-    }
-
-    string BuildZone3MarkerBar()
-    {
-        const int width = 24;
-        var targetIndex = Mathf.Clamp(Mathf.RoundToInt(_zone3Target01 * (width - 1)), 0, width - 1);
-        var cursorIndex = Mathf.Clamp(Mathf.RoundToInt(_zone3Cursor01 * (width - 1)), 0, width - 1);
-        var chars = new char[width];
-        for (var i = 0; i < width; i++)
-            chars[i] = '-';
-        chars[targetIndex] = 'X';
-        chars[cursorIndex] = cursorIndex == targetIndex ? 'O' : '|';
-        return new string(chars);
     }
 
     void BuildOverlayIfNeeded()
@@ -260,25 +247,25 @@ public class MiniGameManager : MonoBehaviour
         rootRt.offsetMax = Vector2.zero;
 
         var blocker = _overlayRoot.AddComponent<Image>();
-        blocker.color = new Color(0f, 0f, 0f, 0.7f);
+        blocker.color = new Color(0.02f, 0.02f, 0.06f, 0.88f);
 
         var panel = new GameObject("Panel");
         panel.transform.SetParent(_overlayRoot.transform, false);
-        var panelRt = panel.AddComponent<RectTransform>();
-        panelRt.anchorMin = new Vector2(0.5f, 0.5f);
-        panelRt.anchorMax = new Vector2(0.5f, 0.5f);
-        panelRt.pivot = new Vector2(0.5f, 0.5f);
-        panelRt.sizeDelta = new Vector2(760f, 300f);
-        panelRt.anchoredPosition = Vector2.zero;
+        _panelRt = panel.AddComponent<RectTransform>();
+        _panelRt.anchorMin = new Vector2(0.5f, 0.5f);
+        _panelRt.anchorMax = new Vector2(0.5f, 0.5f);
+        _panelRt.pivot = new Vector2(0.5f, 0.5f);
+        _panelRt.sizeDelta = new Vector2(760f, 300f);
+        _panelRt.anchoredPosition = Vector2.zero;
         var panelImg = panel.AddComponent<Image>();
-        panelImg.color = new Color(0.08f, 0.08f, 0.12f, 0.95f);
+        panelImg.color = new Color(0.06f, 0.07f, 0.14f, 0.98f);
 
-        _title = CreateText(panel.transform, "Title", 24, TextAlignmentOptions.Center, new Vector2(0f, 108f), new Vector2(700f, 42f));
-        _body = CreateText(panel.transform, "Body", 18, TextAlignmentOptions.Center, new Vector2(0f, 42f), new Vector2(700f, 80f));
-        _status = CreateText(panel.transform, "Status", 20, TextAlignmentOptions.Center, new Vector2(0f, -24f), new Vector2(700f, 40f));
+        _title = CreateText(panel.transform, "Title", 24, TextAlignmentOptions.Center, new Vector2(0f, 248f), new Vector2(860f, 40f));
+        _body = CreateText(panel.transform, "Body", 17, TextAlignmentOptions.Center, new Vector2(0f, 180f), new Vector2(860f, 64f));
+        _status = CreateText(panel.transform, "Status", 18, TextAlignmentOptions.Center, new Vector2(0f, -240f), new Vector2(860f, 32f));
 
-        _actionButton = CreateButton(panel.transform, "Canalizar (+1)", new Vector2(-110f, -110f), new Vector2(220f, 44f));
-        _cancelButton = CreateButton(panel.transform, "Cancelar", new Vector2(110f, -110f), new Vector2(220f, 44f));
+        _actionButton = CreateButton(panel.transform, "Action", new Vector2(-120f, -268f), new Vector2(200f, 40f));
+        _cancelButton = CreateButton(panel.transform, "Cancelar", new Vector2(120f, -268f), new Vector2(200f, 40f));
     }
 
     void SetOverlayVisible(bool visible)
@@ -301,7 +288,7 @@ public class MiniGameManager : MonoBehaviour
         var txt = go.AddComponent<TextMeshProUGUI>();
         txt.fontSize = fontSize;
         txt.alignment = alignment;
-        txt.color = Color.white;
+        txt.color = new Color(0.95f, 0.95f, 0.97f, 1f);
         txt.textWrappingMode = TextWrappingModes.Normal;
         return txt;
     }
@@ -318,8 +305,8 @@ public class MiniGameManager : MonoBehaviour
         rt.sizeDelta = size;
 
         var img = go.AddComponent<Image>();
-        img.color = new Color(0.18f, 0.18f, 0.24f, 1f);
-        var btn = go.AddComponent<Button>();
+        img.color = new Color(0.2f, 0.25f, 0.4f, 1f);
+        go.AddComponent<Button>();
 
         var txtGo = new GameObject("Text");
         txtGo.transform.SetParent(go.transform, false);
@@ -330,9 +317,9 @@ public class MiniGameManager : MonoBehaviour
         txtRt.offsetMax = Vector2.zero;
         var txt = txtGo.AddComponent<TextMeshProUGUI>();
         txt.text = label;
-        txt.fontSize = 18;
+        txt.fontSize = 17;
         txt.alignment = TextAlignmentOptions.Center;
         txt.color = Color.white;
-        return btn;
+        return go.GetComponent<Button>();
     }
 }
