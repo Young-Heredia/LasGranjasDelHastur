@@ -1,0 +1,542 @@
+fileFormatVersion: 2
+guid: fe72e0f78107ff64fbb36d74a834117e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5413542276057776285
+    second: Hound_Adolescent_Work_0
+  - first:
+      213: 5677798522515026998
+    second: Hound_Adolescent_Work_1
+  - first:
+      213: 5133433825121738818
+    second: Hound_Adolescent_Work_2
+  - first:
+      213: -339597108244078796
+    second: Hound_Adolescent_Work_3
+  - first:
+      213: 4244751087244011071
+    second: Hound_Adolescent_Work_4
+  - first:
+      213: -3764800151361047952
+    second: Hound_Adolescent_Work_5
+  - first:
+      213: 1871867733062163415
+    second: Hound_Adolescent_Work_6
+  - first:
+      213: 2852553124698186602
+    second: Hound_Adolescent_Work_7
+  - first:
+      213: -1956078176006619079
+    second: Hound_Adolescent_Work_8
+  - first:
+      213: -2196196400034531290
+    second: Hound_Adolescent_Work_9
+  - first:
+      213: -2447525417164921958
+    second: Hound_Adolescent_Work_10
+  - first:
+      213: -1996563091670286764
+    second: Hound_Adolescent_Work_11
+  - first:
+      213: -479354719901558079
+    second: Hound_Adolescent_Work_12
+  - first:
+      213: -920604028918396009
+    second: Hound_Adolescent_Work_13
+  - first:
+      213: -8860413386239434055
+    second: Hound_Adolescent_Work_14
+  - first:
+      213: 2652378573146910992
+    second: Hound_Adolescent_Work_15
+  - first:
+      213: 8786006634529903778
+    second: Hound_Adolescent_Work_16
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Hound_Adolescent_Work_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 23
+        width: 2048
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d90cbf49404c02b40800000000000000
+      internalID: 5413542276057776285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hound_Adolescent_Work_1
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 159
+        width: 26
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 634feb88ca79bce40800000000000000
+      internalID: 5677798522515026998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hound_Adolescent_Work_2
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 159
+        width: 26
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2402b58adde9d3740800000000000000
+      internalID: 5133433825121738818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hound_Adolescent_Work_3
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 159
+        width: 26
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43f9c54ba32894bf0800000000000000
+      internalID: -339597108244078796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hound_Adolescent_Work_4
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 159
+        width: 26
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f36e12bcf9268ea30800000000000000
+      internalID: 4244751087244011071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hound_Adolescent_Work_5
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 159
+        width: 26
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 072b9c7853eb0cbc0800000000000000
+      internalID: -3764800151361047952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hound_Adolescent_Work_6
+      rect:
+        serializedVersion: 2
+        x: 715
+        y: 159
+        width: 26
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7db9faf19c53af910800000000000000
+      internalID: 1871867733062163415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hound_Adolescent_Work_7
+      rect:
+        serializedVersion: 2
+        x: 823
+        y: 159
+        width: 26
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a63e09414fd469720800000000000000
+      internalID: 2852553124698186602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hound_Adolescent_Work_8
+      rect:
+        serializedVersion: 2
+        x: 975
+        y: 159
+        width: 26
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9304b3e334d9ad4e0800000000000000
+      internalID: -1956078176006619079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hound_Adolescent_Work_9
+      rect:
+        serializedVersion: 2
+        x: 1083
+        y: 159
+        width: 26
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62833f6920b8581e0800000000000000
+      internalID: -2196196400034531290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hound_Adolescent_Work_10
+      rect:
+        serializedVersion: 2
+        x: 1223
+        y: 159
+        width: 26
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a932523c994a80ed0800000000000000
+      internalID: -2447525417164921958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hound_Adolescent_Work_11
+      rect:
+        serializedVersion: 2
+        x: 1343
+        y: 159
+        width: 26
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45e36554278ca44e0800000000000000
+      internalID: -1996563091670286764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hound_Adolescent_Work_12
+      rect:
+        serializedVersion: 2
+        x: 1483
+        y: 159
+        width: 26
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ca5cd60c6df859f0800000000000000
+      internalID: -479354719901558079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hound_Adolescent_Work_13
+      rect:
+        serializedVersion: 2
+        x: 1591
+        y: 159
+        width: 26
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79b8685638b5933f0800000000000000
+      internalID: -920604028918396009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hound_Adolescent_Work_14
+      rect:
+        serializedVersion: 2
+        x: 1743
+        y: 159
+        width: 26
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b2251e38fc790580800000000000000
+      internalID: -8860413386239434055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hound_Adolescent_Work_15
+      rect:
+        serializedVersion: 2
+        x: 1851
+        y: 159
+        width: 26
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 011774662442fc420800000000000000
+      internalID: 2652378573146910992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hound_Adolescent_Work_16
+      rect:
+        serializedVersion: 2
+        x: 1991
+        y: 159
+        width: 26
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a4516ddb7a2ee970800000000000000
+      internalID: 8786006634529903778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

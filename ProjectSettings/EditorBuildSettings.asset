@@ -17,6 +17,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/00_Scenes/Lucas/Zone1_Dungeons.unity
     guid: d4257285012484040b1734a21d711e4f
+  - enabled: 1
+    path: Assets/00_Scenes/Lucas/Zone2_Cities.unity
+    guid: 8b4f3a0c58a84f62a30ed9cd74e5341c
+  - enabled: 1
+    path: Assets/00_Scenes/Lucas/Zone3_Celestial.unity
+    guid: c6bc6455ffd04f5ba52c4a6bb6d888a2
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

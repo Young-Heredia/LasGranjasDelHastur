@@ -1,0 +1,542 @@
+fileFormatVersion: 2
+guid: 3faded1a60d993049a453366ac37f27f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3549746658526515142
+    second: Hound_Adult_Walk_0
+  - first:
+      213: -8673160414842762611
+    second: Hound_Adult_Walk_1
+  - first:
+      213: -4079184097608103478
+    second: Hound_Adult_Walk_2
+  - first:
+      213: 5951096470197462870
+    second: Hound_Adult_Walk_3
+  - first:
+      213: 1413150301745852100
+    second: Hound_Adult_Walk_4
+  - first:
+      213: 8888605396097131488
+    second: Hound_Adult_Walk_5
+  - first:
+      213: -2615204205807650973
+    second: Hound_Adult_Walk_6
+  - first:
+      213: 695122674996413353
+    second: Hound_Adult_Walk_7
+  - first:
+      213: 986556207192184802
+    second: Hound_Adult_Walk_8
+  - first:
+      213: -1869117802271752582
+    second: Hound_Adult_Walk_9
+  - first:
+      213: -1621041217048577414
+    second: Hound_Adult_Walk_10
+  - first:
+      213: 7036751284249257410
+    second: Hound_Adult_Walk_11
+  - first:
+      213: 879619775950238285
+    second: Hound_Adult_Walk_12
+  - first:
+      213: 4886970640024177529
+    second: Hound_Adult_Walk_13
+  - first:
+      213: 3057005000281870264
+    second: Hound_Adult_Walk_14
+  - first:
+      213: 1871828800539984819
+    second: Hound_Adult_Walk_15
+  - first:
+      213: -8524687040973975625
+    second: Hound_Adult_Walk_16
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Hound_Adult_Walk_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 19
+        width: 2048
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a30b5efa834ccbec0800000000000000
+      internalID: -3549746658526515142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hound_Adult_Walk_1
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 159
+        width: 26
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8a41591e8eb2a780800000000000000
+      internalID: -8673160414842762611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hound_Adult_Walk_2
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 159
+        width: 26
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac985a8fca3d367c0800000000000000
+      internalID: -4079184097608103478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hound_Adult_Walk_3
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 159
+        width: 26
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 657633a95ba869250800000000000000
+      internalID: 5951096470197462870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hound_Adult_Walk_4
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 159
+        width: 26
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ce2cc556b48c9310800000000000000
+      internalID: 1413150301745852100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hound_Adult_Walk_5
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 159
+        width: 26
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e36dfe838baa5b70800000000000000
+      internalID: 8888605396097131488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hound_Adult_Walk_6
+      rect:
+        serializedVersion: 2
+        x: 715
+        y: 159
+        width: 26
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3673ab971ade4bbd0800000000000000
+      internalID: -2615204205807650973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hound_Adult_Walk_7
+      rect:
+        serializedVersion: 2
+        x: 823
+        y: 159
+        width: 26
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a30b76d36295a900800000000000000
+      internalID: 695122674996413353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hound_Adult_Walk_8
+      rect:
+        serializedVersion: 2
+        x: 975
+        y: 159
+        width: 26
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e795a8b4a3f0bd00800000000000000
+      internalID: 986556207192184802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hound_Adult_Walk_9
+      rect:
+        serializedVersion: 2
+        x: 1083
+        y: 159
+        width: 26
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7ebb38034f8f06e0800000000000000
+      internalID: -1869117802271752582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hound_Adult_Walk_10
+      rect:
+        serializedVersion: 2
+        x: 1223
+        y: 159
+        width: 26
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7a7d8b0a97e089e0800000000000000
+      internalID: -1621041217048577414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hound_Adult_Walk_11
+      rect:
+        serializedVersion: 2
+        x: 1343
+        y: 159
+        width: 26
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c5637eb20097a160800000000000000
+      internalID: 7036751284249257410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hound_Adult_Walk_12
+      rect:
+        serializedVersion: 2
+        x: 1483
+        y: 159
+        width: 26
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d423cea9689053c00800000000000000
+      internalID: 879619775950238285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hound_Adult_Walk_13
+      rect:
+        serializedVersion: 2
+        x: 1591
+        y: 159
+        width: 26
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97b8762a7e102d340800000000000000
+      internalID: 4886970640024177529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hound_Adult_Walk_14
+      rect:
+        serializedVersion: 2
+        x: 1743
+        y: 159
+        width: 26
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8bfc46ed9d9ac6a20800000000000000
+      internalID: 3057005000281870264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hound_Adult_Walk_15
+      rect:
+        serializedVersion: 2
+        x: 1851
+        y: 159
+        width: 26
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b3088070621af910800000000000000
+      internalID: 1871828800539984819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hound_Adult_Walk_16
+      rect:
+        serializedVersion: 2
+        x: 1991
+        y: 159
+        width: 26
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7bfce5d4d4a32b980800000000000000
+      internalID: -8524687040973975625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

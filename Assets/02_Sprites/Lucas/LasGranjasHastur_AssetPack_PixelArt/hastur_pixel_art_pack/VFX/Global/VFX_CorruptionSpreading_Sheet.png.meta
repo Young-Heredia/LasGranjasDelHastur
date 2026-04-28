@@ -1,0 +1,567 @@
+fileFormatVersion: 2
+guid: 439e0a75d378cb048a1cdb4910c5678e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5829924595027365542
+    second: VFX_CorruptionSpreading_Sheet_0
+  - first:
+      213: 3359190510897579455
+    second: VFX_CorruptionSpreading_Sheet_1
+  - first:
+      213: -1950571246127206052
+    second: VFX_CorruptionSpreading_Sheet_2
+  - first:
+      213: 6135532140508673991
+    second: VFX_CorruptionSpreading_Sheet_3
+  - first:
+      213: 8649064257619730312
+    second: VFX_CorruptionSpreading_Sheet_4
+  - first:
+      213: 6127418666615367139
+    second: VFX_CorruptionSpreading_Sheet_5
+  - first:
+      213: -6976830250481744688
+    second: VFX_CorruptionSpreading_Sheet_6
+  - first:
+      213: -22582247576848773
+    second: VFX_CorruptionSpreading_Sheet_7
+  - first:
+      213: -4447120060757419282
+    second: VFX_CorruptionSpreading_Sheet_8
+  - first:
+      213: -2668297760353744825
+    second: VFX_CorruptionSpreading_Sheet_9
+  - first:
+      213: -8968535709694073350
+    second: VFX_CorruptionSpreading_Sheet_10
+  - first:
+      213: -2970922733707689020
+    second: VFX_CorruptionSpreading_Sheet_11
+  - first:
+      213: 1332537727539126817
+    second: VFX_CorruptionSpreading_Sheet_12
+  - first:
+      213: -7863815899694647136
+    second: VFX_CorruptionSpreading_Sheet_13
+  - first:
+      213: -2978348800224221918
+    second: VFX_CorruptionSpreading_Sheet_14
+  - first:
+      213: -4132633917869618860
+    second: VFX_CorruptionSpreading_Sheet_15
+  - first:
+      213: 5433336953150278653
+    second: VFX_CorruptionSpreading_Sheet_16
+  - first:
+      213: -7078394323908624241
+    second: VFX_CorruptionSpreading_Sheet_17
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: VFX_CorruptionSpreading_Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 43
+        width: 194
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a51b4161872f71fa0800000000000000
+      internalID: -5829924595027365542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_CorruptionSpreading_Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 115
+        width: 34
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb5c9eec8fd3e9e20800000000000000
+      internalID: 3359190510897579455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_CorruptionSpreading_Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 43
+        width: 182
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c513f7549cd2ee4e0800000000000000
+      internalID: -1950571246127206052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_CorruptionSpreading_Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 123
+        width: 18
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c7f20f69f9c52550800000000000000
+      internalID: 6135532140508673991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_CorruptionSpreading_Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 491
+        y: 135
+        width: 26
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88f93fa1e16a70870800000000000000
+      internalID: 8649064257619730312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_CorruptionSpreading_Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 555
+        y: 103
+        width: 26
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e5e4b510d6f80550800000000000000
+      internalID: 6127418666615367139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_CorruptionSpreading_Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 711
+        y: 43
+        width: 182
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d406dd1ad15d2f90800000000000000
+      internalID: -6976830250481744688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_CorruptionSpreading_Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 1031
+        y: 43
+        width: 182
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b76b3f2c095cfaff0800000000000000
+      internalID: -22582247576848773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_CorruptionSpreading_Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 1203
+        y: 151
+        width: 38
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eea5a09ddd7a842c0800000000000000
+      internalID: -4447120060757419282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_CorruptionSpreading_Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 1351
+        y: 43
+        width: 182
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 748052ff25d48fad0800000000000000
+      internalID: -2668297760353744825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_CorruptionSpreading_Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 1671
+        y: 43
+        width: 182
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af567441a4c598380800000000000000
+      internalID: -8968535709694073350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_CorruptionSpreading_Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 1675
+        y: 147
+        width: 26
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c3883aa38925c6d0800000000000000
+      internalID: -2970922733707689020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_CorruptionSpreading_Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 1835
+        y: 95
+        width: 30
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 122a6cbc0002e7210800000000000000
+      internalID: 1332537727539126817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_CorruptionSpreading_Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 1991
+        y: 43
+        width: 182
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a8b1af7a1d1ed290800000000000000
+      internalID: -7863815899694647136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_CorruptionSpreading_Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 2159
+        y: 147
+        width: 18
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 225ac61db87caa6d0800000000000000
+      internalID: -2978348800224221918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_CorruptionSpreading_Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 2311
+        y: 43
+        width: 182
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45986aae85fe5a6c0800000000000000
+      internalID: -4132633917869618860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_CorruptionSpreading_Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 879
+        y: 87
+        width: 30
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dfb868dfb27176b40800000000000000
+      internalID: 5433336953150278653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_CorruptionSpreading_Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 2483
+        y: 59
+        width: 38
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8009478ddd74cd90800000000000000
+      internalID: -7078394323908624241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

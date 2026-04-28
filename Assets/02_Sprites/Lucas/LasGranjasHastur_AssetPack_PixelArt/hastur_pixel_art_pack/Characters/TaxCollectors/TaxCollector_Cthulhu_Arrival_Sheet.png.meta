@@ -1,0 +1,817 @@
+fileFormatVersion: 2
+guid: 4dc4b5eb3f1c9e645bf9de84d263cef2
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3604815030233687353
+    second: TaxCollector_Cthulhu_Arrival_Sheet_0
+  - first:
+      213: -6673497317196036006
+    second: TaxCollector_Cthulhu_Arrival_Sheet_1
+  - first:
+      213: -624709639263231506
+    second: TaxCollector_Cthulhu_Arrival_Sheet_2
+  - first:
+      213: -3813194140697662494
+    second: TaxCollector_Cthulhu_Arrival_Sheet_3
+  - first:
+      213: 3502769765579495906
+    second: TaxCollector_Cthulhu_Arrival_Sheet_4
+  - first:
+      213: 1740557177039942579
+    second: TaxCollector_Cthulhu_Arrival_Sheet_5
+  - first:
+      213: -5181071946753738399
+    second: TaxCollector_Cthulhu_Arrival_Sheet_6
+  - first:
+      213: -6037964465792149900
+    second: TaxCollector_Cthulhu_Arrival_Sheet_7
+  - first:
+      213: -2868578390724461458
+    second: TaxCollector_Cthulhu_Arrival_Sheet_8
+  - first:
+      213: -1450942550430103193
+    second: TaxCollector_Cthulhu_Arrival_Sheet_9
+  - first:
+      213: 8514807947657096940
+    second: TaxCollector_Cthulhu_Arrival_Sheet_10
+  - first:
+      213: -5764583128428699103
+    second: TaxCollector_Cthulhu_Arrival_Sheet_11
+  - first:
+      213: 5386363572813026875
+    second: TaxCollector_Cthulhu_Arrival_Sheet_12
+  - first:
+      213: 533877963772529598
+    second: TaxCollector_Cthulhu_Arrival_Sheet_13
+  - first:
+      213: -5808881553275929100
+    second: TaxCollector_Cthulhu_Arrival_Sheet_14
+  - first:
+      213: -5591290440759110177
+    second: TaxCollector_Cthulhu_Arrival_Sheet_15
+  - first:
+      213: -2615736452985514301
+    second: TaxCollector_Cthulhu_Arrival_Sheet_16
+  - first:
+      213: -9213817345228034918
+    second: TaxCollector_Cthulhu_Arrival_Sheet_17
+  - first:
+      213: -7411118402049548914
+    second: TaxCollector_Cthulhu_Arrival_Sheet_18
+  - first:
+      213: 5725025565830851625
+    second: TaxCollector_Cthulhu_Arrival_Sheet_19
+  - first:
+      213: -8669692606225010324
+    second: TaxCollector_Cthulhu_Arrival_Sheet_20
+  - first:
+      213: 7524703106406271761
+    second: TaxCollector_Cthulhu_Arrival_Sheet_21
+  - first:
+      213: -4726349899319559263
+    second: TaxCollector_Cthulhu_Arrival_Sheet_22
+  - first:
+      213: 557754960971226383
+    second: TaxCollector_Cthulhu_Arrival_Sheet_23
+  - first:
+      213: -5421312112119361127
+    second: TaxCollector_Cthulhu_Arrival_Sheet_24
+  - first:
+      213: 6900076342280968018
+    second: TaxCollector_Cthulhu_Arrival_Sheet_25
+  - first:
+      213: -2275231561046778629
+    second: TaxCollector_Cthulhu_Arrival_Sheet_26
+  - first:
+      213: 1587101391107971800
+    second: TaxCollector_Cthulhu_Arrival_Sheet_27
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: TaxCollector_Cthulhu_Arrival_Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 1747
+        y: 259
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 935611ebb20e60230800000000000000
+      internalID: 3604815030233687353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TaxCollector_Cthulhu_Arrival_Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 2343
+        y: 59
+        width: 306
+        height: 214
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5802073c89f263a0800000000000000
+      internalID: -6673497317196036006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TaxCollector_Cthulhu_Arrival_Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 2411
+        y: 267
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee1e3f794e59457f0800000000000000
+      internalID: -624709639263231506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TaxCollector_Cthulhu_Arrival_Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 2563
+        y: 267
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2eb6d18d120d41bc0800000000000000
+      internalID: -3813194140697662494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TaxCollector_Cthulhu_Arrival_Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 2703
+        y: 43
+        width: 350
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e918571b865c9030800000000000000
+      internalID: 3502769765579495906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TaxCollector_Cthulhu_Arrival_Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 1339
+        y: 251
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b3f8b8d783b72810800000000000000
+      internalID: 1740557177039942579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TaxCollector_Cthulhu_Arrival_Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 1603
+        y: 87
+        width: 254
+        height: 166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1697002d3822918b0800000000000000
+      internalID: -5181071946753738399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TaxCollector_Cthulhu_Arrival_Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 1979
+        y: 67
+        width: 270
+        height: 198
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47617021f47d43ca0800000000000000
+      internalID: -6037964465792149900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TaxCollector_Cthulhu_Arrival_Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 1243
+        y: 99
+        width: 210
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6cb18ae623c038d0800000000000000
+      internalID: -2868578390724461458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TaxCollector_Cthulhu_Arrival_Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 1391
+        y: 239
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7694d1410773ddbe0800000000000000
+      internalID: -1450942550430103193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TaxCollector_Cthulhu_Arrival_Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 215
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cee26ca07bcaa2670800000000000000
+      internalID: 8514807947657096940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TaxCollector_Cthulhu_Arrival_Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 583
+        y: 219
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1222ccfcf261000b0800000000000000
+      internalID: -5764583128428699103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TaxCollector_Cthulhu_Arrival_Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 879
+        y: 103
+        width: 174
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b36df9c912530ca40800000000000000
+      internalID: 5386363572813026875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TaxCollector_Cthulhu_Arrival_Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 203
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebb0210fd27b86700800000000000000
+      internalID: 533877963772529598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TaxCollector_Cthulhu_Arrival_Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 115
+        width: 134
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4fd3baa0105b26fa0800000000000000
+      internalID: -5808881553275929100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TaxCollector_Cthulhu_Arrival_Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 1239
+        y: 199
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd51482d7feb762b0800000000000000
+      internalID: -5591290440759110177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TaxCollector_Cthulhu_Arrival_Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 3051
+        y: 207
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c612c50e8903bbd0800000000000000
+      internalID: -2615736452985514301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TaxCollector_Cthulhu_Arrival_Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 187
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9ca95001f1f12080800000000000000
+      internalID: -9213817345228034918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TaxCollector_Cthulhu_Arrival_Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 127
+        width: 102
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8dd971441b662990800000000000000
+      internalID: -7411118402049548914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TaxCollector_Cthulhu_Arrival_Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 163
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92ca06d6b60637f40800000000000000
+      internalID: 5725025565830851625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TaxCollector_Cthulhu_Arrival_Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 499
+        y: 171
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c61b02632801fa780800000000000000
+      internalID: -8669692606225010324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TaxCollector_Cthulhu_Arrival_Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 499
+        y: 151
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11bcf919b9d1d6860800000000000000
+      internalID: 7524703106406271761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TaxCollector_Cthulhu_Arrival_Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 3055
+        y: 143
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1abbadecec1a86eb0800000000000000
+      internalID: -4726349899319559263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TaxCollector_Cthulhu_Arrival_Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 1239
+        y: 123
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0dd6609e2b8db700800000000000000
+      internalID: 557754960971226383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TaxCollector_Cthulhu_Arrival_Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 1343
+        y: 79
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9915a9c7b51a3c4b0800000000000000
+      internalID: -5421312112119361127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TaxCollector_Cthulhu_Arrival_Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 1703
+        y: 71
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 257dbb800eef1cf50800000000000000
+      internalID: 6900076342280968018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TaxCollector_Cthulhu_Arrival_Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 1767
+        y: 75
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfc9c0e23f0cc60e0800000000000000
+      internalID: -2275231561046778629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TaxCollector_Cthulhu_Arrival_Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 2935
+        y: 39
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8dad48f6e44860610800000000000000
+      internalID: 1587101391107971800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

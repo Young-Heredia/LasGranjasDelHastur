@@ -1,4 +1,5 @@
 using System;
+using LasGranjasDelHastur.Core;
 using UnityEngine;
 
 namespace LasGranjasDelHastur.Zone1
@@ -18,8 +19,8 @@ namespace LasGranjasDelHastur.Zone1
         [SerializeField, Range(0f, 1f)] private float baseTaxPercent = 0.15f;
 
         [Header("Timing")]
-        [Tooltip("For tests in editor; design target is 10 minutes.")]
-        [SerializeField] private float taxIntervalSeconds = 90f;
+        [Tooltip("Zona 1: 20 minutos (1200 s).")]
+        [SerializeField] private float taxIntervalSeconds = 1200f;
         [SerializeField] private float payWindowSeconds = 20f;
 
         [Header("Penalties")]
@@ -33,11 +34,10 @@ namespace LasGranjasDelHastur.Zone1
         float _timer;
         float _payWindowRemaining;
         bool _alertActive;
-        int _strikes;
         int _fineDebt;
 
         public string CollectorName => collectorName;
-        public int Strikes => _strikes;
+        public int Strikes => GlobalTaxLedger.GetStrikes();
         public int FineDebt => _fineDebt;
         public bool IsAlertActive => _alertActive;
 
@@ -61,7 +61,7 @@ namespace LasGranjasDelHastur.Zone1
         {
             collectorName = string.IsNullOrWhiteSpace(newCollectorName) ? "Cthulhu" : newCollectorName;
             baseTaxPercent = Mathf.Clamp01(newBaseTaxPercent);
-            taxIntervalSeconds = Mathf.Max(5f, newTaxIntervalSeconds);
+            taxIntervalSeconds = Mathf.Max(60f, newTaxIntervalSeconds);
             payWindowSeconds = Mathf.Max(5f, newPayWindowSeconds);
             moneyLossOnFail = Mathf.Clamp01(newMoneyLossOnFail);
             finePerStrikeStep = Mathf.Max(1, newFinePerStrikeStep);
@@ -152,8 +152,9 @@ namespace LasGranjasDelHastur.Zone1
             // Lose 75% of money (keep 25%).
             _resources.Multiply(ResourceType.DarkCoins, 1f - moneyLossOnFail);
 
-            _strikes += 1;
-            _fineDebt += finePerStrikeStep * _strikes;
+            GlobalTaxLedger.RegisterStrikeFailure(GameOverOrigin.Dungeons);
+            var strikeCount = GlobalTaxLedger.GetStrikes();
+            _fineDebt += finePerStrikeStep * strikeCount;
 
             // Corrupt at least 1 cell if possible.
             _cells?.TryCorruptRandomCell();
@@ -164,17 +165,14 @@ namespace LasGranjasDelHastur.Zone1
             CloseAlert(resetTimer: true);
             TaxFailed?.Invoke();
 
-            // Game Over prepared (not hard-implemented yet): strikes >= 3.
-            if (_strikes >= maxStrikesBeforeGameOver)
-            {
+            if (strikeCount >= maxStrikesBeforeGameOver)
                 GameOverReached?.Invoke();
-                Changed?.Invoke();
-            }
+            Changed?.Invoke();
         }
 
         public void ApplySaveState(int strikes, int fineDebt, float timeToNextTax, bool alertActive, float payWindowRemaining)
         {
-            _strikes = Mathf.Max(0, strikes);
+            // Las multas son globales; el valor de guardado legacy se ignora (ver SaveGameData.globalTaxStrikes).
             _fineDebt = Mathf.Max(0, fineDebt);
             _timer = Mathf.Max(0f, timeToNextTax);
             _alertActive = alertActive;
