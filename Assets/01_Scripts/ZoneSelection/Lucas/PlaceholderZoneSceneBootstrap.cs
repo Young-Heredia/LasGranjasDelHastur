@@ -36,7 +36,10 @@ public static class PlaceholderZoneSceneBootstrap
         if (scene.name != "Zone2_Cities" && scene.name != "Zone3_Celestial")
             return;
 
-        if (Object.FindFirstObjectByType<PlaceholderZoneSceneMarker>() != null)
+        // If zone gameplay root already exists (manually placed or editor scaffolded), do not spawn duplicates.
+        if (scene.name == "Zone2_Cities" && Object.FindFirstObjectByType<LasGranjasDelHastur.Zone2.Zone2PrototypeGame>() != null)
+            return;
+        if (scene.name == "Zone3_Celestial" && Object.FindFirstObjectByType<LasGranjasDelHastur.Zone3.Zone3PrototypeGame>() != null)
             return;
 
         EnsureCamera();
@@ -44,17 +47,13 @@ public static class PlaceholderZoneSceneBootstrap
 
         if (scene.name == "Zone2_Cities")
         {
-            var zone2 = new GameObject("Zone2PrototypeGame");
-            zone2.AddComponent<PlaceholderZoneSceneMarker>();
-            zone2.AddComponent<LasGranjasDelHastur.Zone2.Zone2PrototypeGame>();
+            LasGranjasDelHastur.Zone2.Zone2RuntimeScaffold.EnsureSceneScaffold();
             return;
         }
 
         if (scene.name == "Zone3_Celestial")
         {
-            var zone3 = new GameObject("Zone3PrototypeGame");
-            zone3.AddComponent<PlaceholderZoneSceneMarker>();
-            zone3.AddComponent<LasGranjasDelHastur.Zone3.Zone3PrototypeGame>();
+            LasGranjasDelHastur.Zone3.Zone3RuntimeScaffold.EnsureSceneScaffold();
             return;
         }
 

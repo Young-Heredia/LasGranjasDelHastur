@@ -1,0 +1,15 @@
+Las Granjas del Hastur — Zona 2 (Ciudades condensadas)
+Referencia: Documento de Prompts para Assets 2D del proyecto.
+
+Pega al inicio de cada prompt:
+2D pixel art game asset, dark rustic lovecraftian farm aesthetic, isometric 3/4 top-down perspective, designed for Unity 2D, readable silhouette, limited color palette, soft depth, subtle shadows, clean pixel clusters, atmospheric but not visually overloaded, muted colors, transparent background, no text, no watermark, no realistic rendering, no 3D render
+
+Al final:
+no photorealism, no 3D render, no excessive neon colors, no blurry pixels, no oversaturated palette, no unreadable details, no text, no watermark, no logo, no modern cartoon style, no anime style, no realistic horror gore, no excessive blood
+
+Sección 5.2 — Entorno ciudad destruida (tileset).
+Sección 6.7–6.10 — Celdas: Distrito Condensador, Torre de Cultistas, Mercado Maldito, Archivo de Yith.
+Sección 8.2 — Kthanid recaudador (UI / retrato grande).
+Sección 9.4–9.6 — Compradores Nyarlathotep, Gran Raza de Yith, Miri Nigri.
+
+Paleta: azul-gris hormigón, sombras púrpura oscuro, acentos dorados apagados, niebla urbana tenue.

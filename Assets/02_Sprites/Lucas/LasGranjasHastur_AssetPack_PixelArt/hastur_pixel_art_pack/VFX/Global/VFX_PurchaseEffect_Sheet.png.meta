@@ -1,0 +1,1367 @@
+fileFormatVersion: 2
+guid: ee48b182b3d3af04f9507dbda012de90
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 765489212509530439
+    second: VFX_PurchaseEffect_Sheet_0
+  - first:
+      213: 5770446456303188089
+    second: VFX_PurchaseEffect_Sheet_1
+  - first:
+      213: -8090686563179803938
+    second: VFX_PurchaseEffect_Sheet_2
+  - first:
+      213: -1749023057966953739
+    second: VFX_PurchaseEffect_Sheet_3
+  - first:
+      213: -5186855312155493822
+    second: VFX_PurchaseEffect_Sheet_4
+  - first:
+      213: 4056610579114818294
+    second: VFX_PurchaseEffect_Sheet_5
+  - first:
+      213: 3156328456859284314
+    second: VFX_PurchaseEffect_Sheet_6
+  - first:
+      213: 7878886577206385701
+    second: VFX_PurchaseEffect_Sheet_7
+  - first:
+      213: 1782104745106712367
+    second: VFX_PurchaseEffect_Sheet_8
+  - first:
+      213: 2660808360656811633
+    second: VFX_PurchaseEffect_Sheet_9
+  - first:
+      213: 7352418766972342860
+    second: VFX_PurchaseEffect_Sheet_10
+  - first:
+      213: 3370261776413043272
+    second: VFX_PurchaseEffect_Sheet_11
+  - first:
+      213: -6208208536887418296
+    second: VFX_PurchaseEffect_Sheet_12
+  - first:
+      213: 424504530644367436
+    second: VFX_PurchaseEffect_Sheet_13
+  - first:
+      213: 3474691358612670692
+    second: VFX_PurchaseEffect_Sheet_14
+  - first:
+      213: -519519808935766653
+    second: VFX_PurchaseEffect_Sheet_15
+  - first:
+      213: 6756403756352585944
+    second: VFX_PurchaseEffect_Sheet_16
+  - first:
+      213: 8344310765774859704
+    second: VFX_PurchaseEffect_Sheet_17
+  - first:
+      213: -8721465324142489117
+    second: VFX_PurchaseEffect_Sheet_18
+  - first:
+      213: 5491922185340269182
+    second: VFX_PurchaseEffect_Sheet_19
+  - first:
+      213: 2091150764613109885
+    second: VFX_PurchaseEffect_Sheet_20
+  - first:
+      213: 6704069841285940639
+    second: VFX_PurchaseEffect_Sheet_21
+  - first:
+      213: 983823911341943590
+    second: VFX_PurchaseEffect_Sheet_22
+  - first:
+      213: 2586662756543142204
+    second: VFX_PurchaseEffect_Sheet_23
+  - first:
+      213: -196576800073668798
+    second: VFX_PurchaseEffect_Sheet_24
+  - first:
+      213: 1817798056361725246
+    second: VFX_PurchaseEffect_Sheet_25
+  - first:
+      213: -6559520883746029052
+    second: VFX_PurchaseEffect_Sheet_26
+  - first:
+      213: -4274761769943311909
+    second: VFX_PurchaseEffect_Sheet_27
+  - first:
+      213: 528976091016965553
+    second: VFX_PurchaseEffect_Sheet_28
+  - first:
+      213: -2172956485298707862
+    second: VFX_PurchaseEffect_Sheet_29
+  - first:
+      213: -9091357574238330000
+    second: VFX_PurchaseEffect_Sheet_30
+  - first:
+      213: 631715916176391425
+    second: VFX_PurchaseEffect_Sheet_31
+  - first:
+      213: -2987115723518462011
+    second: VFX_PurchaseEffect_Sheet_32
+  - first:
+      213: 7058216414117290242
+    second: VFX_PurchaseEffect_Sheet_33
+  - first:
+      213: -3650060409467533233
+    second: VFX_PurchaseEffect_Sheet_34
+  - first:
+      213: -6683201471621848326
+    second: VFX_PurchaseEffect_Sheet_35
+  - first:
+      213: -4428650963978435467
+    second: VFX_PurchaseEffect_Sheet_36
+  - first:
+      213: 1336490470433451434
+    second: VFX_PurchaseEffect_Sheet_37
+  - first:
+      213: -6135728612291862929
+    second: VFX_PurchaseEffect_Sheet_38
+  - first:
+      213: -3248769495417437128
+    second: VFX_PurchaseEffect_Sheet_39
+  - first:
+      213: 2940531518782106162
+    second: VFX_PurchaseEffect_Sheet_40
+  - first:
+      213: 3704747823276821260
+    second: VFX_PurchaseEffect_Sheet_41
+  - first:
+      213: 1352381942634752804
+    second: VFX_PurchaseEffect_Sheet_42
+  - first:
+      213: 3063465955053178322
+    second: VFX_PurchaseEffect_Sheet_43
+  - first:
+      213: -6992073771398794445
+    second: VFX_PurchaseEffect_Sheet_44
+  - first:
+      213: 8868842317459909583
+    second: VFX_PurchaseEffect_Sheet_45
+  - first:
+      213: 8566600605507552887
+    second: VFX_PurchaseEffect_Sheet_46
+  - first:
+      213: -1135332451440656601
+    second: VFX_PurchaseEffect_Sheet_47
+  - first:
+      213: 4840912408508545031
+    second: VFX_PurchaseEffect_Sheet_48
+  - first:
+      213: -7450418202797125892
+    second: VFX_PurchaseEffect_Sheet_49
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: VFX_PurchaseEffect_Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 1755
+        y: 271
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 749260f02609f9a00800000000000000
+      internalID: 765489212509530439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_PurchaseEffect_Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 1435
+        y: 259
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 978fc579a7eb41050800000000000000
+      internalID: 5770446456303188089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_PurchaseEffect_Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 1115
+        y: 251
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eda44a4ef6b18bf80800000000000000
+      internalID: -8090686563179803938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_PurchaseEffect_Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 795
+        y: 239
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fa89e5abc83ab7e0800000000000000
+      internalID: -1749023057966953739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_PurchaseEffect_Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 1675
+        y: 239
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24abf9123969408b0800000000000000
+      internalID: -5186855312155493822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_PurchaseEffect_Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 1839
+        y: 239
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fafa3034d9fb4830800000000000000
+      internalID: 4056610579114818294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_PurchaseEffect_Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 231
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a53fd8132088dcb20800000000000000
+      internalID: 3156328456859284314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_PurchaseEffect_Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 1363
+        y: 231
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52cdafb099d675d60800000000000000
+      internalID: 7878886577206385701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_PurchaseEffect_Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 1511
+        y: 231
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f27af9cd2de4bb810800000000000000
+      internalID: 1782104745106712367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_PurchaseEffect_Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 219
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 176b6504b171de420800000000000000
+      internalID: 2660808360656811633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_PurchaseEffect_Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 1051
+        y: 223
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c425d4de9e9090660800000000000000
+      internalID: 7352418766972342860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_PurchaseEffect_Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 1183
+        y: 223
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84a2d2faa3395ce20800000000000000
+      internalID: 3370261776413043272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_PurchaseEffect_Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 211
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 842274b6a3308d9a0800000000000000
+      internalID: -6208208536887418296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_PurchaseEffect_Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 211
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c48f99a1f9424e500800000000000000
+      internalID: 424504530644367436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_PurchaseEffect_Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 739
+        y: 215
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e84a368165983030800000000000000
+      internalID: 3474691358612670692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_PurchaseEffect_Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 855
+        y: 215
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 385da9e7c7b4ac8f0800000000000000
+      internalID: -519519808935766653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_PurchaseEffect_Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 155
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d0c2806b6193cd50800000000000000
+      internalID: 6756403756352585944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_PurchaseEffect_Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 107
+        width: 102
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8bd6a717e62fcc370800000000000000
+      internalID: 8344310765774859704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_PurchaseEffect_Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 223
+        y: 155
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e19999fe7127f680800000000000000
+      internalID: -8721465324142489117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_PurchaseEffect_Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 155
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e723b4f412a373c40800000000000000
+      internalID: 5491922185340269182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_PurchaseEffect_Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 107
+        width: 102
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d780d808a82450d10800000000000000
+      internalID: 2091150764613109885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_PurchaseEffect_Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 555
+        y: 155
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f95024f3004a90d50800000000000000
+      internalID: 6704069841285940639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_PurchaseEffect_Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 715
+        y: 155
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62b621582ae37ad00800000000000000
+      internalID: 983823911341943590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_PurchaseEffect_Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 751
+        y: 107
+        width: 102
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c399c75821ca5e320800000000000000
+      internalID: 2586662756543142204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_PurchaseEffect_Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 883
+        y: 155
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 247a68c117e954df0800000000000000
+      internalID: -196576800073668798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_PurchaseEffect_Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 1023
+        y: 155
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3d06de73bd1a3910800000000000000
+      internalID: 1817798056361725246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_PurchaseEffect_Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 1071
+        y: 107
+        width: 102
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 402cf839286e7f4a0800000000000000
+      internalID: -6559520883746029052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_PurchaseEffect_Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 1215
+        y: 155
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd9db13a1defca4c0800000000000000
+      internalID: -4274761769943311909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_PurchaseEffect_Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 1335
+        y: 155
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1bdadbfb3fc475700800000000000000
+      internalID: 528976091016965553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_PurchaseEffect_Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 1391
+        y: 107
+        width: 102
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a62a365e69b18d1e0800000000000000
+      internalID: -2172956485298707862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_PurchaseEffect_Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 1543
+        y: 155
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 073a77d447205d180800000000000000
+      internalID: -9091357574238330000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_PurchaseEffect_Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 1643
+        y: 155
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10d77ae574e44c800800000000000000
+      internalID: 631715916176391425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_PurchaseEffect_Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 1711
+        y: 107
+        width: 102
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c7b2bc6312ab86d0800000000000000
+      internalID: -2987115723518462011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_PurchaseEffect_Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 1875
+        y: 155
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 201ea4fbe62d3f160800000000000000
+      internalID: 7058216414117290242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_PurchaseEffect_Sheet_34
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 103
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4888fc7561685dc0800000000000000
+      internalID: -3650060409467533233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_PurchaseEffect_Sheet_35
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 103
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: af2ac91bbaf7043a0800000000000000
+      internalID: -6683201471621848326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_PurchaseEffect_Sheet_36
+      rect:
+        serializedVersion: 2
+        x: 739
+        y: 99
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 574cfd989654a82c0800000000000000
+      internalID: -4428650963978435467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_PurchaseEffect_Sheet_37
+      rect:
+        serializedVersion: 2
+        x: 855
+        y: 99
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aad61e7700b2c8210800000000000000
+      internalID: 1336490470433451434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_PurchaseEffect_Sheet_38
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 91
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6e942ae55389daa0800000000000000
+      internalID: -6135728612291862929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_PurchaseEffect_Sheet_39
+      rect:
+        serializedVersion: 2
+        x: 1051
+        y: 91
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 834c48c4b5d0ae2d0800000000000000
+      internalID: -3248769495417437128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_PurchaseEffect_Sheet_40
+      rect:
+        serializedVersion: 2
+        x: 1183
+        y: 91
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23ae8d336dddec820800000000000000
+      internalID: 2940531518782106162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_PurchaseEffect_Sheet_41
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 79
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0b01d44488e96330800000000000000
+      internalID: 3704747823276821260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_PurchaseEffect_Sheet_42
+      rect:
+        serializedVersion: 2
+        x: 1363
+        y: 83
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42ba56b2630a4c210800000000000000
+      internalID: 1352381942634752804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_PurchaseEffect_Sheet_43
+      rect:
+        serializedVersion: 2
+        x: 1511
+        y: 83
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2dd82702e0e938a20800000000000000
+      internalID: 3063465955053178322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_PurchaseEffect_Sheet_44
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 71
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 333f27453f927fe90800000000000000
+      internalID: -6992073771398794445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_PurchaseEffect_Sheet_45
+      rect:
+        serializedVersion: 2
+        x: 1675
+        y: 75
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fcb662d3915741b70800000000000000
+      internalID: 8868842317459909583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_PurchaseEffect_Sheet_46
+      rect:
+        serializedVersion: 2
+        x: 1839
+        y: 75
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7768ce7ecdda2e670800000000000000
+      internalID: 8566600605507552887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_PurchaseEffect_Sheet_47
+      rect:
+        serializedVersion: 2
+        x: 1119
+        y: 59
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72ff7e1962d7e30f0800000000000000
+      internalID: -1135332451440656601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_PurchaseEffect_Sheet_48
+      rect:
+        serializedVersion: 2
+        x: 1439
+        y: 51
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 708bee1ff206e2340800000000000000
+      internalID: 4840912408508545031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VFX_PurchaseEffect_Sheet_49
+      rect:
+        serializedVersion: 2
+        x: 1759
+        y: 39
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfe4c2a5e1cca9890800000000000000
+      internalID: -7450418202797125892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

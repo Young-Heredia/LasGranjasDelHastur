@@ -58,6 +58,8 @@ namespace LasGranjasDelHastur.Zone1.UI
         // Sales bindings
         RectTransform _salesListRoot;
         readonly List<GameObject> _saleRows = new();
+        TextMeshProUGUI _salesAssistantsInfo;
+        Button _salesBuyAssistantBtn;
 
         // Tax bindings
         TextMeshProUGUI _taxTitle;
@@ -233,7 +235,7 @@ namespace LasGranjasDelHastur.Zone1.UI
                 _txtAssistants.text = $"Asistentes: {_assistants.AvailableAssistants}/{_assistants.TotalAssistants}";
 
             if (_tax != null)
-                _txtStrikes.text = $"Multas: {_tax.Strikes}/3";
+                _txtStrikes.text = $"Multas globales: {_tax.Strikes}/3";
         }
 
         void OnCellSelected(FarmCell cell)
@@ -403,6 +405,17 @@ namespace LasGranjasDelHastur.Zone1.UI
                 var row = CreateBuyerRow(_salesListRoot, buyer);
                 _saleRows.Add(row);
             }
+
+            if (_salesAssistantsInfo != null && _assistants != null)
+                _salesAssistantsInfo.text =
+                    $"Compras\n" +
+                    $"Asistentes disponibles: {_assistants.AvailableAssistants}/{_assistants.TotalAssistants}\n" +
+                    $"Costo siguiente asistente: {_assistants.NextAssistantCost}";
+
+            if (_salesBuyAssistantBtn != null && _assistants != null)
+                _salesBuyAssistantBtn.interactable = _assistants.TotalAssistants < 30 &&
+                    _resources != null &&
+                    _resources.Get(ResourceType.DarkCoins) >= _assistants.NextAssistantCost;
         }
 
         GameObject CreateBuyerRow(RectTransform parent, BuyerDefinition buyer)
@@ -531,7 +544,7 @@ namespace LasGranjasDelHastur.Zone1.UI
         {
             if (_taxPanel == null || _tax == null)
                 return;
-            _txtStrikes.text = $"Multas: {_tax.Strikes}/3";
+            _txtStrikes.text = $"Multas globales: {_tax.Strikes}/3";
 
             if (!_tax.IsAlertActive)
                 return;
@@ -577,9 +590,6 @@ namespace LasGranjasDelHastur.Zone1.UI
         void OnTaxGameOverReached()
         {
             AudioManager.Instance?.PlayZone1StrikeGain();
-
-            SaveManager.Instance?.ResetAllProgress(resetIntroSeen: true);
-            SceneManager.LoadScene(zoneSelectionSceneName);
         }
 
         void BuildUI()
@@ -800,6 +810,34 @@ namespace LasGranjasDelHastur.Zone1.UI
             scroll.viewport = viewportRt;
             scroll.content = _salesListRoot;
             scroll.horizontal = false;
+
+            var purchases = new GameObject("PurchasesSection");
+            purchases.transform.SetParent(root, false);
+            var purchasesLe = purchases.AddComponent<LayoutElement>();
+            purchasesLe.preferredHeight = 100f;
+            purchasesLe.minHeight = 96f;
+            var purchasesV = purchases.AddComponent<VerticalLayoutGroup>();
+            purchasesV.spacing = 6f;
+            purchasesV.childAlignment = TextAnchor.UpperLeft;
+            purchasesV.childControlHeight = true;
+            purchasesV.childControlWidth = true;
+            purchasesV.childForceExpandHeight = false;
+            purchasesV.childForceExpandWidth = false;
+            _salesAssistantsInfo = CreateTMP(purchases.transform, "Compras", 15, TextAlignmentOptions.Left);
+            _salesAssistantsInfo.textWrappingMode = TextWrappingModes.Normal;
+            _salesBuyAssistantBtn = CreateButton(purchases.transform, "Comprar Asistente", 250f, 34f, 15);
+            _salesBuyAssistantBtn.onClick.AddListener(() =>
+            {
+                if (_assistants == null)
+                    return;
+                if (_assistants.TryBuyAssistant())
+                {
+                    if (AudioManager.Instance != null && AudioManager.Instance.zone1AssistantAssign != null)
+                        AudioManager.Instance.PlaySFX(AudioManager.Instance.zone1AssistantAssign);
+                    RefreshHUD();
+                    RefreshSalesPanel();
+                }
+            });
 
             var close = CreateButton(root, "Cerrar");
             close.onClick.AddListener(() => CloseSalesPanel());

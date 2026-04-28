@@ -1,41 +1,74 @@
 using LasGranjasDelHastur.Core;
-using TMPro;
+using LasGranjasDelHastur.Zone1;
+using LasGranjasDelHastur.Zone2.Systems;
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 namespace LasGranjasDelHastur.Zone2
 {
     [DisallowMultipleComponent]
-    public class Zone2PrototypeGame : MonoBehaviour
+    public partial class Zone2PrototypeGame : MonoBehaviour
     {
+        const int MaxAssistants = 30;
+
+        class Zone2CellRuntime
+        {
+            public int id;
+            public string displayName;
+            public bool producesSupplies;
+            public bool unlocked;
+            public bool producing;
+            public bool ready;
+            public bool corrupted;
+            public float remainingSeconds;
+            public int level = 1;
+        }
+
         [Header("Economy")]
         [SerializeField] private bool sharedEconomyWithZone1 = true;
-        [SerializeField, Min(1f)] private float taxIntervalSeconds = 45f;
+        [Tooltip("Zona 2: cobro cada 10 minutos.")]
+        [SerializeField, Min(1f)] private float taxIntervalSeconds = 600f;
+        [SerializeField, Min(1)] private int initialUnlockedCells = 2;
 
         int _darkCoins = 260;
         int _citySupplies;
         int _arcaneBlueprints;
         int _difficultyTier = 1;
         int _totalSold;
+        int _nextCellCost = 120;
+        int _assistantBuyCost = 90;
+        int _assistantsTotal = 1;
+        int _recentProductionForTax;
+        int _sharedLevel = 1;
+        int _sharedXp;
         float _taxTimer;
+        float _automationTick;
         float _runtime;
 
-        TextMeshProUGUI _txtHeader;
-        TextMeshProUGUI _txtResources;
-        TextMeshProUGUI _txtTax;
-        TextMeshProUGUI _txtDifficulty;
-        TextMeshProUGUI _txtHint;
+        readonly List<Zone2CellRuntime> _cells = new();
+        readonly List<int> _assistantAssignedCellId = new();
+
+        Zone2CellRuntime _selectedCell;
+        Zone2CellManager _worldCells;
 
         void Awake()
         {
+            Zone2RuntimeScaffold.EnsureSceneScaffold();
             AudioManager.EnsureInstance();
+            _worldCells = FindFirstObjectByType<Zone2CellManager>();
+            if (_worldCells != null)
+                _worldCells.SelectedSlotChanged += OnWorldSlotSelected;
             _taxTimer = taxIntervalSeconds;
+            BuildDefaultCells();
+            EnsureAssistantCount(_assistantsTotal);
             if (sharedEconomyWithZone1)
-                PullCoinsFromZone1Save();
+                PullSharedProgressFromZone1Save();
             TryRestoreFromSaveIfRequested();
+            if (sharedEconomyWithZone1)
+                PushSharedProgressToZone1Save();
             BuildUi();
             RefreshUi();
+            SyncWorldCellVisuals();
         }
 
         void Update()
@@ -47,70 +80,73 @@ namespace LasGranjasDelHastur.Zone2
             _taxTimer -= Time.deltaTime;
             if (_taxTimer <= 0f)
             {
-                ApplyTax();
+                ResolveTaxCycle();
                 _taxTimer = taxIntervalSeconds;
             }
 
+            UpdateCells(Time.deltaTime);
+            RunAssistantAutomation(Time.deltaTime);
             RefreshUi();
+            if (Time.frameCount % 12 == 0)
+                SyncWorldCellVisuals();
         }
 
-        void BuildUi()
+        void OnDisable()
         {
-            var root = new GameObject("Zone2PrototypeUI");
-            root.transform.SetParent(transform, false);
-            var canvas = root.AddComponent<Canvas>();
-            canvas.renderMode = RenderMode.ScreenSpaceOverlay;
-            var scaler = root.AddComponent<CanvasScaler>();
-            scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
-            scaler.referenceResolution = new Vector2(1920f, 1080f);
-            scaler.matchWidthOrHeight = 0.65f;
-            root.AddComponent<GraphicRaycaster>();
+            if (_worldCells != null)
+                _worldCells.SelectedSlotChanged -= OnWorldSlotSelected;
+            PushSharedProgressToZone1Save();
+        }
 
-            var backdrop = CreateImage(root.transform, "Backdrop", new Color(0.04f, 0.08f, 0.10f, 1f));
-            Stretch(backdrop.rectTransform);
-
-            var panel = CreateImage(root.transform, "Panel", new Color(0.08f, 0.12f, 0.15f, 0.94f));
-            var prt = panel.rectTransform;
-            prt.anchorMin = new Vector2(0.5f, 0.5f);
-            prt.anchorMax = new Vector2(0.5f, 0.5f);
-            prt.pivot = new Vector2(0.5f, 0.5f);
-            prt.sizeDelta = new Vector2(Mathf.Min(940f, Screen.width * 0.9f), Mathf.Min(530f, Screen.height * 0.86f));
-            prt.anchoredPosition = Vector2.zero;
-
-            _txtHeader = CreateLabel(panel.transform, "Header", "Zone2_Cities - Fase 6 Prototype", 34, new Vector2(0f, 210f), new Vector2(840f, 56f));
-            _txtResources = CreateLabel(panel.transform, "Resources", "", 22, new Vector2(0f, 146f), new Vector2(840f, 78f));
-            _txtTax = CreateLabel(panel.transform, "Tax", "", 20, new Vector2(0f, 98f), new Vector2(840f, 42f));
-            _txtDifficulty = CreateLabel(panel.transform, "Difficulty", "", 20, new Vector2(0f, 58f), new Vector2(840f, 42f));
-            _txtHint = CreateLabel(panel.transform, "Hint", "", 17, new Vector2(0f, 20f), new Vector2(840f, 42f));
-
-            var btnProduceA = CreateButton(panel.transform, "Recolectar Suministros +7", new Vector2(-210f, -70f), new Vector2(300f, 50f));
-            btnProduceA.onClick.AddListener(() =>
+        void OnWorldSlotSelected(int slotIndex)
+        {
+            if (slotIndex < 0 || slotIndex >= _cells.Count)
             {
-                _citySupplies += 7 + _difficultyTier;
-                AudioManager.Instance?.PlayZone2ProduceSupplies();
-            });
+                _selectedCell = null;
+                RefreshSelectedCellPanel();
+                return;
+            }
+            _selectedCell = _cells[slotIndex];
+            RefreshSelectedCellPanel();
+        }
 
-            var btnProduceB = CreateButton(panel.transform, "Trazar Planos +4", new Vector2(210f, -70f), new Vector2(300f, 50f));
-            btnProduceB.onClick.AddListener(() =>
+        void SyncWorldCellVisuals()
+        {
+            if (_worldCells == null)
+                return;
+
+            for (var i = 0; i < _cells.Count; i++)
             {
-                _arcaneBlueprints += 4 + Mathf.Max(0, _difficultyTier - 1);
-                AudioManager.Instance?.PlayZone2ProduceBlueprints();
-            });
+                var c = _cells[i];
+                var spritePath = GetCellSpritePath(c);
+                var tint = c.corrupted
+                    ? new Color(0.75f, 0.55f, 0.90f, 1f)
+                    : c.ready
+                        ? new Color(1f, 0.96f, 0.80f, 1f)
+                        : c.unlocked
+                            ? Color.white
+                            : new Color(0.55f, 0.55f, 0.60f, 1f);
 
-            var btnSellA = CreateButton(panel.transform, "Vender Suministros", new Vector2(-210f, -138f), new Vector2(300f, 46f));
-            btnSellA.onClick.AddListener(SellSupplies);
+                _worldCells.ApplyVisual(i, spritePath, tint);
+                // Como Zona 1: celdas bloqueadas también se pueden seleccionar (para comprar).
+                _worldCells.SetSlotColliderEnabled(i, true);
+            }
+        }
 
-            var btnSellB = CreateButton(panel.transform, "Vender Planos", new Vector2(210f, -138f), new Vector2(300f, 46f));
-            btnSellB.onClick.AddListener(SellBlueprints);
+        static string GetCellSpritePath(Zone2CellRuntime cell)
+        {
+            const string root = "Assets/02_Sprites/Lucas/LasGranjasHastur_AssetPack_PixelArt/hastur_pixel_art_pack/";
+            if (cell == null)
+                return root + "Cells/Base/Cell_Empty.png";
 
-            var btnBack = CreateButton(panel.transform, "Volver a Zonas", new Vector2(0f, -215f), new Vector2(320f, 52f));
-            btnBack.onClick.AddListener(() =>
+            return cell.displayName switch
             {
-                PushCoinsToZone1Save();
-                SaveManager.Instance?.SaveNow();
-                AudioManager.Instance?.PlayZone2BackToZones();
-                SceneManager.LoadScene("ZoneSelection");
-            });
+                "Distrito Condensador" => root + "Cells/Zone2/Zone2_Cell_CityCondenser.png",
+                "Torre de Cultistas" => root + "Cells/Zone2/Zone2_Cell_CultistTower.png",
+                "Mercado Maldito" => root + "Cells/Zone2/Zone2_Cell_CursedMarket.png",
+                "Archivo de Yith" => root + "Cells/Zone2/Zone2_Cell_YithArchive.png",
+                _ => root + "Cells/Base/Cell_Empty.png",
+            };
         }
 
         void SellSupplies()
@@ -121,7 +157,9 @@ namespace LasGranjasDelHastur.Zone2
             _citySupplies = 0;
             _darkCoins += amount * (5 + _difficultyTier);
             _totalSold += amount;
-            PushCoinsToZone1Save();
+            _recentProductionForTax += amount;
+            GrantSharedXp(Mathf.Max(1, amount / 3));
+            PushSharedProgressToZone1Save();
             AudioManager.Instance?.PlayZone2Sell();
         }
 
@@ -133,45 +171,57 @@ namespace LasGranjasDelHastur.Zone2
             _arcaneBlueprints = 0;
             _darkCoins += amount * (8 + _difficultyTier);
             _totalSold += amount;
-            PushCoinsToZone1Save();
+            _recentProductionForTax += amount;
+            GrantSharedXp(Mathf.Max(1, amount / 2));
+            PushSharedProgressToZone1Save();
             AudioManager.Instance?.PlayZone2Sell();
         }
 
-        void ApplyTax()
+        void ResolveTaxCycle()
         {
-            var rate = 0.16f + _difficultyTier * 0.025f;
-            var tax = Mathf.CeilToInt(_darkCoins * rate);
-            _darkCoins = Mathf.Max(0, _darkCoins - tax);
-            _txtHint.text = $"Impuesto urbano aplicado: -{tax} monedas.";
-            PushCoinsToZone1Save();
+            var rate = 0.16f + _difficultyTier * 0.02f;
+            var tax = Mathf.CeilToInt(_darkCoins * rate + _recentProductionForTax * 0.12f);
+            _recentProductionForTax = 0;
+
+            if (_darkCoins >= tax)
+            {
+                _darkCoins -= tax;
+                _txtHint.text = $"Impuesto urbano pagado: -{tax} monedas.";
+                AudioManager.Instance?.PlayZone2TaxPay();
+                PushSharedProgressToZone1Save();
+                return;
+            }
+
+            GlobalTaxLedger.RegisterStrikeFailure(GameOverOrigin.CondensedCities);
+            var strikeCount = GlobalTaxLedger.GetStrikes();
+            _darkCoins = Mathf.FloorToInt(_darkCoins * 0.25f);
+            TryCorruptRandomUnlockedCell();
+            _txtHint.text = $"No alcanzó para pagar. Multa {strikeCount}/3 y corrupción aplicada.";
             AudioManager.Instance?.PlayZone2TaxAlert();
+            PushSharedProgressToZone1Save();
         }
 
-        void RefreshUi()
+        void PullSharedProgressFromZone1Save()
         {
-            _txtResources.text = $"Monedas: {_darkCoins}  |  Suministros: {_citySupplies}  |  Planos: {_arcaneBlueprints}";
-            _txtTax.text = $"Próximo impuesto: {Mathf.Max(0f, _taxTimer):0.0}s";
-            _txtDifficulty.text = $"Dificultad: Tier {_difficultyTier}  |  Vendido total: {_totalSold}";
-            if (string.IsNullOrEmpty(_txtHint.text))
-                _txtHint.text = sharedEconomyWithZone1 ? "Economía compartida con Zona 1: activa." : "Economía aislada de Zona 1: activa.";
-        }
-
-        void PullCoinsFromZone1Save()
-        {
-            if (!sharedEconomyWithZone1 || SaveManager.Instance == null || SaveManager.Instance.CachedData == null ||
-                SaveManager.Instance.CachedData.zone1 == null || !SaveManager.Instance.CachedData.zone1.valid)
+            if (!sharedEconomyWithZone1 || SaveManager.Instance == null || SaveManager.Instance.CachedData == null)
                 return;
 
-            _darkCoins = Mathf.Max(0, SaveManager.Instance.CachedData.zone1.darkCoins);
+            var zone1 = EnsureZone1SharedDataContainer();
+            _darkCoins = Mathf.Max(0, zone1.darkCoins);
+            _sharedLevel = Mathf.Max(1, zone1.level);
+            _sharedXp = Mathf.Max(0, zone1.xp);
         }
 
-        void PushCoinsToZone1Save()
+        void PushSharedProgressToZone1Save()
         {
-            if (!sharedEconomyWithZone1 || SaveManager.Instance == null || SaveManager.Instance.CachedData == null ||
-                SaveManager.Instance.CachedData.zone1 == null || !SaveManager.Instance.CachedData.zone1.valid)
+            if (!sharedEconomyWithZone1 || SaveManager.Instance == null || SaveManager.Instance.CachedData == null)
                 return;
 
-            SaveManager.Instance.CachedData.zone1.darkCoins = Mathf.Max(0, _darkCoins);
+            var zone1 = EnsureZone1SharedDataContainer();
+            zone1.darkCoins = Mathf.Max(0, _darkCoins);
+            zone1.level = Mathf.Max(1, _sharedLevel);
+            zone1.xp = Mathf.Max(0, _sharedXp);
+            SaveManager.Instance.CachedData.zone1Available = true;
         }
 
         void TryRestoreFromSaveIfRequested()
@@ -198,6 +248,11 @@ namespace LasGranjasDelHastur.Zone2
                 totalSold = _totalSold,
                 taxTimer = _taxTimer,
                 runtimeSeconds = _runtime,
+                strikes = GlobalTaxLedger.GetStrikes(),
+                assistantsTotal = _assistantsTotal,
+                nextCellCost = _nextCellCost,
+                assistants = CaptureAssistantsSaveData(),
+                cells = CaptureCellsSaveData(),
             };
         }
 
@@ -213,65 +268,329 @@ namespace LasGranjasDelHastur.Zone2
             _totalSold = Mathf.Max(0, data.totalSold);
             _taxTimer = Mathf.Max(0f, data.taxTimer);
             _runtime = Mathf.Max(0f, data.runtimeSeconds);
+            _nextCellCost = Mathf.Max(60, data.nextCellCost <= 0 ? _nextCellCost : data.nextCellCost);
+            _assistantsTotal = Mathf.Clamp(data.assistantsTotal <= 0 ? _assistantsTotal : data.assistantsTotal, 1, MaxAssistants);
+            EnsureAssistantCount(_assistantsTotal);
+            ApplyAssistantsSaveData(data.assistants);
+            ApplyCellsSaveData(data.cells);
+            RebuildCellsListUi();
         }
 
-        static Image CreateImage(Transform parent, string name, Color color)
+        void BuildDefaultCells()
         {
-            var go = new GameObject(name);
-            go.transform.SetParent(parent, false);
-            var img = go.AddComponent<Image>();
-            img.color = color;
-            return img;
+            _cells.Clear();
+            var names = new[]
+            {
+                ("Distrito Condensador", true),
+                ("Torre de Cultistas", false),
+                ("Mercado Maldito", true),
+                ("Archivo de Yith", false),
+            };
+
+            for (var i = 0; i < 12; i++)
+            {
+                var template = names[i % names.Length];
+                _cells.Add(new Zone2CellRuntime
+                {
+                    id = i,
+                    displayName = template.Item1,
+                    producesSupplies = template.Item2,
+                    unlocked = i < initialUnlockedCells,
+                });
+            }
+            _selectedCell = _cells.Count > 0 ? _cells[0] : null;
         }
 
-        static TextMeshProUGUI CreateLabel(Transform parent, string name, string text, int size, Vector2 pos, Vector2 rectSize)
+        void UpdateCells(float deltaTime)
         {
-            var go = new GameObject(name);
-            go.transform.SetParent(parent, false);
-            var rt = go.AddComponent<RectTransform>();
-            rt.anchorMin = new Vector2(0.5f, 0.5f);
-            rt.anchorMax = new Vector2(0.5f, 0.5f);
-            rt.pivot = new Vector2(0.5f, 0.5f);
-            rt.anchoredPosition = pos;
-            rt.sizeDelta = rectSize;
-            var tmp = go.AddComponent<TextMeshProUGUI>();
-            tmp.text = text;
-            tmp.fontSize = size;
-            tmp.alignment = TextAlignmentOptions.Center;
-            tmp.color = Color.white;
-            tmp.textWrappingMode = TextWrappingModes.Normal;
-            tmp.raycastTarget = false;
-            return tmp;
+            foreach (var cell in _cells)
+            {
+                if (!cell.unlocked || !cell.producing)
+                    continue;
+
+                cell.remainingSeconds = Mathf.Max(0f, cell.remainingSeconds - deltaTime);
+                if (cell.remainingSeconds > 0f)
+                    continue;
+
+                cell.producing = false;
+                cell.ready = true;
+            }
         }
 
-        static Button CreateButton(Transform parent, string text, Vector2 pos, Vector2 rectSize)
+        void RunAssistantAutomation(float deltaTime)
         {
-            var go = new GameObject($"Button_{text}");
-            go.transform.SetParent(parent, false);
-            var rt = go.AddComponent<RectTransform>();
-            rt.anchorMin = new Vector2(0.5f, 0.5f);
-            rt.anchorMax = new Vector2(0.5f, 0.5f);
-            rt.pivot = new Vector2(0.5f, 0.5f);
-            rt.anchoredPosition = pos;
-            rt.sizeDelta = rectSize;
-            var bg = go.AddComponent<Image>();
-            bg.color = new Color(0.16f, 0.21f, 0.26f, 1f);
-            var btn = go.AddComponent<Button>();
-            var lbl = CreateLabel(go.transform, "Text", text, 20, Vector2.zero, rectSize);
-            lbl.rectTransform.anchorMin = Vector2.zero;
-            lbl.rectTransform.anchorMax = Vector2.one;
-            lbl.rectTransform.offsetMin = Vector2.zero;
-            lbl.rectTransform.offsetMax = Vector2.zero;
-            return btn;
+            _automationTick += deltaTime;
+            if (_automationTick < 0.35f)
+                return;
+            _automationTick = 0f;
+
+            foreach (var cell in _cells)
+            {
+                var assigned = GetAssignedAssistantsOnCell(cell.id);
+                if (assigned <= 0 || !cell.unlocked || cell.corrupted)
+                    continue;
+
+                if (cell.ready)
+                    CollectCell(cell);
+                else if (!cell.producing)
+                    StartCellProduction(cell);
+            }
         }
 
-        static void Stretch(RectTransform rt)
+        void StartSelectedCellProduction() => StartCellProduction(_selectedCell);
+        void CollectSelectedCell() => CollectCell(_selectedCell);
+        void UpgradeSelectedCell()
         {
-            rt.anchorMin = Vector2.zero;
-            rt.anchorMax = Vector2.one;
-            rt.offsetMin = Vector2.zero;
-            rt.offsetMax = Vector2.zero;
-            rt.pivot = new Vector2(0.5f, 0.5f);
+            if (_selectedCell == null || !_selectedCell.unlocked)
+                return;
+            var cost = 40 * _selectedCell.level;
+            if (_darkCoins < cost)
+                return;
+
+            _darkCoins -= cost;
+            _selectedCell.level++;
+            AudioManager.Instance?.PlayZone2TierUp();
         }
+
+        void ToggleAssistantOnSelectedCell()
+        {
+            if (_selectedCell == null || !_selectedCell.unlocked)
+                return;
+
+            for (var i = 0; i < _assistantAssignedCellId.Count; i++)
+            {
+                if (_assistantAssignedCellId[i] == _selectedCell.id)
+                {
+                    _assistantAssignedCellId[i] = -1;
+                    return;
+                }
+            }
+
+            for (var i = 0; i < _assistantAssignedCellId.Count; i++)
+            {
+                if (_assistantAssignedCellId[i] >= 0)
+                    continue;
+                _assistantAssignedCellId[i] = _selectedCell.id;
+                return;
+            }
+        }
+
+        void BuyAssistant()
+        {
+            if (_assistantsTotal >= MaxAssistants || _darkCoins < _assistantBuyCost)
+                return;
+
+            _darkCoins -= _assistantBuyCost;
+            _assistantsTotal++;
+            _assistantBuyCost = Mathf.Min(9999, _assistantBuyCost + 35);
+            EnsureAssistantCount(_assistantsTotal);
+            GrantSharedXp(2);
+            PushSharedProgressToZone1Save();
+            AudioManager.Instance?.PlayZone2Action();
+        }
+
+        void BuyNextCell()
+        {
+            if (_selectedCell == null || _selectedCell.unlocked)
+                return;
+            if (_darkCoins < _nextCellCost)
+                return;
+
+            _darkCoins -= _nextCellCost;
+            _selectedCell.unlocked = true;
+            _selectedCell.level = 1;
+            _selectedCell.corrupted = false;
+            _nextCellCost += 55;
+            SyncWorldCellVisuals();
+            RebuildCellsListUi();
+            GrantSharedXp(3);
+            PushSharedProgressToZone1Save();
+            AudioManager.Instance?.PlayZone2Action();
+        }
+
+        void StartCellProduction(Zone2CellRuntime cell)
+        {
+            if (cell == null || !cell.unlocked || cell.producing || cell.ready || cell.corrupted)
+                return;
+
+            var assistantBoost = Mathf.Clamp(GetAssignedAssistantsOnCell(cell.id), 0, 4) * 0.25f;
+            var speed = 1f + (_difficultyTier - 1) * 0.1f + assistantBoost;
+            cell.remainingSeconds = Mathf.Max(1.2f, (6.0f - cell.level * 0.4f) / speed);
+            cell.producing = true;
+            AudioManager.Instance?.PlayZone2Action();
+        }
+
+        void CollectCell(Zone2CellRuntime cell)
+        {
+            if (cell == null || !cell.ready)
+                return;
+
+            cell.ready = false;
+            var amount = 3 + cell.level + GetAssignedAssistantsOnCell(cell.id);
+            if (cell.producesSupplies)
+            {
+                _citySupplies += amount;
+                AudioManager.Instance?.PlayZone2ProduceSupplies();
+            }
+            else
+            {
+                _arcaneBlueprints += amount;
+                AudioManager.Instance?.PlayZone2ProduceBlueprints();
+            }
+            GrantSharedXp(1 + Mathf.Max(0, cell.level - 1));
+        }
+
+        void TryCorruptRandomUnlockedCell()
+        {
+            var candidates = new List<Zone2CellRuntime>();
+            foreach (var cell in _cells)
+            {
+                if (cell.unlocked && !cell.corrupted)
+                    candidates.Add(cell);
+            }
+
+            if (candidates.Count == 0)
+                return;
+
+            var index = Random.Range(0, candidates.Count);
+            candidates[index].corrupted = true;
+            candidates[index].producing = false;
+            candidates[index].ready = false;
+        }
+
+        int CountAssignedAssistants()
+        {
+            var count = 0;
+            for (var i = 0; i < _assistantAssignedCellId.Count; i++)
+            {
+                if (_assistantAssignedCellId[i] >= 0)
+                    count++;
+            }
+            return count;
+        }
+
+        int GetAssignedAssistantsOnCell(int cellId)
+        {
+            var count = 0;
+            for (var i = 0; i < _assistantAssignedCellId.Count; i++)
+            {
+                if (_assistantAssignedCellId[i] == cellId)
+                    count++;
+            }
+            return count;
+        }
+
+        void EnsureAssistantCount(int total)
+        {
+            total = Mathf.Clamp(total, 1, MaxAssistants);
+            while (_assistantAssignedCellId.Count < total)
+                _assistantAssignedCellId.Add(-1);
+            while (_assistantAssignedCellId.Count > total)
+                _assistantAssignedCellId.RemoveAt(_assistantAssignedCellId.Count - 1);
+        }
+
+        void GrantSharedXp(int amount)
+        {
+            amount = Mathf.Max(0, amount);
+            _sharedXp += amount;
+            while (_sharedXp >= GetXpToNextLevel(_sharedLevel))
+            {
+                _sharedXp -= GetXpToNextLevel(_sharedLevel);
+                _sharedLevel++;
+            }
+        }
+
+        static int GetXpToNextLevel(int level)
+        {
+            return Mathf.Max(30, 50 + Mathf.Max(0, level - 1) * 25);
+        }
+
+        Zone1SaveData EnsureZone1SharedDataContainer()
+        {
+            var data = SaveManager.Instance.CachedData;
+            data.zone1 ??= new Zone1SaveData();
+            var zone1 = data.zone1;
+            if (!zone1.valid)
+            {
+                zone1.valid = true;
+                zone1.darkCoins = Mathf.Max(0, _darkCoins);
+                zone1.level = Mathf.Max(1, _sharedLevel);
+                zone1.xp = Mathf.Max(0, _sharedXp);
+            }
+            return zone1;
+        }
+
+        List<AssistantSaveData> CaptureAssistantsSaveData()
+        {
+            var data = new List<AssistantSaveData>(_assistantAssignedCellId.Count);
+            for (var i = 0; i < _assistantAssignedCellId.Count; i++)
+            {
+                data.Add(new AssistantSaveData
+                {
+                    assistantId = i,
+                    assignedSlotIndex = _assistantAssignedCellId[i],
+                });
+            }
+            return data;
+        }
+
+        void ApplyAssistantsSaveData(List<AssistantSaveData> data)
+        {
+            for (var i = 0; i < _assistantAssignedCellId.Count; i++)
+                _assistantAssignedCellId[i] = -1;
+
+            if (data == null)
+                return;
+
+            foreach (var saved in data)
+            {
+                if (saved == null || saved.assistantId < 0 || saved.assistantId >= _assistantAssignedCellId.Count)
+                    continue;
+                _assistantAssignedCellId[saved.assistantId] = saved.assignedSlotIndex;
+            }
+        }
+
+        List<Zone2CellSaveData> CaptureCellsSaveData()
+        {
+            var data = new List<Zone2CellSaveData>(_cells.Count);
+            foreach (var cell in _cells)
+            {
+                data.Add(new Zone2CellSaveData
+                {
+                    cellId = cell.id,
+                    displayName = cell.displayName,
+                    unlocked = cell.unlocked,
+                    level = cell.level,
+                    producing = cell.producing,
+                    ready = cell.ready,
+                    corrupted = cell.corrupted,
+                    remainingSeconds = cell.remainingSeconds,
+                    assignedAssistants = GetAssignedAssistantsOnCell(cell.id),
+                });
+            }
+            return data;
+        }
+
+        void ApplyCellsSaveData(List<Zone2CellSaveData> data)
+        {
+            if (data == null || data.Count == 0)
+                return;
+
+            foreach (var saved in data)
+            {
+                if (saved == null)
+                    continue;
+                var cell = _cells.Find(c => c.id == saved.cellId);
+                if (cell == null)
+                    continue;
+                cell.unlocked = saved.unlocked;
+                cell.level = Mathf.Max(1, saved.level);
+                cell.producing = saved.producing;
+                cell.ready = saved.ready;
+                cell.corrupted = saved.corrupted;
+                cell.remainingSeconds = Mathf.Max(0f, saved.remainingSeconds);
+            }
+        }
+
     }
 }

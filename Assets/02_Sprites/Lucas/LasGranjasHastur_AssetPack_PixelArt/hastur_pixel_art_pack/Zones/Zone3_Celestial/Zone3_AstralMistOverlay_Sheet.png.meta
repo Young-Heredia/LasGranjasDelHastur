@@ -1,0 +1,3417 @@
+fileFormatVersion: 2
+guid: 61dc670dfd26e7343bb35fab109d32b8
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -739545072157823681
+    second: Zone3_AstralMistOverlay_Sheet_0
+  - first:
+      213: -9062686559839966166
+    second: Zone3_AstralMistOverlay_Sheet_1
+  - first:
+      213: -1338966905249922662
+    second: Zone3_AstralMistOverlay_Sheet_2
+  - first:
+      213: 5824917216294489397
+    second: Zone3_AstralMistOverlay_Sheet_3
+  - first:
+      213: -7346922903118156682
+    second: Zone3_AstralMistOverlay_Sheet_4
+  - first:
+      213: 3028874486593043132
+    second: Zone3_AstralMistOverlay_Sheet_5
+  - first:
+      213: 2687546820048848687
+    second: Zone3_AstralMistOverlay_Sheet_6
+  - first:
+      213: -833132589007599423
+    second: Zone3_AstralMistOverlay_Sheet_7
+  - first:
+      213: 4481271803154115773
+    second: Zone3_AstralMistOverlay_Sheet_8
+  - first:
+      213: -6067532738075173453
+    second: Zone3_AstralMistOverlay_Sheet_9
+  - first:
+      213: -4725038842782108273
+    second: Zone3_AstralMistOverlay_Sheet_10
+  - first:
+      213: -5262253277379026747
+    second: Zone3_AstralMistOverlay_Sheet_11
+  - first:
+      213: -1865633491647720153
+    second: Zone3_AstralMistOverlay_Sheet_12
+  - first:
+      213: 975903224819285604
+    second: Zone3_AstralMistOverlay_Sheet_13
+  - first:
+      213: -8001032762901354207
+    second: Zone3_AstralMistOverlay_Sheet_14
+  - first:
+      213: 8121776605978807827
+    second: Zone3_AstralMistOverlay_Sheet_15
+  - first:
+      213: 5518244868180723340
+    second: Zone3_AstralMistOverlay_Sheet_16
+  - first:
+      213: -3129123546910036291
+    second: Zone3_AstralMistOverlay_Sheet_17
+  - first:
+      213: -3228805585114024558
+    second: Zone3_AstralMistOverlay_Sheet_18
+  - first:
+      213: 5598878770629622980
+    second: Zone3_AstralMistOverlay_Sheet_19
+  - first:
+      213: 2256533722350495756
+    second: Zone3_AstralMistOverlay_Sheet_20
+  - first:
+      213: 1718695321630492535
+    second: Zone3_AstralMistOverlay_Sheet_21
+  - first:
+      213: -4789834251379996000
+    second: Zone3_AstralMistOverlay_Sheet_22
+  - first:
+      213: 6370962519075936812
+    second: Zone3_AstralMistOverlay_Sheet_23
+  - first:
+      213: -6933575561836872473
+    second: Zone3_AstralMistOverlay_Sheet_24
+  - first:
+      213: 3566635304575910969
+    second: Zone3_AstralMistOverlay_Sheet_25
+  - first:
+      213: 5996849405071314858
+    second: Zone3_AstralMistOverlay_Sheet_26
+  - first:
+      213: -2036502815687078082
+    second: Zone3_AstralMistOverlay_Sheet_27
+  - first:
+      213: 8059308620218775658
+    second: Zone3_AstralMistOverlay_Sheet_28
+  - first:
+      213: 3593682872659421893
+    second: Zone3_AstralMistOverlay_Sheet_29
+  - first:
+      213: -6332813299012162273
+    second: Zone3_AstralMistOverlay_Sheet_30
+  - first:
+      213: -1418139448469335280
+    second: Zone3_AstralMistOverlay_Sheet_31
+  - first:
+      213: 647076801056754196
+    second: Zone3_AstralMistOverlay_Sheet_32
+  - first:
+      213: -8055334665531276244
+    second: Zone3_AstralMistOverlay_Sheet_33
+  - first:
+      213: 5536679462171141472
+    second: Zone3_AstralMistOverlay_Sheet_34
+  - first:
+      213: 6530318454859923306
+    second: Zone3_AstralMistOverlay_Sheet_35
+  - first:
+      213: 8954878666674963668
+    second: Zone3_AstralMistOverlay_Sheet_36
+  - first:
+      213: -4246337994000515108
+    second: Zone3_AstralMistOverlay_Sheet_37
+  - first:
+      213: 5930017932670963535
+    second: Zone3_AstralMistOverlay_Sheet_38
+  - first:
+      213: 7010621617903410691
+    second: Zone3_AstralMistOverlay_Sheet_39
+  - first:
+      213: 3228304925562984731
+    second: Zone3_AstralMistOverlay_Sheet_40
+  - first:
+      213: 390726605817042011
+    second: Zone3_AstralMistOverlay_Sheet_41
+  - first:
+      213: 7156687107621647373
+    second: Zone3_AstralMistOverlay_Sheet_42
+  - first:
+      213: 4353567221782808738
+    second: Zone3_AstralMistOverlay_Sheet_43
+  - first:
+      213: -478715417883290600
+    second: Zone3_AstralMistOverlay_Sheet_44
+  - first:
+      213: -134906047826410987
+    second: Zone3_AstralMistOverlay_Sheet_45
+  - first:
+      213: 319297093294540495
+    second: Zone3_AstralMistOverlay_Sheet_46
+  - first:
+      213: 4124475824679913071
+    second: Zone3_AstralMistOverlay_Sheet_47
+  - first:
+      213: 6132054158932238194
+    second: Zone3_AstralMistOverlay_Sheet_48
+  - first:
+      213: -2841014086163682702
+    second: Zone3_AstralMistOverlay_Sheet_49
+  - first:
+      213: -7035224680370063788
+    second: Zone3_AstralMistOverlay_Sheet_50
+  - first:
+      213: 1138816177095421683
+    second: Zone3_AstralMistOverlay_Sheet_51
+  - first:
+      213: -3691773799025178644
+    second: Zone3_AstralMistOverlay_Sheet_52
+  - first:
+      213: 5663782710245724451
+    second: Zone3_AstralMistOverlay_Sheet_53
+  - first:
+      213: 5985192346910437019
+    second: Zone3_AstralMistOverlay_Sheet_54
+  - first:
+      213: -6791936838685121272
+    second: Zone3_AstralMistOverlay_Sheet_55
+  - first:
+      213: -888578520774790013
+    second: Zone3_AstralMistOverlay_Sheet_56
+  - first:
+      213: 7235062606319931273
+    second: Zone3_AstralMistOverlay_Sheet_57
+  - first:
+      213: 7528619579167166829
+    second: Zone3_AstralMistOverlay_Sheet_58
+  - first:
+      213: 5295018208764132967
+    second: Zone3_AstralMistOverlay_Sheet_59
+  - first:
+      213: 3112486931234107564
+    second: Zone3_AstralMistOverlay_Sheet_60
+  - first:
+      213: -5664288300457296827
+    second: Zone3_AstralMistOverlay_Sheet_61
+  - first:
+      213: 7447600302331897570
+    second: Zone3_AstralMistOverlay_Sheet_62
+  - first:
+      213: -2281721035649529242
+    second: Zone3_AstralMistOverlay_Sheet_63
+  - first:
+      213: 570201800707376428
+    second: Zone3_AstralMistOverlay_Sheet_64
+  - first:
+      213: 6670408325582524128
+    second: Zone3_AstralMistOverlay_Sheet_65
+  - first:
+      213: 5903895218317902752
+    second: Zone3_AstralMistOverlay_Sheet_66
+  - first:
+      213: 7588477555903546159
+    second: Zone3_AstralMistOverlay_Sheet_67
+  - first:
+      213: -1927685286022136619
+    second: Zone3_AstralMistOverlay_Sheet_68
+  - first:
+      213: -4255237959854285910
+    second: Zone3_AstralMistOverlay_Sheet_69
+  - first:
+      213: -5294171364214844088
+    second: Zone3_AstralMistOverlay_Sheet_70
+  - first:
+      213: -1366140867460132854
+    second: Zone3_AstralMistOverlay_Sheet_71
+  - first:
+      213: 8604434052714376778
+    second: Zone3_AstralMistOverlay_Sheet_72
+  - first:
+      213: -1562133545394183181
+    second: Zone3_AstralMistOverlay_Sheet_73
+  - first:
+      213: -8620210625715168768
+    second: Zone3_AstralMistOverlay_Sheet_74
+  - first:
+      213: 3228451034260031551
+    second: Zone3_AstralMistOverlay_Sheet_75
+  - first:
+      213: -6996818010863467613
+    second: Zone3_AstralMistOverlay_Sheet_76
+  - first:
+      213: 5450629566946587668
+    second: Zone3_AstralMistOverlay_Sheet_77
+  - first:
+      213: -7350055540405303363
+    second: Zone3_AstralMistOverlay_Sheet_78
+  - first:
+      213: 890194320742429923
+    second: Zone3_AstralMistOverlay_Sheet_79
+  - first:
+      213: -7968352309038057984
+    second: Zone3_AstralMistOverlay_Sheet_80
+  - first:
+      213: -4628179808134073726
+    second: Zone3_AstralMistOverlay_Sheet_81
+  - first:
+      213: 1214713485631867294
+    second: Zone3_AstralMistOverlay_Sheet_82
+  - first:
+      213: -7982332638604925311
+    second: Zone3_AstralMistOverlay_Sheet_83
+  - first:
+      213: 3959646175934170348
+    second: Zone3_AstralMistOverlay_Sheet_84
+  - first:
+      213: 310493506099971269
+    second: Zone3_AstralMistOverlay_Sheet_85
+  - first:
+      213: 4152499003318205166
+    second: Zone3_AstralMistOverlay_Sheet_86
+  - first:
+      213: -2757424561685085367
+    second: Zone3_AstralMistOverlay_Sheet_87
+  - first:
+      213: -8284053915394879702
+    second: Zone3_AstralMistOverlay_Sheet_88
+  - first:
+      213: -377791767473290932
+    second: Zone3_AstralMistOverlay_Sheet_89
+  - first:
+      213: -1663451342294200318
+    second: Zone3_AstralMistOverlay_Sheet_90
+  - first:
+      213: -6426412790714597975
+    second: Zone3_AstralMistOverlay_Sheet_91
+  - first:
+      213: -9182430665313578199
+    second: Zone3_AstralMistOverlay_Sheet_92
+  - first:
+      213: -7794193813863586396
+    second: Zone3_AstralMistOverlay_Sheet_93
+  - first:
+      213: 5359676659816620527
+    second: Zone3_AstralMistOverlay_Sheet_94
+  - first:
+      213: 991506973478775392
+    second: Zone3_AstralMistOverlay_Sheet_95
+  - first:
+      213: 8478304786627973929
+    second: Zone3_AstralMistOverlay_Sheet_96
+  - first:
+      213: -3497430999417908641
+    second: Zone3_AstralMistOverlay_Sheet_97
+  - first:
+      213: -2246220364300721932
+    second: Zone3_AstralMistOverlay_Sheet_98
+  - first:
+      213: 4856727827643685202
+    second: Zone3_AstralMistOverlay_Sheet_99
+  - first:
+      213: -784083559547263341
+    second: Zone3_AstralMistOverlay_Sheet_100
+  - first:
+      213: -6269181372842911201
+    second: Zone3_AstralMistOverlay_Sheet_101
+  - first:
+      213: 2228674582145208692
+    second: Zone3_AstralMistOverlay_Sheet_102
+  - first:
+      213: -2692431263369743509
+    second: Zone3_AstralMistOverlay_Sheet_103
+  - first:
+      213: -3522155699748928127
+    second: Zone3_AstralMistOverlay_Sheet_104
+  - first:
+      213: 2983266785645429204
+    second: Zone3_AstralMistOverlay_Sheet_105
+  - first:
+      213: 2154266296234199393
+    second: Zone3_AstralMistOverlay_Sheet_106
+  - first:
+      213: 3758773362024261228
+    second: Zone3_AstralMistOverlay_Sheet_107
+  - first:
+      213: 6307669766434248808
+    second: Zone3_AstralMistOverlay_Sheet_108
+  - first:
+      213: -4436351258470299315
+    second: Zone3_AstralMistOverlay_Sheet_109
+  - first:
+      213: -6029320784612028035
+    second: Zone3_AstralMistOverlay_Sheet_110
+  - first:
+      213: 7824405029652372501
+    second: Zone3_AstralMistOverlay_Sheet_111
+  - first:
+      213: -208748594388684091
+    second: Zone3_AstralMistOverlay_Sheet_112
+  - first:
+      213: 607274407102830560
+    second: Zone3_AstralMistOverlay_Sheet_113
+  - first:
+      213: 2534459286170316784
+    second: Zone3_AstralMistOverlay_Sheet_114
+  - first:
+      213: -4451681577089148603
+    second: Zone3_AstralMistOverlay_Sheet_115
+  - first:
+      213: 6046248638334733529
+    second: Zone3_AstralMistOverlay_Sheet_116
+  - first:
+      213: -1865955208200017014
+    second: Zone3_AstralMistOverlay_Sheet_117
+  - first:
+      213: -7448082918612941470
+    second: Zone3_AstralMistOverlay_Sheet_118
+  - first:
+      213: -933793189889114592
+    second: Zone3_AstralMistOverlay_Sheet_119
+  - first:
+      213: 5365988089929964551
+    second: Zone3_AstralMistOverlay_Sheet_120
+  - first:
+      213: -6052174878314757554
+    second: Zone3_AstralMistOverlay_Sheet_121
+  - first:
+      213: -8784867036701828635
+    second: Zone3_AstralMistOverlay_Sheet_122
+  - first:
+      213: -975858533062930829
+    second: Zone3_AstralMistOverlay_Sheet_123
+  - first:
+      213: 9026125617595045631
+    second: Zone3_AstralMistOverlay_Sheet_124
+  - first:
+      213: 4271459098568129436
+    second: Zone3_AstralMistOverlay_Sheet_125
+  - first:
+      213: 9087898720267111631
+    second: Zone3_AstralMistOverlay_Sheet_126
+  - first:
+      213: -2451246343056482179
+    second: Zone3_AstralMistOverlay_Sheet_127
+  - first:
+      213: 2356400399295186729
+    second: Zone3_AstralMistOverlay_Sheet_128
+  - first:
+      213: -7218465555322692422
+    second: Zone3_AstralMistOverlay_Sheet_129
+  - first:
+      213: -7291917801215891040
+    second: Zone3_AstralMistOverlay_Sheet_130
+  - first:
+      213: -6222255317830640548
+    second: Zone3_AstralMistOverlay_Sheet_131
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 1599
+        y: 303
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3d64a6dcab9cb5f0800000000000000
+      internalID: -739545072157823681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 2151
+        y: 303
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2c280a079eda3280800000000000000
+      internalID: -9062686559839966166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 1291
+        y: 283
+        width: 182
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a91039e91b80b6de0800000000000000
+      internalID: -1338966905249922662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 1539
+        y: 291
+        width: 202
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53d4a43b85346d050800000000000000
+      internalID: 5824917216294489397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 2051
+        y: 291
+        width: 154
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67ce5779b8c7a0a90800000000000000
+      internalID: -7346922903118156682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 2675
+        y: 283
+        width: 186
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cba3f924c49b80a20800000000000000
+      internalID: 3028874486593043132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 3595
+        y: 283
+        width: 286
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f270e36f7951c4520800000000000000
+      internalID: 2687546820048848687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 4439
+        y: 283
+        width: 170
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c8866d035e1074f0800000000000000
+      internalID: -833132589007599423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 279
+        width: 94
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbca9f056fca03e30800000000000000
+      internalID: 4481271803154115773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 2143
+        y: 279
+        width: 118
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3bdd9f33f1bcbcba0800000000000000
+      internalID: -6067532738075173453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 2563
+        y: 267
+        width: 382
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f85bc02f43a4d6eb0800000000000000
+      internalID: -4725038842782108273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 2907
+        y: 283
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c020bb5688b8f6b0800000000000000
+      internalID: -5262253277379026747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 263
+        width: 222
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 72514415930fb16e0800000000000000
+      internalID: -1865633491647720153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 791
+        y: 271
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46ef28affca1b8d00800000000000000
+      internalID: 975903224819285604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 3263
+        y: 271
+        width: 222
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 129a00be71f96f090800000000000000
+      internalID: -8001032762901354207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 3627
+        y: 267
+        width: 222
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31ec178cac856b070800000000000000
+      internalID: 8121776605978807827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 259
+        width: 278
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c86c88f787eb49c40800000000000000
+      internalID: 5518244868180723340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 1323
+        y: 259
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbeed1086be1394d0800000000000000
+      internalID: -3129123546910036291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 2535
+        y: 251
+        width: 78
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2953b726d6af033d0800000000000000
+      internalID: -3228805585114024558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 4555
+        y: 259
+        width: 146
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ccbad7e39633bd40800000000000000
+      internalID: 5598878770629622980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 5107
+        y: 259
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0824600771d05f10800000000000000
+      internalID: 2256533722350495756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 1235
+        y: 247
+        width: 198
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77749eaf9480ad710800000000000000
+      internalID: 1718695321630492535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 1791
+        y: 247
+        width: 186
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0aa0f714027178db0800000000000000
+      internalID: -4789834251379996000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 2263
+        y: 251
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2a59d208a43a6850800000000000000
+      internalID: 6370962519075936812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 2771
+        y: 247
+        width: 222
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ec326d13cdf6cf90800000000000000
+      internalID: -6933575561836872473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 3767
+        y: 235
+        width: 198
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9344d94a9eb3f7130800000000000000
+      internalID: 3566635304575910969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 3967
+        y: 247
+        width: 170
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aafc9c0e2c6193350800000000000000
+      internalID: 5996849405071314858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 4283
+        y: 243
+        width: 202
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3f83ee9a73ecb3e0800000000000000
+      internalID: -2036502815687078082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 943
+        y: 235
+        width: 154
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6832637d7a68df60800000000000000
+      internalID: 8059308620218775658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 1107
+        y: 231
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ca254458835fd130800000000000000
+      internalID: 3593682872659421893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 1179
+        y: 219
+        width: 318
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1da2837bd35d18a0800000000000000
+      internalID: -6332813299012162273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 2167
+        y: 231
+        width: 294
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 013540c6fa1c15ce0800000000000000
+      internalID: -1418139448469335280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 2711
+        y: 235
+        width: 118
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41a42651ce0eaf800800000000000000
+      internalID: 647076801056754196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 3331
+        y: 227
+        width: 106
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c244e1afcc3b53090800000000000000
+      internalID: -8055334665531276244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_34
+      rect:
+        serializedVersion: 2
+        x: 4167
+        y: 231
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06569e1e2ac36dc40800000000000000
+      internalID: 5536679462171141472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_35
+      rect:
+        serializedVersion: 2
+        x: 4539
+        y: 227
+        width: 222
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6f7a1c190a50aa50800000000000000
+      internalID: 6530318454859923306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_36
+      rect:
+        serializedVersion: 2
+        x: 967
+        y: 219
+        width: 174
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d482edc3be164c70800000000000000
+      internalID: 8954878666674963668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_37
+      rect:
+        serializedVersion: 2
+        x: 1647
+        y: 223
+        width: 134
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cdfba5fa71af115c0800000000000000
+      internalID: -4246337994000515108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_38
+      rect:
+        serializedVersion: 2
+        x: 1819
+        y: 215
+        width: 266
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4f8c8424e7ab4250800000000000000
+      internalID: 5930017932670963535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_39
+      rect:
+        serializedVersion: 2
+        x: 2851
+        y: 227
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30e9ec5b73bba4160800000000000000
+      internalID: 7010621617903410691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_40
+      rect:
+        serializedVersion: 2
+        x: 3611
+        y: 223
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b1953dab93e3dcc20800000000000000
+      internalID: 3228304925562984731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_41
+      rect:
+        serializedVersion: 2
+        x: 4067
+        y: 219
+        width: 138
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b54d40027c32c6500800000000000000
+      internalID: 390726605817042011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_42
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 215
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d04f762b109a15360800000000000000
+      internalID: 7156687107621647373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_43
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 215
+        width: 206
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a80620725afa6c30800000000000000
+      internalID: 4353567221782808738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_44
+      rect:
+        serializedVersion: 2
+        x: 1319
+        y: 207
+        width: 154
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81450902dd24b59f0800000000000000
+      internalID: -478715417883290600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_45
+      rect:
+        serializedVersion: 2
+        x: 1607
+        y: 211
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 512414d0aa7b02ef0800000000000000
+      internalID: -134906047826410987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_46
+      rect:
+        serializedVersion: 2
+        x: 2499
+        y: 203
+        width: 366
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc6c2afb30f5e6400800000000000000
+      internalID: 319297093294540495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_47
+      rect:
+        serializedVersion: 2
+        x: 3495
+        y: 211
+        width: 206
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f668bbef8e41d3930800000000000000
+      internalID: 4124475824679913071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_48
+      rect:
+        serializedVersion: 2
+        x: 4695
+        y: 207
+        width: 202
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27fdc9eb4ce691550800000000000000
+      internalID: 6132054158932238194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_49
+      rect:
+        serializedVersion: 2
+        x: 5103
+        y: 211
+        width: 17
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27a2550bdb0b298d0800000000000000
+      internalID: -2841014086163682702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_50
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 203
+        width: 102
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4563b7b6d6cdd5e90800000000000000
+      internalID: -7035224680370063788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_51
+      rect:
+        serializedVersion: 2
+        x: 1059
+        y: 203
+        width: 146
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3fead348743edcf00800000000000000
+      internalID: 1138816177095421683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_52
+      rect:
+        serializedVersion: 2
+        x: 1299
+        y: 195
+        width: 222
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce782062a4f24ccc0800000000000000
+      internalID: -3691773799025178644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_53
+      rect:
+        serializedVersion: 2
+        x: 1527
+        y: 199
+        width: 158
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3211231fd5cc99e40800000000000000
+      internalID: 5663782710245724451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_54
+      rect:
+        serializedVersion: 2
+        x: 1827
+        y: 199
+        width: 170
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9eabf58abcaf0350800000000000000
+      internalID: 5985192346910437019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_55
+      rect:
+        serializedVersion: 2
+        x: 2975
+        y: 195
+        width: 142
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 805a8413e613eb1a0800000000000000
+      internalID: -6791936838685121272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_56
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 183
+        width: 113
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3843d221b822ba3f0800000000000000
+      internalID: -888578520774790013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_57
+      rect:
+        serializedVersion: 2
+        x: 1939
+        y: 187
+        width: 78
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98f49618b1b186460800000000000000
+      internalID: 7235062606319931273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_58
+      rect:
+        serializedVersion: 2
+        x: 2779
+        y: 191
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d615f417e970b7860800000000000000
+      internalID: 7528619579167166829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_59
+      rect:
+        serializedVersion: 2
+        x: 3211
+        y: 183
+        width: 98
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76e7c94b10fab7940800000000000000
+      internalID: 5295018208764132967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_60
+      rect:
+        serializedVersion: 2
+        x: 3811
+        y: 183
+        width: 338
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca031409f56c13b20800000000000000
+      internalID: 3112486931234107564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_61
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 167
+        width: 310
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54c77d92dc76461b0800000000000000
+      internalID: -5664288300457296827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_62
+      rect:
+        serializedVersion: 2
+        x: 1335
+        y: 175
+        width: 206
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e6a59114013b5760800000000000000
+      internalID: 7447600302331897570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_63
+      rect:
+        serializedVersion: 2
+        x: 2611
+        y: 179
+        width: 194
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66ac291aec2b550e0800000000000000
+      internalID: -2281721035649529242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_64
+      rect:
+        serializedVersion: 2
+        x: 2947
+        y: 175
+        width: 218
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c2583754483c9e700800000000000000
+      internalID: 570201800707376428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_65
+      rect:
+        serializedVersion: 2
+        x: 4727
+        y: 183
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ee8721e70d029c50800000000000000
+      internalID: 6670408325582524128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_66
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 159
+        width: 242
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a347febb69dee150800000000000000
+      internalID: 5903895218317902752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_67
+      rect:
+        serializedVersion: 2
+        x: 1035
+        y: 167
+        width: 174
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f23c7a1b120bf4960800000000000000
+      internalID: 7588477555903546159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_68
+      rect:
+        serializedVersion: 2
+        x: 1755
+        y: 171
+        width: 98
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5dc37e7127c7f35e0800000000000000
+      internalID: -1927685286022136619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_69
+      rect:
+        serializedVersion: 2
+        x: 1923
+        y: 171
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aab9028ee9b52f4c0800000000000000
+      internalID: -4255237959854285910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_70
+      rect:
+        serializedVersion: 2
+        x: 3363
+        y: 163
+        width: 86
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 845dde7a1335786b0800000000000000
+      internalID: -5294171364214844088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_71
+      rect:
+        serializedVersion: 2
+        x: 4187
+        y: 167
+        width: 350
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0015e18e1e7a0de0800000000000000
+      internalID: -1366140867460132854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_72
+      rect:
+        serializedVersion: 2
+        x: 4695
+        y: 171
+        width: 118
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4ea055ce27196770800000000000000
+      internalID: 8604434052714376778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_73
+      rect:
+        serializedVersion: 2
+        x: 1883
+        y: 155
+        width: 206
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f3ee0721df225ae0800000000000000
+      internalID: -1562133545394183181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_74
+      rect:
+        serializedVersion: 2
+        x: 4663
+        y: 163
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00a13359b1cde5880800000000000000
+      internalID: -8620210625715168768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_75
+      rect:
+        serializedVersion: 2
+        x: 1427
+        y: 155
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f38cfcf4c13cdcc20800000000000000
+      internalID: 3228451034260031551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_76
+      rect:
+        serializedVersion: 2
+        x: 3407
+        y: 147
+        width: 146
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a38d60071f46ee90800000000000000
+      internalID: -6996818010863467613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_77
+      rect:
+        serializedVersion: 2
+        x: 4435
+        y: 151
+        width: 326
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 414b71466b684ab40800000000000000
+      internalID: 5450629566946587668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_78
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 139
+        width: 98
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db700c2ad6b5ff990800000000000000
+      internalID: -7350055540405303363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_79
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 139
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e43ceca40b9a5c00800000000000000
+      internalID: 890194320742429923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_80
+      rect:
+        serializedVersion: 2
+        x: 1331
+        y: 143
+        width: 142
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0067f960bc9ba6190800000000000000
+      internalID: -7968352309038057984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_81
+      rect:
+        serializedVersion: 2
+        x: 1583
+        y: 131
+        width: 398
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28278835cf665cfb0800000000000000
+      internalID: -4628179808134073726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_82
+      rect:
+        serializedVersion: 2
+        x: 1715
+        y: 143
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e99c6f6ba778bd010800000000000000
+      internalID: 1214713485631867294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_83
+      rect:
+        serializedVersion: 2
+        x: 2267
+        y: 143
+        width: 134
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18662f4e1ce093190800000000000000
+      internalID: -7982332638604925311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_84
+      rect:
+        serializedVersion: 2
+        x: 2647
+        y: 123
+        width: 330
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce44ac8c73d73f630800000000000000
+      internalID: 3959646175934170348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_85
+      rect:
+        serializedVersion: 2
+        x: 3555
+        y: 135
+        width: 126
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c48720e2381f4400800000000000000
+      internalID: 310493506099971269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_86
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 127
+        width: 86
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eeaf1f6b7d3a0a930800000000000000
+      internalID: 4152499003318205166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_87
+      rect:
+        serializedVersion: 2
+        x: 787
+        y: 131
+        width: 94
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 943c2d978f8abb9d0800000000000000
+      internalID: -2757424561685085367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_88
+      rect:
+        serializedVersion: 2
+        x: 991
+        y: 123
+        width: 166
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2f44b0dad0290d80800000000000000
+      internalID: -8284053915394879702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_89
+      rect:
+        serializedVersion: 2
+        x: 1887
+        y: 127
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4100bc9360d1caf0800000000000000
+      internalID: -377791767473290932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_90
+      rect:
+        serializedVersion: 2
+        x: 3403
+        y: 115
+        width: 246
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 200586941db3ae8e0800000000000000
+      internalID: -1663451342294200318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_91
+      rect:
+        serializedVersion: 2
+        x: 4427
+        y: 131
+        width: 226
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9adfd6d8d9bc0d6a0800000000000000
+      internalID: -6426412790714597975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_92
+      rect:
+        serializedVersion: 2
+        x: 1807
+        y: 115
+        width: 130
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9239453e5f3719080800000000000000
+      internalID: -9182430665313578199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_93
+      rect:
+        serializedVersion: 2
+        x: 2551
+        y: 115
+        width: 194
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a52d1e850675d390800000000000000
+      internalID: -7794193813863586396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_94
+      rect:
+        serializedVersion: 2
+        x: 3859
+        y: 123
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe1625b7685616a40800000000000000
+      internalID: 5359676659816620527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_95
+      rect:
+        serializedVersion: 2
+        x: 5059
+        y: 115
+        width: 61
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06a6682d65a82cd00800000000000000
+      internalID: 991506973478775392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_96
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 111
+        width: 202
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9235470984df8a570800000000000000
+      internalID: 8478304786627973929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_97
+      rect:
+        serializedVersion: 2
+        x: 755
+        y: 115
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5291454901a67fc0800000000000000
+      internalID: -3497430999417908641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_98
+      rect:
+        serializedVersion: 2
+        x: 2779
+        y: 111
+        width: 78
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f06b9aca72d3d0e0800000000000000
+      internalID: -2246220364300721932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_99
+      rect:
+        serializedVersion: 2
+        x: 2863
+        y: 111
+        width: 90
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 259d4792a30966340800000000000000
+      internalID: 4856727827643685202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_100
+      rect:
+        serializedVersion: 2
+        x: 3847
+        y: 99
+        width: 422
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39626f628206e15f0800000000000000
+      internalID: -784083559547263341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_101
+      rect:
+        serializedVersion: 2
+        x: 4851
+        y: 111
+        width: 142
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1ad337c1c46ff8a0800000000000000
+      internalID: -6269181372842911201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_102
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 95
+        width: 209
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47115b479b7ddee10800000000000000
+      internalID: 2228674582145208692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_103
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 99
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b63b0b4f70092aad0800000000000000
+      internalID: -2692431263369743509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_104
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 103
+        width: 130
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18509d06d0ace1fc0800000000000000
+      internalID: -3522155699748928127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_105
+      rect:
+        serializedVersion: 2
+        x: 2271
+        y: 99
+        width: 150
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d10e94e551b66920800000000000000
+      internalID: 2983266785645429204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_106
+      rect:
+        serializedVersion: 2
+        x: 2519
+        y: 95
+        width: 122
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 169c2aa58cd75ed10800000000000000
+      internalID: 2154266296234199393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_107
+      rect:
+        serializedVersion: 2
+        x: 4915
+        y: 99
+        width: 98
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6628aa3578d92430800000000000000
+      internalID: 3758773362024261228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_108
+      rect:
+        serializedVersion: 2
+        x: 291
+        y: 87
+        width: 134
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 868d8ccab38598750800000000000000
+      internalID: 6307669766434248808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_109
+      rect:
+        serializedVersion: 2
+        x: 495
+        y: 87
+        width: 90
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d494504090aee62c0800000000000000
+      internalID: -4436351258470299315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_110
+      rect:
+        serializedVersion: 2
+        x: 903
+        y: 83
+        width: 226
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d71125ce0bc835ca0800000000000000
+      internalID: -6029320784612028035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_111
+      rect:
+        serializedVersion: 2
+        x: 1423
+        y: 91
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51c95334beed59c60800000000000000
+      internalID: 7824405029652372501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_112
+      rect:
+        serializedVersion: 2
+        x: 2067
+        y: 87
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c2b91862406a1df0800000000000000
+      internalID: -208748594388684091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_113
+      rect:
+        serializedVersion: 2
+        x: 4051
+        y: 87
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e7dc841bd87d6800800000000000000
+      internalID: 607274407102830560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_114
+      rect:
+        serializedVersion: 2
+        x: 4455
+        y: 87
+        width: 218
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ff2fd9ea453c2320800000000000000
+      internalID: 2534459286170316784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_115
+      rect:
+        serializedVersion: 2
+        x: 1279
+        y: 79
+        width: 222
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 549537011337832c0800000000000000
+      internalID: -4451681577089148603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_116
+      rect:
+        serializedVersion: 2
+        x: 1811
+        y: 71
+        width: 106
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9dc81a72a1798e350800000000000000
+      internalID: 6046248638334733529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_117
+      rect:
+        serializedVersion: 2
+        x: 1999
+        y: 71
+        width: 258
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8ba278df9bca16e0800000000000000
+      internalID: -1865955208200017014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_118
+      rect:
+        serializedVersion: 2
+        x: 3371
+        y: 71
+        width: 82
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 265cb621c0813a890800000000000000
+      internalID: -7448082918612941470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_119
+      rect:
+        serializedVersion: 2
+        x: 3935
+        y: 75
+        width: 146
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02efafe8a008a03f0800000000000000
+      internalID: -933793189889114592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_120
+      rect:
+        serializedVersion: 2
+        x: 4295
+        y: 75
+        width: 186
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70c9041dcb1d77a40800000000000000
+      internalID: 5365988089929964551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_121
+      rect:
+        serializedVersion: 2
+        x: 4383
+        y: 55
+        width: 362
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e428183930b520ca0800000000000000
+      internalID: -6052174878314757554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_122
+      rect:
+        serializedVersion: 2
+        x: 4835
+        y: 71
+        width: 222
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e9595e69f1e51680800000000000000
+      internalID: -8784867036701828635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_123
+      rect:
+        serializedVersion: 2
+        x: 687
+        y: 67
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37e00c1a5dd0572f0800000000000000
+      internalID: -975858533062930829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_124
+      rect:
+        serializedVersion: 2
+        x: 2271
+        y: 59
+        width: 166
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff65ece3d6d334d70800000000000000
+      internalID: 9026125617595045631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_125
+      rect:
+        serializedVersion: 2
+        x: 3107
+        y: 63
+        width: 162
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9b73c24b65474b30800000000000000
+      internalID: 4271459098568129436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_126
+      rect:
+        serializedVersion: 2
+        x: 4119
+        y: 71
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fcc8f308cb3be1e70800000000000000
+      internalID: 9087898720267111631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_127
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 63
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d70a421307c6bfdd0800000000000000
+      internalID: -2451246343056482179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_128
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 55
+        width: 110
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 927049cadad93b020800000000000000
+      internalID: 2356400399295186729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_129
+      rect:
+        serializedVersion: 2
+        x: 1491
+        y: 51
+        width: 142
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: abc199f82dbd2db90800000000000000
+      internalID: -7218465555322692422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_130
+      rect:
+        serializedVersion: 2
+        x: 3971
+        y: 59
+        width: 186
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a9ed2fd467edca90800000000000000
+      internalID: -7291917801215891040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone3_AstralMistOverlay_Sheet_131
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 51
+        width: 194
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5c5bee51cb16a9a0800000000000000
+      internalID: -6222255317830640548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

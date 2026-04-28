@@ -7,9 +7,11 @@ namespace LasGranjasDelHastur.Core
     [Serializable]
     public class SaveGameData
     {
-        public int saveVersion = 1;
+        public int saveVersion = 2;
         public string savedAtUtc = "";
         public string lastSceneName = "MainMenu";
+        /// <summary>Multas de impuestos compartidas entre todas las zonas jugables.</summary>
+        public int globalTaxStrikes;
         public bool zone1Available = false;
         public Zone1SaveData zone1 = new();
         public bool zone2Available = false;
@@ -71,6 +73,11 @@ namespace LasGranjasDelHastur.Core
         public int totalSold;
         public float taxTimer;
         public float runtimeSeconds;
+        public int strikes;
+        public int assistantsTotal;
+        public int nextCellCost;
+        public List<AssistantSaveData> assistants = new();
+        public List<Zone2CellSaveData> cells = new();
     }
 
     [Serializable]
@@ -86,6 +93,39 @@ namespace LasGranjasDelHastur.Core
         public float runtimeSeconds;
         public int prestigePoints;
         public bool endNarrativeShown;
+        public int strikes;
+        public int assistantsTotal;
+        public int nextCellCost;
+        public List<AssistantSaveData> assistants = new();
+        public List<Zone3CellSaveData> cells = new();
+    }
+
+    [Serializable]
+    public class Zone2CellSaveData
+    {
+        public int cellId;
+        public string displayName = "";
+        public bool unlocked;
+        public int level;
+        public bool producing;
+        public bool ready;
+        public bool corrupted;
+        public float remainingSeconds;
+        public int assignedAssistants;
+    }
+
+    [Serializable]
+    public class Zone3CellSaveData
+    {
+        public int cellId;
+        public string displayName = "";
+        public bool unlocked;
+        public int level;
+        public bool producing;
+        public bool ready;
+        public bool corrupted;
+        public float remainingSeconds;
+        public int assignedAssistants;
     }
 }
 

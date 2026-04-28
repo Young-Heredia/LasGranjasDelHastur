@@ -1,0 +1,2642 @@
+fileFormatVersion: 2
+guid: 81453908e02ae924cab1b15e7a6dc523
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8560712923341720672
+    second: Zone2_FogOverlay_City_Sheet_0
+  - first:
+      213: -789033861562834169
+    second: Zone2_FogOverlay_City_Sheet_1
+  - first:
+      213: -6137524284839412652
+    second: Zone2_FogOverlay_City_Sheet_2
+  - first:
+      213: 6142390576226948544
+    second: Zone2_FogOverlay_City_Sheet_3
+  - first:
+      213: 9081021080004849917
+    second: Zone2_FogOverlay_City_Sheet_4
+  - first:
+      213: -3888691069317382005
+    second: Zone2_FogOverlay_City_Sheet_5
+  - first:
+      213: 6071807476864095394
+    second: Zone2_FogOverlay_City_Sheet_6
+  - first:
+      213: 8355427205127958173
+    second: Zone2_FogOverlay_City_Sheet_7
+  - first:
+      213: 8299996900680106667
+    second: Zone2_FogOverlay_City_Sheet_8
+  - first:
+      213: 2768153970614724821
+    second: Zone2_FogOverlay_City_Sheet_9
+  - first:
+      213: -1175152229923211647
+    second: Zone2_FogOverlay_City_Sheet_10
+  - first:
+      213: 7451677860155991615
+    second: Zone2_FogOverlay_City_Sheet_11
+  - first:
+      213: -5949653647511088530
+    second: Zone2_FogOverlay_City_Sheet_12
+  - first:
+      213: -6599759597485133695
+    second: Zone2_FogOverlay_City_Sheet_13
+  - first:
+      213: -8839274433325957136
+    second: Zone2_FogOverlay_City_Sheet_14
+  - first:
+      213: -7765318200464244721
+    second: Zone2_FogOverlay_City_Sheet_15
+  - first:
+      213: 6575482006092727174
+    second: Zone2_FogOverlay_City_Sheet_16
+  - first:
+      213: -6286238063486829166
+    second: Zone2_FogOverlay_City_Sheet_17
+  - first:
+      213: -2731206570739862304
+    second: Zone2_FogOverlay_City_Sheet_18
+  - first:
+      213: 4939270467612421087
+    second: Zone2_FogOverlay_City_Sheet_19
+  - first:
+      213: -3232213686643599564
+    second: Zone2_FogOverlay_City_Sheet_20
+  - first:
+      213: -3602375037714713542
+    second: Zone2_FogOverlay_City_Sheet_21
+  - first:
+      213: 2651562217116526208
+    second: Zone2_FogOverlay_City_Sheet_22
+  - first:
+      213: -1349703585630021306
+    second: Zone2_FogOverlay_City_Sheet_23
+  - first:
+      213: 4954276398444342243
+    second: Zone2_FogOverlay_City_Sheet_24
+  - first:
+      213: -4626991922070396734
+    second: Zone2_FogOverlay_City_Sheet_25
+  - first:
+      213: 6715492865180572071
+    second: Zone2_FogOverlay_City_Sheet_26
+  - first:
+      213: 4345472641629405403
+    second: Zone2_FogOverlay_City_Sheet_27
+  - first:
+      213: 3348808344497637543
+    second: Zone2_FogOverlay_City_Sheet_28
+  - first:
+      213: -3659192607254813725
+    second: Zone2_FogOverlay_City_Sheet_29
+  - first:
+      213: -6174947564962805615
+    second: Zone2_FogOverlay_City_Sheet_30
+  - first:
+      213: 6233582305949928174
+    second: Zone2_FogOverlay_City_Sheet_31
+  - first:
+      213: -5939055815722117912
+    second: Zone2_FogOverlay_City_Sheet_32
+  - first:
+      213: 2810339516101190152
+    second: Zone2_FogOverlay_City_Sheet_33
+  - first:
+      213: -1469203194378994321
+    second: Zone2_FogOverlay_City_Sheet_34
+  - first:
+      213: -8925081421772435235
+    second: Zone2_FogOverlay_City_Sheet_35
+  - first:
+      213: 3452136379408707302
+    second: Zone2_FogOverlay_City_Sheet_36
+  - first:
+      213: -1747541030235938561
+    second: Zone2_FogOverlay_City_Sheet_37
+  - first:
+      213: 960357181553890211
+    second: Zone2_FogOverlay_City_Sheet_38
+  - first:
+      213: -9146726467111321092
+    second: Zone2_FogOverlay_City_Sheet_39
+  - first:
+      213: 7070297026450574811
+    second: Zone2_FogOverlay_City_Sheet_40
+  - first:
+      213: -5488823826247959969
+    second: Zone2_FogOverlay_City_Sheet_41
+  - first:
+      213: 1326354095015985248
+    second: Zone2_FogOverlay_City_Sheet_42
+  - first:
+      213: -5962275454560825921
+    second: Zone2_FogOverlay_City_Sheet_43
+  - first:
+      213: -4721464600418278428
+    second: Zone2_FogOverlay_City_Sheet_44
+  - first:
+      213: 5992131091257297840
+    second: Zone2_FogOverlay_City_Sheet_45
+  - first:
+      213: 4403778870451396462
+    second: Zone2_FogOverlay_City_Sheet_46
+  - first:
+      213: -3512706740122649584
+    second: Zone2_FogOverlay_City_Sheet_47
+  - first:
+      213: -3064409880255712729
+    second: Zone2_FogOverlay_City_Sheet_48
+  - first:
+      213: -596110119095361426
+    second: Zone2_FogOverlay_City_Sheet_49
+  - first:
+      213: 3832879507466137363
+    second: Zone2_FogOverlay_City_Sheet_50
+  - first:
+      213: 955674421716459574
+    second: Zone2_FogOverlay_City_Sheet_51
+  - first:
+      213: 1302787645964303375
+    second: Zone2_FogOverlay_City_Sheet_52
+  - first:
+      213: 2298867197194109594
+    second: Zone2_FogOverlay_City_Sheet_53
+  - first:
+      213: 1647750291932109372
+    second: Zone2_FogOverlay_City_Sheet_54
+  - first:
+      213: -2588083321162867949
+    second: Zone2_FogOverlay_City_Sheet_55
+  - first:
+      213: -6628450268691966682
+    second: Zone2_FogOverlay_City_Sheet_56
+  - first:
+      213: -7412018059126090401
+    second: Zone2_FogOverlay_City_Sheet_57
+  - first:
+      213: -4422957447185849035
+    second: Zone2_FogOverlay_City_Sheet_58
+  - first:
+      213: 4780277831852588277
+    second: Zone2_FogOverlay_City_Sheet_59
+  - first:
+      213: -1271889148807356150
+    second: Zone2_FogOverlay_City_Sheet_60
+  - first:
+      213: 5787701420644785437
+    second: Zone2_FogOverlay_City_Sheet_61
+  - first:
+      213: 9069985933198410811
+    second: Zone2_FogOverlay_City_Sheet_62
+  - first:
+      213: -2049974583696062595
+    second: Zone2_FogOverlay_City_Sheet_63
+  - first:
+      213: 4257256555933375596
+    second: Zone2_FogOverlay_City_Sheet_64
+  - first:
+      213: -1461700545772648555
+    second: Zone2_FogOverlay_City_Sheet_65
+  - first:
+      213: 5215309896671903158
+    second: Zone2_FogOverlay_City_Sheet_66
+  - first:
+      213: -5878685082343447502
+    second: Zone2_FogOverlay_City_Sheet_67
+  - first:
+      213: 1210643477459077598
+    second: Zone2_FogOverlay_City_Sheet_68
+  - first:
+      213: 1755670106580384948
+    second: Zone2_FogOverlay_City_Sheet_69
+  - first:
+      213: -777953463795442808
+    second: Zone2_FogOverlay_City_Sheet_70
+  - first:
+      213: -7960710897733643130
+    second: Zone2_FogOverlay_City_Sheet_71
+  - first:
+      213: -6820068076523556435
+    second: Zone2_FogOverlay_City_Sheet_72
+  - first:
+      213: 6473285940408461083
+    second: Zone2_FogOverlay_City_Sheet_73
+  - first:
+      213: -855331225744908154
+    second: Zone2_FogOverlay_City_Sheet_74
+  - first:
+      213: -4925661854293193121
+    second: Zone2_FogOverlay_City_Sheet_75
+  - first:
+      213: 2064389537899663868
+    second: Zone2_FogOverlay_City_Sheet_76
+  - first:
+      213: -184606491407790658
+    second: Zone2_FogOverlay_City_Sheet_77
+  - first:
+      213: 5943581395394950109
+    second: Zone2_FogOverlay_City_Sheet_78
+  - first:
+      213: 6377589172676410473
+    second: Zone2_FogOverlay_City_Sheet_79
+  - first:
+      213: 7941597232981204018
+    second: Zone2_FogOverlay_City_Sheet_80
+  - first:
+      213: -4366541553476442120
+    second: Zone2_FogOverlay_City_Sheet_81
+  - first:
+      213: -8386710347518920003
+    second: Zone2_FogOverlay_City_Sheet_82
+  - first:
+      213: -387352674697756929
+    second: Zone2_FogOverlay_City_Sheet_83
+  - first:
+      213: 905368880394390194
+    second: Zone2_FogOverlay_City_Sheet_84
+  - first:
+      213: 1833053555034328159
+    second: Zone2_FogOverlay_City_Sheet_85
+  - first:
+      213: 6810686236253842596
+    second: Zone2_FogOverlay_City_Sheet_86
+  - first:
+      213: 5432862852223794234
+    second: Zone2_FogOverlay_City_Sheet_87
+  - first:
+      213: 4087097982925158112
+    second: Zone2_FogOverlay_City_Sheet_88
+  - first:
+      213: -4779185914559776154
+    second: Zone2_FogOverlay_City_Sheet_89
+  - first:
+      213: -8018010993249369876
+    second: Zone2_FogOverlay_City_Sheet_90
+  - first:
+      213: 7330012214536114847
+    second: Zone2_FogOverlay_City_Sheet_91
+  - first:
+      213: 1963145081893170250
+    second: Zone2_FogOverlay_City_Sheet_92
+  - first:
+      213: 8001736554197631640
+    second: Zone2_FogOverlay_City_Sheet_93
+  - first:
+      213: -3671059616413698381
+    second: Zone2_FogOverlay_City_Sheet_94
+  - first:
+      213: 824666472888830673
+    second: Zone2_FogOverlay_City_Sheet_95
+  - first:
+      213: 8394231885600322548
+    second: Zone2_FogOverlay_City_Sheet_96
+  - first:
+      213: 1111456275641590921
+    second: Zone2_FogOverlay_City_Sheet_97
+  - first:
+      213: 7465544578030797430
+    second: Zone2_FogOverlay_City_Sheet_98
+  - first:
+      213: 623735574511285199
+    second: Zone2_FogOverlay_City_Sheet_99
+  - first:
+      213: 6486935994042130964
+    second: Zone2_FogOverlay_City_Sheet_100
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 287
+        width: 114
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a3fe1ce3fc323980800000000000000
+      internalID: -8560712923341720672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 647
+        y: 287
+        width: 226
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 703eac522e9cc05f0800000000000000
+      internalID: -789033861562834169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 1083
+        y: 283
+        width: 262
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 45c30d15e2223daa0800000000000000
+      internalID: -6137524284839412652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 2731
+        y: 287
+        width: 90
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c5d6bf6fa72e3550800000000000000
+      internalID: 6142390576226948544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 4843
+        y: 283
+        width: 226
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df0f5871f84460e70800000000000000
+      internalID: 9081021080004849917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 5095
+        y: 287
+        width: 25
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b808a1c5318980ac0800000000000000
+      internalID: -3888691069317382005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 263
+        width: 170
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a49b0bfab4634450800000000000000
+      internalID: 6071807476864095394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 2031
+        y: 267
+        width: 198
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9e694c26c074f370800000000000000
+      internalID: 8355427205127958173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 4419
+        y: 271
+        width: 186
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba281e5b4338f2370800000000000000
+      internalID: 8299996900680106667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 691
+        y: 259
+        width: 94
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d8e316be557a6620800000000000000
+      internalID: 2768153970614724821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 891
+        y: 251
+        width: 90
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1863b6ae54501bfe0800000000000000
+      internalID: -1175152229923211647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 2539
+        y: 251
+        width: 166
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f36ad3b788da96760800000000000000
+      internalID: 7451677860155991615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 2795
+        y: 259
+        width: 118
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e629e7bb7859e6da0800000000000000
+      internalID: -5949653647511088530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 3227
+        y: 251
+        width: 78
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1807ce4fc91f864a0800000000000000
+      internalID: -6599759597485133695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 3787
+        y: 251
+        width: 130
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0fff9614cb6945580800000000000000
+      internalID: -8839274433325957136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 4443
+        y: 247
+        width: 214
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0004753d3c0c3490800000000000000
+      internalID: -7765318200464244721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 239
+        width: 81
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6834120db0ec04b50800000000000000
+      internalID: 6575482006092727174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 1599
+        y: 231
+        width: 158
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 29df35489cbc2c8a0800000000000000
+      internalID: -6286238063486829166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 2215
+        y: 235
+        width: 162
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e476de281ec81ad0800000000000000
+      internalID: -2731206570739862304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 3843
+        y: 235
+        width: 210
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fdbad972250db8440800000000000000
+      internalID: 4939270467612421087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 4175
+        y: 235
+        width: 130
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 437d379e6ced423d0800000000000000
+      internalID: -3232213686643599564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 4951
+        y: 235
+        width: 169
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a34b7494dfac10ec0800000000000000
+      internalID: -3602375037714713542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 1179
+        y: 219
+        width: 146
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 086e313b9cd3cc420800000000000000
+      internalID: 2651562217116526208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 1855
+        y: 207
+        width: 186
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 649937a6db3e44de0800000000000000
+      internalID: -1349703585630021306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 1967
+        y: 223
+        width: 182
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3eb6060b22021c440800000000000000
+      internalID: 4954276398444342243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 2211
+        y: 215
+        width: 166
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c0646a9c5f99cfb0800000000000000
+      internalID: -4626991922070396734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 3187
+        y: 211
+        width: 138
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a912c04e29323d50800000000000000
+      internalID: 6715492865180572071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 3727
+        y: 215
+        width: 150
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd0cf7128583e4c30800000000000000
+      internalID: 4345472641629405403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 4235
+        y: 219
+        width: 218
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a845a2527b597e20800000000000000
+      internalID: 3348808344497637543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 211
+        width: 114
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e367dff5bfe73dc0800000000000000
+      internalID: -3659192607254813725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 207
+        width: 126
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1988abbe7ed2e4aa0800000000000000
+      internalID: -6174947564962805615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 2443
+        y: 203
+        width: 122
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eea4e409412228650800000000000000
+      internalID: 6233582305949928174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 2907
+        y: 207
+        width: 146
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e45aaab33c349da0800000000000000
+      internalID: -5939055815722117912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 3435
+        y: 195
+        width: 198
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 802647b66e4500720800000000000000
+      internalID: 2810339516101190152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_34
+      rect:
+        serializedVersion: 2
+        x: 3747
+        y: 203
+        width: 122
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6dbb289a775c9be0800000000000000
+      internalID: -1469203194378994321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_35
+      rect:
+        serializedVersion: 2
+        x: 3879
+        y: 207
+        width: 114
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd0d0d7ebbdb32480800000000000000
+      internalID: -8925081421772435235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_36
+      rect:
+        serializedVersion: 2
+        x: 1351
+        y: 199
+        width: 194
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6eeebd23fb378ef20800000000000000
+      internalID: 3452136379408707302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_37
+      rect:
+        serializedVersion: 2
+        x: 2631
+        y: 175
+        width: 254
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff0ed5e11bc7fb7e0800000000000000
+      internalID: -1747541030235938561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_38
+      rect:
+        serializedVersion: 2
+        x: 2779
+        y: 195
+        width: 154
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a3d308b4cfd35d00800000000000000
+      internalID: 960357181553890211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_39
+      rect:
+        serializedVersion: 2
+        x: 3227
+        y: 191
+        width: 198
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf18a265dbc401180800000000000000
+      internalID: -9146726467111321092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_40
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 183
+        width: 178
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bdd461e7fadbe1260800000000000000
+      internalID: 7070297026450574811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_41
+      rect:
+        serializedVersion: 2
+        x: 975
+        y: 179
+        width: 166
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5a3ac1afc7c3d3b0800000000000000
+      internalID: -5488823826247959969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_42
+      rect:
+        serializedVersion: 2
+        x: 1451
+        y: 179
+        width: 102
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06000d7a508286210800000000000000
+      internalID: 1326354095015985248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_43
+      rect:
+        serializedVersion: 2
+        x: 1835
+        y: 183
+        width: 138
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fbd0fd5401eb14da0800000000000000
+      internalID: -5962275454560825921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_44
+      rect:
+        serializedVersion: 2
+        x: 3755
+        y: 175
+        width: 214
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e3ac7816fcf97eb0800000000000000
+      internalID: -4721464600418278428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_45
+      rect:
+        serializedVersion: 2
+        x: 4383
+        y: 179
+        width: 158
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0bb07f5da73582350800000000000000
+      internalID: 5992131091257297840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_46
+      rect:
+        serializedVersion: 2
+        x: 4695
+        y: 187
+        width: 214
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e6f50aaec8d5d1d30800000000000000
+      internalID: 4403778870451396462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_47
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 155
+        width: 242
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 01c7edab4db504fc0800000000000000
+      internalID: -3512706740122649584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_48
+      rect:
+        serializedVersion: 2
+        x: 1263
+        y: 151
+        width: 186
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 722392923770975d0800000000000000
+      internalID: -3064409880255712729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_49
+      rect:
+        serializedVersion: 2
+        x: 1511
+        y: 159
+        width: 170
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e602e4841013ab7f0800000000000000
+      internalID: -596110119095361426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_50
+      rect:
+        serializedVersion: 2
+        x: 1755
+        y: 159
+        width: 110
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31fa465ca9f113530800000000000000
+      internalID: 3832879507466137363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_51
+      rect:
+        serializedVersion: 2
+        x: 1867
+        y: 155
+        width: 314
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 630265bb2dc334d00800000000000000
+      internalID: 955674421716459574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_52
+      rect:
+        serializedVersion: 2
+        x: 2115
+        y: 167
+        width: 166
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0c3877267e641210800000000000000
+      internalID: 1302787645964303375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_53
+      rect:
+        serializedVersion: 2
+        x: 2891
+        y: 151
+        width: 314
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a928d82398737ef10800000000000000
+      internalID: 2298867197194109594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_54
+      rect:
+        serializedVersion: 2
+        x: 4459
+        y: 167
+        width: 318
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3ad82d092cfdd610800000000000000
+      internalID: 1647750291932109372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_55
+      rect:
+        serializedVersion: 2
+        x: 663
+        y: 151
+        width: 218
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31b59f08ee7451cd0800000000000000
+      internalID: -2588083321162867949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_56
+      rect:
+        serializedVersion: 2
+        x: 1003
+        y: 155
+        width: 162
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 625d54389930304a0800000000000000
+      internalID: -6628450268691966682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_57
+      rect:
+        serializedVersion: 2
+        x: 4843
+        y: 151
+        width: 182
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f55520588d8332990800000000000000
+      internalID: -7412018059126090401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_58
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 135
+        width: 289
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 535a1d7b2af7e92c0800000000000000
+      internalID: -4422957447185849035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_59
+      rect:
+        serializedVersion: 2
+        x: 619
+        y: 139
+        width: 226
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fc7f3f6c55f65240800000000000000
+      internalID: 4780277831852588277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_60
+      rect:
+        serializedVersion: 2
+        x: 1663
+        y: 143
+        width: 174
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a01e9a3de87595ee0800000000000000
+      internalID: -1271889148807356150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_61
+      rect:
+        serializedVersion: 2
+        x: 2175
+        y: 135
+        width: 94
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1d5e8b07cb025050800000000000000
+      internalID: 5787701420644785437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_62
+      rect:
+        serializedVersion: 2
+        x: 2923
+        y: 135
+        width: 190
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b34c412c6201fdd70800000000000000
+      internalID: 9069985933198410811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_63
+      rect:
+        serializedVersion: 2
+        x: 3687
+        y: 131
+        width: 282
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7787343af60d83e0800000000000000
+      internalID: -2049974583696062595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_64
+      rect:
+        serializedVersion: 2
+        x: 4155
+        y: 139
+        width: 182
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6c9c1e1840d41b30800000000000000
+      internalID: 4257256555933375596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_65
+      rect:
+        serializedVersion: 2
+        x: 4567
+        y: 139
+        width: 154
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5970a39191ff6bbe0800000000000000
+      internalID: -1461700545772648555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_66
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 119
+        width: 218
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6bd35b818b0806840800000000000000
+      internalID: 5215309896671903158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_67
+      rect:
+        serializedVersion: 2
+        x: 1907
+        y: 119
+        width: 218
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 234e7807017ba6ea0800000000000000
+      internalID: -5878685082343447502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_68
+      rect:
+        serializedVersion: 2
+        x: 2163
+        y: 115
+        width: 262
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed9879714d11dc010800000000000000
+      internalID: 1210643477459077598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_69
+      rect:
+        serializedVersion: 2
+        x: 4059
+        y: 119
+        width: 206
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bcfe75f8a46d5810800000000000000
+      internalID: 1755670106580384948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_70
+      rect:
+        serializedVersion: 2
+        x: 4315
+        y: 115
+        width: 234
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88b10ba42772435f0800000000000000
+      internalID: -777953463795442808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_71
+      rect:
+        serializedVersion: 2
+        x: 4727
+        y: 119
+        width: 318
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 684510dbd9fd58190800000000000000
+      internalID: -7960710897733643130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_72
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 103
+        width: 194
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da1f4daf7304a51a0800000000000000
+      internalID: -6820068076523556435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_73
+      rect:
+        serializedVersion: 2
+        x: 1199
+        y: 91
+        width: 354
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b17a39f044bb5d950800000000000000
+      internalID: 6473285940408461083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_74
+      rect:
+        serializedVersion: 2
+        x: 1699
+        y: 95
+        width: 226
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 680ec2c28c04124f0800000000000000
+      internalID: -855331225744908154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_75
+      rect:
+        serializedVersion: 2
+        x: 3159
+        y: 99
+        width: 106
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5e892b04a884abb0800000000000000
+      internalID: -4925661854293193121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_76
+      rect:
+        serializedVersion: 2
+        x: 4503
+        y: 103
+        width: 110
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf1da8cd85f26ac10800000000000000
+      internalID: 2064389537899663868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_77
+      rect:
+        serializedVersion: 2
+        x: 5063
+        y: 99
+        width: 57
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ebd4868cf55207df0800000000000000
+      internalID: -184606491407790658
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_78
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 87
+        width: 198
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd3f226e9c7db7250800000000000000
+      internalID: 5943581395394950109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_79
+      rect:
+        serializedVersion: 2
+        x: 647
+        y: 87
+        width: 178
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96c31c8009fb18850800000000000000
+      internalID: 6377589172676410473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_80
+      rect:
+        serializedVersion: 2
+        x: 1587
+        y: 83
+        width: 118
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23cd1156b98363e60800000000000000
+      internalID: 7941597232981204018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_81
+      rect:
+        serializedVersion: 2
+        x: 2259
+        y: 91
+        width: 226
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f7ed00979de663c0800000000000000
+      internalID: -4366541553476442120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_82
+      rect:
+        serializedVersion: 2
+        x: 2575
+        y: 83
+        width: 78
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbaba06af5b6c9b80800000000000000
+      internalID: -8386710347518920003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_83
+      rect:
+        serializedVersion: 2
+        x: 3679
+        y: 87
+        width: 114
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffeb7dd6bc8df9af0800000000000000
+      internalID: -387352674697756929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_84
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 79
+        width: 190
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2bac99a2334809c00800000000000000
+      internalID: 905368880394390194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_85
+      rect:
+        serializedVersion: 2
+        x: 1831
+        y: 79
+        width: 206
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5c86121f70507910800000000000000
+      internalID: 1833053555034328159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_86
+      rect:
+        serializedVersion: 2
+        x: 2287
+        y: 75
+        width: 78
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4ac6d8c1c0b648e50800000000000000
+      internalID: 6810686236253842596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_87
+      rect:
+        serializedVersion: 2
+        x: 2727
+        y: 79
+        width: 278
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3cf634caf7656b40800000000000000
+      internalID: 5432862852223794234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_88
+      rect:
+        serializedVersion: 2
+        x: 3083
+        y: 71
+        width: 142
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e6387a06f948b830800000000000000
+      internalID: 4087097982925158112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_89
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 63
+        width: 314
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66a3d1f5bbbecadb0800000000000000
+      internalID: -4779185914559776154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_90
+      rect:
+        serializedVersion: 2
+        x: 863
+        y: 59
+        width: 210
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce0c13e9b7d4ab090800000000000000
+      internalID: -8018010993249369876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_91
+      rect:
+        serializedVersion: 2
+        x: 1455
+        y: 67
+        width: 190
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9213b6e54f69b560800000000000000
+      internalID: 7330012214536114847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_92
+      rect:
+        serializedVersion: 2
+        x: 2503
+        y: 63
+        width: 314
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4c2cc00d0e7e3b10800000000000000
+      internalID: 1963145081893170250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_93
+      rect:
+        serializedVersion: 2
+        x: 3271
+        y: 51
+        width: 350
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89245334001eb0f60800000000000000
+      internalID: 8001736554197631640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_94
+      rect:
+        serializedVersion: 2
+        x: 3675
+        y: 51
+        width: 342
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b6316e9ab6cd0dc0800000000000000
+      internalID: -3671059616413698381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_95
+      rect:
+        serializedVersion: 2
+        x: 4051
+        y: 59
+        width: 122
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1da86bea9cdc17b00800000000000000
+      internalID: 824666472888830673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_96
+      rect:
+        serializedVersion: 2
+        x: 4655
+        y: 67
+        width: 134
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f3f677ec6d4e7470800000000000000
+      internalID: 8394231885600322548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_97
+      rect:
+        serializedVersion: 2
+        x: 587
+        y: 55
+        width: 194
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 984eefc089fac6f00800000000000000
+      internalID: 1111456275641590921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_98
+      rect:
+        serializedVersion: 2
+        x: 1699
+        y: 55
+        width: 186
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6728e545d31fa9760800000000000000
+      internalID: 7465544578030797430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_99
+      rect:
+        serializedVersion: 2
+        x: 4383
+        y: 55
+        width: 126
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc3f4884334f7a800800000000000000
+      internalID: 623735574511285199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zone2_FogOverlay_City_Sheet_100
+      rect:
+        serializedVersion: 2
+        x: 4839
+        y: 51
+        width: 154
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 412a395dae9360a50800000000000000
+      internalID: 6486935994042130964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

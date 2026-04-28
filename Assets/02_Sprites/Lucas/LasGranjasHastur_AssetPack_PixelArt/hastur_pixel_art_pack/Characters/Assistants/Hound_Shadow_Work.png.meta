@@ -1,0 +1,542 @@
+fileFormatVersion: 2
+guid: 89f629f71f19ed348987d449e7a94256
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7065678216990491748
+    second: Hound_Shadow_Work_0
+  - first:
+      213: 6060934994478683518
+    second: Hound_Shadow_Work_1
+  - first:
+      213: 3326885102582451423
+    second: Hound_Shadow_Work_2
+  - first:
+      213: -2026261873902778200
+    second: Hound_Shadow_Work_3
+  - first:
+      213: -4569367785187153936
+    second: Hound_Shadow_Work_4
+  - first:
+      213: -1765459000749178612
+    second: Hound_Shadow_Work_5
+  - first:
+      213: 222000995415024498
+    second: Hound_Shadow_Work_6
+  - first:
+      213: 2228872038714085666
+    second: Hound_Shadow_Work_7
+  - first:
+      213: 5431886230394897818
+    second: Hound_Shadow_Work_8
+  - first:
+      213: 7003466286503376959
+    second: Hound_Shadow_Work_9
+  - first:
+      213: 2942410199125846363
+    second: Hound_Shadow_Work_10
+  - first:
+      213: 4431376812443797595
+    second: Hound_Shadow_Work_11
+  - first:
+      213: -758461520623257099
+    second: Hound_Shadow_Work_12
+  - first:
+      213: -3917702051741152094
+    second: Hound_Shadow_Work_13
+  - first:
+      213: -609021200739714938
+    second: Hound_Shadow_Work_14
+  - first:
+      213: 5567709291765937967
+    second: Hound_Shadow_Work_15
+  - first:
+      213: 950871473276751650
+    second: Hound_Shadow_Work_16
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Hound_Shadow_Work_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 23
+        width: 2048
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4640fec17e45e0260800000000000000
+      internalID: 7065678216990491748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hound_Shadow_Work_1
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 159
+        width: 26
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e75d2a8e344cc1450800000000000000
+      internalID: 6060934994478683518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hound_Shadow_Work_2
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 159
+        width: 26
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fdc47fbcf587b2e20800000000000000
+      internalID: 3326885102582451423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hound_Shadow_Work_3
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 159
+        width: 26
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a88b10bf8541e3e0800000000000000
+      internalID: -2026261873902778200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hound_Shadow_Work_4
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 159
+        width: 26
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f76ecb75385690c0800000000000000
+      internalID: -4569367785187153936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hound_Shadow_Work_5
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 159
+        width: 26
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0144d28464df77e0800000000000000
+      internalID: -1765459000749178612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hound_Shadow_Work_6
+      rect:
+        serializedVersion: 2
+        x: 715
+        y: 159
+        width: 26
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 273ee77aab4b41300800000000000000
+      internalID: 222000995415024498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hound_Shadow_Work_7
+      rect:
+        serializedVersion: 2
+        x: 823
+        y: 159
+        width: 26
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2219a556f4b8eee10800000000000000
+      internalID: 2228872038714085666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hound_Shadow_Work_8
+      rect:
+        serializedVersion: 2
+        x: 975
+        y: 159
+        width: 26
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9506074fbfe16b40800000000000000
+      internalID: 5431886230394897818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hound_Shadow_Work_9
+      rect:
+        serializedVersion: 2
+        x: 1083
+        y: 159
+        width: 26
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f38357b4b7f413160800000000000000
+      internalID: 7003466286503376959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hound_Shadow_Work_10
+      rect:
+        serializedVersion: 2
+        x: 1223
+        y: 159
+        width: 26
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b59e16e8c7a85d820800000000000000
+      internalID: 2942410199125846363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hound_Shadow_Work_11
+      rect:
+        serializedVersion: 2
+        x: 1343
+        y: 159
+        width: 26
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b588d938bb96f7d30800000000000000
+      internalID: 4431376812443797595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hound_Shadow_Work_12
+      rect:
+        serializedVersion: 2
+        x: 1483
+        y: 159
+        width: 26
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5f9b277f3476975f0800000000000000
+      internalID: -758461520623257099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hound_Shadow_Work_13
+      rect:
+        serializedVersion: 2
+        x: 1591
+        y: 159
+        width: 26
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ac4626adb681a9c0800000000000000
+      internalID: -3917702051741152094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hound_Shadow_Work_14
+      rect:
+        serializedVersion: 2
+        x: 1743
+        y: 159
+        width: 26
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6883a35d1725c87f0800000000000000
+      internalID: -609021200739714938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hound_Shadow_Work_15
+      rect:
+        serializedVersion: 2
+        x: 1851
+        y: 159
+        width: 26
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f27b9541a1a744d40800000000000000
+      internalID: 5567709291765937967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hound_Shadow_Work_16
+      rect:
+        serializedVersion: 2
+        x: 1991
+        y: 159
+        width: 26
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22f86b7219c223d00800000000000000
+      internalID: 950871473276751650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
