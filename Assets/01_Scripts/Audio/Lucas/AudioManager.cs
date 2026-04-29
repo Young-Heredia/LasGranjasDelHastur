@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Networking;
+using System.Collections;
 
 /// <summary>
 /// Asigna música y SFX en el Inspector. La música de escena se elige por nombre.
@@ -32,6 +34,11 @@ public class AudioManager : MonoBehaviour
     public AudioClip zone1Music;
     public AudioClip zone2Music;
     public AudioClip zone3Music;
+
+    [Header("Zone1 Easter Egg (ruta a mp3 dentro de Assets)")]
+    [Tooltip("Ruta tipo Assets/... para cargar el mp3 en runtime sin referencia directa.")]
+    [SerializeField] private string zone1EasterEggMusicPath =
+        "Assets/03_Audio/Music/Lucas/Zone1/zone1_easter_carolina.mp3";
 
     [Header("Intro — hastur_sfx_pack")]
     public AudioClip introOpen;
@@ -138,6 +145,20 @@ public class AudioManager : MonoBehaviour
     [Tooltip("Reproduce introMusic en IntroComic y mainMenuMusic al cargar MainMenu (recomendado).")]
     [SerializeField] private bool autoPlayMusicByScene = true;
 
+    // --- Music persistence per scene ---
+    float _tIntro;
+    float _tMenu;
+    float _tZone1;
+    float _tZone2;
+    float _tZone3;
+
+    // --- Zone1 easter egg state ---
+    bool _zone1EasterActive;
+    float _tZone1Easter;
+    bool _easterWasPlaying;
+    AudioClip _zone1EasterClip;
+    Coroutine _loadEasterCoroutine;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -154,60 +175,71 @@ public class AudioManager : MonoBehaviour
         ApplyVolumeSettings();
 
         if (autoPlayMusicByScene)
-            PlayMusicForSceneName(SceneManager.GetActiveScene().name);
+            PlayMusicForSceneName(SceneManager.GetActiveScene().name, resumeIfPossible: true);
     }
 
     private void OnEnable()
     {
-        SceneManager.sceneLoaded += OnSceneLoaded;
+        SceneManager.activeSceneChanged += OnActiveSceneChanged;
     }
 
     private void OnDisable()
     {
-        SceneManager.sceneLoaded -= OnSceneLoaded;
+        SceneManager.activeSceneChanged -= OnActiveSceneChanged;
     }
 
-    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    private void OnActiveSceneChanged(Scene oldScene, Scene newScene)
     {
         if (!autoPlayMusicByScene)
             return;
-        PlayMusicForSceneName(scene.name);
+
+        // Save current time for the scene we are leaving (pause, don't reset).
+        SaveCurrentMusicTime(oldScene.name);
+
+        // Resume the next scene music from where it was.
+        PlayMusicForSceneName(newScene.name, resumeIfPossible: true);
     }
 
-    private void PlayMusicForSceneName(string sceneName)
+    private void PlayMusicForSceneName(string sceneName, bool resumeIfPossible)
     {
         if (sceneName == "IntroComic")
         {
             if (introMusic != null)
-                PlayMusic(introMusic, loop: true);
+                PlayMusicWithResume(introMusic, loop: true, ref _tIntro, resumeIfPossible);
             return;
         }
 
         if (sceneName == "MainMenu" || sceneName == "ZoneSelection")
         {
             if (mainMenuMusic != null)
-                PlayMainMenuMusicContinueIfSame();
+                PlayMusicWithResume(mainMenuMusic, loop: true, ref _tMenu, resumeIfPossible, continueIfSame: true);
             return;
         }
 
         if (sceneName == "Zone1_Dungeons")
         {
+            if (_zone1EasterActive)
+            {
+                PlayZone1EasterMusic(resumeIfPossible);
+                return;
+            }
+
             if (zone1Music != null)
-                PlayMusic(zone1Music, loop: true);
+                PlayMusicWithResume(zone1Music, loop: true, ref _tZone1, resumeIfPossible);
             return;
         }
 
         if (sceneName == "Zone2_Cities")
         {
             if (zone2Music != null)
-                PlayMusic(zone2Music, loop: true);
+                PlayMusicWithResume(zone2Music, loop: true, ref _tZone2, resumeIfPossible);
             return;
         }
 
         if (sceneName == "Zone3_Celestial")
         {
             if (zone3Music != null)
-                PlayMusic(zone3Music, loop: true);
+                PlayMusicWithResume(zone3Music, loop: true, ref _tZone3, resumeIfPossible);
         }
     }
 
@@ -228,6 +260,169 @@ public class AudioManager : MonoBehaviour
         }
 
         PlayMusic(mainMenuMusic, loop: true);
+    }
+
+    void PlayMusicWithResume(AudioClip clip, bool loop, ref float rememberedTime, bool resumeIfPossible, bool continueIfSame = false)
+    {
+        if (clip == null || musicSource == null)
+            return;
+
+        if (continueIfSame && musicSource.clip == clip)
+        {
+            musicSource.loop = loop;
+            if (!musicSource.isPlaying)
+                musicSource.UnPause();
+            return;
+        }
+
+        if (musicSource.clip == clip)
+        {
+            musicSource.loop = loop;
+            if (!musicSource.isPlaying)
+                musicSource.UnPause();
+            return;
+        }
+
+        musicSource.clip = clip;
+        musicSource.loop = loop;
+        if (resumeIfPossible)
+            musicSource.time = Mathf.Clamp(rememberedTime, 0f, Mathf.Max(0f, clip.length - 0.05f));
+        musicSource.Play();
+    }
+
+    void SaveCurrentMusicTime(string oldSceneName)
+    {
+        if (musicSource == null || musicSource.clip == null)
+            return;
+
+        var t = musicSource.time;
+
+        // If we leave Zone1 while easter egg is active and playing, remember its time.
+        if (_zone1EasterActive && _zone1EasterClip != null && musicSource.clip == _zone1EasterClip)
+        {
+            _tZone1Easter = t;
+            musicSource.Pause();
+            return;
+        }
+
+        switch (oldSceneName)
+        {
+            case "IntroComic":
+                if (musicSource.clip == introMusic) _tIntro = t;
+                break;
+            case "MainMenu":
+            case "ZoneSelection":
+                if (musicSource.clip == mainMenuMusic) _tMenu = t;
+                break;
+            case "Zone1_Dungeons":
+                if (musicSource.clip == zone1Music) _tZone1 = t;
+                break;
+            case "Zone2_Cities":
+                if (musicSource.clip == zone2Music) _tZone2 = t;
+                break;
+            case "Zone3_Celestial":
+                if (musicSource.clip == zone3Music) _tZone3 = t;
+                break;
+        }
+
+        // Pause when leaving a zone so it resumes later.
+        if (oldSceneName == "Zone1_Dungeons" || oldSceneName == "Zone2_Cities" || oldSceneName == "Zone3_Celestial")
+            musicSource.Pause();
+    }
+
+    void Update()
+    {
+        // Easter egg: when the mp3 finishes, return to normal Zone1 music.
+        if (!_zone1EasterActive || musicSource == null)
+            return;
+        if (_zone1EasterClip == null || musicSource.clip != _zone1EasterClip)
+            return;
+
+        if (musicSource.isPlaying)
+        {
+            _easterWasPlaying = true;
+            return;
+        }
+
+        // If it's paused (e.g. left Zone1), keep state.
+        if (SceneManager.GetActiveScene().name != "Zone1_Dungeons")
+            return;
+
+        // Finished typically resets time to 0; only end after we had started.
+        if (_easterWasPlaying && musicSource.time <= 0.02f)
+            EndZone1EasterEgg();
+    }
+
+    public bool IsZone1EasterEggActive => _zone1EasterActive;
+
+    public void TriggerZone1EasterEgg()
+    {
+        if (_zone1EasterActive)
+            return;
+        _zone1EasterActive = true;
+        _easterWasPlaying = false;
+        _tZone1Easter = 0f;
+        if (SceneManager.GetActiveScene().name == "Zone1_Dungeons")
+            PlayZone1EasterMusic(resumeIfPossible: true);
+    }
+
+    void EndZone1EasterEgg()
+    {
+        _zone1EasterActive = false;
+        _easterWasPlaying = false;
+        _tZone1Easter = 0f;
+
+        // Restore Zone1 base track if we're in Zone1, otherwise keep paused state.
+        if (SceneManager.GetActiveScene().name == "Zone1_Dungeons" && zone1Music != null)
+            PlayMusicWithResume(zone1Music, loop: true, ref _tZone1, resumeIfPossible: true);
+    }
+
+    void PlayZone1EasterMusic(bool resumeIfPossible)
+    {
+        if (musicSource == null)
+            return;
+
+        if (_zone1EasterClip != null)
+        {
+            musicSource.clip = _zone1EasterClip;
+            musicSource.loop = false;
+            if (resumeIfPossible)
+                musicSource.time = Mathf.Clamp(_tZone1Easter, 0f, Mathf.Max(0f, _zone1EasterClip.length - 0.05f));
+            musicSource.Play();
+            return;
+        }
+
+        if (_loadEasterCoroutine != null)
+            return;
+        _loadEasterCoroutine = StartCoroutine(LoadEasterClipThenPlay(resumeIfPossible));
+    }
+
+    IEnumerator LoadEasterClipThenPlay(bool resumeIfPossible)
+    {
+        _loadEasterCoroutine = null;
+        var path = zone1EasterEggMusicPath;
+        if (string.IsNullOrWhiteSpace(path))
+            yield break;
+
+        var full = System.IO.Path.Combine(Application.dataPath, path.Replace("Assets/", ""));
+        var url = "file://" + full.Replace("\\", "/");
+        using var req = UnityWebRequestMultimedia.GetAudioClip(url, AudioType.MPEG);
+        yield return req.SendWebRequest();
+        if (req.result != UnityWebRequest.Result.Success)
+            yield break;
+
+        _zone1EasterClip = DownloadHandlerAudioClip.GetContent(req);
+        if (_zone1EasterClip == null)
+            yield break;
+
+        if (_zone1EasterActive && SceneManager.GetActiveScene().name == "Zone1_Dungeons")
+        {
+            musicSource.clip = _zone1EasterClip;
+            musicSource.loop = false;
+            if (resumeIfPossible)
+                musicSource.time = Mathf.Clamp(_tZone1Easter, 0f, Mathf.Max(0f, _zone1EasterClip.length - 0.05f));
+            musicSource.Play();
+        }
     }
 
     private void EnsureSources()
@@ -395,6 +590,8 @@ public class AudioManager : MonoBehaviour
     public void PlayZone1AssistantAssign() => PlaySFX(zone1AssistantAssign);
     public void PlayZone1AssistantUnassign() => PlaySFX(zone1AssistantUnassign);
     public void PlayZone1BackToZones() => PlayUI(zone1BackToZones != null ? zone1BackToZones : uiBack);
+    public void PlayZone1TaxAlert() => PlaySFX(zone1TaxAlert);
+    public void PlayZone1TaxPay() => PlaySFX(zone1TaxPay);
 
     public void PlayZone2Action() => PlaySFX(zone2Action);
     public void PlayZone2ProduceSupplies() => PlaySFX(zone2ProduceSupplies != null ? zone2ProduceSupplies : zone2Action);

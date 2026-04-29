@@ -34,6 +34,36 @@ namespace LasGranjasDelHastur
 #endif
         }
 
+        /// <summary>Clic izquierdo o primer toque nuevo este frame. Obligatorio si Active Input Handling usa solo Input System.</summary>
+        public static bool PrimaryPointerDownThisFrame(out Vector2 screenPos, out int pointerId)
+        {
+            screenPos = default;
+            pointerId = -1;
+
+#if ENABLE_INPUT_SYSTEM
+            var ts = Touchscreen.current;
+            if (ts != null && ts.primaryTouch.press.wasPressedThisFrame)
+            {
+                screenPos = ts.primaryTouch.position.ReadValue();
+                pointerId = ts.primaryTouch.touchId.ReadValue();
+                return true;
+            }
+
+            if (Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame)
+            {
+                screenPos = Mouse.current.position.ReadValue();
+                pointerId = -1;
+                return true;
+            }
+
+            return false;
+#else
+            screenPos = Input.mousePosition;
+            pointerId = -1;
+            return Input.GetMouseButtonDown(0);
+#endif
+        }
+
         public static bool LeftMouseUpThisFrame()
         {
 #if ENABLE_INPUT_SYSTEM

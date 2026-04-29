@@ -34,6 +34,8 @@ namespace LasGranjasDelHastur.Zone1
         [Range(0f, 1f)] public float moneyLossOnFail = 0.75f;
         [Min(1)] public int finePerStrikeStep = 25;
         [Min(1)] public int maxStrikesBeforeGameOver = 3;
+        [Tooltip("Extra por multa global acumulada (pensión por pago tardío), sumado al impuesto.")]
+        [Min(0)] public int latePaymentPensionPerStrike = 15;
 
         [Header("Buyer Dynamic Prices")]
         [Range(0.5f, 1f)] public float buyerPriceMinMultiplier = 0.75f;

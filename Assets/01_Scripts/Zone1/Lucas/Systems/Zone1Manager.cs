@@ -142,6 +142,9 @@ namespace LasGranjasDelHastur.Zone1
             cellManager.RefreshAssistantVisuals(assistantManager);
             artTuner?.Apply();
 
+            // Tras recargar la escena, el bootstrap puede haber corrido antes de que el mundo estuviera listo; repetimos decor/cultistas en la escena activa.
+            Zone1Bootstrap.EnsureZone1RuntimeDecor();
+
             _initialized = true;
         }
 
@@ -214,7 +217,8 @@ namespace LasGranjasDelHastur.Zone1
                 zone1Config.payWindowSeconds,
                 zone1Config.moneyLossOnFail,
                 zone1Config.finePerStrikeStep,
-                zone1Config.maxStrikesBeforeGameOver);
+                zone1Config.maxStrikesBeforeGameOver,
+                zone1Config.latePaymentPensionPerStrike);
         }
 
         void TryRestoreFromSaveIfRequested()

@@ -183,8 +183,10 @@ namespace LasGranjasDelHastur.Zone3
 
         void ResolveTaxCycle()
         {
+            var purchasedCells = CountPurchasedCellsForTax();
             var rate = 0.20f + _difficultyTier * 0.03f;
-            var taxAmount = Mathf.CeilToInt(_darkCoins * rate + _recentProductionForTax * 0.18f);
+            var activity = Mathf.Clamp(0.25f + purchasedCells * 0.12f, 0.25f, 2.0f);
+            var taxAmount = Mathf.CeilToInt((_darkCoins * rate + _recentProductionForTax * 0.18f) * activity);
             _recentProductionForTax = 0;
 
             if (_darkCoins >= taxAmount)
@@ -203,6 +205,18 @@ namespace LasGranjasDelHastur.Zone3
             _txtHint.text = $"No alcanzó para pagar. Multa {strikeCount}/3 y corrupción aplicada.";
             AudioManager.Instance?.PlayZone3TaxAlert();
             PushSharedProgressToZone1Save();
+        }
+
+        int CountPurchasedCellsForTax()
+        {
+            var n = 0;
+            for (var i = 0; i < _cells.Count; i++)
+            {
+                var c = _cells[i];
+                if (c != null && c.unlocked)
+                    n++;
+            }
+            return n;
         }
 
         void ShowEndNarrative()

@@ -1,3 +1,4 @@
+using System.Collections;
 using System.IO;
 using LasGranjasDelHastur;
 using LasGranjasDelHastur.Camera;
@@ -11,6 +12,58 @@ namespace LasGranjasDelHastur.Zone1
     {
         public const string SceneName = "Zone1_Dungeons";
 
+        /// <summary>
+        /// Fuentes + cultistas (idempotente). Llamar tras cargar Zone1: <see cref="GameObject.Find"/> puede apuntar a raíces de otra escena o DDOL.
+        /// </summary>
+        public static void EnsureZone1RuntimeDecor() => EnsureDecorExtrasExist();
+
+        static GameObject FindRootInActiveScene(string objectName)
+        {
+            var scene = SceneManager.GetActiveScene();
+            if (!scene.IsValid() || !scene.isLoaded)
+                return null;
+            foreach (var go in scene.GetRootGameObjects())
+            {
+                if (go != null && go.name == objectName)
+                    return go;
+            }
+
+            return null;
+        }
+
+        /// <summary>
+        /// <see cref="Transform.Find"/> no incluye hijos inactivos; al recargar Zone1 a veces quedan capas desactivadas y el decor parece "vacío".
+        /// </summary>
+        static Transform FindChildByNameIncludingInactive(Transform parent, string childName)
+        {
+            if (parent == null || string.IsNullOrEmpty(childName))
+                return null;
+            for (var i = 0; i < parent.childCount; i++)
+            {
+                var ch = parent.GetChild(i);
+                if (ch != null && ch.name == childName)
+                    return ch;
+            }
+
+            return null;
+        }
+
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+        static void InstallZone1DecorSceneHook()
+        {
+            SceneManager.sceneLoaded -= OnZone1SceneLoadedDeferredDecor;
+            SceneManager.sceneLoaded += OnZone1SceneLoadedDeferredDecor;
+        }
+
+        static void OnZone1SceneLoadedDeferredDecor(Scene scene, LoadSceneMode mode)
+        {
+            if (scene.name != SceneName)
+                return;
+            var host = new GameObject("__Zone1DecorDeferredEnsure");
+            SceneManager.MoveGameObjectToScene(host, scene);
+            host.AddComponent<Zone1DecorDeferredEnsureHost>();
+        }
+
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
         static void AfterSceneLoad()
         {
@@ -23,9 +76,10 @@ namespace LasGranjasDelHastur.Zone1
             EnsureCameraSetup();
             EnsureArtTunerExists();
             EnsureEditorPlaceholderPanelsAreClosed();
+            EnsureDecorExtrasExist();
 
             // Build missing structure only when absent.
-            if (Object.FindFirstObjectByType<Zone1Manager>() == null || GameObject.Find("WorldRoot") == null || GameObject.Find("Systems") == null)
+            if (Object.FindFirstObjectByType<Zone1Manager>() == null || FindRootInActiveScene("WorldRoot") == null || FindRootInActiveScene("Systems") == null)
                 EnsureSceneScaffold(includeAudioManager: false);
         }
 
@@ -60,10 +114,10 @@ namespace LasGranjasDelHastur.Zone1
             if (Object.FindFirstObjectByType<Zone1ArtTuner>() != null)
                 return;
 
-            var systems = GameObject.Find("Systems");
+            var systemsGo = FindRootInActiveScene("Systems");
             var go = new GameObject("Zone1ArtTuner");
-            if (systems != null)
-                go.transform.SetParent(systems.transform, false);
+            if (systemsGo != null)
+                go.transform.SetParent(systemsGo.transform, false);
             go.AddComponent<Zone1ArtTuner>();
         }
 
@@ -83,7 +137,7 @@ namespace LasGranjasDelHastur.Zone1
 
         static void EnsureWorldPlaceholder()
         {
-            var worldRoot = GameObject.Find("WorldRoot");
+            var worldRoot = FindRootInActiveScene("WorldRoot");
             if (worldRoot == null)
                 worldRoot = new GameObject("WorldRoot");
 
@@ -107,6 +161,120 @@ namespace LasGranjasDelHastur.Zone1
             CreateAmbientOverlays(atmosphereRoot.transform);
         }
 
+        static void EnsureDecorExtrasExist()
+        {
+            var worldRoot = FindRootInActiveScene("WorldRoot");
+            if (worldRoot == null)
+                return;
+
+            var decor = FindChildByNameIncludingInactive(worldRoot.transform, "Layer_Decor");
+            if (decor == null)
+                return;
+
+            if (!decor.gameObject.activeSelf)
+                decor.gameObject.SetActive(true);
+
+            var dungeonDecor = FindChildByNameIncludingInactive(decor, "DungeonDecor");
+            if (dungeonDecor == null)
+                CreateDungeonDecor(decor);
+
+            dungeonDecor = FindChildByNameIncludingInactive(decor, "DungeonDecor");
+            if (dungeonDecor == null)
+                return;
+
+            if (!dungeonDecor.gameObject.activeSelf)
+                dungeonDecor.gameObject.SetActive(true);
+
+            EnsureFountains(dungeonDecor);
+            EnsureCultists(dungeonDecor);
+        }
+
+        static void EnsureCultists(Transform dungeonDecor)
+        {
+            if (dungeonDecor == null)
+                return;
+
+            // Controller singleton under DungeonDecor.
+            var ctrlTf = FindChildByNameIncludingInactive(dungeonDecor, "CultistEasterEggController");
+            Zone1CultistEasterEggController ctrl = null;
+            if (ctrlTf != null)
+                ctrl = ctrlTf.GetComponent<Zone1CultistEasterEggController>();
+            if (ctrl == null)
+            {
+                var goCtrl = ctrlTf != null ? ctrlTf.gameObject : new GameObject("CultistEasterEggController");
+                goCtrl.transform.SetParent(dungeonDecor, false);
+                ctrl = goCtrl.GetComponent<Zone1CultistEasterEggController>();
+                if (ctrl == null)
+                    ctrl = goCtrl.AddComponent<Zone1CultistEasterEggController>();
+            }
+
+            ctrl.PruneDestroyedCultists();
+
+            // 8 cultists placed around the map (avoid covering the grid center).
+            var placements = new (string name, Vector3 pos, Vector3 scale, int sorting, bool isBook)[]
+            {
+                ("Cultist_1", new Vector3(-11.2f, 3.9f, 0f), new Vector3(0.95f, 0.95f, 1f), 20, false),
+                ("Cultist_2", new Vector3(11.1f, 3.7f, 0f), new Vector3(-0.95f, 0.95f, 1f), 20, true),
+                ("Cultist_3", new Vector3(-11.6f, -3.8f, 0f), new Vector3(0.9f, 0.9f, 1f), 75, true),
+                ("Cultist_4", new Vector3(11.6f, -3.6f, 0f), new Vector3(-0.9f, 0.9f, 1f), 75, false),
+                ("Cultist_5", new Vector3(-6.9f, 5.15f, 0f), new Vector3(0.85f, 0.85f, 1f), 16, false),
+                ("Cultist_6", new Vector3(6.9f, 5.15f, 0f), new Vector3(-0.85f, 0.85f, 1f), 16, true),
+                ("Cultist_7", new Vector3(-6.7f, -6.1f, 0f), new Vector3(0.82f, 0.82f, 1f), 82, true),
+                ("Cultist_8", new Vector3(6.7f, -6.1f, 0f), new Vector3(-0.82f, 0.82f, 1f), 82, false),
+            };
+
+            foreach (var p in placements)
+                EnsureOneCultist(dungeonDecor, ctrl, p.name, p.pos, p.scale, p.sorting, p.isBook);
+
+            ctrl.PruneDestroyedCultists();
+        }
+
+        static void EnsureOneCultist(Transform parent, Zone1CultistEasterEggController ctrl, string name, Vector3 pos, Vector3 scale, int sortingOrder, bool isBook)
+        {
+            var existing = FindChildByNameIncludingInactive(parent, name);
+            if (existing != null)
+            {
+                var click = existing.GetComponent<Zone1CultistClickable>();
+                var existingSr = existing.GetComponent<SpriteRenderer>();
+                if (click != null && existingSr != null && existingSr.sprite != null && click.controller == ctrl)
+                {
+                    if (!existing.gameObject.activeSelf)
+                        existing.gameObject.SetActive(true);
+                    return;
+                }
+
+                Object.Destroy(existing.gameObject);
+            }
+
+            var go = new GameObject(name);
+            go.transform.SetParent(parent, false);
+            go.transform.position = pos;
+            go.transform.localScale = scale;
+
+            var sr = go.AddComponent<SpriteRenderer>();
+            var spritePath = isBook
+                ? "Assets/02_Sprites/Lucas/Zone1/Props/zone1_cultist_yellow_book_64.png"
+                : "Assets/02_Sprites/Lucas/Zone1/Props/zone1_cultist_yellow_staff_64.png";
+            sr.sprite = Zone1ArtProvider.LoadSprite(spritePath) ?? RuntimeSpriteFactory.OpaqueWhiteSprite;
+            sr.color = Color.white;
+            sr.sortingOrder = sortingOrder + Mathf.RoundToInt(-pos.y * 3f);
+
+            // Hitbox for clicks.
+            var col = go.AddComponent<BoxCollider2D>();
+            col.isTrigger = true;
+            col.size = new Vector2(0.9f, 1.2f);
+            col.offset = new Vector2(0f, 0.15f);
+
+            var clickable = go.AddComponent<Zone1CultistClickable>();
+            clickable.controller = ctrl;
+
+            // Animator added but disabled by default; controller enables on easter.
+            var anim = go.AddComponent<SpriteSheetAnimator>();
+            anim.enabled = false;
+
+            ctrl?.RegisterCultist(go.transform, isBook);
+        }
+
         static void CreateFloorTiled(Transform parent)
         {
             if (parent.Find("DungeonFloorRoot") != null)
@@ -118,12 +286,12 @@ namespace LasGranjasDelHastur.Zone1
 
             var tilePaths = new[]
             {
-                "Assets/02_Sprites/Lucas/Zone1/Tiles/zone1_floor_tile_01.png",
-                "Assets/02_Sprites/Lucas/Zone1/Tiles/zone1_floor_tile_02.png",
-                "Assets/02_Sprites/Lucas/Zone1/Tiles/zone1_floor_tile_03.png",
-                "Assets/02_Sprites/Lucas/Zone1/Tiles/zone1_floor_tile_04.png",
-                "Assets/02_Sprites/Lucas/Zone1/Tiles/zone1_floor_tile_05.png",
-                "Assets/02_Sprites/Lucas/Zone1/Tiles/zone1_floor_tile_06.png",
+                "Assets/02_Sprites/Lucas/Zone1/Tiles/NWzone1_floor_tile_01.png",
+                "Assets/02_Sprites/Lucas/Zone1/Tiles/NWzone1_floor_tile_02.png",
+                "Assets/02_Sprites/Lucas/Zone1/Tiles/NWzone1_floor_tile_03.png",
+                "Assets/02_Sprites/Lucas/Zone1/Tiles/NWzone1_floor_tile_04.png",
+                "Assets/02_Sprites/Lucas/Zone1/Tiles/NWzone1_floor_tile_05.png",
+                "Assets/02_Sprites/Lucas/Zone1/Tiles/NWzone1_floor_tile_06.png",
             };
 
             for (var y = -10; y <= 10; y++)
@@ -140,9 +308,9 @@ namespace LasGranjasDelHastur.Zone1
                     var path = tilePaths[index];
 
                     if ((x + y) % 13 == 0)
-                        path = "Assets/02_Sprites/Lucas/Zone1/Tiles/zone1_floor_corrupt_transition.png";
+                        path = "Assets/02_Sprites/Lucas/Zone1/Tiles/Nwzone1_floor_corrupt_transition.png";
                     if ((x - y) % 19 == 0)
-                        path = "Assets/02_Sprites/Lucas/Zone1/Tiles/zone1_floor_ritual_tile.png";
+                        path = "Assets/02_Sprites/Lucas/Zone1/Tiles/Nwzone1_floor_ritual_tile.png";
 
                     sr.sprite = Zone1ArtProvider.LoadSprite(path) ?? RuntimeSpriteFactory.OpaqueWhiteSprite;
                     sr.color = Color.white;
@@ -304,8 +472,12 @@ namespace LasGranjasDelHastur.Zone1
 
         static void CreateDungeonDecor(Transform decorRoot)
         {
-            if (decorRoot.Find("DungeonDecor") != null)
+            var existing = FindChildByNameIncludingInactive(decorRoot, "DungeonDecor");
+            if (existing != null)
+            {
+                EnsureFountains(existing);
                 return;
+            }
 
             var root = new GameObject("DungeonDecor");
             root.transform.SetParent(decorRoot, false);
@@ -323,6 +495,44 @@ namespace LasGranjasDelHastur.Zone1
             CreateProp(root.transform, "zone1_prop_dark_puddle.png", new Vector3(6.0f, -3.2f, 0f), new Vector3(0.9f, 0.9f, 1f), 11);
             CreateProp(root.transform, "zone1_prop_ritual_candles.png", new Vector3(0f, -5.2f, 0f), new Vector3(0.72f, 0.72f, 1f), 78);
             CreateRitualMark(root.transform, new Vector3(0f, -4.2f, 0f));
+
+            // Ambient animated fountains (new spritesheet 4x1 @ 128px).
+            EnsureFountains(root.transform);
+        }
+
+        static void EnsureFountains(Transform parent)
+        {
+            CreateFountain(parent, "Fountain_West", new Vector3(-10.6f, 0.15f, 0f), new Vector3(0.85f, 0.85f, 1f), 22);
+            CreateFountain(parent, "Fountain_East", new Vector3(10.55f, -0.1f, 0f), new Vector3(-0.85f, 0.85f, 1f), 22);
+            CreateFountain(parent, "Fountain_North", new Vector3(0.0f, 4.65f, 0f), new Vector3(0.78f, 0.78f, 1f), 16);
+        }
+
+        static void CreateFountain(Transform parent, string name, Vector3 pos, Vector3 scale, int sortingOrder)
+        {
+            if (FindChildByNameIncludingInactive(parent, name) != null)
+                return;
+
+            var go = new GameObject(name);
+            go.transform.SetParent(parent, false);
+            go.transform.position = pos;
+            go.transform.localScale = scale;
+
+            var sh = new GameObject("Shadow");
+            sh.transform.SetParent(go.transform, false);
+            sh.transform.localPosition = new Vector3(0f, -0.55f, 0f);
+            sh.transform.localScale = new Vector3(1.25f, 0.42f, 1f);
+            var shSr = sh.AddComponent<SpriteRenderer>();
+            shSr.sprite = RuntimeSpriteFactory.OpaqueWhiteSprite;
+            shSr.color = new Color(0f, 0f, 0f, 0.22f);
+            shSr.sortingOrder = sortingOrder - 1;
+
+            var sr = go.AddComponent<SpriteRenderer>();
+            sr.sprite = Zone1ArtProvider.LoadSprite("Assets/02_Sprites/Lucas/Zone1/Spritesheets/zone1_fountain_spritesheet_4x1_128.png") ?? RuntimeSpriteFactory.OpaqueWhiteSprite;
+            sr.color = Color.white;
+            sr.sortingOrder = sortingOrder;
+
+            var anim = go.AddComponent<SpriteSheetAnimator>();
+            anim.Configure("Assets/02_Sprites/Lucas/Zone1/Spritesheets/zone1_fountain_spritesheet_4x1_128.png", 128, 128, 8f);
         }
 
         static void CreateRitualMark(Transform parent, Vector3 pos)
@@ -383,7 +593,7 @@ namespace LasGranjasDelHastur.Zone1
 
         static GameObject GetOrCreateChild(Transform parent, string childName)
         {
-            var child = parent.Find(childName);
+            var child = FindChildByNameIncludingInactive(parent, childName);
             if (child != null)
                 return child.gameObject;
 
@@ -394,7 +604,7 @@ namespace LasGranjasDelHastur.Zone1
 
         static void EnsureSystems()
         {
-            var systems = GameObject.Find("Systems");
+            var systems = FindRootInActiveScene("Systems");
             if (systems == null)
                 systems = new GameObject("Systems");
 
@@ -413,7 +623,7 @@ namespace LasGranjasDelHastur.Zone1
             if (Object.FindFirstObjectByType<T>() != null)
                 return;
 
-            var go = systemsRoot.Find(objectName)?.gameObject;
+            var go = FindChildByNameIncludingInactive(systemsRoot, objectName)?.gameObject;
             if (go == null)
             {
                 go = new GameObject(objectName);
@@ -422,6 +632,19 @@ namespace LasGranjasDelHastur.Zone1
 
             if (go.GetComponent<T>() == null)
                 go.AddComponent<T>();
+        }
+    }
+
+    /// <summary>
+    /// Un frame después de cargar Zone1 (tras game over / menú) vuelve a asegurar cultistas y fuentes.
+    /// </summary>
+    sealed class Zone1DecorDeferredEnsureHost : MonoBehaviour
+    {
+        IEnumerator Start()
+        {
+            yield return null;
+            Zone1Bootstrap.EnsureZone1RuntimeDecor();
+            Destroy(gameObject);
         }
     }
 }

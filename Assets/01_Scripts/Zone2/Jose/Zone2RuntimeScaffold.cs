@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
-namespace LasGranjasDelHastur.Zone2
+namespace LasGranjasDelHastur.Zone2.Jose
 {
     public static class Zone2RuntimeScaffold
     {

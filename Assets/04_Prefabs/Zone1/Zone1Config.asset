@@ -29,7 +29,7 @@ MonoBehaviour:
   initiallyPurchasableCells: 2
   collectorName: Cthulhu
   baseTaxPercent: 0.25
-  taxIntervalSeconds: 28
+  taxIntervalSeconds: 240
   payWindowSeconds: 10
   moneyLossOnFail: 0.75
   finePerStrikeStep: 40
@@ -44,10 +44,10 @@ MonoBehaviour:
   cellUpgradeBaseCost: 30
   cellUpgradePerLevelAdd: 30
   cellUpgradeLevelMultiplier: 1.25
-  weakSoulsCapacity: 10
-  pureEnergyCapacity: 8
-  memoryShardsCapacity: 6
-  unstableSoulsCapacity: 5
+  weakSoulsCapacity: 1000000
+  pureEnergyCapacity: 1000000
+  memoryShardsCapacity: 1000000
+  unstableSoulsCapacity: 1000000
   initialAssistants: 2
   maxAssistants: 30
   assistantAutomationTickSeconds: 0.25

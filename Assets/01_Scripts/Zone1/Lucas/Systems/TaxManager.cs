@@ -1,6 +1,7 @@
 using System;
 using LasGranjasDelHastur.Core;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace LasGranjasDelHastur.Zone1
 {
@@ -27,6 +28,17 @@ namespace LasGranjasDelHastur.Zone1
         [SerializeField, Range(0f, 1f)] private float moneyLossOnFail = 0.75f;
         [SerializeField] private int finePerStrikeStep = 25;
         [SerializeField] private int maxStrikesBeforeGameOver = 3;
+        [Tooltip("Monedas extra por cada multa global acumulada (pensión por pago tardío), sumadas al impuesto general.")]
+        [SerializeField, Min(0)] private int latePaymentPensionPerStrike = 15;
+
+        [Header("Dynamic Tax (shared economy)")]
+        [Tooltip("Costo adicional por celda comprada (que genera recursos). Se escala por zona.")]
+        [SerializeField, Min(0)] private int darkCoinsPerPurchasedCell = 8;
+        [Tooltip("Factor adicional por celda comprada aplicado al % base. Ej: 0.12 => +12% de la tasa base por celda.")]
+        [SerializeField, Range(0f, 0.5f)] private float percentFactorPerPurchasedCell = 0.12f;
+        [SerializeField] private float zone1Multiplier = 1.0f;
+        [SerializeField] private float zone2Multiplier = 1.35f;
+        [SerializeField] private float zone3Multiplier = 1.65f;
 
         ResourceManager _resources;
         CellManager _cells;
@@ -57,7 +69,7 @@ namespace LasGranjasDelHastur.Zone1
             Changed?.Invoke();
         }
 
-        public void Configure(string newCollectorName, float newBaseTaxPercent, float newTaxIntervalSeconds, float newPayWindowSeconds, float newMoneyLossOnFail, int newFinePerStrikeStep, int newMaxStrikesBeforeGameOver)
+        public void Configure(string newCollectorName, float newBaseTaxPercent, float newTaxIntervalSeconds, float newPayWindowSeconds, float newMoneyLossOnFail, int newFinePerStrikeStep, int newMaxStrikesBeforeGameOver, int newLatePaymentPensionPerStrike)
         {
             collectorName = string.IsNullOrWhiteSpace(newCollectorName) ? "Cthulhu" : newCollectorName;
             baseTaxPercent = Mathf.Clamp01(newBaseTaxPercent);
@@ -66,6 +78,7 @@ namespace LasGranjasDelHastur.Zone1
             moneyLossOnFail = Mathf.Clamp01(newMoneyLossOnFail);
             finePerStrikeStep = Mathf.Max(1, newFinePerStrikeStep);
             maxStrikesBeforeGameOver = Mathf.Max(1, newMaxStrikesBeforeGameOver);
+            latePaymentPensionPerStrike = Mathf.Max(0, newLatePaymentPensionPerStrike);
             _timer = Mathf.Max(1f, taxIntervalSeconds);
             Changed?.Invoke();
         }
@@ -106,9 +119,27 @@ namespace LasGranjasDelHastur.Zone1
                 return 0;
 
             var money = _resources.Get(ResourceType.DarkCoins);
-            var baseAmount = Mathf.FloorToInt(money * baseTaxPercent);
+            var purchased = _cells != null ? Mathf.Max(0, _cells.CountPurchasedCellsForTax()) : 0;
+            var z = SceneManager.GetActiveScene().name;
+            var zm = z switch
+            {
+                "Zone3_Celestial" => zone3Multiplier,
+                "Zone2_Cities" => zone2Multiplier,
+                _ => zone1Multiplier
+            };
+
+            var effectivePercent = baseTaxPercent * (1f + purchased * percentFactorPerPurchasedCell) * zm;
+            var baseAmount = Mathf.FloorToInt(money * effectivePercent);
             baseAmount = Mathf.Max(0, baseAmount);
-            return baseAmount + Mathf.Max(0, _fineDebt);
+            var cellAdd = Mathf.RoundToInt(purchased * darkCoinsPerPurchasedCell * zm);
+            return baseAmount + cellAdd + Mathf.Max(0, _fineDebt) + CalculateLatePaymentPension();
+        }
+
+        /// <summary>Suma fija por cada multa global (streak); va aparte de la deuda <see cref="_fineDebt"/>.</summary>
+        public int CalculateLatePaymentPension()
+        {
+            var s = Mathf.Max(0, Strikes);
+            return s <= 0 ? 0 : s * latePaymentPensionPerStrike;
         }
 
         public bool TryPay()
@@ -124,6 +155,29 @@ namespace LasGranjasDelHastur.Zone1
             CloseAlert(resetTimer: true);
             TaxPaid?.Invoke();
             return true;
+        }
+
+        /// <summary>
+        /// Abre la ventana de impuesto antes de que venza el temporizador, sin cobrar hasta que el jugador pulse Pagar en el panel.
+        /// </summary>
+        public bool TryOpenTaxAlertEarly()
+        {
+            if (_resources == null || _alertActive)
+                return false;
+
+            OpenAlert();
+            return true;
+        }
+
+        /// <summary>
+        /// Cierra el panel sin pagar: misma penalización que dejar expirar la ventana (multa, pérdida de dinero, etc.).
+        /// </summary>
+        public void RefuseTaxPayment()
+        {
+            if (!_alertActive || _resources == null)
+                return;
+
+            FailToPay();
         }
 
         void OpenAlert()

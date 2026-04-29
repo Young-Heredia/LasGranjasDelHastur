@@ -9,7 +9,7 @@ using UnityEditor;
 using UnityEditor.SceneManagement;
 #endif
 
-namespace LasGranjasDelHastur.Zone2
+namespace LasGranjasDelHastur.Zone2.Jose
 {
 #if UNITY_EDITOR
     [InitializeOnLoad]
