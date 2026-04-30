@@ -1,0 +1,429 @@
+fileFormatVersion: 2
+guid: 3176e4c201b8b054bb59a68dba17e0fd
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -437834020416164204
+    second: zone1_cultist_yellow_dance_nobook_transparent_spritesheet_12x1_64_0
+  - first:
+      213: -4850194265736208513
+    second: zone1_cultist_yellow_dance_nobook_transparent_spritesheet_12x1_64_1
+  - first:
+      213: -2452817936176564416
+    second: zone1_cultist_yellow_dance_nobook_transparent_spritesheet_12x1_64_2
+  - first:
+      213: -3977836427276264117
+    second: zone1_cultist_yellow_dance_nobook_transparent_spritesheet_12x1_64_3
+  - first:
+      213: 1229446055863061571
+    second: zone1_cultist_yellow_dance_nobook_transparent_spritesheet_12x1_64_4
+  - first:
+      213: 8696465325869870273
+    second: zone1_cultist_yellow_dance_nobook_transparent_spritesheet_12x1_64_5
+  - first:
+      213: 1481793441644773279
+    second: zone1_cultist_yellow_dance_nobook_transparent_spritesheet_12x1_64_6
+  - first:
+      213: 4968616670660061948
+    second: zone1_cultist_yellow_dance_nobook_transparent_spritesheet_12x1_64_7
+  - first:
+      213: 8317523938205953382
+    second: zone1_cultist_yellow_dance_nobook_transparent_spritesheet_12x1_64_8
+  - first:
+      213: 8303152414022881273
+    second: zone1_cultist_yellow_dance_nobook_transparent_spritesheet_12x1_64_9
+  - first:
+      213: 5278961427984450831
+    second: zone1_cultist_yellow_dance_nobook_transparent_spritesheet_12x1_64_10
+  - first:
+      213: -4172421742840633161
+    second: zone1_cultist_yellow_dance_nobook_transparent_spritesheet_12x1_64_11
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: zone1_cultist_yellow_dance_nobook_transparent_spritesheet_12x1_64_0
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 2
+        width: 41
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49e638637408ce9f0800000000000000
+      internalID: -437834020416164204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone1_cultist_yellow_dance_nobook_transparent_spritesheet_12x1_64_1
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 10
+        width: 42
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7f18234306a0bcb0800000000000000
+      internalID: -4850194265736208513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone1_cultist_yellow_dance_nobook_transparent_spritesheet_12x1_64_2
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 3
+        width: 43
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0473d772517d5fdd0800000000000000
+      internalID: -2452817936176564416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone1_cultist_yellow_dance_nobook_transparent_spritesheet_12x1_64_3
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 3
+        width: 42
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4dd69948d2ebc8c0800000000000000
+      internalID: -3977836427276264117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone1_cultist_yellow_dance_nobook_transparent_spritesheet_12x1_64_4
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 8
+        width: 46
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34c09368caedf0110800000000000000
+      internalID: 1229446055863061571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone1_cultist_yellow_dance_nobook_transparent_spritesheet_12x1_64_5
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 4
+        width: 49
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1cca9f5532d00b870800000000000000
+      internalID: 8696465325869870273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone1_cultist_yellow_dance_nobook_transparent_spritesheet_12x1_64_6
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 8
+        width: 46
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9f7db7c843609410800000000000000
+      internalID: 1481793441644773279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone1_cultist_yellow_dance_nobook_transparent_spritesheet_12x1_64_7
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 3
+        width: 42
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfae6cf798214f440800000000000000
+      internalID: 4968616670660061948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone1_cultist_yellow_dance_nobook_transparent_spritesheet_12x1_64_8
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 3
+        width: 43
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66de29324f7cd6370800000000000000
+      internalID: 8317523938205953382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone1_cultist_yellow_dance_nobook_transparent_spritesheet_12x1_64_9
+      rect:
+        serializedVersion: 2
+        x: 587
+        y: 10
+        width: 42
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ffc2c9e029ba3370800000000000000
+      internalID: 8303152414022881273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone1_cultist_yellow_dance_nobook_transparent_spritesheet_12x1_64_10
+      rect:
+        serializedVersion: 2
+        x: 652
+        y: 2
+        width: 41
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f05800a1373a24940800000000000000
+      internalID: 5278961427984450831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone1_cultist_yellow_dance_nobook_transparent_spritesheet_12x1_64_11
+      rect:
+        serializedVersion: 2
+        x: 711
+        y: 3
+        width: 49
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b82ed408849816c0800000000000000
+      internalID: -4172421742840633161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      zone1_cultist_yellow_dance_nobook_transparent_spritesheet_12x1_64_0: -437834020416164204
+      zone1_cultist_yellow_dance_nobook_transparent_spritesheet_12x1_64_1: -4850194265736208513
+      zone1_cultist_yellow_dance_nobook_transparent_spritesheet_12x1_64_10: 5278961427984450831
+      zone1_cultist_yellow_dance_nobook_transparent_spritesheet_12x1_64_11: -4172421742840633161
+      zone1_cultist_yellow_dance_nobook_transparent_spritesheet_12x1_64_2: -2452817936176564416
+      zone1_cultist_yellow_dance_nobook_transparent_spritesheet_12x1_64_3: -3977836427276264117
+      zone1_cultist_yellow_dance_nobook_transparent_spritesheet_12x1_64_4: 1229446055863061571
+      zone1_cultist_yellow_dance_nobook_transparent_spritesheet_12x1_64_5: 8696465325869870273
+      zone1_cultist_yellow_dance_nobook_transparent_spritesheet_12x1_64_6: 1481793441644773279
+      zone1_cultist_yellow_dance_nobook_transparent_spritesheet_12x1_64_7: 4968616670660061948
+      zone1_cultist_yellow_dance_nobook_transparent_spritesheet_12x1_64_8: 8317523938205953382
+      zone1_cultist_yellow_dance_nobook_transparent_spritesheet_12x1_64_9: 8303152414022881273
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

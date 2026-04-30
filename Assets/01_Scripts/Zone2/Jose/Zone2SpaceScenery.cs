@@ -1,7 +1,7 @@
 using LasGranjasDelHastur;
 using UnityEngine;
 
-namespace LasGranjasDelHastur.Zone2
+namespace LasGranjasDelHastur.Zone2.Jose
 {
     /// <summary>
     /// Fondo 2D espacial: estrellas, nebulosa, lunas, plataformas flotantes y "máquinas cósmicas";

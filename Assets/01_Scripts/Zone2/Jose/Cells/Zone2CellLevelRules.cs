@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace LasGranjasDelHastur.Zone2
+namespace LasGranjasDelHastur.Zone2.Jose
 {
     public static class Zone2CellLevelRules
     {

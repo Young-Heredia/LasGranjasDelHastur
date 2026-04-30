@@ -1,4 +1,4 @@
-namespace LasGranjasDelHastur.Zone2
+namespace LasGranjasDelHastur.Zone2.Jose
 {
     /// <summary>Arquetipos lunares/estelares (Zona 2); 30 celdas rotan con id % 4.</summary>
     public enum Zone2DistrictType

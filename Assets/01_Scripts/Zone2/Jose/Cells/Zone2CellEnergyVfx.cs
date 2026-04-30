@@ -1,7 +1,7 @@
 using LasGranjasDelHastur;
 using UnityEngine;
 
-namespace LasGranjasDelHastur.Zone2
+namespace LasGranjasDelHastur.Zone2.Jose
 {
     /// <summary>Efecto visual de energía: anillos y núcleo pulsante según estado y arquetipo.</summary>
     [DisallowMultipleComponent]

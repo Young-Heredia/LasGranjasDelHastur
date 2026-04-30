@@ -1,7 +1,7 @@
 using System.IO;
 using UnityEngine;
 
-namespace LasGranjasDelHastur.Zone2
+namespace LasGranjasDelHastur.Zone2.Jose
 {
     /// <summary>
     /// Jose: <c>zone2_lunargarden</c>, <c>zone2_cometmill</c>, etc. Si no existen, prueba nombres heredados

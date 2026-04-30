@@ -1,10 +1,10 @@
 using LasGranjasDelHastur.Core;
 using LasGranjasDelHastur.Zone1;
-using LasGranjasDelHastur.Zone2.Systems;
+using LasGranjasDelHastur.Zone2.Jose.Systems;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace LasGranjasDelHastur.Zone2
+namespace LasGranjasDelHastur.Zone2.Jose
 {
     [DisallowMultipleComponent]
     public partial class Zone2PrototypeGame : MonoBehaviour
