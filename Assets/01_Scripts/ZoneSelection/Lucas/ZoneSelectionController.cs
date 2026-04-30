@@ -462,9 +462,18 @@ public class ZoneSelectionController : MonoBehaviour
         btnResetProgress.onClick.AddListener(() =>
         {
             SaveManager.Instance?.ResetAllProgress(resetIntroSeen: true);
+            GlobalTaxLedger.ClearStrikes();
             zoneManager?.ResetAllUnlocksForDebug();
             RefreshAllCards();
             Debug.Log("[ZoneSelection] Debug: progreso total reiniciado.");
+        });
+
+        var btnClearFines = CreateDebugButton(_debugPanel.transform, "Quitar Multas", Vector2.zero, Vector2.zero, new Vector2(220f, 36f));
+        btnClearFines.onClick.AddListener(() =>
+        {
+            GlobalTaxLedger.ClearStrikes();
+            RefreshAllCards();
+            Debug.Log("[ZoneSelection] Debug: multas globales reiniciadas.");
         });
 
         _debugPanel.SetActive(!debugPanelStartsHidden);

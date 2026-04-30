@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-namespace LasGranjasDelHastur.Zone2
+namespace LasGranjasDelHastur.Zone2.Jose
 {
     /// <summary>Presentación y UI en tiempo de ejecución para Zona 2 (separado del bucle de gameplay).</summary>
     public partial class Zone2PrototypeGame
@@ -518,7 +518,10 @@ namespace LasGranjasDelHastur.Zone2
             sLe.preferredHeight = 240f;
             sLe.flexibleWidth = 1f;
 
-            var scrollRt = scrollGo.AddComponent<RectTransform>();
+            // Nota: al agregar LayoutElement, Unity puede auto-agregar RectTransform.
+            var scrollRt = scrollGo.GetComponent<RectTransform>();
+            if (scrollRt == null)
+                scrollRt = scrollGo.AddComponent<RectTransform>();
             scrollRt.sizeDelta = new Vector2(0f, 240f);
 
             var scroll = scrollGo.AddComponent<ScrollRect>();

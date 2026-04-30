@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace LasGranjasDelHastur.Zone2
+namespace LasGranjasDelHastur.Zone2.Jose
 {
     /// <summary>
     /// En Editor, deja serializados los sprites del pack en la escena (Hierarchy/Inspector),
