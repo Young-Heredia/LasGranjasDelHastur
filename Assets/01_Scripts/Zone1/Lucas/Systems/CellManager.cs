@@ -49,6 +49,21 @@ namespace LasGranjasDelHastur.Zone1
 
         public IReadOnlyList<FarmCell> Cells => _cells;
         public FarmCell SelectedCell { get; private set; }
+
+        public int CountPurchasedCellsForTax()
+        {
+            var n = 0;
+            for (var i = 0; i < _cells.Count; i++)
+            {
+                var c = _cells[i];
+                if (c == null)
+                    continue;
+                // Blocked == not bought. Any other state means the player owns a producing slot.
+                if (c.State != CellState.Blocked)
+                    n++;
+            }
+            return n;
+        }
         public FarmCell GetCellBySlotIndex(int slotIndex)
         {
             for (var i = 0; i < _cells.Count; i++)

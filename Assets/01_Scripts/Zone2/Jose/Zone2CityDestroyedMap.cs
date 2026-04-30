@@ -1,7 +1,7 @@
 using LasGranjasDelHastur;
 using UnityEngine;
 
-namespace LasGranjasDelHastur.Zone2
+namespace LasGranjasDelHastur.Zone2.Jose
 {
     /// <summary>
     /// Capa de decoración: calles rituales, edificios dañados, torres corruptas, niebla densa (ciudad condensada).

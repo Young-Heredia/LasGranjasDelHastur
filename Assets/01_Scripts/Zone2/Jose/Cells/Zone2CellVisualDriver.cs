@@ -2,7 +2,7 @@ using LasGranjasDelHastur;
 using LasGranjasDelHastur.Zone1;
 using UnityEngine;
 
-namespace LasGranjasDelHastur.Zone2
+namespace LasGranjasDelHastur.Zone2.Jose
 {
     [DisallowMultipleComponent]
     public sealed class Zone2CellVisualDriver : MonoBehaviour

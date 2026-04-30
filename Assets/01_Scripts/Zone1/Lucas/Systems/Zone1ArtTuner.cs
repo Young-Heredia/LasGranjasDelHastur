@@ -153,6 +153,7 @@ namespace LasGranjasDelHastur.Zone1
             {
                 if (sr == null)
                     continue;
+                ApplyFloorSpriteIfPossible(sr);
                 var p = sr.transform.localPosition;
                 var hash = Mathf.Abs((int)(p.x * 31f + p.y * 17f)) % 3;
                 sr.color = hash switch
@@ -162,6 +163,49 @@ namespace LasGranjasDelHastur.Zone1
                     _ => floorAltTintB
                 };
             }
+        }
+
+        static void ApplyFloorSpriteIfPossible(SpriteRenderer sr)
+        {
+            if (sr == null)
+                return;
+
+            // Only touch floor tiles (avoid "FloorWet_*" overlays and any props accidentally under this root).
+            var n = sr.gameObject.name;
+            if (string.IsNullOrEmpty(n) || !n.StartsWith("Floor_"))
+                return;
+            if (n.StartsWith("FloorWet_"))
+                return;
+
+            // Parse "Floor_x_y".
+            var parts = n.Split('_');
+            if (parts.Length < 3)
+                return;
+            if (!int.TryParse(parts[1], out var x))
+                return;
+            if (!int.TryParse(parts[2], out var y))
+                return;
+
+            var tilePaths = new[]
+            {
+                "Assets/02_Sprites/Lucas/Zone1/Tiles/NWzone1_floor_tile_01.png",
+                "Assets/02_Sprites/Lucas/Zone1/Tiles/NWzone1_floor_tile_02.png",
+                "Assets/02_Sprites/Lucas/Zone1/Tiles/NWzone1_floor_tile_03.png",
+                "Assets/02_Sprites/Lucas/Zone1/Tiles/NWzone1_floor_tile_04.png",
+                "Assets/02_Sprites/Lucas/Zone1/Tiles/NWzone1_floor_tile_05.png",
+                "Assets/02_Sprites/Lucas/Zone1/Tiles/NWzone1_floor_tile_06.png",
+            };
+
+            var index = Mathf.Abs((x * 31 + y * 17) % tilePaths.Length);
+            var path = tilePaths[index];
+            if ((x + y) % 13 == 0)
+                        path = "Assets/02_Sprites/Lucas/Zone1/Tiles/Nwzone1_floor_corrupt_transition.png";
+            if ((x - y) % 19 == 0)
+                        path = "Assets/02_Sprites/Lucas/Zone1/Tiles/Nwzone1_floor_ritual_tile.png";
+
+            var sprite = Zone1ArtProvider.LoadSprite(path);
+            if (sprite != null)
+                sr.sprite = sprite;
         }
 
         void ApplyPropsBalance()

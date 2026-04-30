@@ -38,6 +38,7 @@ namespace LasGranjasDelHastur.Zone1.UI
 
         Button _btnSales;
         Button _btnBack;
+        Button _btnPayEarly;
 
         // Panels
         GameObject _cellPanel;
@@ -71,6 +72,22 @@ namespace LasGranjasDelHastur.Zone1.UI
         // Hover bindings
         TextMeshProUGUI _hoverText;
         TextMeshProUGUI _txtActionHint;
+
+        struct HudDeltaPopup
+        {
+            public TextMeshProUGUI tmp;
+            public int accumDelta;
+            public float remaining;
+            public float maxRemaining;
+        }
+
+        RectTransform _rtRowMoney;
+        RectTransform _rtRowWeakSouls;
+        RectTransform _rtRowEnergy;
+
+        HudDeltaPopup _popMoney;
+        HudDeltaPopup _popWeakSouls;
+        HudDeltaPopup _popEnergy;
 
         FarmCell _boundCell;
         float _uiSelfHealTimer;
@@ -110,6 +127,8 @@ namespace LasGranjasDelHastur.Zone1.UI
                 CloseSalesPanel();
             }
 
+            UpdateHudDeltaPopups(Time.unscaledDeltaTime);
+
             if (_tax != null && _txtTaxTimer != null)
                 _txtTaxTimer.text = $"Impuesto: {FormatTime(_tax.IsAlertActive ? _tax.PayWindowRemainingSeconds : _tax.TimeToNextTaxSeconds)}";
         }
@@ -137,6 +156,7 @@ namespace LasGranjasDelHastur.Zone1.UI
                 return;
 
             if (_resources != null) _resources.Changed += RefreshHUD;
+            if (_resources != null) _resources.ResourceChanged += OnResourceChanged;
             if (_progression != null) _progression.Changed += RefreshHUD;
 
             if (_cells != null)
@@ -164,6 +184,22 @@ namespace LasGranjasDelHastur.Zone1.UI
                 else OpenSalesPanel();
             });
 
+            if (_btnPayEarly != null)
+            {
+                _btnPayEarly.onClick.AddListener(() =>
+                {
+                    if (_tax != null && _tax.TryOpenTaxAlertEarly())
+                    {
+                        RefreshHUD();
+                        RefreshTaxPanel();
+                    }
+                    else
+                    {
+                        AudioManager.Instance?.PlayZoneLocked();
+                    }
+                });
+            }
+
             _btnBack.onClick.AddListener(() =>
             {
                 SaveManager.Instance?.SaveNow();
@@ -179,6 +215,7 @@ namespace LasGranjasDelHastur.Zone1.UI
                 return;
 
             if (_resources != null) _resources.Changed -= RefreshHUD;
+            if (_resources != null) _resources.ResourceChanged -= OnResourceChanged;
             if (_progression != null) _progression.Changed -= RefreshHUD;
 
             if (_cells != null)
@@ -199,6 +236,117 @@ namespace LasGranjasDelHastur.Zone1.UI
 
             Zone1UIHoverBus.HoverChanged -= OnHoverChanged;
             _eventsWired = false;
+        }
+
+        void OnResourceChanged(ResourceType type, int newValue, int delta)
+        {
+            if (delta == 0)
+                return;
+
+            switch (type)
+            {
+                case ResourceType.DarkCoins:
+                    EnsureHudRowRefs();
+                    BumpHudPopup(ref _popMoney, _rtRowMoney, delta);
+                    break;
+                case ResourceType.WeakSouls:
+                    EnsureHudRowRefs();
+                    BumpHudPopup(ref _popWeakSouls, _rtRowWeakSouls, delta);
+                    break;
+                case ResourceType.PureEnergy:
+                    EnsureHudRowRefs();
+                    BumpHudPopup(ref _popEnergy, _rtRowEnergy, delta);
+                    break;
+            }
+        }
+
+        void EnsureHudRowRefs()
+        {
+            if (_rtRowMoney == null && _txtMoney != null)
+                _rtRowMoney = _txtMoney.transform.parent as RectTransform;
+            if (_rtRowWeakSouls == null && _txtWeakSouls != null)
+                _rtRowWeakSouls = _txtWeakSouls.transform.parent as RectTransform;
+            if (_rtRowEnergy == null && _txtEnergy != null)
+                _rtRowEnergy = _txtEnergy.transform.parent as RectTransform;
+        }
+
+        static void BumpHudPopup(ref HudDeltaPopup popup, RectTransform rowRt, int delta)
+        {
+            if (rowRt == null)
+                return;
+
+            if (popup.tmp == null)
+                popup.tmp = CreateHudDeltaLabel(rowRt);
+
+            popup.accumDelta += delta;
+
+            var baseDuration = 1.0f;
+            var bump = 0.18f;
+            var maxDuration = 2.2f;
+            popup.remaining = Mathf.Clamp(Mathf.Max(popup.remaining, baseDuration) + bump, 0f, maxDuration);
+            popup.maxRemaining = Mathf.Max(popup.maxRemaining, popup.remaining);
+            popup.tmp.gameObject.SetActive(true);
+        }
+
+        static TextMeshProUGUI CreateHudDeltaLabel(RectTransform rowRt)
+        {
+            var go = new GameObject("DeltaPopup");
+            go.transform.SetParent(rowRt, false);
+            var rt = go.AddComponent<RectTransform>();
+            rt.anchorMin = new Vector2(1f, 0.5f);
+            rt.anchorMax = new Vector2(1f, 0.5f);
+            rt.pivot = new Vector2(0f, 0.5f);
+            rt.anchoredPosition = new Vector2(10f, 0f);
+            rt.sizeDelta = new Vector2(120f, 28f);
+
+            var tmp = go.AddComponent<TextMeshProUGUI>();
+            tmp.text = "";
+            tmp.fontSize = 18;
+            tmp.alignment = TextAlignmentOptions.Left;
+            tmp.raycastTarget = false;
+            tmp.textWrappingMode = TextWrappingModes.NoWrap;
+            tmp.color = new Color(0.75f, 1f, 0.75f, 0f);
+            return tmp;
+        }
+
+        void UpdateHudDeltaPopups(float dt)
+        {
+            UpdateHudPopup(ref _popMoney, dt);
+            UpdateHudPopup(ref _popWeakSouls, dt);
+            UpdateHudPopup(ref _popEnergy, dt);
+        }
+
+        static void UpdateHudPopup(ref HudDeltaPopup popup, float dt)
+        {
+            if (popup.tmp == null)
+                return;
+
+            if (popup.remaining <= 0f || popup.accumDelta == 0)
+            {
+                popup.remaining = 0f;
+                popup.maxRemaining = 0f;
+                popup.accumDelta = 0;
+                popup.tmp.text = "";
+                popup.tmp.color = new Color(popup.tmp.color.r, popup.tmp.color.g, popup.tmp.color.b, 0f);
+                popup.tmp.gameObject.SetActive(false);
+                return;
+            }
+
+            popup.remaining -= dt;
+            if (popup.remaining < 0f)
+                popup.remaining = 0f;
+
+            var sign = popup.accumDelta >= 0 ? "+" : "-";
+            var abs = Mathf.Abs(popup.accumDelta);
+            popup.tmp.text = $"{sign}{abs}";
+            var baseColor = popup.accumDelta >= 0
+                ? new Color(0.66f, 1f, 0.66f, 1f)
+                : new Color(1f, 0.62f, 0.62f, 1f);
+
+            var denom = Mathf.Max(0.01f, popup.maxRemaining);
+            var t = popup.remaining / denom;
+            var alpha = Mathf.Clamp01(t);
+            popup.tmp.color = new Color(baseColor.r, baseColor.g, baseColor.b, alpha);
         }
 
         void OnDestroy()
@@ -225,6 +373,7 @@ namespace LasGranjasDelHastur.Zone1.UI
             if (_resources == null || _progression == null)
                 return;
 
+            EnsureHudRowRefs();
             _txtMoney.text = $"{_resources.Get(ResourceType.DarkCoins)}";
             _txtMoney.text = $"Monedas oscuras: {_resources.Get(ResourceType.DarkCoins)}";
             _txtWeakSouls.text = $"Almas débiles: {_resources.Get(ResourceType.WeakSouls)}";
@@ -236,6 +385,9 @@ namespace LasGranjasDelHastur.Zone1.UI
 
             if (_tax != null)
                 _txtStrikes.text = $"Multas globales: {_tax.Strikes}/3";
+
+            if (_btnPayEarly != null && _tax != null)
+                _btnPayEarly.interactable = !_tax.IsAlertActive;
         }
 
         void OnCellSelected(FarmCell cell)
@@ -538,6 +690,10 @@ namespace LasGranjasDelHastur.Zone1.UI
         {
             if (_taxPanel != null)
                 _taxPanel.SetActive(false);
+
+            // Cerrar sin pagar durante una alerta activa cuenta como impago (+multa, etc.).
+            if (_tax != null && _tax.IsAlertActive)
+                _tax.RefuseTaxPayment();
         }
 
         void RefreshTaxPanel()
@@ -546,14 +702,25 @@ namespace LasGranjasDelHastur.Zone1.UI
                 return;
             _txtStrikes.text = $"Multas globales: {_tax.Strikes}/3";
 
+            if (_btnPayEarly != null)
+                _btnPayEarly.interactable = !_tax.IsAlertActive;
+
             if (!_tax.IsAlertActive)
                 return;
 
             _taxTitle.text = "El recaudador se aproxima…";
             var amount = _tax.CalculateTaxAmount();
+            var pension = _tax.CalculateLatePaymentPension();
+            var debt = _tax.FineDebt;
+            var extras = "";
+            if (debt > 0)
+                extras += $"\n• Deuda acumulada: {debt}";
+            if (pension > 0)
+                extras += $"\n• Pensión pago tardío (multas): +{pension}";
+
             _taxBody.text =
                 $"Recaudador: {_tax.CollectorName}\n" +
-                $"Monto: {amount}\n" +
+                $"Monto total: {amount}{extras}\n" +
                 $"Tiempo para pagar: {FormatTime(_tax.PayWindowRemainingSeconds)}\n\n" +
                 $"Si no pagas:\n- Pierdes 75% del dinero\n- +1 multa\n- Puede corromper celdas\n- Game Over a 3 multas";
 
@@ -666,6 +833,7 @@ namespace LasGranjasDelHastur.Zone1.UI
 
             var colBtns = CreateVerticalGroup(hud.transform, 240);
             _btnSales = CreateButton(colBtns, "Ventas", 210f, 42f);
+            _btnPayEarly = CreateButton(colBtns, "Pago adelantado", 210f, 40f);
             _btnBack = CreateButton(colBtns, "Volver a Zonas", 210f, 42f);
             var btnsLE = colBtns.gameObject.GetComponent<LayoutElement>();
             if (btnsLE != null)

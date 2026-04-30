@@ -6,7 +6,7 @@ using LasGranjasDelHastur.Zone2;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-namespace LasGranjasDelHastur.Zone2.Systems
+namespace LasGranjasDelHastur.Zone2.Jose.Systems
 {
     [DisallowMultipleComponent]
     public sealed class Zone2CellManager : MonoBehaviour
