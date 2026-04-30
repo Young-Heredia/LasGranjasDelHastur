@@ -1,4 +1,5 @@
 using LasGranjasDelHastur.Camera;
+using LasGranjasDelHastur.Zone2.Jose.Systems;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
@@ -87,8 +88,8 @@ namespace LasGranjasDelHastur.Zone2.Jose
             var front = EnsureChild(world.transform, "Layer_WallsFront");
             var atmo = EnsureChild(world.transform, "Layer_Atmosphere");
             var slots = EnsureChild(world.transform, "CellSlotsRoot");
-            if (slots != null && slots.GetComponent<LasGranjasDelHastur.Zone2.Systems.Zone2CellManager>() == null)
-                slots.AddComponent<LasGranjasDelHastur.Zone2.Systems.Zone2CellManager>();
+            if (slots != null && slots.GetComponent<Zone2CellManager>() == null)
+                slots.AddComponent<Zone2CellManager>();
 
             // Suelo y horizonte más amplios que Zona 1; rejilla 6×5 ≈ 12.8×7.7 unidades (espacio de celdas alineado a Z1).
             CreateSpriteBlock(floor.transform, "CityFloorPlate", Sprite_Z2_Backplate, new Vector3(0f, 0f, 0f), new Vector3(38f, 24f, 1f), new Color(0.08f, 0.12f, 0.14f, 1f), 0);

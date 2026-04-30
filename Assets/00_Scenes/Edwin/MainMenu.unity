@@ -1713,7 +1713,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -5, y: 301}
+  m_AnchoredPosition: {x: -5, y: 285}
   m_SizeDelta: {x: 360, y: 72}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &487659705
@@ -1874,6 +1874,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
   musicSource: {fileID: 501002004}
   sfxSource: {fileID: 501002003}
+  uiSource: {fileID: 0}
   introMusic: {fileID: 8300000, guid: 244e4f4161d080a498561dc4fefdb164, type: 3}
   mainMenuMusic: {fileID: 8300000, guid: fd8fa7f328aab404b9a802f6d58b9a61, type: 3}
   zone1Music: {fileID: 8300000, guid: a8b2e266339dbea4a9b97b34cd9c118c, type: 3}
@@ -2426,7 +2427,7 @@ MonoBehaviour:
   m_text: Creditos
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2c850da04a019d744998563843b74278, type: 2}
-  m_sharedMaterial: {fileID: -5932530350644016231, guid: 2c850da04a019d744998563843b74278, type: 2}
+  m_sharedMaterial: {fileID: 5784286356169234867, guid: 2c850da04a019d744998563843b74278, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2624,7 +2625,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -5, y: 465}
+  m_AnchoredPosition: {x: -5, y: 547}
   m_SizeDelta: {x: 360, y: 72}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1126771268
@@ -2797,7 +2798,7 @@ MonoBehaviour:
   m_text: Opciones
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2c850da04a019d744998563843b74278, type: 2}
-  m_sharedMaterial: {fileID: -5932530350644016231, guid: 2c850da04a019d744998563843b74278, type: 2}
+  m_sharedMaterial: {fileID: 5784286356169234867, guid: 2c850da04a019d744998563843b74278, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2911,7 +2912,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -5, y: 383}
+  m_AnchoredPosition: {x: -5, y: 373}
   m_SizeDelta: {x: 360, y: 72}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1332194827
@@ -3084,7 +3085,7 @@ MonoBehaviour:
   m_text: SALIR
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2c850da04a019d744998563843b74278, type: 2}
-  m_sharedMaterial: {fileID: -5932530350644016231, guid: 2c850da04a019d744998563843b74278, type: 2}
+  m_sharedMaterial: {fileID: 5784286356169234867, guid: 2c850da04a019d744998563843b74278, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3221,7 +3222,7 @@ MonoBehaviour:
   m_text: JUGAR
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2c850da04a019d744998563843b74278, type: 2}
-  m_sharedMaterial: {fileID: -5932530350644016231, guid: 2c850da04a019d744998563843b74278, type: 2}
+  m_sharedMaterial: {fileID: 5784286356169234867, guid: 2c850da04a019d744998563843b74278, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3490,6 +3491,7 @@ MonoBehaviour:
   introSceneName: IntroComic
   zoneSelectionSceneName: ZoneSelection
   optionsPanel: {fileID: 1827288368}
+  continueButton: {fileID: 0}
 --- !u!4 &1959086425
 Transform:
   m_ObjectHideFlags: 0
@@ -3542,7 +3544,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: -5, y: 383}
+  m_AnchoredPosition: {x: -5, y: 461}
   m_SizeDelta: {x: 360, y: 72}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2118032208
