@@ -25,6 +25,15 @@ namespace LasGranjasDelHastur.Zone1
             if (!fileName.EndsWith(".png", System.StringComparison.OrdinalIgnoreCase))
                 return $"{LucasCellsDir}/{fileName}";
 
+            // Lucas agregó variantes con prefijo "N" para evitar choques de nombres.
+            // Si existen, se prefieren sobre el nombre sin prefijo (solo para Lucas/Zone1/Cells).
+            if (fileName.StartsWith("zone1_energywell_", System.StringComparison.OrdinalIgnoreCase))
+            {
+                var lucasN = $"{LucasCellsDir}/N{fileName}";
+                if (FileExistsAsAssetPath(lucasN))
+                    return lucasN;
+            }
+
             var jose = $"{JoseCellsDir}/{fileName}";
             if (FileExistsAsAssetPath(jose))
                 return jose;
