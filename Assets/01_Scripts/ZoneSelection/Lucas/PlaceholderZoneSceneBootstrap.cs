@@ -47,7 +47,7 @@ public static class PlaceholderZoneSceneBootstrap
 
         if (scene.name == "Zone2_Cities")
         {
-            LasGranjasDelHastur.Zone2.Zone2RuntimeScaffold.EnsureSceneScaffold();
+            LasGranjasDelHastur.Zone2.Jose.Zone2RuntimeScaffold.EnsureSceneScaffold();
             return;
         }
 

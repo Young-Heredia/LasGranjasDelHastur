@@ -1,6 +1,7 @@
 using LasGranjasDelHastur.Core;
 using LasGranjasDelHastur.Zone1;
-using LasGranjasDelHastur.Zone2.Systems;
+using LasGranjasDelHastur.Zone2.Jose.Systems;
+using LasGranjasDelHastur.Zone2.Jose;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,6 +10,7 @@ namespace LasGranjasDelHastur.Zone2
     [DisallowMultipleComponent]
     public partial class Zone2PrototypeGame : MonoBehaviour
     {
+        public const int Zone2GridCellCount = 30;
         const int MaxAssistants = 30;
 
         class Zone2CellRuntime
@@ -23,6 +25,16 @@ namespace LasGranjasDelHastur.Zone2
             public float remainingSeconds;
             public int level = 1;
         }
+
+        struct Zone2AssistantState
+        {
+            public int cellId; // -1 = sin asignar
+            public Zone2DistrictType type;
+            public int level; // 1..Z2RosterMaxAssistantLevel
+        }
+
+        public const int Z2RosterMaxAssistantLevel = 10;
+        int _reassignAssistantIndex = -1; // reasignar: tocar celda
 
         [Header("Economy")]
         [SerializeField] private bool sharedEconomyWithZone1 = true;
@@ -46,7 +58,7 @@ namespace LasGranjasDelHastur.Zone2
         float _runtime;
 
         readonly List<Zone2CellRuntime> _cells = new();
-        readonly List<int> _assistantAssignedCellId = new();
+        readonly List<Zone2AssistantState> _zone2Assistants = new();
 
         Zone2CellRuntime _selectedCell;
         Zone2CellManager _worldCells;
@@ -100,6 +112,13 @@ namespace LasGranjasDelHastur.Zone2
 
         void OnWorldSlotSelected(int slotIndex)
         {
+            if (TryCompleteReassignToCellIndex(slotIndex))
+            {
+                if (slotIndex >= 0 && slotIndex < _cells.Count)
+                    _selectedCell = _cells[slotIndex];
+                RefreshSelectedCellPanel();
+                return;
+            }
             if (slotIndex < 0 || slotIndex >= _cells.Count)
             {
                 _selectedCell = null;
@@ -118,35 +137,31 @@ namespace LasGranjasDelHastur.Zone2
             for (var i = 0; i < _cells.Count; i++)
             {
                 var c = _cells[i];
-                var spritePath = GetCellSpritePath(c);
-                var tint = c.corrupted
-                    ? new Color(0.75f, 0.55f, 0.90f, 1f)
-                    : c.ready
-                        ? new Color(1f, 0.96f, 0.80f, 1f)
-                        : c.unlocked
-                            ? Color.white
-                            : new Color(0.55f, 0.55f, 0.60f, 1f);
-
-                _worldCells.ApplyVisual(i, spritePath, tint);
+                var district = (Zone2DistrictType)(c.id % 4);
+                _worldCells.ApplyDistrictVisual(
+                    i,
+                    district,
+                    GetZone2VisualState(c),
+                    Zone2CellLevelRules.ClampLevel(c.level),
+                    c.unlocked);
                 // Como Zona 1: celdas bloqueadas también se pueden seleccionar (para comprar).
                 _worldCells.SetSlotColliderEnabled(i, true);
             }
         }
 
-        static string GetCellSpritePath(Zone2CellRuntime cell)
+        static Zone2CellVisualState GetZone2VisualState(Zone2CellRuntime c)
         {
-            const string root = "Assets/02_Sprites/Lucas/LasGranjasHastur_AssetPack_PixelArt/hastur_pixel_art_pack/";
-            if (cell == null)
-                return root + "Cells/Base/Cell_Empty.png";
-
-            return cell.displayName switch
-            {
-                "Distrito Condensador" => root + "Cells/Zone2/Zone2_Cell_CityCondenser.png",
-                "Torre de Cultistas" => root + "Cells/Zone2/Zone2_Cell_CultistTower.png",
-                "Mercado Maldito" => root + "Cells/Zone2/Zone2_Cell_CursedMarket.png",
-                "Archivo de Yith" => root + "Cells/Zone2/Zone2_Cell_YithArchive.png",
-                _ => root + "Cells/Base/Cell_Empty.png",
-            };
+            if (c == null)
+                return Zone2CellVisualState.Idle;
+            if (!c.unlocked)
+                return Zone2CellVisualState.Locked;
+            if (c.corrupted)
+                return Zone2CellVisualState.Corrupted;
+            if (c.ready)
+                return Zone2CellVisualState.Ready;
+            if (c.producing)
+                return Zone2CellVisualState.Producing;
+            return Zone2CellVisualState.Idle;
         }
 
         void SellSupplies()
@@ -179,10 +194,8 @@ namespace LasGranjasDelHastur.Zone2
 
         void ResolveTaxCycle()
         {
-            var purchasedCells = CountPurchasedCellsForTax();
             var rate = 0.16f + _difficultyTier * 0.02f;
-            var activity = Mathf.Clamp(0.25f + purchasedCells * 0.12f, 0.25f, 2.0f);
-            var tax = Mathf.CeilToInt((_darkCoins * rate + _recentProductionForTax * 0.12f) * activity);
+            var tax = Mathf.CeilToInt(_darkCoins * rate + _recentProductionForTax * 0.12f);
             _recentProductionForTax = 0;
 
             if (_darkCoins >= tax)
@@ -201,18 +214,6 @@ namespace LasGranjasDelHastur.Zone2
             _txtHint.text = $"No alcanzó para pagar. Multa {strikeCount}/3 y corrupción aplicada.";
             AudioManager.Instance?.PlayZone2TaxAlert();
             PushSharedProgressToZone1Save();
-        }
-
-        int CountPurchasedCellsForTax()
-        {
-            var n = 0;
-            for (var i = 0; i < _cells.Count; i++)
-            {
-                var c = _cells[i];
-                if (c != null && c.unlocked)
-                    n++;
-            }
-            return n;
         }
 
         void PullSharedProgressFromZone1Save()
@@ -293,22 +294,18 @@ namespace LasGranjasDelHastur.Zone2
         void BuildDefaultCells()
         {
             _cells.Clear();
-            var names = new[]
-            {
-                ("Distrito Condensador", true),
-                ("Torre de Cultistas", false),
-                ("Mercado Maldito", true),
-                ("Archivo de Yith", false),
-            };
+            // Cuatro arquetipos (Huerto Lunar, Molino, Núcleo, Incubadora): id % 4 → sprite y nombre.
+            // Cuatro arquetipos de producción: alterna suministros / planos.
+            var supplyPattern = new[] { true, false, true, false, true, true, false, false, true, false };
 
-            for (var i = 0; i < 12; i++)
+            for (var i = 0; i < Zone2GridCellCount; i++)
             {
-                var template = names[i % names.Length];
+                var district = (Zone2DistrictType)(i % 4);
                 _cells.Add(new Zone2CellRuntime
                 {
                     id = i,
-                    displayName = template.Item1,
-                    producesSupplies = template.Item2,
+                    displayName = $"{Zone2DistrictPaths.GetDisplayName(district)} · {i + 1:00}",
+                    producesSupplies = supplyPattern[i % supplyPattern.Length],
                     unlocked = i < initialUnlockedCells,
                 });
             }
@@ -357,34 +354,43 @@ namespace LasGranjasDelHastur.Zone2
         {
             if (_selectedCell == null || !_selectedCell.unlocked)
                 return;
-            var cost = 40 * _selectedCell.level;
-            if (_darkCoins < cost)
+            if (!Zone2CellLevelRules.CanUpgrade(_selectedCell.level))
+                return;
+            var cost = Zone2CellLevelRules.NextUpgradeCost(_selectedCell.level);
+            if (cost <= 0 || _darkCoins < cost)
                 return;
 
             _darkCoins -= cost;
-            _selectedCell.level++;
+            _selectedCell.level = Zone2CellLevelRules.ClampLevel(_selectedCell.level + 1);
+            SyncWorldCellVisuals();
+            PushSharedProgressToZone1Save();
             AudioManager.Instance?.PlayZone2TierUp();
         }
 
         void ToggleAssistantOnSelectedCell()
         {
+            _reassignAssistantIndex = -1;
             if (_selectedCell == null || !_selectedCell.unlocked)
                 return;
 
-            for (var i = 0; i < _assistantAssignedCellId.Count; i++)
+            for (var i = 0; i < _zone2Assistants.Count; i++)
             {
-                if (_assistantAssignedCellId[i] == _selectedCell.id)
+                if (_zone2Assistants[i].cellId == _selectedCell.id)
                 {
-                    _assistantAssignedCellId[i] = -1;
+                    var a = _zone2Assistants[i];
+                    a.cellId = -1;
+                    _zone2Assistants[i] = a;
                     return;
                 }
             }
 
-            for (var i = 0; i < _assistantAssignedCellId.Count; i++)
+            for (var i = 0; i < _zone2Assistants.Count; i++)
             {
-                if (_assistantAssignedCellId[i] >= 0)
+                if (_zone2Assistants[i].cellId >= 0)
                     continue;
-                _assistantAssignedCellId[i] = _selectedCell.id;
+                var a = _zone2Assistants[i];
+                a.cellId = _selectedCell.id;
+                _zone2Assistants[i] = a;
                 return;
             }
         }
@@ -412,7 +418,7 @@ namespace LasGranjasDelHastur.Zone2
 
             _darkCoins -= _nextCellCost;
             _selectedCell.unlocked = true;
-            _selectedCell.level = 1;
+            _selectedCell.level = Zone2CellLevelRules.MinLevel;
             _selectedCell.corrupted = false;
             _nextCellCost += 55;
             SyncWorldCellVisuals();
@@ -427,9 +433,13 @@ namespace LasGranjasDelHastur.Zone2
             if (cell == null || !cell.unlocked || cell.producing || cell.ready || cell.corrupted)
                 return;
 
-            var assistantBoost = Mathf.Clamp(GetAssignedAssistantsOnCell(cell.id), 0, 4) * 0.25f;
+            var n = GetAssignedAssistantsOnCell(cell.id);
+            var sumLv = GetAssistantLevelSumOnCell(cell.id);
+            var levelExtra = Mathf.Max(0, sumLv - n);
+            var assistantBoost = Mathf.Clamp(n * 0.25f + levelExtra * 0.04f, 0f, 1.2f);
             var speed = 1f + (_difficultyTier - 1) * 0.1f + assistantBoost;
-            cell.remainingSeconds = Mathf.Max(1.2f, (6.0f - cell.level * 0.4f) / speed);
+            var baseT = Zone2CellLevelRules.BaseProductionSeconds(Zone2CellLevelRules.ClampLevel(cell.level));
+            cell.remainingSeconds = Mathf.Max(0.4f, baseT / speed);
             cell.producing = true;
             AudioManager.Instance?.PlayZone2Action();
         }
@@ -440,7 +450,10 @@ namespace LasGranjasDelHastur.Zone2
                 return;
 
             cell.ready = false;
-            var amount = 3 + cell.level + GetAssignedAssistantsOnCell(cell.id);
+            var amount = Zone2CellLevelRules.CollectAmount(
+                Zone2CellLevelRules.ClampLevel(cell.level),
+                GetAssignedAssistantsOnCell(cell.id),
+                GetAssistantLevelSumOnCell(cell.id));
             if (cell.producesSupplies)
             {
                 _citySupplies += amount;
@@ -475,9 +488,9 @@ namespace LasGranjasDelHastur.Zone2
         int CountAssignedAssistants()
         {
             var count = 0;
-            for (var i = 0; i < _assistantAssignedCellId.Count; i++)
+            for (var i = 0; i < _zone2Assistants.Count; i++)
             {
-                if (_assistantAssignedCellId[i] >= 0)
+                if (_zone2Assistants[i].cellId >= 0)
                     count++;
             }
             return count;
@@ -486,21 +499,125 @@ namespace LasGranjasDelHastur.Zone2
         int GetAssignedAssistantsOnCell(int cellId)
         {
             var count = 0;
-            for (var i = 0; i < _assistantAssignedCellId.Count; i++)
+            for (var i = 0; i < _zone2Assistants.Count; i++)
             {
-                if (_assistantAssignedCellId[i] == cellId)
+                if (_zone2Assistants[i].cellId == cellId)
                     count++;
             }
             return count;
         }
 
+        int GetAssistantLevelSumOnCell(int cellId)
+        {
+            var sum = 0;
+            for (var i = 0; i < _zone2Assistants.Count; i++)
+            {
+                if (_zone2Assistants[i].cellId == cellId)
+                    sum += Mathf.Max(1, _zone2Assistants[i].level);
+            }
+            return sum;
+        }
+
+        int NextAssistantUpgradeCost(int currentLevel) =>
+            30 + Mathf.Max(0, currentLevel) * 20;
+
+        string Z2NameForCellId(int cellId)
+        {
+            if (cellId < 0 || cellId >= _cells.Count)
+                return "—";
+            var c = _cells[cellId];
+            return c == null ? "—" : c.displayName;
+        }
+
+        void UpgradeZone2AssistantByIndex(int index)
+        {
+            if (index < 0 || index >= _zone2Assistants.Count)
+                return;
+            var a = _zone2Assistants[index];
+            if (a.level >= Z2RosterMaxAssistantLevel)
+                return;
+            var cost = NextAssistantUpgradeCost(a.level);
+            if (cost > 0 && _darkCoins < cost)
+                return;
+            _darkCoins -= cost;
+            a.level = Mathf.Min(Z2RosterMaxAssistantLevel, a.level + 1);
+            _zone2Assistants[index] = a;
+            GrantSharedXp(1);
+            PushSharedProgressToZone1Save();
+            AudioManager.Instance?.PlayZone2Action();
+        }
+
+        void BeginReassignAssistantByIndex(int index)
+        {
+            if (index < 0 || index >= _zone2Assistants.Count)
+            {
+                _reassignAssistantIndex = -1;
+                return;
+            }
+            _reassignAssistantIndex = index;
+        }
+
+        void RetireUnassignAssistantByIndex(int index)
+        {
+            if (index < 0 || index >= _zone2Assistants.Count)
+                return;
+            var a = _zone2Assistants[index];
+            a.cellId = -1;
+            _zone2Assistants[index] = a;
+            if (_reassignAssistantIndex == index)
+                _reassignAssistantIndex = -1;
+            PushSharedProgressToZone1Save();
+            AudioManager.Instance?.PlayZone2Action();
+        }
+
+        bool TryCompleteReassignToCellIndex(int cellIndex)
+        {
+            if (_reassignAssistantIndex < 0)
+                return false;
+            if (cellIndex < 0 || cellIndex >= _cells.Count)
+            {
+                _reassignAssistantIndex = -1;
+                return true;
+            }
+            var c = _cells[cellIndex];
+            if (c == null || !c.unlocked)
+            {
+                if (_txtHint != null)
+                    _txtHint.text = "Reasignar: elige una celda desbloqueada.";
+                return true;
+            }
+            var a = _zone2Assistants[_reassignAssistantIndex];
+            if (a.cellId == c.id)
+            {
+                _reassignAssistantIndex = -1;
+                if (_txtHint != null)
+                    _txtHint.text = "Reasignar cancelada (misma celda).";
+                return true;
+            }
+            a.cellId = c.id;
+            _zone2Assistants[_reassignAssistantIndex] = a;
+            _reassignAssistantIndex = -1;
+            PushSharedProgressToZone1Save();
+            AudioManager.Instance?.PlayZone2Action();
+            if (_txtHint != null)
+                _txtHint.text = $"Asistente reasignado a {c.displayName}.";
+            return true;
+        }
+
         void EnsureAssistantCount(int total)
         {
             total = Mathf.Clamp(total, 1, MaxAssistants);
-            while (_assistantAssignedCellId.Count < total)
-                _assistantAssignedCellId.Add(-1);
-            while (_assistantAssignedCellId.Count > total)
-                _assistantAssignedCellId.RemoveAt(_assistantAssignedCellId.Count - 1);
+            while (_zone2Assistants.Count < total)
+            {
+                _zone2Assistants.Add(new Zone2AssistantState
+                {
+                    cellId = -1,
+                    type = (Zone2DistrictType)Random.Range(0, 4),
+                    level = 1,
+                });
+            }
+            while (_zone2Assistants.Count > total)
+                _zone2Assistants.RemoveAt(_zone2Assistants.Count - 1);
         }
 
         void GrantSharedXp(int amount)
@@ -536,13 +653,16 @@ namespace LasGranjasDelHastur.Zone2
 
         List<AssistantSaveData> CaptureAssistantsSaveData()
         {
-            var data = new List<AssistantSaveData>(_assistantAssignedCellId.Count);
-            for (var i = 0; i < _assistantAssignedCellId.Count; i++)
+            var data = new List<AssistantSaveData>(_zone2Assistants.Count);
+            for (var i = 0; i < _zone2Assistants.Count; i++)
             {
+                var a = _zone2Assistants[i];
                 data.Add(new AssistantSaveData
                 {
                     assistantId = i,
-                    assignedSlotIndex = _assistantAssignedCellId[i],
+                    assignedSlotIndex = a.cellId,
+                    assistantType = (int)a.type,
+                    assistantLevel = a.level,
                 });
             }
             return data;
@@ -550,17 +670,30 @@ namespace LasGranjasDelHastur.Zone2
 
         void ApplyAssistantsSaveData(List<AssistantSaveData> data)
         {
-            for (var i = 0; i < _assistantAssignedCellId.Count; i++)
-                _assistantAssignedCellId[i] = -1;
+            for (var i = 0; i < _zone2Assistants.Count; i++)
+            {
+                var a = _zone2Assistants[i];
+                a.cellId = -1;
+                _zone2Assistants[i] = a;
+            }
 
             if (data == null)
                 return;
 
             foreach (var saved in data)
             {
-                if (saved == null || saved.assistantId < 0 || saved.assistantId >= _assistantAssignedCellId.Count)
+                if (saved == null || saved.assistantId < 0 || saved.assistantId >= _zone2Assistants.Count)
                     continue;
-                _assistantAssignedCellId[saved.assistantId] = saved.assignedSlotIndex;
+                var a = _zone2Assistants[saved.assistantId];
+                a.cellId = saved.assignedSlotIndex;
+                if (saved.assistantType >= 0 && saved.assistantType < 4)
+                    a.type = (Zone2DistrictType)saved.assistantType;
+                else
+                    a.type = (Zone2DistrictType)(saved.assistantId % 4);
+                a.level = saved.assistantLevel > 0
+                    ? Mathf.Clamp(saved.assistantLevel, 1, Z2RosterMaxAssistantLevel)
+                    : 1;
+                _zone2Assistants[saved.assistantId] = a;
             }
         }
 
@@ -598,7 +731,7 @@ namespace LasGranjasDelHastur.Zone2
                 if (cell == null)
                     continue;
                 cell.unlocked = saved.unlocked;
-                cell.level = Mathf.Max(1, saved.level);
+                cell.level = Zone2CellLevelRules.ClampLevel(saved.level);
                 cell.producing = saved.producing;
                 cell.ready = saved.ready;
                 cell.corrupted = saved.corrupted;
