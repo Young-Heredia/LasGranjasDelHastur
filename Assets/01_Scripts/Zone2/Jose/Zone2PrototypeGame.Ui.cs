@@ -518,7 +518,10 @@ namespace LasGranjasDelHastur.Zone2.Jose
             sLe.preferredHeight = 240f;
             sLe.flexibleWidth = 1f;
 
-            var scrollRt = scrollGo.AddComponent<RectTransform>();
+            // Nota: al agregar LayoutElement, Unity puede auto-agregar RectTransform.
+            var scrollRt = scrollGo.GetComponent<RectTransform>();
+            if (scrollRt == null)
+                scrollRt = scrollGo.AddComponent<RectTransform>();
             scrollRt.sizeDelta = new Vector2(0f, 240f);
 
             var scroll = scrollGo.AddComponent<ScrollRect>();
