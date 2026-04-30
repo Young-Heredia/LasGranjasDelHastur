@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fc17dc99e0a1db4b8945cdf124a9767, type: 3}
   m_Name: Zone1Config
   m_EditorClassIdentifier: Assembly-CSharp::LasGranjasDelHastur.Zone1.Zone1Config
-  initialDarkCoins: 420
-  initialWeakSouls: 12
-  initialPureEnergy: 6
+  initialDarkCoins: 220
+  initialWeakSouls: 6
+  initialPureEnergy: 0
   initialMemoryShards: 0
   initialUnstableSouls: 0
   initialLevel: 1
@@ -28,27 +28,28 @@ MonoBehaviour:
   initiallyUnlockedCells: 1
   initiallyPurchasableCells: 2
   collectorName: Cthulhu
-  baseTaxPercent: 0.25
-  taxIntervalSeconds: 240
-  payWindowSeconds: 10
+  baseTaxPercent: 0.14
+  taxIntervalSeconds: 600
+  payWindowSeconds: 20
   moneyLossOnFail: 0.75
-  finePerStrikeStep: 40
+  finePerStrikeStep: 25
   maxStrikesBeforeGameOver: 3
+  latePaymentPensionPerStrike: 10
   buyerPriceMinMultiplier: 0.75
   buyerPriceMaxMultiplier: 1.35
   buyerLevelDemandBonusPerLevel: 0.02
   buyerStockPenaltyAtFull: 0.2
   buyerSoldPressurePerUnit: 0.02
   buyerPressureRecoveryPerSecond: 0.12
-  cellPurchaseSlotScale: 0.3
-  cellUpgradeBaseCost: 30
-  cellUpgradePerLevelAdd: 30
-  cellUpgradeLevelMultiplier: 1.25
-  weakSoulsCapacity: 1000000
-  pureEnergyCapacity: 1000000
-  memoryShardsCapacity: 1000000
-  unstableSoulsCapacity: 1000000
-  initialAssistants: 2
+  cellPurchaseSlotScale: 0.16
+  cellUpgradeBaseCost: 25
+  cellUpgradePerLevelAdd: 20
+  cellUpgradeLevelMultiplier: 1.18
+  weakSoulsCapacity: 120
+  pureEnergyCapacity: 90
+  memoryShardsCapacity: 70
+  unstableSoulsCapacity: 55
+  initialAssistants: 1
   maxAssistants: 30
   assistantAutomationTickSeconds: 0.25
   cameraMinBounds: {x: -13, y: -10}

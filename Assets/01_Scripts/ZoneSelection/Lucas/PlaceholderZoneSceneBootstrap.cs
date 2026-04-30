@@ -37,7 +37,7 @@ public static class PlaceholderZoneSceneBootstrap
             return;
 
         // If zone gameplay root already exists (manually placed or editor scaffolded), do not spawn duplicates.
-        if (scene.name == "Zone2_Cities" && Object.FindFirstObjectByType<LasGranjasDelHastur.Zone2.Zone2PrototypeGame>() != null)
+        if (scene.name == "Zone2_Cities" && Object.FindFirstObjectByType<LasGranjasDelHastur.Zone2.Jose.Zone2PrototypeGame>() != null)
             return;
         if (scene.name == "Zone3_Celestial" && Object.FindFirstObjectByType<LasGranjasDelHastur.Zone3.Zone3PrototypeGame>() != null)
             return;
@@ -47,7 +47,7 @@ public static class PlaceholderZoneSceneBootstrap
 
         if (scene.name == "Zone2_Cities")
         {
-            LasGranjasDelHastur.Zone2.Zone2RuntimeScaffold.EnsureSceneScaffold();
+            LasGranjasDelHastur.Zone2.Jose.Zone2RuntimeScaffold.EnsureSceneScaffold();
             return;
         }
 

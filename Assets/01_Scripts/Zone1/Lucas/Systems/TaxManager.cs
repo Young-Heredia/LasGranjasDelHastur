@@ -33,9 +33,9 @@ namespace LasGranjasDelHastur.Zone1
 
         [Header("Dynamic Tax (shared economy)")]
         [Tooltip("Costo adicional por celda comprada (que genera recursos). Se escala por zona.")]
-        [SerializeField, Min(0)] private int darkCoinsPerPurchasedCell = 8;
+        [SerializeField, Min(0)] private int darkCoinsPerPurchasedCell = 5;
         [Tooltip("Factor adicional por celda comprada aplicado al % base. Ej: 0.12 => +12% de la tasa base por celda.")]
-        [SerializeField, Range(0f, 0.5f)] private float percentFactorPerPurchasedCell = 0.12f;
+        [SerializeField, Range(0f, 0.5f)] private float percentFactorPerPurchasedCell = 0.07f;
         [SerializeField] private float zone1Multiplier = 1.0f;
         [SerializeField] private float zone2Multiplier = 1.35f;
         [SerializeField] private float zone3Multiplier = 1.65f;

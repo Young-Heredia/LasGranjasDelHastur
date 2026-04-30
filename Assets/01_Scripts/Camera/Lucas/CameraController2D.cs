@@ -18,6 +18,8 @@ namespace LasGranjasDelHastur.Camera
 
         [Header("Zoom")]
         [SerializeField] private float zoomSpeed = 6f;
+        [Tooltip("Multiplicador aplicado al delta de la rueda para que el zoom sea coherente por 'tick'.")]
+        [SerializeField, Range(0.05f, 1.5f)] private float mouseWheelZoomScale = 0.45f;
         [SerializeField] private float zoomSmoothing = 16f;
         [SerializeField] private float minOrthoSize = 3.5f;
         [SerializeField] private float maxOrthoSize = 10f;
@@ -72,7 +74,7 @@ namespace LasGranjasDelHastur.Camera
             var scroll = InputAdapter.MouseScrollY();
             if (Mathf.Abs(scroll) > 0.01f)
             {
-                _targetZoom -= scroll * zoomSpeed * 0.1f;
+                _targetZoom -= scroll * zoomSpeed * mouseWheelZoomScale;
                 _targetZoom = Mathf.Clamp(_targetZoom, minOrthoSize, maxOrthoSize);
             }
         }
