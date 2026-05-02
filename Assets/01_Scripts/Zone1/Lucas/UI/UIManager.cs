@@ -4,6 +4,7 @@ using LasGranjasDelHastur.Zone1.Cells;
 using LasGranjasDelHastur.Core;
 using TMPro;
 using LasGranjasDelHastur;
+using LasGranjasDelHastur.UI.Edwin;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
@@ -14,6 +15,11 @@ namespace LasGranjasDelHastur.Zone1.UI
     [DisallowMultipleComponent]
     public class UIManager : MonoBehaviour
     {
+        const string TaxPanelSpriteEdwinPath = "Assets/Resources/Edwin/Tax/zone1-ui-panel-tax-preview.png";
+        const string TaxPanelSpriteLegacyPath = "Assets/02_Sprites/Lucas/Zone1/UI/zone1_ui_panel_tax.png";
+        const string TaxPortraitEdwinPath = "Assets/Resources/Edwin/Tax/zone1-tax-cthulhu-portrait-preview.png";
+        const string TaxPortraitLegacyPath = "Assets/02_Sprites/Lucas/Zone1/Portraits/zone1_tax_cthulhu_portrait.png";
+
         [Header("Scene Names")]
         [SerializeField] private string zoneSelectionSceneName = "ZoneSelection";
 
@@ -77,6 +83,7 @@ namespace LasGranjasDelHastur.Zone1.UI
         // Sales bindings
         RectTransform _salesListRoot;
         readonly List<GameObject> _saleRows = new();
+        EdwinSalesOfferPanel _salesOfferPanel;
         TextMeshProUGUI _salesAssistantsInfo;
         Button _salesBuyAssistantBtn;
 
@@ -611,6 +618,7 @@ namespace LasGranjasDelHastur.Zone1.UI
 
         void CloseSalesPanel()
         {
+            _salesOfferPanel?.Hide();
             if (_salesPanel != null)
                 _salesPanel.SetActive(false);
         }
@@ -659,8 +667,7 @@ namespace LasGranjasDelHastur.Zone1.UI
             h.childAlignment = TextAnchor.MiddleLeft;
 
             var le = row.AddComponent<LayoutElement>();
-            le.preferredHeight = 68f;
-            le.minHeight = 64f;
+            le.preferredHeight = 52f;
             le.flexibleWidth = 1f;
 
             var portrait = new GameObject("Portrait");
@@ -669,28 +676,17 @@ namespace LasGranjasDelHastur.Zone1.UI
             portraitImg.color = Color.white;
             portraitImg.preserveAspect = true;
             var portraitLE = portrait.AddComponent<LayoutElement>();
-            portraitLE.preferredWidth = 64f;
-            portraitLE.preferredHeight = 64f;
-            var portraitPath = buyer.buyerName switch
-            {
-                "Los Profundos" => Zone1UiSpritePaths.BuyerDeepOnePortrait,
-                "Yekuvian" or "Yithianos" => Zone1UiSpritePaths.BuyerYekuvianPortrait,
-                "Custodios del Eco" => Zone1UiSpritePaths.AssistantHoundTindalosPortrait,
-                "Ángeles Caídos" => Zone1UiSpritePaths.BuyerFallenAngelPortrait,
-                _ => null
-            };
-            if (!string.IsNullOrEmpty(portraitPath))
-            {
-                var p = Zone1ArtProvider.LoadSprite(portraitPath);
-                if (p != null)
-                    portraitImg.sprite = p;
-            }
+            portraitLE.preferredWidth = 40f;
+            portraitLE.preferredHeight = 40f;
+            var iconSprite = BuyerPortraitResolver.GetListIconSprite(buyer.buyerName);
+            if (iconSprite != null)
+                portraitImg.sprite = iconSprite;
 
             var currentPrice = _buyers != null ? _buyers.GetCurrentPrice(buyer) : buyer.basePricePerUnit;
             var left = CreateTMP(row.transform, $"{buyer.buyerName} · {ResourceLabel(buyer.buysResource)} · {currentPrice}/u", 15, TextAlignmentOptions.Left);
             var leftLE = left.gameObject.AddComponent<LayoutElement>();
-            leftLE.preferredWidth = 220f;
-            leftLE.minWidth = 120f;
+            leftLE.preferredWidth = 380f;
+            leftLE.minWidth = 300f;
             leftLE.flexibleWidth = 1f;
             left.textWrappingMode = TextWrappingModes.Normal;
             left.overflowMode = TextOverflowModes.Ellipsis;
@@ -711,9 +707,18 @@ namespace LasGranjasDelHastur.Zone1.UI
             actionsLayout.childForceExpandHeight = false;
             actionsLayout.childForceExpandWidth = false;
             var actionsLE = actions.AddComponent<LayoutElement>();
-            actionsLE.preferredWidth = 224f;
-            actionsLE.minWidth = 218f;
-            actionsLE.flexibleWidth = 0f;
+            actionsLE.preferredWidth = 292f;
+            actionsLE.minWidth = 292f;
+
+            var btnOffer = CreateButton(actions.transform, "Oferta", 78f, 34f, 14);
+            btnOffer.onClick.AddListener(() =>
+            {
+                _salesOfferPanel?.Show(buyer, () =>
+                {
+                    RefreshHUD();
+                    RefreshSalesPanel();
+                });
+            });
 
             var btn1 = CreateButton(actions.transform, "x1", 108f, 38f, 16);
             btn1.onClick.AddListener(() =>
@@ -791,6 +796,8 @@ namespace LasGranjasDelHastur.Zone1.UI
                 return;
 
             _taxTitle.text = "El recaudador se aproxima…";
+            var strikes = _tax.Strikes;
+            var maxS = _tax.MaxStrikesBeforeGameOver;
             var amount = _tax.CalculateTaxAmount();
             var pension = _tax.CalculateLatePaymentPension();
             var debt = _tax.FineDebt;
@@ -800,11 +807,22 @@ namespace LasGranjasDelHastur.Zone1.UI
             if (pension > 0)
                 extras += $"\n• Pensión pago tardío (multas): +{pension}";
 
-            _taxBody.text = TmpSafeGlyphs(
+            var goUrgent = "";
+            if (strikes >= maxS - 1 && strikes < maxS)
+                goUrgent =
+                    $"\n\n<color=#ff7b72><b>¡Game Over fiscal cercano!</b> Esta multa puede ser la última: el límite es <b>{maxS}</b> infracciones globales.</color>";
+
+            _taxBody.text =
+                $"Multas fiscales actuales: <b>{strikes}</b> / {maxS}\n" +
                 $"Recaudador: {_tax.CollectorName}\n" +
                 $"Monto total: {amount}{extras}\n" +
                 $"Tiempo para pagar: {FormatTime(_tax.PayWindowRemainingSeconds)}\n\n" +
-                $"Si no pagas:\n- Pierdes 75% del dinero\n- +1 multa\n- Puede corromper celdas\n- Game Over a 3 multas");
+                $"Si no pagas en este plazo:\n" +
+                $"- Pierdes 75% de las monedas oscuras\n" +
+                $"- +1 multa global\n" +
+                $"- Puede corromper celdas\n" +
+                $"- <b>Game Over</b> al llegar a {maxS} multas" +
+                goUrgent;
 
             _taxPayBtn.onClick.RemoveAllListeners();
             _taxPayBtn.onClick.AddListener(() =>
@@ -994,7 +1012,9 @@ namespace LasGranjasDelHastur.Zone1.UI
             _salesPanel.SetActive(false);
 
             // Tax alert
-            _taxPanel = CreatePanel(root.transform, "TaxAlertPanel", new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0, 0), new Vector2(560, 390));
+            _taxPanel = CreatePanel(root.transform, "TaxAlertPanel", new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0, 0), new Vector2(560, 420));
+            if (_taxPanel.GetComponent<TaxAlertPanelPulse>() == null)
+                _taxPanel.AddComponent<TaxAlertPanelPulse>();
             BuildTaxPanel(_taxPanel.transform);
             _taxPanel.SetActive(false);
 
@@ -1011,6 +1031,9 @@ namespace LasGranjasDelHastur.Zone1.UI
             _txtActionHint.rectTransform.offsetMax = new Vector2(-8f, -2f);
             _txtActionHint.textWrappingMode = TextWrappingModes.NoWrap;
             _txtActionHint.overflowMode = TextOverflowModes.Overflow;
+
+            _salesOfferPanel = EdwinSalesOfferPanel.Ensure(root.transform);
+            _salesOfferPanel.Configure(_buyers, _resources);
         }
 
         static GameObject GetOrCreateSingleUiRoot()
@@ -1109,7 +1132,7 @@ namespace LasGranjasDelHastur.Zone1.UI
             v.spacing = 8f;
 
             CreateTMP(root, "Ventas (compradores)", 20, TextAlignmentOptions.Left);
-            var legend = CreateTMP(root, "x1 = vender 1 unidad   |   MAX = vender todo disponible", 14, TextAlignmentOptions.Left);
+            var legend = CreateTMP(root, "x1 · MAX — venta libre   |   Oferta — contrato con cantidad fija, precio total y XP", 14, TextAlignmentOptions.Left);
             legend.color = new Color(0.88f, 0.86f, 0.72f, 0.9f);
 
             var scrollGo = new GameObject("Scroll");
@@ -1217,9 +1240,9 @@ namespace LasGranjasDelHastur.Zone1.UI
             _taxPortrait = portraitGo.AddComponent<Image>();
             _taxPortrait.preserveAspect = true;
             var portraitLe = portraitGo.AddComponent<LayoutElement>();
-            portraitLe.preferredWidth = 92f;
-            portraitLe.preferredHeight = 92f;
-            var taxPortraitSprite = Zone1ArtProvider.LoadSprite(Zone1UiSpritePaths.TaxCthulhuPortrait);
+            portraitLe.preferredWidth = 84f;
+            portraitLe.preferredHeight = 84f;
+            var taxPortraitSprite = LoadTaxCollectorPortraitSprite();
             if (taxPortraitSprite != null)
                 _taxPortrait.sprite = taxPortraitSprite;
 
@@ -1236,6 +1259,7 @@ namespace LasGranjasDelHastur.Zone1.UI
                 sealImg.sprite = sealSprite;
             _taxBody = CreateTMP(root, "-", 16, TextAlignmentOptions.Left);
             _taxBody.textWrappingMode = TextWrappingModes.Normal;
+            _taxBody.richText = true;
             _taxBody.rectTransform.sizeDelta = new Vector2(0, 220);
 
             var row = CreateHorizontalGroup(root);
@@ -1262,6 +1286,18 @@ namespace LasGranjasDelHastur.Zone1.UI
             bridge.EnsureCorrectInputModule();
         }
 
+        static Sprite LoadTaxPanelBackgroundSprite()
+        {
+            var s = Zone1ArtProvider.LoadSprite(TaxPanelSpriteEdwinPath);
+            return s ?? Zone1ArtProvider.LoadSprite(TaxPanelSpriteLegacyPath);
+        }
+
+        static Sprite LoadTaxCollectorPortraitSprite()
+        {
+            var s = Zone1ArtProvider.LoadSprite(TaxPortraitEdwinPath);
+            return s ?? Zone1ArtProvider.LoadSprite(TaxPortraitLegacyPath);
+        }
+
         static GameObject CreatePanel(Transform parent, string name, Vector2 anchorMin, Vector2 anchorMax, Vector2 anchoredPos, Vector2 size)
         {
             var go = new GameObject(name);
@@ -1276,24 +1312,27 @@ namespace LasGranjasDelHastur.Zone1.UI
             var img = go.AddComponent<Image>();
             img.color = new Color(0.06f, 0.06f, 0.07f, 0.95f);
 
-            var spritePath = name switch
+            Sprite panelSprite = null;
+            if (name == "TaxAlertPanel")
+                panelSprite = LoadTaxPanelBackgroundSprite();
+            else
             {
-                "CellInfoPanel" => "Assets/02_Sprites/Lucas/Zone1/UI/zone1_ui_panel_cell.png",
-                "SalesPanel" => "Assets/02_Sprites/Lucas/Zone1/UI/zone1_ui_panel_sales.png",
-                "TaxAlertPanel" => "Assets/02_Sprites/Lucas/Zone1/UI/zone1_ui_panel_tax.png",
-                "HoverInfoPanel" => "Assets/02_Sprites/Lucas/Zone1/UI/zone1_ui_panel_cell.png",
-                "ActionHintPanel" => "Assets/02_Sprites/Lucas/Zone1/UI/zone1_ui_panel_cell.png",
-                _ => null
-            };
-            if (!string.IsNullOrEmpty(spritePath))
-            {
-                var panelSprite = Zone1ArtProvider.LoadSprite(spritePath);
-                if (panelSprite != null)
+                var spritePath = name switch
                 {
-                    img.sprite = panelSprite;
-                    img.type = Image.Type.Sliced;
-                    img.color = Color.white;
-                }
+                    "CellInfoPanel" => "Assets/02_Sprites/Lucas/Zone1/UI/zone1_ui_panel_cell.png",
+                    "SalesPanel" => "Assets/02_Sprites/Lucas/Zone1/UI/zone1_ui_panel_sales.png",
+                    "HoverInfoPanel" => "Assets/02_Sprites/Lucas/Zone1/UI/zone1_ui_panel_cell.png",
+                    _ => null
+                };
+                if (!string.IsNullOrEmpty(spritePath))
+                    panelSprite = Zone1ArtProvider.LoadSprite(spritePath);
+            }
+
+            if (panelSprite != null)
+            {
+                img.sprite = panelSprite;
+                img.type = Image.Type.Sliced;
+                img.color = Color.white;
             }
 
             var outline = go.AddComponent<Outline>();
