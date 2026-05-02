@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using LasGranjasDelHastur.Core;
 
 namespace LasGranjasDelHastur.Zone1
 {
@@ -18,9 +19,14 @@ namespace LasGranjasDelHastur.Zone1
         [Header("Trigger")]
         [SerializeField] int clicksToTrigger = 5;
 
+        [Header("First-time Bonus")]
+        [Tooltip("Monedas extra que se otorgan SOLO la primera vez que se activa el easter egg en una run (se reinicia con Game Over).")]
+        [SerializeField, Min(0)] int firstTimeBonusDarkCoins = 1000;
+
         readonly List<Zone1CultistVisual> _cultists = new();
         int _clickCount;
         bool _lastActive;
+        ResourceManager _resources;
 
         [Header("Click UI")]
         [SerializeField] float clickPopupSeconds = 1.0f;
@@ -97,6 +103,68 @@ namespace LasGranjasDelHastur.Zone1
 
             _clickCount = 0;
             AudioManager.Instance?.TriggerZone1EasterEgg();
+            var bonusResult = TryGrantFirstTimeBonus();
+            if (bonusResult != BonusResult.None)
+                ShowBonusPopup(worldPos, bonusResult);
+        }
+
+        enum BonusResult
+        {
+            None = 0,
+            Granted,
+            AlreadyClaimed,
+            FailedNoSave,
+            FailedNoResources,
+        }
+
+        BonusResult TryGrantFirstTimeBonus()
+        {
+            if (firstTimeBonusDarkCoins <= 0)
+                return BonusResult.None;
+
+            var sm = SaveManager.Instance;
+            if (sm == null || sm.CachedData == null || sm.CachedData.zone1 == null)
+                return BonusResult.FailedNoSave;
+
+            // Ya cobrado en esta run.
+            if (sm.CachedData.zone1.zone1EasterEggBonusClaimed)
+                return BonusResult.AlreadyClaimed;
+
+            if (_resources == null)
+                _resources = FindFirstObjectByType<ResourceManager>();
+            if (_resources == null)
+                return BonusResult.FailedNoResources;
+
+            _resources.Add(ResourceType.DarkCoins, firstTimeBonusDarkCoins);
+            sm.CachedData.zone1.zone1EasterEggBonusClaimed = true;
+            sm.CachedData.zone1Available = true;
+            sm.CachedData.zone1.valid = true;
+
+            // Persist immediately so reloading the scene keeps the bonus.
+            sm.SaveNow();
+            return BonusResult.Granted;
+        }
+
+        void ShowBonusPopup(Vector3 worldPos, BonusResult result)
+        {
+            if (_popup == null)
+                ShowClickPopup(worldPos);
+
+            if (_popup == null)
+                return;
+
+            _popup.text = result switch
+            {
+                BonusResult.Granted => $"+{firstTimeBonusDarkCoins} monedas (bono 1ª vez)",
+                BonusResult.AlreadyClaimed => "Bono ya cobrado (hasta Game Over)",
+                BonusResult.FailedNoSave => "Bono falló: SaveManager no listo",
+                BonusResult.FailedNoResources => "Bono falló: ResourceManager no listo",
+                _ => ""
+            };
+            _popup.transform.position = worldPos + clickPopupOffset;
+            _popup.sortingOrder = 200;
+            _popup.gameObject.SetActive(true);
+            _popupRemaining = Mathf.Max(_popupRemaining, clickPopupSeconds);
         }
 
         void ShowClickPopup(Vector3 worldPos)

@@ -119,7 +119,7 @@ namespace LasGranjasDelHastur.Core
                 CachedData.zone1Available = CachedData.zone1 != null && CachedData.zone1.valid;
             }
 
-            var zone2 = FindFirstObjectByType<Zone2PrototypeGame>();
+            var zone2 = FindFirstObjectByType<LasGranjasDelHastur.Zone2.Jose.Zone2PrototypeGame>();
             if (zone2 != null)
             {
                 CachedData.zone2 = zone2.CaptureSaveData();
