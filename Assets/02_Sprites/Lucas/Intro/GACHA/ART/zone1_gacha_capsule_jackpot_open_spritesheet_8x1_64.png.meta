@@ -1,0 +1,559 @@
+fileFormatVersion: 2
+guid: bfe2beb0a8fdec14682bfa50698e191f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4041147825716916487
+    second: zone1_gacha_capsule_jackpot_open_spritesheet_8x1_64_0
+  - first:
+      213: 1573641320132815491
+    second: zone1_gacha_capsule_jackpot_open_spritesheet_8x1_64_1
+  - first:
+      213: -3766268903477290798
+    second: zone1_gacha_capsule_jackpot_open_spritesheet_8x1_64_2
+  - first:
+      213: 2769554493047366872
+    second: zone1_gacha_capsule_jackpot_open_spritesheet_8x1_64_3
+  - first:
+      213: -2204460368181834407
+    second: zone1_gacha_capsule_jackpot_open_spritesheet_8x1_64_4
+  - first:
+      213: 6399793065431670471
+    second: zone1_gacha_capsule_jackpot_open_spritesheet_8x1_64_5
+  - first:
+      213: -4892324999933076722
+    second: zone1_gacha_capsule_jackpot_open_spritesheet_8x1_64_6
+  - first:
+      213: -122277710581577827
+    second: zone1_gacha_capsule_jackpot_open_spritesheet_8x1_64_7
+  - first:
+      213: 7414585524291527657
+    second: zone1_gacha_capsule_jackpot_open_spritesheet_8x1_64_8
+  - first:
+      213: -6762683675880795282
+    second: zone1_gacha_capsule_jackpot_open_spritesheet_8x1_64_9
+  - first:
+      213: -8991356693723159949
+    second: zone1_gacha_capsule_jackpot_open_spritesheet_8x1_64_10
+  - first:
+      213: -2207607518414546759
+    second: zone1_gacha_capsule_jackpot_open_spritesheet_8x1_64_11
+  - first:
+      213: 4764501385746139061
+    second: zone1_gacha_capsule_jackpot_open_spritesheet_8x1_64_12
+  - first:
+      213: -8020027873648809921
+    second: zone1_gacha_capsule_jackpot_open_spritesheet_8x1_64_13
+  - first:
+      213: -1433713873705366220
+    second: zone1_gacha_capsule_jackpot_open_spritesheet_8x1_64_14
+  - first:
+      213: 2911422205621438681
+    second: zone1_gacha_capsule_jackpot_open_spritesheet_8x1_64_15
+  - first:
+      213: -760762662971530331
+    second: zone1_gacha_capsule_jackpot_open_spritesheet_8x1_64_16
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: zone1_gacha_capsule_jackpot_open_spritesheet_8x1_64_0
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 2
+        width: 52
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 701f2bc598a051830800000000000000
+      internalID: 4041147825716916487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone1_gacha_capsule_jackpot_open_spritesheet_8x1_64_1
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 2
+        width: 52
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38aa4627172b6d510800000000000000
+      internalID: 1573641320132815491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone1_gacha_capsule_jackpot_open_spritesheet_8x1_64_2
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 2
+        width: 53
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d8d2a703668bbbc0800000000000000
+      internalID: -3766268903477290798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone1_gacha_capsule_jackpot_open_spritesheet_8x1_64_3
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 0
+        width: 53
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d4ec20432f6f6620800000000000000
+      internalID: 2769554493047366872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone1_gacha_capsule_jackpot_open_spritesheet_8x1_64_4
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 50
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95d481199fe2861e0800000000000000
+      internalID: -2204460368181834407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone1_gacha_capsule_jackpot_open_spritesheet_8x1_64_5
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 0
+        width: 57
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ce101da2e1a0d850800000000000000
+      internalID: 6399793065431670471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone1_gacha_capsule_jackpot_open_spritesheet_8x1_64_6
+      rect:
+        serializedVersion: 2
+        x: 321
+        y: 55
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0bd93d4558fa1cb0800000000000000
+      internalID: -4892324999933076722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone1_gacha_capsule_jackpot_open_spritesheet_8x1_64_7
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 0
+        width: 59
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9746d0f1159d4ef0800000000000000
+      internalID: -122277710581577827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone1_gacha_capsule_jackpot_open_spritesheet_8x1_64_8
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 58
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e3662c0046e5e660800000000000000
+      internalID: 7414585524291527657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone1_gacha_capsule_jackpot_open_spritesheet_8x1_64_9
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 0
+        width: 62
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e63dacae60f1622a0800000000000000
+      internalID: -6762683675880795282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone1_gacha_capsule_jackpot_open_spritesheet_8x1_64_10
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 0
+        width: 63
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 372eccda9b8483380800000000000000
+      internalID: -8991356693723159949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone1_gacha_capsule_jackpot_open_spritesheet_8x1_64_11
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 41
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b85b6d88a00d51e0800000000000000
+      internalID: -2207607518414546759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone1_gacha_capsule_jackpot_open_spritesheet_8x1_64_12
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 40
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b7414554c8ee1240800000000000000
+      internalID: 4764501385746139061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone1_gacha_capsule_jackpot_open_spritesheet_8x1_64_13
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 41
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f386e6e042323b090800000000000000
+      internalID: -8020027873648809921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone1_gacha_capsule_jackpot_open_spritesheet_8x1_64_14
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 40
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43d0e38f3dc6a1ce0800000000000000
+      internalID: -1433713873705366220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone1_gacha_capsule_jackpot_open_spritesheet_8x1_64_15
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 40
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d800451213776820800000000000000
+      internalID: 2911422205621438681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone1_gacha_capsule_jackpot_open_spritesheet_8x1_64_16
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 47
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a3a333836a3175f0800000000000000
+      internalID: -760762662971530331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      zone1_gacha_capsule_jackpot_open_spritesheet_8x1_64_0: 4041147825716916487
+      zone1_gacha_capsule_jackpot_open_spritesheet_8x1_64_1: 1573641320132815491
+      zone1_gacha_capsule_jackpot_open_spritesheet_8x1_64_10: -8991356693723159949
+      zone1_gacha_capsule_jackpot_open_spritesheet_8x1_64_11: -2207607518414546759
+      zone1_gacha_capsule_jackpot_open_spritesheet_8x1_64_12: 4764501385746139061
+      zone1_gacha_capsule_jackpot_open_spritesheet_8x1_64_13: -8020027873648809921
+      zone1_gacha_capsule_jackpot_open_spritesheet_8x1_64_14: -1433713873705366220
+      zone1_gacha_capsule_jackpot_open_spritesheet_8x1_64_15: 2911422205621438681
+      zone1_gacha_capsule_jackpot_open_spritesheet_8x1_64_16: -760762662971530331
+      zone1_gacha_capsule_jackpot_open_spritesheet_8x1_64_2: -3766268903477290798
+      zone1_gacha_capsule_jackpot_open_spritesheet_8x1_64_3: 2769554493047366872
+      zone1_gacha_capsule_jackpot_open_spritesheet_8x1_64_4: -2204460368181834407
+      zone1_gacha_capsule_jackpot_open_spritesheet_8x1_64_5: 6399793065431670471
+      zone1_gacha_capsule_jackpot_open_spritesheet_8x1_64_6: -4892324999933076722
+      zone1_gacha_capsule_jackpot_open_spritesheet_8x1_64_7: -122277710581577827
+      zone1_gacha_capsule_jackpot_open_spritesheet_8x1_64_8: 7414585524291527657
+      zone1_gacha_capsule_jackpot_open_spritesheet_8x1_64_9: -6762683675880795282
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -2,6 +2,10 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Networking;
 using System.Collections;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
+using LasGranjasDelHastur.Zone1.Gacha;
 
 /// <summary>
 /// Asigna música y SFX en el Inspector. La música de escena se elige por nombre.
@@ -124,6 +128,30 @@ public class AudioManager : MonoBehaviour
     public AudioClip zone3CosmicWarning;
     public AudioClip zone3BackToZones;
 
+    [Header("Zone1 — Gacha (asigna WAV importados desde Intro/GACHA/zone1_gacha_sfx_pack)")]
+    public AudioClip zone1GachaPanelOpen;
+    public AudioClip zone1GachaPanelClose;
+    public AudioClip zone1GachaButtonPull;
+    public AudioClip zone1GachaButtonPressed;
+    public AudioClip zone1GachaMachineReadyHumLoop;
+    public AudioClip zone1GachaMachineSpinLoop;
+    public AudioClip zone1GachaMachineStop;
+    public AudioClip zone1GachaCapsuleDrop;
+    public AudioClip zone1GachaCapsuleShake;
+    public AudioClip zone1GachaCapsuleOpenCommon;
+    public AudioClip zone1GachaCapsuleOpenCursed;
+    public AudioClip zone1GachaCapsuleOpenJackpot;
+    public AudioClip zone1GachaRewardCoinX2;
+    public AudioClip zone1GachaRewardResourceX2;
+    public AudioClip zone1GachaRewardCoinX5;
+    public AudioClip zone1GachaPenaltyCoin100;
+    public AudioClip zone1GachaPenaltyResource10;
+    public AudioClip zone1GachaCurseSmoke;
+    public AudioClip zone1GachaRevealGood;
+    public AudioClip zone1GachaRevealBad;
+    public AudioClip zone1GachaVfxSpinGlow;
+    public AudioClip zone1GachaJackpotStinger;
+
     [Header("Random Events / Ambient")]
     public AudioClip eventYellowRiftSpawn;
     public AudioClip eventAshRainLoop;
@@ -152,6 +180,9 @@ public class AudioManager : MonoBehaviour
     float _tZone2;
     float _tZone3;
 
+    AudioSource _gachaReadyLoopSource;
+    AudioSource _gachaSpinLoopSource;
+
     // --- Zone1 easter egg state ---
     bool _zone1EasterActive;
     float _tZone1Easter;
@@ -172,6 +203,9 @@ public class AudioManager : MonoBehaviour
 
         EnsureSources();
         SanitizeSharedAudioSource();
+#if UNITY_EDITOR
+        AutofillZone1GachaClipsFromPackIfMissing();
+#endif
         ApplyVolumeSettings();
 
         if (autoPlayMusicByScene)
@@ -456,7 +490,97 @@ public class AudioManager : MonoBehaviour
             uiSource.playOnAwake = false;
             uiSource.spatialBlend = 0f;
         }
+
+        EnsureGachaLoopSources();
     }
+
+    void EnsureGachaLoopSources()
+    {
+        if (_gachaReadyLoopSource != null && _gachaSpinLoopSource != null)
+            return;
+
+        var holder = transform.Find("GachaLoops");
+        if (holder == null)
+        {
+            var h = new GameObject("GachaLoops");
+            h.transform.SetParent(transform, false);
+            holder = h.transform;
+        }
+
+        if (_gachaReadyLoopSource == null)
+        {
+            var go = new GameObject("GachaReadyHum");
+            go.transform.SetParent(holder, false);
+            _gachaReadyLoopSource = go.AddComponent<AudioSource>();
+            _gachaReadyLoopSource.loop = true;
+            _gachaReadyLoopSource.playOnAwake = false;
+            _gachaReadyLoopSource.spatialBlend = 0f;
+        }
+
+        if (_gachaSpinLoopSource == null)
+        {
+            var go = new GameObject("GachaSpin");
+            go.transform.SetParent(holder, false);
+            _gachaSpinLoopSource = go.AddComponent<AudioSource>();
+            _gachaSpinLoopSource.loop = true;
+            _gachaSpinLoopSource.playOnAwake = false;
+            _gachaSpinLoopSource.spatialBlend = 0f;
+        }
+    }
+
+#if UNITY_EDITOR
+    /// <summary>
+    /// Si los campos del gacha están vacíos, carga los WAV del pack desde <see cref="Zone1GachaArtPaths"/>.
+    /// Solo en Editor (AssetDatabase); en build hay que asignar clips en el prefab o usar otro pipeline.
+    /// </summary>
+    void AutofillZone1GachaClipsFromPackIfMissing()
+    {
+        if (zone1GachaPanelOpen == null)
+            zone1GachaPanelOpen = AssetDatabase.LoadAssetAtPath<AudioClip>(Zone1GachaArtPaths.SfxPanelOpen);
+        if (zone1GachaPanelClose == null)
+            zone1GachaPanelClose = AssetDatabase.LoadAssetAtPath<AudioClip>(Zone1GachaArtPaths.SfxPanelClose);
+        if (zone1GachaButtonPull == null)
+            zone1GachaButtonPull = AssetDatabase.LoadAssetAtPath<AudioClip>(Zone1GachaArtPaths.SfxButtonPull);
+        if (zone1GachaButtonPressed == null)
+            zone1GachaButtonPressed = AssetDatabase.LoadAssetAtPath<AudioClip>(Zone1GachaArtPaths.SfxButtonPressed);
+        if (zone1GachaMachineReadyHumLoop == null)
+            zone1GachaMachineReadyHumLoop = AssetDatabase.LoadAssetAtPath<AudioClip>(Zone1GachaArtPaths.SfxReadyHumLoop);
+        if (zone1GachaMachineSpinLoop == null)
+            zone1GachaMachineSpinLoop = AssetDatabase.LoadAssetAtPath<AudioClip>(Zone1GachaArtPaths.SfxSpinLoop);
+        if (zone1GachaMachineStop == null)
+            zone1GachaMachineStop = AssetDatabase.LoadAssetAtPath<AudioClip>(Zone1GachaArtPaths.SfxMachineStop);
+        if (zone1GachaCapsuleDrop == null)
+            zone1GachaCapsuleDrop = AssetDatabase.LoadAssetAtPath<AudioClip>(Zone1GachaArtPaths.SfxCapsuleDrop);
+        if (zone1GachaCapsuleShake == null)
+            zone1GachaCapsuleShake = AssetDatabase.LoadAssetAtPath<AudioClip>(Zone1GachaArtPaths.SfxCapsuleShake);
+        if (zone1GachaCapsuleOpenCommon == null)
+            zone1GachaCapsuleOpenCommon = AssetDatabase.LoadAssetAtPath<AudioClip>(Zone1GachaArtPaths.SfxCapsuleOpenCommon);
+        if (zone1GachaCapsuleOpenCursed == null)
+            zone1GachaCapsuleOpenCursed = AssetDatabase.LoadAssetAtPath<AudioClip>(Zone1GachaArtPaths.SfxCapsuleOpenCursed);
+        if (zone1GachaCapsuleOpenJackpot == null)
+            zone1GachaCapsuleOpenJackpot = AssetDatabase.LoadAssetAtPath<AudioClip>(Zone1GachaArtPaths.SfxCapsuleOpenJackpot);
+        if (zone1GachaRewardCoinX2 == null)
+            zone1GachaRewardCoinX2 = AssetDatabase.LoadAssetAtPath<AudioClip>(Zone1GachaArtPaths.SfxRewardCoinX2);
+        if (zone1GachaRewardResourceX2 == null)
+            zone1GachaRewardResourceX2 = AssetDatabase.LoadAssetAtPath<AudioClip>(Zone1GachaArtPaths.SfxRewardResourceX2);
+        if (zone1GachaRewardCoinX5 == null)
+            zone1GachaRewardCoinX5 = AssetDatabase.LoadAssetAtPath<AudioClip>(Zone1GachaArtPaths.SfxRewardCoinX5);
+        if (zone1GachaPenaltyCoin100 == null)
+            zone1GachaPenaltyCoin100 = AssetDatabase.LoadAssetAtPath<AudioClip>(Zone1GachaArtPaths.SfxPenaltyCoin100);
+        if (zone1GachaPenaltyResource10 == null)
+            zone1GachaPenaltyResource10 = AssetDatabase.LoadAssetAtPath<AudioClip>(Zone1GachaArtPaths.SfxPenaltyResource10);
+        if (zone1GachaCurseSmoke == null)
+            zone1GachaCurseSmoke = AssetDatabase.LoadAssetAtPath<AudioClip>(Zone1GachaArtPaths.SfxCurseSmoke);
+        if (zone1GachaRevealGood == null)
+            zone1GachaRevealGood = AssetDatabase.LoadAssetAtPath<AudioClip>(Zone1GachaArtPaths.SfxRevealGood);
+        if (zone1GachaRevealBad == null)
+            zone1GachaRevealBad = AssetDatabase.LoadAssetAtPath<AudioClip>(Zone1GachaArtPaths.SfxRevealBad);
+        if (zone1GachaVfxSpinGlow == null)
+            zone1GachaVfxSpinGlow = AssetDatabase.LoadAssetAtPath<AudioClip>(Zone1GachaArtPaths.SfxVfxSpinGlow);
+        if (zone1GachaJackpotStinger == null)
+            zone1GachaJackpotStinger = AssetDatabase.LoadAssetAtPath<AudioClip>(Zone1GachaArtPaths.SfxJackpotStinger);
+    }
+#endif
 
     /// <summary>Si música y SFX apuntan al mismo AudioSource, crea un SFX aparte para no cortar la música.</summary>
     private void SanitizeSharedAudioSource()
@@ -623,4 +747,69 @@ public class AudioManager : MonoBehaviour
     public void PlayEventHasturBlessing() => PlaySFX(eventHasturBlessing);
     public void PlayEventTentaclePlague() => PlaySFX(eventTentaclePlague);
     public void PlayEventDimensionalStormLoop() => PlaySFX(eventDimensionalStormLoop);
+
+    public void PlayZone1GachaPanelOpen() => PlayUI(zone1GachaPanelOpen != null ? zone1GachaPanelOpen : uiOpenPanel);
+    public void PlayZone1GachaPanelClose() => PlayUI(zone1GachaPanelClose != null ? zone1GachaPanelClose : uiClosePanel);
+    public void PlayZone1GachaButtonPull() => PlayUI(zone1GachaButtonPull != null ? zone1GachaButtonPull : uiClick);
+    public void PlayZone1GachaButtonPressed() => PlayUI(zone1GachaButtonPressed != null ? zone1GachaButtonPressed : uiClick);
+    public void PlayZone1GachaCapsuleDrop() => PlaySFX(zone1GachaCapsuleDrop);
+    public void PlayZone1GachaCapsuleShake() => PlaySFX(zone1GachaCapsuleShake);
+    public void PlayZone1GachaMachineStop() => PlaySFX(zone1GachaMachineStop);
+    public void PlayZone1GachaCapsuleOpenCommon() => PlaySFX(zone1GachaCapsuleOpenCommon);
+    public void PlayZone1GachaCapsuleOpenCursed() => PlaySFX(zone1GachaCapsuleOpenCursed);
+    public void PlayZone1GachaCapsuleOpenJackpot() => PlaySFX(zone1GachaCapsuleOpenJackpot);
+    public void PlayZone1GachaRewardCoinX2() => PlaySFX(zone1GachaRewardCoinX2);
+    public void PlayZone1GachaRewardResourceX2() => PlaySFX(zone1GachaRewardResourceX2);
+    public void PlayZone1GachaRewardCoinX5() => PlaySFX(zone1GachaRewardCoinX5);
+    public void PlayZone1GachaPenaltyCoin100() => PlaySFX(zone1GachaPenaltyCoin100);
+    public void PlayZone1GachaPenaltyResource10() => PlaySFX(zone1GachaPenaltyResource10);
+    public void PlayZone1GachaCurseSmoke() => PlaySFX(zone1GachaCurseSmoke);
+    public void PlayZone1GachaRevealGood() => PlaySFX(zone1GachaRevealGood);
+    public void PlayZone1GachaRevealBad() => PlaySFX(zone1GachaRevealBad);
+    public void PlayZone1GachaVfxSpinGlow(float volumeScale = 1f) => PlaySFX(zone1GachaVfxSpinGlow, volumeScale);
+    public void PlayZone1GachaJackpotStinger() => PlaySFX(zone1GachaJackpotStinger);
+
+    public void StartZone1GachaReadyHumLoop()
+    {
+        EnsureGachaLoopSources();
+        if (_gachaReadyLoopSource == null || zone1GachaMachineReadyHumLoop == null)
+            return;
+        float s = Mathf.Clamp01(PlayerPrefs.GetFloat("SFXVolume", 1f));
+        _gachaReadyLoopSource.clip = zone1GachaMachineReadyHumLoop;
+        _gachaReadyLoopSource.volume = s * 0.55f;
+        _gachaReadyLoopSource.loop = true;
+        if (!_gachaReadyLoopSource.isPlaying)
+            _gachaReadyLoopSource.Play();
+    }
+
+    public void StopZone1GachaHumLoop()
+    {
+        if (_gachaReadyLoopSource != null && _gachaReadyLoopSource.isPlaying)
+            _gachaReadyLoopSource.Stop();
+    }
+
+    public void StartZone1GachaSpinLoop()
+    {
+        EnsureGachaLoopSources();
+        if (_gachaSpinLoopSource == null || zone1GachaMachineSpinLoop == null)
+            return;
+        float s = Mathf.Clamp01(PlayerPrefs.GetFloat("SFXVolume", 1f));
+        _gachaSpinLoopSource.clip = zone1GachaMachineSpinLoop;
+        _gachaSpinLoopSource.volume = s * 0.65f;
+        _gachaSpinLoopSource.loop = true;
+        if (!_gachaSpinLoopSource.isPlaying)
+            _gachaSpinLoopSource.Play();
+    }
+
+    public void StopZone1GachaSpinLoop()
+    {
+        if (_gachaSpinLoopSource != null && _gachaSpinLoopSource.isPlaying)
+            _gachaSpinLoopSource.Stop();
+    }
+
+    public void StopZone1GachaLoops()
+    {
+        StopZone1GachaHumLoop();
+        StopZone1GachaSpinLoop();
+    }
 }

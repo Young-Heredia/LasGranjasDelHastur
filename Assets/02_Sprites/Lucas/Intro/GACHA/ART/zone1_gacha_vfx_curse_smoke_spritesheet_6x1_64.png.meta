@@ -1,0 +1,325 @@
+fileFormatVersion: 2
+guid: 4144ee4b124788742b209cce695264e6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2472373024410862125
+    second: zone1_gacha_vfx_curse_smoke_spritesheet_6x1_64_0
+  - first:
+      213: -91743134681787220
+    second: zone1_gacha_vfx_curse_smoke_spritesheet_6x1_64_1
+  - first:
+      213: -9015160514867171851
+    second: zone1_gacha_vfx_curse_smoke_spritesheet_6x1_64_2
+  - first:
+      213: 283816282995829798
+    second: zone1_gacha_vfx_curse_smoke_spritesheet_6x1_64_3
+  - first:
+      213: -8714107901075239501
+    second: zone1_gacha_vfx_curse_smoke_spritesheet_6x1_64_4
+  - first:
+      213: 5291217901563468358
+    second: zone1_gacha_vfx_curse_smoke_spritesheet_6x1_64_5
+  - first:
+      213: -4787114685013305977
+    second: zone1_gacha_vfx_curse_smoke_spritesheet_6x1_64_6
+  - first:
+      213: -6471687232861064009
+    second: zone1_gacha_vfx_curse_smoke_spritesheet_6x1_64_7
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: zone1_gacha_vfx_curse_smoke_spritesheet_6x1_64_0
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 9
+        width: 44
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3dd7bbf55dd50bdd0800000000000000
+      internalID: -2472373024410862125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone1_gacha_vfx_curse_smoke_spritesheet_6x1_64_1
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 34
+        width: 31
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca416b6ea101abef0800000000000000
+      internalID: -91743134681787220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone1_gacha_vfx_curse_smoke_spritesheet_6x1_64_2
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 4
+        width: 46
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5fde63ea647b3e280800000000000000
+      internalID: -9015160514867171851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone1_gacha_vfx_curse_smoke_spritesheet_6x1_64_3
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 36
+        width: 33
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62c2079d76150f300800000000000000
+      internalID: 283816282995829798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone1_gacha_vfx_curse_smoke_spritesheet_6x1_64_4
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 4
+        width: 50
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3bd4cf58805411780800000000000000
+      internalID: -8714107901075239501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone1_gacha_vfx_curse_smoke_spritesheet_6x1_64_5
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 4
+        width: 54
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64ad0ebb5ae2e6940800000000000000
+      internalID: 5291217901563468358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone1_gacha_vfx_curse_smoke_spritesheet_6x1_64_6
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 4
+        width: 58
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 785d9b4ae80c09db0800000000000000
+      internalID: -4787114685013305977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: zone1_gacha_vfx_curse_smoke_spritesheet_6x1_64_7
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 2
+        width: 62
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b4b2eb00c2ff26a0800000000000000
+      internalID: -6471687232861064009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      zone1_gacha_vfx_curse_smoke_spritesheet_6x1_64_0: -2472373024410862125
+      zone1_gacha_vfx_curse_smoke_spritesheet_6x1_64_1: -91743134681787220
+      zone1_gacha_vfx_curse_smoke_spritesheet_6x1_64_2: -9015160514867171851
+      zone1_gacha_vfx_curse_smoke_spritesheet_6x1_64_3: 283816282995829798
+      zone1_gacha_vfx_curse_smoke_spritesheet_6x1_64_4: -8714107901075239501
+      zone1_gacha_vfx_curse_smoke_spritesheet_6x1_64_5: 5291217901563468358
+      zone1_gacha_vfx_curse_smoke_spritesheet_6x1_64_6: -4787114685013305977
+      zone1_gacha_vfx_curse_smoke_spritesheet_6x1_64_7: -6471687232861064009
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

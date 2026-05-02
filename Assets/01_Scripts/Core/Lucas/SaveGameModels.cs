@@ -35,6 +35,9 @@ namespace LasGranjasDelHastur.Core
         /// </summary>
         public bool zone1EasterEggBonusClaimed;
 
+        /// <summary>Tutorial guiado de Zona 1 completado o saltado (no volver a mostrar).</summary>
+        public bool guidedTutorialCompleted;
+
         public int level;
         public int xp;
 

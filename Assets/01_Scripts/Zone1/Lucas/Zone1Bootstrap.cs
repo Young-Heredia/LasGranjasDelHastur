@@ -2,6 +2,7 @@ using System.Collections;
 using System.IO;
 using LasGranjasDelHastur;
 using LasGranjasDelHastur.Camera;
+using LasGranjasDelHastur.Zone1.Gacha;
 using LasGranjasDelHastur.Zone1.UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -325,7 +326,7 @@ namespace LasGranjasDelHastur.Zone1
                         wet.transform.localScale = new Vector3(0.9f, 0.9f, 1f);
                         var wetSr = wet.AddComponent<SpriteRenderer>();
                         wetSr.sprite = Zone1ArtProvider.LoadSprite("Assets/02_Sprites/Lucas/Zone1/Overlays/zone1_overlay_humidity.png") ?? RuntimeSpriteFactory.OpaqueWhiteSprite;
-                        wetSr.color = new Color(0.62f, 0.72f, 0.82f, 0.08f);
+                        wetSr.color = new Color(0.78f, 0.86f, 0.95f, 0.045f);
                         wetSr.sortingOrder = 1;
                     }
                 }
@@ -334,9 +335,9 @@ namespace LasGranjasDelHastur.Zone1
 
         static void CreateFog(Transform parent)
         {
-            CreateFogBand(parent, "LowFog_Front", new Vector3(0f, -5.8f, 1f), new Vector3(13f, 3.4f, 1f), new Color(0.72f, 0.76f, 0.74f, 0.2f), 70, 6f);
-            CreateFogBand(parent, "LowFog_Center", new Vector3(0f, -1.8f, 1f), new Vector3(12f, 2.8f, 1f), new Color(0.66f, 0.73f, 0.73f, 0.14f), 68, 4.5f);
-            CreateFogBand(parent, "LowFog_Back", new Vector3(0f, 2.7f, 1f), new Vector3(11f, 2.2f, 1f), new Color(0.55f, 0.64f, 0.68f, 0.1f), 16, 3.8f);
+            CreateFogBand(parent, "LowFog_Front", new Vector3(0f, -5.8f, 1f), new Vector3(13f, 3.4f, 1f), new Color(0.82f, 0.88f, 0.96f, 0.11f), 70, 6f);
+            CreateFogBand(parent, "LowFog_Center", new Vector3(0f, -1.8f, 1f), new Vector3(12f, 2.8f, 1f), new Color(0.76f, 0.84f, 0.92f, 0.08f), 68, 4.5f);
+            CreateFogBand(parent, "LowFog_Back", new Vector3(0f, 2.7f, 1f), new Vector3(11f, 2.2f, 1f), new Color(0.68f, 0.78f, 0.88f, 0.06f), 16, 3.8f);
         }
 
         static void CreateFogBand(Transform parent, string name, Vector3 pos, Vector3 scale, Color color, int sortingOrder, float fps)
@@ -450,8 +451,8 @@ namespace LasGranjasDelHastur.Zone1
             var root = new GameObject("CellFieldLayout");
             root.transform.SetParent(parent, false);
 
-            CreateWallSegment(root.transform, "FieldShadow", new Vector3(0f, -0.45f, 0f), new Vector3(16.4f, 10.8f, 1f), 8, new Color(0.02f, 0.02f, 0.04f, 0.35f));
-            CreateWallSegment(root.transform, "FieldPlate", new Vector3(0f, -0.1f, 0f), new Vector3(15.2f, 9.5f, 1f), 9, new Color(0.12f, 0.10f, 0.12f, 0.58f));
+            CreateWallSegment(root.transform, "FieldShadow", new Vector3(0f, -0.45f, 0f), new Vector3(16.4f, 10.8f, 1f), 8, new Color(0.04f, 0.06f, 0.10f, 0.20f));
+            CreateWallSegment(root.transform, "FieldPlate", new Vector3(0f, -0.1f, 0f), new Vector3(15.2f, 9.5f, 1f), 9, new Color(0.14f, 0.16f, 0.22f, 0.34f));
 
             for (var row = 0; row < 5; row++)
             {
@@ -504,7 +505,42 @@ namespace LasGranjasDelHastur.Zone1
         {
             CreateFountain(parent, "Fountain_West", new Vector3(-10.6f, 0.15f, 0f), new Vector3(0.85f, 0.85f, 1f), 22);
             CreateFountain(parent, "Fountain_East", new Vector3(10.55f, -0.1f, 0f), new Vector3(-0.85f, 0.85f, 1f), 22);
-            CreateFountain(parent, "Fountain_North", new Vector3(0.0f, 4.65f, 0f), new Vector3(0.78f, 0.78f, 1f), 16);
+            // Más arriba que la rejilla de celdas para no competir con OverlapPoint de farm.
+            CreateFountain(parent, "Fountain_North", new Vector3(0.0f, 5.55f, 0f), new Vector3(0.78f, 0.78f, 1f), 16);
+            EnsureGachaCollidersOnFountains(parent);
+        }
+
+        static void EnsureGachaCollidersOnFountains(Transform dungeonDecor)
+        {
+            TryCollider("Fountain_West");
+            TryCollider("Fountain_East");
+            TryCollider("Fountain_North");
+
+            void TryCollider(string fountainName)
+            {
+                var t = FindChildByNameIncludingInactive(dungeonDecor, fountainName);
+                if (t == null)
+                    return;
+                EnsureGachaColliderOnFountain(t.gameObject);
+            }
+        }
+
+        public static void EnsureGachaColliderOnFountain(GameObject fountainRoot)
+        {
+            if (fountainRoot == null)
+                return;
+            if (fountainRoot.name == "Fountain_North")
+                fountainRoot.transform.position = new Vector3(0f, 5.55f, fountainRoot.transform.position.z);
+
+            if (fountainRoot.GetComponent<BoxCollider2D>() == null)
+            {
+                var col = fountainRoot.AddComponent<BoxCollider2D>();
+                col.size = new Vector2(2.4f, 2.9f);
+                col.offset = new Vector2(0f, 0.35f);
+            }
+
+            if (fountainRoot.GetComponent<Zone1GachaFountainInteract>() == null)
+                fountainRoot.AddComponent<Zone1GachaFountainInteract>();
         }
 
         static void CreateFountain(Transform parent, string name, Vector3 pos, Vector3 scale, int sortingOrder)
@@ -533,6 +569,7 @@ namespace LasGranjasDelHastur.Zone1
 
             var anim = go.AddComponent<SpriteSheetAnimator>();
             anim.Configure("Assets/02_Sprites/Lucas/Zone1/Spritesheets/zone1_fountain_spritesheet_4x1_128.png", 128, 128, 8f);
+            EnsureGachaColliderOnFountain(go);
         }
 
         static void CreateRitualMark(Transform parent, Vector3 pos)
@@ -562,7 +599,7 @@ namespace LasGranjasDelHastur.Zone1
             runes.transform.localScale = new Vector3(5f, 4f, 1f);
             var runesSr = runes.AddComponent<SpriteRenderer>();
             runesSr.sprite = Zone1ArtProvider.LoadSprite("Assets/02_Sprites/Lucas/Zone1/Overlays/zone1_overlay_runes.png");
-            runesSr.color = new Color(1f, 1f, 1f, 0.35f);
+            runesSr.color = new Color(0.92f, 0.96f, 1f, 0.18f);
             runesSr.sortingOrder = 6;
 
             var vignette = new GameObject("AmbientVignette");
@@ -571,7 +608,8 @@ namespace LasGranjasDelHastur.Zone1
             vignette.transform.localScale = new Vector3(5f, 5f, 1f);
             var vigSr = vignette.AddComponent<SpriteRenderer>();
             vigSr.sprite = Zone1ArtProvider.LoadSprite("Assets/02_Sprites/Lucas/Zone1/Overlays/zone1_overlay_vignette.png");
-            vigSr.color = new Color(1f, 1f, 1f, 0.25f);
+            // Viñeta más suave: menos oscurecimiento en bordes, tono ligeramente frío (azul).
+            vigSr.color = new Color(0.82f, 0.88f, 0.98f, 0.11f);
             vigSr.sortingOrder = 90;
         }
 
