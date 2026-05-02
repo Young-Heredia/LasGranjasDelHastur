@@ -2,6 +2,7 @@ using System.Collections;
 using System.IO;
 using LasGranjasDelHastur;
 using LasGranjasDelHastur.Camera;
+using LasGranjasDelHastur.Zone1.Gacha;
 using LasGranjasDelHastur.Zone1.UI;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -504,7 +505,42 @@ namespace LasGranjasDelHastur.Zone1
         {
             CreateFountain(parent, "Fountain_West", new Vector3(-10.6f, 0.15f, 0f), new Vector3(0.85f, 0.85f, 1f), 22);
             CreateFountain(parent, "Fountain_East", new Vector3(10.55f, -0.1f, 0f), new Vector3(-0.85f, 0.85f, 1f), 22);
-            CreateFountain(parent, "Fountain_North", new Vector3(0.0f, 4.65f, 0f), new Vector3(0.78f, 0.78f, 1f), 16);
+            // Más arriba que la rejilla de celdas para no competir con OverlapPoint de farm.
+            CreateFountain(parent, "Fountain_North", new Vector3(0.0f, 5.55f, 0f), new Vector3(0.78f, 0.78f, 1f), 16);
+            EnsureGachaCollidersOnFountains(parent);
+        }
+
+        static void EnsureGachaCollidersOnFountains(Transform dungeonDecor)
+        {
+            TryCollider("Fountain_West");
+            TryCollider("Fountain_East");
+            TryCollider("Fountain_North");
+
+            void TryCollider(string fountainName)
+            {
+                var t = FindChildByNameIncludingInactive(dungeonDecor, fountainName);
+                if (t == null)
+                    return;
+                EnsureGachaColliderOnFountain(t.gameObject);
+            }
+        }
+
+        public static void EnsureGachaColliderOnFountain(GameObject fountainRoot)
+        {
+            if (fountainRoot == null)
+                return;
+            if (fountainRoot.name == "Fountain_North")
+                fountainRoot.transform.position = new Vector3(0f, 5.55f, fountainRoot.transform.position.z);
+
+            if (fountainRoot.GetComponent<BoxCollider2D>() == null)
+            {
+                var col = fountainRoot.AddComponent<BoxCollider2D>();
+                col.size = new Vector2(2.4f, 2.9f);
+                col.offset = new Vector2(0f, 0.35f);
+            }
+
+            if (fountainRoot.GetComponent<Zone1GachaFountainInteract>() == null)
+                fountainRoot.AddComponent<Zone1GachaFountainInteract>();
         }
 
         static void CreateFountain(Transform parent, string name, Vector3 pos, Vector3 scale, int sortingOrder)
@@ -533,6 +569,7 @@ namespace LasGranjasDelHastur.Zone1
 
             var anim = go.AddComponent<SpriteSheetAnimator>();
             anim.Configure("Assets/02_Sprites/Lucas/Zone1/Spritesheets/zone1_fountain_spritesheet_4x1_128.png", 128, 128, 8f);
+            EnsureGachaColliderOnFountain(go);
         }
 
         static void CreateRitualMark(Transform parent, Vector3 pos)

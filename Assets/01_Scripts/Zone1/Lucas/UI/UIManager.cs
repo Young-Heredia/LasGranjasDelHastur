@@ -42,12 +42,25 @@ namespace LasGranjasDelHastur.Zone1.UI
         RectTransform _btnSalesRt;
         Vector3 _salesPulseBaseScale = Vector3.one;
         float _salesPulsePhase;
+        CanvasGroup _salesCtaGroup;
+        RectTransform _salesCtaRt;
+        TextMeshProUGUI _salesCtaTmp;
+        float _salesCtaTimer;
+        static readonly string[] SalesCtaPhrases = { "BUY", "SHOP NOW", "VENDE" };
         Button _btnBack;
         Button _btnPayEarly;
 
         // Panels
         GameObject _cellPanel;
         GameObject _salesPanel;
+
+        /// <summary>True cuando el panel de ventas está abierto (tutorial / UI).</summary>
+        public bool IsSalesPanelOpen => _salesPanel != null && _salesPanel.activeSelf;
+
+        /// <summary>Ventas exitosas en esta carga de escena (para tutorial guiado).</summary>
+        public int SessionSalesCompletedCount { get; private set; }
+
+        void RegisterSessionSaleCompleted() => SessionSalesCompletedCount++;
         GameObject _taxPanel;
         GameObject _hoverPanel;
 
@@ -142,6 +155,7 @@ namespace LasGranjasDelHastur.Zone1.UI
                 _txtTaxTimer.text = TmpSafeGlyphs($"Impuesto: {FormatTime(_tax.IsAlertActive ? _tax.PayWindowRemainingSeconds : _tax.TimeToNextTaxSeconds)}");
 
             UpdateSalesButtonAttentionPulse();
+            UpdateSalesCtaCallout();
         }
 
         void SelfHealUiIfNeeded()
@@ -706,6 +720,7 @@ namespace LasGranjasDelHastur.Zone1.UI
             {
                 if (_buyers.TrySell(buyer, 1))
                 {
+                    RegisterSessionSaleCompleted();
                     if (AudioManager.Instance != null && AudioManager.Instance.zone1Sell != null)
                         AudioManager.Instance.PlaySFX(AudioManager.Instance.zone1Sell);
                     RefreshHUD();
@@ -721,6 +736,7 @@ namespace LasGranjasDelHastur.Zone1.UI
                     return;
                 if (_buyers.TrySell(buyer, amt))
                 {
+                    RegisterSessionSaleCompleted();
                     if (AudioManager.Instance != null && AudioManager.Instance.zone1Sell != null)
                         AudioManager.Instance.PlaySFX(AudioManager.Instance.zone1Sell);
                     RefreshHUD();
@@ -928,7 +944,15 @@ namespace LasGranjasDelHastur.Zone1.UI
             _txtZoneLabel = CreateHUDStatRow(colTax, Zone1UiSpritePaths.IconTax, "Zona 1 - Calabozos", 22, 28f);
             _txtTaxTimer = CreateHUDStatRow(colTax, Zone1UiSpritePaths.IconTime, "Impuesto: 00:00", 20, 28f);
             _txtStrikes = CreateHUDStatRow(colTax, Zone1UiSpritePaths.IconAlert, "Multas: 0/3", 20, 28f);
-            _txtAssistants = CreateHUDStatRow(colTax, Zone1UiSpritePaths.AssistantHoundTindalosPortrait, "Asistentes: 0/0", 18, 38f, true);
+            _txtAssistants = CreateHUDStatRow(
+                colTax,
+                Zone1UiSpritePaths.AssistantHoundTindalosPortrait,
+                "Asistentes: 0/0",
+                20,
+                iconSide: 56f,
+                preserveIconAspect: true,
+                iconPreferredWidth: 72f,
+                portraitHudOutline: true);
 
             var hudSpacer = new GameObject("HudSpacer");
             hudSpacer.transform.SetParent(hud.transform, false);
@@ -947,6 +971,8 @@ namespace LasGranjasDelHastur.Zone1.UI
             _btnSales = CreateButton(colBtns, "Ventas", 122f, 118f, 21, layoutFlexibleWidth: false);
             _btnSalesRt = _btnSales != null ? _btnSales.GetComponent<RectTransform>() : null;
             _salesPulseBaseScale = _btnSalesRt != null ? _btnSalesRt.localScale : Vector3.one;
+            if (_btnSales != null)
+                BuildSalesCtaCallout(_btnSales.transform);
             _btnPayEarly = CreateButton(colBtns, "Pago adelantado", 126f, 38f, 15, layoutFlexibleWidth: false);
             _btnBack = CreateButton(colBtns, "Volver a Zonas", 126f, 40f, 15, layoutFlexibleWidth: false);
             var btnsLE = colBtns.gameObject.GetComponent<LayoutElement>();
@@ -1307,7 +1333,15 @@ namespace LasGranjasDelHastur.Zone1.UI
             return go.transform;
         }
 
-        static TextMeshProUGUI CreateHUDStatRow(Transform parent, string iconPath, string text, int fontSize, float iconSide = 30f, bool preserveIconAspect = false)
+        static TextMeshProUGUI CreateHUDStatRow(
+            Transform parent,
+            string iconPath,
+            string text,
+            int fontSize,
+            float iconSide = 30f,
+            bool preserveIconAspect = false,
+            float iconPreferredWidth = -1f,
+            bool portraitHudOutline = false)
         {
             var row = new GameObject("HUDStatRow");
             row.transform.SetParent(parent, false);
@@ -1320,16 +1354,30 @@ namespace LasGranjasDelHastur.Zone1.UI
             h.childForceExpandHeight = false;
             h.childForceExpandWidth = false;
             var rowLe = row.AddComponent<LayoutElement>();
-            rowLe.preferredHeight = Mathf.Max(26f, Mathf.Max(fontSize + 10f, iconSide + 6f));
+            var iconW = iconPreferredWidth > 0f ? iconPreferredWidth : iconSide;
+            var iconH = iconSide;
+            rowLe.preferredHeight = Mathf.Max(26f, Mathf.Max(fontSize + 10f, iconH + 6f));
 
             var iconGo = new GameObject("Icon");
             iconGo.transform.SetParent(row.transform, false);
             var icon = iconGo.AddComponent<Image>();
             icon.preserveAspect = preserveIconAspect;
             var iconLe = iconGo.AddComponent<LayoutElement>();
-            iconLe.preferredWidth = iconSide;
-            iconLe.preferredHeight = iconSide;
+            iconLe.preferredWidth = iconW;
+            iconLe.preferredHeight = iconH;
+            iconLe.minWidth = iconW;
+            iconLe.minHeight = iconH;
             iconLe.flexibleWidth = 0f;
+            iconLe.flexibleHeight = 0f;
+            if (portraitHudOutline)
+            {
+                var io = iconGo.AddComponent<Outline>();
+                io.effectColor = new Color(0.82f, 0.76f, 0.52f, 0.75f);
+                io.effectDistance = new Vector2(1.1f, -1.1f);
+                // El retrato tiene mucho transparente / aspecto vertical: el layout no escala el dibujo.
+                iconGo.transform.localScale = new Vector3(1.55f, 1.55f, 1f);
+                rowLe.preferredHeight = Mathf.Max(rowLe.preferredHeight, iconH * 1.55f + 6f);
+            }
             var iconSprite = Zone1ArtProvider.LoadSprite(iconPath);
             if (iconSprite != null)
                 icon.sprite = iconSprite;
@@ -1403,7 +1451,8 @@ namespace LasGranjasDelHastur.Zone1.UI
         {
             if (_btnSalesRt == null)
                 return;
-            if (!ShouldPulseSalesButton())
+            // Pulso alineado con “hay algo que vender”: mismo criterio que el callout (incentivo ventas).
+            if (!HasAnySellableStock() || (_salesPanel != null && _salesPanel.activeSelf))
             {
                 _btnSalesRt.localScale = _salesPulseBaseScale;
                 return;
@@ -1415,30 +1464,85 @@ namespace LasGranjasDelHastur.Zone1.UI
             _btnSalesRt.localScale = _salesPulseBaseScale * scale;
         }
 
-        bool ShouldPulseSalesButton()
+        void BuildSalesCtaCallout(Transform salesButtonTransform)
         {
-            if (_resources == null)
-                return false;
+            var ctaGo = new GameObject("SalesCtaCallout");
+            ctaGo.transform.SetParent(salesButtonTransform, false);
+            // Graphic + sprite: sin sprite, algunos layouts no reservan bien el rect; Image invisible fuerza RectTransform bajo UI.
+            var holderImg = ctaGo.AddComponent<Image>();
+            holderImg.sprite = RuntimeSpriteFactory.OpaqueWhiteSprite;
+            holderImg.type = Image.Type.Simple;
+            holderImg.color = new Color(1f, 1f, 1f, 0f);
+            holderImg.raycastTarget = false;
+            _salesCtaRt = ctaGo.GetComponent<RectTransform>();
+            // Mitad superior del botón (dentro del rect) para que no quede fuera del padre ni bajo otros canvas.
+            _salesCtaRt.anchorMin = new Vector2(0.04f, 0.48f);
+            _salesCtaRt.anchorMax = new Vector2(0.96f, 0.98f);
+            _salesCtaRt.pivot = new Vector2(0.5f, 0.5f);
+            _salesCtaRt.offsetMin = Vector2.zero;
+            _salesCtaRt.offsetMax = Vector2.zero;
+            _salesCtaRt.localScale = Vector3.one;
 
-            if (HasAnySellableStock())
-                return true;
+            _salesCtaGroup = ctaGo.AddComponent<CanvasGroup>();
+            _salesCtaGroup.alpha = 0f;
+            _salesCtaGroup.blocksRaycasts = false;
+            _salesCtaGroup.interactable = false;
 
-            if (_cellPanel != null && _cellPanel.activeSelf && _boundCell != null)
+            var labelGo = new GameObject("CtaLabel");
+            labelGo.transform.SetParent(ctaGo.transform, false);
+            _salesCtaTmp = labelGo.AddComponent<TextMeshProUGUI>();
+            _salesCtaTmp.alignment = TextAlignmentOptions.Center;
+            _salesCtaTmp.fontSize = 18;
+            _salesCtaTmp.fontStyle = FontStyles.Bold;
+            _salesCtaTmp.color = new Color(0.98f, 0.9f, 0.52f, 1f);
+            _salesCtaTmp.text = TmpSafeGlyphs("> BUY");
+            _salesCtaTmp.raycastTarget = false;
+            _salesCtaTmp.enableAutoSizing = false;
+            _salesCtaTmp.margin = new Vector4(1f, 1f, 1f, 1f);
+            _salesCtaTmp.overflowMode = TextOverflowModes.Overflow;
+            _salesCtaTmp.textWrappingMode = TextWrappingModes.NoWrap;
+            // NewRocker: outline muy fino evita glitches; el color del texto ya contrasta.
+            _salesCtaTmp.outlineWidth = 0.12f;
+            _salesCtaTmp.outlineColor = new Color(0.04f, 0.04f, 0.07f, 0.95f);
+
+            var rtTmp = _salesCtaTmp.rectTransform;
+            rtTmp.anchorMin = Vector2.zero;
+            rtTmp.anchorMax = Vector2.one;
+            rtTmp.offsetMin = Vector2.zero;
+            rtTmp.offsetMax = Vector2.zero;
+
+            ctaGo.transform.SetAsLastSibling();
+        }
+
+        void UpdateSalesCtaCallout()
+        {
+            if (_salesCtaGroup == null || _salesCtaTmp == null || _salesCtaRt == null)
+                return;
+
+            var show = HasAnySellableStock() && _salesPanel != null && !_salesPanel.activeSelf;
+            if (!show)
             {
-                if (_boundCell.State == CellState.Blocked && _cells != null &&
-                    _cells.TryGetBlockedPurchasePreview(_boundCell, out _, out var buyCost, out _) &&
-                    _resources.Get(ResourceType.DarkCoins) < buyCost)
-                    return true;
-
-                if (!_boundCell.IsCorrupted &&
-                    (_boundCell.State == CellState.Available ||
-                     _boundCell.State == CellState.ReadyToCollect ||
-                     _boundCell.State == CellState.Producing) &&
-                    _resources.Get(ResourceType.DarkCoins) < _boundCell.UpgradeCostDarkCoins)
-                    return true;
+                _salesCtaGroup.alpha = 0f;
+                return;
             }
 
-            return false;
+            _salesCtaTimer += Time.unscaledDeltaTime;
+            const float phraseLen = 2.75f;
+            const float fade = 0.42f;
+            var phase = _salesCtaTimer % phraseLen;
+            var idx = Mathf.FloorToInt(_salesCtaTimer / phraseLen) % SalesCtaPhrases.Length;
+            // Solo ASCII / glifos de la fuente NewRocker (Unicode triángulos -> espacio y no se lee nada).
+            _salesCtaTmp.text = TmpSafeGlyphs($"> {SalesCtaPhrases[idx]}");
+
+            float a = 1f;
+            if (phase < fade)
+                a = phase / fade;
+            else if (phase > phraseLen - fade)
+                a = (phraseLen - phase) / fade;
+            _salesCtaGroup.alpha = Mathf.Clamp01(a);
+
+            var bob = Mathf.Sin(_salesCtaTimer * 5.2f) * 2f;
+            _salesCtaRt.anchoredPosition = new Vector2(bob * 0.35f, bob);
         }
 
         bool HasAnySellableStock()
@@ -1602,6 +1706,8 @@ namespace LasGranjasDelHastur.Zone1.UI
         /// <summary>
         /// NewRocker-Regular SDF (y similares) suelen no incluir flechas Unicode; TMPro spamea warnings si aparecen en texto dinámico.
         /// </summary>
+        public static string SafeGlyphs(string s) => TmpSafeGlyphs(s);
+
         static string TmpSafeGlyphs(string s)
         {
             if (string.IsNullOrEmpty(s))
@@ -1609,7 +1715,9 @@ namespace LasGranjasDelHastur.Zone1.UI
             return s
                 .Replace("\u2192", "->")
                 .Replace("\u2190", "<-")
-                .Replace("\u2194", "<->");
+                .Replace("\u2194", "<->")
+                .Replace("\u25bc", ">")
+                .Replace("\u25BC", ">");
         }
 
         static string ResourceLabel(ResourceType type)

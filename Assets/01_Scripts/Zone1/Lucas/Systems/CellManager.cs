@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using LasGranjasDelHastur;
 using LasGranjasDelHastur.Core;
 using LasGranjasDelHastur.Zone1.Cells;
+using LasGranjasDelHastur.Zone1.Gacha;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -123,13 +124,34 @@ namespace LasGranjasDelHastur.Zone1
                 return;
 
             var world = cam.ScreenToWorldPoint(InputAdapter.MousePosition());
-            var hit = Physics2D.OverlapPoint(new Vector2(world.x, world.y));
-            if (hit == null)
+            var point = new Vector2(world.x, world.y);
+            var hits = Physics2D.OverlapPointAll(point);
+            if (hits == null || hits.Length == 0)
                 return;
 
-            var cell = hit.GetComponent<FarmCell>();
-            if (cell == null)
-                cell = hit.GetComponentInParent<FarmCell>();
+            for (var i = 0; i < hits.Length; i++)
+            {
+                var h = hits[i];
+                if (h == null)
+                    continue;
+                if (h.GetComponent<Zone1GachaFountainInteract>() != null || h.GetComponentInParent<Zone1GachaFountainInteract>() != null)
+                {
+                    Zone1GachaController.Instance?.OpenFromWorld();
+                    return;
+                }
+            }
+
+            FarmCell cell = null;
+            for (var i = 0; i < hits.Length; i++)
+            {
+                var c = hits[i].GetComponent<FarmCell>() ?? hits[i].GetComponentInParent<FarmCell>();
+                if (c != null)
+                {
+                    cell = c;
+                    break;
+                }
+            }
+
             if (cell == null)
                 return;
 

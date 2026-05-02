@@ -9,6 +9,7 @@ namespace LasGranjasDelHastur.Zone1
     /// </summary>
     public static class FarmCellSlotHierarchy
     {
+        static Material _cachedParticleMaterial;
         public struct FxRefs
         {
             public GameObject SelectionRing;
@@ -120,10 +121,52 @@ namespace LasGranjasDelHastur.Zone1
             ApplyParticleRendererSorting(ps, sortingOrder);
         }
 
+        /// <summary>
+        /// Sin material, Unity pinta las partículas en magenta.
+        /// No usamos <c>Resources.GetBuiltinResource("Default-Particle.mat")</c>: en Unity 6 / algunos RP falla y escribe error en consola.
+        /// </summary>
+        static Material ResolveStateParticleMaterial()
+        {
+            if (_cachedParticleMaterial != null)
+                return _cachedParticleMaterial;
+
+            string[] shaderNames =
+            {
+                "Universal Render Pipeline/Particles/Unlit",
+                "Universal Render Pipeline/Particles/Simple Lit",
+                "Particles/Standard Unlit",
+                "Legacy Shaders/Particles/Alpha Blended",
+                "Mobile/Particles/Alpha Blended",
+                "Sprites/Default",
+            };
+
+            foreach (var name in shaderNames)
+            {
+                var sh = Shader.Find(name);
+                if (sh == null)
+                    continue;
+                var m = new Material(sh) { name = "FarmCellStateParticles_Runtime" };
+                if (m.HasProperty("_BaseColor"))
+                    m.SetColor("_BaseColor", Color.white);
+                if (m.HasProperty("_TintColor"))
+                    m.SetColor("_TintColor", Color.white);
+                if (m.HasProperty("_Color"))
+                    m.SetColor("_Color", Color.white);
+                _cachedParticleMaterial = m;
+                return _cachedParticleMaterial;
+            }
+
+            return null;
+        }
+
         static void ApplyParticleRendererSorting(ParticleSystem ps, int sortingOrder)
         {
             var r = ps.GetComponent<ParticleSystemRenderer>();
             r.sortingOrder = sortingOrder;
+            r.renderMode = ParticleSystemRenderMode.Billboard;
+            var mat = ResolveStateParticleMaterial();
+            if (mat != null)
+                r.sharedMaterial = mat;
         }
 
         static void EnsureGroundShadow(Transform parent, int baseSortingOrder)

@@ -195,7 +195,29 @@ namespace LasGranjasDelHastur.Core
             PlayerPrefs.DeleteKey("LasGranjas_Zone3_PrestigePoints");
             if (resetIntroSeen)
                 PlayerPrefs.DeleteKey("IntroSeen");
+            PlayerPrefs.DeleteKey(Zone1GuidedTutorial.PlayerPrefsKey);
+            Zone1GuidedTutorial.ClearStaticForNewGame();
             PlayerPrefs.Save();
+        }
+
+        /// <summary>
+        /// Reinicia solo el calabozo de Zona 1 en memoria y en disco (stats como run nueva), sin borrar Z2/Z3 ni menús.
+        /// Útil para QA del tutorial y economía inicial; equivale a “snapshot Z1 vacío” + flags del tutorial limpios.
+        /// </summary>
+        public void ResetZone1DungeonProgressKeepOtherZones()
+        {
+            CachedData ??= new SaveGameData();
+            CachedData.zone1 = new Zone1SaveData();
+            CachedData.zone1Available = false;
+            GlobalTaxLedger.ClearStrikes();
+
+            PlayerPrefs.DeleteKey(Zone1GuidedTutorial.PlayerPrefsKey);
+            Zone1GuidedTutorial.ClearStaticForNewGame();
+            PlayerPrefs.Save();
+
+            CachedData.savedAtUtc = DateTime.UtcNow.ToString("o");
+            CachedData.saveVersion = CurrentSaveVersion;
+            WriteToDisk(CachedData);
         }
 
         void LoadFromDisk()
