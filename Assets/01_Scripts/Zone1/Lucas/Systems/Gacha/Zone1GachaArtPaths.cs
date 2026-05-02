@@ -2,8 +2,8 @@ namespace LasGranjasDelHastur.Zone1.Gacha
 {
     public static class Zone1GachaArtPaths
     {
-        public const string ArtRoot = "Assets/02_Sprites/Lucas/Intro/GACHA/ART/";
-        public const string SfxRoot = "Assets/02_Sprites/Lucas/Intro/GACHA/zone1_gacha_sfx_pack/";
+        public const string ArtRoot = "Assets/02_Sprites/Lucas/Zone1/Gacha/ART/";
+        public const string SfxRoot = "Assets/02_Sprites/Lucas/Zone1/Gacha/zone1_gacha_sfx_pack/";
 
         public const string PanelBg = ArtRoot + "zone1_gacha_panel_bg.png";
         public const string PanelFrame = ArtRoot + "zone1_gacha_panel_frame.png";
