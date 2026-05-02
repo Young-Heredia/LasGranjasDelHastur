@@ -8,6 +8,11 @@ namespace LasGranjasDelHastur.Zone1
         public string buyerName = "Buyer";
         public ResourceType buysResource;
         [Min(1)] public int basePricePerUnit = 1;
+
+        /// <summary>Unidades que este comprador exige por contrato en el panel de oferta (venta atómica).</summary>
+        [Min(1)] public int contractUnitsPerDeal = 1;
+
+        public int ContractBatchSize => Mathf.Max(1, contractUnitsPerDeal);
     }
 }
 

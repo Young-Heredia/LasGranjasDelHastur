@@ -8,7 +8,6 @@ Este documento sustituye la comprobación manual en el Editor: los datos salen d
 |---------|-----------|
 | `00_Scenes` | Escenas del build y prefabs embebidos de escena si aplica |
 | `01_Scripts` | Código C# del juego: **dominio primero** (`Audio`, `Camera`, `Core`, `Intro`, `MainMenu`, `SceneManagement`, `UI`, zonas, `ZoneSelection`), **persona dentro** (`Edwin`, `Jose`, `Lucas`). |
-| `02_Scripts` | Scripts o código auxiliar fuera de `01_Scripts` (antes bajo `03_Audio/Scripts`; misma convención de ensamblado Unity que el resto de `Assets/`). |
 | `02_Sprites` | Texturas, sprites 2D y **Tilemaps** (`02_Sprites/Tilemaps/`; paletas y tiles de nivel) |
 | `03_AUDIO` | Música y SFX |
 | `04_Prefabs` | Prefabs reutilizables y datos serializados de juego (p. ej. `Zone1/Zone1Config.asset`; trabajo por autor bajo `Lucas/`, etc.) |
