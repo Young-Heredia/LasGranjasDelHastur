@@ -38,12 +38,12 @@ namespace LasGranjasDelHastur.Zone2.Jose
 
         static void EnsureCamera()
         {
-            var cam = Camera.main;
+            var cam = UnityEngine.Camera.main;
             if (cam == null)
             {
                 var go = new GameObject("Main Camera");
                 go.tag = "MainCamera";
-                cam = go.AddComponent<Camera>();
+                cam = go.AddComponent<UnityEngine.Camera>();
                 cam.orthographic = true;
                 cam.orthographicSize = 5f;
                 cam.clearFlags = CameraClearFlags.SolidColor;
