@@ -73,7 +73,7 @@ namespace LasGranjasDelHastur.Zone1
         {
             collectorName = string.IsNullOrWhiteSpace(newCollectorName) ? "Cthulhu" : newCollectorName;
             baseTaxPercent = Mathf.Clamp01(newBaseTaxPercent);
-            taxIntervalSeconds = Mathf.Max(60f, newTaxIntervalSeconds);
+            taxIntervalSeconds = Mathf.Max(30f, newTaxIntervalSeconds);
             payWindowSeconds = Mathf.Max(5f, newPayWindowSeconds);
             moneyLossOnFail = Mathf.Clamp01(newMoneyLossOnFail);
             finePerStrikeStep = Mathf.Max(1, newFinePerStrikeStep);
@@ -231,6 +231,15 @@ namespace LasGranjasDelHastur.Zone1
             _timer = Mathf.Max(0f, timeToNextTax);
             _alertActive = alertActive;
             _payWindowRemaining = Mathf.Max(0f, payWindowRemaining);
+            Changed?.Invoke();
+        }
+
+        public void ResetLocalTaxUiState()
+        {
+            _fineDebt = 0;
+            _alertActive = false;
+            _payWindowRemaining = 0f;
+            _timer = Mathf.Max(1f, taxIntervalSeconds);
             Changed?.Invoke();
         }
     }

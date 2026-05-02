@@ -22,7 +22,7 @@ namespace LasGranjasDelHastur.Camera
         [SerializeField, Range(0.05f, 1.5f)] private float mouseWheelZoomScale = 0.45f;
         [SerializeField] private float zoomSmoothing = 16f;
         [SerializeField] private float minOrthoSize = 3.5f;
-        [SerializeField] private float maxOrthoSize = 10f;
+        [SerializeField] private float maxOrthoSize = 14f;
 
         [Header("Bounds (world)")]
         [SerializeField] private Vector2 minBounds = new(-18f, -10f);
@@ -50,6 +50,19 @@ namespace LasGranjasDelHastur.Camera
             maxBounds = max;
             _targetPos = ClampToBounds(_targetPos);
             transform.position = _targetPos;
+        }
+
+        /// <summary>Aplica zoom ortográfico inicial (p.ej. desde Zone1Config). Se clamp entre min/max.</summary>
+        public void ApplyInitialOrthographicSize(float orthographicSize)
+        {
+            if (targetCamera == null)
+                targetCamera = GetComponent<UnityEngine.Camera>() ?? UnityEngine.Camera.main;
+            if (targetCamera == null)
+                return;
+
+            var z = Mathf.Clamp(orthographicSize, minOrthoSize, maxOrthoSize);
+            _targetZoom = z;
+            targetCamera.orthographicSize = z;
         }
 
         void Update()

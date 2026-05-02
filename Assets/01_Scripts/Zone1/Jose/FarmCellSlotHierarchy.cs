@@ -1,4 +1,5 @@
 using LasGranjasDelHastur.Core;
+using LasGranjasDelHastur.Zone1.UI;
 using UnityEngine;
 
 namespace LasGranjasDelHastur.Zone1
@@ -8,11 +9,14 @@ namespace LasGranjasDelHastur.Zone1
     /// </summary>
     public static class FarmCellSlotHierarchy
     {
+        static Material _cachedParticleMaterial;
         public struct FxRefs
         {
             public GameObject SelectionRing;
             public GameObject ReadyPulse;
             public GameObject AssistantMarker;
+            public GameObject ProducingFx;
+            public GameObject ReadyFx;
         }
 
         public static FxRefs Ensure(Transform parent, int baseSortingOrder)
@@ -28,7 +32,141 @@ namespace LasGranjasDelHastur.Zone1
             refs.SelectionRing = EnsureSelectionRing(parent, baseSortingOrder);
             refs.ReadyPulse = EnsureReadyPulse(parent, baseSortingOrder);
             refs.AssistantMarker = EnsureAssistantMarker(parent, baseSortingOrder);
+            var prodA = new Color(1f, 1f, 1f, 0.78f);
+            var prodB = new Color(1f, 1f, 1f, 0.42f);
+            refs.ProducingFx = EnsureStateParticles(parent, "ProducingFx", baseSortingOrder + 6, 0.08f,
+                prodA, prodB, 13f, 0.4f);
+            refs.ReadyFx = EnsureStateParticles(parent, "ReadyFx", baseSortingOrder + 7, 0.38f,
+                prodA, prodB, 22f, 0.3f);
             return refs;
+        }
+
+        static GameObject EnsureStateParticles(Transform parent, string childName, int sortingOrder, float localY,
+            Color colorA, Color colorB, float rate, float radius)
+        {
+            var t = parent.Find(childName);
+            GameObject go;
+            if (t == null)
+            {
+                go = new GameObject(childName);
+                go.transform.SetParent(parent, false);
+                go.transform.localPosition = new Vector3(0f, localY, 0f);
+                var ps = go.AddComponent<ParticleSystem>();
+                StopAndClearParticles(ps);
+                ConfigureLoopParticles(ps, sortingOrder, colorA, colorB, rate, radius);
+                go.SetActive(false);
+                return go;
+            }
+
+            go = t.gameObject;
+            var existing = go.GetComponent<ParticleSystem>();
+            if (existing == null)
+            {
+                existing = go.AddComponent<ParticleSystem>();
+                StopAndClearParticles(existing);
+                ConfigureLoopParticles(existing, sortingOrder, colorA, colorB, rate, radius);
+            }
+            else
+            {
+                StopAndClearParticles(existing);
+                ConfigureLoopParticles(existing, sortingOrder, colorA, colorB, rate, radius);
+            }
+
+            go.SetActive(false);
+            return go;
+        }
+
+        static void StopAndClearParticles(ParticleSystem ps)
+        {
+            if (ps == null)
+                return;
+            var mainStop = ps.main;
+            mainStop.playOnAwake = false;
+            ps.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+        }
+
+        static void ConfigureLoopParticles(ParticleSystem ps, int sortingOrder, Color colorA, Color colorB,
+            float rate, float radius)
+        {
+            StopAndClearParticles(ps);
+            var main = ps.main;
+            main.loop = true;
+            main.playOnAwake = false;
+            main.duration = 1f;
+            main.startLifetime = new ParticleSystem.MinMaxCurve(0.32f, 0.72f);
+            main.startSpeed = new ParticleSystem.MinMaxCurve(0.06f, 0.32f);
+            main.startSize = new ParticleSystem.MinMaxCurve(0.03f, 0.09f);
+            main.maxParticles = 72;
+            main.simulationSpace = ParticleSystemSimulationSpace.Local;
+            main.gravityModifier = 0f;
+            main.startRotation = new ParticleSystem.MinMaxCurve(0f, Mathf.PI * 2f);
+            main.startColor = new ParticleSystem.MinMaxGradient(colorA, colorB);
+
+            var em = ps.emission;
+            em.rateOverTime = rate;
+
+            var shape = ps.shape;
+            shape.enabled = true;
+            shape.shapeType = ParticleSystemShapeType.Circle;
+            shape.radius = radius;
+
+            var col = ps.colorOverLifetime;
+            col.enabled = true;
+            var grad = new Gradient();
+            grad.SetKeys(
+                new[] { new GradientColorKey(Color.white, 0f), new GradientColorKey(Color.white, 1f) },
+                new[] { new GradientAlphaKey(0f, 0f), new GradientAlphaKey(1f, 0.15f), new GradientAlphaKey(0.85f, 0.5f), new GradientAlphaKey(0f, 1f) });
+            col.color = grad;
+
+            ApplyParticleRendererSorting(ps, sortingOrder);
+        }
+
+        /// <summary>
+        /// Sin material, Unity pinta las partículas en magenta.
+        /// No usamos <c>Resources.GetBuiltinResource("Default-Particle.mat")</c>: en Unity 6 / algunos RP falla y escribe error en consola.
+        /// </summary>
+        static Material ResolveStateParticleMaterial()
+        {
+            if (_cachedParticleMaterial != null)
+                return _cachedParticleMaterial;
+
+            string[] shaderNames =
+            {
+                "Universal Render Pipeline/Particles/Unlit",
+                "Universal Render Pipeline/Particles/Simple Lit",
+                "Particles/Standard Unlit",
+                "Legacy Shaders/Particles/Alpha Blended",
+                "Mobile/Particles/Alpha Blended",
+                "Sprites/Default",
+            };
+
+            foreach (var name in shaderNames)
+            {
+                var sh = Shader.Find(name);
+                if (sh == null)
+                    continue;
+                var m = new Material(sh) { name = "FarmCellStateParticles_Runtime" };
+                if (m.HasProperty("_BaseColor"))
+                    m.SetColor("_BaseColor", Color.white);
+                if (m.HasProperty("_TintColor"))
+                    m.SetColor("_TintColor", Color.white);
+                if (m.HasProperty("_Color"))
+                    m.SetColor("_Color", Color.white);
+                _cachedParticleMaterial = m;
+                return _cachedParticleMaterial;
+            }
+
+            return null;
+        }
+
+        static void ApplyParticleRendererSorting(ParticleSystem ps, int sortingOrder)
+        {
+            var r = ps.GetComponent<ParticleSystemRenderer>();
+            r.sortingOrder = sortingOrder;
+            r.renderMode = ParticleSystemRenderMode.Billboard;
+            var mat = ResolveStateParticleMaterial();
+            if (mat != null)
+                r.sharedMaterial = mat;
         }
 
         static void EnsureGroundShadow(Transform parent, int baseSortingOrder)
@@ -120,9 +258,9 @@ namespace LasGranjasDelHastur.Zone1
                 var assistant = new GameObject("AssistantMarker");
                 assistant.transform.SetParent(parent, false);
                 assistant.transform.localPosition = new Vector3(0f, 1.05f, 0f);
-                assistant.transform.localScale = new Vector3(0.65f, 0.65f, 1f);
+                assistant.transform.localScale = new Vector3(0.78f, 0.78f, 1f);
                 var assistantSr = assistant.AddComponent<SpriteRenderer>();
-                assistantSr.sprite = Zone1ArtProvider.LoadSprite("Assets/02_Sprites/Lucas/Zone1/Icons/zone1_icon_level.png")
+                assistantSr.sprite = Zone1ArtProvider.LoadSprite(Zone1UiSpritePaths.AssistantHoundTindalosPortrait)
                     ?? RuntimeSpriteFactory.OpaqueWhiteSprite;
                 assistantSr.color = new Color(0.80f, 0.95f, 1f, 0.95f);
                 assistantSr.sortingOrder = baseSortingOrder + 5;
