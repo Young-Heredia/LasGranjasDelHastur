@@ -50,6 +50,7 @@ namespace LasGranjasDelHastur.Zone1
 
         public string CollectorName => collectorName;
         public int Strikes => GlobalTaxLedger.GetStrikes();
+        public int MaxStrikesBeforeGameOver => Mathf.Max(1, maxStrikesBeforeGameOver);
         public int FineDebt => _fineDebt;
         public bool IsAlertActive => _alertActive;
 

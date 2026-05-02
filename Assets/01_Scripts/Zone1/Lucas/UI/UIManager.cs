@@ -4,6 +4,7 @@ using LasGranjasDelHastur.Zone1.Cells;
 using LasGranjasDelHastur.Core;
 using TMPro;
 using LasGranjasDelHastur;
+using LasGranjasDelHastur.UI.Edwin;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
@@ -59,6 +60,7 @@ namespace LasGranjasDelHastur.Zone1.UI
         // Sales bindings
         RectTransform _salesListRoot;
         readonly List<GameObject> _saleRows = new();
+        EdwinSalesOfferPanel _salesOfferPanel;
         TextMeshProUGUI _salesAssistantsInfo;
         Button _salesBuyAssistantBtn;
 
@@ -537,6 +539,7 @@ namespace LasGranjasDelHastur.Zone1.UI
 
         void CloseSalesPanel()
         {
+            _salesOfferPanel?.Hide();
             if (_salesPanel != null)
                 _salesPanel.SetActive(false);
         }
@@ -584,7 +587,7 @@ namespace LasGranjasDelHastur.Zone1.UI
             h.childAlignment = TextAnchor.MiddleLeft;
 
             var le = row.AddComponent<LayoutElement>();
-            le.preferredHeight = 48f;
+            le.preferredHeight = 52f;
             le.flexibleWidth = 1f;
 
             var portrait = new GameObject("Portrait");
@@ -611,8 +614,8 @@ namespace LasGranjasDelHastur.Zone1.UI
             var currentPrice = _buyers != null ? _buyers.GetCurrentPrice(buyer) : buyer.basePricePerUnit;
             var left = CreateTMP(row.transform, $"{buyer.buyerName} · {ResourceLabel(buyer.buysResource)} · {currentPrice}/u", 14, TextAlignmentOptions.Left);
             var leftLE = left.gameObject.AddComponent<LayoutElement>();
-            leftLE.preferredWidth = 420f;
-            leftLE.minWidth = 360f;
+            leftLE.preferredWidth = 380f;
+            leftLE.minWidth = 300f;
             leftLE.flexibleWidth = 1f;
             left.textWrappingMode = TextWrappingModes.NoWrap;
             left.overflowMode = TextOverflowModes.Overflow;
@@ -632,8 +635,18 @@ namespace LasGranjasDelHastur.Zone1.UI
             actionsLayout.childForceExpandHeight = false;
             actionsLayout.childForceExpandWidth = false;
             var actionsLE = actions.AddComponent<LayoutElement>();
-            actionsLE.preferredWidth = 200f;
-            actionsLE.minWidth = 200f;
+            actionsLE.preferredWidth = 292f;
+            actionsLE.minWidth = 292f;
+
+            var btnOffer = CreateButton(actions.transform, "Oferta", 78f, 34f, 14);
+            btnOffer.onClick.AddListener(() =>
+            {
+                _salesOfferPanel?.Show(buyer, () =>
+                {
+                    RefreshHUD();
+                    RefreshSalesPanel();
+                });
+            });
 
             var btn1 = CreateButton(actions.transform, "x1", 96f, 34f, 15);
             btn1.onClick.AddListener(() =>
@@ -709,6 +722,8 @@ namespace LasGranjasDelHastur.Zone1.UI
                 return;
 
             _taxTitle.text = "El recaudador se aproxima…";
+            var strikes = _tax.Strikes;
+            var maxS = _tax.MaxStrikesBeforeGameOver;
             var amount = _tax.CalculateTaxAmount();
             var pension = _tax.CalculateLatePaymentPension();
             var debt = _tax.FineDebt;
@@ -718,11 +733,22 @@ namespace LasGranjasDelHastur.Zone1.UI
             if (pension > 0)
                 extras += $"\n• Pensión pago tardío (multas): +{pension}";
 
+            var goUrgent = "";
+            if (strikes >= maxS - 1 && strikes < maxS)
+                goUrgent =
+                    $"\n\n<color=#ff7b72><b>¡Game Over fiscal cercano!</b> Esta multa puede ser la última: el límite es <b>{maxS}</b> infracciones globales.</color>";
+
             _taxBody.text =
+                $"Multas fiscales actuales: <b>{strikes}</b> / {maxS}\n" +
                 $"Recaudador: {_tax.CollectorName}\n" +
                 $"Monto total: {amount}{extras}\n" +
                 $"Tiempo para pagar: {FormatTime(_tax.PayWindowRemainingSeconds)}\n\n" +
-                $"Si no pagas:\n- Pierdes 75% del dinero\n- +1 multa\n- Puede corromper celdas\n- Game Over a 3 multas";
+                $"Si no pagas en este plazo:\n" +
+                $"- Pierdes 75% de las monedas oscuras\n" +
+                $"- +1 multa global\n" +
+                $"- Puede corromper celdas\n" +
+                $"- <b>Game Over</b> al llegar a {maxS} multas" +
+                goUrgent;
 
             _taxPayBtn.onClick.RemoveAllListeners();
             _taxPayBtn.onClick.AddListener(() =>
@@ -853,7 +879,9 @@ namespace LasGranjasDelHastur.Zone1.UI
             _salesPanel.SetActive(false);
 
             // Tax alert
-            _taxPanel = CreatePanel(root.transform, "TaxAlertPanel", new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0, 0), new Vector2(560, 390));
+            _taxPanel = CreatePanel(root.transform, "TaxAlertPanel", new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0, 0), new Vector2(560, 420));
+            if (_taxPanel.GetComponent<TaxAlertPanelPulse>() == null)
+                _taxPanel.AddComponent<TaxAlertPanelPulse>();
             BuildTaxPanel(_taxPanel.transform);
             _taxPanel.SetActive(false);
 
@@ -870,6 +898,9 @@ namespace LasGranjasDelHastur.Zone1.UI
             _txtActionHint.rectTransform.offsetMax = new Vector2(-8f, -2f);
             _txtActionHint.textWrappingMode = TextWrappingModes.NoWrap;
             _txtActionHint.overflowMode = TextOverflowModes.Overflow;
+
+            _salesOfferPanel = EdwinSalesOfferPanel.Ensure(root.transform);
+            _salesOfferPanel.Configure(_buyers, _resources);
         }
 
         static GameObject GetOrCreateSingleUiRoot()
@@ -935,7 +966,7 @@ namespace LasGranjasDelHastur.Zone1.UI
             v.spacing = 8f;
 
             CreateTMP(root, "Ventas (compradores)", 20, TextAlignmentOptions.Left);
-            var legend = CreateTMP(root, "x1 = vender 1 unidad   |   MAX = vender todo disponible", 14, TextAlignmentOptions.Left);
+            var legend = CreateTMP(root, "x1 · MAX — venta libre   |   Oferta — contrato con cantidad fija, precio total y XP", 14, TextAlignmentOptions.Left);
             legend.color = new Color(0.88f, 0.86f, 0.72f, 0.9f);
 
             var scrollGo = new GameObject("Scroll");
@@ -1029,6 +1060,7 @@ namespace LasGranjasDelHastur.Zone1.UI
                 _taxPortrait.sprite = taxPortraitSprite;
             _taxBody = CreateTMP(root, "-", 16, TextAlignmentOptions.Left);
             _taxBody.textWrappingMode = TextWrappingModes.Normal;
+            _taxBody.richText = true;
             _taxBody.rectTransform.sizeDelta = new Vector2(0, 220);
 
             var row = CreateHorizontalGroup(root);
