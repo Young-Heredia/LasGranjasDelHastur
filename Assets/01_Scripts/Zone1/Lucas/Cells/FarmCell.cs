@@ -38,9 +38,18 @@ namespace LasGranjasDelHastur.Zone1
         public Zone1CellType CellType => definition != null ? definition.cellType : Zone1CellType.SoulPit;
         public ResourceType ProducesResource => definition != null ? definition.producesResource : ResourceType.WeakSouls;
         public float ProductionSeconds => definition != null ? definition.productionSeconds : 5f;
-        public int ProductionAmount => definition != null ? definition.productionAmount : 1;
+
+        public int ProductionAmount
+        {
+            get
+            {
+                var baseAmt = definition != null ? definition.productionAmount : 1;
+                return Mathf.Max(1, baseAmt * Mathf.Max(1, level));
+            }
+        }
         public int PurchaseCostDarkCoins => Mathf.Max(0, Mathf.RoundToInt(BasePurchaseCost() * (1f + purchaseSlotScalePercent * slotIndex)));
         public int UpgradeCostDarkCoins => CalculateUpgradeCostDarkCoins();
+        public int CleanseCostDarkCoinsPublic => CleanseCostDarkCoins();
         public float CorruptionRiskOnCollect => definition != null ? definition.corruptionRiskOnCollect : 0f;
 
         public void Configure(int newSlotIndex, Zone1CellDefinition def, CellState initialState, int initialLevel = 1)
@@ -155,7 +164,7 @@ namespace LasGranjasDelHastur.Zone1
         {
             if (resources == null)
                 return false;
-            if (state != CellState.Available)
+            if (state != CellState.Available && state != CellState.ReadyToCollect && state != CellState.Producing)
                 return false;
             if (IsCorrupted)
                 return false;
@@ -175,6 +184,12 @@ namespace LasGranjasDelHastur.Zone1
             var cost = CalculateUpgradeCostDarkCoins();
             if (!resources.TrySpend(ResourceType.DarkCoins, cost))
                 return false;
+
+            if (state == CellState.Producing)
+            {
+                producingRemaining = 0f;
+                SetStateInternal(CellState.Available, notify: false);
+            }
 
             level += 1;
             progression?.AddXp(10);

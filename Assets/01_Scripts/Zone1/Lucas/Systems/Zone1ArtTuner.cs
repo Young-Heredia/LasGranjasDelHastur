@@ -238,7 +238,7 @@ namespace LasGranjasDelHastur.Zone1
             {
                 var fogSr = fog.GetComponent<SpriteRenderer>();
                 if (fogSr != null)
-                    fogSr.color = new Color(0.78f, 0.82f, 0.88f, 0.22f);
+                    fogSr.color = new Color(0.84f, 0.90f, 0.98f, 0.12f);
             }
 
             var runes = GameObject.Find("AmbientRunes");
@@ -246,7 +246,7 @@ namespace LasGranjasDelHastur.Zone1
             {
                 var rSr = runes.GetComponent<SpriteRenderer>();
                 if (rSr != null)
-                    rSr.color = new Color(1f, 0.88f, 0.56f, 0.42f);
+                    rSr.color = new Color(0.94f, 0.93f, 1f, 0.22f);
             }
         }
 

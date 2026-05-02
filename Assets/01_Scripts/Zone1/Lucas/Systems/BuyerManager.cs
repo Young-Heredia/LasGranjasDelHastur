@@ -36,6 +36,8 @@ namespace LasGranjasDelHastur.Zone1
             if (buyers == null || buyers.Count == 0)
                 buyers = CreateRuntimeDefaultBuyers();
 
+            EnsureStandardBuyersPresent();
+
             _soldPressure.Clear();
             foreach (var buyer in buyers)
                 _soldPressure[buyer] = 0f;
@@ -142,6 +144,31 @@ namespace LasGranjasDelHastur.Zone1
             return _soldPressure.TryGetValue(buyer, out var value) ? value : 0f;
         }
 
+        void EnsureStandardBuyersPresent()
+        {
+            if (buyers == null)
+                buyers = new List<BuyerDefinition>();
+            EnsureBuyerFor(ResourceType.WeakSouls, "Los Profundos", 3);
+            EnsureBuyerFor(ResourceType.PureEnergy, "Yekuvian", 6);
+            EnsureBuyerFor(ResourceType.MemoryShards, "Custodios del Eco", 9);
+            EnsureBuyerFor(ResourceType.UnstableSouls, "Ángeles Caídos", 12);
+        }
+
+        void EnsureBuyerFor(ResourceType resource, string defaultName, int defaultPrice)
+        {
+            foreach (var b in buyers)
+            {
+                if (b != null && b.buysResource == resource)
+                    return;
+            }
+
+            var so = ScriptableObject.CreateInstance<BuyerDefinition>();
+            so.buyerName = defaultName;
+            so.buysResource = resource;
+            so.basePricePerUnit = defaultPrice;
+            buyers.Add(so);
+        }
+
         List<BuyerDefinition> CreateRuntimeDefaultBuyers()
         {
             var list = new List<BuyerDefinition>();
@@ -157,6 +184,12 @@ namespace LasGranjasDelHastur.Zone1
             yekuvian.buysResource = ResourceType.PureEnergy;
             yekuvian.basePricePerUnit = 6;
             list.Add(yekuvian);
+
+            var echoKeepers = ScriptableObject.CreateInstance<BuyerDefinition>();
+            echoKeepers.buyerName = "Custodios del Eco";
+            echoKeepers.buysResource = ResourceType.MemoryShards;
+            echoKeepers.basePricePerUnit = 9;
+            list.Add(echoKeepers);
 
             var fallenAngels = ScriptableObject.CreateInstance<BuyerDefinition>();
             fallenAngels.buyerName = "Ángeles Caídos";

@@ -27,6 +27,19 @@ namespace LasGranjasDelHastur.Zone1
         [Header("Editor Debug")]
         [SerializeField] private bool balanceDebugLogs;
         [SerializeField, Min(1f)] private float balanceDebugInterval = 5f;
+        [Tooltip("Si está activo, **solo la primera entrada a Zona 1 en esta sesión de Play** invalida el snapshot de Z1 en disco (QA de economía). Cada recarga de escena ya no lo repite — antes al volver desde selección de zonas se borraba el guardado otra vez.")]
+        [SerializeField] private bool debugIgnoreZone1DiskSaveOnce;
+
+        /// <summary>
+        /// Evita ejecutar el modo debug en cada carga de la escena (cada vez se crea un Zone1Manager nuevo con el mismo valor serializado).
+        /// </summary>
+        static bool s_zone1DebugIgnoreDiskAppliedThisPlaySession;
+
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+        static void ResetZone1DebugIgnoreDiskGate()
+        {
+            s_zone1DebugIgnoreDiskAppliedThisPlaySession = false;
+        }
 
         public ResourceManager Resources => resourceManager;
         public ProgressionManager Progression => progressionManager;
@@ -133,13 +146,16 @@ namespace LasGranjasDelHastur.Zone1
             assistantManager.Changed += OnAssistantAssignmentsChanged;
             buyerManager.Initialize(resourceManager, progressionManager);
             taxManager.Initialize(resourceManager, cellManager);
+            TryRestoreFromSaveIfRequested();
             uiManager.Initialize(resourceManager, progressionManager, cellManager, assistantManager, buyerManager, taxManager);
 
-            // Camera bounds tuned by config.
+            // Camera bounds + zoom tuned by config.
             if (cameraController != null)
+            {
                 cameraController.SetBounds(zone1Config.cameraMinBounds, zone1Config.cameraMaxBounds);
+                cameraController.ApplyInitialOrthographicSize(zone1Config.cameraOrthographicSize);
+            }
 
-            TryRestoreFromSaveIfRequested();
             cellManager.RefreshAssistantVisuals(assistantManager);
             artTuner?.Apply();
 
@@ -226,6 +242,23 @@ namespace LasGranjasDelHastur.Zone1
         {
             if (SaveManager.Instance == null)
                 return;
+
+            if (debugIgnoreZone1DiskSaveOnce && !s_zone1DebugIgnoreDiskAppliedThisPlaySession)
+            {
+                s_zone1DebugIgnoreDiskAppliedThisPlaySession = true;
+                var d = SaveManager.Instance.CachedData;
+                if (d == null)
+                    return;
+                d.zone1 = new Zone1SaveData { valid = false };
+                d.zone1Available = false;
+                GlobalTaxLedger.ClearStrikes();
+                taxManager?.ResetLocalTaxUiState();
+                SaveManager.Instance.WriteCachedDataNow();
+                _autoRestoredFromDisk = true;
+                if (SaveManager.Instance.ShouldRestoreFromSave)
+                    SaveManager.Instance.MarkRestoreConsumed();
+                return;
+            }
 
             var data = SaveManager.Instance.CachedData;
             if (data == null || data.zone1 == null || !data.zone1.valid)

@@ -137,6 +137,19 @@ namespace LasGranjasDelHastur.Core
             WriteToDisk(CachedData);
         }
 
+        /// <summary>
+        /// Escribe CachedData tal cual está (sin capturar estado desde escena). Útil para invalidar snapshots parciales sin depender de managers ya inicializados.
+        /// </summary>
+        public void WriteCachedDataNow()
+        {
+            if (CachedData == null)
+                CachedData = new SaveGameData();
+
+            CachedData.saveVersion = CurrentSaveVersion;
+            CachedData.savedAtUtc = DateTime.UtcNow.ToString("o");
+            WriteToDisk(CachedData);
+        }
+
         public void DeleteSaveFile()
         {
             if (File.Exists(SaveFilePath))
