@@ -89,6 +89,8 @@ namespace LasGranjasDelHastur.Zone1
             }
         }
 
+        public static int GetXpRewardForUnits(int unitsSold) => Mathf.Max(2, Mathf.Max(0, unitsSold));
+
         public int GetAvailableToSell(ResourceType type) => _resources != null ? _resources.Get(type) : 0;
         public int GetCurrentPrice(BuyerDefinition buyer)
         {
@@ -114,7 +116,7 @@ namespace LasGranjasDelHastur.Zone1
                 return false;
 
             _resources.Add(ResourceType.DarkCoins, revenue);
-            _progression?.AddXp(Mathf.Max(2, amount)); // Simple: 1 XP per unit, min 2.
+            _progression?.AddXp(GetXpRewardForUnits(amount));
             _soldPressure[buyer] = Mathf.Clamp01(GetSoldPressure(buyer) + amount * soldPressurePerUnit);
             Changed?.Invoke();
             return true;
@@ -177,12 +179,14 @@ namespace LasGranjasDelHastur.Zone1
             deepOnes.buyerName = "Los Profundos";
             deepOnes.buysResource = ResourceType.WeakSouls;
             deepOnes.basePricePerUnit = 3;
+            deepOnes.contractUnitsPerDeal = 6;
             list.Add(deepOnes);
 
             var yekuvian = ScriptableObject.CreateInstance<BuyerDefinition>();
             yekuvian.buyerName = "Yekuvian";
             yekuvian.buysResource = ResourceType.PureEnergy;
             yekuvian.basePricePerUnit = 6;
+            yekuvian.contractUnitsPerDeal = 4;
             list.Add(yekuvian);
 
             var echoKeepers = ScriptableObject.CreateInstance<BuyerDefinition>();
@@ -195,6 +199,7 @@ namespace LasGranjasDelHastur.Zone1
             fallenAngels.buyerName = "Ángeles Caídos";
             fallenAngels.buysResource = ResourceType.UnstableSouls;
             fallenAngels.basePricePerUnit = 12;
+            fallenAngels.contractUnitsPerDeal = 10;
             list.Add(fallenAngels);
 
             return list;
