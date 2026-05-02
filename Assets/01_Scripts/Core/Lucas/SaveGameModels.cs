@@ -30,6 +30,11 @@ namespace LasGranjasDelHastur.Core
         public int memoryShards;
         public int unstableSouls;
 
+        /// <summary>
+        /// True si ya se cobró el bono del easter egg de cultistas en esta run (se resetea con Game Over / nuevo juego).
+        /// </summary>
+        public bool zone1EasterEggBonusClaimed;
+
         public int level;
         public int xp;
 

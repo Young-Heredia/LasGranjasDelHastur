@@ -27,7 +27,7 @@ namespace LasGranjasDelHastur.Zone1
 
             // Lucas agregó variantes con prefijo "N" para evitar choques de nombres.
             // Si existen, se prefieren sobre el nombre sin prefijo (solo para Lucas/Zone1/Cells).
-            if (fileName.StartsWith("zone1_energywell_", System.StringComparison.OrdinalIgnoreCase))
+            if (fileName.StartsWith("zone1_", System.StringComparison.OrdinalIgnoreCase))
             {
                 var lucasN = $"{LucasCellsDir}/N{fileName}";
                 if (FileExistsAsAssetPath(lucasN))
