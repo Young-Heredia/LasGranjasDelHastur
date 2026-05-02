@@ -128,7 +128,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip zone3CosmicWarning;
     public AudioClip zone3BackToZones;
 
-    [Header("Zone1 — Gacha (asigna WAV importados desde Intro/GACHA/zone1_gacha_sfx_pack)")]
+    [Header("Zone1 — Gacha (WAV en Assets/02_Sprites/Lucas/Zone1/Gacha/zone1_gacha_sfx_pack)")]
     public AudioClip zone1GachaPanelOpen;
     public AudioClip zone1GachaPanelClose;
     public AudioClip zone1GachaButtonPull;
