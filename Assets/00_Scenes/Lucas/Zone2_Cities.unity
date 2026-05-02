@@ -4904,7 +4904,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1654060185}
   - component: {fileID: 1654060187}
-  - component: {fileID: 1654060188}
   m_Layer: 0
   m_Name: Zone2PrototypeGame
   m_TagString: Untagged
@@ -4936,24 +4935,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1654060184}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c05ff243f6075bf469874135eea43f7f, type: 3}
+  m_Script: {fileID: 11500000, guid: fde5da5feb2d4474ab30c7ec69296f1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LasGranjasDelHastur.Zone2.Zone2PrototypeGame
-  sharedEconomyWithZone1: 1
-  taxIntervalSeconds: 300
-  initialUnlockedCells: 2
---- !u!114 &1654060188
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1654060184}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a98733d8ed22d44493dd246cfab0136, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LasGranjasDelHastur.Zone2.Jose.Zone2PrototypeGame
   sharedEconomyWithZone1: 1
   taxIntervalSeconds: 600
   initialUnlockedCells: 2
