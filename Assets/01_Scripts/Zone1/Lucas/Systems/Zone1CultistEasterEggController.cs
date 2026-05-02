@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
@@ -8,6 +9,9 @@ namespace LasGranjasDelHastur.Zone1
     [DisallowMultipleComponent]
     public class Zone1CultistEasterEggController : MonoBehaviour
     {
+        /// <summary>Se invoca cuando el jugador desbloquea la pista secreta (tras los clics en cultistas).</summary>
+        public static event Action EasterEggActivated;
+
         [Header("Sprites (static)")]
         [SerializeField] string staffSpritePath = "Assets/02_Sprites/Lucas/Zone1/Props/zone1_cultist_yellow_staff_64.png";
         [SerializeField] string bookSpritePath = "Assets/02_Sprites/Lucas/Zone1/Props/zone1_cultist_yellow_book_64.png";
@@ -103,6 +107,7 @@ namespace LasGranjasDelHastur.Zone1
 
             _clickCount = 0;
             AudioManager.Instance?.TriggerZone1EasterEgg();
+            EasterEggActivated?.Invoke();
             var bonusResult = TryGrantFirstTimeBonus();
             if (bonusResult != BonusResult.None)
                 ShowBonusPopup(worldPos, bonusResult);

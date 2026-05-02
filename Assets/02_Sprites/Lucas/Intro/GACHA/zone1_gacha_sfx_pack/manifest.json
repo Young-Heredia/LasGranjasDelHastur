@@ -1,0 +1,30 @@
+{
+  "pack": "zone1_gacha_sfx_pack",
+  "format": "WAV PCM 16-bit mono",
+  "sample_rate": 44100,
+  "usage": "Importar directamente en Unity como AudioClip. Los archivos con _loop están pensados para loop.",
+  "files": [
+    "zone1_gacha_button_pressed.wav",
+    "zone1_gacha_button_pull.wav",
+    "zone1_gacha_capsule_drop.wav",
+    "zone1_gacha_capsule_open_common.wav",
+    "zone1_gacha_capsule_open_cursed.wav",
+    "zone1_gacha_capsule_open_jackpot.wav",
+    "zone1_gacha_capsule_shake.wav",
+    "zone1_gacha_curse_smoke.wav",
+    "zone1_gacha_jackpot_stinger.wav",
+    "zone1_gacha_machine_ready_hum_loop.wav",
+    "zone1_gacha_machine_spin_loop.wav",
+    "zone1_gacha_machine_stop.wav",
+    "zone1_gacha_panel_close.wav",
+    "zone1_gacha_panel_open.wav",
+    "zone1_gacha_penalty_coin_minus100.wav",
+    "zone1_gacha_penalty_resource_minus10.wav",
+    "zone1_gacha_result_reveal_bad.wav",
+    "zone1_gacha_result_reveal_good.wav",
+    "zone1_gacha_reward_coin_x2.wav",
+    "zone1_gacha_reward_coin_x5_jackpot.wav",
+    "zone1_gacha_reward_resource_x2.wav",
+    "zone1_gacha_vfx_spin_glow.wav"
+  ]
+}

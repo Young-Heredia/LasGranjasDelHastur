@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using LasGranjasDelHastur;
 using LasGranjasDelHastur.Core;
 using LasGranjasDelHastur.Zone1.Cells;
+using LasGranjasDelHastur.Zone1.Gacha;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -33,18 +34,23 @@ namespace LasGranjasDelHastur.Zone1
         [SerializeField, Min(0)] private int upgradePerLevelAdd = 20;
         [SerializeField, Range(1f, 3f)] private float upgradeLevelMultiplier = 1.15f;
 
+        [Header("Generator Rules")]
+        [Tooltip("Máximo de celdas tipo Fosa de Almas (generador de almas débiles) que el jugador puede tener desbloqueadas a la vez (incluye la inicial).")]
+        [SerializeField, Min(1)] private int maxOwnedSoulPitCells = 2;
+
         [Header("Prefab (optional)")]
-        [Tooltip("Raíz: SpriteRenderer, BoxCollider2D, FarmCell, WorldCellClickable, hijos GroundShadow, SelectionRing, ReadyPulse, AssistantMarker. Generar con Jose/Editor: Bake FarmCellSlot prefab. Si null, se construye en código como antes.")]
+        [Tooltip("Raíz: SpriteRenderer, BoxCollider2D, FarmCell, WorldCellClickable, hijos GroundShadow, SelectionRing, ReadyPulse, ProducingFx, ReadyFx, AssistantMarker. Generar con Jose/Editor: Bake FarmCellSlot prefab. Si null, se construye en código como antes.")]
         [SerializeField] private GameObject cellSlotPrefab;
 
         readonly List<FarmCell> _cells = new();
         readonly Dictionary<Zone1CellType, Zone1CellDefinition> _defsByType = new();
         readonly Dictionary<FarmCell, GameObject> _selectionRings = new();
         readonly Dictionary<FarmCell, GameObject> _readyPulses = new();
+        readonly Dictionary<FarmCell, GameObject> _producingParticles = new();
+        readonly Dictionary<FarmCell, GameObject> _readyParticles = new();
         readonly Dictionary<FarmCell, GameObject> _assistantMarkers = new();
 
         ResourceManager _resources;
-        ProgressionManager _progression;
         bool _initialized;
 
         public IReadOnlyList<FarmCell> Cells => _cells;
@@ -80,12 +86,10 @@ namespace LasGranjasDelHastur.Zone1
             if (_initialized)
             {
                 _resources = resources;
-                _progression = progression;
                 return;
             }
 
             _resources = resources;
-            _progression = progression;
 
             if (cellDefinitions == null || cellDefinitions.Count == 0)
                 cellDefinitions = CreateRuntimeDefaultCellDefs();
@@ -99,6 +103,7 @@ namespace LasGranjasDelHastur.Zone1
             }
 
             BuildGridIfEmpty();
+            SpreadPurchasableDefinitionsAcrossBlockedSlots();
             ApplyInitialUnlocks();
 
             CellsChanged?.Invoke();
@@ -119,13 +124,34 @@ namespace LasGranjasDelHastur.Zone1
                 return;
 
             var world = cam.ScreenToWorldPoint(InputAdapter.MousePosition());
-            var hit = Physics2D.OverlapPoint(new Vector2(world.x, world.y));
-            if (hit == null)
+            var point = new Vector2(world.x, world.y);
+            var hits = Physics2D.OverlapPointAll(point);
+            if (hits == null || hits.Length == 0)
                 return;
 
-            var cell = hit.GetComponent<FarmCell>();
-            if (cell == null)
-                cell = hit.GetComponentInParent<FarmCell>();
+            for (var i = 0; i < hits.Length; i++)
+            {
+                var h = hits[i];
+                if (h == null)
+                    continue;
+                if (h.GetComponent<Zone1GachaFountainInteract>() != null || h.GetComponentInParent<Zone1GachaFountainInteract>() != null)
+                {
+                    Zone1GachaController.Instance?.OpenFromWorld();
+                    return;
+                }
+            }
+
+            FarmCell cell = null;
+            for (var i = 0; i < hits.Length; i++)
+            {
+                var c = hits[i].GetComponent<FarmCell>() ?? hits[i].GetComponentInParent<FarmCell>();
+                if (c != null)
+                {
+                    cell = c;
+                    break;
+                }
+            }
+
             if (cell == null)
                 return;
 
@@ -155,6 +181,155 @@ namespace LasGranjasDelHastur.Zone1
                 if (cell == null)
                     continue;
                 cell.ConfigureEconomy(purchaseSlotScalePercent, upgradeBaseCost, upgradePerLevelAdd, upgradeLevelMultiplier);
+            }
+        }
+
+        public bool TryPurchaseCell(FarmCell cell)
+        {
+            if (cell == null || _resources == null)
+                return false;
+            if (cell.State != CellState.Blocked)
+                return false;
+
+            var def = ResolvePurchasableDefinitionForBlockedCell(cell);
+            if (def == null)
+                return false;
+
+            cell.Configure(cell.SlotIndex, def, CellState.Blocked, 1);
+            cell.ConfigureEconomy(purchaseSlotScalePercent, upgradeBaseCost, upgradePerLevelAdd, upgradeLevelMultiplier);
+
+            if (!cell.TryBuy(_resources))
+                return false;
+
+            ApplyVisual(cell);
+            CellsChanged?.Invoke();
+            return true;
+        }
+
+        public bool CanPurchaseBlockedSlot(FarmCell cell)
+        {
+            if (cell == null || _resources == null)
+                return false;
+            if (cell.State != CellState.Blocked)
+                return false;
+
+            var def = ResolvePurchasableDefinitionForBlockedCell(cell);
+            if (def == null)
+                return false;
+
+            var cost = CalculatePurchaseCostDarkCoins(def, cell.SlotIndex);
+            return _resources.Get(ResourceType.DarkCoins) >= cost;
+        }
+
+        public bool TryGetBlockedPurchasePreview(FarmCell cell, out Zone1CellDefinition definition, out int purchaseCostDarkCoins, out string displayName)
+        {
+            definition = null;
+            purchaseCostDarkCoins = 0;
+            displayName = "";
+
+            if (cell == null || cell.State != CellState.Blocked)
+                return false;
+
+            var def = ResolvePurchasableDefinitionForBlockedCell(cell);
+            if (def == null)
+                return false;
+
+            definition = def;
+            purchaseCostDarkCoins = CalculatePurchaseCostDarkCoins(def, cell.SlotIndex);
+            displayName = def != null ? def.displayName : cell.DisplayName;
+            return true;
+        }
+
+        int CountOwnedSoulPits()
+        {
+            var n = 0;
+            for (var i = 0; i < _cells.Count; i++)
+            {
+                var c = _cells[i];
+                if (c == null || c.State == CellState.Blocked)
+                    continue;
+                if (c.CellType == Zone1CellType.SoulPit)
+                    n++;
+            }
+            return n;
+        }
+
+        Zone1CellDefinition ResolvePurchasableDefinitionForBlockedCell(FarmCell cell)
+        {
+            var desired = cell != null ? cell.CellType : Zone1CellType.SoulPit;
+
+            if (desired == Zone1CellType.SoulPit && CountOwnedSoulPits() >= maxOwnedSoulPitCells)
+                desired = Zone1CellType.EnergyWell;
+
+            var def = GetDef(desired);
+
+            if (def != null && def.cellType == Zone1CellType.SoulPit && CountOwnedSoulPits() >= maxOwnedSoulPitCells)
+                def = null;
+
+            if (def != null)
+                return def;
+
+            // Map purchases use the cell layout (no level gate): pick next non-soul type by slot.
+            var rotation = new[] { Zone1CellType.EnergyWell, Zone1CellType.EchoChamber, Zone1CellType.BrokenAltar };
+            var start = Mathf.Abs(cell.SlotIndex) % rotation.Length;
+            for (var k = 0; k < rotation.Length; k++)
+            {
+                var t = rotation[(start + k) % rotation.Length];
+                var d = GetDef(t);
+                if (d != null)
+                    return d;
+            }
+
+            if (CountOwnedSoulPits() < maxOwnedSoulPitCells)
+                return GetDef(Zone1CellType.SoulPit);
+
+            return null;
+        }
+
+        int CalculatePurchaseCostDarkCoins(Zone1CellDefinition def, int slotIndex)
+        {
+            var baseCost = def != null ? def.purchaseCostDarkCoins : 50;
+            return Mathf.Max(0, Mathf.RoundToInt(baseCost * (1f + purchaseSlotScalePercent * slotIndex)));
+        }
+
+        void SpreadPurchasableDefinitionsAcrossBlockedSlots()
+        {
+            if (_cells.Count == 0)
+                return;
+
+            var start = Mathf.Clamp(initiallyUnlockedCells + initiallyPurchasableCells, 0, _cells.Count);
+            if (start >= _cells.Count)
+                return;
+
+            var pattern = new[]
+            {
+                Zone1CellType.EnergyWell,
+                Zone1CellType.EchoChamber,
+                Zone1CellType.BrokenAltar,
+                Zone1CellType.EnergyWell,
+            };
+
+            var p = 0;
+            for (var i = start; i < _cells.Count; i++)
+            {
+                var cell = _cells[i];
+                if (cell == null || cell.State != CellState.Blocked)
+                    continue;
+
+                var t = pattern[p % pattern.Length];
+                p++;
+
+                var def = GetDef(t);
+
+                if (def == null)
+                    def = GetDef(Zone1CellType.SoulPit);
+
+                if (def == null)
+                    continue;
+
+                cell.Configure(cell.SlotIndex, def, CellState.Blocked, 1);
+                cell.ConfigureEconomy(purchaseSlotScalePercent, upgradeBaseCost, upgradePerLevelAdd, upgradeLevelMultiplier);
+                ApplyVisual(cell);
             }
         }
 
@@ -202,6 +377,8 @@ namespace LasGranjasDelHastur.Zone1
                     var fx = FarmCellSlotHierarchy.Ensure(go.transform, baseSorting);
                     _selectionRings[cell] = fx.SelectionRing;
                     _readyPulses[cell] = fx.ReadyPulse;
+                    _producingParticles[cell] = fx.ProducingFx;
+                    _readyParticles[cell] = fx.ReadyFx;
                     _assistantMarkers[cell] = fx.AssistantMarker;
                     _cells.Add(cell);
                 }
@@ -337,6 +514,38 @@ namespace LasGranjasDelHastur.Zone1
             sr.color = Color.white;
             if (_readyPulses.TryGetValue(cell, out var pulse) && pulse != null)
                 pulse.SetActive(cell.State == CellState.ReadyToCollect && !cell.IsCorrupted);
+
+            RefreshCellStateParticles(cell);
+        }
+
+        void RefreshCellStateParticles(FarmCell cell)
+        {
+            if (cell == null)
+                return;
+            var corrupt = cell.IsCorrupted;
+            SetLoopingParticlesActive(_producingParticles, cell, !corrupt && cell.State == CellState.Producing);
+            SetLoopingParticlesActive(_readyParticles, cell, !corrupt && cell.State == CellState.ReadyToCollect);
+        }
+
+        static void SetLoopingParticlesActive(Dictionary<FarmCell, GameObject> hosts, FarmCell cell, bool active)
+        {
+            if (!hosts.TryGetValue(cell, out var go) || go == null)
+                return;
+            var ps = go.GetComponent<ParticleSystem>();
+            if (active)
+            {
+                if (!go.activeSelf)
+                    go.SetActive(true);
+                if (ps != null && !ps.isPlaying)
+                    ps.Play();
+            }
+            else
+            {
+                if (ps != null)
+                    ps.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+                if (go.activeSelf)
+                    go.SetActive(false);
+            }
         }
 
         static string GetCellSpritePath(FarmCell cell) => CellSpritePathResolver.ResolveForCell(cell);
@@ -403,7 +612,7 @@ namespace LasGranjasDelHastur.Zone1
             soulPit.producesResource = ResourceType.WeakSouls;
             soulPit.productionSeconds = 4f;
             soulPit.productionAmount = 2;
-            soulPit.purchaseCostDarkCoins = 0;
+            soulPit.purchaseCostDarkCoins = 45;
             soulPit.corruptionRiskOnCollect = 0f;
             list.Add(soulPit);
 

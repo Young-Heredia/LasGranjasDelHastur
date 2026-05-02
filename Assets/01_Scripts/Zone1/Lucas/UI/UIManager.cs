@@ -36,6 +36,8 @@ namespace LasGranjasDelHastur.Zone1.UI
         TextMeshProUGUI _txtMoney;
         TextMeshProUGUI _txtWeakSouls;
         TextMeshProUGUI _txtEnergy;
+        TextMeshProUGUI _txtMemoryShards;
+        TextMeshProUGUI _txtUnstableSouls;
         TextMeshProUGUI _txtLevel;
         Image _xpFill;
         TextMeshProUGUI _txtTaxTimer;
@@ -43,12 +45,28 @@ namespace LasGranjasDelHastur.Zone1.UI
         TextMeshProUGUI _txtAssistants;
 
         Button _btnSales;
+        RectTransform _btnSalesRt;
+        Vector3 _salesPulseBaseScale = Vector3.one;
+        float _salesPulsePhase;
+        CanvasGroup _salesCtaGroup;
+        RectTransform _salesCtaRt;
+        TextMeshProUGUI _salesCtaTmp;
+        float _salesCtaTimer;
+        static readonly string[] SalesCtaPhrases = { "BUY", "SHOP NOW", "VENDE" };
         Button _btnBack;
         Button _btnPayEarly;
 
         // Panels
         GameObject _cellPanel;
         GameObject _salesPanel;
+
+        /// <summary>True cuando el panel de ventas está abierto (tutorial / UI).</summary>
+        public bool IsSalesPanelOpen => _salesPanel != null && _salesPanel.activeSelf;
+
+        /// <summary>Ventas exitosas en esta carga de escena (para tutorial guiado).</summary>
+        public int SessionSalesCompletedCount { get; private set; }
+
+        void RegisterSessionSaleCompleted() => SessionSalesCompletedCount++;
         GameObject _taxPanel;
         GameObject _hoverPanel;
 
@@ -91,10 +109,14 @@ namespace LasGranjasDelHastur.Zone1.UI
         RectTransform _rtRowMoney;
         RectTransform _rtRowWeakSouls;
         RectTransform _rtRowEnergy;
+        RectTransform _rtRowMemory;
+        RectTransform _rtRowUnstable;
 
         HudDeltaPopup _popMoney;
         HudDeltaPopup _popWeakSouls;
         HudDeltaPopup _popEnergy;
+        HudDeltaPopup _popMemory;
+        HudDeltaPopup _popUnstable;
 
         FarmCell _boundCell;
         float _uiSelfHealTimer;
@@ -137,7 +159,10 @@ namespace LasGranjasDelHastur.Zone1.UI
             UpdateHudDeltaPopups(Time.unscaledDeltaTime);
 
             if (_tax != null && _txtTaxTimer != null)
-                _txtTaxTimer.text = $"Impuesto: {FormatTime(_tax.IsAlertActive ? _tax.PayWindowRemainingSeconds : _tax.TimeToNextTaxSeconds)}";
+                _txtTaxTimer.text = TmpSafeGlyphs($"Impuesto: {FormatTime(_tax.IsAlertActive ? _tax.PayWindowRemainingSeconds : _tax.TimeToNextTaxSeconds)}");
+
+            UpdateSalesButtonAttentionPulse();
+            UpdateSalesCtaCallout();
         }
 
         void SelfHealUiIfNeeded()
@@ -264,6 +289,14 @@ namespace LasGranjasDelHastur.Zone1.UI
                     EnsureHudRowRefs();
                     BumpHudPopup(ref _popEnergy, _rtRowEnergy, delta);
                     break;
+                case ResourceType.MemoryShards:
+                    EnsureHudRowRefs();
+                    BumpHudPopup(ref _popMemory, _rtRowMemory, delta);
+                    break;
+                case ResourceType.UnstableSouls:
+                    EnsureHudRowRefs();
+                    BumpHudPopup(ref _popUnstable, _rtRowUnstable, delta);
+                    break;
             }
         }
 
@@ -275,6 +308,10 @@ namespace LasGranjasDelHastur.Zone1.UI
                 _rtRowWeakSouls = _txtWeakSouls.transform.parent as RectTransform;
             if (_rtRowEnergy == null && _txtEnergy != null)
                 _rtRowEnergy = _txtEnergy.transform.parent as RectTransform;
+            if (_rtRowMemory == null && _txtMemoryShards != null)
+                _rtRowMemory = _txtMemoryShards.transform.parent as RectTransform;
+            if (_rtRowUnstable == null && _txtUnstableSouls != null)
+                _rtRowUnstable = _txtUnstableSouls.transform.parent as RectTransform;
         }
 
         static void BumpHudPopup(ref HudDeltaPopup popup, RectTransform rowRt, int delta)
@@ -321,6 +358,8 @@ namespace LasGranjasDelHastur.Zone1.UI
             UpdateHudPopup(ref _popMoney, dt);
             UpdateHudPopup(ref _popWeakSouls, dt);
             UpdateHudPopup(ref _popEnergy, dt);
+            UpdateHudPopup(ref _popMemory, dt);
+            UpdateHudPopup(ref _popUnstable, dt);
         }
 
         static void UpdateHudPopup(ref HudDeltaPopup popup, float dt)
@@ -345,7 +384,7 @@ namespace LasGranjasDelHastur.Zone1.UI
 
             var sign = popup.accumDelta >= 0 ? "+" : "-";
             var abs = Mathf.Abs(popup.accumDelta);
-            popup.tmp.text = $"{sign}{abs}";
+            popup.tmp.text = TmpSafeGlyphs($"{sign}{abs}");
             var baseColor = popup.accumDelta >= 0
                 ? new Color(0.66f, 1f, 0.66f, 1f)
                 : new Color(1f, 0.62f, 0.62f, 1f);
@@ -381,10 +420,13 @@ namespace LasGranjasDelHastur.Zone1.UI
                 return;
 
             EnsureHudRowRefs();
-            _txtMoney.text = $"{_resources.Get(ResourceType.DarkCoins)}";
             _txtMoney.text = $"Monedas oscuras: {_resources.Get(ResourceType.DarkCoins)}";
             _txtWeakSouls.text = $"Almas débiles: {_resources.Get(ResourceType.WeakSouls)}";
             _txtEnergy.text = $"Energía pura: {_resources.Get(ResourceType.PureEnergy)}";
+            if (_txtMemoryShards != null)
+                _txtMemoryShards.text = $"Fragmentos de recuerdo: {_resources.Get(ResourceType.MemoryShards)}";
+            if (_txtUnstableSouls != null)
+                _txtUnstableSouls.text = $"Almas inestables: {_resources.Get(ResourceType.UnstableSouls)}";
             _txtLevel.text = $"Nivel {_progression.Level}";
             _xpFill.fillAmount = _progression.XpProgress01();
             if (_txtAssistants != null && _assistants != null)
@@ -420,7 +462,7 @@ namespace LasGranjasDelHastur.Zone1.UI
             if (_boundCell == null)
                 return;
 
-            _cellTitle.text = _boundCell.DisplayName;
+            _cellTitle.text = TmpSafeGlyphs(_boundCell.DisplayName);
 
             var resourceName = _boundCell.ProducesResource switch
             {
@@ -441,8 +483,23 @@ namespace LasGranjasDelHastur.Zone1.UI
                 : $"{resourceAmount}";
             var storageFull = _resources.IsAtCapacity(_boundCell.ProducesResource) ? " (lleno)" : "";
             var assistantCount = _assistants != null ? _assistants.GetAssistantCountOnCell(_boundCell) : 0;
+            var cleanseCost = _boundCell.CleanseCostDarkCoinsPublic;
+            var prodAmt = _boundCell.ProductionAmount;
+            var prodSec = Mathf.Max(0.1f, _boundCell.ProductionSeconds);
+            var collectXpPreview = Mathf.Max(2, prodAmt * 2);
 
-            _cellBody.text =
+            var purchaseLine = "Costo compra: — (solo en celdas bloqueadas)";
+            var hasPurchasePreview = false;
+            var previewBuyForBtn = 0;
+            if (_boundCell.State == CellState.Blocked && _cells != null &&
+                _cells.TryGetBlockedPurchasePreview(_boundCell, out _, out var previewBuy, out var previewName))
+            {
+                hasPurchasePreview = true;
+                previewBuyForBtn = previewBuy;
+                purchaseLine = $"Costo compra: {previewBuy} monedas -> {previewName}";
+            }
+
+            _cellBody.text = TmpSafeGlyphs(
                 $"Nivel: {_boundCell.Level}\n" +
                 $"Recurso: {resourceName}\n" +
                 $"Tiempo: {Mathf.Max(0.1f, _boundCell.ProductionSeconds):0.0}s\n" +
@@ -451,16 +508,31 @@ namespace LasGranjasDelHastur.Zone1.UI
                 $"Estado: {state}{prod}\n" +
                 $"Corrupta: {corrupt}\n" +
                 $"Asistente: {assistantCount} (máx 1)\n" +
-                $"Costo compra: {_boundCell.PurchaseCostDarkCoins}\n" +
-                $"Costo mejora: {_boundCell.UpgradeCostDarkCoins}";
+                $"{purchaseLine}\n" +
+                $"Producir: 0 monedas oscuras · obtienes +{prodAmt} {resourceName} al terminar (~{prodSec:0.#}s)\n" +
+                $"Recolectar: 0 monedas oscuras · recibes +{prodAmt} {resourceName} y +{collectXpPreview} XP\n" +
+                $"Mejora: {_boundCell.UpgradeCostDarkCoins} monedas\n" +
+                $"Limpieza: {cleanseCost} monedas (si está corrupta)");
 
             _cellProduceBtn.interactable = _boundCell.CanProduce(_resources);
             _cellCollectBtn.interactable = _boundCell.CanCollect(_resources);
             _cellUpgradeBtn.interactable = _boundCell.CanUpgrade(_resources);
-            _cellBuyBtn.interactable = _boundCell.CanBuy(_resources);
+            _cellBuyBtn.interactable = _boundCell.State == CellState.Blocked
+                ? (_cells != null && _cells.CanPurchaseBlockedSlot(_boundCell))
+                : _boundCell.CanBuy(_resources);
             _cellCleanseBtn.interactable = _boundCell.CanCleanse(_resources);
             _cellAssistantBtn.interactable = _assistants != null &&
                 (_assistants.HasAssistantOnCell(_boundCell) || _assistants.CanAssignToCell(_boundCell));
+
+            SetButtonLabel(_cellProduceBtn, $"Producir (+{prodAmt})");
+            SetButtonLabel(_cellCollectBtn, $"Recolectar (+{prodAmt})");
+            SetButtonLabel(_cellUpgradeBtn, $"Mejorar ({_boundCell.UpgradeCostDarkCoins})");
+            SetButtonLabel(
+                _cellBuyBtn,
+                _boundCell.State == CellState.Blocked
+                    ? (hasPurchasePreview ? $"Comprar ({previewBuyForBtn})" : "Comprar (—)")
+                    : "Comprar (—)");
+            SetButtonLabel(_cellCleanseBtn, $"Limpiar ({cleanseCost})");
 
             _cellProduceBtn.onClick.RemoveAllListeners();
             _cellProduceBtn.onClick.AddListener(() =>
@@ -490,11 +562,13 @@ namespace LasGranjasDelHastur.Zone1.UI
             _cellBuyBtn.onClick.RemoveAllListeners();
             _cellBuyBtn.onClick.AddListener(() =>
             {
-                if (_boundCell.TryBuy(_resources))
+                if (_cells != null && _cells.TryPurchaseCell(_boundCell))
                 {
                     _cells.ApplyVisual(_boundCell);
                     if (AudioManager.Instance != null && AudioManager.Instance.zone1Buy != null)
                         AudioManager.Instance.PlaySFX(AudioManager.Instance.zone1Buy);
+                    RefreshCellPanel();
+                    RefreshHUD();
                 }
             });
 
@@ -511,7 +585,7 @@ namespace LasGranjasDelHastur.Zone1.UI
                 var hasAssistant = _assistants.HasAssistantOnCell(_boundCell);
                 var txt = _cellAssistantBtn.GetComponentInChildren<TextMeshProUGUI>();
                 if (txt != null)
-                    txt.text = hasAssistant ? "Quitar Asist." : "Asignar Asist.";
+                    txt.text = TmpSafeGlyphs(hasAssistant ? "Quitar asistente" : "Asignar asistente");
                 _cellAssistantBtn.onClick.AddListener(() =>
                 {
                     if (_assistants.HasAssistantOnCell(_boundCell))
@@ -567,10 +641,10 @@ namespace LasGranjasDelHastur.Zone1.UI
             }
 
             if (_salesAssistantsInfo != null && _assistants != null)
-                _salesAssistantsInfo.text =
+                _salesAssistantsInfo.text = TmpSafeGlyphs(
                     $"Compras\n" +
                     $"Asistentes disponibles: {_assistants.AvailableAssistants}/{_assistants.TotalAssistants}\n" +
-                    $"Costo siguiente asistente: {_assistants.NextAssistantCost}";
+                    $"Costo siguiente asistente: {_assistants.NextAssistantCost}");
 
             if (_salesBuyAssistantBtn != null && _assistants != null)
                 _salesBuyAssistantBtn.interactable = _assistants.TotalAssistants < 30 &&
@@ -584,9 +658,10 @@ namespace LasGranjasDelHastur.Zone1.UI
             row.transform.SetParent(parent, false);
 
             var h = row.AddComponent<HorizontalLayoutGroup>();
-            h.spacing = 8f;
+            h.spacing = 10f;
+            h.padding = new RectOffset(2, 6, 2, 2);
             h.childControlHeight = true;
-            h.childControlWidth = false;
+            h.childControlWidth = true;
             h.childForceExpandHeight = false;
             h.childForceExpandWidth = false;
             h.childAlignment = TextAnchor.MiddleLeft;
@@ -599,6 +674,7 @@ namespace LasGranjasDelHastur.Zone1.UI
             portrait.transform.SetParent(row.transform, false);
             var portraitImg = portrait.AddComponent<Image>();
             portraitImg.color = Color.white;
+            portraitImg.preserveAspect = true;
             var portraitLE = portrait.AddComponent<LayoutElement>();
             portraitLE.preferredWidth = 40f;
             portraitLE.preferredHeight = 40f;
@@ -607,24 +683,25 @@ namespace LasGranjasDelHastur.Zone1.UI
                 portraitImg.sprite = iconSprite;
 
             var currentPrice = _buyers != null ? _buyers.GetCurrentPrice(buyer) : buyer.basePricePerUnit;
-            var left = CreateTMP(row.transform, $"{buyer.buyerName} · {ResourceLabel(buyer.buysResource)} · {currentPrice}/u", 14, TextAlignmentOptions.Left);
+            var left = CreateTMP(row.transform, $"{buyer.buyerName} · {ResourceLabel(buyer.buysResource)} · {currentPrice}/u", 15, TextAlignmentOptions.Left);
             var leftLE = left.gameObject.AddComponent<LayoutElement>();
             leftLE.preferredWidth = 380f;
             leftLE.minWidth = 300f;
             leftLE.flexibleWidth = 1f;
-            left.textWrappingMode = TextWrappingModes.NoWrap;
-            left.overflowMode = TextOverflowModes.Overflow;
+            left.textWrappingMode = TextWrappingModes.Normal;
+            left.overflowMode = TextOverflowModes.Ellipsis;
 
             var available = _resources.Get(buyer.buysResource);
-            var mid = CreateTMP(row.transform, $"Disp: {available}", 14, TextAlignmentOptions.Center);
+            var mid = CreateTMP(row.transform, $"Disp: {available}", 15, TextAlignmentOptions.Right);
             var midLE = mid.gameObject.AddComponent<LayoutElement>();
-            midLE.preferredWidth = 95f;
-            midLE.minWidth = 90f;
+            midLE.preferredWidth = 124f;
+            midLE.minWidth = 118f;
+            midLE.flexibleWidth = 0f;
 
             var actions = new GameObject("Actions");
             actions.transform.SetParent(row.transform, false);
             var actionsLayout = actions.AddComponent<HorizontalLayoutGroup>();
-            actionsLayout.spacing = 8f;
+            actionsLayout.spacing = 10f;
             actionsLayout.childControlHeight = true;
             actionsLayout.childControlWidth = true;
             actionsLayout.childForceExpandHeight = false;
@@ -643,11 +720,12 @@ namespace LasGranjasDelHastur.Zone1.UI
                 });
             });
 
-            var btn1 = CreateButton(actions.transform, "x1", 96f, 34f, 15);
+            var btn1 = CreateButton(actions.transform, "x1", 108f, 38f, 16);
             btn1.onClick.AddListener(() =>
             {
                 if (_buyers.TrySell(buyer, 1))
                 {
+                    RegisterSessionSaleCompleted();
                     if (AudioManager.Instance != null && AudioManager.Instance.zone1Sell != null)
                         AudioManager.Instance.PlaySFX(AudioManager.Instance.zone1Sell);
                     RefreshHUD();
@@ -655,7 +733,7 @@ namespace LasGranjasDelHastur.Zone1.UI
                 }
             });
 
-            var btnAll = CreateButton(actions.transform, "MAX", 96f, 34f, 15);
+            var btnAll = CreateButton(actions.transform, "MAX", 108f, 38f, 16);
             btnAll.onClick.AddListener(() =>
             {
                 var amt = _resources.Get(buyer.buysResource);
@@ -663,6 +741,7 @@ namespace LasGranjasDelHastur.Zone1.UI
                     return;
                 if (_buyers.TrySell(buyer, amt))
                 {
+                    RegisterSessionSaleCompleted();
                     if (AudioManager.Instance != null && AudioManager.Instance.zone1Sell != null)
                         AudioManager.Instance.PlaySFX(AudioManager.Instance.zone1Sell);
                     RefreshHUD();
@@ -772,7 +851,7 @@ namespace LasGranjasDelHastur.Zone1.UI
             var line1 = cell.DisplayName;
             var line2 = cell.State == CellState.Producing ? $"Produciendo ({FormatTime(cell.ProducingRemainingSeconds)})" : cell.State.ToString();
             var line3 = cell.IsCorrupted ? "Corrupta" : "";
-            _hoverText.text = string.IsNullOrEmpty(line3) ? $"{line1}\n{line2}" : $"{line1}\n{line2}\n{line3}";
+            _hoverText.text = TmpSafeGlyphs(string.IsNullOrEmpty(line3) ? $"{line1}\n{line2}" : $"{line1}\n{line2}\n{line3}");
         }
 
         void OnTaxGameOverReached()
@@ -816,7 +895,8 @@ namespace LasGranjasDelHastur.Zone1.UI
             hudRt.anchorMin = new Vector2(0, 1);
             hudRt.anchorMax = new Vector2(1, 1);
             hudRt.pivot = new Vector2(0.5f, 1f);
-            hudRt.sizeDelta = new Vector2(0, 152);
+            // Altura suficiente para columna Ventas + Pago + Volver sin recorte vertical.
+            hudRt.sizeDelta = new Vector2(0, 252);
             hudRt.anchoredPosition = new Vector2(0, -2);
 
             var hudBg = hud.AddComponent<Image>();
@@ -829,47 +909,105 @@ namespace LasGranjasDelHastur.Zone1.UI
                 hudBg.color = Color.white;
             }
 
+            hud.AddComponent<RectMask2D>();
+
             var hudLayout = hud.AddComponent<HorizontalLayoutGroup>();
-            hudLayout.padding = new RectOffset(18, 18, 12, 12);
-            hudLayout.spacing = 16f;
+            hudLayout.padding = new RectOffset(14, 22, 12, 12);
+            hudLayout.spacing = 12f;
             hudLayout.childAlignment = TextAnchor.MiddleLeft;
             hudLayout.childForceExpandHeight = true;
             hudLayout.childForceExpandWidth = false;
 
-            var colLeft = CreateVerticalGroup(hud.transform, 390);
-            _txtMoney = CreateHUDStatRow(colLeft, "Assets/02_Sprites/Lucas/Zone1/Icons/zone1_icon_darkcoin.png", "Monedas oscuras: 0", 24);
-            _txtWeakSouls = CreateHUDStatRow(colLeft, "Assets/02_Sprites/Lucas/Zone1/Icons/zone1_icon_soulweak.png", "Almas débiles: 0", 20);
-            _txtEnergy = CreateHUDStatRow(colLeft, "Assets/02_Sprites/Lucas/Zone1/Icons/zone1_icon_pureenergy.png", "Energía pura: 0", 20);
+            var resBlock = new GameObject("HudResources");
+            resBlock.transform.SetParent(hud.transform, false);
+            var resBlockImg = resBlock.AddComponent<Image>();
+            var resPanelSprite = Zone1ArtProvider.LoadSprite("Assets/02_Sprites/Lucas/Zone1/UI/zone1_ui_panel_cell.png");
+            if (resPanelSprite != null)
+            {
+                resBlockImg.sprite = resPanelSprite;
+                resBlockImg.type = Image.Type.Sliced;
+                resBlockImg.color = new Color(0.72f, 0.70f, 0.78f, 0.42f);
+            }
+            else
+                resBlockImg.color = new Color(0.07f, 0.07f, 0.09f, 0.88f);
 
-            var colMid = CreateVerticalGroup(hud.transform, 260);
-            _txtLevel = CreateHUDStatRow(colMid, "Assets/02_Sprites/Lucas/Zone1/Icons/zone1_icon_level.png", "Nivel 1", 22);
-            CreateTMP(colMid, "Experiencia", 16, TextAlignmentOptions.Left);
-            _xpFill = CreateProgressBar(colMid, 230, 18);
+            var resBlockLe = resBlock.AddComponent<LayoutElement>();
+            resBlockLe.preferredWidth = 548f;
+            resBlockLe.flexibleWidth = 1f;
+            resBlockLe.minWidth = 420f;
 
-            var colTax = CreateVerticalGroup(hud.transform, 300);
-            _txtZoneLabel = CreateTMP(colTax, "Zona 1 - Calabozos", 22, TextAlignmentOptions.Left);
-            _txtTaxTimer = CreateHUDStatRow(colTax, "Assets/02_Sprites/Lucas/Zone1/Icons/zone1_icon_tax.png", "Impuesto: 00:00", 20);
-            _txtStrikes = CreateHUDStatRow(colTax, "Assets/02_Sprites/Lucas/Zone1/Icons/zone1_icon_alert.png", "Multas: 0/3", 20);
-            _txtAssistants = CreateHUDStatRow(colTax, "Assets/02_Sprites/Lucas/Zone1/Icons/zone1_icon_level.png", "Asistentes: 0/0", 18);
+            var resBlockH = resBlock.AddComponent<HorizontalLayoutGroup>();
+            resBlockH.padding = new RectOffset(10, 10, 6, 6);
+            resBlockH.spacing = 10f;
+            resBlockH.childAlignment = TextAnchor.MiddleLeft;
+            resBlockH.childControlHeight = true;
+            resBlockH.childControlWidth = true;
+            resBlockH.childForceExpandHeight = true;
+            resBlockH.childForceExpandWidth = false;
 
-            var colBtns = CreateVerticalGroup(hud.transform, 240);
-            _btnSales = CreateButton(colBtns, "Ventas", 210f, 42f);
-            _btnPayEarly = CreateButton(colBtns, "Pago adelantado", 210f, 40f);
-            _btnBack = CreateButton(colBtns, "Volver a Zonas", 210f, 42f);
+            var colResA = CreateVerticalGroup(resBlock.transform, 262);
+            var colResB = CreateVerticalGroup(resBlock.transform, 262);
+            _txtMoney = CreateHUDStatRow(colResA, Zone1UiSpritePaths.IconDarkCoin, "Monedas oscuras: 0", 22, 30f);
+            _txtWeakSouls = CreateHUDStatRow(colResA, Zone1UiSpritePaths.IconSoulWeak, "Almas débiles: 0", 18, 28f);
+            _txtEnergy = CreateHUDStatRow(colResA, Zone1UiSpritePaths.IconPureEnergy, "Energía pura: 0", 18, 28f);
+            _txtMemoryShards = CreateHUDStatRow(colResB, Zone1UiSpritePaths.IconMemoryShard, "Fragmentos de recuerdo: 0", 17, 28f);
+            _txtUnstableSouls = CreateHUDStatRow(colResB, Zone1UiSpritePaths.IconUnstableSoul, "Almas inestables: 0", 17, 28f);
+
+            var colMid = CreateVerticalGroup(hud.transform, 212);
+            _txtLevel = CreateHUDStatRow(colMid, Zone1UiSpritePaths.IconLevel, "Nivel 1", 22, 30f);
+            CreateHUDStatRow(colMid, Zone1UiSpritePaths.IconXp, "Experiencia", 16, 26f);
+            _xpFill = CreateProgressBar(colMid, 204, 20);
+
+            var colTax = CreateVerticalGroup(hud.transform, 248);
+            _txtZoneLabel = CreateHUDStatRow(colTax, Zone1UiSpritePaths.IconTax, "Zona 1 - Calabozos", 22, 28f);
+            _txtTaxTimer = CreateHUDStatRow(colTax, Zone1UiSpritePaths.IconTime, "Impuesto: 00:00", 20, 28f);
+            _txtStrikes = CreateHUDStatRow(colTax, Zone1UiSpritePaths.IconAlert, "Multas: 0/3", 20, 28f);
+            _txtAssistants = CreateHUDStatRow(
+                colTax,
+                Zone1UiSpritePaths.AssistantHoundTindalosPortrait,
+                "Asistentes: 0/0",
+                20,
+                iconSide: 56f,
+                preserveIconAspect: true,
+                iconPreferredWidth: 72f,
+                portraitHudOutline: true);
+
+            var hudSpacer = new GameObject("HudSpacer");
+            hudSpacer.transform.SetParent(hud.transform, false);
+            var hudSpacerLe = hudSpacer.AddComponent<LayoutElement>();
+            hudSpacerLe.flexibleWidth = 1f;
+            hudSpacerLe.minWidth = 4f;
+
+            var colBtns = CreateVerticalGroup(hud.transform, 136);
+            if (colBtns.TryGetComponent<VerticalLayoutGroup>(out var colBtnsV))
+            {
+                colBtnsV.spacing = 8f;
+                colBtnsV.childForceExpandWidth = true;
+                colBtnsV.childControlWidth = true;
+            }
+
+            _btnSales = CreateButton(colBtns, "Ventas", 122f, 118f, 21, layoutFlexibleWidth: false);
+            _btnSalesRt = _btnSales != null ? _btnSales.GetComponent<RectTransform>() : null;
+            _salesPulseBaseScale = _btnSalesRt != null ? _btnSalesRt.localScale : Vector3.one;
+            if (_btnSales != null)
+                BuildSalesCtaCallout(_btnSales.transform);
+            _btnPayEarly = CreateButton(colBtns, "Pago adelantado", 126f, 38f, 15, layoutFlexibleWidth: false);
+            _btnBack = CreateButton(colBtns, "Volver a Zonas", 126f, 40f, 15, layoutFlexibleWidth: false);
             var btnsLE = colBtns.gameObject.GetComponent<LayoutElement>();
             if (btnsLE != null)
             {
-                btnsLE.minWidth = 200f;
-                btnsLE.preferredWidth = 220f;
+                btnsLE.minWidth = 128f;
+                btnsLE.preferredWidth = 136f;
+                btnsLE.flexibleWidth = 0f;
             }
 
             // Cell panel
-            _cellPanel = CreatePanel(root.transform, "CellInfoPanel", new Vector2(0, 0.5f), new Vector2(0, 0.5f), new Vector2(10, 0), new Vector2(390, 440));
+            _cellPanel = CreatePanel(root.transform, "CellInfoPanel", new Vector2(0, 0.5f), new Vector2(0, 0.5f), new Vector2(14, 0), new Vector2(628, 736));
             BuildCellPanel(_cellPanel.transform);
             _cellPanel.SetActive(false);
 
             // Sales panel
-            _salesPanel = CreatePanel(root.transform, "SalesPanel", new Vector2(1, 0.5f), new Vector2(1, 0.5f), new Vector2(-10, 0), new Vector2(980, 560));
+            _salesPanel = CreatePanel(root.transform, "SalesPanel", new Vector2(1, 0.5f), new Vector2(1, 0.5f), new Vector2(-10, 0), new Vector2(1040, 620));
             BuildSalesPanel(_salesPanel.transform);
             _salesPanel.SetActive(false);
 
@@ -929,29 +1067,62 @@ namespace LasGranjasDelHastur.Zone1.UI
         void BuildCellPanel(Transform root)
         {
             var v = root.gameObject.AddComponent<VerticalLayoutGroup>();
-            v.padding = new RectOffset(12, 12, 12, 12);
-            v.spacing = 8f;
+            v.padding = new RectOffset(24, 24, 18, 20);
+            v.spacing = 12f;
             v.childAlignment = TextAnchor.UpperLeft;
+            v.childControlHeight = true;
+            v.childControlWidth = true;
+            v.childForceExpandWidth = true;
+            v.childForceExpandHeight = false;
 
-            _cellTitle = CreateTMP(root, "Celda", 20, TextAlignmentOptions.Left);
-            _cellBody = CreateTMP(root, "-", 16, TextAlignmentOptions.Left);
-            _cellBody.textWrappingMode = TextWrappingModes.Normal;
+            _cellTitle = CreateTMP(root, "Celda", 20, TextAlignmentOptions.Left, null, TextWrappingModes.Normal, TextOverflowModes.Overflow);
+            _cellTitle.margin = new Vector4(4f, 2f, 12f, 2f);
+            var titleLe = _cellTitle.gameObject.AddComponent<LayoutElement>();
+            titleLe.flexibleWidth = 1f;
+            titleLe.minHeight = 26f;
+            titleLe.preferredHeight = 32f;
+
+            _cellBody = CreateTMP(root, "-", 15, TextAlignmentOptions.TopLeft, null, TextWrappingModes.Normal, TextOverflowModes.Overflow);
+            _cellBody.margin = new Vector4(8f, 4f, 16f, 6f);
+            _cellBody.lineSpacing = 20f;
+            _cellBody.paragraphSpacing = 2f;
+            var bodyLe = _cellBody.gameObject.AddComponent<LayoutElement>();
+            bodyLe.flexibleWidth = 1f;
+            bodyLe.flexibleHeight = 0f;
+            bodyLe.minHeight = 180f;
+            var bodySize = _cellBody.gameObject.AddComponent<ContentSizeFitter>();
+            bodySize.horizontalFit = ContentSizeFitter.FitMode.Unconstrained;
+            bodySize.verticalFit = ContentSizeFitter.FitMode.PreferredSize;
 
             var btnRow1 = CreateHorizontalGroup(root);
-            _cellProduceBtn = CreateButton(btnRow1, "Producir");
-            _cellCollectBtn = CreateButton(btnRow1, "Recolectar");
+            ConfigureCellButtonRow(btnRow1);
+            _cellProduceBtn = CreateIconButton(btnRow1, Zone1UiSpritePaths.IconProduce, "Producir", 268f, 56f, 15, true, 30f);
+            _cellCollectBtn = CreateIconButton(btnRow1, Zone1UiSpritePaths.IconCollect, "Recolectar", 268f, 56f, 15, true, 30f);
 
             var btnRow2 = CreateHorizontalGroup(root);
-            _cellUpgradeBtn = CreateButton(btnRow2, "Mejorar");
-            _cellBuyBtn = CreateButton(btnRow2, "Comprar");
+            ConfigureCellButtonRow(btnRow2);
+            _cellUpgradeBtn = CreateIconButton(btnRow2, Zone1UiSpritePaths.IconUpgrade, "Mejorar", 268f, 56f, 15, true, 30f);
+            _cellBuyBtn = CreateIconButton(btnRow2, Zone1UiSpritePaths.IconBuy, "Comprar", 268f, 56f, 15, true, 30f);
 
             var btnRow3 = CreateHorizontalGroup(root);
-            _cellCleanseBtn = CreateButton(btnRow3, "Limpiar");
-            var close = CreateButton(btnRow3, "Cerrar");
+            ConfigureCellButtonRow(btnRow3);
+            _cellCleanseBtn = CreateIconButton(btnRow3, Zone1UiSpritePaths.IconCorruption, "Limpiar", 268f, 56f, 15, true, 30f);
+            var close = CreateButton(btnRow3, "Cerrar", 268f, 56f, 15);
             close.onClick.AddListener(() => CloseCellPanel());
 
             var btnRow4 = CreateHorizontalGroup(root);
-            _cellAssistantBtn = CreateButton(btnRow4, "Asignar Asist.");
+            ConfigureCellButtonRow(btnRow4);
+            _cellAssistantBtn = CreateIconButton(btnRow4, Zone1UiSpritePaths.AssistantHoundTindalosPortrait, "Asignar asistente", 560f, 60f, 15, true, 38f, boostPortraitVisibility: true);
+        }
+
+        static void ConfigureCellButtonRow(Transform row)
+        {
+            if (!row.TryGetComponent<HorizontalLayoutGroup>(out var h))
+                return;
+            h.spacing = 12f;
+            h.padding = new RectOffset(4, 4, 4, 4);
+            h.childForceExpandWidth = true;
+            h.childControlWidth = true;
         }
 
         void BuildSalesPanel(Transform root)
@@ -967,16 +1138,16 @@ namespace LasGranjasDelHastur.Zone1.UI
             var scrollGo = new GameObject("Scroll");
             scrollGo.transform.SetParent(root, false);
             var scrollRt = scrollGo.AddComponent<RectTransform>();
-            scrollRt.sizeDelta = new Vector2(0, 390);
+            scrollRt.sizeDelta = new Vector2(0, 468);
             var scrollLe = scrollGo.AddComponent<LayoutElement>();
-            scrollLe.preferredHeight = 390f;
+            scrollLe.preferredHeight = 468f;
             scrollLe.flexibleHeight = 1f;
 
             var scroll = scrollGo.AddComponent<ScrollRect>();
             var viewport = new GameObject("Viewport");
             viewport.transform.SetParent(scrollGo.transform, false);
             var viewportImg = viewport.AddComponent<Image>();
-            viewportImg.color = new Color(0, 0, 0, 0.15f);
+            viewportImg.color = new Color(0, 0, 0, 0.08f);
             viewport.AddComponent<Mask>().showMaskGraphic = false;
             var viewportRt = viewport.GetComponent<RectTransform>();
             viewportRt.anchorMin = Vector2.zero;
@@ -993,7 +1164,7 @@ namespace LasGranjasDelHastur.Zone1.UI
             _salesListRoot.anchoredPosition = Vector2.zero;
             _salesListRoot.sizeDelta = new Vector2(0f, 0f);
             var contentV = content.AddComponent<VerticalLayoutGroup>();
-            contentV.spacing = 6f;
+            contentV.spacing = 10f;
             contentV.childControlHeight = true;
             contentV.childControlWidth = true;
             contentV.childForceExpandWidth = true;
@@ -1008,8 +1179,8 @@ namespace LasGranjasDelHastur.Zone1.UI
             var purchases = new GameObject("PurchasesSection");
             purchases.transform.SetParent(root, false);
             var purchasesLe = purchases.AddComponent<LayoutElement>();
-            purchasesLe.preferredHeight = 100f;
-            purchasesLe.minHeight = 96f;
+            purchasesLe.preferredHeight = 112f;
+            purchasesLe.minHeight = 108f;
             var purchasesV = purchases.AddComponent<VerticalLayoutGroup>();
             purchasesV.spacing = 6f;
             purchasesV.childAlignment = TextAnchor.UpperLeft;
@@ -1019,7 +1190,23 @@ namespace LasGranjasDelHastur.Zone1.UI
             purchasesV.childForceExpandWidth = false;
             _salesAssistantsInfo = CreateTMP(purchases.transform, "Compras", 15, TextAlignmentOptions.Left);
             _salesAssistantsInfo.textWrappingMode = TextWrappingModes.Normal;
-            _salesBuyAssistantBtn = CreateButton(purchases.transform, "Comprar Asistente", 250f, 34f, 15);
+
+            var assistantShopRow = CreateHorizontalGroup(purchases.transform);
+            if (assistantShopRow.TryGetComponent<HorizontalLayoutGroup>(out var asstRowLayout))
+                asstRowLayout.childForceExpandWidth = false;
+            var assistantPortraitGo = new GameObject("AssistantShopPortrait");
+            assistantPortraitGo.transform.SetParent(assistantShopRow, false);
+            var assistantPortraitImg = assistantPortraitGo.AddComponent<Image>();
+            assistantPortraitImg.color = Color.white;
+            assistantPortraitImg.preserveAspect = true;
+            var assistantPortraitLe = assistantPortraitGo.AddComponent<LayoutElement>();
+            assistantPortraitLe.preferredWidth = 72f;
+            assistantPortraitLe.preferredHeight = 72f;
+            var assistantShopSpr = Zone1ArtProvider.LoadSprite(Zone1UiSpritePaths.AssistantHoundTindalosPortrait);
+            if (assistantShopSpr != null)
+                assistantPortraitImg.sprite = assistantShopSpr;
+
+            _salesBuyAssistantBtn = CreateButton(assistantShopRow, "Comprar Asistente", 272f, 40f, 16);
             _salesBuyAssistantBtn.onClick.AddListener(() =>
             {
                 if (_assistants == null)
@@ -1044,15 +1231,32 @@ namespace LasGranjasDelHastur.Zone1.UI
             v.spacing = 8f;
 
             _taxTitle = CreateTMP(root, "El recaudador se aproxima…", 22, TextAlignmentOptions.Left);
+
+            var taxIconsRow = CreateHorizontalGroup(root);
+            if (taxIconsRow.TryGetComponent<HorizontalLayoutGroup>(out var taxIconLayout))
+                taxIconLayout.childForceExpandWidth = false;
             var portraitGo = new GameObject("CollectorPortrait");
-            portraitGo.transform.SetParent(root, false);
+            portraitGo.transform.SetParent(taxIconsRow, false);
             _taxPortrait = portraitGo.AddComponent<Image>();
+            _taxPortrait.preserveAspect = true;
             var portraitLe = portraitGo.AddComponent<LayoutElement>();
             portraitLe.preferredWidth = 84f;
             portraitLe.preferredHeight = 84f;
             var taxPortraitSprite = LoadTaxCollectorPortraitSprite();
             if (taxPortraitSprite != null)
                 _taxPortrait.sprite = taxPortraitSprite;
+
+            var sealGo = new GameObject("CollectorSeal");
+            sealGo.transform.SetParent(taxIconsRow, false);
+            var sealImg = sealGo.AddComponent<Image>();
+            sealImg.color = Color.white;
+            sealImg.preserveAspect = true;
+            var sealLe = sealGo.AddComponent<LayoutElement>();
+            sealLe.preferredWidth = 80f;
+            sealLe.preferredHeight = 80f;
+            var sealSprite = Zone1ArtProvider.LoadSprite(Zone1UiSpritePaths.TaxCthulhuSeal);
+            if (sealSprite != null)
+                sealImg.sprite = sealSprite;
             _taxBody = CreateTMP(root, "-", 16, TextAlignmentOptions.Left);
             _taxBody.textWrappingMode = TextWrappingModes.Normal;
             _taxBody.richText = true;
@@ -1132,8 +1336,8 @@ namespace LasGranjasDelHastur.Zone1.UI
             }
 
             var outline = go.AddComponent<Outline>();
-            outline.effectColor = new Color(0.8f, 0.75f, 0.45f, 0.35f);
-            outline.effectDistance = new Vector2(1, -1);
+            outline.effectColor = new Color(0.8f, 0.75f, 0.45f, 0.28f);
+            outline.effectDistance = new Vector2(0.75f, -0.75f);
 
             return go;
         }
@@ -1168,37 +1372,73 @@ namespace LasGranjasDelHastur.Zone1.UI
             return go.transform;
         }
 
-        static TextMeshProUGUI CreateHUDStatRow(Transform parent, string iconPath, string text, int fontSize)
+        static TextMeshProUGUI CreateHUDStatRow(
+            Transform parent,
+            string iconPath,
+            string text,
+            int fontSize,
+            float iconSide = 30f,
+            bool preserveIconAspect = false,
+            float iconPreferredWidth = -1f,
+            bool portraitHudOutline = false)
         {
             var row = new GameObject("HUDStatRow");
             row.transform.SetParent(parent, false);
             var h = row.AddComponent<HorizontalLayoutGroup>();
-            h.spacing = 6f;
+            h.spacing = 12f;
+            h.padding = new RectOffset(2, 10, 2, 2);
             h.childAlignment = TextAnchor.MiddleLeft;
             h.childControlHeight = true;
             h.childControlWidth = false;
             h.childForceExpandHeight = false;
             h.childForceExpandWidth = false;
             var rowLe = row.AddComponent<LayoutElement>();
-            rowLe.preferredHeight = Mathf.Max(22f, fontSize + 6f);
+            var iconW = iconPreferredWidth > 0f ? iconPreferredWidth : iconSide;
+            var iconH = iconSide;
+            rowLe.preferredHeight = Mathf.Max(26f, Mathf.Max(fontSize + 10f, iconH + 6f));
 
             var iconGo = new GameObject("Icon");
             iconGo.transform.SetParent(row.transform, false);
             var icon = iconGo.AddComponent<Image>();
+            icon.preserveAspect = preserveIconAspect;
             var iconLe = iconGo.AddComponent<LayoutElement>();
-            iconLe.preferredWidth = 24f;
-            iconLe.preferredHeight = 24f;
+            iconLe.preferredWidth = iconW;
+            iconLe.preferredHeight = iconH;
+            iconLe.minWidth = iconW;
+            iconLe.minHeight = iconH;
+            iconLe.flexibleWidth = 0f;
+            iconLe.flexibleHeight = 0f;
+            if (portraitHudOutline)
+            {
+                var io = iconGo.AddComponent<Outline>();
+                io.effectColor = new Color(0.82f, 0.76f, 0.52f, 0.75f);
+                io.effectDistance = new Vector2(1.1f, -1.1f);
+                // El retrato tiene mucho transparente / aspecto vertical: el layout no escala el dibujo.
+                iconGo.transform.localScale = new Vector3(1.55f, 1.55f, 1f);
+                rowLe.preferredHeight = Mathf.Max(rowLe.preferredHeight, iconH * 1.55f + 6f);
+            }
             var iconSprite = Zone1ArtProvider.LoadSprite(iconPath);
             if (iconSprite != null)
                 icon.sprite = iconSprite;
             icon.color = Color.white;
 
-            var label = CreateTMP(row.transform, text, fontSize, TextAlignmentOptions.Left);
-            label.overflowMode = TextOverflowModes.Overflow;
+            var label = CreateTMP(row.transform, text, fontSize, TextAlignmentOptions.Left, null, TextWrappingModes.Normal, TextOverflowModes.Overflow);
+            label.lineSpacing = 2f;
+            label.margin = new Vector4(2f, 0f, 4f, 0f);
+            var labelLe = label.gameObject.AddComponent<LayoutElement>();
+            labelLe.flexibleWidth = 1f;
+            labelLe.minWidth = 60f;
             return label;
         }
 
-        static TextMeshProUGUI CreateTMP(Transform parent, string value, int fontSize, TextAlignmentOptions align, string label = null)
+        static TextMeshProUGUI CreateTMP(
+            Transform parent,
+            string value,
+            int fontSize,
+            TextAlignmentOptions align,
+            string label = null,
+            TextWrappingModes wrapMode = TextWrappingModes.NoWrap,
+            TextOverflowModes overflowMode = TextOverflowModes.Ellipsis)
         {
             var go = new GameObject("Text");
             go.transform.SetParent(parent, false);
@@ -1211,10 +1451,10 @@ namespace LasGranjasDelHastur.Zone1.UI
                 tmp.color = new Color(0.77f, 0.79f, 0.85f, 1f);      // Secondary labels
             else
                 tmp.color = new Color(0.93f, 0.93f, 0.93f, 1f);      // Body/value text
-            tmp.text = label != null ? $"{label}{value}" : value;
+            tmp.text = TmpSafeGlyphs(label != null ? $"{label}{value}" : value);
             tmp.raycastTarget = false;
-            tmp.textWrappingMode = TextWrappingModes.NoWrap;
-            tmp.overflowMode = TextOverflowModes.Ellipsis;
+            tmp.textWrappingMode = wrapMode;
+            tmp.overflowMode = overflowMode;
             tmp.enableAutoSizing = false;
             return tmp;
         }
@@ -1246,7 +1486,123 @@ namespace LasGranjasDelHastur.Zone1.UI
             return fill;
         }
 
-        static Button CreateButton(Transform parent, string text, float preferredWidth = 180f, float preferredHeight = 34f, int fontSize = 16)
+        void UpdateSalesButtonAttentionPulse()
+        {
+            if (_btnSalesRt == null)
+                return;
+            // Pulso alineado con “hay algo que vender”: mismo criterio que el callout (incentivo ventas).
+            if (!HasAnySellableStock() || (_salesPanel != null && _salesPanel.activeSelf))
+            {
+                _btnSalesRt.localScale = _salesPulseBaseScale;
+                return;
+            }
+
+            _salesPulsePhase += Time.unscaledDeltaTime * Mathf.PI * 1.15f;
+            var t = (Mathf.Sin(_salesPulsePhase) + 1f) * 0.5f;
+            var scale = Mathf.Lerp(0.94f, 1.08f, t);
+            _btnSalesRt.localScale = _salesPulseBaseScale * scale;
+        }
+
+        void BuildSalesCtaCallout(Transform salesButtonTransform)
+        {
+            var ctaGo = new GameObject("SalesCtaCallout");
+            ctaGo.transform.SetParent(salesButtonTransform, false);
+            // Graphic + sprite: sin sprite, algunos layouts no reservan bien el rect; Image invisible fuerza RectTransform bajo UI.
+            var holderImg = ctaGo.AddComponent<Image>();
+            holderImg.sprite = RuntimeSpriteFactory.OpaqueWhiteSprite;
+            holderImg.type = Image.Type.Simple;
+            holderImg.color = new Color(1f, 1f, 1f, 0f);
+            holderImg.raycastTarget = false;
+            _salesCtaRt = ctaGo.GetComponent<RectTransform>();
+            // Mitad superior del botón (dentro del rect) para que no quede fuera del padre ni bajo otros canvas.
+            _salesCtaRt.anchorMin = new Vector2(0.04f, 0.48f);
+            _salesCtaRt.anchorMax = new Vector2(0.96f, 0.98f);
+            _salesCtaRt.pivot = new Vector2(0.5f, 0.5f);
+            _salesCtaRt.offsetMin = Vector2.zero;
+            _salesCtaRt.offsetMax = Vector2.zero;
+            _salesCtaRt.localScale = Vector3.one;
+
+            _salesCtaGroup = ctaGo.AddComponent<CanvasGroup>();
+            _salesCtaGroup.alpha = 0f;
+            _salesCtaGroup.blocksRaycasts = false;
+            _salesCtaGroup.interactable = false;
+
+            var labelGo = new GameObject("CtaLabel");
+            labelGo.transform.SetParent(ctaGo.transform, false);
+            _salesCtaTmp = labelGo.AddComponent<TextMeshProUGUI>();
+            _salesCtaTmp.alignment = TextAlignmentOptions.Center;
+            _salesCtaTmp.fontSize = 18;
+            _salesCtaTmp.fontStyle = FontStyles.Bold;
+            _salesCtaTmp.color = new Color(0.98f, 0.9f, 0.52f, 1f);
+            _salesCtaTmp.text = TmpSafeGlyphs("> BUY");
+            _salesCtaTmp.raycastTarget = false;
+            _salesCtaTmp.enableAutoSizing = false;
+            _salesCtaTmp.margin = new Vector4(1f, 1f, 1f, 1f);
+            _salesCtaTmp.overflowMode = TextOverflowModes.Overflow;
+            _salesCtaTmp.textWrappingMode = TextWrappingModes.NoWrap;
+            // NewRocker: outline muy fino evita glitches; el color del texto ya contrasta.
+            _salesCtaTmp.outlineWidth = 0.12f;
+            _salesCtaTmp.outlineColor = new Color(0.04f, 0.04f, 0.07f, 0.95f);
+
+            var rtTmp = _salesCtaTmp.rectTransform;
+            rtTmp.anchorMin = Vector2.zero;
+            rtTmp.anchorMax = Vector2.one;
+            rtTmp.offsetMin = Vector2.zero;
+            rtTmp.offsetMax = Vector2.zero;
+
+            ctaGo.transform.SetAsLastSibling();
+        }
+
+        void UpdateSalesCtaCallout()
+        {
+            if (_salesCtaGroup == null || _salesCtaTmp == null || _salesCtaRt == null)
+                return;
+
+            var show = HasAnySellableStock() && _salesPanel != null && !_salesPanel.activeSelf;
+            if (!show)
+            {
+                _salesCtaGroup.alpha = 0f;
+                return;
+            }
+
+            _salesCtaTimer += Time.unscaledDeltaTime;
+            const float phraseLen = 2.75f;
+            const float fade = 0.42f;
+            var phase = _salesCtaTimer % phraseLen;
+            var idx = Mathf.FloorToInt(_salesCtaTimer / phraseLen) % SalesCtaPhrases.Length;
+            // Solo ASCII / glifos de la fuente NewRocker (Unicode triángulos -> espacio y no se lee nada).
+            _salesCtaTmp.text = TmpSafeGlyphs($"> {SalesCtaPhrases[idx]}");
+
+            float a = 1f;
+            if (phase < fade)
+                a = phase / fade;
+            else if (phase > phraseLen - fade)
+                a = (phraseLen - phase) / fade;
+            _salesCtaGroup.alpha = Mathf.Clamp01(a);
+
+            var bob = Mathf.Sin(_salesCtaTimer * 5.2f) * 2f;
+            _salesCtaRt.anchoredPosition = new Vector2(bob * 0.35f, bob);
+        }
+
+        bool HasAnySellableStock()
+        {
+            if (_buyers == null || _resources == null)
+                return false;
+            var buyers = _buyers.Buyers;
+            if (buyers == null)
+                return false;
+            for (var i = 0; i < buyers.Count; i++)
+            {
+                var b = buyers[i];
+                if (b == null)
+                    continue;
+                if (_resources.Get(b.buysResource) > 0)
+                    return true;
+            }
+            return false;
+        }
+
+        static Button CreateIconButton(Transform parent, string iconPath, string text, float preferredWidth = 180f, float preferredHeight = 34f, int fontSize = 16, bool layoutFlexibleWidth = true, float iconSide = 28f, bool boostPortraitVisibility = false)
         {
             var go = new GameObject($"Button_{text}");
             go.transform.SetParent(parent, false);
@@ -1267,7 +1623,90 @@ namespace LasGranjasDelHastur.Zone1.UI
             colors.pressedColor = new Color(0.08f, 0.08f, 0.10f, 1f);
             btn.colors = colors;
 
-            var txt = CreateTMP(go.transform, text, fontSize, TextAlignmentOptions.Center);
+            var row = new GameObject("LabelRow");
+            row.transform.SetParent(go.transform, false);
+            var rowRt = row.AddComponent<RectTransform>();
+            rowRt.anchorMin = Vector2.zero;
+            rowRt.anchorMax = Vector2.one;
+            rowRt.offsetMin = new Vector2(12f, 5f);
+            rowRt.offsetMax = new Vector2(-12f, -5f);
+            var h = row.AddComponent<HorizontalLayoutGroup>();
+            h.spacing = 12f;
+            h.padding = new RectOffset(2, 4, 0, 0);
+            h.childAlignment = TextAnchor.MiddleLeft;
+            h.childControlHeight = true;
+            h.childControlWidth = false;
+            h.childForceExpandHeight = false;
+            h.childForceExpandWidth = false;
+
+            var iconGo = new GameObject("Icon");
+            iconGo.transform.SetParent(row.transform, false);
+            var iconImg = iconGo.AddComponent<Image>();
+            iconImg.color = Color.white;
+            iconImg.preserveAspect = true;
+            var iconLe = iconGo.AddComponent<LayoutElement>();
+            iconLe.preferredWidth = iconSide;
+            iconLe.preferredHeight = iconSide;
+            iconLe.flexibleWidth = 0f;
+            var iconSp = Zone1ArtProvider.LoadSprite(iconPath);
+            if (iconSp != null)
+                iconImg.sprite = iconSp;
+            if (boostPortraitVisibility)
+            {
+                var io = iconGo.AddComponent<Outline>();
+                io.effectColor = new Color(0.72f, 0.68f, 0.52f, 0.55f);
+                io.effectDistance = new Vector2(0.6f, -0.6f);
+            }
+
+            var txt = CreateTMP(row.transform, text, fontSize, TextAlignmentOptions.Center, null, TextWrappingModes.Normal, TextOverflowModes.Overflow);
+            txt.lineSpacing = 0f;
+            var txtLe = txt.gameObject.AddComponent<LayoutElement>();
+            txtLe.flexibleWidth = 1f;
+            txtLe.minWidth = 40f;
+
+            var le = go.AddComponent<LayoutElement>();
+            le.preferredHeight = preferredHeight;
+            le.preferredWidth = preferredWidth;
+            le.flexibleWidth = layoutFlexibleWidth && preferredWidth > 130f ? 1f : 0f;
+            le.minHeight = preferredHeight;
+
+            if (go.GetComponent<BasicUIAudio>() == null)
+            {
+                var uiAudio = go.AddComponent<BasicUIAudio>();
+                if (AudioManager.Instance != null)
+                {
+                    uiAudio.hoverClip = AudioManager.Instance.uiHover;
+                    uiAudio.clickClip = AudioManager.Instance.uiClick;
+                    uiAudio.useAudioManagerFirst = true;
+                }
+            }
+
+            return btn;
+        }
+
+        static Button CreateButton(Transform parent, string text, float preferredWidth = 180f, float preferredHeight = 34f, int fontSize = 16, bool layoutFlexibleWidth = true)
+        {
+            var go = new GameObject($"Button_{text}");
+            go.transform.SetParent(parent, false);
+
+            var img = go.AddComponent<Image>();
+            img.color = new Color(0.12f, 0.12f, 0.14f, 1f);
+            var btnSprite = Zone1ArtProvider.LoadSprite("Assets/02_Sprites/Lucas/Zone1/UI/zone1_ui_button_base.png");
+            if (btnSprite != null)
+            {
+                img.sprite = btnSprite;
+                img.type = Image.Type.Sliced;
+                img.color = Color.white;
+            }
+
+            var btn = go.AddComponent<Button>();
+            var colors = btn.colors;
+            colors.highlightedColor = new Color(0.18f, 0.18f, 0.22f, 1f);
+            colors.pressedColor = new Color(0.08f, 0.08f, 0.10f, 1f);
+            btn.colors = colors;
+
+            var txt = CreateTMP(go.transform, text, fontSize, TextAlignmentOptions.Center, null, TextWrappingModes.Normal, TextOverflowModes.Overflow);
+            txt.lineSpacing = -2f;
             txt.rectTransform.anchorMin = Vector2.zero;
             txt.rectTransform.anchorMax = Vector2.one;
             txt.rectTransform.offsetMin = Vector2.zero;
@@ -1275,8 +1714,9 @@ namespace LasGranjasDelHastur.Zone1.UI
 
             var le = go.AddComponent<LayoutElement>();
             le.preferredHeight = preferredHeight;
+            le.minHeight = preferredHeight;
             le.preferredWidth = preferredWidth;
-            le.flexibleWidth = preferredWidth <= 130f ? 0f : 1f;
+            le.flexibleWidth = layoutFlexibleWidth && preferredWidth > 130f ? 1f : 0f;
 
             // Optional: wire existing BasicUIAudio if AudioManager is present later.
             if (go.GetComponent<BasicUIAudio>() == null)
@@ -1293,13 +1733,39 @@ namespace LasGranjasDelHastur.Zone1.UI
             return btn;
         }
 
+        static void SetButtonLabel(Button button, string text)
+        {
+            if (button == null)
+                return;
+            var tmp = button.GetComponentInChildren<TextMeshProUGUI>();
+            if (tmp != null)
+                tmp.text = TmpSafeGlyphs(text);
+        }
+
+        /// <summary>
+        /// NewRocker-Regular SDF (y similares) suelen no incluir flechas Unicode; TMPro spamea warnings si aparecen en texto dinámico.
+        /// </summary>
+        public static string SafeGlyphs(string s) => TmpSafeGlyphs(s);
+
+        static string TmpSafeGlyphs(string s)
+        {
+            if (string.IsNullOrEmpty(s))
+                return s;
+            return s
+                .Replace("\u2192", "->")
+                .Replace("\u2190", "<-")
+                .Replace("\u2194", "<->")
+                .Replace("\u25bc", ">")
+                .Replace("\u25BC", ">");
+        }
+
         static string ResourceLabel(ResourceType type)
         {
             return type switch
             {
                 ResourceType.WeakSouls => "Almas débiles",
                 ResourceType.PureEnergy => "Energía pura",
-                ResourceType.MemoryShards => "Frag. recuerdo",
+                ResourceType.MemoryShards => "Fragmentos de recuerdo",
                 ResourceType.UnstableSouls => "Almas inestables",
                 ResourceType.DarkCoins => "Monedas oscuras",
                 _ => type.ToString()
