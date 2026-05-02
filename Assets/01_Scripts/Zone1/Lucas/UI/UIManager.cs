@@ -15,6 +15,11 @@ namespace LasGranjasDelHastur.Zone1.UI
     [DisallowMultipleComponent]
     public class UIManager : MonoBehaviour
     {
+        const string TaxPanelSpriteEdwinPath = "Assets/Resources/Edwin/Tax/zone1-ui-panel-tax-preview.png";
+        const string TaxPanelSpriteLegacyPath = "Assets/02_Sprites/Lucas/Zone1/UI/zone1_ui_panel_tax.png";
+        const string TaxPortraitEdwinPath = "Assets/Resources/Edwin/Tax/zone1-tax-cthulhu-portrait-preview.png";
+        const string TaxPortraitLegacyPath = "Assets/02_Sprites/Lucas/Zone1/Portraits/zone1_tax_cthulhu_portrait.png";
+
         [Header("Scene Names")]
         [SerializeField] private string zoneSelectionSceneName = "ZoneSelection";
 
@@ -597,19 +602,9 @@ namespace LasGranjasDelHastur.Zone1.UI
             var portraitLE = portrait.AddComponent<LayoutElement>();
             portraitLE.preferredWidth = 40f;
             portraitLE.preferredHeight = 40f;
-            var portraitPath = buyer.buyerName switch
-            {
-                "Los Profundos" => "Assets/02_Sprites/Lucas/Zone1/Portraits/zone1_buyer_deepone_portrait.png",
-                "Yekuvian" => "Assets/02_Sprites/Lucas/Zone1/Portraits/zone1_buyer_yekuvian_portrait.png",
-                "Ángeles Caídos" => "Assets/02_Sprites/Lucas/Zone1/Portraits/zone1_buyer_fallenangel_portrait.png",
-                _ => null
-            };
-            if (!string.IsNullOrEmpty(portraitPath))
-            {
-                var p = Zone1ArtProvider.LoadSprite(portraitPath);
-                if (p != null)
-                    portraitImg.sprite = p;
-            }
+            var iconSprite = BuyerPortraitResolver.GetListIconSprite(buyer.buyerName);
+            if (iconSprite != null)
+                portraitImg.sprite = iconSprite;
 
             var currentPrice = _buyers != null ? _buyers.GetCurrentPrice(buyer) : buyer.basePricePerUnit;
             var left = CreateTMP(row.transform, $"{buyer.buyerName} · {ResourceLabel(buyer.buysResource)} · {currentPrice}/u", 14, TextAlignmentOptions.Left);
@@ -1055,7 +1050,7 @@ namespace LasGranjasDelHastur.Zone1.UI
             var portraitLe = portraitGo.AddComponent<LayoutElement>();
             portraitLe.preferredWidth = 84f;
             portraitLe.preferredHeight = 84f;
-            var taxPortraitSprite = Zone1ArtProvider.LoadSprite("Assets/02_Sprites/Lucas/Zone1/Portraits/zone1_tax_cthulhu_portrait.png");
+            var taxPortraitSprite = LoadTaxCollectorPortraitSprite();
             if (taxPortraitSprite != null)
                 _taxPortrait.sprite = taxPortraitSprite;
             _taxBody = CreateTMP(root, "-", 16, TextAlignmentOptions.Left);
@@ -1087,6 +1082,18 @@ namespace LasGranjasDelHastur.Zone1.UI
             bridge.EnsureCorrectInputModule();
         }
 
+        static Sprite LoadTaxPanelBackgroundSprite()
+        {
+            var s = Zone1ArtProvider.LoadSprite(TaxPanelSpriteEdwinPath);
+            return s ?? Zone1ArtProvider.LoadSprite(TaxPanelSpriteLegacyPath);
+        }
+
+        static Sprite LoadTaxCollectorPortraitSprite()
+        {
+            var s = Zone1ArtProvider.LoadSprite(TaxPortraitEdwinPath);
+            return s ?? Zone1ArtProvider.LoadSprite(TaxPortraitLegacyPath);
+        }
+
         static GameObject CreatePanel(Transform parent, string name, Vector2 anchorMin, Vector2 anchorMax, Vector2 anchoredPos, Vector2 size)
         {
             var go = new GameObject(name);
@@ -1101,23 +1108,27 @@ namespace LasGranjasDelHastur.Zone1.UI
             var img = go.AddComponent<Image>();
             img.color = new Color(0.06f, 0.06f, 0.07f, 0.95f);
 
-            var spritePath = name switch
+            Sprite panelSprite = null;
+            if (name == "TaxAlertPanel")
+                panelSprite = LoadTaxPanelBackgroundSprite();
+            else
             {
-                "CellInfoPanel" => "Assets/02_Sprites/Lucas/Zone1/UI/zone1_ui_panel_cell.png",
-                "SalesPanel" => "Assets/02_Sprites/Lucas/Zone1/UI/zone1_ui_panel_sales.png",
-                "TaxAlertPanel" => "Assets/02_Sprites/Lucas/Zone1/UI/zone1_ui_panel_tax.png",
-                "HoverInfoPanel" => "Assets/02_Sprites/Lucas/Zone1/UI/zone1_ui_panel_cell.png",
-                _ => null
-            };
-            if (!string.IsNullOrEmpty(spritePath))
-            {
-                var panelSprite = Zone1ArtProvider.LoadSprite(spritePath);
-                if (panelSprite != null)
+                var spritePath = name switch
                 {
-                    img.sprite = panelSprite;
-                    img.type = Image.Type.Sliced;
-                    img.color = Color.white;
-                }
+                    "CellInfoPanel" => "Assets/02_Sprites/Lucas/Zone1/UI/zone1_ui_panel_cell.png",
+                    "SalesPanel" => "Assets/02_Sprites/Lucas/Zone1/UI/zone1_ui_panel_sales.png",
+                    "HoverInfoPanel" => "Assets/02_Sprites/Lucas/Zone1/UI/zone1_ui_panel_cell.png",
+                    _ => null
+                };
+                if (!string.IsNullOrEmpty(spritePath))
+                    panelSprite = Zone1ArtProvider.LoadSprite(spritePath);
+            }
+
+            if (panelSprite != null)
+            {
+                img.sprite = panelSprite;
+                img.type = Image.Type.Sliced;
+                img.color = Color.white;
             }
 
             var outline = go.AddComponent<Outline>();

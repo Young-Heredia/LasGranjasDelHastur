@@ -246,16 +246,7 @@ namespace LasGranjasDelHastur.UI.Edwin
         {
             if (_portrait == null)
                 return;
-            var portraitPath = buyer.buyerName switch
-            {
-                "Los Profundos" => "Assets/02_Sprites/Lucas/Zone1/Portraits/zone1_buyer_deepone_portrait.png",
-                "Yekuvian" => "Assets/02_Sprites/Lucas/Zone1/Portraits/zone1_buyer_yekuvian_portrait.png",
-                "Ángeles Caídos" => "Assets/02_Sprites/Lucas/Zone1/Portraits/zone1_buyer_fallenangel_portrait.png",
-                _ => null
-            };
-            _portrait.sprite = !string.IsNullOrEmpty(portraitPath)
-                ? Zone1ArtProvider.LoadSprite(portraitPath)
-                : null;
+            _portrait.sprite = BuyerPortraitResolver.GetPortraitSprite(buyer.buyerName);
             _portrait.color = _portrait.sprite != null ? Color.white : new Color(0.25f, 0.25f, 0.28f, 0.9f);
         }
 
