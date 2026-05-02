@@ -37,6 +37,7 @@ namespace LasGranjasDelHastur.Zone1
         public Zone1Config Config => zone1Config;
         bool _initialized;
         float _debugTimer;
+        bool _autoRestoredFromDisk;
 
         [ContextMenu("Auto Wire References")]
         public void AutoWireReferences()
@@ -225,18 +226,29 @@ namespace LasGranjasDelHastur.Zone1
         {
             if (SaveManager.Instance == null)
                 return;
-            if (!SaveManager.Instance.ShouldRestoreFromSave)
-                return;
 
             var data = SaveManager.Instance.CachedData;
             if (data == null || data.zone1 == null || !data.zone1.valid)
             {
-                SaveManager.Instance.MarkRestoreConsumed();
+                if (SaveManager.Instance.ShouldRestoreFromSave)
+                    SaveManager.Instance.MarkRestoreConsumed();
                 return;
             }
 
+            // Normal flow: restore explicitly requested (Continue/new load).
+            if (SaveManager.Instance.ShouldRestoreFromSave)
+            {
+                ApplySaveData(data.zone1);
+                SaveManager.Instance.MarkRestoreConsumed();
+                _autoRestoredFromDisk = true;
+                return;
+            }
+
+            // Editor/runtime convenience: reloading Zone1 scene should keep last saved state.
+            if (_autoRestoredFromDisk)
+                return;
             ApplySaveData(data.zone1);
-            SaveManager.Instance.MarkRestoreConsumed();
+            _autoRestoredFromDisk = true;
         }
 
         public Zone1SaveData CaptureSaveData()
@@ -249,6 +261,10 @@ namespace LasGranjasDelHastur.Zone1
                 pureEnergy = resourceManager.Get(ResourceType.PureEnergy),
                 memoryShards = resourceManager.Get(ResourceType.MemoryShards),
                 unstableSouls = resourceManager.Get(ResourceType.UnstableSouls),
+                zone1EasterEggBonusClaimed = SaveManager.Instance != null &&
+                                             SaveManager.Instance.CachedData != null &&
+                                             SaveManager.Instance.CachedData.zone1 != null &&
+                                             SaveManager.Instance.CachedData.zone1.zone1EasterEggBonusClaimed,
                 level = progressionManager.Level,
                 xp = progressionManager.Xp,
                 strikes = GlobalTaxLedger.GetStrikes(),
@@ -278,6 +294,9 @@ namespace LasGranjasDelHastur.Zone1
             cellManager.ApplySaveData(data.cells);
             assistantManager.ApplySaveData(data.assistantTotal, data.assistants);
             taxManager.ApplySaveState(data.strikes, data.fineDebt, data.timeToNextTaxSeconds, data.taxAlertActive, data.payWindowRemainingSeconds);
+
+            if (SaveManager.Instance != null && SaveManager.Instance.CachedData != null && SaveManager.Instance.CachedData.zone1 != null)
+                SaveManager.Instance.CachedData.zone1.zone1EasterEggBonusClaimed = data.zone1EasterEggBonusClaimed;
 
             cellManager.RefreshAssistantVisuals(assistantManager);
             uiManager.RefreshFromExternalState();

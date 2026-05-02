@@ -4903,7 +4903,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1654060185}
-  - component: {fileID: 1654060187}
   - component: {fileID: 1654060188}
   m_Layer: 0
   m_Name: Zone2PrototypeGame
@@ -4927,21 +4926,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1291075240}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1654060187
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1654060184}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c05ff243f6075bf469874135eea43f7f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LasGranjasDelHastur.Zone2.Zone2PrototypeGame
-  sharedEconomyWithZone1: 1
-  taxIntervalSeconds: 300
-  initialUnlockedCells: 2
 --- !u!114 &1654060188
 MonoBehaviour:
   m_ObjectHideFlags: 0
