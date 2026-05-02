@@ -13,6 +13,8 @@ public class IntroComicController : MonoBehaviour
     public Button skipButton;
 
     [Header("Contenido")]
+    // Panel order (Cinematic pack): 1-YellowSky, 2-HasturThrone,
+    // 3-EntitiesDemandingResources, 4-AbandonedFarmDungeon, 5-Contract, 6-FirstZoneUnlocked
     public Sprite[] panels;
     public string[] narrations;
 

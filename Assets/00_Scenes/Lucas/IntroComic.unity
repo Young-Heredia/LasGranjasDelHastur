@@ -1198,23 +1198,23 @@ MonoBehaviour:
   nextButton: {fileID: 844158064}
   skipButton: {fileID: 1840037936}
   panels:
-  - {fileID: 21300000, guid: c75e01c9c01c0f94db84ee53c91fe0ab, type: 3}
-  - {fileID: 21300000, guid: 98a58fb1b54b2c845b42840679c1db3e, type: 3}
-  - {fileID: 21300000, guid: 1fd53e36e136ed342b306904dec26a28, type: 3}
-  - {fileID: 21300000, guid: 85004967bcc847b4dbeaa790b24634d9, type: 3}
-  - {fileID: 21300000, guid: 2db35f0696f124046be91d6e51cc5154, type: 3}
-  - {fileID: 21300000, guid: c01efa5b538eb2d4485d51ec37ca76b6, type: 3}
+  - {fileID: 21300000, guid: 6ad0bb7c9156cf1408c741faa6c3ca65, type: 3}
+  - {fileID: 21300000, guid: 32a6b07d03c40094dbf21c34c2e5c905, type: 3}
+  - {fileID: 21300000, guid: deee9747ce29aa24181dfd06aaf6a0cc, type: 3}
+  - {fileID: 21300000, guid: 0b1a1166e097bd24ca302b167d7c0984, type: 3}
+  - {fileID: 21300000, guid: eabca44d8afeec94099af5efd453abca, type: 3}
+  - {fileID: 21300000, guid: bee10b04c01d04046a672481f03e7b80, type: 3}
   narrations:
-  - "En los confines del vac\xEDo, Hastur, el Rey Amarillo, observa mundos enteros
-    como si fueran simples recursos de su imperio."
-  - "Ciudades, almas y recuerdos son comprimidos en ofrendas para alimentar a entidades
-    antiguas que esperan m\xE1s all\xE1 de las estrellas."
-  - "En los calabozos abandonados, los cultos levantan rituales para iniciar la producci\xF3n
-    de almas y energ\xEDa pura."
-  - "Un nuevo administrador recibe el contrato amarillo: dirigir las granjas interdimensionales
-    y mantener activa la econom\xEDa de Hastur."
-  - "Cuando la producci\xF3n crezca, incluso lunas, planetas, cometas y estrellas
-    ser\xE1n cosechados como recursos."
+  - "El cielo se ti\xF1e de amarillo. Mundos enteros colapsan bajo el peso de entidades
+    antiguas. Todo cuanto existe es un recurso m\xE1s."
+  - "Hastur, el Rey Amarillo, contempla desde su trono las granjas interdimensionales.
+    Su poder crece con cada alma cosechada."
+  - "Las entidades antiguas exigen tributos sin fin. Sacrificios de almas y energ\xEDa
+    son arrancados de cada rinc\xF3n del cosmos."
+  - "Granjas abandonadas a la deriva entre estrellas muertas. Sin administrador, sin
+    producci\xF3n, sin pago de impuestos. El caos avanza."
+  - "T\xFA eres nombrado el nuevo administrador. El contrato amarillo est\xE1 firmado.
+    Diriges las granjas interdimensionales de Hastur."
   - "La granja despierta. Produce, vende, mejora y paga los impuestos c\xF3smicos...
     o ser\xE1s devorado por tus propias deudas."
   delayPerCharacter: 0.035
