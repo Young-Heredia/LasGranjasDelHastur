@@ -1,0 +1,30 @@
+Las Granjas del Hastur — Zona 1 (Calabozos / mazmorra ritual)
+Misma convención que Zona 2 y 3. Ver también docs/VisualStyleGuide.md.
+
+Pega al inicio de cada prompt:
+2D pixel art game asset, dark rustic lovecraftian dungeon, top-down with slight 3/4 tilt, designed for Unity 2D, readable silhouette, limited color palette, soft shadows, clean pixel clusters, cold stone and deep shadow, muted sickly yellow accents for occult symbols, transparent background, no text, no watermark, no photorealism, no 3D render
+
+Al final:
+no photorealism, no 3D render, no neon, no blurry pixels, no oversaturated colors, no unreadable micro-detail, no text, no watermark, no logo, no anime, no modern flat UI style, no gore
+
+Paleta (referencia): piedra #302E38–#4A4A55, fondo cámara #080D1F, niebla/cenital frío #D1DCF5 tintes, acentos runas/ritual #F2D375 / ocre apagado.
+
+---
+
+Archivos opcionales (ver Zone1DungeonArtPaths.cs):
+
+Tiles/
+- zone1_wall_stone_top_band.png — franja horizontal de muro superior, repetable en X, grietas y mortero
+- zone1_wall_stone_side_band.png — muro lateral vertical, repetable en Y
+- zone1_wall_stone_lintel.png — dintel / parte superior de hueco de puerta
+- zone1_wall_stone_bottom_band.png — zócalo o muro inferior (frente)
+- zone1_wall_stone_broken_breach.png — tramo roto con escombros (sustituye o enriquece el hueco inferior)
+
+Overlays/
+- zone1_overlay_dungeon_frame.png — marco ornamental (piedra/hierro) que encuadre la sala visto desde arriba
+- zone1_overlay_runes_yellow.png — mismo rol que runas frías pero grabados en oro enfermizo / ámbar
+
+Props/
+- zone1_prop_wall_rubble_cluster.png — montículo de escombros junto al hueco
+
+Ya existentes en proyecto: NWzone1_floor_tile_01–06, zone1_overlay_runes, zone1_prop_dark_puddle, zone1_torch_sheet, etc.

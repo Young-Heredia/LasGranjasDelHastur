@@ -1,5 +1,7 @@
 Las Granjas del Hastur
 
+Guía visual (estilo, paleta, tamaños): [docs/VisualStyleGuide.md](docs/VisualStyleGuide.md).
+
 Documentación de cableado de escenas y alcance MVP de Zone 1: [docs/SceneWiringAndZone1Scope.md](docs/SceneWiringAndZone1Scope.md).
 
 Contenido principal de `Assets/`: `00_Scenes`, `01_Scripts`, `02_Sprites`, `03_AUDIO`, `04_Prefabs`, `05_Fonts` (detalle en el doc enlazado). En `01_Scripts` la convención es **dominio primero** (`Audio`, `Camera`, `Core`, `Intro`, `MainMenu`, `SceneManagement`, `UI`, `Zone1`…, `ZoneSelection`) y **dentro por persona** (`Edwin`, `Jose`, `Lucas`).

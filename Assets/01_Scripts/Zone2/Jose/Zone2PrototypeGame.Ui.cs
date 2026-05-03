@@ -1,6 +1,10 @@
+using LasGranjasDelHastur;
 using LasGranjasDelHastur.Core;
+using LasGranjasDelHastur.Zone1;
 using TMPro;
+using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -106,7 +110,7 @@ namespace LasGranjasDelHastur.Zone2.Jose
             ZonePrototypeUiChrome.ApplyHybridPackOrZone1Button(btnBackZones, true, Ui_ButtonPrimary, Ui_ButtonDanger);
 
             var gridPanel = CreateImage(panel.transform, "CellGridPanel", new Color(1f, 1f, 1f, 1f));
-            ApplyUiSprite(gridPanel, Ui_PanelTaxAlert, fallbackTint: new Color(0.05f, 0.09f, 0.11f, 0.68f));
+            ApplyZ2TaxGridPanel(gridPanel);
             var gridRt = gridPanel.rectTransform;
             gridRt.anchorMin = new Vector2(0.5f, 0.5f);
             gridRt.anchorMax = new Vector2(0.5f, 0.5f);
@@ -214,6 +218,9 @@ namespace LasGranjasDelHastur.Zone2.Jose
             });
 
             RebuildCellsListUi();
+
+            _z2TaxFxCanvasRoot = root.transform;
+            EnsureZ2TaxFlashHost(_z2TaxFxCanvasRoot);
 
             if (_salesPanelGo != null) _salesPanelGo.SetActive(false);
             if (_detailsPanelGo != null) _detailsPanelGo.SetActive(false);
@@ -346,6 +353,9 @@ namespace LasGranjasDelHastur.Zone2.Jose
 
             if (_salesPanelGo != null) _salesPanelGo.SetActive(false);
             if (_detailsPanelGo != null) _detailsPanelGo.SetActive(false);
+
+            _z2TaxFxCanvasRoot = uiRoot.transform;
+            EnsureZ2TaxFlashHost(_z2TaxFxCanvasRoot);
 
             return true;
         }
@@ -750,6 +760,166 @@ namespace LasGranjasDelHastur.Zone2.Jose
             img.preserveAspect = false;
         }
 
+        static void ApplyZ2TaxGridPanel(Image gridPanel)
+        {
+            if (gridPanel == null)
+                return;
+            var sprite = TryLoadSprite(TaxCollectorArtPaths.Z2Panel);
+            if (sprite != null)
+            {
+                gridPanel.sprite = sprite;
+                gridPanel.color = Color.white;
+                gridPanel.type = Image.Type.Simple;
+                gridPanel.preserveAspect = false;
+                return;
+            }
+
+            ApplyUiSprite(gridPanel, Ui_PanelTaxAlert, fallbackTint: new Color(0.05f, 0.09f, 0.11f, 0.68f));
+        }
+
+        void PlayZone2TaxCollectorPresentation(bool shortFlash)
+        {
+            EnsureZ2TaxFlashHost(_z2TaxFxCanvasRoot != null ? _z2TaxFxCanvasRoot : transform);
+            if (_z2TaxFxRoot == null)
+                return;
+            if (_z2TaxFxRoutine != null)
+            {
+                StopCoroutine(_z2TaxFxRoutine);
+                _z2TaxFxRoutine = null;
+            }
+
+            _z2TaxFxRoutine = StartCoroutine(Zone2TaxFxRoutine(shortFlash));
+        }
+
+        void EnsureZ2TaxFlashHost(Transform canvasRoot)
+        {
+            if (canvasRoot == null)
+                return;
+
+            var existing = canvasRoot.Find("Z2TaxCollectorFx");
+            if (existing != null)
+            {
+                _z2TaxFxCanvasRoot = canvasRoot;
+                _z2TaxFxRoot = existing.GetComponent<CanvasGroup>();
+                _z2TaxFxPortrait = existing.Find("Portrait")?.GetComponent<Image>();
+                _z2TaxFxStrip = existing.Find("ArrivalStrip")?.GetComponent<Image>();
+                if (_z2TaxFxRoot == null)
+                {
+                    _z2TaxFxRoot = existing.gameObject.AddComponent<CanvasGroup>();
+                    _z2TaxFxRoot.alpha = 0f;
+                    _z2TaxFxRoot.blocksRaycasts = false;
+                }
+
+                return;
+            }
+
+            _z2TaxFxCanvasRoot = canvasRoot;
+            var host = new GameObject("Z2TaxCollectorFx");
+            host.transform.SetParent(canvasRoot, false);
+            var rt = host.AddComponent<RectTransform>();
+            Stretch(rt);
+            _z2TaxFxRoot = host.AddComponent<CanvasGroup>();
+            _z2TaxFxRoot.alpha = 0f;
+            _z2TaxFxRoot.blocksRaycasts = false;
+            _z2TaxFxRoot.interactable = false;
+
+            var dim = CreateImage(host.transform, "Dim", new Color(0f, 0f, 0f, 0.55f));
+            Stretch(dim.rectTransform);
+            dim.raycastTarget = false;
+
+            var portraitGo = new GameObject("Portrait");
+            portraitGo.transform.SetParent(host.transform, false);
+            var prt = portraitGo.AddComponent<RectTransform>();
+            prt.anchorMin = new Vector2(0.5f, 0.5f);
+            prt.anchorMax = new Vector2(0.5f, 0.5f);
+            prt.pivot = new Vector2(0.5f, 0.5f);
+            prt.sizeDelta = new Vector2(280f, 280f);
+            prt.anchoredPosition = new Vector2(0f, 24f);
+            _z2TaxFxPortrait = portraitGo.AddComponent<Image>();
+            _z2TaxFxPortrait.preserveAspect = true;
+            _z2TaxFxPortrait.raycastTarget = false;
+
+            var stripGo = new GameObject("ArrivalStrip");
+            stripGo.transform.SetParent(host.transform, false);
+            var srt = stripGo.AddComponent<RectTransform>();
+            srt.anchorMin = new Vector2(0.5f, 0.5f);
+            srt.anchorMax = new Vector2(0.5f, 0.5f);
+            srt.pivot = new Vector2(0.5f, 0.5f);
+            srt.sizeDelta = new Vector2(360f, 90f);
+            srt.anchoredPosition = new Vector2(0f, -148f);
+            _z2TaxFxStrip = stripGo.AddComponent<Image>();
+            _z2TaxFxStrip.preserveAspect = true;
+            _z2TaxFxStrip.raycastTarget = false;
+        }
+
+        IEnumerator Zone2TaxFxRoutine(bool shortFlash)
+        {
+            if (_z2TaxFxRoot == null)
+                yield break;
+
+            if (_z2TaxFxPortrait != null)
+            {
+                var p = TryLoadSprite(TaxCollectorArtPaths.Z2Portrait);
+                _z2TaxFxPortrait.sprite = p;
+                if (p != null)
+                    _z2TaxFxPortrait.color = shortFlash ? Color.white : new Color(1f, 0.6f, 0.6f, 1f);
+                else
+                    _z2TaxFxPortrait.color = new Color(1f, 1f, 1f, 0f);
+            }
+
+            var frames = Zone1ArtProvider.LoadHorizontalStrip(TaxCollectorArtPaths.ArrivalSheet4Frames, TaxCollectorArtPaths.ArrivalFrameCount);
+            var frameIdx = 0;
+            var frameAcc = 0f;
+            const float frameDt = 0.1f;
+            var hold = shortFlash ? 0.72f : 1.15f;
+            const float fadeIn = 0.12f;
+            const float fadeOut = 0.2f;
+            var peakAlpha = shortFlash ? 0.88f : 0.95f;
+
+            for (var t = 0f; t < fadeIn; t += Time.unscaledDeltaTime)
+            {
+                _z2TaxFxRoot.alpha = Mathf.Clamp01(t / fadeIn) * peakAlpha;
+                yield return null;
+            }
+
+            _z2TaxFxRoot.alpha = peakAlpha;
+            var elapsed = 0f;
+            while (elapsed < hold)
+            {
+                elapsed += Time.unscaledDeltaTime;
+                if (frames != null && frames.Length > 0 && _z2TaxFxStrip != null)
+                {
+                    frameAcc += Time.unscaledDeltaTime;
+                    while (frameAcc >= frameDt)
+                    {
+                        frameAcc -= frameDt;
+                        frameIdx = (frameIdx + 1) % frames.Length;
+                    }
+
+                    _z2TaxFxStrip.sprite = frames[frameIdx];
+                    _z2TaxFxStrip.color = Color.white;
+                }
+
+                yield return null;
+            }
+
+            var startAlpha = _z2TaxFxRoot.alpha;
+            for (var t = 0f; t < fadeOut; t += Time.unscaledDeltaTime)
+            {
+                _z2TaxFxRoot.alpha = Mathf.Lerp(startAlpha, 0f, Mathf.Clamp01(t / fadeOut));
+                yield return null;
+            }
+
+            _z2TaxFxRoot.alpha = 0f;
+            if (_z2TaxFxStrip != null)
+            {
+                _z2TaxFxStrip.sprite = null;
+                _z2TaxFxStrip.color = new Color(1f, 1f, 1f, 0f);
+            }
+
+            _z2TaxFxRoutine = null;
+        }
+
         static void ApplyButtonSkin(Button btn, bool danger)
         {
             if (btn == null)
@@ -773,13 +943,23 @@ namespace LasGranjasDelHastur.Zone2.Jose
 
         static Sprite TryLoadSprite(string assetPath)
         {
-#if UNITY_EDITOR
             if (string.IsNullOrEmpty(assetPath))
                 return null;
-            return UnityEditor.AssetDatabase.LoadAssetAtPath<Sprite>(assetPath);
-#else
-            return null;
+
+#if UNITY_EDITOR
+            var editorSprite = UnityEditor.AssetDatabase.LoadAssetAtPath<Sprite>(assetPath);
+            if (editorSprite != null)
+                return editorSprite;
 #endif
+            var res = TaxCollectorArtPaths.ToResourcesLoadPath(assetPath);
+            if (!string.IsNullOrEmpty(res))
+            {
+                var loaded = Resources.Load<Sprite>(res);
+                if (loaded != null)
+                    return loaded;
+            }
+
+            return Zone1ArtProvider.LoadSprite(assetPath);
         }
 
         static TextMeshProUGUI CreateLabel(Transform parent, string name, string text, int size, Vector2 pos, Vector2 rectSize)

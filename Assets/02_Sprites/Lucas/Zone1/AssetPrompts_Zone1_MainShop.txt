@@ -1,0 +1,33 @@
+Las Granjas del Hastur — Zona 1 — Tienda principal (prompts opcionales)
+
+La UI actual reutiliza zone1_ui_panel_sales.png y botones genéricos. Genera estos solo si quieres arte dedicado.
+
+---
+
+Imagen / sprite — fondo panel tienda
+Nombre archivo: zone1_ui_panel_shop.png
+Ruta Unity: Assets/02_Sprites/Lucas/Zone1/UI/zone1_ui_panel_shop.png
+
+Prompt DALL·E (PNG ~1024px de ancho; nine-slice si lo importas como sliced sprite):
+Dark fantasy UI panel frame for a shop window, muted purple-brown stone border, subtle golden occult trim, parchment-like inner area, low saturation, game HUD style, flat dark inner fill for content, no text, no watermark.
+
+---
+
+Imagen / sprite — fondo botón pestaña activa (opcional, 9-slice)
+Nombre archivo: zone1_ui_shop_tab_active.png
+Ruta Unity: Assets/02_Sprites/Lucas/Zone1/UI/zone1_ui_shop_tab_active.png
+
+Prompt:
+Small UI button panel background, dark teal-purple gradient, thin muted gold border, subtle inner glow, flat game HUD sprite, no icons, no text.
+
+---
+
+Sonido / FlowMusic
+No hay efectos nuevos obligatorios (compras y mejoras siguen usando clips ya cableados en AudioManager).
+
+Opcional — clic al cambiar de pestaña:
+Nombre archivo: zone1_ui_shop_tab_click.wav
+Ruta Unity sugerida: Assets/03_Audio/SFX/Lucas/UI/zone1_ui_shop_tab_click.wav
+
+Prompt FlowMusic:
+Very short UI tab click, soft metallic tick, subtle dark room reverb, fantasy game menu, non-intrusive, under 0.2 seconds.
