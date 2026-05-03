@@ -1,8 +1,10 @@
 using LasGranjasDelHastur.Core;
 using LasGranjasDelHastur.Zone1;
 using LasGranjasDelHastur.Zone3.Systems;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace LasGranjasDelHastur.Zone3
 {
@@ -52,6 +54,12 @@ namespace LasGranjasDelHastur.Zone3
 
         Zone3CellRuntime _selectedCell;
         Zone3CellManager _worldCells;
+
+        Transform _z3TaxFxCanvasRoot;
+        CanvasGroup _z3TaxFxRoot;
+        Image _z3TaxFxPortrait;
+        Image _z3TaxFxStrip;
+        Coroutine _z3TaxFxRoutine;
 
         void Awake()
         {
@@ -194,6 +202,7 @@ namespace LasGranjasDelHastur.Zone3
                 _darkCoins -= taxAmount;
                 _txtHint.text = $"Impuesto celestial pagado: -{taxAmount} monedas.";
                 AudioManager.Instance?.PlayZone3TaxPay();
+                PlayZone3TaxCollectorPresentation(shortFlash: true);
                 PushSharedProgressToZone1Save();
                 return;
             }
@@ -204,6 +213,7 @@ namespace LasGranjasDelHastur.Zone3
             TryCorruptRandomUnlockedCell();
             _txtHint.text = $"No alcanzó para pagar. Multa {strikeCount}/3 y corrupción aplicada.";
             AudioManager.Instance?.PlayZone3TaxAlert();
+            PlayZone3TaxCollectorPresentation(shortFlash: false);
             PushSharedProgressToZone1Save();
         }
 

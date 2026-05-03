@@ -188,6 +188,10 @@ namespace LasGranjasDelHastur.Zone1
 
             EnsureFountains(dungeonDecor);
             EnsureCultists(dungeonDecor);
+
+            var atmosphereRoot = FindChildByNameIncludingInactive(worldRoot.transform, "Layer_Atmosphere");
+            if (atmosphereRoot != null)
+                CreateAmbientOverlays(atmosphereRoot.transform);
         }
 
         static void EnsureCultists(Transform dungeonDecor)
@@ -416,11 +420,11 @@ namespace LasGranjasDelHastur.Zone1
                 var back = new GameObject("DungeonWallsBack");
                 back.transform.SetParent(wallsBackRoot, false);
 
-                CreateWallSegment(back.transform, "TopWall_Left", new Vector3(-7.5f, 5.6f, 0f), new Vector3(10.5f, 2.4f, 1f), -10, new Color(0.19f, 0.18f, 0.22f, 1f));
-                CreateWallSegment(back.transform, "TopWall_Right", new Vector3(7.5f, 5.6f, 0f), new Vector3(10.5f, 2.4f, 1f), -10, new Color(0.19f, 0.18f, 0.22f, 1f));
-                CreateWallSegment(back.transform, "LeftWall", new Vector3(-12.2f, -0.2f, 0f), new Vector3(2.3f, 11.8f, 1f), -9, new Color(0.17f, 0.16f, 0.20f, 1f));
-                CreateWallSegment(back.transform, "RightWall", new Vector3(12.2f, -0.2f, 0f), new Vector3(2.3f, 11.8f, 1f), -9, new Color(0.17f, 0.16f, 0.20f, 1f));
-                CreateWallSegment(back.transform, "BrokenDoorLintel", new Vector3(0f, 5.2f, 0f), new Vector3(3.8f, 1.2f, 1f), -8, new Color(0.26f, 0.22f, 0.18f, 1f));
+                CreateWallSegment(back.transform, "TopWall_Left", new Vector3(-7.5f, 5.6f, 0f), new Vector3(10.5f, 2.4f, 1f), -10, new Color(0.19f, 0.18f, 0.22f, 1f), Zone1DungeonArtPaths.OptionalWallTopBand);
+                CreateWallSegment(back.transform, "TopWall_Right", new Vector3(7.5f, 5.6f, 0f), new Vector3(10.5f, 2.4f, 1f), -10, new Color(0.19f, 0.18f, 0.22f, 1f), Zone1DungeonArtPaths.OptionalWallTopBand);
+                CreateWallSegment(back.transform, "LeftWall", new Vector3(-12.2f, -0.2f, 0f), new Vector3(2.3f, 11.8f, 1f), -9, new Color(0.17f, 0.16f, 0.20f, 1f), Zone1DungeonArtPaths.OptionalWallSideBand);
+                CreateWallSegment(back.transform, "RightWall", new Vector3(12.2f, -0.2f, 0f), new Vector3(2.3f, 11.8f, 1f), -9, new Color(0.17f, 0.16f, 0.20f, 1f), Zone1DungeonArtPaths.OptionalWallSideBand);
+                CreateWallSegment(back.transform, "BrokenDoorLintel", new Vector3(0f, 5.2f, 0f), new Vector3(3.8f, 1.2f, 1f), -8, new Color(0.26f, 0.22f, 0.18f, 1f), Zone1DungeonArtPaths.OptionalWallLintel);
 
                 CreateProp(back.transform, "zone1_prop_sealed_door.png", new Vector3(0f, 4.55f, 0f), new Vector3(1.35f, 1.15f, 1f), -3);
                 CreateProp(back.transform, "zone1_prop_chain_hanging.png", new Vector3(-4.9f, 4.8f, 0f), new Vector3(0.8f, 0.8f, 1f), -1);
@@ -432,9 +436,11 @@ namespace LasGranjasDelHastur.Zone1
                 var front = new GameObject("DungeonWallsFront");
                 front.transform.SetParent(wallsFrontRoot, false);
 
-                CreateWallSegment(front.transform, "BottomWall_Left", new Vector3(-8.3f, -6.8f, 0f), new Vector3(8.6f, 1.7f, 1f), 78, new Color(0.16f, 0.15f, 0.18f, 1f));
-                CreateWallSegment(front.transform, "BottomWall_Right", new Vector3(8.3f, -6.8f, 0f), new Vector3(8.6f, 1.7f, 1f), 78, new Color(0.16f, 0.15f, 0.18f, 1f));
-                CreateWallSegment(front.transform, "BrokenGapShadow", new Vector3(0f, -6.6f, 0f), new Vector3(3.2f, 1.1f, 1f), 77, new Color(0.04f, 0.03f, 0.05f, 1f));
+                CreateWallSegment(front.transform, "BottomWall_Left", new Vector3(-8.3f, -6.8f, 0f), new Vector3(8.6f, 1.7f, 1f), 78, new Color(0.16f, 0.15f, 0.18f, 1f), Zone1DungeonArtPaths.OptionalWallBottomBand);
+                CreateWallSegment(front.transform, "BottomWall_Right", new Vector3(8.3f, -6.8f, 0f), new Vector3(8.6f, 1.7f, 1f), 78, new Color(0.16f, 0.15f, 0.18f, 1f), Zone1DungeonArtPaths.OptionalWallBottomBand);
+                CreateWallSegment(front.transform, "BrokenGapShadow", new Vector3(0f, -6.6f, 0f), new Vector3(3.2f, 1.1f, 1f), 77, new Color(0.04f, 0.03f, 0.05f, 1f), Zone1DungeonArtPaths.OptionalWallBrokenBreach);
+
+                TryOptionalDungeonSprite(front.transform, "OptionalWallRubbleCluster", Zone1DungeonArtPaths.OptionalWallRubbleProp, new Vector3(0f, -6.35f, 0f), new Vector3(1.15f, 1.15f, 1f), 80);
 
                 CreateProp(front.transform, "zone1_prop_cage_broken.png", new Vector3(-9.1f, -5.9f, 0f), new Vector3(1f, 1f, 1f), 82);
                 CreateProp(front.transform, "zone1_prop_cage_broken.png", new Vector3(9.25f, -5.75f, 0f), new Vector3(-1f, 1f, 1f), 82);
@@ -590,7 +596,15 @@ namespace LasGranjasDelHastur.Zone1
 
         static void CreateAmbientOverlays(Transform parent)
         {
-            if (parent.Find("AmbientRunes") != null || parent.Find("AmbientVignette") != null)
+            EnsureAmbientRunesCold(parent);
+            EnsureAmbientRunesYellow(parent);
+            EnsureAmbientVignette(parent);
+            EnsureDungeonFrameOverlay(parent);
+        }
+
+        static void EnsureAmbientRunesCold(Transform parent)
+        {
+            if (parent == null || parent.Find("AmbientRunes") != null)
                 return;
 
             var runes = new GameObject("AmbientRunes");
@@ -601,6 +615,35 @@ namespace LasGranjasDelHastur.Zone1
             runesSr.sprite = Zone1ArtProvider.LoadSprite("Assets/02_Sprites/Lucas/Zone1/Overlays/zone1_overlay_runes.png");
             runesSr.color = new Color(0.92f, 0.96f, 1f, 0.18f);
             runesSr.sortingOrder = 6;
+        }
+
+        static void EnsureAmbientRunesYellow(Transform parent)
+        {
+            if (parent == null || parent.Find("AmbientRunesYellow") != null)
+                return;
+
+            var dedicated = Zone1ArtProvider.LoadSprite(Zone1DungeonArtPaths.OptionalRunesYellow);
+            var sharedRunesPath = "Assets/02_Sprites/Lucas/Zone1/Overlays/zone1_overlay_runes.png";
+            var sprite = dedicated ?? Zone1ArtProvider.LoadSprite(sharedRunesPath);
+            if (sprite == null)
+                return;
+
+            var runesYellow = new GameObject("AmbientRunesYellow");
+            runesYellow.transform.SetParent(parent, false);
+            runesYellow.transform.position = new Vector3(0f, 0f, 1.85f);
+            runesYellow.transform.localScale = new Vector3(5f, 4f, 1f);
+            var sr = runesYellow.AddComponent<SpriteRenderer>();
+            sr.sprite = sprite;
+            sr.color = dedicated != null
+                ? new Color(1f, 1f, 1f, 0.2f)
+                : new Color(0.95f, 0.78f, 0.28f, 0.16f);
+            sr.sortingOrder = 7;
+        }
+
+        static void EnsureAmbientVignette(Transform parent)
+        {
+            if (parent == null || parent.Find("AmbientVignette") != null)
+                return;
 
             var vignette = new GameObject("AmbientVignette");
             vignette.transform.SetParent(parent, false);
@@ -608,12 +651,48 @@ namespace LasGranjasDelHastur.Zone1
             vignette.transform.localScale = new Vector3(5f, 5f, 1f);
             var vigSr = vignette.AddComponent<SpriteRenderer>();
             vigSr.sprite = Zone1ArtProvider.LoadSprite("Assets/02_Sprites/Lucas/Zone1/Overlays/zone1_overlay_vignette.png");
-            // Viñeta más suave: menos oscurecimiento en bordes, tono ligeramente frío (azul).
             vigSr.color = new Color(0.82f, 0.88f, 0.98f, 0.11f);
             vigSr.sortingOrder = 90;
         }
 
-        static void CreateWallSegment(Transform parent, string name, Vector3 pos, Vector3 scale, int sortingOrder, Color color)
+        static void EnsureDungeonFrameOverlay(Transform parent)
+        {
+            if (parent == null || parent.Find("DungeonFrameOverlay") != null)
+                return;
+
+            var sp = Zone1ArtProvider.LoadSprite(Zone1DungeonArtPaths.OptionalDungeonFrameOverlay);
+            if (sp == null)
+                return;
+
+            var frame = new GameObject("DungeonFrameOverlay");
+            frame.transform.SetParent(parent, false);
+            frame.transform.position = new Vector3(0f, 0f, 2f);
+            frame.transform.localScale = new Vector3(5.2f, 5.2f, 1f);
+            var sr = frame.AddComponent<SpriteRenderer>();
+            sr.sprite = sp;
+            sr.color = new Color(1f, 1f, 1f, 0.38f);
+            sr.sortingOrder = 84;
+        }
+
+        static void TryOptionalDungeonSprite(Transform parent, string objectName, string assetPath, Vector3 worldPos, Vector3 localScale, int sortingOrder)
+        {
+            if (parent == null || parent.Find(objectName) != null || string.IsNullOrEmpty(assetPath))
+                return;
+            var sp = Zone1ArtProvider.LoadSprite(assetPath);
+            if (sp == null)
+                return;
+
+            var go = new GameObject(objectName);
+            go.transform.SetParent(parent, false);
+            go.transform.position = worldPos;
+            go.transform.localScale = localScale;
+            var sr = go.AddComponent<SpriteRenderer>();
+            sr.sprite = sp;
+            sr.color = Color.white;
+            sr.sortingOrder = sortingOrder;
+        }
+
+        static void CreateWallSegment(Transform parent, string name, Vector3 pos, Vector3 scale, int sortingOrder, Color color, string optionalSpritePath = null)
         {
             if (parent.Find(name) != null)
                 return;
@@ -624,8 +703,20 @@ namespace LasGranjasDelHastur.Zone1
             go.transform.localScale = scale;
 
             var sr = go.AddComponent<SpriteRenderer>();
-            sr.sprite = RuntimeSpriteFactory.OpaqueWhiteSprite;
-            sr.color = color;
+            Sprite opt = null;
+            if (!string.IsNullOrEmpty(optionalSpritePath))
+                opt = Zone1ArtProvider.LoadSprite(optionalSpritePath);
+            if (opt != null)
+            {
+                sr.sprite = opt;
+                sr.color = Color.white;
+            }
+            else
+            {
+                sr.sprite = RuntimeSpriteFactory.OpaqueWhiteSprite;
+                sr.color = color;
+            }
+
             sr.sortingOrder = sortingOrder;
         }
 

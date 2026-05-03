@@ -1,0 +1,55 @@
+Las Granjas del Hastur — Zona 1 — HUD superior (referencia + prompts opcionales)
+
+El HUD ya está implementado en tiempo de ejecución en UIManager (HUDCanvas): monedas, cuatro recursos de venta, nivel + barra XP, zona, temporizador de impuesto, multas fiscales y asistentes; botones Tienda, Pago adelantado y Volver a Zonas.
+
+Sprites que usa el código (si faltan, la UI hace fallback a color sólido donde aplique):
+
+Barra / paneles
+- zone1_ui_hud_bar.png → Assets/02_Sprites/Lucas/Zone1/UI/zone1_ui_hud_bar.png
+- zone1_ui_panel_cell.png → Assets/02_Sprites/Lucas/Zone1/UI/zone1_ui_panel_cell.png (bloque de recursos)
+
+Iconos (ver Zone1UiSpritePaths.cs)
+- Nzone1_icon_darkcoin.png
+- Nzone1_icon_soulweak.png
+- Nzone1_icon_pureenergy.png
+- Nzone1_icon_memoryshard.png
+- Nzone1_icon_unstablesoul.png
+- Nzone1_icon_level.png
+- Nzone1_icon_xp.png
+- Nzone1_icon_tax.png
+- Nzone1_icon_time.png
+- Nzone1_icon_alert.png
+Ruta base: Assets/02_Sprites/Lucas/Zone1/Icons/
+
+Retrato asistente HUD
+- zone1_buyer_hound_tindalos_portrait.png → Assets/02_Sprites/Lucas/Zone1/Portraits/
+
+---
+
+Prompt DALL·E opcional — fondo barra HUD (si quieres sustituir zone1_ui_hud_bar.png)
+
+Nombre archivo: zone1_ui_hud_bar.png
+Ruta: Assets/02_Sprites/Lucas/Zone1/UI/
+
+Prompt:
+Wide horizontal UI HUD strip for dark fantasy farm game, muted stone and bronze trim, subtle occult engravings, low saturation, inner safe area for icons and text, nine-slice friendly borders, no text, no watermark, game HUD not web UI.
+
+---
+
+Prompt DALL·E opcional — marco bloque recursos (panel celda reutilizado en HUD)
+
+Nombre: zone1_ui_panel_cell.png (ya existente; solo si regeneras)
+Prompt:
+Dark fantasy UI inset panel, semi-transparent cool gray-violet fill, thin gold-brown border, sliced sprite friendly, no text.
+
+---
+
+Sonido / FlowMusic
+
+No hay efectos de sonido obligatorios solo por mostrar el HUD (el reloj de impuesto es visual).
+
+Opcional — tick muy suave cada segundo cerca del vencimiento del impuesto (podría molestar; mejor no cablear sin diseño de audio):
+Nombre sugerido: zone1_ui_tax_timer_tick.wav
+Ruta sugerida: Assets/03_Audio/SFX/Lucas/UI/
+Prompt FlowMusic:
+Single soft clock tick, very quiet, low-passed, dark ambient UI tension, 0.1s, non-looping.
