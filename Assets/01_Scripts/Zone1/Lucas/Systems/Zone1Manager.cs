@@ -1,5 +1,6 @@
 using LasGranjasDelHastur.Camera;
 using LasGranjasDelHastur.Core;
+using LasGranjasDelHastur.Zone1.Gacha;
 using LasGranjasDelHastur.Zone1.UI;
 using UnityEngine;
 
@@ -20,6 +21,9 @@ namespace LasGranjasDelHastur.Zone1
         [SerializeField] private TaxManager taxManager;
         [SerializeField] private UIManager uiManager;
         [SerializeField] private Zone1ArtTuner artTuner;
+        [SerializeField] private Zone1GachaController gachaController;
+        [Tooltip("Opcional: instancia de UI Gacha reutilizable en otras escenas. Si null, el controlador usa Resources o construcción runtime.")]
+        [SerializeField] private GameObject zone1GachaPanelPrefab;
 
         [Header("Camera")]
         [SerializeField] private CameraController2D cameraController;
@@ -27,6 +31,25 @@ namespace LasGranjasDelHastur.Zone1
         [Header("Editor Debug")]
         [SerializeField] private bool balanceDebugLogs;
         [SerializeField, Min(1f)] private float balanceDebugInterval = 5f;
+        [Tooltip("Si está activo, **solo la primera entrada a Zona 1 en esta sesión de Play** invalida el snapshot de Z1 en disco (QA de economía). Cada recarga de escena ya no lo repite — antes al volver desde selección de zonas se borraba el guardado otra vez.")]
+        [SerializeField] private bool debugIgnoreZone1DiskSaveOnce;
+
+        [Tooltip("Si está activo, **solo la primera entrada a Zona 1 en esta sesión de Play** reinicia el guardado de Z1 como run nueva (stats en config + tutorial visible), sin borrar Z2/Z3. Equivale a snapshot vacío + prefs tutorial limpios.")]
+        [SerializeField] private bool debugResetZone1EconomyAndTutorialOncePerPlaySession;
+
+        /// <summary>
+        /// Evita ejecutar el modo debug en cada carga de la escena (cada vez se crea un Zone1Manager nuevo con el mismo valor serializado).
+        /// </summary>
+        static bool s_zone1DebugIgnoreDiskAppliedThisPlaySession;
+
+        static bool s_zone1DebugFreshEconomyAppliedThisPlaySession;
+
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+        static void ResetZone1DebugIgnoreDiskGate()
+        {
+            s_zone1DebugIgnoreDiskAppliedThisPlaySession = false;
+            s_zone1DebugFreshEconomyAppliedThisPlaySession = false;
+        }
 
         public ResourceManager Resources => resourceManager;
         public ProgressionManager Progression => progressionManager;
@@ -51,6 +74,8 @@ namespace LasGranjasDelHastur.Zone1
             if (uiManager == null) uiManager = FindFirstObjectByType<UIManager>();
             if (cameraController == null) cameraController = FindFirstObjectByType<CameraController2D>();
             if (artTuner == null) artTuner = FindFirstObjectByType<Zone1ArtTuner>();
+            if (gachaController == null) gachaController = GetComponent<Zone1GachaController>();
+            if (gachaController == null) gachaController = FindFirstObjectByType<Zone1GachaController>();
         }
 
         void Awake()
@@ -127,19 +152,38 @@ namespace LasGranjasDelHastur.Zone1
                 return;
             }
 
+            if (debugResetZone1EconomyAndTutorialOncePerPlaySession &&
+                SaveManager.Instance != null &&
+                !s_zone1DebugFreshEconomyAppliedThisPlaySession)
+            {
+                s_zone1DebugFreshEconomyAppliedThisPlaySession = true;
+                SaveManager.Instance.ResetZone1DungeonProgressKeepOtherZones();
+            }
+
             ApplyConfig();
             cellManager.Initialize(resourceManager, progressionManager);
             assistantManager.Initialize(cellManager, resourceManager, progressionManager);
             assistantManager.Changed += OnAssistantAssignmentsChanged;
             buyerManager.Initialize(resourceManager, progressionManager);
             taxManager.Initialize(resourceManager, cellManager);
+            TryRestoreFromSaveIfRequested();
+            Zone1GuidedTutorial.SyncHydrationFromCachedSave(SaveManager.Instance);
+
             uiManager.Initialize(resourceManager, progressionManager, cellManager, assistantManager, buyerManager, taxManager);
 
-            // Camera bounds tuned by config.
-            if (cameraController != null)
-                cameraController.SetBounds(zone1Config.cameraMinBounds, zone1Config.cameraMaxBounds);
+            if (gachaController == null)
+                gachaController = gameObject.AddComponent<Zone1GachaController>();
+            gachaController.Setup(resourceManager, uiManager, zone1GachaPanelPrefab);
 
-            TryRestoreFromSaveIfRequested();
+            Zone1GuidedTutorial.TryBegin(this, cellManager, uiManager);
+
+            // Camera bounds + zoom tuned by config.
+            if (cameraController != null)
+            {
+                cameraController.SetBounds(zone1Config.cameraMinBounds, zone1Config.cameraMaxBounds);
+                cameraController.ApplyInitialOrthographicSize(zone1Config.cameraOrthographicSize);
+            }
+
             cellManager.RefreshAssistantVisuals(assistantManager);
             artTuner?.Apply();
 
@@ -227,6 +271,23 @@ namespace LasGranjasDelHastur.Zone1
             if (SaveManager.Instance == null)
                 return;
 
+            if (debugIgnoreZone1DiskSaveOnce && !s_zone1DebugIgnoreDiskAppliedThisPlaySession)
+            {
+                s_zone1DebugIgnoreDiskAppliedThisPlaySession = true;
+                var d = SaveManager.Instance.CachedData;
+                if (d == null)
+                    return;
+                d.zone1 = new Zone1SaveData { valid = false };
+                d.zone1Available = false;
+                GlobalTaxLedger.ClearStrikes();
+                taxManager?.ResetLocalTaxUiState();
+                SaveManager.Instance.WriteCachedDataNow();
+                _autoRestoredFromDisk = true;
+                if (SaveManager.Instance.ShouldRestoreFromSave)
+                    SaveManager.Instance.MarkRestoreConsumed();
+                return;
+            }
+
             var data = SaveManager.Instance.CachedData;
             if (data == null || data.zone1 == null || !data.zone1.valid)
             {
@@ -275,6 +336,7 @@ namespace LasGranjasDelHastur.Zone1
                 cells = cellManager.CaptureSaveData(),
                 assistantTotal = assistantManager.TotalAssistants,
                 assistants = assistantManager.CaptureSaveData(),
+                guidedTutorialCompleted = Zone1GuidedTutorial.IsDoneForPersistence(),
             };
             return data;
         }
@@ -283,6 +345,8 @@ namespace LasGranjasDelHastur.Zone1
         {
             if (data == null || !data.valid)
                 return;
+
+            Zone1GuidedTutorial.HydrateFromSave(data.guidedTutorialCompleted);
 
             resourceManager.Set(ResourceType.DarkCoins, data.darkCoins);
             resourceManager.Set(ResourceType.WeakSouls, data.weakSouls);
@@ -296,7 +360,10 @@ namespace LasGranjasDelHastur.Zone1
             taxManager.ApplySaveState(data.strikes, data.fineDebt, data.timeToNextTaxSeconds, data.taxAlertActive, data.payWindowRemainingSeconds);
 
             if (SaveManager.Instance != null && SaveManager.Instance.CachedData != null && SaveManager.Instance.CachedData.zone1 != null)
+            {
                 SaveManager.Instance.CachedData.zone1.zone1EasterEggBonusClaimed = data.zone1EasterEggBonusClaimed;
+                SaveManager.Instance.CachedData.zone1.guidedTutorialCompleted = data.guidedTutorialCompleted;
+            }
 
             cellManager.RefreshAssistantVisuals(assistantManager);
             uiManager.RefreshFromExternalState();

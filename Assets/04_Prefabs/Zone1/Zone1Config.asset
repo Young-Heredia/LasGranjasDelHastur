@@ -29,7 +29,7 @@ MonoBehaviour:
   initiallyPurchasableCells: 2
   collectorName: Cthulhu
   baseTaxPercent: 0.14
-  taxIntervalSeconds: 600
+  taxIntervalSeconds: 240
   payWindowSeconds: 20
   moneyLossOnFail: 0.75
   finePerStrikeStep: 25
@@ -54,3 +54,4 @@ MonoBehaviour:
   assistantAutomationTickSeconds: 0.25
   cameraMinBounds: {x: -13, y: -10}
   cameraMaxBounds: {x: 13, y: 8}
+  cameraOrthographicSize: 7
