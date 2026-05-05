@@ -261,39 +261,68 @@ namespace LasGranjasDelHastur.Zone2.Jose
 
         static void EnsurePanel(Transform parent, string name, Vector2 anchorMin, Vector2 anchorMax, Vector2 anchoredPosition, Vector2 sizeDelta, Color color, bool stretchHorizontal = false)
         {
-            if (parent == null || !parent)
-                return;
-
-            var panel = parent.Find(name);
-            if (panel == null)
+            // Unity can destroy/recreate objects mid-frame during scene load; keep this resilient.
+            try
             {
-                var go = new GameObject(name);
-                go.transform.SetParent(parent, false);
-                panel = go.transform;
+                if (parent == null || !parent)
+                    return;
+
+                var panel = parent.Find(name);
+                if (panel == null)
+                {
+                    var go = new GameObject(name);
+                    if (parent == null || !parent)
+                        return;
+                    go.transform.SetParent(parent, false);
+                    panel = go.transform;
+                }
+
+                if (panel == null || !panel)
+                    return;
+
+                var rt = panel.GetComponent<RectTransform>();
+                if (rt == null)
+                {
+                    if (panel == null || !panel)
+                        return;
+                    rt = panel.gameObject.AddComponent<RectTransform>();
+                }
+                if (rt == null)
+                    return;
+
+                if (stretchHorizontal)
+                {
+                    rt.anchorMin = new Vector2(0f, anchorMin.y);
+                    rt.anchorMax = new Vector2(1f, anchorMax.y);
+                }
+                else
+                {
+                    rt.anchorMin = anchorMin;
+                    rt.anchorMax = anchorMax;
+                }
+
+                rt.anchoredPosition = anchoredPosition;
+                rt.sizeDelta = sizeDelta;
+
+                var img = panel.GetComponent<Image>();
+                if (img == null)
+                {
+                    if (panel == null || !panel)
+                        return;
+                    img = panel.gameObject.AddComponent<Image>();
+                }
+                if (img == null)
+                    return;
+                img.color = color;
             }
-
-            var rt = panel.GetComponent<RectTransform>();
-            if (rt == null)
-                rt = panel.gameObject.AddComponent<RectTransform>();
-
-            if (stretchHorizontal)
+            catch (MissingReferenceException)
             {
-                rt.anchorMin = new Vector2(0f, anchorMin.y);
-                rt.anchorMax = new Vector2(1f, anchorMax.y);
+                // Parent/panel destroyed mid-pass (editor refresh or scene transition).
             }
-            else
+            catch (NullReferenceException)
             {
-                rt.anchorMin = anchorMin;
-                rt.anchorMax = anchorMax;
+                // Defensive fallback for transient lifetimes.
             }
-
-            rt.anchoredPosition = anchoredPosition;
-            rt.sizeDelta = sizeDelta;
-
-            var img = panel.GetComponent<Image>();
-            if (img == null)
-                img = panel.gameObject.AddComponent<Image>();
-            img.color = color;
         }
 
         static void SetActiveIfExists(Transform parent, string childName, bool active)
