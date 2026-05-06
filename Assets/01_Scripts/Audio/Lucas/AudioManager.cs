@@ -16,7 +16,9 @@ using LasGranjasDelHastur.Zone1.Gacha;
 public class AudioManager : MonoBehaviour
 {
     const string Zone2EasterDefaultMusicAssetPath =
-        "Assets/03_Audio/Music/Lucas/Zone2/Saiko - COSAS QUE NO TE DIJE - 432 hertz.mp3";
+        "Assets/02_Sprites/Lucas/Zone2/EasterEgg/Yellow Claw_ Love & War (G-Funk Remix) [Extended Mix].mp3";
+    const string Zone3EasterDefaultMusicAssetPath =
+        "Assets/02_Sprites/Lucas/Zone3/EasterEgg/Junior H - LAS NOCHES [Official Visualizer].mp3";
 
     public static AudioManager Instance { get; private set; }
 
@@ -55,6 +57,12 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioClip zone2EasterEggMusicClip;
     [Tooltip("Ruta tipo Assets/... (fallback si no hay clip asignado; en Editor se carga como asset).")]
     [SerializeField] private string zone2EasterEggMusicPath = Zone2EasterDefaultMusicAssetPath;
+
+    [Header("Zone3 Easter Egg (Flautista amorfo — ruta a mp3 dentro de Assets)")]
+    [Tooltip("Opcional: arrastra el .mp3 aquí para que funcione en builds; si está vacío, en Editor se usa la ruta de Assets.")]
+    [SerializeField] private AudioClip zone3EasterEggMusicClip;
+    [Tooltip("Ruta tipo Assets/... (fallback si no hay clip asignado; en Editor se carga como asset).")]
+    [SerializeField] private string zone3EasterEggMusicPath = Zone3EasterDefaultMusicAssetPath;
 
     [Header("Intro — hastur_sfx_pack")]
     public AudioClip introOpen;
@@ -210,6 +218,14 @@ public class AudioManager : MonoBehaviour
     Coroutine _loadZone2EasterCoroutine;
     bool _zone2EasterLoadInProgress;
 
+    // --- Zone3 easter egg (Flautista) ---
+    bool _zone3EasterActive;
+    float _tZone3Easter;
+    bool _easter3WasPlaying;
+    AudioClip _zone3EasterClip;
+    Coroutine _loadZone3EasterCoroutine;
+    bool _zone3EasterLoadInProgress;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -309,6 +325,12 @@ public class AudioManager : MonoBehaviour
 
         if (sceneName == "Zone3_Celestial")
         {
+            if (_zone3EasterActive)
+            {
+                PlayZone3EasterMusic(resumeIfPossible);
+                return;
+            }
+
             if (zone3Music != null)
                 PlayMusicWithResume(zone3Music, loop: true, ref _tZone3, resumeIfPossible);
         }
@@ -397,6 +419,13 @@ public class AudioManager : MonoBehaviour
             return;
         }
 
+        if (_zone3EasterActive && _zone3EasterClip != null && musicSource.clip == _zone3EasterClip)
+        {
+            _tZone3Easter = t;
+            musicSource.Pause();
+            return;
+        }
+
         switch (oldSceneName)
         {
             case "IntroComic":
@@ -426,6 +455,7 @@ public class AudioManager : MonoBehaviour
     {
         TickZone1EasterEnd();
         TickZone2EasterEnd();
+        TickZone3EasterEnd();
     }
 
     void TickZone1EasterEnd()
@@ -493,6 +523,7 @@ public class AudioManager : MonoBehaviour
     public bool IsZone1EasterEggActive => _zone1EasterActive;
 
     public bool IsZone2EasterEggActive => _zone2EasterActive;
+    public bool IsZone3EasterEggActive => _zone3EasterActive;
 
     public void TriggerZone2EasterEgg()
     {
@@ -532,9 +563,6 @@ public class AudioManager : MonoBehaviour
     {
         if (musicSource == null)
             return;
-
-        if (zone2EasterEggMusicClip != null)
-            _zone2EasterClip = zone2EasterEggMusicClip;
 
         if (_zone2EasterClip != null)
         {
@@ -647,6 +675,13 @@ public class AudioManager : MonoBehaviour
                 }
             }
 
+            if (zone2EasterEggMusicClip != null)
+            {
+                _zone2EasterClip = zone2EasterEggMusicClip;
+                PlayLoadedZone2EasterClip(resumeIfPossible);
+                yield break;
+            }
+
             Debug.LogWarning(
                 "[AudioManager] Zone2 easter: no se pudo cargar el MP3 (ruta mal puesta, .mp3 fuera de Assets, o import no Audio). " +
                 $"Revisa '{zone2EasterEggMusicPath}' o asigna zone2EasterEggMusicClip. Fallback probado: {Zone2EasterDefaultMusicAssetPath}.");
@@ -657,6 +692,182 @@ public class AudioManager : MonoBehaviour
         finally
         {
             _zone2EasterLoadInProgress = false;
+        }
+    }
+
+    void TickZone3EasterEnd()
+    {
+        if (!_zone3EasterActive || musicSource == null)
+            return;
+        if (_zone3EasterClip == null)
+            return;
+
+        if (musicSource.clip != _zone3EasterClip)
+        {
+            _zone3EasterActive = false;
+            return;
+        }
+
+        if (musicSource.isPlaying)
+        {
+            _easter3WasPlaying = true;
+            return;
+        }
+
+        if (SceneManager.GetActiveScene().name != "Zone3_Celestial")
+            return;
+
+        if (!_easter3WasPlaying)
+            return;
+
+        var len = _zone3EasterClip.length;
+        var t = musicSource.time;
+        if (t <= 0.02f || (len > 0.05f && t >= len - 0.08f))
+            EndZone3EasterEgg();
+    }
+
+    public void TriggerZone3EasterEgg()
+    {
+        if (SceneManager.GetActiveScene().name != "Zone3_Celestial")
+            return;
+
+        if (_zone3EasterActive)
+        {
+            if (_zone3EasterLoadInProgress)
+                return;
+
+            var easterAudible = musicSource != null && _zone3EasterClip != null &&
+                                musicSource.clip == _zone3EasterClip && musicSource.isPlaying;
+            if (easterAudible)
+                return;
+
+            _zone3EasterActive = false;
+        }
+
+        _zone3EasterActive = true;
+        _easter3WasPlaying = false;
+        _tZone3Easter = 0f;
+        PlayZone3EasterMusic(resumeIfPossible: false);
+    }
+
+    void EndZone3EasterEgg()
+    {
+        _zone3EasterActive = false;
+        _easter3WasPlaying = false;
+        _tZone3Easter = 0f;
+
+        if (SceneManager.GetActiveScene().name == "Zone3_Celestial" && zone3Music != null)
+            PlayMusicWithResume(zone3Music, loop: true, ref _tZone3, resumeIfPossible: true);
+    }
+
+    void PlayZone3EasterMusic(bool resumeIfPossible)
+    {
+        if (musicSource == null)
+            return;
+
+        if (_zone3EasterClip != null)
+        {
+            musicSource.clip = _zone3EasterClip;
+            musicSource.loop = false;
+            if (resumeIfPossible)
+                musicSource.time = Mathf.Clamp(_tZone3Easter, 0f, Mathf.Max(0f, _zone3EasterClip.length - 0.05f));
+            musicSource.Play();
+            return;
+        }
+
+        if (_loadZone3EasterCoroutine != null)
+            return;
+        _zone3EasterLoadInProgress = true;
+        _loadZone3EasterCoroutine = StartCoroutine(LoadZone3EasterClipThenPlay(resumeIfPossible));
+    }
+
+    static IEnumerable<string> EnumerateZone3EasterMusicAssetPaths(string configured)
+    {
+        if (!string.IsNullOrWhiteSpace(configured))
+        {
+            var t = configured.Trim();
+            yield return t;
+            if (string.Equals(t, Zone3EasterDefaultMusicAssetPath, StringComparison.OrdinalIgnoreCase))
+                yield break;
+        }
+        yield return Zone3EasterDefaultMusicAssetPath;
+    }
+
+    void PlayLoadedZone3EasterClip(bool resumeIfPossible)
+    {
+        if (!_zone3EasterActive || SceneManager.GetActiveScene().name != "Zone3_Celestial" || musicSource == null)
+            return;
+        musicSource.clip = _zone3EasterClip;
+        musicSource.loop = false;
+        if (resumeIfPossible)
+            musicSource.time = Mathf.Clamp(_tZone3Easter, 0f, Mathf.Max(0f, _zone3EasterClip.length - 0.05f));
+        musicSource.Play();
+    }
+
+    IEnumerator LoadZone3EasterClipThenPlay(bool resumeIfPossible)
+    {
+        _loadZone3EasterCoroutine = null;
+        try
+        {
+            var path = zone3EasterEggMusicPath;
+            if (string.IsNullOrWhiteSpace(path))
+            {
+                _zone3EasterActive = false;
+                yield break;
+            }
+
+            if (zone3EasterEggMusicClip != null)
+            {
+                _zone3EasterClip = zone3EasterEggMusicClip;
+                PlayLoadedZone3EasterClip(resumeIfPossible);
+                yield break;
+            }
+
+#if UNITY_EDITOR
+            foreach (var assetPath in EnumerateZone3EasterMusicAssetPaths(path))
+            {
+                if (!assetPath.StartsWith("Assets/", StringComparison.OrdinalIgnoreCase))
+                    continue;
+                var editorClip = AssetDatabase.LoadAssetAtPath<AudioClip>(assetPath);
+                if (editorClip == null)
+                    continue;
+                _zone3EasterClip = editorClip;
+                PlayLoadedZone3EasterClip(resumeIfPossible);
+                yield break;
+            }
+#endif
+            foreach (var assetPath in EnumerateZone3EasterMusicAssetPaths(path))
+            {
+                if (!assetPath.StartsWith("Assets/", StringComparison.OrdinalIgnoreCase))
+                    continue;
+                var full = Path.GetFullPath(Path.Combine(Application.dataPath, assetPath.Replace("Assets/", "")));
+                if (!File.Exists(full))
+                    continue;
+
+                foreach (var url in BuildLocalMp3UrlsForUnityWebRequest(full))
+                {
+                    using var req = UnityWebRequestMultimedia.GetAudioClip(url, AudioType.MPEG);
+                    yield return req.SendWebRequest();
+                    if (req.result != UnityWebRequest.Result.Success)
+                        continue;
+                    _zone3EasterClip = DownloadHandlerAudioClip.GetContent(req);
+                    if (_zone3EasterClip == null)
+                        continue;
+                    PlayLoadedZone3EasterClip(resumeIfPossible);
+                    yield break;
+                }
+            }
+
+            Debug.LogWarning(
+                "[AudioManager] Zone3 easter: no se pudo cargar el MP3 (ruta mal puesta, .mp3 fuera de Assets, o import no Audio). " +
+                $"Revisa '{zone3EasterEggMusicPath}' o asigna zone3EasterEggMusicClip. Fallback probado: {Zone3EasterDefaultMusicAssetPath}.");
+            _zone3EasterActive = false;
+            if (SceneManager.GetActiveScene().name == "Zone3_Celestial" && zone3Music != null && musicSource != null)
+                PlayMusicWithResume(zone3Music, loop: true, ref _tZone3, resumeIfPossible: true);
+        }
+        finally
+        {
+            _zone3EasterLoadInProgress = false;
         }
     }
 

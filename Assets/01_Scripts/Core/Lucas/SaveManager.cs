@@ -137,18 +137,14 @@ namespace LasGranjasDelHastur.Core
             if (zone2Mgr != null)
             {
                 CachedData.zone2Available = true;
-                CachedData.zone2 ??= new Zone2SaveData();
-                CachedData.zone2.valid = true;
-                CachedData.zone2.darkCoins = CachedData.zone1 != null ? CachedData.zone1.darkCoins : CachedData.zone2.darkCoins;
+                CachedData.zone2 = CaptureZone2LikeFromStack(CachedData.zone2);
             }
 
             var zone3Mgr = FindFirstObjectByType<LasGranjasDelHastur.Zone3.Zone3Manager>();
             if (zone3Mgr != null)
             {
                 CachedData.zone3Available = true;
-                CachedData.zone3 ??= new Zone3SaveData();
-                CachedData.zone3.valid = true;
-                CachedData.zone3.darkCoins = CachedData.zone1 != null ? CachedData.zone1.darkCoins : CachedData.zone3.darkCoins;
+                CachedData.zone3 = CaptureZone3LikeFromStack(CachedData.zone3);
             }
 
             CachedData.savedAtUtc = DateTime.UtcNow.ToString("o");
@@ -177,6 +173,84 @@ namespace LasGranjasDelHastur.Core
                 assistants = am.CaptureSaveData(),
             };
             return data;
+        }
+
+        static Zone2SaveData CaptureZone2LikeFromStack(Zone2SaveData existing)
+        {
+            var rm = FindFirstObjectByType<ResourceManager>();
+            var cm = FindFirstObjectByType<CellManager>();
+            var am = FindFirstObjectByType<AssistantManager>();
+            var current = existing ?? new Zone2SaveData();
+            if (rm == null || cm == null || am == null)
+                return current;
+
+            current.valid = true;
+            current.darkCoins = rm.Get(ResourceType.DarkCoins);
+            current.assistantsTotal = am.TotalAssistants;
+            current.assistants = am.CaptureSaveData();
+            current.cells ??= new System.Collections.Generic.List<Zone2CellSaveData>();
+            current.cells.Clear();
+
+            var cells = cm.Cells;
+            for (var i = 0; i < cells.Count; i++)
+            {
+                var c = cells[i];
+                if (c == null)
+                    continue;
+                current.cells.Add(new Zone2CellSaveData
+                {
+                    cellId = c.SlotIndex,
+                    displayName = c.DisplayName,
+                    unlocked = c.State != CellState.Blocked,
+                    level = c.Level,
+                    producing = c.State == CellState.Producing,
+                    ready = c.State == CellState.ReadyToCollect,
+                    corrupted = c.IsCorrupted,
+                    remainingSeconds = c.ProducingRemainingSeconds,
+                    assignedAssistants = am.GetAssistantCountOnCell(c),
+                });
+            }
+
+            return current;
+        }
+
+        static Zone3SaveData CaptureZone3LikeFromStack(Zone3SaveData existing)
+        {
+            var rm = FindFirstObjectByType<ResourceManager>();
+            var cm = FindFirstObjectByType<CellManager>();
+            var am = FindFirstObjectByType<AssistantManager>();
+            var current = existing ?? new Zone3SaveData();
+            if (rm == null || cm == null || am == null)
+                return current;
+
+            current.valid = true;
+            current.darkCoins = rm.Get(ResourceType.DarkCoins);
+            current.assistantsTotal = am.TotalAssistants;
+            current.assistants = am.CaptureSaveData();
+            current.cells ??= new System.Collections.Generic.List<Zone3CellSaveData>();
+            current.cells.Clear();
+
+            var cells = cm.Cells;
+            for (var i = 0; i < cells.Count; i++)
+            {
+                var c = cells[i];
+                if (c == null)
+                    continue;
+                current.cells.Add(new Zone3CellSaveData
+                {
+                    cellId = c.SlotIndex,
+                    displayName = c.DisplayName,
+                    unlocked = c.State != CellState.Blocked,
+                    level = c.Level,
+                    producing = c.State == CellState.Producing,
+                    ready = c.State == CellState.ReadyToCollect,
+                    corrupted = c.IsCorrupted,
+                    remainingSeconds = c.ProducingRemainingSeconds,
+                    assignedAssistants = am.GetAssistantCountOnCell(c),
+                });
+            }
+
+            return current;
         }
 
         /// <summary>

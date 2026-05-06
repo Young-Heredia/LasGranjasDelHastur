@@ -156,7 +156,7 @@ namespace LasGranjasDelHastur.Zone2.Jose
                 ui.AddComponent<GraphicRaycaster>();
 
             // Reuse Zone 1's UI layout contract (names, anchors, sizes), so Zone2/Zone3 can share UI binders.
-            EnsurePanel(ui.transform, "HUDCanvas", new Vector2(0.5f, 1f), new Vector2(0.5f, 1f), new Vector2(0f, -55f), new Vector2(0f, 110f), new Color(0.05f, 0.05f, 0.06f, 0.9f), true);
+            EnsurePanel(ui.transform, "HUDCanvas", new Vector2(0.5f, 1f), new Vector2(0.5f, 1f), new Vector2(0f, -55f), new Vector2(0f, 110f), new Color(0.05f, 0.05f, 0.06f, 0f), true);
             EnsurePanel(ui.transform, "CellInfoPanel", new Vector2(0f, 0.5f), new Vector2(0f, 0.5f), new Vector2(190f, 0f), new Vector2(360f, 420f), new Color(0.06f, 0.06f, 0.07f, 0.92f));
             EnsurePanel(ui.transform, "SalesPanel", new Vector2(1f, 0.5f), new Vector2(1f, 0.5f), new Vector2(-270f, 0f), new Vector2(520f, 420f), new Color(0.06f, 0.06f, 0.07f, 0.92f));
             EnsurePanel(ui.transform, "TaxAlertPanel", new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0f, 0f), new Vector2(520f, 360f), new Color(0.08f, 0.06f, 0.06f, 0.94f));
@@ -193,10 +193,13 @@ namespace LasGranjasDelHastur.Zone2.Jose
             if (systemsRoot == null || !systemsRoot)
                 return null;
 
-            // Prefer shared singleton instance if it exists (shared economy/level across scenes).
-            var global = UnityEngine.Object.FindFirstObjectByType<T>();
-            if (global != null)
-                return global;
+            // Solo recursos/progresión son compartidos entre escenas.
+            if (typeof(T) == typeof(ResourceManager) || typeof(T) == typeof(ProgressionManager))
+            {
+                var global = UnityEngine.Object.FindFirstObjectByType<T>();
+                if (global != null)
+                    return global;
+            }
 
             var existing = systemsRoot.Find(name)?.gameObject;
             if (existing == null)
@@ -408,6 +411,7 @@ namespace LasGranjasDelHastur.Zone2.Jose
                 if (img == null)
                     return;
                 img.color = color;
+                img.raycastTarget = false;
             }
             catch (MissingReferenceException)
             {

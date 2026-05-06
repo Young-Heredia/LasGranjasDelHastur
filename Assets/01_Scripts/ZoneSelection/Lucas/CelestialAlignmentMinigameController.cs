@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 using LasGranjasDelHastur;
+using LasGranjasDelHastur.Zone1;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -11,13 +13,25 @@ public class CelestialAlignmentMinigameController : MonoBehaviour
 {
     [SerializeField] float snapDistancePx = 44f;
     [SerializeField] float victoryHoldSeconds = 0.45f;
+    [SerializeField] float guideFlowSpeed = 0.45f;
+    [SerializeField] float guideLineThickness = 8f;
+    [SerializeField] float timingClickWindowPx = 28f;
+    [SerializeField] string planetSpritePath = "Assets/02_Sprites/Lucas/Zone3/NewCells/z3_celestial_energy_sun_idle.png";
+    [SerializeField] string moonASpritePath = "Assets/02_Sprites/Lucas/Zone3/NewCells/z3_celestial_soul_moon_idle.png";
+    [SerializeField] string moonBSpritePath = "Assets/02_Sprites/Lucas/Zone3/NewCells/z3_celestial_coin_asteroid_idle.png";
 
     RectTransform _playArea;
     readonly List<RectTransform> _targets = new();
+    readonly List<Image> _targetImages = new();
     readonly List<CelestialBodyDrag> _bodies = new();
+    readonly List<Vector2> _guideRoute = new();
     float _holdTimer;
     bool _victory;
     Sprite _white;
+    TextMeshProUGUI _guideText;
+    RectTransform _flowMarkerRt;
+    TextMeshProUGUI _clickNowText;
+    int _flowTargetIndex = -1;
 
     public bool IsVictory => _victory;
     public int BodiesPlaced { get; private set; }
@@ -40,6 +54,7 @@ public class CelestialAlignmentMinigameController : MonoBehaviour
         root.anchoredPosition = new Vector2(0f, 8f);
         _playArea = root;
         _playArea.gameObject.AddComponent<Image>().color = new Color(0.02f, 0.04f, 0.12f, 0.9f);
+        BuildGuideLabel();
 
         // Puntos de alineación (anillos)
         var targetPositions = new[]
@@ -47,6 +62,14 @@ public class CelestialAlignmentMinigameController : MonoBehaviour
             new Vector2(-200f, 50f),
             new Vector2(0f, -40f),
             new Vector2(200f, 50f),
+        };
+        var extendedGuideRoute = new[]
+        {
+            new Vector2(-300f, 112f),
+            targetPositions[0],
+            targetPositions[1],
+            targetPositions[2],
+            new Vector2(300f, 112f),
         };
         for (var i = 0; i < 3; i++)
         {
@@ -58,6 +81,7 @@ public class CelestialAlignmentMinigameController : MonoBehaviour
             var img = t.AddComponent<Image>();
             img.sprite = _white;
             img.color = new Color(0.95f, 0.85f, 0.35f, 0.45f);
+            _targetImages.Add(img);
             _targets.Add(rt);
             var ring = new GameObject("Ring");
             ring.transform.SetParent(t.transform, false);
@@ -68,6 +92,7 @@ public class CelestialAlignmentMinigameController : MonoBehaviour
             ringImg.sprite = _white;
             ringImg.color = new Color(0.4f, 0.75f, 1f, 0.5f);
         }
+        BuildTargetGuideLines(extendedGuideRoute);
 
         // Cuerpos: planeta (0), luna 1, luna 2
         var starts = new[]
@@ -84,8 +109,10 @@ public class CelestialAlignmentMinigameController : MonoBehaviour
             rt.anchoredPosition = starts[i].Item1;
             rt.sizeDelta = new Vector2(starts[i].Item3, starts[i].Item3);
             var img = b.AddComponent<Image>();
-            img.sprite = _white;
-            img.color = starts[i].Item2;
+            var bodySprite = ResolveBodySprite(i);
+            img.sprite = bodySprite ?? _white;
+            img.color = bodySprite != null ? Color.white : starts[i].Item2;
+            img.preserveAspect = true;
             img.raycastTarget = true;
             var d = b.AddComponent<CelestialBodyDrag>();
             d.TargetIndex = i;
@@ -109,6 +136,7 @@ public class CelestialAlignmentMinigameController : MonoBehaviour
             _bodies[i].Placed = false;
         }
         UpdatePlacedCount();
+        UpdateGuidanceVisuals();
     }
 
     public void Tick()
@@ -125,12 +153,13 @@ public class CelestialAlignmentMinigameController : MonoBehaviour
         {
             _holdTimer = 0f;
         }
+        UpdateGuidanceVisuals();
     }
 
     public string BuildStatusLine(float timeLeft)
     {
         UpdatePlacedCount();
-        return $"Alineación: {BodiesPlaced}/{BodiesRequired}   Mantén la formación   Tiempo: {Mathf.Max(0f, timeLeft):0.0}s";
+        return $"Alineación: {BodiesPlaced}/{BodiesRequired}   Sigue la línea brillante y suelta/click cerca del anillo   Tiempo: {Mathf.Max(0f, timeLeft):0.0}s";
     }
 
     void UpdatePlacedCount()
@@ -180,10 +209,18 @@ public class CelestialAlignmentMinigameController : MonoBehaviour
             }
         }
         _holdTimer = 0f;
+        RefreshGuideText();
     }
 
     public void TrySnapIfClose()
     {
+        // Modo timing: si el marcador pasa por un objetivo y el jugador pulsa click/espacio, encaja esa pieza.
+        if (TryTimingSnapAtCurrentFlowTarget())
+        {
+            NotifyDragEnd();
+            return;
+        }
+
         foreach (var b in _bodies)
         {
             var body = b.GetComponent<RectTransform>();
@@ -193,6 +230,205 @@ public class CelestialAlignmentMinigameController : MonoBehaviour
                 body.anchoredPosition = tgt;
         }
         NotifyDragEnd();
+    }
+
+    void BuildGuideLabel()
+    {
+        var go = new GameObject("GuideText");
+        go.transform.SetParent(_playArea, false);
+        var rt = go.AddComponent<RectTransform>();
+        rt.anchorMin = new Vector2(0.5f, 1f);
+        rt.anchorMax = new Vector2(0.5f, 1f);
+        rt.pivot = new Vector2(0.5f, 1f);
+        rt.anchoredPosition = new Vector2(0f, -8f);
+        rt.sizeDelta = new Vector2(690f, 28f);
+        _guideText = go.AddComponent<TextMeshProUGUI>();
+        _guideText.fontSize = 15;
+        _guideText.alignment = TextAlignmentOptions.Center;
+        _guideText.color = new Color(0.78f, 0.9f, 1f, 1f);
+        _guideText.raycastTarget = false;
+
+        var clickGo = new GameObject("ClickNowText");
+        clickGo.transform.SetParent(_playArea, false);
+        var clickRt = clickGo.AddComponent<RectTransform>();
+        clickRt.anchorMin = new Vector2(0.5f, 0f);
+        clickRt.anchorMax = new Vector2(0.5f, 0f);
+        clickRt.pivot = new Vector2(0.5f, 0f);
+        clickRt.anchoredPosition = new Vector2(0f, 10f);
+        clickRt.sizeDelta = new Vector2(690f, 26f);
+        _clickNowText = clickGo.AddComponent<TextMeshProUGUI>();
+        _clickNowText.fontSize = 15;
+        _clickNowText.alignment = TextAlignmentOptions.Center;
+        _clickNowText.color = new Color(1f, 0.9f, 0.4f, 0f);
+        _clickNowText.text = "CLICK AHORA / ESPACIO: pieza en rango de encaje";
+        _clickNowText.raycastTarget = false;
+        RefreshGuideText();
+    }
+
+    void BuildTargetGuideLines(IReadOnlyList<Vector2> points)
+    {
+        if (points == null || points.Count < 2)
+            return;
+        for (var i = 0; i < points.Count - 1; i++)
+            CreateGuideLine(points[i], points[i + 1], i);
+    }
+
+    void CreateGuideLine(Vector2 from, Vector2 to, int idx)
+    {
+        var go = new GameObject($"GuideLine_{idx + 1}");
+        go.transform.SetParent(_playArea, false);
+        var rt = go.AddComponent<RectTransform>();
+        var delta = to - from;
+        var len = delta.magnitude;
+        rt.sizeDelta = new Vector2(len, Mathf.Max(2f, guideLineThickness));
+        rt.anchoredPosition = from + delta * 0.5f;
+        rt.localRotation = Quaternion.Euler(0f, 0f, Mathf.Atan2(delta.y, delta.x) * Mathf.Rad2Deg);
+        var img = go.AddComponent<Image>();
+        img.sprite = _white;
+        img.color = new Color(0.45f, 0.75f, 1f, 0.6f);
+        img.raycastTarget = false;
+        if (idx == 0)
+            _guideRoute.Add(from);
+        _guideRoute.Add(to);
+        if (_flowMarkerRt == null)
+            CreateFlowMarker();
+    }
+
+    void CreateFlowMarker()
+    {
+        var go = new GameObject("FlowMarker");
+        go.transform.SetParent(_playArea, false);
+        _flowMarkerRt = go.AddComponent<RectTransform>();
+        _flowMarkerRt.sizeDelta = new Vector2(14f, 14f);
+        var img = go.AddComponent<Image>();
+        img.sprite = _white;
+        img.color = new Color(1f, 0.96f, 0.5f, 0.95f);
+        img.raycastTarget = false;
+    }
+
+    Sprite ResolveBodySprite(int index)
+    {
+        var path = index switch
+        {
+            0 => planetSpritePath,
+            1 => moonASpritePath,
+            _ => moonBSpritePath
+        };
+        return string.IsNullOrWhiteSpace(path) ? null : Zone1ArtProvider.LoadSprite(path);
+    }
+
+    void RefreshGuideText()
+    {
+        if (_guideText == null)
+            return;
+        _guideText.text = BodiesPlaced >= BodiesRequired
+            ? "Perfecto: mantén esta alineación un instante para completar."
+            : "Guía: sigue la línea brillante y encaja cada pieza en su anillo.";
+    }
+
+    void UpdateGuidanceVisuals()
+    {
+        UpdateFlowMarker();
+        UpdateTargetHighlights();
+        UpdateClickNowHint();
+    }
+
+    void UpdateFlowMarker()
+    {
+        if (_flowMarkerRt == null || _guideRoute.Count < 2)
+            return;
+
+        var segmentCount = _guideRoute.Count - 1;
+        var t = Mathf.Repeat(Time.unscaledTime * Mathf.Max(0.05f, guideFlowSpeed), segmentCount);
+        var segmentIndex = Mathf.Clamp(Mathf.FloorToInt(t), 0, segmentCount - 1);
+        var localT = t - segmentIndex;
+        _flowMarkerRt.anchoredPosition = Vector2.Lerp(_guideRoute[segmentIndex], _guideRoute[segmentIndex + 1], localT);
+        _flowTargetIndex = ResolveActiveFlowTarget();
+    }
+
+    void UpdateTargetHighlights()
+    {
+        for (var i = 0; i < _targetImages.Count; i++)
+        {
+            var img = _targetImages[i];
+            if (img == null)
+                continue;
+
+            if (IsBodyInTarget(i))
+            {
+                img.color = new Color(0.55f, 1f, 0.65f, 0.72f);
+                continue;
+            }
+
+            var pulse = 0.5f + 0.5f * Mathf.Sin(Time.unscaledTime * 6f + i * 0.8f);
+            img.color = new Color(0.95f, 0.85f, 0.35f, 0.3f + pulse * 0.28f);
+        }
+    }
+
+    void UpdateClickNowHint()
+    {
+        if (_clickNowText == null)
+            return;
+        var shouldClickNow = HasAnyBodyInSnapAssistRange();
+        var alpha = shouldClickNow ? (0.45f + 0.55f * (0.5f + 0.5f * Mathf.Sin(Time.unscaledTime * 9f))) : 0f;
+        _clickNowText.color = new Color(1f, 0.9f, 0.4f, alpha);
+    }
+
+    bool HasAnyBodyInSnapAssistRange()
+    {
+        if (_flowTargetIndex >= 0 && _flowTargetIndex < _bodies.Count && !_bodies[_flowTargetIndex].Placed)
+            return true;
+
+        for (var i = 0; i < _bodies.Count; i++)
+        {
+            var body = _bodies[i].GetComponent<RectTransform>();
+            var target = _targets[i];
+            if (body == null || target == null)
+                continue;
+            var inRange = (body.anchoredPosition - target.anchoredPosition).sqrMagnitude <= snapDistancePx * snapDistancePx * 2.25f;
+            if (inRange && !_bodies[i].Placed)
+                return true;
+        }
+        return false;
+    }
+
+    bool TryTimingSnapAtCurrentFlowTarget()
+    {
+        if (_flowMarkerRt == null || _flowTargetIndex < 0 || _flowTargetIndex >= _targets.Count || _flowTargetIndex >= _bodies.Count)
+            return false;
+        if (_bodies[_flowTargetIndex].Placed)
+            return false;
+
+        var markerPos = _flowMarkerRt.anchoredPosition;
+        var targetPos = _targets[_flowTargetIndex].anchoredPosition;
+        var inTimingWindow = (markerPos - targetPos).sqrMagnitude <= timingClickWindowPx * timingClickWindowPx;
+        if (!inTimingWindow)
+            return false;
+
+        _bodies[_flowTargetIndex].GetComponent<RectTransform>().anchoredPosition = targetPos;
+        _bodies[_flowTargetIndex].Placed = true;
+        return true;
+    }
+
+    int ResolveActiveFlowTarget()
+    {
+        if (_flowMarkerRt == null || _targets.Count == 0)
+            return -1;
+
+        var markerPos = _flowMarkerRt.anchoredPosition;
+        var bestIndex = -1;
+        var bestDist = float.MaxValue;
+        for (var i = 0; i < _targets.Count; i++)
+        {
+            var d = (markerPos - _targets[i].anchoredPosition).sqrMagnitude;
+            if (d < bestDist)
+            {
+                bestDist = d;
+                bestIndex = i;
+            }
+        }
+
+        return bestDist <= timingClickWindowPx * timingClickWindowPx * 1.3f ? bestIndex : -1;
     }
 }
 

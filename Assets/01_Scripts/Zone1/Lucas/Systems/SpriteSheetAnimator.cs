@@ -9,6 +9,11 @@ namespace LasGranjasDelHastur.Zone1
         [SerializeField] private string relativeSheetPath;
         [SerializeField] private int frameWidth = 32;
         [SerializeField] private int frameHeight = 32;
+        [SerializeField] private int gridColumns = 1;
+        [SerializeField] private int gridRows = 1;
+        [SerializeField] private int gridMaxFrames;
+        [SerializeField] private int[] gridFrameSequence;
+        [SerializeField] private bool useUniformGrid;
         [SerializeField] private float fps = 8f;
         [SerializeField] private bool loop = true;
 
@@ -24,6 +29,35 @@ namespace LasGranjasDelHastur.Zone1
             frameHeight = Mathf.Max(1, height);
             fps = Mathf.Max(1f, newFps);
             loop = shouldLoop;
+            useUniformGrid = false;
+            LoadFrames();
+        }
+
+        public void ConfigureGrid(string sheetPath, int columns, int rows, float newFps, bool shouldLoop = true, float pixelsPerUnit = 32f, int maxFrames = 0)
+        {
+            relativeSheetPath = sheetPath;
+            gridColumns = Mathf.Max(1, columns);
+            gridRows = Mathf.Max(1, rows);
+            gridMaxFrames = Mathf.Max(0, maxFrames);
+            gridFrameSequence = null;
+            fps = Mathf.Max(1f, newFps);
+            loop = shouldLoop;
+            frameWidth = Mathf.RoundToInt(Mathf.Max(1f, pixelsPerUnit));
+            useUniformGrid = true;
+            LoadFrames();
+        }
+
+        public void ConfigureGridSequence(string sheetPath, int columns, int rows, int[] frameSequence, float newFps, bool shouldLoop = true, float pixelsPerUnit = 32f)
+        {
+            relativeSheetPath = sheetPath;
+            gridColumns = Mathf.Max(1, columns);
+            gridRows = Mathf.Max(1, rows);
+            gridMaxFrames = 0;
+            gridFrameSequence = frameSequence;
+            fps = Mathf.Max(1f, newFps);
+            loop = shouldLoop;
+            frameWidth = Mathf.RoundToInt(Mathf.Max(1f, pixelsPerUnit));
+            useUniformGrid = true;
             LoadFrames();
         }
 
@@ -38,7 +72,29 @@ namespace LasGranjasDelHastur.Zone1
             if (string.IsNullOrEmpty(relativeSheetPath))
                 return;
 
-            _frames = Zone1ArtProvider.LoadSheet(relativeSheetPath, frameWidth, frameHeight);
+            _frames = useUniformGrid
+                ? Zone1ArtProvider.LoadSheetUniformGrid(relativeSheetPath, gridColumns, gridRows, Mathf.Max(1f, frameWidth))
+                : Zone1ArtProvider.LoadSheet(relativeSheetPath, frameWidth, frameHeight);
+            if (_frames != null && _frames.Length > 0 && useUniformGrid && gridMaxFrames > 0 && gridMaxFrames < _frames.Length)
+            {
+                var trimmed = new Sprite[gridMaxFrames];
+                for (var i = 0; i < trimmed.Length; i++)
+                    trimmed[i] = _frames[i];
+                _frames = trimmed;
+            }
+            if (_frames != null && _frames.Length > 0 && useUniformGrid && gridFrameSequence != null && gridFrameSequence.Length > 0)
+            {
+                var list = new System.Collections.Generic.List<Sprite>(gridFrameSequence.Length);
+                for (var i = 0; i < gridFrameSequence.Length; i++)
+                {
+                    var idx = gridFrameSequence[i];
+                    if (idx < 0 || idx >= _frames.Length)
+                        continue;
+                    list.Add(_frames[idx]);
+                }
+                if (list.Count > 0)
+                    _frames = list.ToArray();
+            }
             _index = 0;
             _timer = 0f;
             if (_frames != null && _frames.Length > 0 && _renderer != null)

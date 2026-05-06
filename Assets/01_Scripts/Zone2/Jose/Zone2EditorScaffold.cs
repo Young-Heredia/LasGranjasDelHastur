@@ -143,7 +143,7 @@ namespace LasGranjasDelHastur.Zone2.Jose
             if (ui.GetComponent<GraphicRaycaster>() == null)
                 ui.AddComponent<GraphicRaycaster>();
 
-            EnsurePanel(ui.transform, "HUDCanvas", new Vector2(0.5f, 1f), new Vector2(0.5f, 1f), new Vector2(0f, -74f), new Vector2(0f, 148f), new Color(0.04f, 0.08f, 0.10f, 0.88f), true);
+            EnsurePanel(ui.transform, "HUDCanvas", new Vector2(0.5f, 1f), new Vector2(0.5f, 1f), new Vector2(0f, -74f), new Vector2(0f, 148f), new Color(0.04f, 0.08f, 0.10f, 0f), true);
             EnsurePanel(ui.transform, "CellInfoPanel", new Vector2(0f, 0.5f), new Vector2(0f, 0.5f), new Vector2(190f, 0f), new Vector2(360f, 430f), new Color(0.06f, 0.11f, 0.12f, 0.92f));
             EnsurePanel(ui.transform, "SalesPanel", new Vector2(1f, 0.5f), new Vector2(1f, 0.5f), new Vector2(-270f, 0f), new Vector2(530f, 430f), new Color(0.09f, 0.10f, 0.08f, 0.92f));
             EnsurePanel(ui.transform, "TaxAlertPanel", new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0f, 0f), new Vector2(540f, 360f), new Color(0.11f, 0.07f, 0.05f, 0.94f));

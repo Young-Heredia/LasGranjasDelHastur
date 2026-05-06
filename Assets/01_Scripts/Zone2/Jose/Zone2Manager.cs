@@ -2,6 +2,8 @@ using LasGranjasDelHastur.Zone1;
 using LasGranjasDelHastur.Zone1.Gacha;
 using LasGranjasDelHastur.Zone1.UI;
 using LasGranjasDelHastur.Zone2.Lucas;
+using LasGranjasDelHastur.Core;
+using LasGranjasDelHastur.Zone1.Cells;
 using UnityEngine;
 using LasGranjasDelHastur.Camera;
 
@@ -26,6 +28,7 @@ namespace LasGranjasDelHastur.Zone2.Jose
         [SerializeField] GameObject zone1GachaPanelPrefab;
 
         bool _initialized;
+        bool _autoRestoredFromCache;
 
         void Awake()
         {
@@ -36,6 +39,11 @@ namespace LasGranjasDelHastur.Zone2.Jose
         void Start()
         {
             TryInitialize();
+        }
+
+        void OnDisable()
+        {
+            PersistToSaveCache();
         }
 
         [ContextMenu("Auto Wire References")]
@@ -87,6 +95,7 @@ namespace LasGranjasDelHastur.Zone2.Jose
             assistantManager.Initialize(cellManager, resourceManager, progressionManager);
             buyerManager.Initialize(resourceManager, progressionManager);
             taxManager.Initialize(resourceManager, cellManager);
+            TryRestoreFromCachedData();
             uiManager.Initialize(resourceManager, progressionManager, cellManager, assistantManager, buyerManager, taxManager);
 
             if (gachaController == null)
@@ -103,6 +112,102 @@ namespace LasGranjasDelHastur.Zone2.Jose
             cellManager.RefreshAssistantVisuals(assistantManager);
 
             _initialized = true;
+        }
+
+        void TryRestoreFromCachedData()
+        {
+            var sm = SaveManager.Instance;
+            if (sm == null || sm.CachedData == null)
+                return;
+
+            var data = sm.CachedData.zone2;
+            if (data == null || !data.valid)
+            {
+                if (sm.ShouldRestoreFromSave)
+                    sm.MarkRestoreConsumed();
+                return;
+            }
+
+            if (!sm.ShouldRestoreFromSave && _autoRestoredFromCache)
+                return;
+
+            if (resourceManager != null)
+                resourceManager.Set(ResourceType.DarkCoins, Mathf.Max(0, data.darkCoins));
+
+            if (data.cells != null && data.cells.Count > 0)
+            {
+                for (var i = 0; i < data.cells.Count; i++)
+                {
+                    var saved = data.cells[i];
+                    if (saved == null)
+                        continue;
+                    var cell = cellManager.GetCellBySlotIndex(saved.cellId);
+                    if (cell == null)
+                        continue;
+
+                    var unlocked = saved.unlocked;
+                    var state = unlocked
+                        ? saved.corrupted
+                            ? CellState.Corrupted
+                            : saved.ready
+                                ? CellState.ReadyToCollect
+                                : saved.producing
+                                    ? CellState.Producing
+                                    : CellState.Available
+                        : CellState.Blocked;
+                    var level = Mathf.Max(1, saved.level);
+                    cell.Configure(cell.SlotIndex, cell.Definition, state, level);
+                    cell.RestoreState(state, level, saved.corrupted, saved.remainingSeconds);
+                    cellManager.ApplyVisual(cell);
+                }
+            }
+
+            assistantManager.ApplySaveData(Mathf.Max(1, data.assistantsTotal), data.assistants);
+            cellManager.RefreshAssistantVisuals(assistantManager);
+            uiManager.RefreshFromExternalState();
+
+            if (sm.ShouldRestoreFromSave)
+                sm.MarkRestoreConsumed();
+            _autoRestoredFromCache = true;
+        }
+
+        void PersistToSaveCache()
+        {
+            var sm = SaveManager.Instance;
+            if (!_initialized || sm == null || sm.CachedData == null || cellManager == null || assistantManager == null || resourceManager == null)
+                return;
+
+            var outData = sm.CachedData.zone2 ?? new Zone2SaveData();
+            outData.valid = true;
+            outData.darkCoins = resourceManager.Get(ResourceType.DarkCoins);
+            outData.assistantsTotal = assistantManager.TotalAssistants;
+            outData.assistants = assistantManager.CaptureSaveData();
+
+            outData.cells ??= new System.Collections.Generic.List<Zone2CellSaveData>();
+            outData.cells.Clear();
+            var cells = cellManager.Cells;
+            for (var i = 0; i < cells.Count; i++)
+            {
+                var c = cells[i];
+                if (c == null)
+                    continue;
+                outData.cells.Add(new Zone2CellSaveData
+                {
+                    cellId = c.SlotIndex,
+                    displayName = c.DisplayName,
+                    unlocked = c.State != CellState.Blocked,
+                    level = c.Level,
+                    producing = c.State == CellState.Producing,
+                    ready = c.State == CellState.ReadyToCollect,
+                    corrupted = c.IsCorrupted,
+                    remainingSeconds = c.ProducingRemainingSeconds,
+                    assignedAssistants = assistantManager.GetAssistantCountOnCell(c),
+                });
+            }
+
+            sm.CachedData.zone2 = outData;
+            sm.CachedData.zone2Available = true;
+            sm.WriteCachedDataNow();
         }
     }
 }

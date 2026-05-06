@@ -16,6 +16,7 @@ namespace LasGranjasDelHastur.Zone1
         /// Debe ser compatible con <see cref="CellManager"/> (<c>BoxCollider2D</c> ~1×1 y paso de rejilla ~2.14).
         /// </summary>
         const float Zone2BuildingSpriteMaxExtentWorld = 2.05f;
+        const float Zone3BuildingSpriteMaxExtentWorld = 2.05f;
 
         public static Sprite LoadSprite(string relativeAssetPath)
         {
@@ -42,6 +43,11 @@ namespace LasGranjasDelHastur.Zone1
             {
                 var dim = Mathf.Max(tex.width, tex.height);
                 return Mathf.Max(32f, dim / Zone2BuildingSpriteMaxExtentWorld);
+            }
+            if (norm.IndexOf("Lucas/Zone3/NewCells/", StringComparison.OrdinalIgnoreCase) >= 0)
+            {
+                var dim = Mathf.Max(tex.width, tex.height);
+                return Mathf.Max(32f, dim / Zone3BuildingSpriteMaxExtentWorld);
             }
 
             return 32f;

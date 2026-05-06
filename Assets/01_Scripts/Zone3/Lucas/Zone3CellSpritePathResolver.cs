@@ -1,4 +1,5 @@
 using System.IO;
+using LasGranjasDelHastur.Zone1;
 using UnityEngine;
 
 namespace LasGranjasDelHastur.Zone3
@@ -13,22 +14,34 @@ namespace LasGranjasDelHastur.Zone3
             StarIncubator
         }
 
-        const string PackRoot = "Assets/02_Sprites/Lucas/LasGranjasHastur_AssetPack_PixelArt/hastur_pixel_art_pack/Cells/Zone3";
+        const string Zone3CellsRoot = "Assets/02_Sprites/Lucas/Zone3/NewCells";
 
-        public static string Resolve(Kind kind)
+        public static string Resolve(Kind kind, CellState state, bool corrupted)
         {
-            var path = $"{PackRoot}/{FileName(kind)}";
-            return FileExistsAsAssetPath(path) ? path : $"{PackRoot}/Zone3_Cell_LunarOrchard.png";
+            var path = $"{Zone3CellsRoot}/{FileName(kind, state, corrupted)}";
+            if (FileExistsAsAssetPath(path))
+                return path;
+            return $"{Zone3CellsRoot}/z3_celestial_larva_moon_blocked.png";
         }
 
-        static string FileName(Kind kind) =>
-            kind switch
+        static string FileName(Kind kind, CellState state, bool corrupted)
+        {
+            var suffix = corrupted ? "corrupt" : state switch
             {
-                Kind.LunarOrchard => "Zone3_Cell_LunarOrchard.png",
-                Kind.CometMill => "Zone3_Cell_CometMill.png",
-                Kind.PlanetaryCore => "Zone3_Cell_PlanetaryCore.png",
-                _ => "Zone3_Cell_StarIncubator.png",
+                CellState.Blocked => "blocked",
+                CellState.Producing => "producing",
+                CellState.ReadyToCollect => "ready",
+                _ => "idle"
             };
+            var baseName = kind switch
+            {
+                Kind.LunarOrchard => "z3_celestial_larva_moon",
+                Kind.CometMill => "z3_celestial_energy_sun",
+                Kind.PlanetaryCore => "z3_celestial_memory_comet",
+                _ => "z3_celestial_coin_asteroid",
+            };
+            return $"{baseName}_{suffix}.png";
+        }
 
         static bool FileExistsAsAssetPath(string assetsPath)
         {

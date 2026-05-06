@@ -1882,7 +1882,7 @@ MonoBehaviour:
   zone3Music: {fileID: 8300000, guid: d29a3e85f21340d4c8a0b9917e7761ba, type: 3}
   zone1EasterEggMusicPath: Assets/03_Audio/Music/Lucas/Zone1/zone1_easter_carolina.mp3
   zone2EasterEggMusicClip: {fileID: 8300000, guid: 52de12aa0e0b7fd4a93366242df39c16, type: 3}
-  zone2EasterEggMusicPath: Assets/03_Audio/Music/Lucas/Zone2/Saiko - COSAS QUE NO TE DIJE - 432 hertz.mp3
+  zone2EasterEggMusicPath: Assets/02_Sprites/Lucas/Zone2/EasterEgg/Yellow Claw_ Love & War (G-Funk Remix) [Extended Mix].mp3
   introOpen: {fileID: 8300000, guid: 899dcf5fa88352a419922d42f625dd6e, type: 3}
   introPanelChange: {fileID: 8300000, guid: 89b7ab18c8e6dec4fb0f67fd3e943669, type: 3}
   introPanelChangeAlt: {fileID: 8300000, guid: 3ad9a7c9980ec334192c5e7f3ff3174c, type: 3}

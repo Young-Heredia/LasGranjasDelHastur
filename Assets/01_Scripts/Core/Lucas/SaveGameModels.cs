@@ -113,6 +113,9 @@ namespace LasGranjasDelHastur.Core
         public int nextCellCost;
         public List<AssistantSaveData> assistants = new();
         public List<Zone3CellSaveData> cells = new();
+
+        /// <summary>Bono del easter egg Flautista (Zona 3); una vez por run hasta Game Over / nuevo juego.</summary>
+        public bool zone3FlautistaEasterBonusClaimed;
     }
 
     [Serializable]

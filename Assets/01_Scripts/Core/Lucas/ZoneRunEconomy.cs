@@ -10,6 +10,8 @@ namespace LasGranjasDelHastur.Core
     public static class ZoneRunEconomy
     {
         public const float Zone2ProductionVsZone1Multiplier = 4f;
+        public const float Zone3ProductionVsZone2Multiplier = 4f;
+        public const float Zone3ProductionVsZone1Multiplier = Zone2ProductionVsZone1Multiplier * Zone3ProductionVsZone2Multiplier;
 
         /// <summary>√4: escala el término por celdas en el % efectivo sin disparar el impuesto linealmente ×4.</summary>
         public static float Zone2TaxPercentBracketWeight => Mathf.Sqrt(Zone2ProductionVsZone1Multiplier);
@@ -17,7 +19,12 @@ namespace LasGranjasDelHastur.Core
         public const float Zone2TaxFlatPerPurchasedCellWeight = Zone2ProductionVsZone1Multiplier;
 
         public static float GetProductionMultiplierForActiveScene() =>
-            SceneManager.GetActiveScene().name == "Zone2_Cities" ? Zone2ProductionVsZone1Multiplier : 1f;
+            SceneManager.GetActiveScene().name switch
+            {
+                "Zone2_Cities" => Zone2ProductionVsZone1Multiplier,
+                "Zone3_Celestial" => Zone3ProductionVsZone1Multiplier,
+                _ => 1f
+            };
 
         public static string GetHudZoneTitle() =>
             SceneManager.GetActiveScene().name switch
@@ -28,9 +35,12 @@ namespace LasGranjasDelHastur.Core
             };
 
         public static string GetCellPanelEconomySuffix() =>
-            SceneManager.GetActiveScene().name == "Zone2_Cities"
-                ? $" (×{Zone2ProductionVsZone1Multiplier:n0} en esta zona)"
-                : "";
+            SceneManager.GetActiveScene().name switch
+            {
+                "Zone2_Cities" => $" (×{Zone2ProductionVsZone1Multiplier:n0} en esta zona)",
+                "Zone3_Celestial" => $" (×{Zone3ProductionVsZone1Multiplier:n0} en esta zona)",
+                _ => ""
+            };
 
         /// <summary>Texto breve en el panel de alerta fiscal (solo Zona 2).</summary>
         public static string GetTaxPanelEconomyNote()
@@ -47,7 +57,7 @@ namespace LasGranjasDelHastur.Core
                 "Zone2_Cities" =>
                     "Tip: En Ciudades cada ciclo aporta más recursos (×4) que en Calabozos; abre una celda para ver montos y tiempos actualizados.",
                 "Zone3_Celestial" =>
-                    "Tip: Click en una celda para abrir panel y usar Producir / Recolectar / Mejorar.",
+                    "Tip: En Celestial cada ciclo aporta ×4 respecto a Ciudades (×16 vs Calabozos).",
                 _ =>
                     "Tip: Click en una celda para abrir panel y usar Producir / Recolectar / Mejorar."
             };

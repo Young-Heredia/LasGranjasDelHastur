@@ -33,12 +33,13 @@ namespace LasGranjasDelHastur.Core
             _instance = this;
             DontDestroyOnLoad(gameObject);
 
-            // Shared managers (do NOT include CellManager/UIManager because those are per-scene).
+            // Shared managers: economía/progreso común de run.
             EnsureComponent<ResourceManager>("ResourceManager_Shared");
             EnsureComponent<ProgressionManager>("ProgressionManager_Shared");
-            EnsureComponent<AssistantManager>("AssistantManager_Shared");
-            EnsureComponent<BuyerManager>("BuyerManager_Shared");
-            EnsureComponent<TaxManager>("TaxManager_Shared");
+            // Managers de gameplay/UI deben ser por escena para evitar estado cruzado entre zonas.
+            RemoveLegacySharedComponent<AssistantManager>("AssistantManager_Shared");
+            RemoveLegacySharedComponent<BuyerManager>("BuyerManager_Shared");
+            RemoveLegacySharedComponent<TaxManager>("TaxManager_Shared");
 
             TryHydrateFromSave();
         }
@@ -82,6 +83,17 @@ namespace LasGranjasDelHastur.Core
             if (c == null)
                 c = go.AddComponent<T>();
             return c;
+        }
+
+        void RemoveLegacySharedComponent<T>(string name) where T : Component
+        {
+            var child = transform.Find(name);
+            if (child == null)
+                return;
+            var comp = child.GetComponent<T>();
+            if (comp != null)
+                Destroy(comp);
+            Destroy(child.gameObject);
         }
     }
 }

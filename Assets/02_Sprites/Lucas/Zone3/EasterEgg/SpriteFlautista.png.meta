@@ -1,0 +1,429 @@
+fileFormatVersion: 2
+guid: de3576621b785c147922e55680be85c0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3911529128224765692
+    second: SpriteFlautista_0
+  - first:
+      213: 5277213092154459742
+    second: SpriteFlautista_1
+  - first:
+      213: 7241275210972845866
+    second: SpriteFlautista_2
+  - first:
+      213: -213237359839207862
+    second: SpriteFlautista_3
+  - first:
+      213: -4862379951970053559
+    second: SpriteFlautista_4
+  - first:
+      213: 1558794538251964944
+    second: SpriteFlautista_5
+  - first:
+      213: -4675367960498889719
+    second: SpriteFlautista_6
+  - first:
+      213: 8132057743869987846
+    second: SpriteFlautista_7
+  - first:
+      213: 3999839812254955652
+    second: SpriteFlautista_8
+  - first:
+      213: 3850768039434408276
+    second: SpriteFlautista_9
+  - first:
+      213: -7321258019616309763
+    second: SpriteFlautista_10
+  - first:
+      213: -4776561496843569523
+    second: SpriteFlautista_11
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SpriteFlautista_0
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 719
+        width: 217
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 409c1976bf477b9c0800000000000000
+      internalID: -3911529128224765692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteFlautista_1
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 719
+        width: 218
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5648e1f85d6c3940800000000000000
+      internalID: 5277213092154459742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteFlautista_2
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 719
+        width: 211
+        height: 261
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a27d0ee307d2e7460800000000000000
+      internalID: 7241275210972845866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteFlautista_3
+      rect:
+        serializedVersion: 2
+        x: 767
+        y: 719
+        width: 213
+        height: 259
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4e11f140cd6a0df0800000000000000
+      internalID: -213237359839207862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteFlautista_4
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 431
+        width: 217
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94218d7123b558cb0800000000000000
+      internalID: -4862379951970053559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteFlautista_5
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 432
+        width: 213
+        height: 257
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 012d35aaf53f1a510800000000000000
+      internalID: 1558794538251964944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteFlautista_6
+      rect:
+        serializedVersion: 2
+        x: 527
+        y: 431
+        width: 210
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90c98307c91cd1fb0800000000000000
+      internalID: -4675367960498889719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteFlautista_7
+      rect:
+        serializedVersion: 2
+        x: 767
+        y: 431
+        width: 217
+        height: 251
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60cc55cbe6fdad070800000000000000
+      internalID: 8132057743869987846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteFlautista_8
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 143
+        width: 232
+        height: 258
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 488fbeffd19428730800000000000000
+      internalID: 3999839812254955652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteFlautista_9
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 143
+        width: 217
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4515aee212da07530800000000000000
+      internalID: 3850768039434408276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteFlautista_10
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 143
+        width: 221
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dfd3acfee9aa56a90800000000000000
+      internalID: -7321258019616309763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteFlautista_11
+      rect:
+        serializedVersion: 2
+        x: 763
+        y: 143
+        width: 226
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d86b4dc30ae36bdb0800000000000000
+      internalID: -4776561496843569523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      SpriteFlautista_0: -3911529128224765692
+      SpriteFlautista_1: 5277213092154459742
+      SpriteFlautista_10: -7321258019616309763
+      SpriteFlautista_11: -4776561496843569523
+      SpriteFlautista_2: 7241275210972845866
+      SpriteFlautista_3: -213237359839207862
+      SpriteFlautista_4: -4862379951970053559
+      SpriteFlautista_5: 1558794538251964944
+      SpriteFlautista_6: -4675367960498889719
+      SpriteFlautista_7: 8132057743869987846
+      SpriteFlautista_8: 3999839812254955652
+      SpriteFlautista_9: 3850768039434408276
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

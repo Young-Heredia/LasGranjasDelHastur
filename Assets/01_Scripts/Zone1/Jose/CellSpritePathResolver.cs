@@ -32,7 +32,9 @@ namespace LasGranjasDelHastur.Zone1
             if (scene == "Zone3_Celestial")
             {
                 var kind = cell != null ? MapZone1CellTypeToZone3Kind(cell.CellType) : Zone3CellSpritePathResolver.Kind.LunarOrchard;
-                return Zone3CellSpritePathResolver.Resolve(kind);
+                var state = cell != null ? cell.State : CellState.Blocked;
+                var corrupted = cell != null && cell.IsCorrupted;
+                return Zone3CellSpritePathResolver.Resolve(kind, state, corrupted);
             }
 
             var name = GetFileNameForCell(cell);
