@@ -2,6 +2,8 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using LasGranjasDelHastur.Zone1;
+using LasGranjasDelHastur.Zone1.UI;
 using System;
 
 #if UNITY_EDITOR
@@ -156,20 +158,31 @@ namespace LasGranjasDelHastur.Zone3
         static void EnsureSystemsHierarchy()
         {
             var systems = GetOrCreateRoot("Systems");
-            EnsureChild(systems.transform, "ResourceManager");
-            EnsureChild(systems.transform, "ProgressionManager");
-            EnsureChild(systems.transform, "BuyerManager");
-            EnsureChild(systems.transform, "TaxManager");
-            EnsureChild(systems.transform, "UIManager");
-            var zone3Go = systems.transform.Find("Zone3PrototypeGame")?.gameObject;
-            if (zone3Go == null)
-            {
-                zone3Go = new GameObject("Zone3PrototypeGame");
-                zone3Go.transform.SetParent(systems.transform, false);
-            }
+            EnsureComponentUnderRoot<ResourceManager>(systems.transform, "ResourceManager");
+            EnsureComponentUnderRoot<ProgressionManager>(systems.transform, "ProgressionManager");
+            EnsureComponentUnderRoot<CellManager>(systems.transform, "CellManager");
+            EnsureComponentUnderRoot<AssistantManager>(systems.transform, "AssistantManager");
+            EnsureComponentUnderRoot<BuyerManager>(systems.transform, "BuyerManager");
+            EnsureComponentUnderRoot<TaxManager>(systems.transform, "TaxManager");
+            EnsureComponentUnderRoot<UIManager>(systems.transform, "UIManager");
 
-            if (zone3Go.GetComponent<Zone3PrototypeGame>() == null)
-                zone3Go.AddComponent<Zone3PrototypeGame>();
+            EnsureComponentUnderRoot<Zone3Manager>(systems.transform, "Zone3Manager");
+        }
+
+        static T EnsureComponentUnderRoot<T>(Transform systemsRoot, string name) where T : Component
+        {
+            if (systemsRoot == null || !systemsRoot)
+                return null;
+            var existing = systemsRoot.Find(name)?.gameObject;
+            if (existing == null)
+            {
+                existing = new GameObject(name);
+                existing.transform.SetParent(systemsRoot, false);
+            }
+            var c = existing.GetComponent<T>();
+            if (c == null)
+                c = existing.AddComponent<T>();
+            return c;
         }
 
         static void EnsureGridGuides(Transform parent, Color color)

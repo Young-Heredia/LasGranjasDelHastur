@@ -1,6 +1,10 @@
+using System;
+using LasGranjasDelHastur.Zone1;
+using LasGranjasDelHastur.Zone1.UI;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 namespace LasGranjasDelHastur.Zone3
 {
@@ -27,6 +31,7 @@ namespace LasGranjasDelHastur.Zone3
             EnsureCamera();
             EnsureEventSystem();
             EnsureWorldHierarchy();
+            EnsureUiHierarchy();
             EnsureSystemsHierarchy();
         }
 
@@ -77,8 +82,7 @@ namespace LasGranjasDelHastur.Zone3
             var front = EnsureChild(world.transform, "Layer_WallsFront");
             var atmo = EnsureChild(world.transform, "Layer_Atmosphere");
             var slots = EnsureChild(world.transform, "CellSlotsRoot");
-            if (slots != null && slots.GetComponent<LasGranjasDelHastur.Zone3.Systems.Zone3CellManager>() == null)
-                slots.AddComponent<LasGranjasDelHastur.Zone3.Systems.Zone3CellManager>();
+            // Zone3 now uses Zone1.CellManager to build and manage FarmCell slots.
 
             CreateSpriteBlock(floor.transform, "AstralPlane", Sprite_Z3_Backplate, new Vector3(0f, 0f, 0f), new Vector3(26f, 16f, 1f), new Color(0.03f, 0.03f, 0.09f, 1f), 0);
             CreateSpriteBlock(back.transform, "DeepSpaceBackdrop", Sprite_Z3_Backdrop, new Vector3(0f, 4.8f, 0f), new Vector3(24f, 6f, 1f), new Color(0.05f, 0.04f, 0.11f, 1f), -4);
@@ -92,15 +96,138 @@ namespace LasGranjasDelHastur.Zone3
         static void EnsureSystemsHierarchy()
         {
             var systems = GetOrCreateRoot("Systems");
-            var zone3 = systems.transform.Find("Zone3PrototypeGame")?.gameObject;
-            if (zone3 == null)
-            {
-                zone3 = new GameObject("Zone3PrototypeGame");
-                zone3.transform.SetParent(systems.transform, false);
-            }
+            EnsureComponentUnderRoot<ResourceManager>(systems.transform, "ResourceManager");
+            EnsureComponentUnderRoot<ProgressionManager>(systems.transform, "ProgressionManager");
+            var cellManager = EnsureComponentUnderRoot<CellManager>(systems.transform, "CellManager");
+            EnsureComponentUnderRoot<AssistantManager>(systems.transform, "AssistantManager");
+            EnsureComponentUnderRoot<BuyerManager>(systems.transform, "BuyerManager");
+            EnsureComponentUnderRoot<TaxManager>(systems.transform, "TaxManager");
+            EnsureComponentUnderRoot<UIManager>(systems.transform, "UIManager");
 
-            if (zone3.GetComponent<Zone3PrototypeGame>() == null)
-                zone3.AddComponent<Zone3PrototypeGame>();
+            EnsureComponentUnderRoot<Zone3Manager>(systems.transform, "Zone3Manager");
+
+            var slots = GameObject.Find("WorldRoot")?.transform.Find("CellSlotsRoot");
+            if (slots != null && cellManager != null && cellManager.transform.parent != slots)
+                cellManager.transform.SetParent(slots, worldPositionStays: false);
+        }
+
+        static T EnsureComponentUnderRoot<T>(Transform systemsRoot, string name) where T : Component
+        {
+            if (systemsRoot == null || !systemsRoot)
+                return null;
+
+            var global = UnityEngine.Object.FindFirstObjectByType<T>();
+            if (global != null)
+                return global;
+
+            var existing = systemsRoot.Find(name)?.gameObject;
+            if (existing == null)
+            {
+                existing = new GameObject(name);
+                existing.transform.SetParent(systemsRoot, false);
+            }
+            var c = existing.GetComponent<T>();
+            if (c == null)
+                c = existing.AddComponent<T>();
+            return c;
+        }
+
+        static void EnsureUiHierarchy()
+        {
+            var ui = GetOrCreateRoot("UI");
+            if (ui == null)
+                return;
+
+            var canvas = ui.GetComponent<Canvas>();
+            if (canvas == null)
+                canvas = ui.AddComponent<Canvas>();
+            canvas.renderMode = RenderMode.ScreenSpaceOverlay;
+
+            if (ui.GetComponent<CanvasScaler>() == null)
+                ui.AddComponent<CanvasScaler>();
+            if (ui.GetComponent<GraphicRaycaster>() == null)
+                ui.AddComponent<GraphicRaycaster>();
+
+            // Reuse Zone 1's UI layout contract (names, anchors, sizes), so Zone3 can bind the same panels.
+            EnsurePanel(ui.transform, "HUDCanvas", new Vector2(0.5f, 1f), new Vector2(0.5f, 1f), new Vector2(0f, -55f), new Vector2(0f, 110f), new Color(0.05f, 0.05f, 0.06f, 0.9f), stretchHorizontal: true);
+            EnsurePanel(ui.transform, "CellInfoPanel", new Vector2(0f, 0.5f), new Vector2(0f, 0.5f), new Vector2(190f, 0f), new Vector2(360f, 420f), new Color(0.06f, 0.06f, 0.07f, 0.92f));
+            EnsurePanel(ui.transform, "SalesPanel", new Vector2(1f, 0.5f), new Vector2(1f, 0.5f), new Vector2(-270f, 0f), new Vector2(520f, 420f), new Color(0.06f, 0.06f, 0.07f, 0.92f));
+            EnsurePanel(ui.transform, "TaxAlertPanel", new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0f, 0f), new Vector2(520f, 360f), new Color(0.08f, 0.06f, 0.06f, 0.94f));
+            EnsurePanel(ui.transform, "HoverInfoPanel", new Vector2(0.5f, 0f), new Vector2(0.5f, 0f), new Vector2(0f, 50f), new Vector2(320f, 80f), new Color(0.05f, 0.05f, 0.06f, 0.9f));
+
+            SetActiveIfExists(ui.transform, "CellInfoPanel", false);
+            SetActiveIfExists(ui.transform, "SalesPanel", false);
+            SetActiveIfExists(ui.transform, "TaxAlertPanel", false);
+            SetActiveIfExists(ui.transform, "HoverInfoPanel", false);
+        }
+
+        static void EnsurePanel(Transform parent, string name, Vector2 anchorMin, Vector2 anchorMax, Vector2 anchoredPosition, Vector2 sizeDelta, Color color, bool stretchHorizontal = false)
+        {
+            try
+            {
+                if (parent == null || !parent)
+                    return;
+
+                var panel = parent.Find(name);
+                if (panel == null)
+                {
+                    var go = new GameObject(name);
+                    if (parent == null || !parent)
+                        return;
+                    go.transform.SetParent(parent, false);
+                    panel = go.transform;
+                }
+
+                if (panel == null || !panel)
+                    return;
+
+                var panelGo = panel.gameObject;
+                if (panelGo == null)
+                    return;
+
+                if (!panelGo.TryGetComponent<RectTransform>(out var rt) || rt == null)
+                    rt = panelGo.AddComponent<RectTransform>();
+                if (rt == null)
+                    return;
+
+                if (stretchHorizontal)
+                {
+                    rt.anchorMin = new Vector2(0f, anchorMin.y);
+                    rt.anchorMax = new Vector2(1f, anchorMax.y);
+                }
+                else
+                {
+                    rt.anchorMin = anchorMin;
+                    rt.anchorMax = anchorMax;
+                }
+
+                rt.anchoredPosition = anchoredPosition;
+                rt.sizeDelta = sizeDelta;
+
+                if (!panelGo.TryGetComponent<Image>(out var img) || img == null)
+                    img = panelGo.AddComponent<Image>();
+                if (img == null)
+                    return;
+                img.color = color;
+            }
+            catch (MissingReferenceException)
+            {
+            }
+            catch (NullReferenceException)
+            {
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        static void SetActiveIfExists(Transform parent, string childName, bool active)
+        {
+            if (parent == null || !parent)
+                return;
+            var child = parent.Find(childName);
+            if (child != null)
+                child.gameObject.SetActive(active);
         }
 
         static void CreateSpriteBlock(Transform parent, string name, string spriteAssetPath, Vector3 pos, Vector3 scale, Color color, int sortingOrder)

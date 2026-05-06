@@ -55,22 +55,9 @@ namespace LasGranjasDelHastur.Zone3
 
         void Awake()
         {
-            Zone3RuntimeScaffold.EnsureSceneScaffold();
-            AudioManager.EnsureInstance();
-            _worldCells = FindFirstObjectByType<Zone3CellManager>();
-            if (_worldCells != null)
-                _worldCells.SelectedSlotChanged += OnWorldSlotSelected;
-            _prestigePoints = PlayerPrefs.GetInt(PrestigeKey, 0);
-            BuildDefaultCells();
-            EnsureAssistantCount(_assistantsTotal);
-            if (sharedEconomyWithZone1)
-                PullSharedProgressFromZone1Save();
-            TryRestoreFromSaveIfRequested();
-            if (sharedEconomyWithZone1)
-                PushSharedProgressToZone1Save();
-            BuildUi();
-            RefreshUi();
-            SyncWorldCellVisuals();
+            // Legacy prototype: Zone3 now uses `Zone3Manager` + Zone1 stack (UIManager, CellManager, etc).
+            // Keep this component inert if it still exists in the scene.
+            enabled = false;
         }
 
         void Update()

@@ -1,4 +1,7 @@
+using System;
 using LasGranjasDelHastur.Zone2.Jose.Systems;
+using LasGranjasDelHastur.Zone1;
+using LasGranjasDelHastur.Zone1.UI;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
@@ -12,6 +15,10 @@ namespace LasGranjasDelHastur.Zone2.Jose
     public static class Zone2RuntimeScaffold
     {
         const string SceneName = "Zone2_Cities";
+        const string Zone2BackdropPath = "Assets/02_Sprites/Lucas/Zone2/fondo_ciudades_corrompidas_pixel_art_3072x2048.png";
+
+        /// <summary>Multiplicador sobre el sprite del fondo: empuja la escena hacia azul oscuro y baja el contraste respecto a las celdas.</summary>
+        static readonly Color Zone2BackdropCoolTint = new(0.42f, 0.50f, 0.64f, 1f);
 
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
         static void AfterSceneLoad()
@@ -84,17 +91,53 @@ namespace LasGranjasDelHastur.Zone2.Jose
             var atmosphere = EnsureChild(world.transform, "Layer_Atmosphere");
             var slots = EnsureChild(world.transform, "CellSlotsRoot");
 
-            EnsureCityBaseFloor(floor.transform);
-            EnsureCityBackStructures(wallsBack.transform);
-            EnsureCellAreaGrid(cellArea.transform);
-            EnsureCityDecor(decor.transform);
-            EnsureCityFog(fog.transform);
-            EnsureCityFrontRubble(wallsFront.transform);
-            EnsureCityAtmosphere(atmosphere.transform);
+            // New art direction: use a single authored background sprite instead of placeholder blocks.
+            EnsureZone2BackdropOnly(
+                floor.transform,
+                wallsBack.transform,
+                cellArea.transform,
+                decor.transform,
+                fog.transform,
+                wallsFront.transform,
+                atmosphere.transform);
             EnsureGridGuides(slots.transform, new Color(0.24f, 0.45f, 0.48f, 0.18f));
 
-            if (slots != null && slots.GetComponent<Zone2CellManager>() == null)
-                slots.AddComponent<Zone2CellManager>();
+            // Zone2 now uses Zone1.CellManager to build and manage FarmCell slots.
+        }
+
+        static void EnsureZone2BackdropOnly(
+            Transform floor,
+            Transform wallsBack,
+            Transform cellArea,
+            Transform decor,
+            Transform fog,
+            Transform wallsFront,
+            Transform atmosphere)
+        {
+            DestroyChildrenExcept(floor, keepName: null);
+            DestroyChildrenExcept(cellArea, keepName: null);
+            DestroyChildrenExcept(decor, keepName: null);
+            DestroyChildrenExcept(fog, keepName: null);
+            DestroyChildrenExcept(wallsFront, keepName: null);
+            DestroyChildrenExcept(atmosphere, keepName: null);
+
+            DestroyChildrenExcept(wallsBack, keepName: "CondensedSkyline_Back");
+            CreateSpriteBackdrop(wallsBack, "CondensedSkyline_Back", Zone2BackdropPath, new Vector3(0f, 0.2f, 0f), new Vector2(38f, 24f), sortingOrder: -50, tintMultiply: Zone2BackdropCoolTint);
+        }
+
+        static void DestroyChildrenExcept(Transform parent, string keepName)
+        {
+            if (parent == null || !parent)
+                return;
+            for (var i = parent.childCount - 1; i >= 0; i--)
+            {
+                var ch = parent.GetChild(i);
+                if (ch == null)
+                    continue;
+                if (!string.IsNullOrEmpty(keepName) && ch.name == keepName)
+                    continue;
+                UnityEngine.Object.Destroy(ch.gameObject);
+            }
         }
 
         static void EnsureUiHierarchy()
@@ -112,11 +155,12 @@ namespace LasGranjasDelHastur.Zone2.Jose
             if (ui.GetComponent<GraphicRaycaster>() == null)
                 ui.AddComponent<GraphicRaycaster>();
 
-            EnsurePanel(ui.transform, "HUDCanvas", new Vector2(0.5f, 1f), new Vector2(0.5f, 1f), new Vector2(0f, -74f), new Vector2(0f, 148f), new Color(0.04f, 0.08f, 0.10f, 0.88f), true);
-            EnsurePanel(ui.transform, "CellInfoPanel", new Vector2(0f, 0.5f), new Vector2(0f, 0.5f), new Vector2(190f, 0f), new Vector2(360f, 430f), new Color(0.06f, 0.11f, 0.12f, 0.92f));
-            EnsurePanel(ui.transform, "SalesPanel", new Vector2(1f, 0.5f), new Vector2(1f, 0.5f), new Vector2(-270f, 0f), new Vector2(530f, 430f), new Color(0.09f, 0.10f, 0.08f, 0.92f));
-            EnsurePanel(ui.transform, "TaxAlertPanel", new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0f, 0f), new Vector2(540f, 360f), new Color(0.11f, 0.07f, 0.05f, 0.94f));
-            EnsurePanel(ui.transform, "HoverInfoPanel", new Vector2(0.5f, 0f), new Vector2(0.5f, 0f), new Vector2(0f, 54f), new Vector2(340f, 86f), new Color(0.05f, 0.08f, 0.09f, 0.9f));
+            // Reuse Zone 1's UI layout contract (names, anchors, sizes), so Zone2/Zone3 can share UI binders.
+            EnsurePanel(ui.transform, "HUDCanvas", new Vector2(0.5f, 1f), new Vector2(0.5f, 1f), new Vector2(0f, -55f), new Vector2(0f, 110f), new Color(0.05f, 0.05f, 0.06f, 0.9f), true);
+            EnsurePanel(ui.transform, "CellInfoPanel", new Vector2(0f, 0.5f), new Vector2(0f, 0.5f), new Vector2(190f, 0f), new Vector2(360f, 420f), new Color(0.06f, 0.06f, 0.07f, 0.92f));
+            EnsurePanel(ui.transform, "SalesPanel", new Vector2(1f, 0.5f), new Vector2(1f, 0.5f), new Vector2(-270f, 0f), new Vector2(520f, 420f), new Color(0.06f, 0.06f, 0.07f, 0.92f));
+            EnsurePanel(ui.transform, "TaxAlertPanel", new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0f, 0f), new Vector2(520f, 360f), new Color(0.08f, 0.06f, 0.06f, 0.94f));
+            EnsurePanel(ui.transform, "HoverInfoPanel", new Vector2(0.5f, 0f), new Vector2(0.5f, 0f), new Vector2(0f, 50f), new Vector2(320f, 80f), new Color(0.05f, 0.05f, 0.06f, 0.9f));
 
             SetActiveIfExists(ui.transform, "CellInfoPanel", false);
             SetActiveIfExists(ui.transform, "SalesPanel", false);
@@ -127,21 +171,43 @@ namespace LasGranjasDelHastur.Zone2.Jose
         static void EnsureSystemsHierarchy()
         {
             var systems = GetOrCreateRoot("Systems");
-            EnsureChild(systems.transform, "ResourceManager");
-            EnsureChild(systems.transform, "ProgressionManager");
-            EnsureChild(systems.transform, "BuyerManager");
-            EnsureChild(systems.transform, "TaxManager");
-            EnsureChild(systems.transform, "UIManager");
+            // Use Zone 1 stack so we can reuse Zone1.UI.UIManager verbatim.
+            EnsureComponentUnderRoot<ResourceManager>(systems.transform, "ResourceManager");
+            EnsureComponentUnderRoot<ProgressionManager>(systems.transform, "ProgressionManager");
+            var cellManager = EnsureComponentUnderRoot<CellManager>(systems.transform, "CellManager");
+            EnsureComponentUnderRoot<AssistantManager>(systems.transform, "AssistantManager");
+            EnsureComponentUnderRoot<BuyerManager>(systems.transform, "BuyerManager");
+            EnsureComponentUnderRoot<TaxManager>(systems.transform, "TaxManager");
+            EnsureComponentUnderRoot<UIManager>(systems.transform, "UIManager");
 
-            var zone2Go = systems.transform.Find("Zone2PrototypeGame")?.gameObject;
-            if (zone2Go == null)
+            EnsureComponentUnderRoot<Zone2Manager>(systems.transform, "Zone2Manager");
+
+            // Critical: ensure the grid spawns under the world slot root.
+            var slots = GameObject.Find("WorldRoot")?.transform.Find("CellSlotsRoot");
+            if (slots != null && cellManager != null && cellManager.transform.parent != slots)
+                cellManager.transform.SetParent(slots, worldPositionStays: false);
+        }
+
+        static T EnsureComponentUnderRoot<T>(Transform systemsRoot, string name) where T : Component
+        {
+            if (systemsRoot == null || !systemsRoot)
+                return null;
+
+            // Prefer shared singleton instance if it exists (shared economy/level across scenes).
+            var global = UnityEngine.Object.FindFirstObjectByType<T>();
+            if (global != null)
+                return global;
+
+            var existing = systemsRoot.Find(name)?.gameObject;
+            if (existing == null)
             {
-                zone2Go = new GameObject("Zone2PrototypeGame");
-                zone2Go.transform.SetParent(systems.transform, false);
+                existing = new GameObject(name);
+                existing.transform.SetParent(systemsRoot, false);
             }
-
-            if (zone2Go.GetComponent<Zone2PrototypeGame>() == null)
-                zone2Go.AddComponent<Zone2PrototypeGame>();
+            var c = existing.GetComponent<T>();
+            if (c == null)
+                c = existing.AddComponent<T>();
+            return c;
         }
 
         static void EnsureGridGuides(Transform parent, Color color)
@@ -152,13 +218,13 @@ namespace LasGranjasDelHastur.Zone2.Jose
             var root = new GameObject("SlotGuides");
             root.transform.SetParent(parent, false);
             var idx = 0;
-            for (var row = 0; row < 3; row++)
+            for (var row = 0; row < Zone2CellGridLayout.Rows; row++)
             {
-                for (var col = 0; col < 4; col++)
+                for (var col = 0; col < Zone2CellGridLayout.Columns; col++)
                 {
                     var go = new GameObject($"CellGuide_{idx++:00}");
                     go.transform.SetParent(root.transform, false);
-                    go.transform.localPosition = new Vector3(-3.3f + col * 2.2f, 1.8f - row * 2.2f, 0f);
+                    go.transform.localPosition = Zone2CellGridLayout.WorldSlotAnchor(col, row);
                     go.transform.localScale = new Vector3(1.25f, 1.25f, 1f);
                     var sr = go.AddComponent<SpriteRenderer>();
                     sr.sprite = LasGranjasDelHastur.RuntimeSpriteFactory.OpaqueWhiteSprite;
@@ -178,11 +244,44 @@ namespace LasGranjasDelHastur.Zone2.Jose
 
         static void EnsureCityBackStructures(Transform parent)
         {
-            if (parent.Find("CondensedSkyline_Back") != null)
-                return;
-            CreateSpriteBlock(parent, "CondensedSkyline_Back", new Vector3(0f, 4.6f, 0f), new Vector3(22f, 5.5f, 1f), new Color(0.14f, 0.14f, 0.16f, 1f), -4);
+            // Main backdrop: use the new Zone2 background sprite directly (runtime-safe load).
+            CreateSpriteBackdrop(parent, "CondensedSkyline_Back", Zone2BackdropPath, new Vector3(0f, 1.6f, 0f), new Vector2(32f, 20f), sortingOrder: -20, tintMultiply: Zone2BackdropCoolTint);
             CreateSpriteBlock(parent, "CorruptTower_Left", new Vector3(-7.6f, 3.2f, 0f), new Vector3(2.2f, 5.2f, 1f), new Color(0.20f, 0.12f, 0.18f, 0.95f), -3);
             CreateSpriteBlock(parent, "CorruptTower_Right", new Vector3(7.6f, 3.3f, 0f), new Vector3(2.4f, 5.4f, 1f), new Color(0.20f, 0.12f, 0.18f, 0.95f), -3);
+        }
+
+        static void CreateSpriteBackdrop(Transform parent, string name, string assetPath, Vector3 pos, Vector2 targetWorldSize, int sortingOrder, Color? tintMultiply = null)
+        {
+            if (parent == null)
+                return;
+
+            var existing = parent.Find(name);
+            var go = existing != null ? existing.gameObject : new GameObject(name);
+            go.transform.SetParent(parent, false);
+            go.transform.localPosition = pos;
+
+            var sr = go.GetComponent<SpriteRenderer>();
+            if (sr == null)
+                sr = go.AddComponent<SpriteRenderer>();
+            var sprite = Zone1ArtProvider.LoadSprite(assetPath);
+            sr.sprite = sprite ?? LasGranjasDelHastur.RuntimeSpriteFactory.OpaqueWhiteSprite;
+            sr.sortingOrder = sortingOrder;
+
+            if (sprite != null)
+            {
+                sr.color = tintMultiply ?? Color.white;
+                var b = sprite.bounds.size;
+                if (b.x > 0.001f && b.y > 0.001f)
+                    go.transform.localScale = new Vector3(targetWorldSize.x / b.x, targetWorldSize.y / b.y, 1f);
+                else
+                    go.transform.localScale = Vector3.one;
+            }
+            else
+            {
+                // Fallback tint if sprite missing.
+                sr.color = new Color(0.14f, 0.14f, 0.16f, 1f);
+                go.transform.localScale = new Vector3(targetWorldSize.x, targetWorldSize.y, 1f);
+            }
         }
 
         static void EnsureCellAreaGrid(Transform parent)
@@ -280,13 +379,13 @@ namespace LasGranjasDelHastur.Zone2.Jose
                 if (panel == null || !panel)
                     return;
 
-                var rt = panel.GetComponent<RectTransform>();
-                if (rt == null)
-                {
-                    if (panel == null || !panel)
-                        return;
-                    rt = panel.gameObject.AddComponent<RectTransform>();
-                }
+                // Avoid GetComponent<T>() on a Transform that can be destroyed between checks.
+                var panelGo = panel.gameObject;
+                if (panelGo == null)
+                    return;
+
+                if (!panelGo.TryGetComponent<RectTransform>(out var rt) || rt == null)
+                    rt = panelGo.AddComponent<RectTransform>();
                 if (rt == null)
                     return;
 
@@ -304,13 +403,8 @@ namespace LasGranjasDelHastur.Zone2.Jose
                 rt.anchoredPosition = anchoredPosition;
                 rt.sizeDelta = sizeDelta;
 
-                var img = panel.GetComponent<Image>();
-                if (img == null)
-                {
-                    if (panel == null || !panel)
-                        return;
-                    img = panel.gameObject.AddComponent<Image>();
-                }
+                if (!panelGo.TryGetComponent<Image>(out var img) || img == null)
+                    img = panelGo.AddComponent<Image>();
                 if (img == null)
                     return;
                 img.color = color;
@@ -322,6 +416,10 @@ namespace LasGranjasDelHastur.Zone2.Jose
             catch (NullReferenceException)
             {
                 // Defensive fallback for transient lifetimes.
+            }
+            catch (Exception)
+            {
+                // Last-resort guard: Unity can throw other transient exceptions during domain reload/scene transitions.
             }
         }
 

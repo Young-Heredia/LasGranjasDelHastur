@@ -412,6 +412,7 @@ namespace LasGranjasDelHastur.Zone1.UI
         {
             RefreshHUD();
             RefreshCellPanel();
+            _cells?.RefreshAssistantVisuals(_assistants);
         }
 
         void RefreshHUD()
@@ -432,11 +433,20 @@ namespace LasGranjasDelHastur.Zone1.UI
             if (_txtAssistants != null && _assistants != null)
                 _txtAssistants.text = $"Asistentes: {_assistants.AvailableAssistants}/{_assistants.TotalAssistants}";
 
+            if (_txtZoneLabel != null)
+                _txtZoneLabel.text = TmpSafeGlyphs(ZoneRunEconomy.GetHudZoneTitle());
+
             if (_tax != null)
                 _txtStrikes.text = $"Multas globales: {_tax.Strikes}/3";
 
             if (_btnPayEarly != null && _tax != null)
                 _btnPayEarly.interactable = !_tax.IsAlertActive;
+
+            if (_txtActionHint != null)
+                _txtActionHint.text = TmpSafeGlyphs(ZoneRunEconomy.GetActionHintLine());
+
+            if (_cellPanel != null && _cellPanel.activeSelf && _boundCell != null)
+                RefreshCellPanel();
         }
 
         void OnCellSelected(FarmCell cell)
@@ -499,11 +509,12 @@ namespace LasGranjasDelHastur.Zone1.UI
                 purchaseLine = $"Costo compra: {previewBuy} monedas -> {previewName}";
             }
 
+            var econNote = ZoneRunEconomy.GetCellPanelEconomySuffix();
             _cellBody.text = TmpSafeGlyphs(
                 $"Nivel: {_boundCell.Level}\n" +
                 $"Recurso: {resourceName}\n" +
                 $"Tiempo: {Mathf.Max(0.1f, _boundCell.ProductionSeconds):0.0}s\n" +
-                $"Por ciclo: {_boundCell.ProductionAmount}\n" +
+                $"Por ciclo: {_boundCell.ProductionAmount}{econNote}\n" +
                 $"Almacén: {storageLine}{storageFull}\n" +
                 $"Estado: {state}{prod}\n" +
                 $"Corrupta: {corrupt}\n" +
@@ -812,7 +823,8 @@ namespace LasGranjasDelHastur.Zone1.UI
                 goUrgent =
                     $"\n\n<color=#ff7b72><b>¡Game Over fiscal cercano!</b> Esta multa puede ser la última: el límite es <b>{maxS}</b> infracciones globales.</color>";
 
-            _taxBody.text =
+            var taxEconNote = ZoneRunEconomy.GetTaxPanelEconomyNote();
+            _taxBody.text = TmpSafeGlyphs(
                 $"Multas fiscales actuales: <b>{strikes}</b> / {maxS}\n" +
                 $"Recaudador: {_tax.CollectorName}\n" +
                 $"Monto total: {amount}{extras}\n" +
@@ -822,7 +834,8 @@ namespace LasGranjasDelHastur.Zone1.UI
                 $"- +1 multa global\n" +
                 $"- Puede corromper celdas\n" +
                 $"- <b>Game Over</b> al llegar a {maxS} multas" +
-                goUrgent;
+                goUrgent +
+                taxEconNote);
 
             _taxPayBtn.onClick.RemoveAllListeners();
             _taxPayBtn.onClick.AddListener(() =>
@@ -851,7 +864,13 @@ namespace LasGranjasDelHastur.Zone1.UI
             var line1 = cell.DisplayName;
             var line2 = cell.State == CellState.Producing ? $"Produciendo ({FormatTime(cell.ProducingRemainingSeconds)})" : cell.State.ToString();
             var line3 = cell.IsCorrupted ? "Corrupta" : "";
-            _hoverText.text = TmpSafeGlyphs(string.IsNullOrEmpty(line3) ? $"{line1}\n{line2}" : $"{line1}\n{line2}\n{line3}");
+            var prodLine = $"Por ciclo: {cell.ProductionAmount}{ZoneRunEconomy.GetCellPanelEconomySuffix()}";
+            string body;
+            if (string.IsNullOrEmpty(line3))
+                body = $"{line1}\n{line2}\n{prodLine}";
+            else
+                body = $"{line1}\n{line2}\n{line3}\n{prodLine}";
+            _hoverText.text = TmpSafeGlyphs(body);
         }
 
         void OnTaxGameOverReached()
@@ -959,7 +978,7 @@ namespace LasGranjasDelHastur.Zone1.UI
             _xpFill = CreateProgressBar(colMid, 204, 20);
 
             var colTax = CreateVerticalGroup(hud.transform, 248);
-            _txtZoneLabel = CreateHUDStatRow(colTax, Zone1UiSpritePaths.IconTax, "Zona 1 - Calabozos", 22, 28f);
+            _txtZoneLabel = CreateHUDStatRow(colTax, Zone1UiSpritePaths.IconTax, TmpSafeGlyphs(ZoneRunEconomy.GetHudZoneTitle()), 22, 28f);
             _txtTaxTimer = CreateHUDStatRow(colTax, Zone1UiSpritePaths.IconTime, "Impuesto: 00:00", 20, 28f);
             _txtStrikes = CreateHUDStatRow(colTax, Zone1UiSpritePaths.IconAlert, "Multas: 0/3", 20, 28f);
             _txtAssistants = CreateHUDStatRow(
@@ -1019,12 +1038,12 @@ namespace LasGranjasDelHastur.Zone1.UI
             _taxPanel.SetActive(false);
 
             // Hover
-            _hoverPanel = CreatePanel(root.transform, "HoverInfoPanel", new Vector2(0.5f, 0), new Vector2(0.5f, 0), new Vector2(0, 14), new Vector2(320, 80));
+            _hoverPanel = CreatePanel(root.transform, "HoverInfoPanel", new Vector2(0.5f, 0), new Vector2(0.5f, 0), new Vector2(0, 14), new Vector2(340, 108));
             _hoverText = CreateTMP(_hoverPanel.transform, "", 16, TextAlignmentOptions.Center);
             _hoverPanel.SetActive(false);
 
             var hint = CreatePanel(root.transform, "ActionHintPanel", new Vector2(0.5f, 0f), new Vector2(0.5f, 0f), new Vector2(0f, 8f), new Vector2(980f, 34f));
-            _txtActionHint = CreateTMP(hint.transform, "Tip: Click en una celda para abrir panel y usar Producir / Recolectar / Mejorar.", 15, TextAlignmentOptions.Center);
+            _txtActionHint = CreateTMP(hint.transform, TmpSafeGlyphs(ZoneRunEconomy.GetActionHintLine()), 15, TextAlignmentOptions.Center);
             _txtActionHint.rectTransform.anchorMin = Vector2.zero;
             _txtActionHint.rectTransform.anchorMax = Vector2.one;
             _txtActionHint.rectTransform.offsetMin = new Vector2(8f, 2f);

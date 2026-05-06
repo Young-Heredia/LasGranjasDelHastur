@@ -3,6 +3,8 @@ using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using System;
+using LasGranjasDelHastur.Zone1;
+using LasGranjasDelHastur.Zone1.UI;
 
 #if UNITY_EDITOR
 using UnityEditor;
@@ -156,20 +158,31 @@ namespace LasGranjasDelHastur.Zone2.Jose
         static void EnsureSystemsHierarchy()
         {
             var systems = GetOrCreateRoot("Systems");
-            EnsureChild(systems.transform, "ResourceManager");
-            EnsureChild(systems.transform, "ProgressionManager");
-            EnsureChild(systems.transform, "BuyerManager");
-            EnsureChild(systems.transform, "TaxManager");
-            EnsureChild(systems.transform, "UIManager");
-            var zone2Go = systems.transform.Find("Zone2PrototypeGame")?.gameObject;
-            if (zone2Go == null)
-            {
-                zone2Go = new GameObject("Zone2PrototypeGame");
-                zone2Go.transform.SetParent(systems.transform, false);
-            }
+            EnsureComponentUnderRoot<ResourceManager>(systems.transform, "ResourceManager");
+            EnsureComponentUnderRoot<ProgressionManager>(systems.transform, "ProgressionManager");
+            EnsureComponentUnderRoot<CellManager>(systems.transform, "CellManager");
+            EnsureComponentUnderRoot<AssistantManager>(systems.transform, "AssistantManager");
+            EnsureComponentUnderRoot<BuyerManager>(systems.transform, "BuyerManager");
+            EnsureComponentUnderRoot<TaxManager>(systems.transform, "TaxManager");
+            EnsureComponentUnderRoot<UIManager>(systems.transform, "UIManager");
 
-            if (zone2Go.GetComponent<Zone2PrototypeGame>() == null)
-                zone2Go.AddComponent<Zone2PrototypeGame>();
+            EnsureComponentUnderRoot<Zone2Manager>(systems.transform, "Zone2Manager");
+        }
+
+        static T EnsureComponentUnderRoot<T>(Transform systemsRoot, string name) where T : Component
+        {
+            if (systemsRoot == null || !systemsRoot)
+                return null;
+            var existing = systemsRoot.Find(name)?.gameObject;
+            if (existing == null)
+            {
+                existing = new GameObject(name);
+                existing.transform.SetParent(systemsRoot, false);
+            }
+            var c = existing.GetComponent<T>();
+            if (c == null)
+                c = existing.AddComponent<T>();
+            return c;
         }
 
         static void EnsureGridGuides(Transform parent, Color color)
@@ -180,15 +193,13 @@ namespace LasGranjasDelHastur.Zone2.Jose
             var root = new GameObject("SlotGuides");
             root.transform.SetParent(parent, false);
             var idx = 0;
-            // Coherente con la rejilla: 6×5 = 30 celdas (misma lógica que Zona 1 en cantidad)
-            for (var row = 0; row < 3; row++)
+            for (var row = 0; row < Zone2CellGridLayout.Rows; row++)
             {
-                for (var col = 0; col < 4; col++)
+                for (var col = 0; col < Zone2CellGridLayout.Columns; col++)
                 {
                     var go = new GameObject($"CellGuide_{idx++:00}");
                     go.transform.SetParent(root.transform, false);
-                    // Misma grilla base de Zona 1 (origen/espaciado aproximados).
-                    go.transform.localPosition = new Vector3(-3.3f + col * 2.2f, 1.8f - row * 2.2f, 0f);
+                    go.transform.localPosition = Zone2CellGridLayout.WorldSlotAnchor(col, row);
                     go.transform.localScale = new Vector3(1.25f, 1.25f, 1f);
                     var sr = go.AddComponent<SpriteRenderer>();
                     sr.sprite = LasGranjasDelHastur.RuntimeSpriteFactory.OpaqueWhiteSprite;

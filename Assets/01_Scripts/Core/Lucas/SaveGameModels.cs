@@ -90,6 +90,9 @@ namespace LasGranjasDelHastur.Core
         public int nextCellCost;
         public List<AssistantSaveData> assistants = new();
         public List<Zone2CellSaveData> cells = new();
+
+        /// <summary>Bono del easter egg Tindalos Pible (Zona 2); una vez por run hasta Game Over / nuevo juego.</summary>
+        public bool zone2PibleEasterBonusClaimed;
     }
 
     [Serializable]

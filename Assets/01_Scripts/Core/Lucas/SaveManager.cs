@@ -1,7 +1,6 @@
 using System;
 using System.IO;
 using LasGranjasDelHastur.Zone1;
-using LasGranjasDelHastur.Zone2;
 using LasGranjasDelHastur.Zone3;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -118,23 +117,66 @@ namespace LasGranjasDelHastur.Core
                 CachedData.zone1 = zone1.CaptureSaveData();
                 CachedData.zone1Available = CachedData.zone1 != null && CachedData.zone1.valid;
             }
-
-            var zone2 = FindFirstObjectByType<LasGranjasDelHastur.Zone2.Jose.Zone2PrototypeGame>();
-            if (zone2 != null)
+            else
             {
-                CachedData.zone2 = zone2.CaptureSaveData();
-                CachedData.zone2Available = CachedData.zone2 != null && CachedData.zone2.valid;
+                // Z2/Z3 can reuse the Zone1 stack without Zone1Manager; capture a Zone1-like snapshot directly.
+                var rm = FindFirstObjectByType<ResourceManager>();
+                var pm = FindFirstObjectByType<ProgressionManager>();
+                var cm = FindFirstObjectByType<CellManager>();
+                var am = FindFirstObjectByType<AssistantManager>();
+                var tm = FindFirstObjectByType<TaxManager>();
+                if (rm != null && pm != null && cm != null && am != null && tm != null)
+                {
+                    CachedData.zone1 = CaptureZone1Like(rm, pm, cm, am, tm);
+                    CachedData.zone1Available = CachedData.zone1 != null && CachedData.zone1.valid;
+                }
             }
 
-            var zone3 = FindFirstObjectByType<Zone3PrototypeGame>();
-            if (zone3 != null)
+            // No longer depend on legacy prototype games.
+            var zone2Mgr = FindFirstObjectByType<LasGranjasDelHastur.Zone2.Jose.Zone2Manager>();
+            if (zone2Mgr != null)
             {
-                CachedData.zone3 = zone3.CaptureSaveData();
-                CachedData.zone3Available = CachedData.zone3 != null && CachedData.zone3.valid;
+                CachedData.zone2Available = true;
+                CachedData.zone2 ??= new Zone2SaveData();
+                CachedData.zone2.valid = true;
+                CachedData.zone2.darkCoins = CachedData.zone1 != null ? CachedData.zone1.darkCoins : CachedData.zone2.darkCoins;
+            }
+
+            var zone3Mgr = FindFirstObjectByType<LasGranjasDelHastur.Zone3.Zone3Manager>();
+            if (zone3Mgr != null)
+            {
+                CachedData.zone3Available = true;
+                CachedData.zone3 ??= new Zone3SaveData();
+                CachedData.zone3.valid = true;
+                CachedData.zone3.darkCoins = CachedData.zone1 != null ? CachedData.zone1.darkCoins : CachedData.zone3.darkCoins;
             }
 
             CachedData.savedAtUtc = DateTime.UtcNow.ToString("o");
             WriteToDisk(CachedData);
+        }
+
+        static Zone1SaveData CaptureZone1Like(ResourceManager rm, ProgressionManager pm, CellManager cm, AssistantManager am, TaxManager tm)
+        {
+            var data = new Zone1SaveData
+            {
+                valid = true,
+                darkCoins = rm.Get(ResourceType.DarkCoins),
+                weakSouls = rm.Get(ResourceType.WeakSouls),
+                pureEnergy = rm.Get(ResourceType.PureEnergy),
+                memoryShards = rm.Get(ResourceType.MemoryShards),
+                unstableSouls = rm.Get(ResourceType.UnstableSouls),
+                level = pm.Level,
+                xp = pm.Xp,
+                strikes = GlobalTaxLedger.GetStrikes(),
+                fineDebt = tm.FineDebt,
+                timeToNextTaxSeconds = tm.TimeToNextTaxSeconds,
+                taxAlertActive = tm.IsAlertActive,
+                payWindowRemainingSeconds = tm.PayWindowRemainingSeconds,
+                cells = cm.CaptureSaveData(),
+                assistantTotal = am.TotalAssistants,
+                assistants = am.CaptureSaveData(),
+            };
+            return data;
         }
 
         /// <summary>
