@@ -1,8 +1,10 @@
 using LasGranjasDelHastur.Core;
 using LasGranjasDelHastur.Zone1;
 using LasGranjasDelHastur.Zone2.Jose.Systems;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace LasGranjasDelHastur.Zone2.Jose
 {
@@ -61,6 +63,12 @@ namespace LasGranjasDelHastur.Zone2.Jose
 
         Zone2CellRuntime _selectedCell;
         Zone2CellManager _worldCells;
+
+        Transform _z2TaxFxCanvasRoot;
+        CanvasGroup _z2TaxFxRoot;
+        Image _z2TaxFxPortrait;
+        Image _z2TaxFxStrip;
+        Coroutine _z2TaxFxRoutine;
 
         void Awake()
         {
@@ -189,6 +197,7 @@ namespace LasGranjasDelHastur.Zone2.Jose
                 _darkCoins -= tax;
                 _txtHint.text = $"Impuesto urbano pagado: -{tax} monedas.";
                 AudioManager.Instance?.PlayZone2TaxPay();
+                PlayZone2TaxCollectorPresentation(shortFlash: true);
                 PushSharedProgressToZone1Save();
                 return;
             }
@@ -199,6 +208,7 @@ namespace LasGranjasDelHastur.Zone2.Jose
             TryCorruptRandomUnlockedCell();
             _txtHint.text = $"No alcanzó para pagar. Multa {strikeCount}/3 y corrupción aplicada.";
             AudioManager.Instance?.PlayZone2TaxAlert();
+            PlayZone2TaxCollectorPresentation(shortFlash: false);
             PushSharedProgressToZone1Save();
         }
 

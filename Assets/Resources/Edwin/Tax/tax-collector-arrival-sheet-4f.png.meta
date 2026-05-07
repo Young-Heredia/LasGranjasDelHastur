@@ -1,0 +1,416 @@
+fileFormatVersion: 2
+guid: 14664dc8a2e6c7b479568d4db2f762a4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4263906943464556005
+    second: tax-collector-arrival-sheet-4f_0
+  - first:
+      213: 7110832435124904915
+    second: tax-collector-arrival-sheet-4f_1
+  - first:
+      213: -1396279866770770
+    second: tax-collector-arrival-sheet-4f_2
+  - first:
+      213: -1977095254800077042
+    second: tax-collector-arrival-sheet-4f_3
+  - first:
+      213: -7706259135577546306
+    second: tax-collector-arrival-sheet-4f_4
+  - first:
+      213: -4144625548307111110
+    second: tax-collector-arrival-sheet-4f_5
+  - first:
+      213: -291673445230281563
+    second: tax-collector-arrival-sheet-4f_6
+  - first:
+      213: -8834551545408842577
+    second: tax-collector-arrival-sheet-4f_7
+  - first:
+      213: -5100298260516676899
+    second: tax-collector-arrival-sheet-4f_8
+  - first:
+      213: -6873688370353383333
+    second: tax-collector-arrival-sheet-4f_9
+  - first:
+      213: 5446427845643631523
+    second: tax-collector-arrival-sheet-4f_10
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WindowsStoreApps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: tax-collector-arrival-sheet-4f_0
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 293
+        width: 54
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e5c68026c07c2b30800000000000000
+      internalID: 4263906943464556005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tax-collector-arrival-sheet-4f_1
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 301
+        width: 28
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d322f8cc60cea260800000000000000
+      internalID: 7110832435124904915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tax-collector-arrival-sheet-4f_2
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 29
+        width: 155
+        height: 294
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eaab882471a0bfff0800000000000000
+      internalID: -1396279866770770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tax-collector-arrival-sheet-4f_3
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 28
+        width: 160
+        height: 295
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0fe7824752ff84e0800000000000000
+      internalID: -1977095254800077042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tax-collector-arrival-sheet-4f_4
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 27
+        width: 169
+        height: 293
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb1aacc452edd0590800000000000000
+      internalID: -7706259135577546306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tax-collector-arrival-sheet-4f_5
+      rect:
+        serializedVersion: 2
+        x: 569
+        y: 307
+        width: 13
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a336522e5055b76c0800000000000000
+      internalID: -4144625548307111110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tax-collector-arrival-sheet-4f_6
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 58
+        width: 148
+        height: 235
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ac72a20c84c3fbf0800000000000000
+      internalID: -291673445230281563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tax-collector-arrival-sheet-4f_7
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 132
+        width: 29
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa4170a4d2e556580800000000000000
+      internalID: -8834551545408842577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tax-collector-arrival-sheet-4f_8
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 42
+        width: 59
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dda5c5d21c91839b0800000000000000
+      internalID: -5100298260516676899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tax-collector-arrival-sheet-4f_9
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 52
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b585a5478d0cb90a0800000000000000
+      internalID: -6873688370353383333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tax-collector-arrival-sheet-4f_10
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 31
+        width: 23
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ab726ae449959b40800000000000000
+      internalID: 5446427845643631523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      tax-collector-arrival-sheet-4f_0: 4263906943464556005
+      tax-collector-arrival-sheet-4f_1: 7110832435124904915
+      tax-collector-arrival-sheet-4f_10: 5446427845643631523
+      tax-collector-arrival-sheet-4f_2: -1396279866770770
+      tax-collector-arrival-sheet-4f_3: -1977095254800077042
+      tax-collector-arrival-sheet-4f_4: -7706259135577546306
+      tax-collector-arrival-sheet-4f_5: -4144625548307111110
+      tax-collector-arrival-sheet-4f_6: -291673445230281563
+      tax-collector-arrival-sheet-4f_7: -8834551545408842577
+      tax-collector-arrival-sheet-4f_8: -5100298260516676899
+      tax-collector-arrival-sheet-4f_9: -6873688370353383333
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

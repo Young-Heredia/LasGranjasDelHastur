@@ -239,6 +239,7 @@ public class AudioManager : MonoBehaviour
 
         EnsureSources();
         SanitizeSharedAudioSource();
+        AutofillTaxSfxFromResourcesIfMissing();
 #if UNITY_EDITOR
         AutofillZone1GachaClipsFromPackIfMissing();
 #endif
@@ -974,6 +975,29 @@ public class AudioManager : MonoBehaviour
         }
 
         EnsureGachaLoopSources();
+    }
+
+    void AutofillTaxSfxFromResourcesIfMissing()
+    {
+        // Fuente de verdad de Edwin: Assets/03_Audio/SFX/Edwin/Tax (no mezclar con Resources salvo copia espejo opcional para builds sin referencias en Inspector).
+        const string taxDir = "Assets/03_Audio/SFX/Edwin/Tax/";
+        TryAutofillTaxClip(ref zone1TaxAlert, taxDir + "zone1_tax_alert-cthulhu-calabozo.wav", "SFX/Edwin/Tax/zone1_tax_alert-cthulhu-calabozo");
+        TryAutofillTaxClip(ref zone1TaxPay, taxDir + "zone1_tax_pay-pago.wav", "SFX/Edwin/Tax/zone1_tax_pay-pago");
+        TryAutofillTaxClip(ref zone2TaxAlert, taxDir + "zone2_tax_alert-kthanid-ciudad.wav", "SFX/Edwin/Tax/zone2_tax_alert-kthanid-ciudad");
+        TryAutofillTaxClip(ref zone2TaxPay, taxDir + "zone2_tax_pay-pago-urbano.wav", "SFX/Edwin/Tax/zone2_tax_pay-pago-urbano");
+        TryAutofillTaxClip(ref zone3TaxAlert, taxDir + "zone3_tax_alert-azathoth-cosmos.wav", "SFX/Edwin/Tax/zone3_tax_alert-azathoth-cosmos");
+        TryAutofillTaxClip(ref zone3TaxPay, taxDir + "zone3_tax_pay-tributo-aceptado.wav", "SFX/Edwin/Tax/zone3_tax_pay-tributo-aceptado");
+    }
+
+    void TryAutofillTaxClip(ref AudioClip clip, string projectAssetPath, string resourcesSubPathNoExtension)
+    {
+        if (clip != null)
+            return;
+#if UNITY_EDITOR
+        clip = AssetDatabase.LoadAssetAtPath<AudioClip>(projectAssetPath);
+#endif
+        if (clip == null && !string.IsNullOrEmpty(resourcesSubPathNoExtension))
+            clip = Resources.Load<AudioClip>(resourcesSubPathNoExtension);
     }
 
     void EnsureGachaLoopSources()

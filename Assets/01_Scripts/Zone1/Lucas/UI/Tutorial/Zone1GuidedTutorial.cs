@@ -73,7 +73,7 @@ namespace LasGranjasDelHastur.Zone1
         enum BannerRegion
         {
             Bottom,
-            /// <summary>Columna izquierda media-baja: deja libre Ventas y panel de compradores a la derecha.</summary>
+            /// <summary>Columna izquierda media-baja: deja libre el botón Tienda y el panel a la derecha.</summary>
             SalesSideStrip,
             /// <summary>Banda inferior izquierda: no tapa la X ni botones típicos del gacha centrado.</summary>
             GachaSideStrip,
@@ -198,15 +198,22 @@ namespace LasGranjasDelHastur.Zone1
             {
                 case Phase.WaitVentasButton:
                     if (_ui != null && _ui.IsSalesPanelOpen)
+                    {
+                        _ui.EnsureShopTab(UIManager.ShopTabVentas);
                         SetPhase(Phase.WaitSalesFirstSell);
+                    }
                     break;
 
                 case Phase.WaitSalesFirstSell:
+                    if (_ui != null && _ui.IsSalesPanelOpen)
+                        _ui.EnsureShopTab(UIManager.ShopTabVentas);
                     if (_ui != null && _ui.SessionSalesCompletedCount > _salesBaseline)
                         SetPhase(Phase.WaitSalesBuyAssistant);
                     break;
 
                 case Phase.WaitSalesBuyAssistant:
+                    if (_ui != null && _ui.IsSalesPanelOpen)
+                        _ui.EnsureShopTab(UIManager.ShopTabAsistentes);
                     if (_assistants != null &&
                         _assistants.TotalAssistants > _assistantBuyBaseline)
                         SetPhase(Phase.WaitCloseSalesPanel);
@@ -461,10 +468,10 @@ namespace LasGranjasDelHastur.Zone1
                     SetTutorialCanvasSortForGachaSteps(false);
                     SetBanner(true);
                     SetBannerTexts(
-                        UIManager.SafeGlyphs("Abrir Ventas"),
+                        UIManager.SafeGlyphs("Abrir la Tienda"),
                         UIManager.SafeGlyphs(
-                            "Arriba a la derecha verás el botón grande **Ventas**. Púlsalo para abrir el panel de compradores.\n\n" +
-                            "Ahí venderás recursos a cambio de monedas oscuras; más abajo podrás comprar asistentes y cerrar con **Cerrar**."));
+                            "Arriba a la derecha verás el botón **Tienda**. Púlsalo para abrir el panel principal.\n\n" +
+                            "En la pestaña **Ventas** venderás recursos a cambio de monedas oscuras; en **Asistentes** podrás contratar sabuesos. Cierra con **Cerrar** al pie del panel."));
                     SetPrimary(null, null);
                     SetSkipVisible(true);
                     break;
@@ -478,8 +485,8 @@ namespace LasGranjasDelHastur.Zone1
                     SetBannerTexts(
                         UIManager.SafeGlyphs("Vender a un comprador"),
                         UIManager.SafeGlyphs(
-                            "Cada fila es un comprador con un recurso y precio por unidad. A la derecha de la fila usa **x1** para vender una unidad o **MAX** para vender todo lo que tengas de ese recurso.\n\n" +
-                            "Arriba del panel se explica: x1 = vender 1  |  MAX = vender todo. Haz al menos una venta."));
+                            "En la pestaña **Ventas**, cada fila es un comprador con un recurso y precio por unidad (/u). A la derecha usa **x1** o **MAX**.\n\n" +
+                            "La leyenda arriba de la lista resume x1, MAX y Oferta. Haz al menos una venta."));
                     SetPrimary(null, null);
                     SetSkipVisible(true);
                     break;
@@ -499,7 +506,7 @@ namespace LasGranjasDelHastur.Zone1
                     SetBannerTexts(
                         UIManager.SafeGlyphs("Comprar asistente"),
                         UIManager.SafeGlyphs(
-                            "En la parte inferior del panel de Ventas está la sección de compras. Pulsa **Comprar Asistente** si tienes monedas suficientes (el coste se muestra en el texto)."));
+                            "Abre la pestaña **Asistentes** en la Tienda (arriba del contenido). Pulsa **Comprar asistente** si tienes monedas suficientes; el precio aparece en el texto."));
                     SetPrimary(null, null);
                     SetSkipVisible(true);
                     break;
@@ -509,9 +516,9 @@ namespace LasGranjasDelHastur.Zone1
                     SetTutorialCanvasSortForGachaSteps(false);
                     SetBanner(true);
                     SetBannerTexts(
-                        UIManager.SafeGlyphs("Cerrar Ventas"),
+                        UIManager.SafeGlyphs("Cerrar Tienda"),
                         UIManager.SafeGlyphs(
-                            "Cuando termines, pulsa el botón **Cerrar** al final del panel de Ventas para volver al mapa.\n\n" +
+                            "Cuando termines, pulsa **Cerrar** al final del panel de la Tienda para volver al mapa.\n\n" +
                             "Si no pudiste comprar otro asistente por falta de monedas, no pasa nada: cierra igual y sigue."));
                     SetPrimary(null, null);
                     SetSkipVisible(true);
@@ -559,7 +566,7 @@ namespace LasGranjasDelHastur.Zone1
                     SetBannerTexts(
                         UIManager.SafeGlyphs("Tu primera tirada"),
                         UIManager.SafeGlyphs(
-                            "Pulsa Tirar x1 y espera a que termine la animación. Si no te alcanza el dinero, vende más en Ventas y vuelve."));
+                            "Pulsa Tirar x1 y espera a que termine la animación. Si no te alcanza el dinero, vende más en la Tienda (pestaña Ventas) y vuelve."));
                     SetPrimary(null, null);
                     SetSkipVisible(true);
                     break;
