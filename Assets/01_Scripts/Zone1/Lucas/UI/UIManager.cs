@@ -52,7 +52,7 @@ namespace LasGranjasDelHastur.Zone1.UI
         RectTransform _salesCtaRt;
         TextMeshProUGUI _salesCtaTmp;
         float _salesCtaTimer;
-        static readonly string[] SalesCtaPhrases = { "TIENDA", "SHOP", "VENDE" };
+        static readonly string[] SalesCtaPhrases = { "BUY", "SHOP NOW", "VENDE" };
         Button _btnBack;
         Button _btnPayEarly;
 
@@ -60,16 +60,8 @@ namespace LasGranjasDelHastur.Zone1.UI
         GameObject _cellPanel;
         GameObject _salesPanel;
 
-        /// <summary>True cuando el panel de la tienda (SalesPanel) está abierto (tutorial / UI).</summary>
+        /// <summary>True cuando el panel de ventas está abierto (tutorial / UI).</summary>
         public bool IsSalesPanelOpen => _salesPanel != null && _salesPanel.activeSelf;
-
-        /// <summary>Pestaña actual del panel Tienda: 0 Ventas, 1 Celdas, 2 Asistentes, 3 Mejoras, 4 Decoraciones, 5 Reliquias.</summary>
-        public const int ShopTabVentas = 0;
-        public const int ShopTabCeldas = 1;
-        public const int ShopTabAsistentes = 2;
-        public const int ShopTabMejoras = 3;
-        public const int ShopTabDecoraciones = 4;
-        public const int ShopTabReliquias = 5;
 
         /// <summary>Ventas exitosas en esta carga de escena (para tutorial guiado).</summary>
         public int SessionSalesCompletedCount { get; private set; }
@@ -94,20 +86,6 @@ namespace LasGranjasDelHastur.Zone1.UI
         EdwinSalesOfferPanel _salesOfferPanel;
         TextMeshProUGUI _salesAssistantsInfo;
         Button _salesBuyAssistantBtn;
-
-        int _shopTabIndex;
-        readonly List<Button> _shopTabButtons = new();
-        GameObject _shopTabVentas;
-        GameObject _shopTabCeldas;
-        GameObject _shopTabAsistentes;
-        GameObject _shopTabMejoras;
-        GameObject _shopTabDecoraciones;
-        GameObject _shopTabReliquias;
-        RectTransform _shopBlockedCellsListRoot;
-        readonly List<GameObject> _shopBlockedCellRows = new();
-        TextMeshProUGUI _shopMejorasBody;
-        Button _shopMejorasBuyBtn;
-        FarmCell _shopMejorasContextCell;
 
         // Tax bindings
         TextMeshProUGUI _taxTitle;
@@ -216,7 +194,7 @@ namespace LasGranjasDelHastur.Zone1.UI
             if (_cells != null)
             {
                 _cells.SelectedCellChanged += OnCellSelected;
-                _cells.CellsChanged += OnCellsChangedRefreshPanels;
+                _cells.CellsChanged += RefreshCellPanel;
             }
             if (_assistants != null)
                 _assistants.Changed += OnAssistantsChanged;
@@ -275,7 +253,7 @@ namespace LasGranjasDelHastur.Zone1.UI
             if (_cells != null)
             {
                 _cells.SelectedCellChanged -= OnCellSelected;
-                _cells.CellsChanged -= OnCellsChangedRefreshPanels;
+                _cells.CellsChanged -= RefreshCellPanel;
             }
 
             if (_buyers != null) _buyers.Changed -= RefreshSalesPanel;
@@ -434,34 +412,7 @@ namespace LasGranjasDelHastur.Zone1.UI
         {
             RefreshHUD();
             RefreshCellPanel();
-            RefreshSalesPanel();
-        }
-
-        void OnCellsChangedRefreshPanels()
-        {
-            RefreshCellPanel();
-            RefreshSalesPanel();
-        }
-
-        /// <summary>Si la tienda está abierta, cambia de pestaña (útil para tutorial).</summary>
-        public void EnsureShopTab(int tabIndex)
-        {
-            if (_salesPanel == null || !_salesPanel.activeSelf || _shopTabButtons.Count == 0)
-                return;
-            SelectShopTab(Mathf.Clamp(tabIndex, 0, _shopTabButtons.Count - 1));
-        }
-
-        void RefreshHudStrikesLine()
-        {
-            if (_txtStrikes == null)
-                return;
-            if (_tax == null)
-            {
-                _txtStrikes.text = TmpSafeGlyphs("Multas globales: —");
-                return;
-            }
-
-            _txtStrikes.text = TmpSafeGlyphs($"Multas globales: {_tax.Strikes}/{_tax.MaxStrikesBeforeGameOver}");
+            _cells?.RefreshAssistantVisuals(_assistants);
         }
 
         void RefreshHUD()
@@ -482,11 +433,20 @@ namespace LasGranjasDelHastur.Zone1.UI
             if (_txtAssistants != null && _assistants != null)
                 _txtAssistants.text = $"Asistentes: {_assistants.AvailableAssistants}/{_assistants.TotalAssistants}";
 
+            if (_txtZoneLabel != null)
+                _txtZoneLabel.text = TmpSafeGlyphs(ZoneRunEconomy.GetHudZoneTitle());
+
             if (_tax != null)
-                RefreshHudStrikesLine();
+                _txtStrikes.text = $"Multas globales: {_tax.Strikes}/3";
 
             if (_btnPayEarly != null && _tax != null)
                 _btnPayEarly.interactable = !_tax.IsAlertActive;
+
+            if (_txtActionHint != null)
+                _txtActionHint.text = TmpSafeGlyphs(ZoneRunEconomy.GetActionHintLine());
+
+            if (_cellPanel != null && _cellPanel.activeSelf && _boundCell != null)
+                RefreshCellPanel();
         }
 
         void OnCellSelected(FarmCell cell)
@@ -495,17 +455,11 @@ namespace LasGranjasDelHastur.Zone1.UI
             if (cell == null)
             {
                 CloseCellPanel();
-                _shopMejorasContextCell = null;
                 return;
             }
 
-            _shopMejorasContextCell = cell;
-
             OpenCellPanel();
             RefreshCellPanel();
-
-            if (IsSalesPanelOpen)
-                RefreshSalesPanel();
 
             if (AudioManager.Instance != null && AudioManager.Instance.zone1CellClick != null)
                 AudioManager.Instance.PlaySFX(AudioManager.Instance.zone1CellClick);
@@ -555,11 +509,12 @@ namespace LasGranjasDelHastur.Zone1.UI
                 purchaseLine = $"Costo compra: {previewBuy} monedas -> {previewName}";
             }
 
+            var econNote = ZoneRunEconomy.GetCellPanelEconomySuffix();
             _cellBody.text = TmpSafeGlyphs(
                 $"Nivel: {_boundCell.Level}\n" +
                 $"Recurso: {resourceName}\n" +
                 $"Tiempo: {Mathf.Max(0.1f, _boundCell.ProductionSeconds):0.0}s\n" +
-                $"Por ciclo: {_boundCell.ProductionAmount}\n" +
+                $"Por ciclo: {_boundCell.ProductionAmount}{econNote}\n" +
                 $"Almacén: {storageLine}{storageFull}\n" +
                 $"Estado: {state}{prod}\n" +
                 $"Corrupta: {corrupt}\n" +
@@ -612,11 +567,7 @@ namespace LasGranjasDelHastur.Zone1.UI
             _cellUpgradeBtn.onClick.AddListener(() =>
             {
                 if (_boundCell.TryUpgrade(_resources, _progression))
-                {
                     _cells.ApplyVisual(_boundCell);
-                    if (IsSalesPanelOpen)
-                        RefreshSalesPanel();
-                }
             });
 
             _cellBuyBtn.onClick.RemoveAllListeners();
@@ -673,7 +624,6 @@ namespace LasGranjasDelHastur.Zone1.UI
         void OpenSalesPanel()
         {
             _salesPanel.SetActive(true);
-            SelectShopTab(ShopTabVentas);
             RefreshSalesPanel();
         }
 
@@ -703,153 +653,14 @@ namespace LasGranjasDelHastur.Zone1.UI
 
             if (_salesAssistantsInfo != null && _assistants != null)
                 _salesAssistantsInfo.text = TmpSafeGlyphs(
-                    $"Asistentes (sabuesos)\n" +
-                    $"Disponibles / total: {_assistants.AvailableAssistants}/{_assistants.TotalAssistants}\n" +
-                    $"Precio siguiente asistente: {_assistants.NextAssistantCost} monedas oscuras");
+                    $"Compras\n" +
+                    $"Asistentes disponibles: {_assistants.AvailableAssistants}/{_assistants.TotalAssistants}\n" +
+                    $"Costo siguiente asistente: {_assistants.NextAssistantCost}");
 
             if (_salesBuyAssistantBtn != null && _assistants != null)
                 _salesBuyAssistantBtn.interactable = _assistants.TotalAssistants < 30 &&
                     _resources != null &&
                     _resources.Get(ResourceType.DarkCoins) >= _assistants.NextAssistantCost;
-
-            RefreshShopBlockedCellsTab();
-            RefreshShopMejorasTab();
-        }
-
-        void SelectShopTab(int tabIndex)
-        {
-            if (_shopTabButtons.Count == 0)
-                return;
-
-            _shopTabIndex = Mathf.Clamp(tabIndex, 0, _shopTabButtons.Count - 1);
-
-            for (var i = 0; i < _shopTabButtons.Count; i++)
-            {
-                var img = _shopTabButtons[i].GetComponent<Image>();
-                if (img != null)
-                    img.color = i == _shopTabIndex
-                        ? new Color(0.34f, 0.40f, 0.52f, 1f)
-                        : new Color(0.18f, 0.18f, 0.22f, 1f);
-            }
-
-            if (_shopTabVentas != null) _shopTabVentas.SetActive(_shopTabIndex == ShopTabVentas);
-            if (_shopTabCeldas != null) _shopTabCeldas.SetActive(_shopTabIndex == ShopTabCeldas);
-            if (_shopTabAsistentes != null) _shopTabAsistentes.SetActive(_shopTabIndex == ShopTabAsistentes);
-            if (_shopTabMejoras != null) _shopTabMejoras.SetActive(_shopTabIndex == ShopTabMejoras);
-            if (_shopTabDecoraciones != null) _shopTabDecoraciones.SetActive(_shopTabIndex == ShopTabDecoraciones);
-            if (_shopTabReliquias != null) _shopTabReliquias.SetActive(_shopTabIndex == ShopTabReliquias);
-        }
-
-        void RefreshShopBlockedCellsTab()
-        {
-            if (_shopBlockedCellsListRoot == null || _cells == null || _resources == null)
-                return;
-
-            foreach (var row in _shopBlockedCellRows)
-                Destroy(row);
-            _shopBlockedCellRows.Clear();
-
-            foreach (var cell in _cells.Cells)
-            {
-                if (cell == null || cell.State != CellState.Blocked)
-                    continue;
-                if (!_cells.TryGetBlockedPurchasePreview(cell, out _, out var cost, out var displayName))
-                    continue;
-
-                var row = new GameObject($"ShopBlocked_{cell.SlotIndex}");
-                row.transform.SetParent(_shopBlockedCellsListRoot, false);
-
-                var h = row.AddComponent<HorizontalLayoutGroup>();
-                h.spacing = 10f;
-                h.padding = new RectOffset(4, 6, 4, 4);
-                h.childAlignment = TextAnchor.MiddleLeft;
-                h.childControlHeight = true;
-                h.childControlWidth = true;
-                h.childForceExpandHeight = false;
-                h.childForceExpandWidth = false;
-
-                var le = row.AddComponent<LayoutElement>();
-                le.preferredHeight = 48f;
-                le.flexibleWidth = 1f;
-
-                var label = CreateTMP(row.transform, $"{displayName} — {cost} monedas", 15, TextAlignmentOptions.Left);
-                var labelLe = label.gameObject.AddComponent<LayoutElement>();
-                labelLe.flexibleWidth = 1f;
-                labelLe.minWidth = 200f;
-                label.textWrappingMode = TextWrappingModes.Normal;
-
-                var mapBtn = CreateButton(row.transform, "Ir al mapa", 132f, 38f, 14);
-                var captured = cell;
-                mapBtn.onClick.AddListener(() =>
-                {
-                    _cells.SelectCell(captured);
-                    CloseSalesPanel();
-                });
-
-                var buyBtn = CreateButton(row.transform, $"Comprar ({cost})", 148f, 38f, 14);
-                buyBtn.interactable = _cells.CanPurchaseBlockedSlot(cell);
-                buyBtn.onClick.AddListener(() =>
-                {
-                    if (_cells.TryPurchaseCell(captured))
-                    {
-                        _cells.ApplyVisual(captured);
-                        if (AudioManager.Instance != null && AudioManager.Instance.zone1Buy != null)
-                            AudioManager.Instance.PlaySFX(AudioManager.Instance.zone1Buy);
-                        RefreshHUD();
-                        RefreshSalesPanel();
-                        RefreshCellPanel();
-                    }
-                });
-
-                _shopBlockedCellRows.Add(row);
-            }
-        }
-
-        void RefreshShopMejorasTab()
-        {
-            if (_shopMejorasBody == null || _shopMejorasBuyBtn == null || _cells == null || _resources == null)
-                return;
-
-            var sel = _cells.SelectedCell ?? _shopMejorasContextCell;
-            if (sel == null)
-            {
-                _shopMejorasBody.text = TmpSafeGlyphs(
-                    "Haz clic en una celda del mapa al menos una vez para enlazar la mejora aquí (puedes tener abierta la Tienda y la celda).\n\n" +
-                    "La mejora sube el nivel de la celda y aumenta la producción (costo en monedas oscuras).");
-                _shopMejorasBuyBtn.interactable = false;
-                SetButtonLabel(_shopMejorasBuyBtn, "Mejorar (—)");
-                return;
-            }
-
-            if (sel.IsCorrupted)
-            {
-                _shopMejorasBody.text = TmpSafeGlyphs(
-                    $"{sel.DisplayName}\n" +
-                    "Estado: corrupta. Usa **Limpiar** en el panel de la celda antes de mejorar.");
-                _shopMejorasBuyBtn.interactable = false;
-                SetButtonLabel(_shopMejorasBuyBtn, "Mejorar (—)");
-                return;
-            }
-
-            if (sel.State != CellState.Available && sel.State != CellState.ReadyToCollect && sel.State != CellState.Producing)
-            {
-                _shopMejorasBody.text = TmpSafeGlyphs(
-                    $"{sel.DisplayName}\n" +
-                    $"Estado: {sel.State}. Las mejoras aplican con la celda en ciclo normal (disponible / produciendo / lista).");
-                _shopMejorasBuyBtn.interactable = false;
-                SetButtonLabel(_shopMejorasBuyBtn, "Mejorar (—)");
-                return;
-            }
-
-            var cost = sel.UpgradeCostDarkCoins;
-            _shopMejorasBody.text = TmpSafeGlyphs(
-                $"{sel.DisplayName}\n" +
-                $"Nivel actual: {sel.Level}\n" +
-                $"Precio siguiente mejora: {cost} monedas oscuras\n\n" +
-                "Mejorar consume monedas y sube un nivel de la celda seleccionada.");
-            var can = sel.CanUpgrade(_resources);
-            _shopMejorasBuyBtn.interactable = can;
-            SetButtonLabel(_shopMejorasBuyBtn, $"Mejorar ({cost})");
         }
 
         GameObject CreateBuyerRow(RectTransform parent, BuyerDefinition buyer)
@@ -987,7 +798,7 @@ namespace LasGranjasDelHastur.Zone1.UI
         {
             if (_taxPanel == null || _tax == null)
                 return;
-            RefreshHudStrikesLine();
+            _txtStrikes.text = $"Multas globales: {_tax.Strikes}/3";
 
             if (_btnPayEarly != null)
                 _btnPayEarly.interactable = !_tax.IsAlertActive;
@@ -1012,7 +823,8 @@ namespace LasGranjasDelHastur.Zone1.UI
                 goUrgent =
                     $"\n\n<color=#ff7b72><b>¡Game Over fiscal cercano!</b> Esta multa puede ser la última: el límite es <b>{maxS}</b> infracciones globales.</color>";
 
-            _taxBody.text =
+            var taxEconNote = ZoneRunEconomy.GetTaxPanelEconomyNote();
+            _taxBody.text = TmpSafeGlyphs(
                 $"Multas fiscales actuales: <b>{strikes}</b> / {maxS}\n" +
                 $"Recaudador: {_tax.CollectorName}\n" +
                 $"Monto total: {amount}{extras}\n" +
@@ -1022,7 +834,8 @@ namespace LasGranjasDelHastur.Zone1.UI
                 $"- +1 multa global\n" +
                 $"- Puede corromper celdas\n" +
                 $"- <b>Game Over</b> al llegar a {maxS} multas" +
-                goUrgent;
+                goUrgent +
+                taxEconNote);
 
             _taxPayBtn.onClick.RemoveAllListeners();
             _taxPayBtn.onClick.AddListener(() =>
@@ -1051,7 +864,13 @@ namespace LasGranjasDelHastur.Zone1.UI
             var line1 = cell.DisplayName;
             var line2 = cell.State == CellState.Producing ? $"Produciendo ({FormatTime(cell.ProducingRemainingSeconds)})" : cell.State.ToString();
             var line3 = cell.IsCorrupted ? "Corrupta" : "";
-            _hoverText.text = TmpSafeGlyphs(string.IsNullOrEmpty(line3) ? $"{line1}\n{line2}" : $"{line1}\n{line2}\n{line3}");
+            var prodLine = $"Por ciclo: {cell.ProductionAmount}{ZoneRunEconomy.GetCellPanelEconomySuffix()}";
+            string body;
+            if (string.IsNullOrEmpty(line3))
+                body = $"{line1}\n{line2}\n{prodLine}";
+            else
+                body = $"{line1}\n{line2}\n{line3}\n{prodLine}";
+            _hoverText.text = TmpSafeGlyphs(body);
         }
 
         void OnTaxGameOverReached()
@@ -1095,7 +914,7 @@ namespace LasGranjasDelHastur.Zone1.UI
             hudRt.anchorMin = new Vector2(0, 1);
             hudRt.anchorMax = new Vector2(1, 1);
             hudRt.pivot = new Vector2(0.5f, 1f);
-            // Altura suficiente para columna Tienda + Pago + Volver sin recorte vertical.
+            // Altura suficiente para columna Ventas + Pago + Volver sin recorte vertical.
             hudRt.sizeDelta = new Vector2(0, 252);
             hudRt.anchoredPosition = new Vector2(0, -2);
 
@@ -1159,7 +978,7 @@ namespace LasGranjasDelHastur.Zone1.UI
             _xpFill = CreateProgressBar(colMid, 204, 20);
 
             var colTax = CreateVerticalGroup(hud.transform, 248);
-            _txtZoneLabel = CreateHUDStatRow(colTax, Zone1UiSpritePaths.IconTax, "Zona 1 - Calabozos", 22, 28f);
+            _txtZoneLabel = CreateHUDStatRow(colTax, Zone1UiSpritePaths.IconTax, TmpSafeGlyphs(ZoneRunEconomy.GetHudZoneTitle()), 22, 28f);
             _txtTaxTimer = CreateHUDStatRow(colTax, Zone1UiSpritePaths.IconTime, "Impuesto: 00:00", 20, 28f);
             _txtStrikes = CreateHUDStatRow(colTax, Zone1UiSpritePaths.IconAlert, "Multas: 0/3", 20, 28f);
             _txtAssistants = CreateHUDStatRow(
@@ -1186,7 +1005,7 @@ namespace LasGranjasDelHastur.Zone1.UI
                 colBtnsV.childControlWidth = true;
             }
 
-            _btnSales = CreateButton(colBtns, "Tienda", 122f, 118f, 21, layoutFlexibleWidth: false);
+            _btnSales = CreateButton(colBtns, "Ventas", 122f, 118f, 21, layoutFlexibleWidth: false);
             _btnSalesRt = _btnSales != null ? _btnSales.GetComponent<RectTransform>() : null;
             _salesPulseBaseScale = _btnSalesRt != null ? _btnSalesRt.localScale : Vector3.one;
             if (_btnSales != null)
@@ -1207,7 +1026,7 @@ namespace LasGranjasDelHastur.Zone1.UI
             _cellPanel.SetActive(false);
 
             // Sales panel
-            _salesPanel = CreatePanel(root.transform, "SalesPanel", new Vector2(1, 0.5f), new Vector2(1, 0.5f), new Vector2(-10, 0), new Vector2(1040, 680));
+            _salesPanel = CreatePanel(root.transform, "SalesPanel", new Vector2(1, 0.5f), new Vector2(1, 0.5f), new Vector2(-10, 0), new Vector2(1040, 620));
             BuildSalesPanel(_salesPanel.transform);
             _salesPanel.SetActive(false);
 
@@ -1219,12 +1038,12 @@ namespace LasGranjasDelHastur.Zone1.UI
             _taxPanel.SetActive(false);
 
             // Hover
-            _hoverPanel = CreatePanel(root.transform, "HoverInfoPanel", new Vector2(0.5f, 0), new Vector2(0.5f, 0), new Vector2(0, 14), new Vector2(320, 80));
+            _hoverPanel = CreatePanel(root.transform, "HoverInfoPanel", new Vector2(0.5f, 0), new Vector2(0.5f, 0), new Vector2(0, 14), new Vector2(340, 108));
             _hoverText = CreateTMP(_hoverPanel.transform, "", 16, TextAlignmentOptions.Center);
             _hoverPanel.SetActive(false);
 
             var hint = CreatePanel(root.transform, "ActionHintPanel", new Vector2(0.5f, 0f), new Vector2(0.5f, 0f), new Vector2(0f, 8f), new Vector2(980f, 34f));
-            _txtActionHint = CreateTMP(hint.transform, "Tip: Click en una celda para abrir panel y usar Producir / Recolectar / Mejorar.", 15, TextAlignmentOptions.Center);
+            _txtActionHint = CreateTMP(hint.transform, TmpSafeGlyphs(ZoneRunEconomy.GetActionHintLine()), 15, TextAlignmentOptions.Center);
             _txtActionHint.rectTransform.anchorMin = Vector2.zero;
             _txtActionHint.rectTransform.anchorMax = Vector2.one;
             _txtActionHint.rectTransform.offsetMin = new Vector2(8f, 2f);
@@ -1330,98 +1149,18 @@ namespace LasGranjasDelHastur.Zone1.UI
             var v = root.gameObject.AddComponent<VerticalLayoutGroup>();
             v.padding = new RectOffset(12, 12, 12, 12);
             v.spacing = 8f;
-            v.childControlHeight = true;
-            v.childControlWidth = true;
-            v.childForceExpandWidth = true;
-            v.childForceExpandHeight = false;
 
-            CreateTMP(root, "Tienda", 22, TextAlignmentOptions.Left);
-
-            var tabsRow = CreateHorizontalGroup(root);
-            if (tabsRow.TryGetComponent<HorizontalLayoutGroup>(out var tabH))
-            {
-                tabH.spacing = 6f;
-                tabH.padding = new RectOffset(0, 0, 2, 4);
-                tabH.childForceExpandWidth = false;
-                tabH.childAlignment = TextAnchor.MiddleCenter;
-            }
-
-            _shopTabButtons.Clear();
-            var tabTitles = new[] { "Ventas", "Celdas", "Asistentes", "Mejoras", "Decoraciones", "Reliquias" };
-            for (var i = 0; i < tabTitles.Length; i++)
-            {
-                var idx = i;
-                var b = CreateButton(tabsRow.transform, tabTitles[i], 158f, 36f, 14);
-                _shopTabButtons.Add(b);
-                b.onClick.AddListener(() => SelectShopTab(idx));
-            }
-
-            var host = new GameObject("ShopTabHost");
-            host.transform.SetParent(root, false);
-            var hostLe = host.AddComponent<LayoutElement>();
-            hostLe.flexibleHeight = 1f;
-            hostLe.minHeight = 430f;
-            hostLe.preferredHeight = 492f;
-
-            _shopTabVentas = CreateShopTabSurface(host.transform, "TabVentas");
-            BuildShopVentasTabContent(_shopTabVentas.transform);
-
-            _shopTabCeldas = CreateShopTabSurface(host.transform, "TabCeldas");
-            BuildShopCeldasTabContent(_shopTabCeldas.transform);
-
-            _shopTabAsistentes = CreateShopTabSurface(host.transform, "TabAsistentes");
-            BuildShopAsistentesTabContent(_shopTabAsistentes.transform);
-
-            _shopTabMejoras = CreateShopTabSurface(host.transform, "TabMejoras");
-            BuildShopMejorasTabContent(_shopTabMejoras.transform);
-
-            _shopTabDecoraciones = CreateShopTabSurface(host.transform, "TabDecoraciones");
-            BuildShopDecoracionesTabContent(_shopTabDecoraciones.transform);
-
-            _shopTabReliquias = CreateShopTabSurface(host.transform, "TabReliquias");
-            BuildShopReliquiasTabContent(_shopTabReliquias.transform);
-
-            SelectShopTab(ShopTabVentas);
-
-            var close = CreateButton(root, "Cerrar");
-            close.onClick.AddListener(() => CloseSalesPanel());
-        }
-
-        static GameObject CreateShopTabSurface(Transform host, string name)
-        {
-            var go = new GameObject(name);
-            go.transform.SetParent(host, false);
-            var rt = go.AddComponent<RectTransform>();
-            rt.anchorMin = Vector2.zero;
-            rt.anchorMax = Vector2.one;
-            rt.offsetMin = Vector2.zero;
-            rt.offsetMax = Vector2.zero;
-            go.SetActive(false);
-            return go;
-        }
-
-        void BuildShopVentasTabContent(Transform tabRoot)
-        {
-            var vl = tabRoot.gameObject.AddComponent<VerticalLayoutGroup>();
-            vl.padding = new RectOffset(4, 4, 6, 6);
-            vl.spacing = 6f;
-            vl.childAlignment = TextAnchor.UpperLeft;
-            vl.childControlHeight = true;
-            vl.childControlWidth = true;
-            vl.childForceExpandWidth = true;
-            vl.childForceExpandHeight = false;
-
-            CreateTMP(tabRoot, "Compradores activos", 17, TextAlignmentOptions.Left);
-            var legend = CreateTMP(tabRoot, "x1 · MAX — venta libre   |   Oferta — contrato con cantidad fija, precio total y XP", 14, TextAlignmentOptions.Left);
+            CreateTMP(root, "Ventas (compradores)", 20, TextAlignmentOptions.Left);
+            var legend = CreateTMP(root, "x1 · MAX — venta libre   |   Oferta — contrato con cantidad fija, precio total y XP", 14, TextAlignmentOptions.Left);
             legend.color = new Color(0.88f, 0.86f, 0.72f, 0.9f);
 
             var scrollGo = new GameObject("Scroll");
-            scrollGo.transform.SetParent(tabRoot, false);
-            scrollGo.AddComponent<RectTransform>();
+            scrollGo.transform.SetParent(root, false);
+            var scrollRt = scrollGo.AddComponent<RectTransform>();
+            scrollRt.sizeDelta = new Vector2(0, 468);
             var scrollLe = scrollGo.AddComponent<LayoutElement>();
-            scrollLe.preferredHeight = 404f;
+            scrollLe.preferredHeight = 468f;
             scrollLe.flexibleHeight = 1f;
-            scrollLe.minHeight = 320f;
 
             var scroll = scrollGo.AddComponent<ScrollRect>();
             var viewport = new GameObject("Viewport");
@@ -1455,93 +1194,25 @@ namespace LasGranjasDelHastur.Zone1.UI
             scroll.viewport = viewportRt;
             scroll.content = _salesListRoot;
             scroll.horizontal = false;
-        }
-
-        void BuildShopCeldasTabContent(Transform tabRoot)
-        {
-            var vl = tabRoot.gameObject.AddComponent<VerticalLayoutGroup>();
-            vl.padding = new RectOffset(4, 4, 6, 6);
-            vl.spacing = 6f;
-            vl.childAlignment = TextAnchor.UpperLeft;
-            vl.childControlHeight = true;
-            vl.childControlWidth = true;
-            vl.childForceExpandWidth = true;
-
-            var hint = CreateTMP(
-                tabRoot,
-                "Las celdas bloqueadas muestran aquí su nombre y precio. Puedes comprar desde esta lista o abrir la celda en el mapa.",
-                15,
-                TextAlignmentOptions.Left);
-            hint.textWrappingMode = TextWrappingModes.Normal;
-            hint.color = new Color(0.9f, 0.88f, 0.82f, 0.95f);
-
-            var scrollGo = new GameObject("ScrollBlockedCells");
-            scrollGo.transform.SetParent(tabRoot, false);
-            scrollGo.AddComponent<RectTransform>();
-            var scrollLe = scrollGo.AddComponent<LayoutElement>();
-            scrollLe.preferredHeight = 410f;
-            scrollLe.flexibleHeight = 1f;
-            scrollLe.minHeight = 280f;
-
-            var scroll = scrollGo.AddComponent<ScrollRect>();
-            var viewport = new GameObject("Viewport");
-            viewport.transform.SetParent(scrollGo.transform, false);
-            var viewportImg = viewport.AddComponent<Image>();
-            viewportImg.color = new Color(0, 0, 0, 0.06f);
-            viewport.AddComponent<Mask>().showMaskGraphic = false;
-            var viewportRt = viewport.GetComponent<RectTransform>();
-            viewportRt.anchorMin = Vector2.zero;
-            viewportRt.anchorMax = Vector2.one;
-            viewportRt.offsetMin = Vector2.zero;
-            viewportRt.offsetMax = Vector2.zero;
-
-            var content = new GameObject("Content");
-            content.transform.SetParent(viewport.transform, false);
-            _shopBlockedCellsListRoot = content.AddComponent<RectTransform>();
-            _shopBlockedCellsListRoot.anchorMin = new Vector2(0f, 1f);
-            _shopBlockedCellsListRoot.anchorMax = new Vector2(1f, 1f);
-            _shopBlockedCellsListRoot.pivot = new Vector2(0.5f, 1f);
-            _shopBlockedCellsListRoot.anchoredPosition = Vector2.zero;
-            _shopBlockedCellsListRoot.sizeDelta = new Vector2(0f, 0f);
-            var contentV = content.AddComponent<VerticalLayoutGroup>();
-            contentV.spacing = 8f;
-            contentV.childControlHeight = true;
-            contentV.childControlWidth = true;
-            contentV.childForceExpandWidth = true;
-            contentV.childForceExpandHeight = false;
-            content.AddComponent<ContentSizeFitter>().verticalFit = ContentSizeFitter.FitMode.PreferredSize;
-
-            scroll.viewport = viewportRt;
-            scroll.content = _shopBlockedCellsListRoot;
-            scroll.horizontal = false;
-        }
-
-        void BuildShopAsistentesTabContent(Transform tabRoot)
-        {
-            var vl = tabRoot.gameObject.AddComponent<VerticalLayoutGroup>();
-            vl.padding = new RectOffset(4, 4, 6, 6);
-            vl.spacing = 8f;
-            vl.childAlignment = TextAnchor.UpperLeft;
-            vl.childControlHeight = true;
-            vl.childControlWidth = true;
-            vl.childForceExpandWidth = true;
-
-            CreateTMP(tabRoot, "Asistentes — sabuesos de Tindalos", 17, TextAlignmentOptions.Left);
 
             var purchases = new GameObject("PurchasesSection");
-            purchases.transform.SetParent(tabRoot, false);
+            purchases.transform.SetParent(root, false);
             var purchasesLe = purchases.AddComponent<LayoutElement>();
-            purchasesLe.preferredHeight = 132f;
-            purchasesLe.minHeight = 120f;
-            purchases.AddComponent<VerticalLayoutGroup>().spacing = 6f;
-
-            _salesAssistantsInfo = CreateTMP(purchases.transform, "Asistentes", 15, TextAlignmentOptions.Left);
+            purchasesLe.preferredHeight = 112f;
+            purchasesLe.minHeight = 108f;
+            var purchasesV = purchases.AddComponent<VerticalLayoutGroup>();
+            purchasesV.spacing = 6f;
+            purchasesV.childAlignment = TextAnchor.UpperLeft;
+            purchasesV.childControlHeight = true;
+            purchasesV.childControlWidth = true;
+            purchasesV.childForceExpandHeight = false;
+            purchasesV.childForceExpandWidth = false;
+            _salesAssistantsInfo = CreateTMP(purchases.transform, "Compras", 15, TextAlignmentOptions.Left);
             _salesAssistantsInfo.textWrappingMode = TextWrappingModes.Normal;
 
             var assistantShopRow = CreateHorizontalGroup(purchases.transform);
             if (assistantShopRow.TryGetComponent<HorizontalLayoutGroup>(out var asstRowLayout))
                 asstRowLayout.childForceExpandWidth = false;
-
             var assistantPortraitGo = new GameObject("AssistantShopPortrait");
             assistantPortraitGo.transform.SetParent(assistantShopRow, false);
             var assistantPortraitImg = assistantPortraitGo.AddComponent<Image>();
@@ -1554,7 +1225,7 @@ namespace LasGranjasDelHastur.Zone1.UI
             if (assistantShopSpr != null)
                 assistantPortraitImg.sprite = assistantShopSpr;
 
-            _salesBuyAssistantBtn = CreateButton(assistantShopRow, "Comprar asistente", 272f, 42f, 16);
+            _salesBuyAssistantBtn = CreateButton(assistantShopRow, "Comprar Asistente", 272f, 40f, 16);
             _salesBuyAssistantBtn.onClick.AddListener(() =>
             {
                 if (_assistants == null)
@@ -1568,91 +1239,8 @@ namespace LasGranjasDelHastur.Zone1.UI
                 }
             });
 
-            var footer = CreateTMP(
-                tabRoot,
-                "Cada fila en Ventas muestra el precio por unidad (/u). Aquí el precio del siguiente asistente se actualiza con tus monedas.",
-                14,
-                TextAlignmentOptions.Left);
-            footer.textWrappingMode = TextWrappingModes.Normal;
-            footer.color = new Color(0.85f, 0.83f, 0.78f, 0.88f);
-        }
-
-        void BuildShopMejorasTabContent(Transform tabRoot)
-        {
-            var vl = tabRoot.gameObject.AddComponent<VerticalLayoutGroup>();
-            vl.padding = new RectOffset(4, 4, 6, 6);
-            vl.spacing = 10f;
-            vl.childAlignment = TextAnchor.UpperLeft;
-            vl.childControlHeight = true;
-            vl.childControlWidth = true;
-            vl.childForceExpandWidth = true;
-
-            CreateTMP(tabRoot, "Mejoras de celda", 17, TextAlignmentOptions.Left);
-
-            _shopMejorasBody = CreateTMP(tabRoot, "-", 15, TextAlignmentOptions.TopLeft);
-            _shopMejorasBody.textWrappingMode = TextWrappingModes.Normal;
-            _shopMejorasBody.margin = new Vector4(4f, 2f, 8f, 6f);
-            var bodyLe = _shopMejorasBody.gameObject.AddComponent<LayoutElement>();
-            bodyLe.flexibleHeight = 1f;
-            bodyLe.minHeight = 160f;
-
-            _shopMejorasBuyBtn = CreateButton(tabRoot, "Mejorar (—)", 320f, 44f, 17);
-            _shopMejorasBuyBtn.onClick.AddListener(() =>
-            {
-                var target = _cells != null ? (_cells.SelectedCell ?? _shopMejorasContextCell) : null;
-                if (target == null || _resources == null || _progression == null)
-                    return;
-                if (target.TryUpgrade(_resources, _progression))
-                {
-                    _cells.ApplyVisual(target);
-                    AudioManager.Instance?.PlayZone1UpgradeComplete();
-                    RefreshHUD();
-                    RefreshSalesPanel();
-                    RefreshCellPanel();
-                }
-            });
-        }
-
-        void BuildShopDecoracionesTabContent(Transform tabRoot)
-        {
-            var vl = tabRoot.gameObject.AddComponent<VerticalLayoutGroup>();
-            vl.padding = new RectOffset(4, 4, 8, 8);
-            vl.spacing = 8f;
-
-            var t = CreateTMP(
-                tabRoot,
-                "Decoraciones del calabozo — próximamente.\n\n" +
-                "Aquí podrás comprar overlays, marcos y detalle ambiental sin afectar la economía núcleo.",
-                16,
-                TextAlignmentOptions.TopLeft);
-            t.textWrappingMode = TextWrappingModes.Normal;
-            t.color = new Color(0.88f, 0.86f, 0.8f, 0.92f);
-
-            var row = CreateHorizontalGroup(tabRoot);
-            var priceLbl = CreateTMP(row.transform, "Ejemplo de ranura — precio: —", 15, TextAlignmentOptions.Left);
-            priceLbl.gameObject.AddComponent<LayoutElement>().preferredWidth = 420f;
-            var ghostBuy = CreateButton(row.transform, "Comprar", 120f, 36f, 14);
-            ghostBuy.interactable = false;
-        }
-
-        void BuildShopReliquiasTabContent(Transform tabRoot)
-        {
-            tabRoot.gameObject.AddComponent<VerticalLayoutGroup>().padding = new RectOffset(4, 4, 8, 8);
-
-            var t = CreateTMP(
-                tabRoot,
-                "Reliquias — próximamente.\n\n" +
-                "Ítems persistentes con efectos especiales; cuando exista el sistema de inventario, cada reliquia mostrará precio y botón de compra aquí.",
-                16,
-                TextAlignmentOptions.TopLeft);
-            t.textWrappingMode = TextWrappingModes.Normal;
-            t.color = new Color(0.88f, 0.86f, 0.8f, 0.92f);
-
-            var row = CreateHorizontalGroup(tabRoot);
-            var priceLbl = CreateTMP(row.transform, "Reliquia (placeholder) — precio: —", 15, TextAlignmentOptions.Left);
-            priceLbl.gameObject.AddComponent<LayoutElement>().preferredWidth = 420f;
-            var ghostBuy = CreateButton(row.transform, "Comprar", 120f, 36f, 14);
-            ghostBuy.interactable = false;
+            var close = CreateButton(root, "Cerrar");
+            close.onClick.AddListener(() => CloseSalesPanel());
         }
 
         void BuildTaxPanel(Transform root)

@@ -1,6 +1,7 @@
 using LasGranjasDelHastur.Core;
 using LasGranjasDelHastur.Zone1.UI;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace LasGranjasDelHastur.Zone1
 {
@@ -29,6 +30,7 @@ namespace LasGranjasDelHastur.Zone1
                 mainSr.sortingOrder = baseSortingOrder;
 
             EnsureGroundShadow(parent, baseSortingOrder);
+            EnsureSlotReadablePlate(parent, baseSortingOrder);
             refs.SelectionRing = EnsureSelectionRing(parent, baseSortingOrder);
             refs.ReadyPulse = EnsureReadyPulse(parent, baseSortingOrder);
             refs.AssistantMarker = EnsureAssistantMarker(parent, baseSortingOrder);
@@ -188,6 +190,24 @@ namespace LasGranjasDelHastur.Zone1
             shadowSr.sortingOrder = baseSortingOrder - 1;
         }
 
+        /// <summary>Solo Zona 2: panel detrás del edificio para separar la celda del fondo muy cargado.</summary>
+        static void EnsureSlotReadablePlate(Transform parent, int baseSortingOrder)
+        {
+            if (SceneManager.GetActiveScene().name != "Zone2_Cities")
+                return;
+            if (parent.Find("SlotReadablePlate") != null)
+                return;
+
+            var plate = new GameObject("SlotReadablePlate");
+            plate.transform.SetParent(parent, false);
+            plate.transform.localPosition = new Vector3(0f, -0.28f, 0f);
+            plate.transform.localScale = new Vector3(2.25f, 1.95f, 1f);
+            var sr = plate.AddComponent<SpriteRenderer>();
+            sr.sprite = RuntimeSpriteFactory.OpaqueWhiteSprite;
+            sr.color = new Color(0.06f, 0.11f, 0.20f, 0.38f);
+            sr.sortingOrder = baseSortingOrder - 2;
+        }
+
         static GameObject EnsureSelectionRing(Transform parent, int baseSortingOrder)
         {
             var t = parent.Find("SelectionRing");
@@ -252,24 +272,31 @@ namespace LasGranjasDelHastur.Zone1
 
         static GameObject EnsureAssistantMarker(Transform parent, int baseSortingOrder)
         {
+            var z2 = SceneManager.GetActiveScene().name == "Zone2_Cities";
+            var markY = z2 ? 1.52f : 1.05f;
+            var markScale = z2 ? 0.84f : 0.78f;
+            var sortBoost = z2 ? 8 : 5;
+
             var t = parent.Find("AssistantMarker");
             if (t == null)
             {
                 var assistant = new GameObject("AssistantMarker");
                 assistant.transform.SetParent(parent, false);
-                assistant.transform.localPosition = new Vector3(0f, 1.05f, 0f);
-                assistant.transform.localScale = new Vector3(0.78f, 0.78f, 1f);
+                assistant.transform.localPosition = new Vector3(0f, markY, 0f);
+                assistant.transform.localScale = new Vector3(markScale, markScale, 1f);
                 var assistantSr = assistant.AddComponent<SpriteRenderer>();
                 assistantSr.sprite = Zone1ArtProvider.LoadSprite(Zone1UiSpritePaths.AssistantHoundTindalosPortrait)
                     ?? RuntimeSpriteFactory.OpaqueWhiteSprite;
                 assistantSr.color = new Color(0.80f, 0.95f, 1f, 0.95f);
-                assistantSr.sortingOrder = baseSortingOrder + 5;
+                assistantSr.sortingOrder = baseSortingOrder + sortBoost;
                 assistant.SetActive(false);
                 return assistant;
             }
 
+            t.localPosition = new Vector3(0f, markY, 0f);
+            t.localScale = new Vector3(markScale, markScale, 1f);
             if (t.GetComponent<SpriteRenderer>() is { } asr)
-                asr.sortingOrder = baseSortingOrder + 5;
+                asr.sortingOrder = baseSortingOrder + sortBoost;
             t.gameObject.SetActive(false);
             return t.gameObject;
         }

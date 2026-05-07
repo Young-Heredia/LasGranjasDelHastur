@@ -1,4 +1,5 @@
 using System;
+using LasGranjasDelHastur.Core;
 using LasGranjasDelHastur.Zone1.Cells;
 using UnityEngine;
 
@@ -44,7 +45,9 @@ namespace LasGranjasDelHastur.Zone1
             get
             {
                 var baseAmt = definition != null ? definition.productionAmount : 1;
-                return Mathf.Max(1, baseAmt * Mathf.Max(1, level));
+                var core = baseAmt * Mathf.Max(1, level);
+                var mult = ZoneRunEconomy.GetProductionMultiplierForActiveScene();
+                return Mathf.Max(1, Mathf.RoundToInt(core * mult));
             }
         }
         public int PurchaseCostDarkCoins => Mathf.Max(0, Mathf.RoundToInt(BasePurchaseCost() * (1f + purchaseSlotScalePercent * slotIndex)));

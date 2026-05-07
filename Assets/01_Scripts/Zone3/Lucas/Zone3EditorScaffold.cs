@@ -2,6 +2,8 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using LasGranjasDelHastur.Zone1;
+using LasGranjasDelHastur.Zone1.UI;
 using System;
 
 #if UNITY_EDITOR
@@ -17,6 +19,7 @@ namespace LasGranjasDelHastur.Zone3
     public static class Zone3EditorScaffold
     {
         const string SceneName = "Zone3_Celestial";
+        const string Zone3BackdropPath = "Assets/02_Sprites/Lucas/Zone3/NewBackGround/z3_background_black_space_stars_3840x2160.png";
 
 #if UNITY_EDITOR
         static bool _applying;
@@ -117,14 +120,85 @@ namespace LasGranjasDelHastur.Zone3
             var atmosphere = EnsureChild(world.transform, "Layer_Atmosphere");
             var slots = EnsureChild(world.transform, "CellSlotsRoot");
 
-            EnsureSpaceBase(floor.transform);
-            EnsureCelestialBack(wallsBack.transform);
-            EnsureCelestialCellArea(cellArea.transform);
-            EnsureCelestialDecor(decor.transform);
-            EnsureAstralFog(fog.transform);
-            EnsureCelestialFront(wallsFront.transform);
-            EnsureCelestialAtmosphere(atmosphere.transform);
+            EnsureBackdropOnly(floor.transform, wallsBack.transform, cellArea.transform, decor.transform, fog.transform, wallsFront.transform, atmosphere.transform);
             EnsureGridGuides(slots.transform, new Color(0.42f, 0.30f, 0.62f, 0.18f));
+
+            var legacyBackdropLayer = world.transform.Find("Layer_Backdrop");
+            if (legacyBackdropLayer != null)
+                UnityEngine.Object.DestroyImmediate(legacyBackdropLayer.gameObject);
+            var legacyNebulaLayer = world.transform.Find("Layer_Nebula");
+            if (legacyNebulaLayer != null)
+                UnityEngine.Object.DestroyImmediate(legacyNebulaLayer.gameObject);
+        }
+
+        static void EnsureBackdropOnly(
+            Transform floor,
+            Transform wallsBack,
+            Transform cellArea,
+            Transform decor,
+            Transform fog,
+            Transform wallsFront,
+            Transform atmosphere)
+        {
+            DestroyChildrenExcept(floor, null);
+            DestroyChildrenExcept(cellArea, null);
+            DestroyChildrenExcept(decor, null);
+            DestroyChildrenExcept(fog, null);
+            DestroyChildrenExcept(wallsFront, null);
+            DestroyChildrenExcept(atmosphere, null);
+
+            DestroyChildrenExcept(wallsBack, "CelestialBackdrop");
+            CreateSpriteBackdrop(wallsBack, "CelestialBackdrop", Zone3BackdropPath, new Vector3(0f, 0.1f, 0f), new Vector2(40f, 24f), -50);
+        }
+
+        static void DestroyChildrenExcept(Transform parent, string keepName)
+        {
+            if (parent == null || !parent)
+                return;
+            for (var i = parent.childCount - 1; i >= 0; i--)
+            {
+                var ch = parent.GetChild(i);
+                if (ch == null)
+                    continue;
+                if (!string.IsNullOrEmpty(keepName) && ch.name == keepName)
+                    continue;
+                UnityEngine.Object.DestroyImmediate(ch.gameObject);
+            }
+        }
+
+        static void CreateSpriteBackdrop(Transform parent, string name, string assetPath, Vector3 pos, Vector2 targetWorldSize, int sortingOrder)
+        {
+            if (parent == null || !parent)
+                return;
+            var existing = parent.Find(name);
+            var go = existing != null ? existing.gameObject : new GameObject(name);
+            go.transform.SetParent(parent, false);
+            go.transform.localPosition = pos;
+
+            var sr = go.GetComponent<SpriteRenderer>();
+            if (sr == null)
+                sr = go.AddComponent<SpriteRenderer>();
+#if UNITY_EDITOR
+            var sprite = AssetDatabase.LoadAssetAtPath<Sprite>(assetPath);
+#else
+            var sprite = Zone1ArtProvider.LoadSprite(assetPath);
+#endif
+            sr.sprite = sprite ?? LasGranjasDelHastur.RuntimeSpriteFactory.OpaqueWhiteSprite;
+            sr.sortingOrder = sortingOrder;
+            sr.color = Color.white;
+
+            if (sprite != null)
+            {
+                var b = sprite.bounds.size;
+                if (b.x > 0.001f && b.y > 0.001f)
+                    go.transform.localScale = new Vector3(targetWorldSize.x / b.x, targetWorldSize.y / b.y, 1f);
+                else
+                    go.transform.localScale = Vector3.one;
+            }
+            else
+            {
+                go.transform.localScale = new Vector3(targetWorldSize.x, targetWorldSize.y, 1f);
+            }
         }
 
         static void EnsureUiHierarchy()
@@ -141,7 +215,7 @@ namespace LasGranjasDelHastur.Zone3
             if (ui.GetComponent<GraphicRaycaster>() == null)
                 ui.AddComponent<GraphicRaycaster>();
 
-            EnsurePanel(ui.transform, "HUDCanvas", new Vector2(0.5f, 1f), new Vector2(0.5f, 1f), new Vector2(0f, -74f), new Vector2(0f, 148f), new Color(0.06f, 0.05f, 0.11f, 0.88f), true);
+            EnsurePanel(ui.transform, "HUDCanvas", new Vector2(0.5f, 1f), new Vector2(0.5f, 1f), new Vector2(0f, -74f), new Vector2(0f, 148f), new Color(0.06f, 0.05f, 0.11f, 0f), true);
             EnsurePanel(ui.transform, "CellInfoPanel", new Vector2(0f, 0.5f), new Vector2(0f, 0.5f), new Vector2(190f, 0f), new Vector2(360f, 430f), new Color(0.08f, 0.07f, 0.13f, 0.92f));
             EnsurePanel(ui.transform, "SalesPanel", new Vector2(1f, 0.5f), new Vector2(1f, 0.5f), new Vector2(-270f, 0f), new Vector2(530f, 430f), new Color(0.10f, 0.07f, 0.12f, 0.92f));
             EnsurePanel(ui.transform, "TaxAlertPanel", new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0f, 0f), new Vector2(540f, 360f), new Color(0.13f, 0.06f, 0.10f, 0.94f));
@@ -156,20 +230,31 @@ namespace LasGranjasDelHastur.Zone3
         static void EnsureSystemsHierarchy()
         {
             var systems = GetOrCreateRoot("Systems");
-            EnsureChild(systems.transform, "ResourceManager");
-            EnsureChild(systems.transform, "ProgressionManager");
-            EnsureChild(systems.transform, "BuyerManager");
-            EnsureChild(systems.transform, "TaxManager");
-            EnsureChild(systems.transform, "UIManager");
-            var zone3Go = systems.transform.Find("Zone3PrototypeGame")?.gameObject;
-            if (zone3Go == null)
-            {
-                zone3Go = new GameObject("Zone3PrototypeGame");
-                zone3Go.transform.SetParent(systems.transform, false);
-            }
+            EnsureComponentUnderRoot<ResourceManager>(systems.transform, "ResourceManager");
+            EnsureComponentUnderRoot<ProgressionManager>(systems.transform, "ProgressionManager");
+            EnsureComponentUnderRoot<CellManager>(systems.transform, "CellManager");
+            EnsureComponentUnderRoot<AssistantManager>(systems.transform, "AssistantManager");
+            EnsureComponentUnderRoot<BuyerManager>(systems.transform, "BuyerManager");
+            EnsureComponentUnderRoot<TaxManager>(systems.transform, "TaxManager");
+            EnsureComponentUnderRoot<UIManager>(systems.transform, "UIManager");
 
-            if (zone3Go.GetComponent<Zone3PrototypeGame>() == null)
-                zone3Go.AddComponent<Zone3PrototypeGame>();
+            EnsureComponentUnderRoot<Zone3Manager>(systems.transform, "Zone3Manager");
+        }
+
+        static T EnsureComponentUnderRoot<T>(Transform systemsRoot, string name) where T : Component
+        {
+            if (systemsRoot == null || !systemsRoot)
+                return null;
+            var existing = systemsRoot.Find(name)?.gameObject;
+            if (existing == null)
+            {
+                existing = new GameObject(name);
+                existing.transform.SetParent(systemsRoot, false);
+            }
+            var c = existing.GetComponent<T>();
+            if (c == null)
+                c = existing.AddComponent<T>();
+            return c;
         }
 
         static void EnsureGridGuides(Transform parent, Color color)
@@ -195,65 +280,6 @@ namespace LasGranjasDelHastur.Zone3
                     sr.sortingOrder = 2;
                 }
             }
-        }
-
-        static void EnsureSpaceBase(Transform parent)
-        {
-            if (parent.Find("AstralPlane") != null)
-                return;
-            CreateSpriteBlock(parent, "AstralPlane", new Vector3(0f, 0f, 0f), new Vector3(26f, 16f, 1f), new Color(0.03f, 0.03f, 0.09f, 1f), 0);
-            CreateSpriteBlock(parent, "EnergyBands", new Vector3(0f, -0.2f, 0f), new Vector3(22f, 10f, 1f), new Color(0.17f, 0.14f, 0.26f, 0.34f), 1);
-        }
-
-        static void EnsureCelestialBack(Transform parent)
-        {
-            if (parent.Find("DeepSpaceBackdrop") != null)
-                return;
-            CreateSpriteBlock(parent, "DeepSpaceBackdrop", new Vector3(0f, 4.8f, 0f), new Vector3(24f, 6f, 1f), new Color(0.05f, 0.04f, 0.11f, 1f), -4);
-            CreateSpriteBlock(parent, "StarNursery_Left", new Vector3(-7.8f, 3.4f, 0f), new Vector3(3.1f, 3.6f, 1f), new Color(0.20f, 0.15f, 0.36f, 0.85f), -3);
-            CreateSpriteBlock(parent, "StarNursery_Right", new Vector3(7.8f, 3.4f, 0f), new Vector3(3.1f, 3.6f, 1f), new Color(0.20f, 0.15f, 0.36f, 0.85f), -3);
-        }
-
-        static void EnsureCelestialCellArea(Transform parent)
-        {
-            if (parent.Find("CelestialField") != null)
-                return;
-            var field = new GameObject("CelestialField");
-            field.transform.SetParent(parent, false);
-            CreateSpriteBlock(field.transform, "FieldPlate", new Vector3(0f, -0.1f, 0f), new Vector3(15.5f, 9.8f, 1f), new Color(0.10f, 0.08f, 0.18f, 0.54f), 4);
-            CreateSpriteBlock(field.transform, "OrbitBand", new Vector3(0f, -0.1f, 0f), new Vector3(13.8f, 1.1f, 1f), new Color(0.32f, 0.23f, 0.56f, 0.34f), 5);
-        }
-
-        static void EnsureCelestialDecor(Transform parent)
-        {
-            if (parent.Find("AstralDecor") != null)
-                return;
-            var decor = new GameObject("AstralDecor");
-            decor.transform.SetParent(parent, false);
-            CreateSpriteBlock(decor.transform, "MoonCluster_Left", new Vector3(-8.8f, -2.8f, 0f), new Vector3(3.4f, 2.4f, 1f), new Color(0.21f, 0.19f, 0.36f, 0.95f), 8);
-            CreateSpriteBlock(decor.transform, "MoonCluster_Right", new Vector3(8.8f, -2.8f, 0f), new Vector3(3.4f, 2.4f, 1f), new Color(0.21f, 0.19f, 0.36f, 0.95f), 8);
-            CreateSpriteBlock(decor.transform, "CometTrack", new Vector3(0f, -4.3f, 0f), new Vector3(4.6f, 1.2f, 1f), new Color(0.42f, 0.32f, 0.68f, 0.26f), 9);
-        }
-
-        static void EnsureAstralFog(Transform parent)
-        {
-            if (parent.Find("AstralMist") != null)
-                return;
-            CreateSpriteBlock(parent, "AstralMist", new Vector3(0f, -2.3f, 0f), new Vector3(21f, 5.2f, 1f), new Color(0.44f, 0.38f, 0.62f, 0.10f), 24);
-        }
-
-        static void EnsureCelestialFront(Transform parent)
-        {
-            if (parent.Find("ForegroundPlatforms") != null)
-                return;
-            CreateSpriteBlock(parent, "ForegroundPlatforms", new Vector3(0f, -6.3f, 0f), new Vector3(24f, 1.9f, 1f), new Color(0.08f, 0.07f, 0.15f, 0.98f), 76);
-        }
-
-        static void EnsureCelestialAtmosphere(Transform parent)
-        {
-            if (parent.Find("AstralVignette") != null)
-                return;
-            CreateSpriteBlock(parent, "AstralVignette", new Vector3(0f, 0f, 0f), new Vector3(28f, 17f, 1f), new Color(0.04f, 0.02f, 0.08f, 0.24f), 88);
         }
 
         static void CreateSpriteBlock(Transform parent, string name, Vector3 pos, Vector3 scale, Color color, int sortingOrder)

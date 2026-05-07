@@ -1,0 +1,1989 @@
+fileFormatVersion: 2
+guid: 0f52f0b9707e389449a7bc298c48d662
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1708517217206865195
+    second: GACHAFORZONE3_0
+  - first:
+      213: -9039227957874862275
+    second: GACHAFORZONE3_1
+  - first:
+      213: -761797554285483629
+    second: GACHAFORZONE3_2
+  - first:
+      213: 2558668377518997456
+    second: GACHAFORZONE3_3
+  - first:
+      213: 8760413258216630148
+    second: GACHAFORZONE3_4
+  - first:
+      213: -2135146961594475215
+    second: GACHAFORZONE3_5
+  - first:
+      213: -8539982673841840623
+    second: GACHAFORZONE3_6
+  - first:
+      213: -5588340099889759703
+    second: GACHAFORZONE3_7
+  - first:
+      213: 4506326729280962669
+    second: GACHAFORZONE3_8
+  - first:
+      213: 3244123146976086031
+    second: GACHAFORZONE3_9
+  - first:
+      213: -4988882277206238651
+    second: GACHAFORZONE3_10
+  - first:
+      213: 5775568478214598225
+    second: GACHAFORZONE3_11
+  - first:
+      213: 8593994811981127354
+    second: GACHAFORZONE3_12
+  - first:
+      213: -5185391963649491413
+    second: GACHAFORZONE3_13
+  - first:
+      213: 831187915797917628
+    second: GACHAFORZONE3_14
+  - first:
+      213: 8536163118039896601
+    second: GACHAFORZONE3_15
+  - first:
+      213: 8324647934055616910
+    second: GACHAFORZONE3_16
+  - first:
+      213: -9199311910242136802
+    second: GACHAFORZONE3_17
+  - first:
+      213: 8471926006752677543
+    second: GACHAFORZONE3_18
+  - first:
+      213: 332145703611174187
+    second: GACHAFORZONE3_19
+  - first:
+      213: 629742167427730115
+    second: GACHAFORZONE3_20
+  - first:
+      213: -6499920084339956678
+    second: GACHAFORZONE3_21
+  - first:
+      213: 5352070606531811561
+    second: GACHAFORZONE3_22
+  - first:
+      213: -5200674951813071832
+    second: GACHAFORZONE3_23
+  - first:
+      213: -1602585804479626396
+    second: GACHAFORZONE3_24
+  - first:
+      213: -1041511114525376093
+    second: GACHAFORZONE3_25
+  - first:
+      213: -817709389447288906
+    second: GACHAFORZONE3_26
+  - first:
+      213: -5563225484220529166
+    second: GACHAFORZONE3_27
+  - first:
+      213: -2943642656507317960
+    second: GACHAFORZONE3_28
+  - first:
+      213: -4202028848938878108
+    second: GACHAFORZONE3_29
+  - first:
+      213: 8969793032641247293
+    second: GACHAFORZONE3_30
+  - first:
+      213: 1091617958131375735
+    second: GACHAFORZONE3_31
+  - first:
+      213: -5886047257153005264
+    second: GACHAFORZONE3_32
+  - first:
+      213: -33259184866774234
+    second: GACHAFORZONE3_33
+  - first:
+      213: 2807496111899498414
+    second: GACHAFORZONE3_34
+  - first:
+      213: -4604170479364177719
+    second: GACHAFORZONE3_35
+  - first:
+      213: 132139162862654847
+    second: GACHAFORZONE3_36
+  - first:
+      213: -7803758701769249060
+    second: GACHAFORZONE3_37
+  - first:
+      213: 536639034688943811
+    second: GACHAFORZONE3_38
+  - first:
+      213: -3115632706091112240
+    second: GACHAFORZONE3_39
+  - first:
+      213: 2858510004983339829
+    second: GACHAFORZONE3_40
+  - first:
+      213: -4847824549365989326
+    second: GACHAFORZONE3_41
+  - first:
+      213: 2091029257958190418
+    second: GACHAFORZONE3_42
+  - first:
+      213: 2024249945043262297
+    second: GACHAFORZONE3_43
+  - first:
+      213: -6339209212366432716
+    second: GACHAFORZONE3_44
+  - first:
+      213: -5669718514335385840
+    second: GACHAFORZONE3_45
+  - first:
+      213: -5879526027412108485
+    second: GACHAFORZONE3_46
+  - first:
+      213: -154046608349046788
+    second: GACHAFORZONE3_47
+  - first:
+      213: 5413969738416394620
+    second: GACHAFORZONE3_48
+  - first:
+      213: 1688664511617096171
+    second: GACHAFORZONE3_49
+  - first:
+      213: -5156551398037482628
+    second: GACHAFORZONE3_50
+  - first:
+      213: 7808508465901004526
+    second: GACHAFORZONE3_51
+  - first:
+      213: -6964805103275795841
+    second: GACHAFORZONE3_52
+  - first:
+      213: -5706686605138267778
+    second: GACHAFORZONE3_53
+  - first:
+      213: -3956160520162967219
+    second: GACHAFORZONE3_54
+  - first:
+      213: 4800139844778807347
+    second: GACHAFORZONE3_55
+  - first:
+      213: 1269705583192458738
+    second: GACHAFORZONE3_56
+  - first:
+      213: 2407289322192569893
+    second: GACHAFORZONE3_57
+  - first:
+      213: 4950566435442801041
+    second: GACHAFORZONE3_58
+  - first:
+      213: -2565558309919346149
+    second: GACHAFORZONE3_59
+  - first:
+      213: 375331567598002910
+    second: GACHAFORZONE3_60
+  - first:
+      213: -5715704439440479932
+    second: GACHAFORZONE3_61
+  - first:
+      213: 7036318344908589724
+    second: GACHAFORZONE3_62
+  - first:
+      213: 7475559881354792755
+    second: GACHAFORZONE3_63
+  - first:
+      213: -3420337606431347292
+    second: GACHAFORZONE3_64
+  - first:
+      213: 2884160793990464962
+    second: GACHAFORZONE3_65
+  - first:
+      213: 3374462534264315172
+    second: GACHAFORZONE3_66
+  - first:
+      213: 6475175092409133566
+    second: GACHAFORZONE3_67
+  - first:
+      213: 6599239565927417860
+    second: GACHAFORZONE3_68
+  - first:
+      213: -2994155859930601578
+    second: GACHAFORZONE3_69
+  - first:
+      213: 5218153915593777524
+    second: GACHAFORZONE3_70
+  - first:
+      213: 7879256488074169978
+    second: GACHAFORZONE3_71
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: GACHAFORZONE3_0
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 659
+        width: 327
+        height: 345
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d2febf94a02a48e0800000000000000
+      internalID: -1708517217206865195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GACHAFORZONE3_1
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 661
+        width: 319
+        height: 358
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d37d61f60163e8280800000000000000
+      internalID: -9039227957874862275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GACHAFORZONE3_2
+      rect:
+        serializedVersion: 2
+        x: 618
+        y: 971
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3996d0a192d8d65f0800000000000000
+      internalID: -761797554285483629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GACHAFORZONE3_3
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 657
+        width: 319
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0df7b0c3557328320800000000000000
+      internalID: 2558668377518997456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GACHAFORZONE3_4
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 955
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 487ef95917d339970800000000000000
+      internalID: 8760413258216630148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GACHAFORZONE3_5
+      rect:
+        serializedVersion: 2
+        x: 305
+        y: 911
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13d18e2a62f6e52e0800000000000000
+      internalID: -2135146961594475215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GACHAFORZONE3_6
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 729
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 11e9aa14103eb7980800000000000000
+      internalID: -8539982673841840623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GACHAFORZONE3_7
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 727
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92afff5994a3272b0800000000000000
+      internalID: -5588340099889759703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GACHAFORZONE3_8
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 727
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d60c3a4e840b98e30800000000000000
+      internalID: 4506326729280962669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GACHAFORZONE3_9
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 727
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f08c12760d0750d20800000000000000
+      internalID: 3244123146976086031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GACHAFORZONE3_10
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 727
+        width: 15
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54a51e8400ee3cab0800000000000000
+      internalID: -4988882277206238651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GACHAFORZONE3_11
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 321
+        width: 317
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15eacef3ee0f62050800000000000000
+      internalID: 5775568478214598225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GACHAFORZONE3_12
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 659
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: abe5fa1afb0044770800000000000000
+      internalID: 8593994811981127354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GACHAFORZONE3_13
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 659
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2eb1818b79c908b0800000000000000
+      internalID: -5185391963649491413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GACHAFORZONE3_14
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 655
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbf6bbe6109f88b00800000000000000
+      internalID: 831187915797917628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GACHAFORZONE3_15
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 340
+        width: 366
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9121f8b112b867670800000000000000
+      internalID: 8536163118039896601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GACHAFORZONE3_16
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 653
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e81139da037178370800000000000000
+      internalID: 8324647934055616910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GACHAFORZONE3_17
+      rect:
+        serializedVersion: 2
+        x: 808
+        y: 654
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1d4ff3ce8a755080800000000000000
+      internalID: -9199311910242136802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GACHAFORZONE3_18
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 657
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ae03e321d3529570800000000000000
+      internalID: 8471926006752677543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GACHAFORZONE3_19
+      rect:
+        serializedVersion: 2
+        x: 886
+        y: 655
+        width: 19
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2d8a65f1c40c9400800000000000000
+      internalID: 332145703611174187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GACHAFORZONE3_20
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 614
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ca4d9d2a2b4db800800000000000000
+      internalID: 629742167427730115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GACHAFORZONE3_21
+      rect:
+        serializedVersion: 2
+        x: 702
+        y: 336
+        width: 307
+        height: 321
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a346d701f15abc5a0800000000000000
+      internalID: -6499920084339956678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GACHAFORZONE3_22
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 586
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e853233cdf564a40800000000000000
+      internalID: 5352070606531811561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GACHAFORZONE3_23
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 595
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82cf8e88fad73d7b0800000000000000
+      internalID: -5200674951813071832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GACHAFORZONE3_24
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 568
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46388e1a3b872c9e0800000000000000
+      internalID: -1602585804479626396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GACHAFORZONE3_25
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 574
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a10815d82fcb81f0800000000000000
+      internalID: -1041511114525376093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GACHAFORZONE3_26
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 563
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b72e7884a9e6a4f0800000000000000
+      internalID: -817709389447288906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GACHAFORZONE3_27
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 455
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f582a7b5e37bc2b0800000000000000
+      internalID: -5563225484220529166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GACHAFORZONE3_28
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 399
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 831b13999941627d0800000000000000
+      internalID: -2943642656507317960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GACHAFORZONE3_29
+      rect:
+        serializedVersion: 2
+        x: 839
+        y: 399
+        width: 17
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46bfd0376056fa5c0800000000000000
+      internalID: -4202028848938878108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GACHAFORZONE3_30
+      rect:
+        serializedVersion: 2
+        x: 855
+        y: 399
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d38fa5b3d3b1b7c70800000000000000
+      internalID: 8969793032641247293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GACHAFORZONE3_31
+      rect:
+        serializedVersion: 2
+        x: 889
+        y: 400
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77e9bd0dfb4362f00800000000000000
+      internalID: 1091617958131375735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GACHAFORZONE3_32
+      rect:
+        serializedVersion: 2
+        x: 251
+        y: 357
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0399b3a843f805ea0800000000000000
+      internalID: -5886047257153005264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GACHAFORZONE3_33
+      rect:
+        serializedVersion: 2
+        x: 745
+        y: 349
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6233f7492f6d98ff0800000000000000
+      internalID: -33259184866774234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GACHAFORZONE3_34
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 335
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea75f0ac6da36f620800000000000000
+      internalID: 2807496111899498414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GACHAFORZONE3_35
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 327
+        width: 17
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c0882cc753ba10c0800000000000000
+      internalID: -4604170479364177719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GACHAFORZONE3_36
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 62
+        width: 316
+        height: 280
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7598575ed375d100800000000000000
+      internalID: 132139162862654847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GACHAFORZONE3_37
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 335
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cde2e2c8eca73b390800000000000000
+      internalID: -7803758701769249060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GACHAFORZONE3_38
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 338
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c63e3bdb56827700800000000000000
+      internalID: 536639034688943811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GACHAFORZONE3_39
+      rect:
+        serializedVersion: 2
+        x: 927
+        y: 327
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d8a9d6af8c03c4d0800000000000000
+      internalID: -3115632706091112240
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GACHAFORZONE3_40
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 45
+        width: 342
+        height: 289
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53b9ee954b77ba720800000000000000
+      internalID: 2858510004983339829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GACHAFORZONE3_41
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 327
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2304f99d14119bcb0800000000000000
+      internalID: -4847824549365989326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GACHAFORZONE3_42
+      rect:
+        serializedVersion: 2
+        x: 683
+        y: 19
+        width: 310
+        height: 316
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25deb870804d40d10800000000000000
+      internalID: 2091029257958190418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GACHAFORZONE3_43
+      rect:
+        serializedVersion: 2
+        x: 923
+        y: 329
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95b58ee9994971c10800000000000000
+      internalID: 2024249945043262297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GACHAFORZONE3_44
+      rect:
+        serializedVersion: 2
+        x: 939
+        y: 328
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 436d304deca9608a0800000000000000
+      internalID: -6339209212366432716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GACHAFORZONE3_45
+      rect:
+        serializedVersion: 2
+        x: 972
+        y: 297
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0177598fc0d1151b0800000000000000
+      internalID: -5669718514335385840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GACHAFORZONE3_46
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 288
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3b0078aa3ab76ea0800000000000000
+      internalID: -5879526027412108485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GACHAFORZONE3_47
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 277
+        width: 35
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf750860d67bcddf0800000000000000
+      internalID: -154046608349046788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GACHAFORZONE3_48
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 259
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c71160beac8422b40800000000000000
+      internalID: 5413969738416394620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GACHAFORZONE3_49
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 260
+        width: 13
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be9deb72d675f6710800000000000000
+      internalID: 1688664511617096171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GACHAFORZONE3_50
+      rect:
+        serializedVersion: 2
+        x: 657
+        y: 255
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c739ee5f2df3078b0800000000000000
+      internalID: -5156551398037482628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GACHAFORZONE3_51
+      rect:
+        serializedVersion: 2
+        x: 961
+        y: 255
+        width: 16
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee6e8a714156d5c60800000000000000
+      internalID: 7808508465901004526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GACHAFORZONE3_52
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 241
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7a1b61e8aa085f90800000000000000
+      internalID: -6964805103275795841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GACHAFORZONE3_53
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 226
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e71f04894c6cdc0b0800000000000000
+      internalID: -5706686605138267778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GACHAFORZONE3_54
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 233
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d410341b7f4e819c0800000000000000
+      internalID: -3956160520162967219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GACHAFORZONE3_55
+      rect:
+        serializedVersion: 2
+        x: 687
+        y: 213
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3305d30b1c58d9240800000000000000
+      internalID: 4800139844778807347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GACHAFORZONE3_56
+      rect:
+        serializedVersion: 2
+        x: 705
+        y: 211
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f5448f2086ee9110800000000000000
+      internalID: 1269705583192458738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GACHAFORZONE3_57
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 191
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52601e852e8686120800000000000000
+      internalID: 2407289322192569893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GACHAFORZONE3_58
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 176
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1993a8d91f1f3b440800000000000000
+      internalID: 4950566435442801041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GACHAFORZONE3_59
+      rect:
+        serializedVersion: 2
+        x: 377
+        y: 136
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b12b4be5f4e456cd0800000000000000
+      internalID: -2565558309919346149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GACHAFORZONE3_60
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 79
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed26ba77212753500800000000000000
+      internalID: 375331567598002910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GACHAFORZONE3_61
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 77
+        width: 19
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 449e60e681dbda0b0800000000000000
+      internalID: -5715704439440479932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GACHAFORZONE3_62
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 80
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9a47d2314606a160800000000000000
+      internalID: 7036318344908589724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GACHAFORZONE3_63
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 71
+        width: 18
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33f4059da168eb760800000000000000
+      internalID: 7475559881354792755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GACHAFORZONE3_64
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 75
+        width: 16
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4adefb491158880d0800000000000000
+      internalID: -3420337606431347292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GACHAFORZONE3_65
+      rect:
+        serializedVersion: 2
+        x: 505
+        y: 71
+        width: 15
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c509e016f8960820800000000000000
+      internalID: 2884160793990464962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GACHAFORZONE3_66
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 76
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42d50b6dbcf74de20800000000000000
+      internalID: 3374462534264315172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GACHAFORZONE3_67
+      rect:
+        serializedVersion: 2
+        x: 844
+        y: 67
+        width: 21
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef9e08980717cd950800000000000000
+      internalID: 6475175092409133566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GACHAFORZONE3_68
+      rect:
+        serializedVersion: 2
+        x: 843
+        y: 70
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4088ec2cb65359b50800000000000000
+      internalID: 6599239565927417860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GACHAFORZONE3_69
+      rect:
+        serializedVersion: 2
+        x: 905
+        y: 65
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 697aeaeeb1f9276d0800000000000000
+      internalID: -2994155859930601578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GACHAFORZONE3_70
+      rect:
+        serializedVersion: 2
+        x: 826
+        y: 58
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 471e74ad65b9a6840800000000000000
+      internalID: 5218153915593777524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GACHAFORZONE3_71
+      rect:
+        serializedVersion: 2
+        x: 905
+        y: 54
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7e4ad1a70eb85d60800000000000000
+      internalID: 7879256488074169978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      GACHAFORZONE3_0: -1708517217206865195
+      GACHAFORZONE3_1: -9039227957874862275
+      GACHAFORZONE3_10: -4988882277206238651
+      GACHAFORZONE3_11: 5775568478214598225
+      GACHAFORZONE3_12: 8593994811981127354
+      GACHAFORZONE3_13: -5185391963649491413
+      GACHAFORZONE3_14: 831187915797917628
+      GACHAFORZONE3_15: 8536163118039896601
+      GACHAFORZONE3_16: 8324647934055616910
+      GACHAFORZONE3_17: -9199311910242136802
+      GACHAFORZONE3_18: 8471926006752677543
+      GACHAFORZONE3_19: 332145703611174187
+      GACHAFORZONE3_2: -761797554285483629
+      GACHAFORZONE3_20: 629742167427730115
+      GACHAFORZONE3_21: -6499920084339956678
+      GACHAFORZONE3_22: 5352070606531811561
+      GACHAFORZONE3_23: -5200674951813071832
+      GACHAFORZONE3_24: -1602585804479626396
+      GACHAFORZONE3_25: -1041511114525376093
+      GACHAFORZONE3_26: -817709389447288906
+      GACHAFORZONE3_27: -5563225484220529166
+      GACHAFORZONE3_28: -2943642656507317960
+      GACHAFORZONE3_29: -4202028848938878108
+      GACHAFORZONE3_3: 2558668377518997456
+      GACHAFORZONE3_30: 8969793032641247293
+      GACHAFORZONE3_31: 1091617958131375735
+      GACHAFORZONE3_32: -5886047257153005264
+      GACHAFORZONE3_33: -33259184866774234
+      GACHAFORZONE3_34: 2807496111899498414
+      GACHAFORZONE3_35: -4604170479364177719
+      GACHAFORZONE3_36: 132139162862654847
+      GACHAFORZONE3_37: -7803758701769249060
+      GACHAFORZONE3_38: 536639034688943811
+      GACHAFORZONE3_39: -3115632706091112240
+      GACHAFORZONE3_4: 8760413258216630148
+      GACHAFORZONE3_40: 2858510004983339829
+      GACHAFORZONE3_41: -4847824549365989326
+      GACHAFORZONE3_42: 2091029257958190418
+      GACHAFORZONE3_43: 2024249945043262297
+      GACHAFORZONE3_44: -6339209212366432716
+      GACHAFORZONE3_45: -5669718514335385840
+      GACHAFORZONE3_46: -5879526027412108485
+      GACHAFORZONE3_47: -154046608349046788
+      GACHAFORZONE3_48: 5413969738416394620
+      GACHAFORZONE3_49: 1688664511617096171
+      GACHAFORZONE3_5: -2135146961594475215
+      GACHAFORZONE3_50: -5156551398037482628
+      GACHAFORZONE3_51: 7808508465901004526
+      GACHAFORZONE3_52: -6964805103275795841
+      GACHAFORZONE3_53: -5706686605138267778
+      GACHAFORZONE3_54: -3956160520162967219
+      GACHAFORZONE3_55: 4800139844778807347
+      GACHAFORZONE3_56: 1269705583192458738
+      GACHAFORZONE3_57: 2407289322192569893
+      GACHAFORZONE3_58: 4950566435442801041
+      GACHAFORZONE3_59: -2565558309919346149
+      GACHAFORZONE3_6: -8539982673841840623
+      GACHAFORZONE3_60: 375331567598002910
+      GACHAFORZONE3_61: -5715704439440479932
+      GACHAFORZONE3_62: 7036318344908589724
+      GACHAFORZONE3_63: 7475559881354792755
+      GACHAFORZONE3_64: -3420337606431347292
+      GACHAFORZONE3_65: 2884160793990464962
+      GACHAFORZONE3_66: 3374462534264315172
+      GACHAFORZONE3_67: 6475175092409133566
+      GACHAFORZONE3_68: 6599239565927417860
+      GACHAFORZONE3_69: -2994155859930601578
+      GACHAFORZONE3_7: -5588340099889759703
+      GACHAFORZONE3_70: 5218153915593777524
+      GACHAFORZONE3_71: 7879256488074169978
+      GACHAFORZONE3_8: 4506326729280962669
+      GACHAFORZONE3_9: 3244123146976086031
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

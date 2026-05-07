@@ -129,10 +129,13 @@ namespace LasGranjasDelHastur.Zone1
                 _ => zone1Multiplier
             };
 
-            var effectivePercent = baseTaxPercent * (1f + purchased * percentFactorPerPurchasedCell) * zm;
+            var bracketWeight = z == "Zone2_Cities" ? ZoneRunEconomy.Zone2TaxPercentBracketWeight : 1f;
+            var flatCellWeight = z == "Zone2_Cities" ? ZoneRunEconomy.Zone2TaxFlatPerPurchasedCellWeight : 1f;
+
+            var effectivePercent = baseTaxPercent * (1f + purchased * percentFactorPerPurchasedCell * bracketWeight) * zm;
             var baseAmount = Mathf.FloorToInt(money * effectivePercent);
             baseAmount = Mathf.Max(0, baseAmount);
-            var cellAdd = Mathf.RoundToInt(purchased * darkCoinsPerPurchasedCell * zm);
+            var cellAdd = Mathf.RoundToInt(purchased * darkCoinsPerPurchasedCell * zm * flatCellWeight);
             return baseAmount + cellAdd + Mathf.Max(0, _fineDebt) + CalculateLatePaymentPension();
         }
 

@@ -1,17 +1,17 @@
+using System;
+using LasGranjasDelHastur.Zone1;
+using LasGranjasDelHastur.Zone1.UI;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 namespace LasGranjasDelHastur.Zone3
 {
     public static class Zone3RuntimeScaffold
     {
         const string SceneName = "Zone3_Celestial";
-        const string PackRoot = "Assets/02_Sprites/Lucas/LasGranjasHastur_AssetPack_PixelArt/hastur_pixel_art_pack/";
-        const string Sprite_Z3_Backplate = PackRoot + "Zones/Zone3_Celestial/Zone3_BackgroundPlate_CelestialFarm.png";
-        const string Sprite_Z3_Backdrop = PackRoot + "Zones/Zone3_Celestial/Zone3_Backdrop_DeepSpace.png";
-        const string Sprite_Z3_FrontPlatforms = PackRoot + "Zones/Zone3_Celestial/Zone3_Decor_ForegroundPlatforms.png";
-        const string Sprite_Z3_MistSheet = PackRoot + "Zones/Zone3_Celestial/Zone3_AstralMistOverlay_Sheet.png";
+        const string Zone3BackdropPath = "Assets/02_Sprites/Lucas/Zone3/NewBackGround/z3_background_black_space_stars_3840x2160.png";
 
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
         static void AfterSceneLoad()
@@ -27,6 +27,7 @@ namespace LasGranjasDelHastur.Zone3
             EnsureCamera();
             EnsureEventSystem();
             EnsureWorldHierarchy();
+            EnsureUiHierarchy();
             EnsureSystemsHierarchy();
         }
 
@@ -77,30 +78,223 @@ namespace LasGranjasDelHastur.Zone3
             var front = EnsureChild(world.transform, "Layer_WallsFront");
             var atmo = EnsureChild(world.transform, "Layer_Atmosphere");
             var slots = EnsureChild(world.transform, "CellSlotsRoot");
-            if (slots != null && slots.GetComponent<LasGranjasDelHastur.Zone3.Systems.Zone3CellManager>() == null)
-                slots.AddComponent<LasGranjasDelHastur.Zone3.Systems.Zone3CellManager>();
+            EnsureZone3BackdropOnly(floor.transform, back.transform, cell.transform, decor.transform, fog.transform, front.transform, atmo.transform);
 
-            CreateSpriteBlock(floor.transform, "AstralPlane", Sprite_Z3_Backplate, new Vector3(0f, 0f, 0f), new Vector3(26f, 16f, 1f), new Color(0.03f, 0.03f, 0.09f, 1f), 0);
-            CreateSpriteBlock(back.transform, "DeepSpaceBackdrop", Sprite_Z3_Backdrop, new Vector3(0f, 4.8f, 0f), new Vector3(24f, 6f, 1f), new Color(0.05f, 0.04f, 0.11f, 1f), -4);
-            CreateSpriteBlock(cell.transform, "CelestialField", new Vector3(0f, -0.1f, 0f), new Vector3(15.5f, 9.8f, 1f), new Color(0.10f, 0.08f, 0.18f, 0.54f), 4);
-            CreateSpriteBlock(decor.transform, "AstralDecor", new Vector3(0f, -4.1f, 0f), new Vector3(8.6f, 2.2f, 1f), new Color(0.42f, 0.30f, 0.68f, 0.20f), 9);
-            CreateSpriteBlock(fog.transform, "AstralMist", Sprite_Z3_MistSheet, new Vector3(0f, -2.3f, 0f), new Vector3(21f, 5.2f, 1f), new Color(0.44f, 0.38f, 0.62f, 0.10f), 24);
-            CreateSpriteBlock(front.transform, "ForegroundPlatforms", Sprite_Z3_FrontPlatforms, new Vector3(0f, -6.3f, 0f), new Vector3(24f, 1.9f, 1f), new Color(0.08f, 0.07f, 0.15f, 0.98f), 76);
-            CreateSpriteBlock(atmo.transform, "AstralVignette", new Vector3(0f, 0f, 0f), new Vector3(28f, 17f, 1f), new Color(0.04f, 0.02f, 0.08f, 0.24f), 88);
+            var legacyBackdropLayer = world.transform.Find("Layer_Backdrop");
+            if (legacyBackdropLayer != null)
+                UnityEngine.Object.Destroy(legacyBackdropLayer.gameObject);
+            var legacyNebulaLayer = world.transform.Find("Layer_Nebula");
+            if (legacyNebulaLayer != null)
+                UnityEngine.Object.Destroy(legacyNebulaLayer.gameObject);
+        }
+
+        static void EnsureZone3BackdropOnly(
+            Transform floor,
+            Transform wallsBack,
+            Transform cellArea,
+            Transform decor,
+            Transform fog,
+            Transform wallsFront,
+            Transform atmosphere)
+        {
+            DestroyChildrenExcept(floor, keepName: null);
+            DestroyChildrenExcept(cellArea, keepName: null);
+            DestroyChildrenExcept(decor, keepName: null);
+            DestroyChildrenExcept(fog, keepName: null);
+            DestroyChildrenExcept(wallsFront, keepName: null);
+            DestroyChildrenExcept(atmosphere, keepName: null);
+
+            DestroyChildrenExcept(wallsBack, keepName: "CelestialBackdrop");
+            CreateSpriteBackdrop(wallsBack, "CelestialBackdrop", Zone3BackdropPath, new Vector3(0f, 0.1f, 0f), new Vector2(40f, 24f), sortingOrder: -50);
+        }
+
+        static void DestroyChildrenExcept(Transform parent, string keepName)
+        {
+            if (parent == null || !parent)
+                return;
+            for (var i = parent.childCount - 1; i >= 0; i--)
+            {
+                var ch = parent.GetChild(i);
+                if (ch == null)
+                    continue;
+                if (!string.IsNullOrEmpty(keepName) && ch.name == keepName)
+                    continue;
+                UnityEngine.Object.Destroy(ch.gameObject);
+            }
+        }
+
+        static void CreateSpriteBackdrop(Transform parent, string name, string assetPath, Vector3 pos, Vector2 targetWorldSize, int sortingOrder)
+        {
+            if (parent == null || !parent)
+                return;
+            var existing = parent.Find(name);
+            var go = existing != null ? existing.gameObject : new GameObject(name);
+            go.transform.SetParent(parent, false);
+            go.transform.localPosition = pos;
+
+            var sr = go.GetComponent<SpriteRenderer>();
+            if (sr == null)
+                sr = go.AddComponent<SpriteRenderer>();
+
+            var sprite = TryLoadSprite(assetPath);
+            sr.sprite = sprite ?? LasGranjasDelHastur.RuntimeSpriteFactory.OpaqueWhiteSprite;
+            sr.sortingOrder = sortingOrder;
+            sr.color = Color.white;
+
+            if (sprite != null)
+            {
+                var b = sprite.bounds.size;
+                if (b.x > 0.001f && b.y > 0.001f)
+                    go.transform.localScale = new Vector3(targetWorldSize.x / b.x, targetWorldSize.y / b.y, 1f);
+                else
+                    go.transform.localScale = Vector3.one;
+            }
+            else
+            {
+                go.transform.localScale = new Vector3(targetWorldSize.x, targetWorldSize.y, 1f);
+            }
         }
 
         static void EnsureSystemsHierarchy()
         {
             var systems = GetOrCreateRoot("Systems");
-            var zone3 = systems.transform.Find("Zone3PrototypeGame")?.gameObject;
-            if (zone3 == null)
+            EnsureComponentUnderRoot<ResourceManager>(systems.transform, "ResourceManager");
+            EnsureComponentUnderRoot<ProgressionManager>(systems.transform, "ProgressionManager");
+            var cellManager = EnsureComponentUnderRoot<CellManager>(systems.transform, "CellManager");
+            EnsureComponentUnderRoot<AssistantManager>(systems.transform, "AssistantManager");
+            EnsureComponentUnderRoot<BuyerManager>(systems.transform, "BuyerManager");
+            EnsureComponentUnderRoot<TaxManager>(systems.transform, "TaxManager");
+            EnsureComponentUnderRoot<UIManager>(systems.transform, "UIManager");
+
+            EnsureComponentUnderRoot<Zone3Manager>(systems.transform, "Zone3Manager");
+
+            var slots = GameObject.Find("WorldRoot")?.transform.Find("CellSlotsRoot");
+            if (slots != null && cellManager != null && cellManager.transform.parent != slots)
+                cellManager.transform.SetParent(slots, worldPositionStays: false);
+        }
+
+        static T EnsureComponentUnderRoot<T>(Transform systemsRoot, string name) where T : Component
+        {
+            if (systemsRoot == null || !systemsRoot)
+                return null;
+
+            // Solo recursos/progresión son compartidos entre escenas.
+            if (typeof(T) == typeof(ResourceManager) || typeof(T) == typeof(ProgressionManager))
             {
-                zone3 = new GameObject("Zone3PrototypeGame");
-                zone3.transform.SetParent(systems.transform, false);
+                var global = UnityEngine.Object.FindFirstObjectByType<T>();
+                if (global != null)
+                    return global;
             }
 
-            if (zone3.GetComponent<Zone3PrototypeGame>() == null)
-                zone3.AddComponent<Zone3PrototypeGame>();
+            var existing = systemsRoot.Find(name)?.gameObject;
+            if (existing == null)
+            {
+                existing = new GameObject(name);
+                existing.transform.SetParent(systemsRoot, false);
+            }
+            var c = existing.GetComponent<T>();
+            if (c == null)
+                c = existing.AddComponent<T>();
+            return c;
+        }
+
+        static void EnsureUiHierarchy()
+        {
+            var ui = GetOrCreateRoot("UI");
+            if (ui == null)
+                return;
+
+            var canvas = ui.GetComponent<Canvas>();
+            if (canvas == null)
+                canvas = ui.AddComponent<Canvas>();
+            canvas.renderMode = RenderMode.ScreenSpaceOverlay;
+
+            if (ui.GetComponent<CanvasScaler>() == null)
+                ui.AddComponent<CanvasScaler>();
+            if (ui.GetComponent<GraphicRaycaster>() == null)
+                ui.AddComponent<GraphicRaycaster>();
+
+            // Reuse Zone 1's UI layout contract (names, anchors, sizes), so Zone3 can bind the same panels.
+            EnsurePanel(ui.transform, "HUDCanvas", new Vector2(0.5f, 1f), new Vector2(0.5f, 1f), new Vector2(0f, -55f), new Vector2(0f, 110f), new Color(0.05f, 0.05f, 0.06f, 0f), stretchHorizontal: true);
+            EnsurePanel(ui.transform, "CellInfoPanel", new Vector2(0f, 0.5f), new Vector2(0f, 0.5f), new Vector2(190f, 0f), new Vector2(360f, 420f), new Color(0.06f, 0.06f, 0.07f, 0.92f));
+            EnsurePanel(ui.transform, "SalesPanel", new Vector2(1f, 0.5f), new Vector2(1f, 0.5f), new Vector2(-270f, 0f), new Vector2(520f, 420f), new Color(0.06f, 0.06f, 0.07f, 0.92f));
+            EnsurePanel(ui.transform, "TaxAlertPanel", new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f), new Vector2(0f, 0f), new Vector2(520f, 360f), new Color(0.08f, 0.06f, 0.06f, 0.94f));
+            EnsurePanel(ui.transform, "HoverInfoPanel", new Vector2(0.5f, 0f), new Vector2(0.5f, 0f), new Vector2(0f, 50f), new Vector2(320f, 80f), new Color(0.05f, 0.05f, 0.06f, 0.9f));
+
+            SetActiveIfExists(ui.transform, "CellInfoPanel", false);
+            SetActiveIfExists(ui.transform, "SalesPanel", false);
+            SetActiveIfExists(ui.transform, "TaxAlertPanel", false);
+            SetActiveIfExists(ui.transform, "HoverInfoPanel", false);
+        }
+
+        static void EnsurePanel(Transform parent, string name, Vector2 anchorMin, Vector2 anchorMax, Vector2 anchoredPosition, Vector2 sizeDelta, Color color, bool stretchHorizontal = false)
+        {
+            try
+            {
+                if (parent == null || !parent)
+                    return;
+
+                var panel = parent.Find(name);
+                if (panel == null)
+                {
+                    var go = new GameObject(name);
+                    if (parent == null || !parent)
+                        return;
+                    go.transform.SetParent(parent, false);
+                    panel = go.transform;
+                }
+
+                if (panel == null || !panel)
+                    return;
+
+                var panelGo = panel.gameObject;
+                if (panelGo == null)
+                    return;
+
+                if (!panelGo.TryGetComponent<RectTransform>(out var rt) || rt == null)
+                    rt = panelGo.AddComponent<RectTransform>();
+                if (rt == null)
+                    return;
+
+                if (stretchHorizontal)
+                {
+                    rt.anchorMin = new Vector2(0f, anchorMin.y);
+                    rt.anchorMax = new Vector2(1f, anchorMax.y);
+                }
+                else
+                {
+                    rt.anchorMin = anchorMin;
+                    rt.anchorMax = anchorMax;
+                }
+
+                rt.anchoredPosition = anchoredPosition;
+                rt.sizeDelta = sizeDelta;
+
+                if (!panelGo.TryGetComponent<Image>(out var img) || img == null)
+                    img = panelGo.AddComponent<Image>();
+                if (img == null)
+                    return;
+                img.color = color;
+                img.raycastTarget = false;
+            }
+            catch (MissingReferenceException)
+            {
+            }
+            catch (NullReferenceException)
+            {
+            }
+            catch (Exception)
+            {
+            }
+        }
+
+        static void SetActiveIfExists(Transform parent, string childName, bool active)
+        {
+            if (parent == null || !parent)
+                return;
+            var child = parent.Find(childName);
+            if (child != null)
+                child.gameObject.SetActive(active);
         }
 
         static void CreateSpriteBlock(Transform parent, string name, string spriteAssetPath, Vector3 pos, Vector3 scale, Color color, int sortingOrder)

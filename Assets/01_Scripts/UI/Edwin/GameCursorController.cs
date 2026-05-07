@@ -59,6 +59,7 @@ namespace LasGranjasDelHastur.UI.Edwin
         RectTransform _canvasRect;
         RectTransform _cursorRect;
         Image         _cursorImage;
+        bool          _hadFocus = true;
 
         // ── Bootstrap ───────────────────────────────────────────────────────
 
@@ -103,6 +104,28 @@ namespace LasGranjasDelHastur.UI.Edwin
 
         void Update()
         {
+            // In Editor Play Mode, if the user clicks outside the Game view (Inspector, Console, etc),
+            // keep the OS cursor visible so the editor remains usable.
+            var focused = Application.isFocused;
+            if (_hadFocus != focused)
+            {
+                _hadFocus = focused;
+                if (!focused)
+                {
+                    Cursor.visible = true;
+                    Cursor.lockState = CursorLockMode.None;
+                    if (_cursorImage != null)
+                        _cursorImage.enabled = false;
+                }
+                else
+                {
+                    Cursor.visible = false;
+                    Cursor.lockState = CursorLockMode.None;
+                    if (_cursorImage != null)
+                        _cursorImage.enabled = true;
+                }
+            }
+
             MoveCursorToMouse();
 
             if (!_animatingClick
@@ -213,6 +236,8 @@ namespace LasGranjasDelHastur.UI.Edwin
             _cursorImage.raycastTarget = false;
 
             Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.None;
+            _hadFocus = Application.isFocused;
         }
 
         // ── Sprite loading ──────────────────────────────────────────────────

@@ -1,0 +1,611 @@
+fileFormatVersion: 2
+guid: 09d003098a003f249969aa675eeb1672
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5639688170268520339
+    second: GachaForZone2_0
+  - first:
+      213: -9020582135071410163
+    second: GachaForZone2_1
+  - first:
+      213: -7623546978732455935
+    second: GachaForZone2_2
+  - first:
+      213: 8878446338918429923
+    second: GachaForZone2_3
+  - first:
+      213: 2053428830962763722
+    second: GachaForZone2_4
+  - first:
+      213: 2981897026095367046
+    second: GachaForZone2_5
+  - first:
+      213: 7656929196416807322
+    second: GachaForZone2_6
+  - first:
+      213: -6350961073960777363
+    second: GachaForZone2_7
+  - first:
+      213: -2909907566248889530
+    second: GachaForZone2_8
+  - first:
+      213: -7614082812847263992
+    second: GachaForZone2_9
+  - first:
+      213: -3031825205403005174
+    second: GachaForZone2_10
+  - first:
+      213: -8125939206677498946
+    second: GachaForZone2_11
+  - first:
+      213: -1240826300273919839
+    second: GachaForZone2_12
+  - first:
+      213: -2602880977090894890
+    second: GachaForZone2_13
+  - first:
+      213: 7570887118864062605
+    second: GachaForZone2_14
+  - first:
+      213: -6187692439695302614
+    second: GachaForZone2_15
+  - first:
+      213: 5698885195230540110
+    second: GachaForZone2_16
+  - first:
+      213: -3570149304388550992
+    second: GachaForZone2_17
+  - first:
+      213: 6781010648407264578
+    second: GachaForZone2_18
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: GachaForZone2_0
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 687
+        width: 266
+        height: 282
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39fe3d0b282344e40800000000000000
+      internalID: 5639688170268520339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GachaForZone2_1
+      rect:
+        serializedVersion: 2
+        x: 383
+        y: 688
+        width: 260
+        height: 281
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0875db575470d280800000000000000
+      internalID: -9020582135071410163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GachaForZone2_2
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 687
+        width: 270
+        height: 282
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10846240a68b33690800000000000000
+      internalID: -7623546978732455935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GachaForZone2_3
+      rect:
+        serializedVersion: 2
+        x: 951
+        y: 785
+        width: 26
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e4b99cb7e3963b70800000000000000
+      internalID: 8878446338918429923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GachaForZone2_4
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 384
+        width: 273
+        height: 288
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac7c41964ae3f7c10800000000000000
+      internalID: 2053428830962763722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GachaForZone2_5
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 383
+        width: 289
+        height: 290
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6834535eb83d16920800000000000000
+      internalID: 2981897026095367046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GachaForZone2_6
+      rect:
+        serializedVersion: 2
+        x: 702
+        y: 383
+        width: 281
+        height: 289
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a91bdb63980e24a60800000000000000
+      internalID: 7656929196416807322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GachaForZone2_7
+      rect:
+        serializedVersion: 2
+        x: 972
+        y: 567
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d690c345d8adcd7a0800000000000000
+      internalID: -6350961073960777363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GachaForZone2_8
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 516
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64373806c7eed97d0800000000000000
+      internalID: -2909907566248889530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GachaForZone2_9
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 513
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80fe4d9d508555690800000000000000
+      internalID: -7614082812847263992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GachaForZone2_10
+      rect:
+        serializedVersion: 2
+        x: 695
+        y: 512
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0fc0eaf90bcce5d0800000000000000
+      internalID: -3031825205403005174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GachaForZone2_11
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 493
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb37197385dda3f80800000000000000
+      internalID: -8125939206677498946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GachaForZone2_12
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 469
+        width: 32
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a8f538dd03b7cee0800000000000000
+      internalID: -1240826300273919839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GachaForZone2_13
+      rect:
+        serializedVersion: 2
+        x: 694
+        y: 471
+        width: 27
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d320efba85b0ebd0800000000000000
+      internalID: -2602880977090894890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GachaForZone2_14
+      rect:
+        serializedVersion: 2
+        x: 701
+        y: 497
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d88197ae8b1311960800000000000000
+      internalID: 7570887118864062605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GachaForZone2_15
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 457
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2067988286e02aa0800000000000000
+      internalID: -6187692439695302614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GachaForZone2_16
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 80
+        width: 266
+        height: 283
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e41f27d14e1861f40800000000000000
+      internalID: 5698885195230540110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GachaForZone2_17
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 80
+        width: 274
+        height: 282
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0beffc48f18447ec0800000000000000
+      internalID: -3570149304388550992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GachaForZone2_18
+      rect:
+        serializedVersion: 2
+        x: 701
+        y: 79
+        width: 264
+        height: 283
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 24dc474e14dfa1e50800000000000000
+      internalID: 6781010648407264578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      GachaForZone2_0: 5639688170268520339
+      GachaForZone2_1: -9020582135071410163
+      GachaForZone2_10: -3031825205403005174
+      GachaForZone2_11: -8125939206677498946
+      GachaForZone2_12: -1240826300273919839
+      GachaForZone2_13: -2602880977090894890
+      GachaForZone2_14: 7570887118864062605
+      GachaForZone2_15: -6187692439695302614
+      GachaForZone2_16: 5698885195230540110
+      GachaForZone2_17: -3570149304388550992
+      GachaForZone2_18: 6781010648407264578
+      GachaForZone2_2: -7623546978732455935
+      GachaForZone2_3: 8878446338918429923
+      GachaForZone2_4: 2053428830962763722
+      GachaForZone2_5: 2981897026095367046
+      GachaForZone2_6: 7656929196416807322
+      GachaForZone2_7: -6350961073960777363
+      GachaForZone2_8: -2909907566248889530
+      GachaForZone2_9: -7614082812847263992
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

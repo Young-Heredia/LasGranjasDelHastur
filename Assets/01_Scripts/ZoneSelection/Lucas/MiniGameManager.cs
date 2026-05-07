@@ -1,5 +1,6 @@
 using System;
 using LasGranjasDelHastur;
+using LasGranjasDelHastur.Zone1;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,6 +14,10 @@ public class MiniGameManager : MonoBehaviour
     [Header("Zone2 Unlock Trial")]
     [SerializeField, Min(1)] private int zone2TargetClicks = 10;
     [SerializeField, Min(1f)] private float zone2DurationSeconds = 8f;
+    [SerializeField] private string zone2PibleSpritePath = "Assets/02_Sprites/Lucas/Zone2/EasterEgg/zone1_easteregg_tindalos_pible_idle_v3.png";
+    [SerializeField, Min(10f)] private float zone2PiblePixelsPerUnit = 96f;
+    [SerializeField, Min(0.05f)] private float zone2JumpDuration = 0.18f;
+    [SerializeField, Min(4f)] private float zone2JumpHeight = 34f;
 
     [Header("Zone3 Celestial Alignment")]
     [SerializeField, Min(1f)] private float zone3DurationSeconds = 50f;
@@ -25,6 +30,9 @@ public class MiniGameManager : MonoBehaviour
     Button _actionButton;
     Button _cancelButton;
     CelestialAlignmentMinigameController _celestial;
+    RectTransform _zone2PibleRt;
+    Image _zone2PibleImg;
+    Vector2 _zone2PibleBasePos;
 
     bool _isRunning;
     string _activeMiniGameId;
@@ -32,6 +40,7 @@ public class MiniGameManager : MonoBehaviour
     float _remaining;
     Action<bool> _onFinish;
     bool _timerWarningPlayed;
+    float _zone2JumpT = -1f;
 
     public bool IsRunning => _isRunning;
 
@@ -56,6 +65,7 @@ public class MiniGameManager : MonoBehaviour
             RegisterAction();
         if (InputAdapter.KeyDown(KeyCode.Space) && _activeMiniGameId == ZoneManager.Zone3UnlockMiniGameId && _celestial != null)
             _celestial.TrySnapIfClose();
+        TickZone2PibleJump();
 
         if (_activeMiniGameId == ZoneManager.Zone2UnlockMiniGameId && _clicks >= zone2TargetClicks)
         {
@@ -112,6 +122,7 @@ public class MiniGameManager : MonoBehaviour
         if (_activeMiniGameId == ZoneManager.Zone2UnlockMiniGameId)
         {
             _clicks++;
+            TriggerZone2PibleJump();
             AudioManager.Instance?.PlayMiniGameHit();
         }
         else if (_activeMiniGameId == ZoneManager.Zone3UnlockMiniGameId && _celestial != null)
@@ -188,8 +199,9 @@ public class MiniGameManager : MonoBehaviour
             if (_title != null)
                 _title.text = "Minijuego: Alineación de Sellos";
             if (_body != null)
-                _body.text = "Canaliza el sello pulsando el botón (o barra espaciadora)\nantes de que termine el tiempo.";
+                _body.text = "Haz que Pible complete 10 saltos: pulsa el botón (o barra espaciadora)\nantes de que termine el tiempo.";
             SetActionLabel("Canalizar (+1)");
+            SetZone2PibleVisible(true);
             return;
         }
 
@@ -200,8 +212,9 @@ public class MiniGameManager : MonoBehaviour
             if (_title != null)
                 _title.text = "Alineación celestial";
             if (_body != null)
-                _body.text = "Coloca el planeta y las dos lunas en los anillos de luz. Mantén la formación un instante. Espacio: acercar piezas. Cancelar: salir.";
+                _body.text = "Alinea las 3 piezas sobre la guía luminosa y los anillos marcados.\nHaz click o Espacio para ajustar/snap cuando estén cerca del objetivo.";
             SetActionLabel("Acercar piezas");
+            SetZone2PibleVisible(false);
             EnsureCelestial();
         }
     }
@@ -263,9 +276,68 @@ public class MiniGameManager : MonoBehaviour
         _title = CreateText(panel.transform, "Title", 24, TextAlignmentOptions.Center, new Vector2(0f, 248f), new Vector2(860f, 40f));
         _body = CreateText(panel.transform, "Body", 17, TextAlignmentOptions.Center, new Vector2(0f, 180f), new Vector2(860f, 64f));
         _status = CreateText(panel.transform, "Status", 18, TextAlignmentOptions.Center, new Vector2(0f, -240f), new Vector2(860f, 32f));
+        EnsureZone2PibleWidget(panel.transform);
 
         _actionButton = CreateButton(panel.transform, "Action", new Vector2(-120f, -268f), new Vector2(200f, 40f));
         _cancelButton = CreateButton(panel.transform, "Cancelar", new Vector2(120f, -268f), new Vector2(200f, 40f));
+    }
+
+    void EnsureZone2PibleWidget(Transform parent)
+    {
+        if (_zone2PibleRt != null)
+            return;
+
+        var go = new GameObject("Zone2Pible");
+        go.transform.SetParent(parent, false);
+        _zone2PibleRt = go.AddComponent<RectTransform>();
+        _zone2PibleRt.anchorMin = new Vector2(0.5f, 0.5f);
+        _zone2PibleRt.anchorMax = new Vector2(0.5f, 0.5f);
+        _zone2PibleRt.pivot = new Vector2(0.5f, 0.5f);
+        _zone2PibleBasePos = new Vector2(0f, 20f);
+        _zone2PibleRt.anchoredPosition = _zone2PibleBasePos;
+        _zone2PibleRt.sizeDelta = new Vector2(110f, 110f);
+
+        _zone2PibleImg = go.AddComponent<Image>();
+        _zone2PibleImg.raycastTarget = false;
+        var sprite = Zone1ArtProvider.LoadSprite(zone2PibleSpritePath);
+        _zone2PibleImg.sprite = sprite;
+        _zone2PibleImg.color = Color.white;
+        if (sprite != null)
+        {
+            var ppuScale = Mathf.Clamp(zone2PiblePixelsPerUnit / 96f, 0.6f, 2f);
+            _zone2PibleRt.sizeDelta = new Vector2(128f / ppuScale, 128f / ppuScale);
+        }
+        _zone2PibleRt.gameObject.SetActive(false);
+    }
+
+    void SetZone2PibleVisible(bool visible)
+    {
+        if (_zone2PibleRt == null)
+            return;
+        _zone2PibleRt.gameObject.SetActive(visible);
+        _zone2PibleRt.anchoredPosition = _zone2PibleBasePos;
+        _zone2JumpT = -1f;
+    }
+
+    void TriggerZone2PibleJump()
+    {
+        _zone2JumpT = 0f;
+    }
+
+    void TickZone2PibleJump()
+    {
+        if (_zone2PibleRt == null || !_zone2PibleRt.gameObject.activeSelf || _zone2JumpT < 0f)
+            return;
+
+        _zone2JumpT += Time.unscaledDeltaTime;
+        var t = Mathf.Clamp01(_zone2JumpT / Mathf.Max(0.05f, zone2JumpDuration));
+        var y = Mathf.Sin(t * Mathf.PI) * zone2JumpHeight;
+        _zone2PibleRt.anchoredPosition = _zone2PibleBasePos + new Vector2(0f, y);
+        if (t >= 1f)
+        {
+            _zone2PibleRt.anchoredPosition = _zone2PibleBasePos;
+            _zone2JumpT = -1f;
+        }
     }
 
     void SetOverlayVisible(bool visible)

@@ -96,6 +96,8 @@ namespace LasGranjasDelHastur.Core
         {
             if (global::LasGranjasDelHastur.InputAdapter.KeyDown(KeyCode.F8))
                 showOverlay = !showOverlay;
+            if (global::LasGranjasDelHastur.InputAdapter.KeyDown(KeyCode.F9))
+                ResetAllProgressFromDebug();
 
             if (_text == null)
                 return;

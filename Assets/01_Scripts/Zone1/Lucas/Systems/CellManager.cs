@@ -6,6 +6,7 @@ using LasGranjasDelHastur.Zone1.Cells;
 using LasGranjasDelHastur.Zone1.Gacha;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 namespace LasGranjasDelHastur.Zone1
 {
@@ -134,7 +135,7 @@ namespace LasGranjasDelHastur.Zone1
                 var h = hits[i];
                 if (h == null)
                     continue;
-                if (h.GetComponent<Zone1GachaFountainInteract>() != null || h.GetComponentInParent<Zone1GachaFountainInteract>() != null)
+                if (HasGachaWorldTrigger(h.gameObject))
                 {
                     Zone1GachaController.Instance?.OpenFromWorld();
                     return;
@@ -156,6 +157,14 @@ namespace LasGranjasDelHastur.Zone1
                 return;
 
             SelectCell(cell);
+        }
+
+        static bool HasGachaWorldTrigger(GameObject go)
+        {
+            return go.GetComponent<Zone1GachaFountainInteract>() != null ||
+                   go.GetComponentInParent<Zone1GachaFountainInteract>() != null ||
+                   go.GetComponent<GachaWorldInteract>() != null ||
+                   go.GetComponentInParent<GachaWorldInteract>() != null;
         }
 
         public void ConfigureGrid(int newColumns, int newRows, Vector2 newSpacing, Vector2 newOrigin, int unlockedAtStart, int purchasableAtStart)
@@ -387,19 +396,29 @@ namespace LasGranjasDelHastur.Zone1
 
         GameObject CreateCellGameObject(int slotIndex, int r, int c)
         {
+            var pos = new Vector3(origin.x + c * cellSpacing.x, origin.y - r * cellSpacing.y, 0f);
+            if (SceneManager.GetActiveScene().name == "Zone2_Cities")
+            {
+                var wobble = LasGranjasDelHastur.Zone2.Jose.Zone2CellGridLayout.SlotWobble(slotIndex);
+                pos.x += wobble.x;
+                pos.y += wobble.y;
+            }
+
+            var slotScale = SceneManager.GetActiveScene().name == "Zone2_Cities" ? 1.05f : 1.2f;
+
             if (cellSlotPrefab != null)
             {
                 var go = Instantiate(cellSlotPrefab, transform, false);
                 go.name = $"CellSlot_{slotIndex:00}";
-                go.transform.position = new Vector3(origin.x + c * cellSpacing.x, origin.y - r * cellSpacing.y, 0f);
-                go.transform.localScale = new Vector3(1.2f, 1.2f, 1f);
+                go.transform.position = pos;
+                go.transform.localScale = new Vector3(slotScale, slotScale, 1f);
                 return go;
             }
 
             var g = new GameObject($"CellSlot_{slotIndex:00}");
             g.transform.SetParent(transform, false);
-            g.transform.position = new Vector3(origin.x + c * cellSpacing.x, origin.y - r * cellSpacing.y, 0f);
-            g.transform.localScale = new Vector3(1.2f, 1.2f, 1f);
+            g.transform.position = pos;
+            g.transform.localScale = new Vector3(slotScale, slotScale, 1f);
             return g;
         }
 
