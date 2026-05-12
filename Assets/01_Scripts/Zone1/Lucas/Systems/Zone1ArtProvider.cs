@@ -115,6 +115,36 @@ namespace LasGranjasDelHastur.Zone1
             return result;
         }
 
+        /// <summary>Divide una tira horizontal (misma altura que la textura) en <paramref name="frameCount"/> sprites de igual ancho, de izquierda a derecha.</summary>
+        public static Sprite[] LoadHorizontalStrip(string relativeAssetPath, int frameCount)
+        {
+            frameCount = Mathf.Max(1, frameCount);
+            var key = $"{relativeAssetPath}|hstrip|{frameCount}";
+            if (SheetCache.TryGetValue(key, out var cached))
+                return cached;
+
+            var tex = LoadTexture(relativeAssetPath);
+            if (tex == null)
+                return null;
+
+            var fw = tex.width / frameCount;
+            var fh = tex.height;
+            if (fw <= 0 || fh <= 0)
+                return null;
+
+            var ppu = ResolvePixelsPerUnit(relativeAssetPath, tex);
+            var list = new List<Sprite>(frameCount);
+            for (var x = 0; x < frameCount; x++)
+            {
+                var rect = new Rect(x * fw, 0, fw, fh);
+                list.Add(Sprite.Create(tex, rect, new Vector2(0.5f, 0.5f), ppu));
+            }
+
+            var result = list.ToArray();
+            SheetCache[key] = result;
+            return result;
+        }
+
         static Texture2D LoadTexture(string relativeAssetPath)
         {
             if (TextureCache.TryGetValue(relativeAssetPath, out var cached))
