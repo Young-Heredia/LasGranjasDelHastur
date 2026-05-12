@@ -61,6 +61,10 @@ namespace LasGranjasDelHastur.UI.Edwin
         Image         _cursorImage;
         bool          _hadFocus = true;
 
+        [Tooltip(
+            "Extra canvas-local offset applied after placing the hotspot (pixels-ish for Overlay canvas). Tune if tip still misses the OS cursor.")]
+        [SerializeField] Vector2 _hotspotAnchoredOffset;
+
         // ── Bootstrap ───────────────────────────────────────────────────────
 
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
@@ -144,7 +148,7 @@ namespace LasGranjasDelHastur.UI.Edwin
             var mousePos = InputAdapter.MousePosition();
             if (RectTransformUtility.ScreenPointToLocalPointInRectangle(
                     _canvasRect, mousePos, null, out var localPos))
-                _cursorRect.anchoredPosition = localPos;
+                _cursorRect.anchoredPosition = localPos + _hotspotAnchoredOffset;
         }
 
         // ── Click animation ─────────────────────────────────────────────────
@@ -205,6 +209,29 @@ namespace LasGranjasDelHastur.UI.Edwin
                     _cursorRect.sizeDelta.x * scale,
                     CursorDisplayHeight);
             }
+
+            ApplyPivotFromSprite(spr);
+        }
+
+        /// <summary>
+        /// Matches the UI rect pivot to each sprite pivot from the importer (pixels from sprite rect corner),
+        /// instead of guessing top-left — fixes mismatch vs the OS hotspot.
+        /// </summary>
+        void ApplyPivotFromSprite(Sprite spr)
+        {
+            if (spr == null || _cursorRect == null)
+                return;
+            var r = spr.rect;
+            var w = r.width;
+            var h = r.height;
+            if (w <= 0.001f || h <= 0.001f)
+                return;
+            var pivPx = spr.pivot;
+            // Importer often keeps (0,0) pixels (= bottom-left of trimmed rect): wrong for fingertip/OS tip.
+            if (Mathf.Abs(pivPx.x) < 0.51f && Mathf.Abs(pivPx.y) < 0.51f)
+                _cursorRect.pivot = new Vector2(0.09f, 0.93f); // heuristic: NW-tip for Yellow King hand
+            else
+                _cursorRect.pivot = new Vector2(pivPx.x / w, pivPx.y / h);
         }
 
         // ── Canvas / Image construction ─────────────────────────────────────
@@ -227,8 +254,8 @@ namespace LasGranjasDelHastur.UI.Edwin
             // Anchor to canvas center; anchoredPosition = local offset from center.
             _cursorRect.anchorMin = new Vector2(0.5f, 0.5f);
             _cursorRect.anchorMax = new Vector2(0.5f, 0.5f);
-            // Pivot at top-left = hotspot of the cursor (tip of pointer finger).
-            _cursorRect.pivot           = new Vector2(0f, 1f);
+            // Pivot overwritten from each sprite texture import pivot in SetCursorSprite.
+            _cursorRect.pivot = new Vector2(0.5f, 0.5f);
             _cursorRect.anchoredPosition = Vector2.zero;
             _cursorRect.sizeDelta        = new Vector2(CursorDisplayHeight, CursorDisplayHeight);
 

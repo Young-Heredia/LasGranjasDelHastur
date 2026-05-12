@@ -63,8 +63,27 @@ namespace LasGranjasDelHastur.Zone1.UI
         /// <summary>True cuando el panel de ventas está abierto (tutorial / UI).</summary>
         public bool IsSalesPanelOpen => _salesPanel != null && _salesPanel.activeSelf;
 
+        /// <summary>Pestañas lógicas del panel Ventas (API usada por <see cref="LasGranjasDelHastur.Zone1.Zone1GuidedTutorial"/>).</summary>
+        public const int ShopTabVentas = 0;
+        public const int ShopTabAsistentes = 1;
+
         /// <summary>Ventas exitosas en esta carga de escena (para tutorial guiado).</summary>
         public int SessionSalesCompletedCount { get; private set; }
+
+        /// <summary>
+        /// Enfoca la parte del panel de ventas que interesa al tutorial (lista de compradores vs. compra de asistentes).
+        /// </summary>
+        public void EnsureShopTab(int tab)
+        {
+            if (_salesPanel == null || !_salesPanel.activeSelf)
+                return;
+
+            if (_salesScroll != null)
+                _salesScroll.verticalNormalizedPosition = tab == ShopTabAsistentes ? 0f : 1f;
+
+            if (tab == ShopTabAsistentes && _salesBuyAssistantBtn != null)
+                _salesBuyAssistantBtn.Select();
+        }
 
         void RegisterSessionSaleCompleted() => SessionSalesCompletedCount++;
         GameObject _taxPanel;
@@ -81,6 +100,7 @@ namespace LasGranjasDelHastur.Zone1.UI
         Button _cellAssistantBtn;
 
         // Sales bindings
+        ScrollRect _salesScroll;
         RectTransform _salesListRoot;
         readonly List<GameObject> _saleRows = new();
         EdwinSalesOfferPanel _salesOfferPanel;
@@ -1163,6 +1183,7 @@ namespace LasGranjasDelHastur.Zone1.UI
             scrollLe.flexibleHeight = 1f;
 
             var scroll = scrollGo.AddComponent<ScrollRect>();
+            _salesScroll = scroll;
             var viewport = new GameObject("Viewport");
             viewport.transform.SetParent(scrollGo.transform, false);
             var viewportImg = viewport.AddComponent<Image>();
