@@ -63,10 +63,9 @@ namespace LasGranjasDelHastur.Core
 
         static void TryApplyPackSprite(Image img, string packPanelPath, Color fallbackTint)
         {
-#if UNITY_EDITOR
             if (!string.IsNullOrEmpty(packPanelPath))
             {
-                var sp = UnityEditor.AssetDatabase.LoadAssetAtPath<Sprite>(packPanelPath);
+                var sp = Zone1ArtProvider.LoadSprite(packPanelPath);
                 if (sp != null)
                 {
                     img.sprite = sp;
@@ -76,7 +75,6 @@ namespace LasGranjasDelHastur.Core
                     return;
                 }
             }
-#endif
             img.sprite = null;
             img.color = fallbackTint;
         }
@@ -290,11 +288,9 @@ namespace LasGranjasDelHastur.Core
                 return;
 
             Sprite sp = null;
-#if UNITY_EDITOR
             var path = danger ? packDangerPath : packPrimaryPath;
             if (!string.IsNullOrEmpty(path))
-                sp = UnityEditor.AssetDatabase.LoadAssetAtPath<Sprite>(path);
-#endif
+                sp = Zone1ArtProvider.LoadSprite(path);
             if (sp == null)
                 sp = Zone1ArtProvider.LoadSprite(Zone1ButtonBasePath);
 

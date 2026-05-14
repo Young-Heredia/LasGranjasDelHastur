@@ -21,8 +21,8 @@ namespace LasGranjasDelHastur.Zone2.Jose.Systems
         [SerializeField] Vector2 origin = new(-5.35f, 3.65f);
 
         [Header("Sprites (pack defaults)")]
-        [SerializeField] string lockedSpritePath = "Assets/02_Sprites/Lucas/LasGranjasHastur_AssetPack_PixelArt/hastur_pixel_art_pack/Cells/Base/Cell_Locked.png";
-        [SerializeField] string emptySpritePath = "Assets/02_Sprites/Lucas/LasGranjasHastur_AssetPack_PixelArt/hastur_pixel_art_pack/Cells/Base/Cell_Empty.png";
+        [SerializeField] string lockedSpritePath = "Assets/02_Sprites/Lucas/Zone2/Cells/Buildings/z2_building_souls_pit_blocked.png";
+        [SerializeField] string emptySpritePath = "Assets/02_Sprites/Lucas/Zone2/Cells/Buildings/z2_building_souls_pit_idle.png";
 
         [Header("Opcional")]
         [Tooltip("Si se asigna, se instancia en lugar de crear celdas en vacío (recomendado: bake desde menú Editor Zona 2).")]
@@ -44,7 +44,24 @@ namespace LasGranjasDelHastur.Zone2.Jose.Systems
 
         void Awake()
         {
+            NormalizeSpriteDefaults();
             BuildGridIfEmpty();
+        }
+
+        void NormalizeSpriteDefaults()
+        {
+            // Force Zone2 "new cells" set if scene still had old pack defaults serialized.
+            if (string.IsNullOrWhiteSpace(lockedSpritePath) ||
+                lockedSpritePath.IndexOf("hastur_pixel_art_pack/Cells/Base/Cell_Locked", StringComparison.OrdinalIgnoreCase) >= 0)
+            {
+                lockedSpritePath = "Assets/02_Sprites/Lucas/Zone2/Cells/Buildings/z2_building_souls_pit_blocked.png";
+            }
+
+            if (string.IsNullOrWhiteSpace(emptySpritePath) ||
+                emptySpritePath.IndexOf("hastur_pixel_art_pack/Cells/Base/Cell_Empty", StringComparison.OrdinalIgnoreCase) >= 0)
+            {
+                emptySpritePath = "Assets/02_Sprites/Lucas/Zone2/Cells/Buildings/z2_building_souls_pit_idle.png";
+            }
         }
 
         void Update()

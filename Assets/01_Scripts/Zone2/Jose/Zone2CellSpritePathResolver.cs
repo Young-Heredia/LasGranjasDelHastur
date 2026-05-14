@@ -10,6 +10,7 @@ namespace LasGranjasDelHastur.Zone2.Jose
     public static class Zone2CellSpritePathResolver
     {
         public const string JoseCellsDir = "Assets/02_Sprites/Jose/Zone2/Cells";
+        public const string LucasZone2BuildingsDir = "Assets/02_Sprites/Lucas/Zone2/Cells/Buildings";
 
         public static string ResolveDistrict(Zone2DistrictType t)
         {
@@ -19,7 +20,11 @@ namespace LasGranjasDelHastur.Zone2.Jose
             var legacy = $"{JoseCellsDir}/{LegacyJoseFileName(t)}";
             if (FileExistsAsAssetPath(legacy))
                 return legacy;
-            return Zone2DistrictPaths.LucasPackSpritePath(t);
+            var lucasNew = $"{LucasZone2BuildingsDir}/{FileNameForLucasNew(t, "idle")}";
+            if (FileExistsAsAssetPath(lucasNew))
+                return lucasNew;
+            // Hard fallback to new pipeline naming (avoid old pack art unless really needed elsewhere).
+            return $"{LucasZone2BuildingsDir}/z2_building_souls_pit_idle.png";
         }
 
         public static string FileNameForJose(Zone2DistrictType t) =>
@@ -38,6 +43,15 @@ namespace LasGranjasDelHastur.Zone2.Jose
                 Zone2DistrictType.CometMill => "zone2_cultisttower.png",
                 Zone2DistrictType.PlanetaryCore => "zone2_cursedmarket.png",
                 _ => "zone2_yitharchive.png",
+            };
+
+        static string FileNameForLucasNew(Zone2DistrictType t, string stateSuffix) =>
+            t switch
+            {
+                Zone2DistrictType.LunarGarden => $"z2_building_souls_pit_{stateSuffix}.png",
+                Zone2DistrictType.CometMill => $"z2_building_energy_reactor_{stateSuffix}.png",
+                Zone2DistrictType.PlanetaryCore => $"z2_building_memory_archive_{stateSuffix}.png",
+                _ => $"z2_building_unstable_incubator_{stateSuffix}.png",
             };
 
         public static bool FileExistsAsAssetPath(string assetsPath)

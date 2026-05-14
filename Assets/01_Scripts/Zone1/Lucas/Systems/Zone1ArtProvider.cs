@@ -7,6 +7,9 @@ namespace LasGranjasDelHastur.Zone1
 {
     public static class Zone1ArtProvider
     {
+        const string ResourcesPrefix = "Assets/Resources/";
+        const string StreamingCacheFolderName = "RuntimeArtCache";
+
         static readonly Dictionary<string, Sprite> SpriteCache = new();
         static readonly Dictionary<string, Texture2D> TextureCache = new();
         static readonly Dictionary<string, Sprite[]> SheetCache = new();
@@ -23,8 +26,20 @@ namespace LasGranjasDelHastur.Zone1
             if (string.IsNullOrEmpty(relativeAssetPath))
                 return null;
 
-            if (SpriteCache.TryGetValue(relativeAssetPath, out var cached))
+            var cacheKey = NormalizePath(relativeAssetPath);
+            if (SpriteCache.TryGetValue(cacheKey, out var cached))
                 return cached;
+
+            var resourcesPath = ToResourcesLoadPath(cacheKey);
+            if (!string.IsNullOrEmpty(resourcesPath))
+            {
+                var fromResources = Resources.Load<Sprite>(resourcesPath);
+                if (fromResources != null)
+                {
+                    SpriteCache[cacheKey] = fromResources;
+                    return fromResources;
+                }
+            }
 
             var tex = LoadTexture(relativeAssetPath);
             if (tex == null)
@@ -32,7 +47,7 @@ namespace LasGranjasDelHastur.Zone1
 
             var ppu = ResolvePixelsPerUnit(relativeAssetPath, tex);
             var sprite = Sprite.Create(tex, new Rect(0, 0, tex.width, tex.height), new Vector2(0.5f, 0.5f), ppu);
-            SpriteCache[relativeAssetPath] = sprite;
+            SpriteCache[cacheKey] = sprite;
             return sprite;
         }
 
@@ -147,10 +162,22 @@ namespace LasGranjasDelHastur.Zone1
 
         static Texture2D LoadTexture(string relativeAssetPath)
         {
-            if (TextureCache.TryGetValue(relativeAssetPath, out var cached))
+            var cacheKey = NormalizePath(relativeAssetPath);
+            if (TextureCache.TryGetValue(cacheKey, out var cached))
                 return cached;
 
-            var fullPath = Path.Combine(Application.dataPath, relativeAssetPath.Replace("Assets/", ""));
+            var resourcesPath = ToResourcesLoadPath(cacheKey);
+            if (!string.IsNullOrEmpty(resourcesPath))
+            {
+                var resourceTexture = Resources.Load<Texture2D>(resourcesPath);
+                if (resourceTexture != null)
+                {
+                    TextureCache[cacheKey] = resourceTexture;
+                    return resourceTexture;
+                }
+            }
+
+            var fullPath = ResolveDiskPath(cacheKey);
             if (!File.Exists(fullPath))
                 return null;
 
@@ -161,8 +188,44 @@ namespace LasGranjasDelHastur.Zone1
             tex.filterMode = FilterMode.Point;
             tex.wrapMode = TextureWrapMode.Clamp;
             tex.name = Path.GetFileNameWithoutExtension(relativeAssetPath);
-            TextureCache[relativeAssetPath] = tex;
+            TextureCache[cacheKey] = tex;
             return tex;
+        }
+
+        static string ResolveDiskPath(string assetPath)
+        {
+            var normalized = NormalizePath(assetPath);
+            var noAssetsPrefix = normalized.StartsWith("Assets/", StringComparison.OrdinalIgnoreCase)
+                ? normalized.Substring("Assets/".Length)
+                : normalized;
+
+            if (Application.isEditor)
+                return Path.Combine(Application.dataPath, noAssetsPrefix);
+
+            var fromStreaming = Path.Combine(
+                Application.streamingAssetsPath,
+                StreamingCacheFolderName,
+                noAssetsPrefix.Replace('/', Path.DirectorySeparatorChar));
+            if (File.Exists(fromStreaming))
+                return fromStreaming;
+
+            return Path.Combine(Application.dataPath, noAssetsPrefix);
+        }
+
+        static string NormalizePath(string path) =>
+            string.IsNullOrEmpty(path) ? string.Empty : path.Replace('\\', '/');
+
+        static string ToResourcesLoadPath(string assetPath)
+        {
+            if (string.IsNullOrEmpty(assetPath) ||
+                !assetPath.StartsWith(ResourcesPrefix, StringComparison.OrdinalIgnoreCase))
+                return null;
+
+            var relative = assetPath.Substring(ResourcesPrefix.Length);
+            var extIndex = relative.LastIndexOf('.');
+            if (extIndex > 0)
+                relative = relative.Substring(0, extIndex);
+            return relative;
         }
     }
 }
