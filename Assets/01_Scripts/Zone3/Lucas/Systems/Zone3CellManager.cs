@@ -19,8 +19,8 @@ namespace LasGranjasDelHastur.Zone3.Systems
         [SerializeField] Vector2 origin = new(-3.3f, 1.8f);
 
         [Header("Sprites (pack defaults)")]
-        [SerializeField] string lockedSpritePath = "Assets/02_Sprites/Lucas/LasGranjasHastur_AssetPack_PixelArt/hastur_pixel_art_pack/Cells/Base/Cell_Locked.png";
-        [SerializeField] string emptySpritePath = "Assets/02_Sprites/Lucas/LasGranjasHastur_AssetPack_PixelArt/hastur_pixel_art_pack/Cells/Base/Cell_Empty.png";
+        [SerializeField] string lockedSpritePath = "Assets/02_Sprites/Lucas/Zone3/NewCells/z3_celestial_larva_moon_blocked.png";
+        [SerializeField] string emptySpritePath = "Assets/02_Sprites/Lucas/Zone3/NewCells/z3_celestial_larva_moon_idle.png";
 
         readonly List<Slot> _slots = new();
 
@@ -37,7 +37,24 @@ namespace LasGranjasDelHastur.Zone3.Systems
 
         void Awake()
         {
+            NormalizeSpriteDefaults();
             BuildGridIfEmpty();
+        }
+
+        void NormalizeSpriteDefaults()
+        {
+            // Force Zone3 "new cells" set if old pack defaults are still serialized in scene.
+            if (string.IsNullOrWhiteSpace(lockedSpritePath) ||
+                lockedSpritePath.IndexOf("hastur_pixel_art_pack/Cells/Base/Cell_Locked", StringComparison.OrdinalIgnoreCase) >= 0)
+            {
+                lockedSpritePath = "Assets/02_Sprites/Lucas/Zone3/NewCells/z3_celestial_larva_moon_blocked.png";
+            }
+
+            if (string.IsNullOrWhiteSpace(emptySpritePath) ||
+                emptySpritePath.IndexOf("hastur_pixel_art_pack/Cells/Base/Cell_Empty", StringComparison.OrdinalIgnoreCase) >= 0)
+            {
+                emptySpritePath = "Assets/02_Sprites/Lucas/Zone3/NewCells/z3_celestial_larva_moon_idle.png";
+            }
         }
 
         void Update()

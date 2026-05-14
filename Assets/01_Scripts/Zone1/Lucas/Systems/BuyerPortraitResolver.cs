@@ -153,6 +153,14 @@ namespace LasGranjasDelHastur.Zone1
                 return null;
             foreach (var path in paths)
             {
+                var resourcesPath = global::LasGranjasDelHastur.TaxCollectorArtPaths.ToResourcesLoadPath(path);
+                if (!string.IsNullOrEmpty(resourcesPath))
+                {
+                    var fromResources = Resources.Load<Sprite>(resourcesPath);
+                    if (fromResources != null)
+                        return fromResources;
+                }
+
                 var s = Zone1ArtProvider.LoadSprite(path);
                 if (s != null)
                     return s;

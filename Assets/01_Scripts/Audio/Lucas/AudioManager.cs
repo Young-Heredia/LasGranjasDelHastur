@@ -658,7 +658,7 @@ public class AudioManager : MonoBehaviour
             {
                 if (!assetPath.StartsWith("Assets/", StringComparison.OrdinalIgnoreCase))
                     continue;
-                var full = Path.GetFullPath(Path.Combine(Application.dataPath, assetPath.Replace("Assets/", "")));
+                var full = ResolveRuntimeAssetFullPath(assetPath);
                 if (!File.Exists(full))
                     continue;
 
@@ -841,7 +841,7 @@ public class AudioManager : MonoBehaviour
             {
                 if (!assetPath.StartsWith("Assets/", StringComparison.OrdinalIgnoreCase))
                     continue;
-                var full = Path.GetFullPath(Path.Combine(Application.dataPath, assetPath.Replace("Assets/", "")));
+                var full = ResolveRuntimeAssetFullPath(assetPath);
                 if (!File.Exists(full))
                     continue;
 
@@ -921,7 +921,9 @@ public class AudioManager : MonoBehaviour
         if (string.IsNullOrWhiteSpace(path))
             yield break;
 
-        var full = System.IO.Path.Combine(Application.dataPath, path.Replace("Assets/", ""));
+        var full = ResolveRuntimeAssetFullPath(path);
+        if (!File.Exists(full))
+            yield break;
         var url = "file://" + full.Replace("\\", "/");
         using var req = UnityWebRequestMultimedia.GetAudioClip(url, AudioType.MPEG);
         yield return req.SendWebRequest();
@@ -940,6 +942,29 @@ public class AudioManager : MonoBehaviour
                 musicSource.time = Mathf.Clamp(_tZone1Easter, 0f, Mathf.Max(0f, _zone1EasterClip.length - 0.05f));
             musicSource.Play();
         }
+    }
+
+    static string ResolveRuntimeAssetFullPath(string assetPath)
+    {
+        if (string.IsNullOrWhiteSpace(assetPath))
+            return string.Empty;
+
+        var normalized = assetPath.Replace('\\', '/');
+        var relative = normalized.StartsWith("Assets/", StringComparison.OrdinalIgnoreCase)
+            ? normalized.Substring("Assets/".Length)
+            : normalized;
+
+        if (Application.isEditor)
+            return Path.GetFullPath(Path.Combine(Application.dataPath, relative));
+
+        var fromStreaming = Path.Combine(
+            Application.streamingAssetsPath,
+            "RuntimeArtCache",
+            relative.Replace('/', Path.DirectorySeparatorChar));
+        if (File.Exists(fromStreaming))
+            return fromStreaming;
+
+        return Path.GetFullPath(Path.Combine(Application.dataPath, relative));
     }
 
     private void EnsureSources()

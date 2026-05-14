@@ -8,6 +8,7 @@ using LasGranjasDelHastur.Zone1;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace LasGranjasDelHastur.UI.Edwin
@@ -58,6 +59,8 @@ namespace LasGranjasDelHastur.UI.Edwin
                 return;
             }
 #endif
+            if (_layoutBuilt && HasBuiltUi())
+                return;
             if (HasBuiltUi())
                 return;
             BuildNow();
@@ -201,7 +204,7 @@ namespace LasGranjasDelHastur.UI.Edwin
 #endif
 
         const string RhythmBackgroundAssetPath =
-            "Assets/Resources/Edwin/CosmicHarvestRhythm/cosmic-harvest-rhythm-bg-preview.png";
+            "Assets/Resources/Edwin/CosmicHarvestRhythm/audio-tracks-preview.png";
 
         const string RhythmResourceCardAssetPath =
             "Assets/Resources/Edwin/CosmicHarvestRhythm/Resource/resource-card.png";
@@ -296,7 +299,7 @@ namespace LasGranjasDelHastur.UI.Edwin
                 return fromDisk;
 
             var fromResources =
-                Resources.LoadAll<Sprite>("Edwin/CosmicHarvestRhythm/cosmic-harvest-rhythm-bg-preview");
+                Resources.LoadAll<Sprite>("Edwin/CosmicHarvestRhythm/audio-tracks-preview");
             return fromResources != null && fromResources.Length > 0 ? fromResources[0] : null;
         }
 
@@ -1329,6 +1332,13 @@ namespace LasGranjasDelHastur.UI.Edwin
 
         void Update()
         {
+            if (Keyboard.current != null && Keyboard.current.escapeKey.wasPressedThisFrame)
+            {
+                if (Application.CanStreamedLevelBeLoaded("MainMenu"))
+                    SceneManager.LoadScene("MainMenu");
+                return;
+            }
+
             TickMusicReactiveVolume();
             TickPendingSpawns();
             TickActiveNotes();
