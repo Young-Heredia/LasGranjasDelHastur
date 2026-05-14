@@ -22,6 +22,10 @@ namespace LasGranjasDelHastur.Core
         {
 #if UNITY_EDITOR
             EnsureExists();
+#else
+            // Enable overlay in development/debug players (F8 toggle, F9 reset action).
+            if (Debug.isDebugBuild)
+                EnsureExists();
 #endif
         }
 
@@ -36,7 +40,8 @@ namespace LasGranjasDelHastur.Core
         void Awake()
         {
             DontDestroyOnLoad(gameObject);
-            showOverlay = false; // keep hidden by default for normal gameplay tests
+            // In debug/dev players we want overlay visible immediately.
+            showOverlay = Application.isEditor || Debug.isDebugBuild;
             BuildUi();
         }
 
@@ -94,9 +99,13 @@ namespace LasGranjasDelHastur.Core
 
         void Update()
         {
-            if (global::LasGranjasDelHastur.InputAdapter.KeyDown(KeyCode.F8))
+            if (global::LasGranjasDelHastur.InputAdapter.KeyDown(KeyCode.F8) ||
+                (UnityEngine.InputSystem.Keyboard.current != null &&
+                 UnityEngine.InputSystem.Keyboard.current.f8Key.wasPressedThisFrame))
                 showOverlay = !showOverlay;
-            if (global::LasGranjasDelHastur.InputAdapter.KeyDown(KeyCode.F9))
+            if (global::LasGranjasDelHastur.InputAdapter.KeyDown(KeyCode.F9) ||
+                (UnityEngine.InputSystem.Keyboard.current != null &&
+                 UnityEngine.InputSystem.Keyboard.current.f9Key.wasPressedThisFrame))
                 ResetAllProgressFromDebug();
 
             if (_text == null)

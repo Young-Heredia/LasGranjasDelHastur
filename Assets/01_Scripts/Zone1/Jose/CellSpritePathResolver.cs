@@ -75,10 +75,15 @@ namespace LasGranjasDelHastur.Zone1
                     return lucasN;
             }
 
+            // Prefer Lucas runtime set over Jose legacy when both exist.
+            var lucas = $"{LucasCellsDir}/{fileName}";
+            if (FileExistsAsAssetPath(lucas))
+                return lucas;
+
             var jose = $"{JoseCellsDir}/{fileName}";
             if (FileExistsAsAssetPath(jose))
                 return jose;
-            return $"{LucasCellsDir}/{fileName}";
+            return lucas;
         }
 
         public static string GetFileNameForCell(FarmCell cell)
@@ -140,8 +145,18 @@ namespace LasGranjasDelHastur.Zone1
             if (string.IsNullOrEmpty(assetsPath) || !assetsPath.StartsWith("Assets/"))
                 return false;
             var rel = assetsPath["Assets/".Length..].Replace('/', Path.DirectorySeparatorChar);
+
+            // Editor: direct path in project Assets/.
             var full = Path.Combine(Application.dataPath, rel);
-            return File.Exists(full);
+            if (File.Exists(full))
+                return true;
+
+            // Build: copied runtime cache under StreamingAssets/RuntimeArtCache.
+            var fromStreaming = Path.Combine(Application.streamingAssetsPath, "RuntimeArtCache", rel);
+            if (File.Exists(fromStreaming))
+                return true;
+
+            return false;
         }
     }
 }

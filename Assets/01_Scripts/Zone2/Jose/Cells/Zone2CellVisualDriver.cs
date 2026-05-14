@@ -8,7 +8,7 @@ namespace LasGranjasDelHastur.Zone2.Jose
     public sealed class Zone2CellVisualDriver : MonoBehaviour
     {
         [SerializeField] SpriteRenderer mainRenderer;
-        [SerializeField] string emptySpritePath = Zone2DistrictPaths.PackRoot + "Cells/Base/Cell_Empty.png";
+        [SerializeField] string emptySpritePath = "Assets/02_Sprites/Lucas/Zone2/Cells/Buildings/z2_building_souls_pit_idle.png";
 
         Vector3 _baseScale;
         bool _baseCaptured;
@@ -24,6 +24,11 @@ namespace LasGranjasDelHastur.Zone2.Jose
         {
             if (mainRenderer == null)
                 mainRenderer = GetComponent<SpriteRenderer>();
+            if (string.IsNullOrWhiteSpace(emptySpritePath) ||
+                emptySpritePath.IndexOf("hastur_pixel_art_pack/Cells/Base/Cell_Empty", System.StringComparison.OrdinalIgnoreCase) >= 0)
+            {
+                emptySpritePath = "Assets/02_Sprites/Lucas/Zone2/Cells/Buildings/z2_building_souls_pit_idle.png";
+            }
             _energyVfx = GetComponent<Zone2CellEnergyVfx>();
             if (_energyVfx == null)
                 _energyVfx = gameObject.AddComponent<Zone2CellEnergyVfx>();
